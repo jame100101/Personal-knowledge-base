@@ -736,7 +736,6 @@ watch([theme, locale], async () => {
   place-items: center;
   padding: clamp(12px, 3vw, 34px);
   background: rgb(5 8 6 / 78%);
-  backdrop-filter: blur(8px);
 }
 .diagram-viewer-overlay:focus {
   outline: none;
@@ -901,6 +900,56 @@ watch([theme, locale], async () => {
   .diagram-viewer-leave-active .diagram-viewer-shell,
   .diagram-viewer-canvas {
     transition: none;
+  }
+}
+
+.markdown-body {
+  font-size: 17px;
+  line-height: 1.85;
+}
+.markdown-body table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+}
+.markdown-body th,
+.markdown-body td {
+  min-width: 110px;
+}
+.markdown-body pre,
+.markdown-body .code-group {
+  max-width: 100%;
+  min-width: 0;
+}
+@media (max-width: 1180px) {
+  .markdown-body .code-tab {
+    min-height: 44px;
+  }
+  .diagram-viewer-header button,
+  .diagram-viewer-controls button {
+    width: 44px;
+    height: 44px;
+  }
+}
+@media (max-width: 600px) {
+  .markdown-body {
+    font-size: 16px;
+    line-height: 1.85;
+  }
+  .markdown-body h1 {
+    font-size: 28px;
+  }
+  .markdown-body h2 {
+    font-size: 24px;
+  }
+  .markdown-body h3 {
+    font-size: 20px;
+  }
+  .markdown-body pre code {
+    font-size: 13px;
+  }
+  .diagram-viewer-shell {
+    min-height: 0;
   }
 }
 </style>

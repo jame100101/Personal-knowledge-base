@@ -85,7 +85,9 @@ function close() {
               <CornerDownLeft :size="13" />
             </NuxtLink>
           </template>
-          <span class="result-label">{{ query ? t('documents') : t('recentDocuments') }}</span>
+          <span class="result-label">{{
+            query ? t('documents') : t('recentDocuments')
+          }}</span>
           <NuxtLink
             v-for="document in documentResults"
             :key="document.id"
@@ -106,7 +108,10 @@ function close() {
             {{ t('noResults') }}
           </div>
         </div>
-        <footer><kbd>↑↓</kbd> {{ t('browse') }} <kbd>Enter</kbd> {{ t('open') }} <kbd>Esc</kbd> {{ t('close') }}</footer>
+        <footer>
+          <kbd>↑↓</kbd> {{ t('browse') }} <kbd>Enter</kbd> {{ t('open') }}
+          <kbd>Esc</kbd> {{ t('close') }}
+        </footer>
       </section>
     </div>
   </Teleport>
@@ -121,7 +126,6 @@ function close() {
   place-items: start center;
   padding: 12vh 16px 20px;
   background: rgb(3 5 7 / 72%);
-  backdrop-filter: blur(3px);
 }
 .search-dialog {
   width: min(620px, 100%);
@@ -219,5 +223,36 @@ kbd {
   background: var(--kb-shortcut-bg);
   color: var(--kb-shortcut-text);
   padding: 1px 4px;
+}
+
+.search-dialog {
+  max-height: calc(100dvh - 48px);
+  display: flex;
+  flex-direction: column;
+}
+.search-results {
+  min-height: 0;
+  overscroll-behavior: contain;
+}
+header,
+footer {
+  flex-shrink: 0;
+}
+@media (max-width: 1180px) {
+  .search-overlay {
+    padding-top: max(16px, env(safe-area-inset-top));
+  }
+  header input {
+    font-size: 16px;
+  }
+  header button {
+    min-width: 44px;
+    min-height: 44px;
+  }
+  .search-results strong {
+    white-space: normal;
+    font-size: 15px;
+    line-height: 1.5;
+  }
 }
 </style>

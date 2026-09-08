@@ -491,3 +491,51 @@ test('mobile layout has no horizontal overflow', async ({ page }) => {
   )
   expect(overflow).toBe(false)
 })
+
+for (const width of [390, 768, 820, 1024, 1180]) {
+  test(`responsive reading and accessible navigation at ${width}px`, async ({
+    page,
+  }) => {
+    await page.emulateMedia({ reducedMotion: 'reduce' })
+    await page.setViewportSize({ width, height: 900 })
+    const fixture = await detectFixture(page)
+    const menu = page.locator('.mobile-header button').first()
+    await expect(menu).toBeVisible()
+    await expect(page.locator('.left-sidebar')).toHaveAttribute('inert', '')
+    await menu.click()
+    await expect(menu).toHaveAttribute('aria-expanded', 'true')
+    await expect(page.locator('.mobile-close')).toBeFocused()
+    expect(await page.evaluate(() => getComputedStyle(document.body).overflow)).toBe(
+      'hidden',
+    )
+    await page.keyboard.press('Escape')
+    await expect(menu).toBeFocused()
+    await expect(menu).toHaveAttribute('aria-expanded', 'false')
+    await menu.click()
+    await page.locator('.left-sidebar .brand a').click()
+    await expect(menu).toHaveAttribute('aria-expanded', 'false')
+    await page.goto(fixture.documentPath)
+    await expect(page.locator('.markdown-body')).toBeVisible()
+    const outline = page.locator('.toc-toggle')
+    await expect(outline).toBeVisible()
+    await expect(page.locator('.toc nav')).toBeHidden()
+    await outline.click()
+    await expect(page.locator('.toc nav')).toBeVisible()
+    const link = page.locator('.toc nav a').nth(1)
+    const href = await link.getAttribute('href')
+    await link.click()
+    await expect(page.locator('.toc nav')).toBeHidden()
+    expect(decodeURIComponent(new URL(page.url()).hash)).toBe(href)
+    const target = page.locator('.markdown-body').locator(`[id="${href!.slice(1)}"]`)
+    await expect(target).toBeInViewport()
+    expect((await target.boundingBox())!.y).toBeGreaterThanOrEqual(56)
+    const overflow = await page.evaluate(
+      () => document.documentElement.scrollWidth - window.innerWidth,
+    )
+    expect(overflow).toBeLessThanOrEqual(1)
+    await page.screenshot({
+      path: `test-results/responsive-${width}.png`,
+      fullPage: false,
+    })
+  })
+}

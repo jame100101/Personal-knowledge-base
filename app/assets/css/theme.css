@@ -364,3 +364,41 @@ button {
     min-height: 42px;
   }
 }
+
+/* Comfortable reading and touch navigation; background artwork is untouched. */
+:root {
+  --kb-text-subtle: #929ca6;
+}
+:root[data-theme='light'] {
+  --kb-text-subtle: #536158;
+}
+html {
+  scroll-padding-top: 80px;
+  -webkit-text-size-adjust: 100%;
+}
+@media (max-width: 1180px) {
+  .left-sidebar .tree-row,
+  .left-sidebar .tree-document {
+    min-height: 44px;
+  }
+  .left-sidebar .sidebar-footer button,
+  .left-sidebar .sidebar-footer select {
+    min-height: 44px;
+  }
+  input,
+  textarea,
+  select {
+    font-size: 16px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

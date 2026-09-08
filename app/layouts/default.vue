@@ -5,6 +5,27 @@ const { folders, documents, loading, updateAvailable, load, isDemo } = useKnowle
 const { t } = useLocale()
 const searchOpen = ref(false)
 const mobileOpen = ref(false)
+const compact = ref(false)
+const sidebar = ref<HTMLElement>()
+const menuButton = ref<HTMLButtonElement>()
+let media: MediaQueryList | undefined
+let previousOverflow = ''
+function updateCompact() {
+  compact.value = media?.matches ?? false
+  if (!compact.value) mobileOpen.value = false
+}
+watch(mobileOpen, async (open) => {
+  if (open) {
+    previousOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    await nextTick()
+    sidebar.value?.querySelector<HTMLButtonElement>('.mobile-close')?.focus()
+  } else {
+    document.body.style.overflow = previousOverflow
+    await nextTick()
+    if (compact.value) menuButton.value?.focus()
+  }
+})
 const collapsed = useCookie('kb-sidebar-collapsed', { default: () => false })
 const context = computed(() => {
   const path = Array.isArray(route.params.path)
@@ -35,13 +56,44 @@ await callOnce('load-knowledge', () => load())
 useKnowledgeRealtime()
 
 function onKeydown(event: KeyboardEvent) {
+  if (mobileOpen.value && !searchOpen.value) {
+    if (event.key === 'Escape') {
+      mobileOpen.value = false
+      return
+    }
+    if (event.key === 'Tab') {
+      const items = Array.from(
+        sidebar.value?.querySelectorAll<HTMLElement>(
+          'a[href], button, select, [tabindex="0"]',
+        ) ?? [],
+      ).filter((el) => el.getClientRects().length && !el.hasAttribute('disabled'))
+      const first = items[0],
+        last = items.at(-1)
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault()
+        last?.focus()
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault()
+        first?.focus()
+      }
+    }
+  }
   if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') {
     event.preventDefault()
     searchOpen.value = true
   }
 }
-onMounted(() => window.addEventListener('keydown', onKeydown))
-onUnmounted(() => window.removeEventListener('keydown', onKeydown))
+onMounted(() => {
+  media = window.matchMedia('(max-width: 1180px)')
+  updateCompact()
+  media.addEventListener('change', updateCompact)
+  window.addEventListener('keydown', onKeydown)
+})
+onUnmounted(() => {
+  media?.removeEventListener('change', updateCompact)
+  window.removeEventListener('keydown', onKeydown)
+  if (mobileOpen.value) document.body.style.overflow = previousOverflow
+})
 watch(
   () => route.fullPath,
   () => (mobileOpen.value = false),
@@ -50,8 +102,15 @@ watch(
 
 <template>
   <div class="app-shell" :class="{ collapsed }">
-    <header class="mobile-header">
-      <button type="button" :aria-label="t('openNavigation')" @click="mobileOpen = true">
+    <header class="mobile-header" :inert="mobileOpen">
+      <button
+        ref="menuButton"
+        type="button"
+        aria-controls="knowledge-navigation"
+        :aria-expanded="mobileOpen"
+        :aria-label="t('openNavigation')"
+        @click="mobileOpen = true"
+      >
         <Menu :size="20" />
       </button>
       <NuxtLink to="/" class="mobile-brand"
@@ -63,9 +122,16 @@ watch(
     </header>
 
     <div v-if="mobileOpen" class="mobile-backdrop" @click="mobileOpen = false" />
-    <aside class="left-sidebar" :class="{ mobileOpen }">
+    <aside
+      id="knowledge-navigation"
+      ref="sidebar"
+      class="left-sidebar"
+      :class="{ mobileOpen }"
+      :inert="compact ? !mobileOpen : collapsed"
+      :aria-label="t('openNavigation')"
+    >
       <div class="brand">
-        <NuxtLink to="/"
+        <NuxtLink to="/" @click="mobileOpen = false"
           ><BrandMark /><span
             ><strong>Damnatiox</strong><small>KNOWLEDGE</small></span
           ></NuxtLink
@@ -80,7 +146,8 @@ watch(
         </button>
       </div>
       <button class="search-trigger" type="button" @click="searchOpen = true">
-        <Search :size="15" /><span>{{ t('searchKnowledge') }}</span><kbd>⌘ K</kbd>
+        <Search :size="15" /><span>{{ t('searchKnowledge') }}</span
+        ><kbd>⌘ K</kbd>
       </button>
       <div class="sidebar-label">
         <span>LIBRARY</span><span>{{ documents.length }}</span>
@@ -101,7 +168,11 @@ watch(
         <NuxtLink to="/admin"><Settings :size="15" /> {{ t('admin') }}</NuxtLink>
         <LanguageSelector />
         <ThemeToggle />
-        <button type="button" :aria-label="t('collapseSidebar')" @click="collapsed = true">
+        <button
+          type="button"
+          :aria-label="t('collapseSidebar')"
+          @click="collapsed = true"
+        >
           <PanelLeftClose :size="16" />
         </button>
       </footer>
@@ -110,13 +181,14 @@ watch(
     <button
       v-if="collapsed"
       class="restore-sidebar"
+      :aria-label="t('openNavigation')"
       type="button"
       @click="collapsed = false"
     >
       <BrandMark />
     </button>
 
-    <main class="main-pane">
+    <main class="main-pane" :inert="mobileOpen">
       <div v-if="isDemo" class="demo-strip">
         <span><i /> DEMO DATA</span>
         <span>{{ t('demoConnected') }}</span>
@@ -327,7 +399,7 @@ watch(
 .mobile-close {
   display: none;
 }
-@media (max-width: 900px) {
+@media (max-width: 1180px) {
   .mobile-header {
     height: 55px;
     display: flex;
@@ -385,6 +457,35 @@ watch(
   }
   .demo-strip span:last-child {
     display: none;
+  }
+}
+
+@media (max-width: 1180px) {
+  .left-sidebar {
+    width: min(340px, calc(100vw - 48px));
+    height: 100dvh;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .mobile-header {
+    height: calc(56px + env(safe-area-inset-top));
+    padding-top: env(safe-area-inset-top);
+  }
+  .mobile-header button,
+  .mobile-close {
+    min-width: 44px;
+    min-height: 44px;
+  }
+  .search-trigger {
+    min-height: 44px;
+  }
+  .sidebar-footer > button:last-child {
+    display: none;
+  }
+  .tree-scroll {
+    overscroll-behavior: contain;
+  }
+  .sidebar-footer {
+    min-height: 60px;
   }
 }
 </style>
