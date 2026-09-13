@@ -1,0 +1,38 @@
+name: Supabase daily health check
+
+on:
+  schedule:
+    # UTC 03:17 = Asia/Taipei 11:17, once per day.
+    - cron: '17 3 * * *'
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  health:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Request health endpoint and verify database result
+        env:
+          HEALTH_URL: https://knowledge.damnatiox.com/api/health
+        shell: bash
+        run: |
+          set -euo pipefail
+          body="$(mktemp)"
+          trap 'rm -f "$body"' EXIT
+          # No retries: one probe per scheduled run. Fail on timeout/network errors.
+          if ! code=$(curl --silent --show-error --fail-with-body \
+            --connect-timeout 10 --max-time 30 \
+            --header 'Cache-Control: no-cache' \
+            --output "$body" --write-out '%{http_code}' \
+            "${HEALTH_URL}?run=${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"); then
+            echo '::error::Health request failed (HTTP error, network failure or timeout).'
+            exit 1
+          fi
+          # Reject redirects, static HTML, and a 200 response reporting DB failure.
+          if [[ "$code" != '200' ]] || ! jq -e '.status == "ok" and .database == "ok"' "$body" > /dev/null; then
+            echo "::error::Invalid health response (HTTP ${code}); expected database=ok."
+            exit 1
+          fi
+          echo 'Supabase database query succeeded.'
