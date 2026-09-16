@@ -1,6 +1,8 @@
 # Spring Cloud Compatibility Matrix 与升级检查
 
-> **Freshness metadata**
+升级 Cloud 项目时，单独改一个 Boot 版本可能带来组合问题。把 JDK、Boot、Cloud 发行列车和第三方组件一起核对，再执行回归测试。本页记录的是指定日期的兼容关系，后续升级仍要重新检查。
+
+> **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `verified 2026-08-24`
 > - `source_type`: `official-compatibility-table`

@@ -1,6 +1,8 @@
 # Aider 源码研究：Repo Map、Edit Format 与 Git-aware 修复循环
 
-> **Freshness metadata**
+Aider 很适合用来观察“模型输出怎样真正变成代码改动”。阅读时先跟踪编辑格式的解析，再看文件修改、Git 和测试反馈如何连接。它与以通用工具调用为中心的系统不完全相同，这个差别贯穿全文。
+
+> **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `5dc9490bb35f9729ef2c95d00a19ccd30c26339c`
 > - `source_type`: `official-repository + source-audit`

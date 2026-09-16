@@ -1,5 +1,7 @@
 # Java 集合框架：Collection、List、Set、Map、遍历、工具类与 Lambda
 
+一份有顺序的购物清单、不能重复的标签和按编号查询的用户表，需要的容器并不相同。先说清你准备怎样使用数据，再选择 List、Set 或 Map。复杂度和线程安全也要放在这个使用场景里理解。
+
 > 课件来源：《第7章 集合.pptx》。本文逐项覆盖课件目录，并依据 Java SE 26、JDK 25 LTS 及相关官方文档补充现代工程实践。
 
 集合选择的本质是数据语义与复杂度选择。本章覆盖 Collection、List、Set、Map、Iterator、foreach、Collections、Arrays 和 Lambda，并补充不可变集合与并发集合。

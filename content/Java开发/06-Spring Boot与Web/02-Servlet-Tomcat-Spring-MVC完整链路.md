@@ -1,6 +1,8 @@
 # Servlet、Tomcat 与 Spring MVC 请求完整链路
 
-> **Freshness metadata**
+一个请求没有进入 Controller，问题可能在过滤器，也可能在路径映射或参数转换。把 Servlet 容器与 Spring MVC 的处理顺序弄清楚，排查时就知道该在哪一站看日志。本章按请求进入到响应写出的顺序展开。
+
+> **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `Spring Boot 4 / Servlet 6.1 / Jakarta`
 > - `source_type`: `official-docs`
@@ -26,7 +28,7 @@ Servlet 容器管理 Servlet 生命周期并把 HTTP 请求映射为 HttpServlet
 - Filter 适合容器级请求/响应包装、认证和关联 ID。
 - 容器连接、线程、accept queue 和超时共同决定过载行为。
 
-**正确性边界：** Tomcat 既是 Servlet 容器也提供 HTTP 服务器能力；Nginx 反代并不是运行 Spring MVC 的前提。
+**这里容易混淆的是：** Tomcat 既是 Servlet 容器也提供 HTTP 服务器能力；Nginx 反代并不是运行 Spring MVC 的前提。
 
 ### 2. DispatcherServlet 调度
 
@@ -36,7 +38,7 @@ DispatcherServlet 根据 HandlerMapping 找 handler，通过 HandlerAdapter 调�
 - JSON 序列化、内容协商、校验和异常解析各由独立组件负责。
 - 控制器保持薄，事务与业务逻辑进入应用服务。
 
-**正确性边界：** Controller 方法并不是由浏览器直接反射调用，中间存在映射、绑定、校验、转换和异常处理。
+**这里容易混淆的是：** Controller 方法并不是由浏览器直接反射调用，中间存在映射、绑定、校验、转换和异常处理。
 
 ### 3. 请求绑定与响应
 
@@ -46,7 +48,7 @@ DispatcherServlet 根据 HandlerMapping 找 handler，通过 HandlerAdapter 调�
 - 上传限制总大小、单文件、类型、文件名和存储路径。
 - 流式响应和下载正确设置 Content-Type、Disposition 与缓存。
 
-**正确性边界：** 仅检查文件扩展名不足以识别内容类型，且用户文件名不得直接作为服务器路径。
+**这里容易混淆的是：** 仅检查文件扩展名不足以识别内容类型，且用户文件名不得直接作为服务器路径。
 
 ### 4. 线程模型与异步
 
@@ -56,7 +58,7 @@ DispatcherServlet 根据 HandlerMapping 找 handler，通过 HandlerAdapter 调�
 - 设置请求截止时间并取消下游操作。
 - 响应提交后异常无法再正常改写状态码。
 
-**正确性边界：** 异步/虚拟线程不自动提供背压，必须限制队列、连接和并发。
+**这里容易混淆的是：** 异步/虚拟线程不自动提供背压，必须限制队列、连接和并发。
 
 ## 3. 工程链路
 
@@ -77,7 +79,7 @@ sequenceDiagram
 
 ## 4. 最小可运行示例
 
-下面的示例只保留关键路径。把它放入对应版本的最小工程，先运行测试或命令确认行为，再逐步加入重试、超时、监控和异常分支。
+用一次 `GET /api/orders/42` 对照这段控制器：路径里的 ID 被转换成参数，再交给业务服务。示例省略了 `service` 注入和 `OrderView` 定义；找不到订单时如何返回错误，也要在应用中另行约定。
 
 ```java
 @RestController

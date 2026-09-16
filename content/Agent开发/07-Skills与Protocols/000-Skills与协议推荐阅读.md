@@ -1,5 +1,7 @@
 # Skills 与协议推荐阅读
 
+先做一个用途明确的 Skill，再尝试通过协议连接一个外部工具服务，会比同时学习所有名词更清楚。阅读下面资料时，分别记录操作步骤写在哪里、实际函数在哪里执行、连接协议又负责什么。
+
 - [Claude Code Skills](https://docs.anthropic.com/en/docs/claude-code/skills)：Skill 的发现和使用。
 - [Agent Skills](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview)：可复用能力包的结构与渐进加载。
 - [OpenClaw Skills](https://github.com/openclaw/openclaw)：研究本地 Agent 的 Skill 作用域与加载。

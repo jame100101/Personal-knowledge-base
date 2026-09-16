@@ -1,6 +1,8 @@
 # pi-agent 源码研究：极小 Loop、可组合 Harness 与树形 Session
 
-> **Freshness metadata**
+pi 的仓库里既有较小的 Agent Core，也有完整 Coding Agent 所需的工具和会话能力。建议先读核心循环，再看外层怎样补齐使用场景。下面沿着这种由内向外的顺序，避免把 UI 与核心决策混在一起。
+
+> **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `dcd461925db2edf69a43c8135db1180d418afd54`
 > - `source_type`: `official-repository + source-audit`

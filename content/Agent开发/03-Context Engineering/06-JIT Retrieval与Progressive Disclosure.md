@@ -1,6 +1,8 @@
 # JIT Retrieval 与 Progressive Disclosure
 
-> **Freshness metadata**
+查一本手册时，我们通常先看目录，再翻需要的章节；不必每次从第一页读到最后。按需检索和渐进加载采用类似思路。下面区分“需要时找材料”与“先看摘要再加载详情”，并讨论漏掉重要信息时怎样发现。
+
+> **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `stable retrieval patterns`
 > - `source_type`: `engineering synthesis`
@@ -10,12 +12,12 @@
 
 ## 最小流程
 
-1. 在 manifest 中注册可检索源的 summary 与 locator；
-2. 模型或确定性 planner 形成 information need；
-3. retrieval policy 检查权限、范围和预算；
-4. 先返回索引/候选，再读取最相关细节；
-5. 保存 query、结果、未选原因和 citation；
-6. 任务转移后从活跃 context 淘汰，但保留 trace 引用。
+1. 先登记可用资料的摘要与位置，供系统发现。
+2. 当模型或程序明确需要某项信息时，形成检索问题。
+3. 检查是否有权访问，以及允许搜索的范围和预算。
+4. 先查看候选，再读取最相关的细节。
+5. 保存查询、结果、引用及取舍理由，方便回查。
+6. 任务转到别处后，可以不再携带旧材料，但保留运行记录中的引用。
 
 ## 适用边界
 

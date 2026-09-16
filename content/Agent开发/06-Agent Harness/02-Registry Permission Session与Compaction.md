@@ -1,5 +1,7 @@
 # Tool Registry、Permission Gate、Session Store 与 Compaction
 
+工具列表、用户权限、会话状态和历史压缩常出现在同一个运行过程中，却各有职责。先用一次读取文件的调用把它们连起来，再看分别怎样管理，能避免把所有状态都塞进一个不断增长的对象。
+
 ## 1. Tool Registry
 
 Registry 管理工具元数据、版本、handler 和 capability。它需要支持：

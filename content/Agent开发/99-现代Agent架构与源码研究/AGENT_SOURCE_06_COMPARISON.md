@@ -1,6 +1,8 @@
 # 现代 Agent 架构与实现细节对比：十个 Coding Agent / Harness
 
-> **Freshness metadata**
+单看每个项目，工具、会话和上下文好像都差不多；放到同一个具体任务里，控制方式和修改文件的方法就会显出差异。下面用相同问题比较这些实现，不把功能表当作产品排名。
+
+> **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `pinned source snapshots + same-day HEAD audits listed below`
 > - `source_type`: `official repositories / official documentation / local source audit`

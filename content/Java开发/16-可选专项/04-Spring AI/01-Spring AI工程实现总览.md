@@ -1,6 +1,8 @@
 # Spring AI 工程实现总览（可选）
 
-> **Freshness metadata**
+已有 Spring 项目想接入模型时，可以先完成一次普通请求，再按需要加入结构化结果、工具或检索。Spring AI 提供这些集成入口；Agent 是否循环、如何停止、如何验证，仍然需要应用自己设计。
+
+> **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `Spring AI 2.0 line; repository fd3fd6ec700340b90c3d516be57c6e6c87dd7df1`
 > - `source_type`: `Spring official reference + official-repository`

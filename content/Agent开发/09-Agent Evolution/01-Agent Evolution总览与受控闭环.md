@@ -1,6 +1,8 @@
 # Agent Evolution：受控改进闭环
 
-> **Freshness metadata**
+所谓 Agent 演进，可以先理解为根据运行结果提出改动，再通过测试决定是否采用。它不等于让程序在生产环境里随意修改自己。下面分别讨论候选更新、评测和回滚，把“改进”变成可以检查的过程。
+
+> **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `2026 agent-improvement architecture`
 > - `source_type`: `primary-paper + official-repository + engineering synthesis`

@@ -1,6 +1,8 @@
 # JVM 与并发：从运行时到生产诊断
 
-> **Freshness metadata**
+服务变慢或内存不断上涨时，猜一个 JVM 参数通常不是好的起点。先保留运行条件，再收集线程、内存和 GC 的信息。本节给出学习顺序，让后面的诊断工具都有一个具体要回答的问题。
+
+> **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `JDK 25 baseline; JDK 26 feature awareness`
 > - `source_type`: `JVMS + OpenJDK JEP + JDK docs`

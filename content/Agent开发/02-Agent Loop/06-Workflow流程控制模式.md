@@ -1,5 +1,7 @@
 # Workflow 流程控制模式：从确定性链路到自主 Agent Loop
 
+有些步骤必须固定执行，有些分支才需要模型判断。Workflow 可以把这两部分明确连接起来。下面从顺序、分支、并行和汇合开始，再处理审批与失败，避免把所有控制逻辑都塞进提示词。
+
 ## 1. Workflow 与 Agent 的核心差异
 
 Anthropic 在 _Building Effective Agents_ 中给出一个实用区分：

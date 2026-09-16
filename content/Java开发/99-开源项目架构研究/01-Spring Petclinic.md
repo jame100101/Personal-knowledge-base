@@ -1,6 +1,8 @@
 # Spring Petclinic 架构研究入口
 
-> **Freshness metadata**
+Petclinic 的业务比较直观，适合第一次练习读 Spring 应用源码。可以选“查看主人及宠物信息”这条路径，从页面或接口找到控制器，再跟到数据访问和测试，不必先通读所有配置。
+
+> **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `88e37c15cf6fc8490b01bc3e8e2c800cec1ac272`
 > - `source_type`: `official-repository`
@@ -10,7 +12,7 @@
 
 - **Repository**: [spring-projects/spring-petclinic](https://github.com/spring-projects/spring-petclinic)
 - **Commit**: [`88e37c15cf6fc8490b01bc3e8e2c800cec1ac272`](https://github.com/spring-projects/spring-petclinic/tree/88e37c15cf6fc8490b01bc3e8e2c800cec1ac272)
-- **Research date**: `2026-08-24`
+- **研究日期**: `2026-08-24`
 - **Purpose**: 学习单体 Spring Boot MVC、persistence 与 test 的清晰小型结构。
 
 ## Architecture / module map

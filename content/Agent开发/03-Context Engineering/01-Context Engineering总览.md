@@ -1,6 +1,8 @@
 # Context Engineering 总览
 
-> **Freshness metadata**
+模型回答质量不只取决于提示词怎么写，也取决于本轮究竟看到了哪些文件、历史和工具结果。上下文工程就是安排这些材料。先选相关内容，再控制大小、来源和顺序，通常比不断增加提示词更有针对性。
+
+> **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `provider-neutral context architecture`
 > - `source_type`: `official-docs + engineering synthesis`

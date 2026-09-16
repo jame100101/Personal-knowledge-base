@@ -1,19 +1,21 @@
 # Testing Portfolio：行为边界、回归与发布证据
 
-> **Freshness metadata**
+测试并不是越多越好，也不必严格凑出一个金字塔形状。更实际的做法是列出发布后最怕出错的几条路径，再安排反馈速度和成本合适的测试。下面把这组选择整理成可持续运行的回归方案。
+
+> **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `JUnit / Spring Test / Testcontainers concepts`
 > - `source_type`: `official-docs + engineering synthesis`
 > - `stability`: `version-sensitive`
 
-测试金字塔是成本反馈模型，不是固定数量配额。建立 portfolio：
+可以按要发现的问题组织这组测试：
 
-- unit：纯领域规则、快速定位；
-- slice：MVC/JPA 等限定 Spring context；
-- integration：真实 wiring、数据库、broker/container；
-- API/contract：跨服务接口与兼容性；
-- end-to-end：关键用户路径；
-- regression/performance/security：发布门与非功能边界。
+- 单元测试检查纯业务规则，失败时容易定位到小范围。
+- 切片测试只加载 MVC 或 JPA 等相关部分，避免每次启动全部上下文。
+- 集成测试检查真实的依赖装配、数据库或消息系统协作。
+- API 与契约测试检查调用双方是否仍然兼容。
+- 端到端测试从用户入口验证少量重要路径。
+- 回归、性能和安全测试补充发布前需要满足的条件。
 
 ```java
 @Test

@@ -1,6 +1,8 @@
 # Anthropic Claude Code 精读：公开仓库、官方运行契约与 Agent Harness
 
-> **Freshness metadata**
+Claude Code 的公开资料与完整产品内部实现不是一回事。本篇先解释公开可见的工作方式，再标明哪些结论来自仓库、文档或行为观察。阅读时保留这种区分，才不会把合理推断当作已经看过的源码。
+
+> **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `analyzed snapshot inside document; HEAD rechecked 45bdfa96ca415da92e62b6ca85a1d6e29adf3c44`
 > - `source_type`: `official-repository`

@@ -1,5 +1,7 @@
 # Java 网络编程：TCP、UDP、IP、端口、Socket、URL 与 HTTP Client
 
+两台机器要交换数据，除了知道地址，还得约定数据怎样划分、什么时候算读完，以及等不到结果怎么办。本章从 socket 的读写开始，再联系 HTTP Client，帮助你理解网络库替我们处理了哪些细节。
+
 > 课件来源：《第13章 网络编程.pptx》。本文逐项覆盖课件目录，并依据 Java SE 26、JDK 25 LTS 及相关官方文档补充现代工程实践。
 
 本章覆盖网络协议、TCP/UDP、IP/端口、InetAddress、URL、ServerSocket/Socket、DatagramPacket/DatagramSocket 和多线程服务端，并补充协议分帧、超时、TLS 与 HTTP Client。

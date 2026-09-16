@@ -1,6 +1,8 @@
 # Spring Modulith 架构研究入口
 
-> **Freshness metadata**
+读 Spring Modulith 源码时，可以先选一个模块验证或事件测试作为入口。看测试期待什么结果，再追踪实现，比只看模块名称更容易理解它解决的问题。本篇保留固定快照，方便重复查找。
+
+> **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `fc0a547c05dfd240d23c32f3fbb9fa45283af21f`
 > - `source_type`: `official-repository`
@@ -10,7 +12,7 @@
 
 - **Repository**: [spring-projects/spring-modulith](https://github.com/spring-projects/spring-modulith)
 - **Commit**: [`fc0a547c05dfd240d23c32f3fbb9fa45283af21f`](https://github.com/spring-projects/spring-modulith/tree/fc0a547c05dfd240d23c32f3fbb9fa45283af21f)
-- **Research date**: `2026-08-24`
+- **研究日期**: `2026-08-24`
 - **Purpose**: 研究 application module、verification、module test、observability、event publication 与 externalization。
 
 ## Architecture / module map

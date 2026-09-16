@@ -1,6 +1,8 @@
 # OpenAI Codex 源码精读：Agent Loop、工具、Skills、上下文与 Harness
 
-> **Freshness metadata**
+阅读 Codex 时，可以先跟着一个回合走：用户输入怎样进入 session，模型请求怎样形成，工具结果又怎样回到下一轮。把这条线看清，再展开 Skills、压缩和权限机制。下文的文件与符号是定位线索，不需要先背完整模块表。
+
+> **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `analyzed snapshot 4c43465133428898aa84f0bfc02c306ed65fb66a; HEAD audit 77b30a21e17d6ec6317f712ab6d044cb1bd152e7`
 > - `source_type`: `official-repository`

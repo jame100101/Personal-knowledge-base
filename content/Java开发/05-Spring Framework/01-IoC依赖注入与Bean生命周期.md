@@ -1,5 +1,7 @@
 # Spring IoC、依赖注入与 Bean 生命周期
 
+结账服务需要查询订单，也需要调用支付接口。把这些依赖交给构造器，既能清楚看到它需要什么，也方便测试时换成替代实现。Spring 容器负责把这样的对象连接起来，下面就从这个过程理解 IoC。
+
 IoC 容器创建对象图、解析依赖并管理生命周期。依赖注入的目的不是减少 `new`，而是让依赖显式、可替换和可测试。
 
 ## 1. 本文覆盖范围
@@ -19,7 +21,7 @@ ApplicationContext 读取 Java 配置、组件扫描或 XML，形成 BeanDefinit
 - @Configuration/@Bean 适合第三方类型和显式装配。
 - 启动失败应定位 Bean 创建链和根 cause，而非盲目加注解。
 
-**正确性边界：** Spring Bean 默认 singleton 是“每个 ApplicationContext 一个实例”，不等于 JVM 全局单例，也不自动线程安全。
+**这里容易混淆的是：** Spring Bean 默认 singleton 是“每个 ApplicationContext 一个实例”，不等于 JVM 全局单例，也不自动线程安全。
 
 ### 2. 依赖注入选择
 
@@ -29,7 +31,7 @@ ApplicationContext 读取 Java 配置、组件扫描或 XML，形成 BeanDefinit
 - 多个同类型实现用语义接口、@Qualifier、@Primary/@Fallback 明确。
 - 依赖过多提示类职责过重，应拆分而非继续堆构造参数。
 
-**正确性边界：** Optional 注入不应掩盖配置错误；关键能力缺失应在启动阶段失败。
+**这里容易混淆的是：** Optional 注入不应掩盖配置错误；关键能力缺失应在启动阶段失败。
 
 ### 3. Scope、生命周期与销毁
 
@@ -39,7 +41,7 @@ singleton、prototype、request、session 等 scope 决定实例边界。初始�
 - prototype 注入 singleton 时要通过 Provider/ObjectProvider 获取新实例。
 - request/session 数据不进入 singleton 可变字段。
 
-**正确性边界：** 容器通常不管理 prototype Bean 的完整销毁生命周期，使用者承担清理。
+**这里容易混淆的是：** 容器通常不管理 prototype Bean 的完整销毁生命周期，使用者承担清理。
 
 ### 4. 循环依赖与代理
 
@@ -49,7 +51,7 @@ singleton、prototype、request、session 等 scope 决定实例边界。初始�
 - 按接口依赖降低实现耦合。
 - 调试时检查 bean 实际类型和 advisor。
 
-**正确性边界：** 容器能在部分 setter/字段场景“绕过”循环并不证明设计正确，且与代理/版本组合可能失败。
+**这里容易混淆的是：** 容器能在部分 setter/字段场景“绕过”循环并不证明设计正确，且与代理/版本组合可能失败。
 
 ## 3. 工程链路
 
@@ -65,7 +67,7 @@ flowchart LR
 
 ## 4. 最小可运行示例
 
-下面的示例只保留关键路径。把它放入对应版本的最小工程，先运行测试或命令确认行为，再逐步加入重试、超时、监控和异常分支。
+先看构造器：结账服务在创建时就必须拿到订单仓库和支付接口。代码省略了业务方法、接口定义与 import，重点是依赖怎样进入对象。写单元测试时，可以直接传入测试替身，而不启动 Spring 容器。
 
 ```java
 @Service

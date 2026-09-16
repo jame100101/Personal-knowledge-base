@@ -1,6 +1,8 @@
 # Kubernetes：工作负载、网络、配置、Secret 与探针
 
-> **Freshness metadata**
+Kubernetes 不会替应用理解业务，它主要不断协调实际状态与声明的期望状态。应用要主动告诉平台何时可接流量、何时需要重启，并正确处理停止。下面围绕一个服务的部署过程学习这些配合方式。
+
+> **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `Kubernetes version-sensitive concepts`
 > - `source_type`: `official-docs`
@@ -26,7 +28,7 @@ Pod 是调度单元；Deployment 管理无状态 ReplicaSet；StatefulSet 提供
 - PDB 和 topology spread 改善维护与故障域分布。
 - 批任务有幂等、并发、重试和截止时间。
 
-**正确性边界：** StatefulSet 提供稳定身份，不自动让数据库复制或故障转移正确。
+**这里容易混淆的是：** StatefulSet 提供稳定身份，不自动让数据库复制或故障转移正确。
 
 ### 2. 服务网络
 
@@ -36,7 +38,7 @@ Service 为动态 Pod 集合提供稳定虚拟地址，EndpointSlice 记录后�
 - NetworkPolicy 默认拒绝后按依赖开放。
 - DNS 缓存、连接复用和 Pod 终止配合。
 
-**正确性边界：** Service 可达不代表应用 ready，且 NetworkPolicy 是否生效取决于网络实现。
+**这里容易混淆的是：** Service 可达不代表应用 ready，且 NetworkPolicy 是否生效取决于网络实现。
 
 ### 3. 配置与秘密
 
@@ -46,7 +48,7 @@ ConfigMap/Secret 可作为环境或文件挂载；更新传播方式和应用刷
 - 配置带 schema 和版本，发布可回滚。
 - Pod 不拥有读取整个 namespace secrets 的权限。
 
-**正确性边界：** 把秘密放 Kubernetes Secret 仍需要 etcd 加密、访问审计和轮换。
+**这里容易混淆的是：** 把秘密放 Kubernetes Secret 仍需要 etcd 加密、访问审计和轮换。
 
 ### 4. 资源与探针
 
@@ -56,7 +58,7 @@ scheduler 使用 requests 放置 Pod，limits 由运行时执行；startup/liven
 - preStop、terminationGracePeriod 和服务摘流完成优雅终止。
 - 滚动发布设置 maxUnavailable/maxSurge 和 readiness gate。
 
-**正确性边界：** liveness 依赖数据库会在数据库故障时重启全部服务，扩大事故。
+**这里容易混淆的是：** liveness 依赖数据库会在数据库故障时重启全部服务，扩大事故。
 
 ## 3. 工程链路
 
@@ -73,7 +75,7 @@ flowchart LR
 
 ## 4. 最小可运行示例
 
-下面的示例只保留关键路径。把它放入对应版本的最小工程，先运行测试或命令确认行为，再逐步加入重试、超时、监控和异常分支。
+就绪探针决定实例是否应接收流量，存活探针用于判断是否需要重启。片段要放进容器定义，并启用对应健康端点。测试时分别模拟启动较慢和服务失去响应，不要把普通外部依赖波动都当成必须重启的理由。
 
 ```yaml
 readinessProbe:

@@ -1,5 +1,7 @@
 # 最小 Agent Loop 实现
 
+先不要加入计划器和多 Agent。我们只做一个循环：把当前消息交给模型，执行它请求的工具，再把结果交回去。等这条路径清楚以后，再加入步数、超时和取消限制，保证它不只会启动，也能结束。
+
 ## 1. 最小组成
 
 一个可运行的最小 Agent 至少包含：
@@ -190,7 +192,6 @@ async function runAgent(goal: string, tools: Tool[], options: Options) {
 - [Claude Tool Use](https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/overview)
 - [Gemini Function Calling](https://ai.google.dev/gemini-api/docs/function-calling)
 
-<!-- agent-learning-expansion:v2 -->
 
 ## 6. 一轮运行的协议边界
 

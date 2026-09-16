@@ -1,5 +1,7 @@
 # Spring 集成测试、Testcontainers 与契约测试
 
+单元测试通过，SQL 却在真实数据库上报错，这正是集成测试要补上的空缺。先选定要验证的边界，再决定使用 Spring 切片、Testcontainers 还是真实 HTTP 请求，避免每个测试都启动整套系统。
+
 框架切片、真实数据库和服务契约测试共同覆盖序列化、事务、SQL、配置和边界兼容性。
 
 ## 1. 本文覆盖范围
@@ -19,7 +21,7 @@
 - MockMvc/WebTestClient 验证路由、序列化、校验和安全。
 - 测试配置与生产结构相似，但凭据和外部地址隔离。
 
-**正确性边界：** slice 测试中的 mock 可能掩盖真实序列化或事务问题，关键链路仍需完整集成测试。
+**这里容易混淆的是：** slice 测试中的 mock 可能掩盖真实序列化或事务问题，关键链路仍需完整集成测试。
 
 ### 2. Testcontainers
 
@@ -29,7 +31,7 @@ Testcontainers 用临时 Docker 容器运行与生产同类的数据库、broker
 - 容器可按测试类/套件复用，但数据必须隔离。
 - CI 预留 Docker、镜像缓存和并发资源。
 
-**正确性边界：** 用 H2 替代 MySQL/PostgreSQL 会隐藏方言、锁、索引和事务差异。
+**这里容易混淆的是：** 用 H2 替代 MySQL/PostgreSQL 会隐藏方言、锁、索引和事务差异。
 
 ### 3. 数据夹具
 
@@ -39,7 +41,7 @@ fixture 要小、可读且只声明测试相关字段。迁移脚本先执行，
 - 提交、锁和异步事件测试不依赖自动回滚假象。
 - 失败时输出 SQL、容器日志和相关记录。
 
-**正确性边界：** 测试方法自动回滚可能让代码看不到真实 commit 后事件或锁行为。
+**这里容易混淆的是：** 测试方法自动回滚可能让代码看不到真实 commit 后事件或锁行为。
 
 ### 4. 契约测试
 
@@ -49,7 +51,7 @@ provider/consumer contract 把请求、响应、消息 schema 和兼容规则自
 - 提供者在 CI 验证所有受支持消费者契约。
 - breaking change 通过新版本和迁移窗口发布。
 
-**正确性边界：** 契约测试不覆盖提供者内部正确性，也不替代少量端到端链路。
+**这里容易混淆的是：** 契约测试不覆盖提供者内部正确性，也不替代少量端到端链路。
 
 ## 3. 工程链路
 
@@ -65,7 +67,7 @@ flowchart LR
 
 ## 4. 最小可运行示例
 
-下面的示例只保留关键路径。把它放入对应版本的最小工程，先运行测试或命令确认行为，再逐步加入重试、超时、监控和异常分支。
+容器启动后会提供实际连接信息，应用测试应使用这些信息，而不是假设固定端口或账号。这里补齐 URL、用户名和密码；仍需要对应测试依赖、数据库驱动及可运行容器的环境。
 
 ```java
 @Testcontainers
@@ -78,6 +80,8 @@ class OrderRepositoryIT {
   @DynamicPropertySource
   static void database(DynamicPropertyRegistry r) {
     r.add("spring.datasource.url", postgres::getJdbcUrl);
+    r.add("spring.datasource.username", postgres::getUsername);
+    r.add("spring.datasource.password", postgres::getPassword);
   }
 }
 ```
@@ -100,3 +104,5 @@ class OrderRepositoryIT {
 - [Testcontainers for Java](https://java.testcontainers.org/)
 - [Spring Boot Testing](https://docs.spring.io/spring-boot/reference/testing/)
 - [Spring Cloud Contract](https://spring.io/projects/spring-cloud-contract)
+
+示例细节可对照：[Testcontainers 官方 Spring Boot 示例](https://github.com/testcontainers/testcontainers-java-spring-boot-quickstart/blob/main/README.md)。

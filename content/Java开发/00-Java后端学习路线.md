@@ -1,6 +1,8 @@
 # Java 后端工程学习路线（2026）
 
-> **Freshness metadata**
+如果你已经能写几个 Java 类，下一步通常会有点迷茫：先学数据库，还是直接上 Spring Boot？这条路线按做出一个后端服务所需的顺序安排内容。先让程序正确读写数据，再处理多人同时访问、登录权限和上线运行；微服务放在后面，不作为入门门槛。
+
+> **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `JDK 25 LTS baseline; JDK 26 feature release; Spring Boot 4.x`
 > - `source_type`: `official-spec + official-docs`

@@ -1,0 +1,1707 @@
+{
+  "base": "7ad3efbdbf42aa250e0c54403c0a6bfd39d1f37a",
+  "scope": "Reader-oriented editorial pass; source/version snapshots are not reverified by prose edits.",
+  "reviewed": 243,
+  "unchangedTrialFiles": [
+    "content/语言基础/01-TypeScript语言基础/01-环境配置与第一个TypeScript项目.md",
+    "content/语言基础/01-TypeScript语言基础/02-运行模型与编译产物.md",
+    "content/语言基础/01-TypeScript语言基础/03-变量原始类型与类型推断.md",
+    "content/语言基础/01-TypeScript语言基础/08-泛型约束推断与变型.md"
+  ],
+  "articles": [
+    {
+      "path": "content/Agent开发/00-Agent开发学习路线.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/00-Java后端学习路线.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/01-Version Baseline与Compatibility Matrix.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/语言基础/00-语言基础学习路线.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/000-TypeScript官方资料与版本边界.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/04-数组元组对象与只读.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": true
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/05-函数签名重载this与回调.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": true
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/06-interface-type与结构化类型.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": true
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/07-联合交叉收窄与穷尽检查.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": true
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/09-类继承抽象与访问控制.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": true
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/10-模块包与声明文件.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": true
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/11-keyof-typeof索引访问与工具类型.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": true
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/12-映射条件模板字面量与infer.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": true
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/13-tsconfig严格模式与工程编译.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": true
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/14-异步错误边界DOM与Node.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": true
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/15-装饰器JSX与特殊语法边界.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": true
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/16-测试构建Lint发布与迁移.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": true
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/17-综合项目与检查清单.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": true
+    },
+    {
+      "path": "content/语言基础/02-TypeScript跨语言对照/00-五语言总览矩阵.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": true
+    },
+    {
+      "path": "content/语言基础/02-TypeScript跨语言对照/01-TypeScript与JavaScript.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": true
+    },
+    {
+      "path": "content/语言基础/02-TypeScript跨语言对照/02-TypeScript与Java.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": true
+    },
+    {
+      "path": "content/语言基础/02-TypeScript跨语言对照/03-TypeScript与Python.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": true
+    },
+    {
+      "path": "content/语言基础/02-TypeScript跨语言对照/04-TypeScript与Cpp.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": true
+    },
+    {
+      "path": "content/语言基础/02-TypeScript跨语言对照/05-TypeScript独有能力与缺失能力清单.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": true
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/000-Java基础推荐阅读.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/01-Java开发入门.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/02-Java编程基础.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/03-面向对象上.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/04-面向对象下.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/05-异常处理.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/06-Java核心API.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/07-Java集合框架.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/08-Java泛型.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/09-反射机制.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/10-IO与NIO.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/11-JDBC数据库访问.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/14-泛型与集合框架综合.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/02-JVM与并发/00-JVM与并发学习导图.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/02-JVM与并发/01-JVM内存类加载字节码与GC.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": true,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/02-JVM与并发/02-Java并发与多线程.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/02-JVM与并发/03-JMM线程池锁原子类与CompletableFuture.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/02-JVM与并发/04-Virtual Threads Scoped Values与Structured Concurrency.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/03-工程基础与Internet-Linux/00-本阶段导学.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/03-工程基础与Internet-Linux/000-Java 工程工具与 Linux推荐阅读.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/03-工程基础与Internet-Linux/01-JDK-IDE-Maven与Gradle.md",
+      "opening": true,
+      "exampleWalkthrough": true,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/03-工程基础与Internet-Linux/02-Git协作与版本治理.md",
+      "opening": true,
+      "exampleWalkthrough": true,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/03-工程基础与Internet-Linux/03-Linux-Shell与Docker.md",
+      "opening": true,
+      "exampleWalkthrough": true,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/03-工程基础与Internet-Linux/04-Internet请求完整链路.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": true
+    },
+    {
+      "path": "content/Java开发/03-工程基础与Internet-Linux/05-Java网络编程.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/04-关系型数据库/00-本阶段导学.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/04-关系型数据库/000-数据库、缓存与搜索推荐阅读.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/04-关系型数据库/01-数据库原理与SQL.md",
+      "opening": true,
+      "exampleWalkthrough": true,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/04-关系型数据库/02-MySQL-InnoDB索引事务与调优.md",
+      "opening": true,
+      "exampleWalkthrough": true,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/04-关系型数据库/03-PostgreSQL基础.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": true
+    },
+    {
+      "path": "content/Java开发/05-Spring Framework/00-本阶段导学.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/05-Spring Framework/000-Spring Framework推荐阅读.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/05-Spring Framework/01-IoC依赖注入与Bean生命周期.md",
+      "opening": true,
+      "exampleWalkthrough": true,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/05-Spring Framework/02-Spring-AOP代理与事务.md",
+      "opening": true,
+      "exampleWalkthrough": true,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/05-Spring Framework/03-Spring资源事件校验缓存与调度.md",
+      "opening": true,
+      "exampleWalkthrough": true,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/05-Spring Framework/04-Spring异步定时任务Quartz与Batch.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": true,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/05-Spring Framework/05-Spring产品族责任边界.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": true
+    },
+    {
+      "path": "content/Java开发/06-Spring Boot与Web/00-本阶段导学.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/06-Spring Boot与Web/000-Spring Boot 与 Web 开发推荐阅读.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/06-Spring Boot与Web/01-Spring-Boot自动配置与启动.md",
+      "opening": true,
+      "exampleWalkthrough": true,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/06-Spring Boot与Web/02-Servlet-Tomcat-Spring-MVC完整链路.md",
+      "opening": true,
+      "exampleWalkthrough": true,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/06-Spring Boot与Web/03-REST-API校验错误处理与版本.md",
+      "opening": true,
+      "exampleWalkthrough": true,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/06-Spring Boot与Web/04-Actuator日志指标追踪与生产配置.md",
+      "opening": true,
+      "exampleWalkthrough": true,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/06-Spring Boot与Web/05-OpenAPI文件处理邮件与WebSocket.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": true,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/07-数据访问与事务/00-本阶段导学.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/07-数据访问与事务/000-数据访问与 ORM推荐阅读.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/07-数据访问与事务/01-MyBatis映射与动态SQL.md",
+      "opening": true,
+      "exampleWalkthrough": true,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/07-数据访问与事务/02-JPA-Hibernate与Spring-Data.md",
+      "opening": true,
+      "exampleWalkthrough": true,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/07-数据访问与事务/03-连接池事务迁移与数据访问决策.md",
+      "opening": true,
+      "exampleWalkthrough": true,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/07-数据访问与事务/04-MyBatis-Plus工程实践.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": true,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/07-数据访问与事务/05-JDBC vs MyBatis vs JPA决策.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": true
+    },
+    {
+      "path": "content/Java开发/08-测试与质量工程/00-本阶段导学.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/08-测试与质量工程/000-测试与质量工程推荐阅读.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/08-测试与质量工程/01-测试策略-JUnit与Mockito.md",
+      "opening": true,
+      "exampleWalkthrough": true,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/08-测试与质量工程/02-Spring集成-Testcontainers与契约测试.md",
+      "opening": true,
+      "exampleWalkthrough": true,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/08-测试与质量工程/03-API-UI自动化与测试平台.md",
+      "opening": true,
+      "exampleWalkthrough": true,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/08-测试与质量工程/04-性能稳定性与故障演练.md",
+      "opening": true,
+      "exampleWalkthrough": true,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/08-测试与质量工程/05-Testing Portfolio与发布回归.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": true
+    },
+    {
+      "path": "content/Java开发/09-安全认证与授权/00-本阶段导学.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/09-安全认证与授权/000-安全、认证与授权推荐阅读.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/09-安全认证与授权/01-Spring-Security过滤链与方法授权.md",
+      "opening": true,
+      "exampleWalkthrough": true,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/09-安全认证与授权/02-OAuth2-OIDC-JWT与API安全.md",
+      "opening": true,
+      "exampleWalkthrough": true,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/09-安全认证与授权/03-应用安全秘密供应链与审计.md",
+      "opening": true,
+      "exampleWalkthrough": true,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/10-应用架构与模块化单体/00-应用架构导学.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/10-应用架构与模块化单体/01-分层按功能打包与领域边界.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": true
+    },
+    {
+      "path": "content/Java开发/10-应用架构与模块化单体/02-Spring Modulith模块验证测试事件与可观测性.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/10-应用架构与模块化单体/03-事务边界Outbox与幂等.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/10-应用架构与模块化单体/04-模块化单体到微服务什么时候拆.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/11-缓存与搜索/00-缓存与搜索导学.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/11-缓存与搜索/01-Redis与缓存工程.md",
+      "opening": true,
+      "exampleWalkthrough": true,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/11-缓存与搜索/02-Elasticsearch搜索工程.md",
+      "opening": true,
+      "exampleWalkthrough": true,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/11-缓存与搜索/03-缓存CDN分库分表与热点治理.md",
+      "opening": true,
+      "exampleWalkthrough": true,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/11-缓存与搜索/04-Caffeine本地缓存与多级缓存.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": true,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/12-消息与事件驱动/00-本阶段导学.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": true
+    },
+    {
+      "path": "content/Java开发/12-消息与事件驱动/000-高性能与消息队列推荐阅读.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/12-消息与事件驱动/02-消息队列基础与可靠消费.md",
+      "opening": true,
+      "exampleWalkthrough": true,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/12-消息与事件驱动/03-Kafka事件流平台.md",
+      "opening": true,
+      "exampleWalkthrough": true,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/12-消息与事件驱动/04-RabbitMQ与RocketMQ.md",
+      "opening": true,
+      "exampleWalkthrough": true,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/00-本阶段导学.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/000-分布式系统与微服务推荐阅读.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/01-分布式基础CAP-BASE与共识.md",
+      "opening": true,
+      "exampleWalkthrough": true,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/02-RPC-HTTP-OpenFeign-Dubbo-gRPC与Netty.md",
+      "opening": true,
+      "exampleWalkthrough": true,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/03-Nacos注册发现与配置治理.md",
+      "opening": true,
+      "exampleWalkthrough": true,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/04-网关负载均衡限流熔断与重试.md",
+      "opening": true,
+      "exampleWalkthrough": true,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/05-分布式ID事务与可靠事件.md",
+      "opening": true,
+      "exampleWalkthrough": true,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/06-Spring-Cloud与Spring-Cloud-Alibaba组件图.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": true,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/07-Seata-Sentinel-SkyWalking实战边界.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": true,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/08-Spring Cloud Compatibility Matrix与升级.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/14-性能工程/00-性能工程导学.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": true
+    },
+    {
+      "path": "content/Java开发/14-性能工程/01-性能工程容量规划与JVM诊断.md",
+      "opening": true,
+      "exampleWalkthrough": true,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/15-云原生DevOps与可观测性/00-本阶段导学.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/15-云原生DevOps与可观测性/000-云原生、DevOps 与可观测性推荐阅读.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/15-云原生DevOps与可观测性/01-Docker镜像-Compose与供应链.md",
+      "opening": true,
+      "exampleWalkthrough": true,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/15-云原生DevOps与可观测性/02-Kubernetes工作负载网络配置与探针.md",
+      "opening": true,
+      "exampleWalkthrough": true,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/15-云原生DevOps与可观测性/03-CICD发布数据库迁移与回滚.md",
+      "opening": true,
+      "exampleWalkthrough": true,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/15-云原生DevOps与可观测性/04-OpenTelemetry-SLO与故障响应.md",
+      "opening": true,
+      "exampleWalkthrough": true,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/17-项目阶梯/00-本阶段导学.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/17-项目阶梯/000-Java 后端项目阶梯推荐阅读.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/17-项目阶梯/01-P0到P8 Java后端项目阶梯.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/17-项目阶梯/01-项目一模块化单体任务系统.md",
+      "opening": true,
+      "exampleWalkthrough": true,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/17-项目阶梯/02-项目二事件驱动订单与库存系统.md",
+      "opening": true,
+      "exampleWalkthrough": true,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/17-项目阶梯/03-项目三云原生高可用平台.md",
+      "opening": true,
+      "exampleWalkthrough": true,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/17-项目阶梯/04-作品集验收与面试证据.md",
+      "opening": true,
+      "exampleWalkthrough": true,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/99-开源项目架构研究/00-统一源码研究模板.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": true
+    },
+    {
+      "path": "content/Java开发/99-开源项目架构研究/01-Spring Petclinic.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/99-开源项目架构研究/02-Spring Modulith.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/99-开源项目架构研究/03-Petclinic Microservices.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/99-开源项目架构研究/04-Keycloak.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/99-开源项目架构研究/05-JHipster Generator.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/99-开源项目架构研究/06-RuoYi-Vue-Plus.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/99-开源项目架构研究/07-Spring AI.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/00-本阶段导学.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/000-前端基础与全栈交付推荐阅读.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/01-Web-HTML-CSS-JavaScript与TypeScript基础.md",
+      "opening": true,
+      "exampleWalkthrough": true,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/02-Vue3-TypeScript与后台管理界面.md",
+      "opening": true,
+      "exampleWalkthrough": true,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/03-全栈契约认证上传下载WebSocket与Nginx.md",
+      "opening": true,
+      "exampleWalkthrough": true,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/04-HTML语义表单媒体与可访问性.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": true,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/05-CSS级联盒模型布局响应式与动画.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": true,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/06-JavaScript基础类型函数集合DOM与事件.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": true,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/07-JavaScript高级异步模块网络与性能.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": true,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/08-TypeScript-Vue工程化测试与性能.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": true,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/16-可选专项/02-计算机科学与工程选修/01-数据结构算法复杂度与刷题方法.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": true,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/16-可选专项/02-计算机科学与工程选修/02-设计原则UML与常用设计模式.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": true,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/16-可选专项/03-MongoDB数据模型/01-MongoDB文档模型与选型.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Java开发/16-可选专项/04-Spring AI/01-Spring AI工程实现总览.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/01-Agent基础/000-Agent基础推荐阅读.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/01-Agent基础/01-Agent类型区分.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/01-Agent基础/02-Agent基本循环.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/01-Agent基础/03-Agent适用范围.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/01-Agent基础/04-SWE Agent基础概念与ACI.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/01-Agent基础/05-统一工程模型与概念边界.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/02-Agent Loop/000-Agent Loop推荐阅读.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/02-Agent Loop/01-最小Agent Loop实现.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/02-Agent Loop/02-结构化输出与状态机.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/02-Agent Loop/03-终止超时与错误处理.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/02-Agent Loop/04-任务拆分与Plan表示.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/02-Agent Loop/05-Task Scheduler依赖并发与重规划.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/02-Agent Loop/06-Workflow流程控制模式.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/02-Agent Loop/07-Output Parser与结构化响应.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/02-Agent Loop/08-Loop分层与机制选择.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/03-Context Engineering/01-Context Engineering总览.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/03-Context Engineering/02-Context上下文.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/03-Context Engineering/03-Context Builder与Prompt Assembly.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/03-Context Engineering/04-Context Manifest与Assembly.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": true
+    },
+    {
+      "path": "content/Agent开发/03-Context Engineering/05-Token Budget Compaction Prompt Cache与History.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": true
+    },
+    {
+      "path": "content/Agent开发/03-Context Engineering/06-JIT Retrieval与Progressive Disclosure.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": true
+    },
+    {
+      "path": "content/Agent开发/03-Context Engineering/07-Context Trust与Prompt Injection边界.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/00-Tool与Runtime边界.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/000-Tools Call推荐阅读.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/01-工具调用完整链路.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/02-工具Schema权限与幂等.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/03-工具失败空结果与证据.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/04-Terminal执行与进程生命周期.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/05-Terminal输出流读取与结果归一化.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/06-File IO读取写入补丁与原子更新.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/05-Knowledge与Memory/00-Knowledge与Memory边界.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": true
+    },
+    {
+      "path": "content/Agent开发/06-Agent Harness/000-Agent Harness推荐阅读.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/06-Agent Harness/01-Agent Harness架构.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/06-Agent Harness/02-Registry Permission Session与Compaction.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/06-Agent Harness/03-Trace调试恢复与验证.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/06-Agent Harness/05-Executor执行器与事件运行时.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/06-Agent Harness/06-Middleware Hooks与Callbacks.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/07-Skills与Protocols/000-Skills与协议推荐阅读.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/07-Skills与Protocols/01-Skill Tool Prompt与MCP边界.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/07-Skills与Protocols/02-SKILL设计渐进加载与Smoke Test.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/07-Skills与Protocols/03-MCP A2A与ACP.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/08-Evaluation Observability Safety/000-评测与可观测性推荐阅读.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/08-Evaluation Observability Safety/01-Eval数据集指标与回归测试.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/08-Evaluation Observability Safety/02-Trace指标与故障定位.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/08-Evaluation Observability Safety/03-Prompt Injection权限与Human in the loop.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/08-Evaluation Observability Safety/04-Agent Benchmark Map.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/08-Evaluation Observability Safety/05-Evaluation闭环与发布门.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": true
+    },
+    {
+      "path": "content/Agent开发/09-Agent Evolution/01-Agent Evolution总览与受控闭环.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/09-Agent Evolution/02-Skill Workflow与Program Evolution.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": true
+    },
+    {
+      "path": "content/Agent开发/09-Agent Evolution/03-Evolution评测版本沙箱与回滚.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": true
+    },
+    {
+      "path": "content/Agent开发/10-Multi-Agent/000-多Agent推荐阅读.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/10-Multi-Agent/01-角色职责与输入输出边界.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/10-Multi-Agent/02-Supervisor Graph与停止条件.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/10-Multi-Agent/03-故障模式与单Agent判断.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/11-Model Post-training/01-Model Post-training导学.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": true
+    },
+    {
+      "path": "content/Agent开发/11-Model Post-training/02-Trajectory Reward与Agentic RL.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": true
+    },
+    {
+      "path": "content/Agent开发/12-Production Agent/000-生产交付推荐阅读.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/12-Production Agent/01-用户任务与成功标准.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/12-Production Agent/02-重试超时预算部署与运维.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/12-Production Agent/03-README运行手册与交付检查表.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/13-Project Ladder/000-项目阶梯推荐阅读.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/13-Project Ladder/01-P0到P7 Agent工程项目阶梯.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/14-完整Agent链路与架构对照/000-完整链路与框架推荐阅读.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/14-完整Agent链路与架构对照/01-端到端Agent完整链路.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/14-完整Agent链路与架构对照/02-权威Agent路线横向对照.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/00-统一研究模板与证据等级.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": true
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/000-Coding Agent研究阅读顺序.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_01_CODEX.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_02_CLAUDE_CODE.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_04_HERMES_AGENT.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_05_OPENCLAW.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_06_COMPARISON.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_07_AIDER.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_08_GOOSE.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_09_OPENCODE.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_10_DEEPSEEK_HARNESS_WEB.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_11_PI_AGENT.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_12_GROK_BUILD.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/05-Knowledge与Memory/01-Knowledge/000-RAG推荐阅读.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/05-Knowledge与Memory/01-Knowledge/01-RAG完整链路.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/05-Knowledge与Memory/01-Knowledge/02-Chunk Embed Retrieve Rerank.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/05-Knowledge与Memory/01-Knowledge/03-引用Grounded Answer与失败处理.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/05-Knowledge与Memory/02-Memory/000-Memory推荐阅读.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/05-Knowledge与Memory/02-Memory/02-Short-term Memory短期记忆.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/05-Knowledge与Memory/02-Memory/03-Long-term Memory长期记忆.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/05-Knowledge与Memory/02-Memory/04-记忆写入检索更新与遗忘.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/02-Browser Runtime/000-Browser Agent推荐阅读.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/02-Browser Runtime/01-Browser Agent观察动作循环.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/02-Browser Runtime/02-Playwright可靠操作与失败恢复.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/02-Browser Runtime/03-截图DOM动作日志与评测.md",
+      "opening": true,
+      "exampleWalkthrough": false,
+      "specificSelfCheck": false,
+      "bodyRewritten": false
+    }
+  ],
+  "codeCorrections": [
+    {
+      "path": "content/Java开发/04-关系型数据库/02-MySQL-InnoDB索引事务与调优.md",
+      "reason": "Use MySQL LIMIT syntax, not FETCH FIRST."
+    },
+    {
+      "path": "content/Java开发/08-测试与质量工程/02-Spring集成-Testcontainers与契约测试.md",
+      "reason": "Register container username/password as well as URL."
+    },
+    {
+      "path": "content/Java开发/11-缓存与搜索/02-Elasticsearch搜索工程.md",
+      "reason": "Use built-in _score; remove unsupported direct _id sort."
+    }
+  ],
+  "reviewedRemoteBaselines": [
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_05_OPENCLAW.md",
+      "sha256": "1f0c900530c80d9a02826ed7b2d8a2536ddc6d9a3d0585f834b3f9621fb0bfb3",
+      "reason": "Remote still says 五个项目; Git already uses 当前对比样本. Reviewed exact one-line difference; retain Git wording because corpus contains more projects."
+    }
+  ]
+}

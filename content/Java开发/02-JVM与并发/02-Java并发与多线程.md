@@ -1,5 +1,7 @@
 # Java 并发与多线程：生命周期、同步、锁、线程池、虚拟线程与取消
 
+一个线程等待网络结果时，另一个线程可以继续做事；但两个线程一起改同一份数据，也会带来新的问题。本章先把启动、等待和取消讲清，再讨论共享数据。不要把“同时执行”直接等同于“更快”。
+
 > 课件来源：《第12章 多线程.pptx》。本文逐项覆盖课件目录，并依据 Java SE 26、JDK 25 LTS 及相关官方文档补充现代工程实践。
 
 本章覆盖进程/线程、Thread/Runnable/Callable、FutureTask、后台线程、状态、优先级、sleep/join/yield/interrupt、同步、死锁和 ReentrantLock，并扩展到 JMM、Executor、CompletableFuture 与虚拟线程。

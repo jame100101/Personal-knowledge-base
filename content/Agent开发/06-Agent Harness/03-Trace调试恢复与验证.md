@@ -1,5 +1,7 @@
 # Trace、调试、失败恢复与 Validation
 
+Agent 报告“任务失败”，还不够帮助排查。需要知道它看到了什么、选择了哪个动作、工具实际返回什么。Trace 把这些事件串起来；恢复与验证则利用记录判断从哪里继续，以及结果是否真的完成。
+
 ## 1. Trace 的最小字段
 
 ```python group=multi-ea046a61e0c3 label=Python

@@ -1,5 +1,7 @@
 # Agent 适用范围：什么时候使用，什么时候优先 Workflow
 
+并非接上模型的程序都需要 Agent。如果任务步骤已经固定，普通程序可能更简单可靠；如果下一步必须看前一步的结果再决定，Agent 才更有发挥空间。下面用具体任务判断，而不是按产品名称判断。
+
 ## 1. 适合 Agent 的任务特征
 
 ### 路径依赖运行时信息
@@ -77,7 +79,6 @@ Agent 并不适合“目标完全模糊”的任务。理想任务虽然路径�
 - [Anthropic：Building effective agents](https://www.anthropic.com/research/building-effective-agents)
 - [OpenAI：A practical guide to building agents](https://openai.com/business/guides-and-resources/a-practical-guide-to-building-ai-agents/)
 
-<!-- agent-learning-expansion:v2 -->
 ## 7. 用“路径不确定性”评估是否值得使用 Agent
 
 可把候选任务按五个维度打分，每项 0～2 分：

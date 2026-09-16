@@ -1,6 +1,8 @@
 # P0–P7 Agent 工程项目阶梯
 
-> **Freshness metadata**
+从一个小工具循环开始，逐步加入停止、检索、计划和恢复。阶段编号是安排练习的方法，不要求所有产品都配齐全部能力。每一级先证明它解决了当前问题，再继续下一步。
+
+> **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `2026 curriculum`
 > - `source_type`: `engineering synthesis`

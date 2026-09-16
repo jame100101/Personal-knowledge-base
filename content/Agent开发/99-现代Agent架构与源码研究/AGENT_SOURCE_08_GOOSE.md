@@ -1,6 +1,8 @@
 # Goose 源码研究：Rust State Machine、MCP Extensions 与安全检查链
 
-> **Freshness metadata**
+Goose 的实现可以从一个 reply 的推进过程读起。先看操作怎样被选择和执行，再看审批、重试或压缩如何改变后续步骤。这样能把状态机中的名字对应到实际行为，而不是只记一串抽象类型。
+
+> **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `2eb3ab1001dedb5ab09a6ed60158adfc248bac56`（workspace version `1.47.0`）
 > - `source_type`: `official-repository + source-audit`

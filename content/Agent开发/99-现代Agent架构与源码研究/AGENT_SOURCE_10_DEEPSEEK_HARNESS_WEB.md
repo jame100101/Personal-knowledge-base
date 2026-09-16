@@ -1,6 +1,8 @@
 # DeepSeek Harness Web 源码研究：Cordis 插件树、事件日志与双端运行时
 
-> **Freshness metadata**
+这里关注 DeepSeek Harness 的 Web 版本。读它时先分清 Host 与浏览器两端分别运行什么，再看插件怎样注册服务与事件。沿着一次消息往返理解插件树，比把它想成一个巨大的 Agent 类更贴近代码组织。
+
+> **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: 本地 Web 仓库 `141eb6fef83422698aef7a981029e843e8161534`；远端 HEAD 复核至 `b150a551b8d465e31e418e1b2eaf5e79bbb7d28e`
 > - `source_type`: `official-repository + local-source-audit`
@@ -8,7 +10,7 @@
 
 ## 1. 研究对象与结论边界
 
-- **本地源码**：`D:\deepseek harness\deepseek-harness`，即用户指定的 Web 版本，不是 `deepseek-harness-tui`。
+- **本地源码**：`D:\deepseek harness\deepseek-harness`，即本文研究的 Web 版本，不是 `deepseek-harness-tui`。
 - **官方仓库**：[deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness)。
 - **固定分析快照**：[`141eb6f`](https://github.com/deepseek-ai/deepseek-harness/tree/141eb6fef83422698aef7a981029e843e8161534)，本地版本为 `0.1.0-rc.8`。
 - **新鲜度检查**：远端在复核时已经推进到 `b150a551...`。因此本文把“本地快照中的已确认实现”与“远端仍在继续变化”分开表达，不把远端 HEAD 自动等同于已逐行审阅范围。

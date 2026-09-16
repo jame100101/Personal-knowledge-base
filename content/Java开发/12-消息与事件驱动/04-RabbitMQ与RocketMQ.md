@@ -1,5 +1,7 @@
 # RabbitMQ 与 RocketMQ：路由、队列、可靠性和选择
 
+选择消息系统时，可以先拿自己的场景提问：怎样路由，是否要求顺序，延迟任务怎么做，失败后如何重试？下面按这些问题比较 RabbitMQ 与 RocketMQ，而不是用一句“谁性能更好”结束选型。
+
 RabbitMQ 擅长灵活 AMQP 路由和工作队列；RocketMQ 面向大规模消息与事务/延时等业务能力。选择应基于语义和运维证据。
 
 ## 1. 本文覆盖范围
@@ -19,7 +21,7 @@ producer 发布到 exchange，exchange 按 direct/topic/fanout/headers 规则路
 - prefetch 限制未确认消息并形成消费者背压。
 - mandatory/alternate exchange 处理不可路由消息。
 
-**正确性边界：** 消息成功到 exchange 不表示一定进入预期队列；需处理 unroutable 反馈。
+**这里容易混淆的是：** 消息成功到 exchange 不表示一定进入预期队列；需处理 unroutable 反馈。
 
 ### 2. RabbitMQ 可靠性
 
@@ -29,7 +31,7 @@ publisher confirms、持久消息、持久/quorum queue 和 consumer ack 共同�
 - consumer nack/requeue 设置次数和退避，避免忙循环。
 - 监控 ready/unacked、内存/磁盘告警和节点分区。
 
-**正确性边界：** 镜像/副本不会修复消费者非幂等，也不会保证外部数据库原子提交。
+**这里容易混淆的是：** 镜像/副本不会修复消费者非幂等，也不会保证外部数据库原子提交。
 
 ### 3. 死信与延时
 
@@ -39,7 +41,7 @@ TTL、拒绝、队列长度等可触发 dead-letter；死信交换把消息转�
 - 重试队列按等级设置，不无限自循环。
 - 最终失败进入人工可查询状态。
 
-**正确性边界：** 死信转发本身也可能失败，配置和监控必须覆盖目标交换机/队列。
+**这里容易混淆的是：** 死信转发本身也可能失败，配置和监控必须覆盖目标交换机/队列。
 
 ### 4. RocketMQ 语义与选择
 
@@ -49,7 +51,7 @@ RocketMQ 以 topic、message queue、producer/consumer group 组织消息，并�
 - 顺序范围由 message group/queue 决定。
 - 按团队运维能力、生态、延迟与功能验证选型。
 
-**正确性边界：** 事务消息仍需要消费者幂等，并且本地事务状态查询必须可靠。
+**这里容易混淆的是：** 事务消息仍需要消费者幂等，并且本地事务状态查询必须可靠。
 
 ## 3. 工程链路
 
@@ -64,7 +66,7 @@ flowchart LR
 
 ## 4. 最小可运行示例
 
-下面的示例只保留关键路径。把它放入对应版本的最小工程，先运行测试或命令确认行为，再逐步加入重试、超时、监控和异常分支。
+这段发送代码需要已配置的 RabbitTemplate、exchange、绑定和消费者。持久化消息属性只是一环，可靠发送还需结合队列持久化、publisher confirm 与失败处理；`eventId` 则为后续去重提供标识。
 
 ```java
 rabbitTemplate.convertAndSend("orders.exchange", "orders.created", event,

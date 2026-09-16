@@ -1,6 +1,8 @@
 # Context Trust Boundary 与 Prompt Injection Boundary
 
-> **Freshness metadata**
+网页正文里出现“忽略原来的任务”时，它仍然是网页内容，不会因此获得系统指令的权限。上下文中的材料需要保留来源和信任差别。下面重点讨论怎样在组装与执行环节维持这种区分，而不只靠提醒模型小心。
+
+> **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `2026 prompt-injection threat model`
 > - `source_type`: `official-security-guidance + engineering synthesis`

@@ -1,6 +1,8 @@
 # NousResearch Hermes Agent 源码精读：长运行、自改进 Agent Harness
 
-> **Freshness metadata**
+Hermes Agent 涉及模型适配、工具、技能和多种交互入口。可以先从一次对话如何进入循环开始，跟踪工具执行与结果返回，再看其余模块怎样加入。这样读比逐个目录浏览更容易形成整体认识。
+
+> **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `analyzed snapshot 760112adb6458417da8614d2269e5325f0739ed5; HEAD audit 057dcdf236f8a6a26721c10fcc6ccb72726e272a`
 > - `source_type`: `official-repository`

@@ -1,6 +1,8 @@
 # Agent Benchmark Map：测量对象、环境、信号与限制
 
-> **Freshness metadata**
+不同榜单测量的任务不同，分数不适合脱离环境直接比较。先确定自己的 Agent 要完成什么、允许做什么，再选择有参考价值的基准。本页是查找入口，不是按榜单顺序推荐产品。
+
+> **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `benchmark definitions verified 2026-08-24`
 > - `source_type`: `official-benchmark + primary-paper`

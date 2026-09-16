@@ -1,6 +1,8 @@
 # Evolution 的 Evaluation、Version、Sandbox 与 Rollback
 
-> **Freshness metadata**
+如果只写“升级到 v2”，出问题后很难知道究竟换了模型、提示词还是工具。演进实验需要记录整组配置，并在隔离环境中比较。下面说明怎样保存版本、设置评测和准备回滚。
+
+> **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `stable release-control patterns`
 > - `source_type`: `software-delivery practice + agent evaluation`
@@ -20,8 +22,8 @@
 
 ## Sandbox 与 canary
 
-Sandbox 限制文件、网络、process、secret、CPU/memory/time；canary 只接收低风险流量并与 control 组比较。若 guardrail violation、未知 side effect、error rate 或成本越阈值，自动停止并回滚到上一完整版本向量。
+先在隔离环境中限制文件、网络、进程、凭据以及 CPU、内存和运行时间。通过检查后，再用小范围流量与对照组比较。若出现越权、未预期的写操作，或错误率和成本超过阈值，应停止发布，恢复上一整组版本配置。
 
 ## 回滚不等于 Git revert
 
-还要处理 memory/schema migration、队列中的旧任务、已发布 skill cache、模型路由和外部副作用。每次 evolution 发布都应定义 forward/backward compatibility 与 in-flight task 策略。
+撤销代码提交以后，记忆和数据库结构可能已经改变，队列里也可能还有旧任务。还要检查 Skill 缓存、模型路由与已经发生的外部操作。发布前就应约定新旧版本如何兼容，以及正在执行的任务继续、停止还是迁移。

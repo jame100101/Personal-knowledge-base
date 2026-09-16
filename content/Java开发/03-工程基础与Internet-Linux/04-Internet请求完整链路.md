@@ -1,6 +1,8 @@
 # Internet 心智模型：从 URL 到 Spring Controller
 
-> **Freshness metadata**
+在浏览器输入地址到 Controller 收到请求之间，还经过了 DNS、连接建立、代理和服务器处理。沿着一次请求逐站检查，能帮助你判断超时、证书错误或 404 到底发生在哪一层，而不是一律归为后端代码错误。
+
+> **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `HTTP semantics and backend fundamentals`
 > - `source_type`: `RFC + official platform docs`
@@ -20,11 +22,13 @@ flowchart LR
 
 ## 1. 一次请求
 
-浏览器解析 scheme/host/port/path；DNS 将 host 解析为地址；连接可能经 TCP+TLS（HTTP/1.1、HTTP/2）或 QUIC+TLS（HTTP/3）；代理/负载均衡器选择实例；容器解析 HTTP 并分派线程/请求；Filter 处理安全与横切逻辑；Spring MVC 映射 Controller、参数转换、validation、service 与 response。
+先看 URL：协议、主机、端口和路径分别告诉浏览器怎样连接、连接哪里、请求什么。DNS 把主机名解析成地址；连接可能使用 TCP 与 TLS，也可能使用 HTTP/3 所用的 QUIC。
+
+请求到达服务端后，代理或负载均衡器选择实例。Servlet 容器处理 HTTP，请求经过过滤器，再由 Spring MVC 找到控制器、转换并校验参数。业务方法返回后，结果还要转换成 HTTP 响应。图展示的是便于学习的逻辑顺序，不表示每次请求都会重新建立连接或重新查询 DNS。
 
 ## 2. HTTP semantics
 
-方法、状态码、header、representation、cache、conditional request 和 idempotency 是 API 契约。`GET` 应安全；`PUT` 语义上幂等；`POST` 是否可重试取决于应用提供的 idempotency key。keep-alive 复用连接，不等同于 WebSocket。
+HTTP 方法、状态码、响应头、资源表示、缓存和条件请求，共同约定一次调用的含义。幂等性尤其影响失败后是否可以重试。`GET` 应安全；`PUT` 语义上幂等；`POST` 是否可重试取决于应用提供的 idempotency key。keep-alive 复用连接，不等同于 WebSocket。
 
 ## 3. Proxy、cookie 与 CORS
 

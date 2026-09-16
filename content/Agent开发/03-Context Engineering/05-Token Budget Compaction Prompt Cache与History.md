@@ -1,6 +1,8 @@
 # Token Budget、Compaction、Prompt Cache 与 History
 
-> **Freshness metadata**
+上下文窗口再大，也不适合把全部历史永久往里加。先给回答和工具结果留空间，再决定哪些旧内容保留、压缩或按需取回。缓存解决重复输入的成本问题，压缩解决材料长度问题，两者不是同一件事。
+
+> **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `provider-neutral; cache APIs vary by provider`
 > - `source_type`: `official-provider-docs + engineering synthesis`
@@ -29,7 +31,7 @@ Cache 是 provider/runtime 能力而不是通用语义保证。常见策略：�
 
 ## 4. History 管理
 
-History 是事件序列，至少区分 user/model/tool/control。对 tool call 与 result 保存 ID；对 retry 保存 attempt；对 compaction 保存旧范围到摘要的映射。History 可用于 trace 和恢复，但并不自动成为长期 memory。
+历史记录按时间保存用户消息、模型响应、工具结果和控制事件。工具调用与结果要用 ID 对应，重试要记录次数，压缩后也要知道摘要来自哪一段原文。这样才能复盘和恢复。保存了这些事件，并不意味着已经完成了长期记忆的筛选与管理。
 
 ## 5. Failure modes
 
@@ -39,4 +41,4 @@ History 是事件序列，至少区分 user/model/tool/control。对 tool call �
 - summary drift：多轮摘要逐渐改写事实；
 - budget cliff：估算与 provider tokenizer 差异导致请求拒绝。
 
-验证使用固定任务比较 success、input tokens、cache hit、compaction 次数、lost-fact rate，并对摘要做源事实一致性检查。
+用同一组任务比较成功率、输入 token、缓存命中、压缩次数和重要事实丢失情况。抽取摘要中的说法回查原始记录，确认压缩没有改变事实；省下 token 但丢掉关键条件，并不是有效优化。

@@ -1,5 +1,7 @@
 # 工具 Schema、权限门与幂等设计
 
+参数类型写成字符串，还没有说明它是不是允许访问的路径；调用执行成功，也没有说明重复一次是否会造成损失。本章分别讲格式、权限和幂等，把这些经常混在一起的问题拆开处理。
+
 ## 1. 输入 Schema 要表达语义
 
 仅写 `type: string` 远远不够。一个文件读取工具应明确：
@@ -80,7 +82,6 @@ idempotency_key = hash(session_id + task_id + logical_action)
 - 路径规范化和符号链接边界；
 - 敏感字段是否出现在日志或模型消息。
 
-<!-- agent-learning-expansion:v2 -->
 ## 6. Schema：从语法约束到业务约束
 
 ```json

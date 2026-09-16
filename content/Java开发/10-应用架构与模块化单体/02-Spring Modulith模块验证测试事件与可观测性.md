@@ -1,6 +1,8 @@
 # Spring Modulith：模块验证、集成测试、事件与可观测性
 
-> **Freshness metadata**
+约定“订单模块不要直接访问库存内部类”很容易，长期遵守却需要工具帮助。Spring Modulith 可以检查部分模块关系，并支持围绕模块测试和观察事件。它验证的是你的设计，不会自动替你划分业务。
+
+> **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `spring-projects/spring-modulith at fc0a547c05dfd240d23c32f3fbb9fa45283af21f`
 > - `source_type`: `official-repository + official-docs`

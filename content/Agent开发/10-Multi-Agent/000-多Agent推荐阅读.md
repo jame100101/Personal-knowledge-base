@@ -1,5 +1,7 @@
 # 多 Agent 推荐阅读
 
+可以先做一个研究、写作、复核的小流程，再与单 Agent 完成同一任务的表现比较。只有分工带来的收益超过沟通与等待成本，增加 Agent 才有意义。下面的阅读围绕这种比较展开。
+
 - [Claude Code Subagents](https://docs.anthropic.com/en/docs/claude-code/sub-agents)：专用上下文、工具和委派。
 - [Claude Code Hooks](https://docs.anthropic.com/en/docs/claude-code/hooks)：用确定性事件钩子约束与扩展行为。
 - [Google Agent Development Kit](https://adk.dev/)：Agent、graph workflow、runtime、session 与多 Agent 编排。

@@ -1,6 +1,8 @@
 # Keycloak 架构研究入口
 
-> **Freshness metadata**
+Keycloak 仓库很大，先选一个登录流程或协议处理入口即可。沿请求找身份、会话和令牌相关代码，同时阅读对应测试。本篇讨论范围以固定快照为准，不要求初学者一次理解整套身份平台。
+
+> **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `97ae0a6f456d59db3d2f93bba91c52a2413abda7`
 > - `source_type`: `official-repository`
@@ -10,7 +12,7 @@
 
 - **Repository**: [keycloak/keycloak](https://github.com/keycloak/keycloak)
 - **Commit**: [`97ae0a6f456d59db3d2f93bba91c52a2413abda7`](https://github.com/keycloak/keycloak/tree/97ae0a6f456d59db3d2f93bba91c52a2413abda7)
-- **Research date**: `2026-08-24`
+- **研究日期**: `2026-08-24`
 - **Purpose**: 定向研究大型 IAM、OAuth 2.0/OIDC、realm、authentication flow、token 与扩展 SPI。
 
 ## Architecture / module map

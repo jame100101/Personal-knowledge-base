@@ -1,6 +1,8 @@
 # OAuth 2.0、OIDC、JWT 与 API 安全
 
-> **Freshness metadata**
+“用 JWT 登录”和“接入 OAuth”经常被放在一起说，但令牌格式、授权流程和身份信息是不同的问题。先把 OAuth 2.0、OIDC、JWT 分开，再通过一次调用过程看它们怎样配合。
+
+> **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `Spring Security 7 concepts; OAuth2/OIDC standards`
 > - `source_type`: `official-docs`
@@ -26,7 +28,7 @@ OAuth 定义 resource owner、client、authorization server 和 resource server�
 - 公开客户端不保存 client secret。
 - 避免隐式授权和资源所有者密码流程。
 
-**正确性边界：** OAuth access token 证明授权，不天然证明用户登录属性；OIDC ID Token 面向 client 身份会话。
+**这里容易混淆的是：** OAuth access token 证明授权，不天然证明用户登录属性；OIDC ID Token 面向 client 身份会话。
 
 ### 2. JWT 验证
 
@@ -36,7 +38,7 @@ JWT 是带声明的 JWS/JWE 容器。资源服务器验证签名算法、issuer�
 - 按 `kid` 获取并缓存可信 JWK，处理轮换。
 - 令牌只放必要声明，避免敏感数据和过大 header。
 
-**正确性边界：** Base64URL 编码不是加密；签名 JWT 的 payload 对持有者可见。
+**这里容易混淆的是：** Base64URL 编码不是加密；签名 JWT 的 payload 对持有者可见。
 
 ### 3. 令牌生命周期
 
@@ -46,7 +48,7 @@ JWT 是带声明的 JWS/JWE 容器。资源服务器验证签名算法、issuer�
 - 浏览器 token 优先安全 cookie/BFF，降低脚本窃取面。
 - 服务间使用专用 client identity 和最小 scope。
 
-**正确性边界：** “无状态 JWT”不代表系统没有状态；密钥、授权、撤销、客户端和审计仍是状态。
+**这里容易混淆的是：** “无状态 JWT”不代表系统没有状态；密钥、授权、撤销、客户端和审计仍是状态。
 
 ### 4. API 防护
 
@@ -56,7 +58,7 @@ API 除身份外还需输入校验、对象级授权、CSRF/CORS、速率限制�
 - cookie 认证的状态变更请求使用 CSRF token/SameSite 等防护。
 - 输出编码、参数化查询和安全反序列化分别处理不同注入面。
 
-**正确性边界：** 允许任意 Origin 并携带凭据会扩大跨站风险；规则应是明确来源白名单。
+**这里容易混淆的是：** 允许任意 Origin 并携带凭据会扩大跨站风险；规则应是明确来源白名单。
 
 ## 3. 工程链路
 
@@ -77,7 +79,7 @@ sequenceDiagram
 
 ## 4. 最小可运行示例
 
-下面的示例只保留关键路径。把它放入对应版本的最小工程，先运行测试或命令确认行为，再逐步加入重试、超时、监控和异常分支。
+这只是 JWT payload 的示意，不是可直接使用的令牌。字段能被解码不代表令牌可信；服务端还要校验签名、发行者、受众与有效期。这里的时间值仅用于说明字段，实际测试请生成有效的测试令牌。
 
 ```json
 {

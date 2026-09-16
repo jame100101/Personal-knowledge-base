@@ -1,6 +1,8 @@
 # JDBC vs MyBatis vs JPA：按问题选择数据访问方式
 
-> **Freshness metadata**
+如果正在为项目选择数据访问方式，不妨先看几个实际需求：查询有多复杂，是否需要管理对象关系，团队是否愿意直接维护 SQL？下面比较 JDBC、MyBatis 和 JPA 的取舍，而不是按抽象层越高越好来排序。
+
+> **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `Spring 7 / Boot 4 ecosystem`
 > - `source_type`: `official-docs + engineering synthesis`
@@ -28,8 +30,10 @@ return jdbcClient.sql(sql)
 
 ## 决策顺序
 
-先列业务查询、写入不变量、批量、锁、数据库特性、团队经验与迁移成本；做一个真实 vertical slice；用 integration test 与执行计划比较。一个系统可在边界内混用，但同一聚合避免多个抽象争夺事务与状态管理。
+先选一条有代表性的业务，例如创建订单并查询订单明细，把从接口到数据库的整条路径做出来。记录查询复杂度、批量处理、锁和数据库特性的要求，再用集成测试与执行计划比较方案。团队经验和后续迁移成本也应算进去。
+
+不同模块可以采用不同方式，但要约定谁管理事务和对象状态。不要让同一组业务对象同时由几套抽象修改，却没有清楚的协调规则。
 
 ## 共同生产边界
 
-连接池、transaction timeout、migration（Flyway/Liquibase）、pagination、N+1 检查、optimistic/pessimistic locking、batch、SQL observability 与真实数据库 Testcontainers。
+不论选择哪种框架，都要安排连接池、事务超时和数据库迁移。查询方面检查分页、批处理与 N+1；并发修改时选择合适的乐观锁或悲观锁。最后用 SQL 日志和真实数据库测试核对实际行为，Testcontainers 可以帮助准备测试依赖。

@@ -1,5 +1,7 @@
 # Agent Harness 架构：模型之外的能力来源
 
+模型知道下一步想做什么，还需要程序替它准备材料、执行动作和保存状态。Harness 就是组织这些工作的运行环境。下面先看一条任务怎样跑起来，再逐步拆出权限、恢复和日志等部分。
+
 Agent Harness 是承载模型执行任务的运行时。它决定模型能看到什么、能调用什么、如何执行、何时停止、如何记录、如何恢复。相同模型放入不同 Harness，实际能力和可靠性可能差异很大。
 
 ## 1. 典型模块
@@ -79,7 +81,6 @@ Finalizer 负责：
 
 不要只看 README。沿一次完整任务追踪入口、session、loop、tool registry、permission、executor、trace、compaction、finalizer，并记录每个模块的输入输出契约。
 
-<!-- agent-learning-expansion:v2 -->
 ## 9. 模型、Agent 与 Harness 的边界
 
 模型负责基于当前上下文提出决策；Agent 是围绕目标持续运行的逻辑实体；Harness 是让这段逻辑可靠运行的确定性基础设施。

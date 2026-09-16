@@ -1,6 +1,8 @@
 # TypeScript 与 JavaScript：增加了什么、没有改变什么
 
-TypeScript 是 JavaScript 的带类型超集和工具层。任何有效 JavaScript 在迁移策略允许时通常可以逐步进入 TypeScript，但 TypeScript 新语法并不都属于 ECMAScript。
+可以把 TypeScript 学习分成两部分：JavaScript 真正执行的代码，以及帮助我们检查代码的类型信息。迁移旧项目时，也不必一次把所有文件重写。下面一边对照两者的写法，一边说明哪些错误类型系统能发现，哪些仍要靠运行时检查。
+
+TypeScript 在 JavaScript 基础上增加类型与工具支持，旧 JavaScript 项目可以逐步迁移。不过“保留运行行为”不等于“立刻通过所有严格类型检查”，而 TypeScript 的类型语法也不能直接当作 ECMAScript 语法交给普通 JavaScript 引擎。
 
 ## 1. TypeScript 增加的主要能力
 

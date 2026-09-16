@@ -1,6 +1,8 @@
 # P0–P8 Java 后端项目阶梯
 
-> **Freshness metadata**
+P0 到 P8 是逐步增加难度的练习，不是每个项目都必须走完的流水线。先做到模块清楚、数据正确、测试可重复，再决定是否继续微服务或云原生。阶段编号帮助安排进度，不代表架构越复杂越优秀。
+
+> **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `2026 curriculum; JDK 25 baseline`
 > - `source_type`: `engineering synthesis`

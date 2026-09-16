@@ -1,6 +1,8 @@
 # RuoYi-Vue-Plus 架构研究入口
 
-> **Freshness metadata**
+阅读 RuoYi-Vue-Plus 时，可以从一个带权限的业务接口入手，跟踪它怎样进入服务层、访问数据并返回前端。再比较租户和权限条件在哪里加入，不要只根据目录名推测实际行为。
+
+> **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `b37db3fd01a89bd4f296b07e1910209a5e3b305d`
 > - `source_type`: `official-repository`
@@ -10,7 +12,7 @@
 
 - **Repository**: [dromara/RuoYi-Vue-Plus](https://github.com/dromara/RuoYi-Vue-Plus)
 - **Commit**: [`b37db3fd01a89bd4f296b07e1910209a5e3b305d`](https://github.com/dromara/RuoYi-Vue-Plus/tree/b37db3fd01a89bd4f296b07e1910209a5e3b305d)
-- **Research date**: `2026-08-24`
+- **研究日期**: `2026-08-24`
 - **Purpose**: 观察国内后台系统、多租户、MyBatis-Plus、权限与 Vue 协作的工程组合。
 
 ## Architecture / module map

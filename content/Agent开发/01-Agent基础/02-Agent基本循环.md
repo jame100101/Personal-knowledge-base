@@ -1,5 +1,7 @@
 # Agent 基本循环：Observe → Think → Act → Observe
 
+让 Agent 修复一段代码时，它通常要先看文件，提出修改，再运行测试。测试结果不是终点，而是下一次判断的新信息。Observe、Think、Act 描述的就是这个反复过程；每一轮都应让任务更接近完成，或明确为什么该停止。
+
 ## 1. Observe：把环境事实变成模型可消费的观察
 
 观察不仅是用户输入，还包括工具结果、文件变化、测试日志、页面 DOM、错误类型、剩余预算和权限状态。高质量观察应满足：
@@ -349,7 +351,6 @@ ReAct 决定交互的时间结构，ACI 决定 Agent 与计算机之间的动作
 - [Anthropic Tool Use](https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/overview)
 - [OpenAI Function Calling](https://platform.openai.com/docs/guides/function-calling)
 
-<!-- agent-learning-expansion:v2 -->
 
 ## 8. 用状态转移精确定义循环
 

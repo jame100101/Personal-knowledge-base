@@ -1,6 +1,8 @@
 # Transaction Boundary、Outbox 与 Idempotency
 
-> **Freshness metadata**
+保存订单成功后，发送消息失败了怎么办？数据库与消息系统之间的这个间隙，是 Outbox 要处理的问题。下面先看业务记录与待发消息怎样一起保存，再解释为什么后续发送和消费仍然需要处理重复。
+
+> **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `stable distributed data patterns`
 > - `source_type`: `primary-pattern literature + engineering synthesis`

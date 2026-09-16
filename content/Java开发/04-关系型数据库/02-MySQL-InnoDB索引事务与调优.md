@@ -1,6 +1,8 @@
 # MySQL：InnoDB、索引、事务、MVCC、日志与性能调优
 
-MySQL 学习重点是 InnoDB 存储、聚簇索引、事务隔离、锁、redo/undo/binlog 和可证据化调优。
+同一条 SQL 在小表里很快，数据一多却变慢，往往要从索引和执行计划找原因。先理解 InnoDB 如何组织记录，再看事务、锁和日志，就能把查询速度与数据正确性放在一起分析。
+
+MySQL 学习重点是 InnoDB 存储、聚簇索引、事务隔离、锁、redo/undo/binlog 和根据执行计划和测量结果调优。
 
 ## 1. 本文覆盖范围
 
@@ -19,7 +21,7 @@ MySQL 学习重点是 InnoDB 存储、聚簇索引、事务隔离、锁、redo/u
 - 大字段与高频访问列分离，避免无边界 JSON 替代结构建模。
 - 字符集要在库、表、连接和客户端一致。
 
-**正确性边界：** VARCHAR(n) 的 n 是字符数语义但字节占用受字符集影响；索引长度仍有字节限制。
+**这里容易混淆的是：** VARCHAR(n) 的 n 是字符数语义但字节占用受字符集影响；索引长度仍有字节限制。
 
 ### 2. 聚簇索引与二级索引
 
@@ -29,7 +31,7 @@ InnoDB 表数据按主键聚簇，二级索引叶节点存主键值，因此宽�
 - 联合索引遵循查询谓词、选择性、排序与覆盖综合设计。
 - 前缀索引节省空间但降低区分度且不总能覆盖。
 
-**正确性边界：** “最左前缀”不是机械口诀；范围条件后的列能否用于过滤/排序要结合优化器和执行计划。
+**这里容易混淆的是：** “最左前缀”不是机械口诀；范围条件后的列能否用于过滤/排序要结合优化器和执行计划。
 
 ### 3. 事务、MVCC 与锁
 
@@ -39,7 +41,7 @@ InnoDB 使用 undo 版本和 read view 支持一致性读，当前读通过锁�
 - 用版本号实现乐观锁；唯一约束解决“先查后插”竞争。
 - 死锁查看日志并统一访问顺序，应用对整个事务做有界重试。
 
-**正确性边界：** MVCC 不等于“完全没有锁”；写入、当前读、约束检查仍会加锁。
+**这里容易混淆的是：** MVCC 不等于“完全没有锁”；写入、当前读、约束检查仍会加锁。
 
 ### 4. redo、undo 与 binlog
 
@@ -49,7 +51,7 @@ redo log 支持崩溃恢复，undo 支持回滚和 MVCC，binlog 是 Server 层�
 - 刷盘策略在持久性和吞吐之间权衡。
 - 复制延迟下读写分离要处理 read-your-writes。
 
-**正确性边界：** 三种日志服务不同目标，不能互相替代。
+**这里容易混淆的是：** 三种日志服务不同目标，不能互相替代。
 
 ### 5. 查询与运维调优
 
@@ -59,7 +61,7 @@ redo log 支持崩溃恢复，undo 支持回滚和 MVCC，binlog 是 Server 层�
 - 连接数由并发模型和数据库 CPU/I/O 决定，避免连接风暴。
 - 在线 DDL、统计信息更新和索引构建安排容量窗口。
 
-**正确性边界：** 平均延迟会掩盖长尾，至少观察 P95/P99、扫描行数和锁等待。
+**这里容易混淆的是：** 平均延迟会掩盖长尾，至少观察 P95/P99、扫描行数和锁等待。
 
 ## 3. 工程链路
 
@@ -74,7 +76,7 @@ flowchart LR
 
 ## 4. 最小可运行示例
 
-下面的示例只保留关键路径。把它放入对应版本的最小工程，先运行测试或命令确认行为，再逐步加入重试、超时、监控和异常分支。
+先关注索引字段顺序与查询条件如何对应。分页同时使用创建时间和 ID，避免同一时间的记录没有确定顺序。问号要由 JDBC 等驱动绑定；这里使用 MySQL 的 `LIMIT`，不要照搬其他数据库的分页语法。
 
 ```sql
 CREATE TABLE orders (
@@ -90,7 +92,7 @@ SELECT id, status, created_at
 FROM orders
 WHERE customer_id = ? AND (created_at, id) < (?, ?)
 ORDER BY created_at DESC, id DESC
-FETCH FIRST 20 ROWS ONLY;
+LIMIT 20;
 ```
 
 ## 5. 实践与验证
@@ -111,3 +113,5 @@ FETCH FIRST 20 ROWS ONLY;
 - [MySQL 8.4 Reference](https://dev.mysql.com/doc/refman/8.4/en/)
 - [InnoDB Transaction Model](https://dev.mysql.com/doc/refman/8.4/en/innodb-transaction-model.html)
 - [Optimizing InnoDB](https://dev.mysql.com/doc/refman/8.4/en/optimizing-innodb.html)
+
+示例细节可对照：[MySQL SELECT 与 LIMIT 语法](https://dev.mysql.com/doc/refman/8.4/en/select.html)。

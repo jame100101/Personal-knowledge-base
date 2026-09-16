@@ -1,5 +1,7 @@
 # Agent 基础推荐阅读
 
+建议先读系统概念，再读 ReAct 和 SWE-agent 论文。论文里的实验有特定任务与环境，不等同于一套可直接上线的产品。阅读时各挑一个问题：下一步动作由谁决定，工具接口又怎样影响结果？
+
 ## 一、工程入门
 
 1. [Datawhale Agent Learning Hub](https://datawhalechina.github.io/Agent-Learning-Hub/)

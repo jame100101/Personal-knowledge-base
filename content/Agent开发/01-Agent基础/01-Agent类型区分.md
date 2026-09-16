@@ -1,5 +1,7 @@
 # Agent 类型区分：Chatbot、Workflow、Agent 与 Multi-Agent
 
+两个产品都带聊天框，一个只回答问题，另一个却会读文件、运行测试，还会根据报错再修改。它们的差别不在界面，而在下一步由谁决定。下面用这个判断方法区分 Chatbot、Workflow、Agent 和多 Agent 系统。
+
 ## 1. 四类系统的核心差异
 
 ### Chatbot
@@ -81,7 +83,6 @@ Multi-Agent 把任务分给多个具有独立上下文或职责的 Agent，例�
 - [OpenAI：A practical guide to building agents](https://openai.com/business/guides-and-resources/a-practical-guide-to-building-ai-agents/)
 - [Datawhale Agent Learning Hub](https://github.com/datawhalechina/Agent-Learning-Hub)
 
-<!-- agent-learning-expansion:v2 -->
 ## 6. 从“控制权”而不是界面判断系统类型
 
 判断一个系统属于 Chatbot、Workflow 还是 Agent，最有效的问题是：**谁在运行时决定下一条边？**

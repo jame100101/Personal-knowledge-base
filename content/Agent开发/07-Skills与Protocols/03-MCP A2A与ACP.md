@@ -1,6 +1,8 @@
 # MCP、A2A 与 ACP：三个不同互操作边界
 
-> **Freshness metadata**
+面对几个协议缩写，先别急着记字段。先问连接的是谁：模型应用与工具服务，还是两个 Agent，或客户端与编码 Agent？明确通信双方和职责以后，再查对应版本的规范，会少很多混淆。
+
+> **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `MCP 2026-07-28; A2A 1.0; ACP docs verified 2026-08-24`
 > - `source_type`: `official-spec`

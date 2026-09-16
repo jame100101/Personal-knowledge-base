@@ -1,6 +1,8 @@
 # Java Backend Version Baseline 与 Compatibility Matrix
 
-> **Freshness metadata**
+跟教程敲同样的代码却启动失败，有时不是代码写错，而是 JDK、Spring Boot 和插件版本没有配套。这里把版本放在一起核对。它是一份带核验日期的配置记录，不是“全部选最新”的安装清单；升级前仍要查看对应项目的兼容说明。
+
+> **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `verified 2026-08-24`
 > - `source_type`: `official-JEP + official-project-docs`

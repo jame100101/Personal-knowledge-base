@@ -1,5 +1,7 @@
 # Tools Call 推荐阅读
 
+可以从只读工具开始练习，再加入写文件和启动进程。每增加一个工具，都试一次正常输入和一次错误输入，观察结果怎样回到模型。下面的资料分别解释协议和执行细节，不要把函数定义当作完整工具系统。
+
 - [OpenAI Function Calling](https://platform.openai.com/docs/guides/function-calling)：严格 schema、工具选择和消息结构。
 - [Anthropic Tool Use](https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/overview)：client tool、server tool 及 `tool_result` 契约。
 - [Gemini Function Calling](https://ai.google.dev/gemini-api/docs/function-calling)：多工具组合与函数调用配置。

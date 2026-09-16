@@ -1,6 +1,8 @@
 # Spring AI 架构研究入口
 
-> **Freshness metadata**
+研究 Spring AI 时，先选一次模型调用，跟踪请求怎样经过客户端与扩展点，再到提供商适配层。向量检索、工具调用和记忆可以分别阅读，不必把所有集成能力看成每次调用都会执行的步骤。
+
+> **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `fd3fd6ec700340b90c3d516be57c6e6c87dd7df1`
 > - `source_type`: `official-repository`
@@ -10,7 +12,7 @@
 
 - **Repository**: [spring-projects/spring-ai](https://github.com/spring-projects/spring-ai)
 - **Commit**: [`fd3fd6ec700340b90c3d516be57c6e6c87dd7df1`](https://github.com/spring-projects/spring-ai/tree/fd3fd6ec700340b90c3d516be57c6e6c87dd7df1)
-- **Research date**: `2026-08-24`
+- **研究日期**: `2026-08-24`
 - **Purpose**: 研究 Java AI integration：Model API、ChatClient、structured output、tools、memory、RAG/vector store、MCP 与 observability。
 
 ## Architecture / module map

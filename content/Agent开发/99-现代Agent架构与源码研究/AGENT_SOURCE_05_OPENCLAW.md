@@ -1,6 +1,8 @@
 # OpenClaw 源码精读：Gateway、Agent Harness、Tools、Memory 与 Context Engine
 
-> **Freshness metadata**
+OpenClaw 的入口、会话与运行时分工较多。先选一条消息，看它怎样经过 Gateway 到达对应会话，再跟到模型与工具。下文按固定快照解释这些连接，也把推断和未验证行为单独保留。
+
+> **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `analyzed snapshot 6e604438b6a2274145bae60aef053afa78d9170d; HEAD audit dea053e32f4cca1207f980d643f7c6ef795fd9f9`
 > - `source_type`: `official-repository`

@@ -1,6 +1,8 @@
 # JMM、线程池、锁、原子类与 CompletableFuture
 
-> **Freshness metadata**
+多线程程序中，一个线程写了值，另一个线程何时能看到，不能只凭源码的先后顺序判断。JMM 解释这些约束，锁和原子类帮助我们满足它们。下面再看线程池和 CompletableFuture 怎样组织任务，而不是替代这些规则。
+
+> **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `Java 25`
 > - `source_type`: `JLS/JDK API`

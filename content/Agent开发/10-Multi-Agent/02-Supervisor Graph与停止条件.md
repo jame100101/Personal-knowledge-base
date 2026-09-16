@@ -1,5 +1,7 @@
 # Supervisor、Graph 与停止条件
 
+多个 Worker 同时工作时，总要有人知道哪些结果已经齐了、哪些任务还在等待。Supervisor 或任务图可以承担这种协调，但仍要规定何时结束。下面把局部任务与全局状态分开讨论。
+
 ## 1. Supervisor 模式
 
 Supervisor 保存全局任务图和共享证据，Worker 只处理局部任务：

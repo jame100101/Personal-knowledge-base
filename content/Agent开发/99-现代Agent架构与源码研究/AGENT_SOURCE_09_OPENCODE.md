@@ -1,6 +1,8 @@
 # OpenCode 源码研究：Effect Runtime、Server/Client 与 Snapshot-aware Session Loop
 
-> **Freshness metadata**
+OpenCode 不只包含终端界面，界面背后还有会话服务、工具、权限和存储。可以先从一次会话请求进入，再观察不同层之间怎样传递事件。下面把交互入口与核心服务分开分析。
+
+> **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `analyzed snapshot 105b398c2a9ff2f16eaae409836e1dbc4d37671a; HEAD audit 2a6be0a03b93a6734070e10a6c3b56863475f214`
 > - `source_type`: `official-repository + source-audit`

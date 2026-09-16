@@ -1,5 +1,7 @@
 # Skill、Tool、Prompt 与 MCP 的边界
 
+一份告诉模型如何做事的说明，与真正能读文件的函数，不是同一种能力。Skill、Prompt 和 Tool 分别解决不同问题，MCP 则涉及如何连接能力。下面用具体例子区分，避免只是换个名字描述同一段文字。
+
 ## 1. Tool
 
 Tool 是可执行接口，例如 `read_file(path)`、`search(query)`、`create_issue(...)`。它回答“系统能做什么”，强调参数、结果、权限和副作用。

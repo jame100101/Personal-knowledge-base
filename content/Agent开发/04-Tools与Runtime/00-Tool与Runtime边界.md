@@ -1,6 +1,8 @@
 # Tool、Invocation、Execution 与 Runtime 边界
 
-> **Freshness metadata**
+模型提出读取文件，并不意味着读取已经发生。请求还要经过工具查找、权限检查、执行和结果整理。先把这些步骤分开，才能知道一次失败是名称写错、权限不足，还是操作系统真正执行失败。
+
+> **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `provider-neutral tool runtime`
 > - `source_type`: `official-SDK-docs + engineering synthesis`

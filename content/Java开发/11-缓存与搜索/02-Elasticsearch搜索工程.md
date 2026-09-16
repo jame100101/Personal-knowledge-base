@@ -1,5 +1,7 @@
 # Elasticsearch 搜索工程：Mapping、分析器、Query DSL、分片与聚合
 
+用户输入几个词，希望找到相关商品，这与按主键查询一行记录很不一样。Elasticsearch 围绕检索组织数据。下面先看字段怎样建立索引、查询怎样匹配，再讨论分片和更新，别把它当成直接替换关系数据库的工具。
+
 Elasticsearch 是搜索与分析引擎，不是关系数据库的透明替代。核心是 mapping、倒排索引、查询/过滤上下文、分片和生命周期管理。
 
 ## 1. 本文覆盖范围
@@ -19,7 +21,7 @@ mapping 决定字段如何索引。text 经分析用于全文检索，keyword �
 - 同一字符串常用 multi-field 同时提供 text 与 keyword。
 - mapping 不兼容修改通常需新索引 + reindex + alias 切换。
 
-**正确性边界：** 把所有字符串设为 text 会让精确聚合/排序困难；把全文设 keyword 又失去分析检索。
+**这里容易混淆的是：** 把所有字符串设为 text 会让精确聚合/排序困难；把全文设 keyword 又失去分析检索。
 
 ### 2. 分析器与相关性
 
@@ -29,7 +31,7 @@ mapping 决定字段如何索引。text 经分析用于全文检索，keyword �
 - 同义词更新和搜索规则要版本化并离线评测。
 - 结构化约束放 filter，全文相关放 query。
 
-**正确性边界：** 相关性分数只在当前查询与索引统计下有意义，不能直接当跨查询业务概率。
+**这里容易混淆的是：** 相关性分数只在当前查询与索引统计下有意义，不能直接当跨查询业务概率。
 
 ### 3. Query DSL、聚合与分页
 
@@ -39,7 +41,7 @@ Query DSL 是 JSON AST，bool 组合 must/should/filter/must_not。聚合在匹�
 - 排序包含唯一 tie-breaker，PIT 保持分页视图。
 - 高基数 terms 聚合、脚本和通配前缀需要资源预算。
 
-**正确性边界：** terms 聚合在分片采样下的 doc_count 可能有误差；精确需求检查 size/shard_size 与方案。
+**这里容易混淆的是：** terms 聚合在分片采样下的 doc_count 可能有误差；精确需求检查 size/shard_size 与方案。
 
 ### 4. 分片、副本与路由
 
@@ -49,7 +51,7 @@ primary shard 决定索引分区，replica 提供冗余和搜索容量。协调�
 - allocation awareness 跨故障域分布副本。
 - routing 可减少扇出但会带来热点和数据倾斜风险。
 
-**正确性边界：** 增加副本提高读取容量与容错，但会增加写入和存储成本。
+**这里容易混淆的是：** 增加副本提高读取容量与容错，但会增加写入和存储成本。
 
 ### 5. 同步、别名与生命周期
 
@@ -59,7 +61,7 @@ primary shard 决定索引分区，replica 提供冗余和搜索容量。协调�
 - 查询结果需要强一致回源时，按 ID 回数据库验证。
 - 快照到独立仓库并演练恢复。
 
-**正确性边界：** 双写数据库与 ES 无分布式原子性，直接在请求中两边写会产生不一致。
+**这里容易混淆的是：** 双写数据库与 ES 无分布式原子性，直接在请求中两边写会产生不一致。
 
 ## 3. 工程链路
 
@@ -74,7 +76,7 @@ flowchart LR
 
 ## 4. 最小可运行示例
 
-下面的示例只保留关键路径。把它放入对应版本的最小工程，先运行测试或命令确认行为，再逐步加入重试、超时、监控和异常分支。
+先确认 `available` 的映射适合精确过滤，`name` 的映射适合文本搜索。`must` 参与匹配评分，`filter` 限制可售商品。此处按 `_score` 排序，只演示相关度；若要稳定翻页，还需设计排序键与分页方式。
 
 ```json
 POST /products/_search
@@ -85,7 +87,7 @@ POST /products/_search
       "filter": [{"term": {"available": true}}]
     }
   },
-  "sort": [{"score": "desc"}, {"_id": "asc"}]
+  "sort": [{"_score": "desc"}]
 }
 ```
 
@@ -108,3 +110,5 @@ POST /products/_search
 - [Query DSL](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html)
 - [Mapping](https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping.html)
 - [Search Shard Routing](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-shard-routing.html)
+
+示例细节可对照：[Elasticsearch 排序说明](https://www.elastic.co/docs/reference/elasticsearch/rest-apis/sort-search-results)。

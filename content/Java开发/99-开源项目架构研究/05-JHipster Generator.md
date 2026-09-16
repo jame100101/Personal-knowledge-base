@@ -1,6 +1,8 @@
 # JHipster Generator 架构研究入口
 
-> **Freshness metadata**
+JHipster 有两层值得分开看：生成项目的工具，以及它生成出来的应用。先用一个选项观察生成结果，再回到模板和测试找原因，就能看清配置怎样变成代码。
+
+> **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `f9d0f75c20ebf5f367fe91e0ebb68ccbbd25e15d`
 > - `source_type`: `official-repository`
@@ -10,7 +12,7 @@
 
 - **Repository**: [jhipster/generator-jhipster](https://github.com/jhipster/generator-jhipster)
 - **Commit**: [`f9d0f75c20ebf5f367fe91e0ebb68ccbbd25e15d`](https://github.com/jhipster/generator-jhipster/tree/f9d0f75c20ebf5f367fe91e0ebb68ccbbd25e15d)
-- **Research date**: `2026-08-24`
+- **研究日期**: `2026-08-24`
 - **Purpose**: 观察 Spring Boot + frontend + cloud/deployment 的产品化代码生成组合。
 
 ## Architecture / module map

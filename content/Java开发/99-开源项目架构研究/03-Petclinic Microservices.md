@@ -1,6 +1,8 @@
 # Spring Petclinic Microservices 架构研究入口
 
-> **Freshness metadata**
+这份 Petclinic 示例把熟悉的业务拆到了多个服务。可以与单体版本对照：一次查询多经过了哪些网络调用，配置与发现放在哪里，某个服务停掉后会怎样？这些变化比服务数量更值得研究。
+
+> **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `3858f9c630cf989bb6809a86edf47c2be78dc9f1`
 > - `source_type`: `official-repository`
@@ -10,7 +12,7 @@
 
 - **Repository**: [spring-petclinic/spring-petclinic-microservices](https://github.com/spring-petclinic/spring-petclinic-microservices)
 - **Commit**: [`3858f9c630cf989bb6809a86edf47c2be78dc9f1`](https://github.com/spring-petclinic/spring-petclinic-microservices/tree/3858f9c630cf989bb6809a86edf47c2be78dc9f1)
-- **Research date**: `2026-08-24`
+- **研究日期**: `2026-08-24`
 - **Purpose**: 与 monolith Petclinic 对照微服务引入的基础设施与 failure modes。
 
 ## Architecture / module map

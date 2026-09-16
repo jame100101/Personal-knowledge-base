@@ -1,6 +1,8 @@
 # MongoDB 文档模型与选型（可选）
 
-> **Freshness metadata**
+把相关数据放进一个文档，读取时可能很方便，但独立增长的数据也可能让文档越来越难维护。学习 MongoDB 时，先列出实际读写操作，再选择嵌入或引用，而不是把关系表原样换成 JSON。
+
+> **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `MongoDB concepts; verify server/driver versions`
 > - `source_type`: `MongoDB official docs`

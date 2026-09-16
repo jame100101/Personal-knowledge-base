@@ -1,6 +1,8 @@
 # Virtual Threads、Scoped Values 与 Structured Concurrency
 
-> **Freshness metadata**
+虚拟线程适合用来理解一个新问题：大量任务在等待 I/O 时，怎样降低线程带来的负担？它不负责让计算本身变快。读这一章时，把“同时等多少任务”与“同时算多少任务”分开，再看上下文传递和子任务管理。
+
+> **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `Virtual Threads stable since Java 21; Scoped Values final in JDK 25; Structured Concurrency sixth preview in JDK 26`
 > - `source_type`: `OpenJDK JEP`

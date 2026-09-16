@@ -1,5 +1,7 @@
 # Java 核心 API：字符串、系统、数学、时间、包装类与正则表达式
 
+日常程序里，大量工作并不需要自己发明算法：处理文字、计算金额、比较日期，都有现成 API。不过同名或相似的方法未必适合相同场景。下面按常见任务选工具，并解释旧写法和新写法的取舍。
+
 > 课件来源：《第6章 Java API.pptx》。本文逐项覆盖课件目录，并依据 Java SE 26、JDK 25 LTS 及相关官方文档补充现代工程实践。
 
 本章逐项覆盖 String/StringBuffer、System/Runtime、Math/Random、BigInteger/BigDecimal、日期时间、格式化、包装类和正则表达式，并明确旧 API 与现代 API 的选择。

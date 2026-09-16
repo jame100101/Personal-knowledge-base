@@ -1,5 +1,7 @@
 # RAG 完整链路：从数据摄取到带引用回答
 
+模型不知道某份内部手册的内容时，可以先检索相关段落，再把它们交给模型作答。但“查到了”与“用对了”仍是两件事。下面沿着文档进入系统到生成引用的过程，逐步检查每一环。
+
 RAG（Retrieval-Augmented Generation）把外部知识检索结果放入模型上下文，让回答基于可更新、可追溯的数据。生产链路不是“向量搜索 + prompt”两个步骤，而是多个可评测阶段。
 
 ## 1. 离线摄取
@@ -95,7 +97,6 @@ score = α * dense_score + β * sparse_score + metadata_boost
 - [LlamaIndex RAG 文档](https://docs.llamaindex.ai/en/stable/understanding/rag/)
 - [LangChain Retrieval 文档](https://docs.langchain.com/oss/python/langchain/retrieval)
 
-<!-- agent-learning-expansion:v2 -->
 ## 7. 把 RAG 拆成两条可独立回归的流水线
 
 ```mermaid

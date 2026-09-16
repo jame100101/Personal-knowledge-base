@@ -1,5 +1,7 @@
 # Middleware、Hooks 与 Callbacks：横切能力的可控扩展点
 
+日志、审批和重试全写进主循环，代码很快会难以阅读。扩展点可以把它们拆出去，但也要说明谁先执行、谁能中止、出错后怎么办。下面用这些问题理解 middleware、hooks 与 callbacks。
+
 Agent Runtime 需要日志、guardrail、上下文注入、缓存、重试、指标和审批，但把它们全部写进主 Loop 会形成难以测试的巨型函数。Middleware 与 hooks 提供扩展点；同时也可能引入隐藏控制流，所以必须规定顺序、输入输出、短路和异常语义。
 
 ## 1. 三个相近概念

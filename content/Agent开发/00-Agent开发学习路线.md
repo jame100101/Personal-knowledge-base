@@ -1,6 +1,8 @@
 # Agent 开发学习路线：从 Minimum Agent 到 Production Agent
 
-> **Freshness metadata**
+做一个能回答问题的聊天窗口并不难；难的是让它连续做事，遇到错误能调整，做完还能证明结果。可以沿着一个小任务学习：读文件、找问题、修改文件、运行测试。下面各模块解释的，就是这条路径上的不同环节，不需要第一天就把所有组件装齐。
+
+> **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `2026 Agent Engineering`
 > - `source_type`: `official-spec + primary-paper + official-repository`

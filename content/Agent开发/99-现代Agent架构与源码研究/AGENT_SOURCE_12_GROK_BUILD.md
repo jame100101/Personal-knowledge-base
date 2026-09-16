@@ -1,6 +1,8 @@
 # Grok Build 源码研究：Rust Agent Runtime、并行工具与 Worktree Subagent
 
-> **Freshness metadata**
+Grok Build 的研究重点是编码任务怎样被执行：消息进入后，模型怎样选动作，工具怎样修改环境，结果怎样返回。这里讨论的是 Coding Agent 工程，不是基础模型的训练或推理实现；两者需要不同的阅读线索。
+
+> **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: GitHub `07b2f7144fd5c5c9d3dd1966937a87852d2dbdb8`；上游 monorepo `SOURCE_REV=956313d459bee15ae8f17bf73e0633605e18dddd`
 > - `source_type`: `official-repository + official-documentation + source-audit`
@@ -8,7 +10,7 @@
 
 ## 1. 为什么替换 Grok-1 Model Backend 研究
 
-本章研究的是用户指定的 [xai-org/grok-build](https://github.com/xai-org/grok-build)，即真实 Coding Agent Harness，而不是 Grok-1 基础模型推理后端。两者解决的问题不同：
+本章研究的是[xai-org/grok-build](https://github.com/xai-org/grok-build)，即真实 Coding Agent Harness，而不是 Grok-1 基础模型推理后端。两者解决的问题不同：
 
 | Grok-1 模型后端 | Grok Build Agent Harness |
 |---|---|
