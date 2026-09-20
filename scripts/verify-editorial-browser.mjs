@@ -6,15 +6,17 @@ import { chromium } from '@playwright/test'
 const articles = JSON.parse(
   await fs.readFile('.tools/editorial-publication.json', 'utf8'),
 )
-const samples = [
-  '05-函数签名重载this与回调.md',
-  '01-IoC依赖注入与Bean生命周期.md',
-  '03-PostgreSQL基础.md',
-  '01-最小Agent Loop实现.md',
-  '01-Context Engineering总览.md',
-  'AGENT_SOURCE_05_OPENCLAW.md',
-  '01-Spring Petclinic.md',
-]
+const samples = process.argv.includes('--all')
+  ? articles.map((article) => article.file)
+  : [
+      '05-函数签名重载this与回调.md',
+      '01-IoC依赖注入与Bean生命周期.md',
+      '03-PostgreSQL基础.md',
+      '01-最小Agent Loop实现.md',
+      '01-Context Engineering总览.md',
+      'AGENT_SOURCE_05_OPENCLAW.md',
+      '01-Spring Petclinic.md',
+    ]
 const browser = await chromium.launch({
   executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH,
   headless: true,
@@ -27,7 +29,9 @@ await fs.mkdir('.tools/editorial-screenshots', { recursive: true })
 
 try {
   for (const name of samples) {
-    const article = articles.find((item) => item.file.endsWith(`/${name}`))
+    const article = articles.find(
+      (item) => item.file === name || item.file.endsWith(`/${name}`),
+    )
     assert(article, `Missing publication record: ${name}`)
     const response = await page.goto(article.url, { waitUntil: 'networkidle' })
     assert.equal(response?.status(), 200, `HTTP response: ${name}`)
@@ -69,7 +73,9 @@ try {
     await page.screenshot({ path: `.tools/editorial-screenshots/article-${width}.png` })
   }
   assert.deepEqual(errors, [], 'Browser runtime errors')
-  console.log('Verified 7 live articles, matching TOCs, and 390/820/1280px layouts')
+  console.log(
+    `Verified ${samples.length} live articles, matching TOCs, and 390/820/1280px layouts`,
+  )
 } finally {
   await browser.close()
 }

@@ -33,7 +33,9 @@ JavaScript 是动态类型、基于原型、拥有词法作用域和一等函数
 
 ### 4. DOM 与事件
 
-DOM 是节点树。事件先捕获到目标，再冒泡；事件委托把监听器放在稳定祖先，用 `closest` 找实际目标，适合动态列表。`preventDefault` 取消默认动作，`stopPropagation` 阻止传播。
+DOM 是浏览器里的节点树。事件传播通常要区分捕获、目标和冒泡阶段，但不是所有事件都会冒泡，要看事件的 `bubbles` 属性。比如 `focus` 不冒泡，做焦点委托时可以考虑 `focusin` 或捕获监听。事件委托把监听器放在稳定祖先，用 `closest` 找实际目标，适合动态列表。
+
+`preventDefault()` 针对可取消事件的默认动作，不负责阻止传播；被动监听器也不能用它取消默认动作。`stopPropagation()` 处理传播，不等于取消浏览器默认动作。这两件事分开想，按钮点击和表单提交就更容易调试。参见 [事件的 bubbles 属性](https://developer.mozilla.org/en-US/docs/Web/API/Event/bubbles)。
 
 **这里容易混淆的是：** 阻止默认动作不等于阻止冒泡；过度 stopPropagation 会破坏组合。
 

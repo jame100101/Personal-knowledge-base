@@ -44,7 +44,7 @@ JVM 执行字节码；Java SE 定义语言和标准 API；JDK 在运行时之外
 
 ### 3. 版本选择：JDK 25 LTS 与 JDK 26
 
-截至 2026 年 7 月，JDK 26 是最新功能版本，JDK 25 是最新 LTS。学习和长期项目可优先使用 JDK 25 LTS；需要验证 HTTP/3 Client 等 JDK 26 特性时再建立独立实验分支。
+截至 2026-09-20，[JDK 27 已正式发布](https://openjdk.org/projects/jdk/27/)。本教程仍选 JDK 25 作为 LTS 教学基线；长期支持期限要以所用 JDK 发行商的政策为准。学习和长期项目可优先使用 JDK 25 LTS；需要验证 HTTP/3 Client 等 JDK 26 特性时再建立独立实验分支。
 
 **工程理解：** 生产升级要阅读 migration guide、扫描废弃 API、运行完整测试并观察 GC、启动时间和依赖兼容性。
 
@@ -103,7 +103,7 @@ java -jar app.jar
 
 ## 4. 现代 Java 校准
 
-- JDK 26 已在 2026-03-17 发布；JDK 25 是当前最新 LTS。
+- JDK 26 已在 2026-03-17 发布，JDK 27 已在 2026-09-15 发布；本教程保留 JDK 25 教学基线。
 - Applet API 已在 JDK 26 移除；JSP/Applet 不属于现代 Java 后端学习主线。
 - 全局 `CLASSPATH` 不适合作为项目依赖管理方案。
 - 实验 preview 特性时必须同时在编译和运行阶段使用 `--enable-preview`，并隔离于长期维护代码。

@@ -8,6 +8,14 @@ Goose 的实现可以从一个 reply 的推进过程读起。先看操作怎样�
 > - `source_type`: `official-repository + source-audit`
 > - `stability`: `active`
 
+## 2026-09-20 增量核对：现在从哪里读
+
+本轮证据固定在 [`2090ad1c65dd`](https://github.com/aaif-goose/goose/tree/2090ad1c65ddb39497601a936a9fe17d66254bfe)，入口为 [`documentation/docs/goose-architecture/goose-architecture.md`](https://github.com/aaif-goose/goose/blob/2090ad1c65ddb39497601a936a9fe17d66254bfe/documentation/docs/goose-architecture/goose-architecture.md)。下文旧快照与旧核验日期保留；本节不是对全部历史结论的重新背书。
+
+原 `block/goose` 地址本次解析到 `aaif-goose/goose`。当前官方架构仍区分交互客户端、Agent、模型 Provider 和 Extensions。模型发出调用请求，Goose 才负责让扩展执行，再把结果交回模型；“会调用工具”不是模型直接运行本地命令。
+
+入门时先接一个只读扩展，观察请求、工具名、参数和返回结果，再试错误与取消。扩展可以通过 MCP 接入，但接上协议不代表已具备业务权限。本文本轮核对的是官方架构说明与仓库身份，不把整个历史章节自动升级成当前版本源码结论。
+
 ## 1. 项目定位
 
 - 官方仓库：[block/goose](https://github.com/block/goose)（当前源码 metadata 也出现 `aaif-goose/goose` 命名，固定 commit 是本文身份锚点）。

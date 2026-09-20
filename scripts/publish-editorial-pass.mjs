@@ -8,9 +8,38 @@ process.loadEnvFile('.env.local')
 const apply = process.argv.includes('--apply')
 const verifyOnly = process.argv.includes('--verify')
 if (apply && verifyOnly) throw new Error('Choose either --apply or --verify')
-const manifest = JSON.parse(
-  await fs.readFile('scripts/editorial-pass-manifest.json', 'utf8'),
-)
+if (
+  apply &&
+  (!process.env.AGENT_SEED_ADMIN_EMAIL || !process.env.AGENT_SEED_ADMIN_PASSWORD)
+) {
+  throw new Error(
+    'Publishing requires AGENT_SEED_ADMIN_EMAIL and AGENT_SEED_ADMIN_PASSWORD',
+  )
+}
+const manifestFlag = process.argv.indexOf('--manifest')
+const manifestPath =
+  manifestFlag < 0
+    ? 'scripts/editorial-pass-manifest.json'
+    : process.argv[manifestFlag + 1]
+if (!manifestPath || manifestPath.startsWith('--'))
+  throw new Error('Missing --manifest path')
+const manifest = JSON.parse(await fs.readFile(manifestPath, 'utf8'))
+if (!/^[a-f0-9]{40}$/.test(manifest.base) || !Array.isArray(manifest.articles)) {
+  throw new Error('Invalid publication manifest')
+}
+const uniquePaths = new Set(manifest.articles.map((article) => article.path))
+if (uniquePaths.size !== manifest.articles.length)
+  throw new Error('Duplicate manifest paths')
+for (const file of uniquePaths) {
+  if (
+    typeof file !== 'string' ||
+    !file.startsWith('content/') ||
+    file.includes('..') ||
+    !file.endsWith('.md')
+  ) {
+    throw new Error('Invalid article path')
+  }
+}
 const normalize = (s) => s.replace(/\r\n/g, '\n').trim()
 const db = createClient(
   process.env.NUXT_PUBLIC_SUPABASE_URL,

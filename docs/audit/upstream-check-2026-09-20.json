@@ -1,0 +1,64 @@
+[
+  {
+    "repo": "openai/codex",
+    "status": "error",
+    "error": "Command '['git', 'ls-remote', '--exit-code', 'https://github.com/openai/codex.git', 'HEAD']' timed out after 60 seconds"
+  },
+  {
+    "repo": "anthropics/claude-code",
+    "status": "error",
+    "error": "error: RPC failed; curl 56 GnuTLS recv error (-9): Error decoding the received TLS packet.\nerror: 26 bytes of body are still expected\nfatal: expected flush after ref listing"
+  },
+  {
+    "repo": "NousResearch/hermes-agent",
+    "reviewed_head": "8a92051f20e6b371c4ff1a46a5bcec7138cc4e8c",
+    "remote_head": "8a92051f20e6b371c4ff1a46a5bcec7138cc4e8c",
+    "status": "unchanged"
+  },
+  {
+    "repo": "openclaw/openclaw",
+    "reviewed_head": "1083c3fd02534a56f5a55f97146afeb9c31c1ace",
+    "remote_head": "8ebc8cd021e47c8ff2771a89cac0f16dd07b06c8",
+    "status": "needs-review"
+  },
+  {
+    "repo": "Aider-AI/aider",
+    "status": "error",
+    "error": "Command '['git', 'ls-remote', '--exit-code', 'https://github.com/Aider-AI/aider.git', 'HEAD']' timed out after 60 seconds"
+  },
+  {
+    "repo": "aaif-goose/goose",
+    "reviewed_head": "2090ad1c65ddb39497601a936a9fe17d66254bfe",
+    "remote_head": "2090ad1c65ddb39497601a936a9fe17d66254bfe",
+    "status": "unchanged"
+  },
+  {
+    "repo": "anomalyco/opencode",
+    "status": "error",
+    "error": "Command '['git', 'ls-remote', '--exit-code', 'https://github.com/anomalyco/opencode.git', 'HEAD']' timed out after 60 seconds"
+  },
+  {
+    "repo": "deepseek-ai/deepseek-harness",
+    "reviewed_head": "ddefc45fbc7f8e46dd73185e68295696d1297887",
+    "remote_head": "ddefc45fbc7f8e46dd73185e68295696d1297887",
+    "status": "unchanged"
+  },
+  {
+    "repo": "earendil-works/pi",
+    "reviewed_head": "d1230ea2000d876b479a69b8b061f9d670f262f5",
+    "remote_head": "d1230ea2000d876b479a69b8b061f9d670f262f5",
+    "status": "unchanged"
+  },
+  {
+    "repo": "xai-org/grok-build",
+    "reviewed_head": "4247f661689354b831191f11eeeac8424993fe3d",
+    "remote_head": "4247f661689354b831191f11eeeac8424993fe3d",
+    "status": "unchanged"
+  },
+  {
+    "repo": "bojieli/ai-agent-book",
+    "reviewed_head": "4dc4429d56ff9c5d7cc7dcbc971cfcd6a618d674",
+    "remote_head": "4dc4429d56ff9c5d7cc7dcbc971cfcd6a618d674",
+    "status": "unchanged"
+  }
+]

@@ -1,0 +1,97 @@
+[
+  {
+    "file": "book-chapter1.md",
+    "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/4dc4429d56ff9c5d7cc7dcbc971cfcd6a618d674/book/chapter1.md",
+    "sha256": "3e3b2b15b7c600a0e310f1ac2cd6e5d7fe4ce31938a6efc9cc3f3d3b20cf4f91",
+    "local_modules": [
+      "01-Agent基础",
+      "02-Agent Loop",
+      "06-Agent Harness"
+    ],
+    "review_scope": "chapter identity and mapping checked; experiments not reproduced"
+  },
+  {
+    "file": "book-chapter2.md",
+    "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/4dc4429d56ff9c5d7cc7dcbc971cfcd6a618d674/book/chapter2.md",
+    "sha256": "c2d9605525e1e3257374b08802e6a2d3ad11b36728f5a3722ea7bd28acbb3cc6",
+    "local_modules": [
+      "03-Context Engineering",
+      "07-Skills与Protocols"
+    ],
+    "review_scope": "chapter identity and mapping checked; experiments not reproduced"
+  },
+  {
+    "file": "book-chapter3.md",
+    "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/4dc4429d56ff9c5d7cc7dcbc971cfcd6a618d674/book/chapter3.md",
+    "sha256": "aef4bd529d906b7cd1fa32ab25e55ef88254a9220d769bebead423b1c754d6bc",
+    "local_modules": [
+      "05-Knowledge与Memory"
+    ],
+    "review_scope": "chapter identity and mapping checked; experiments not reproduced"
+  },
+  {
+    "file": "book-chapter4.md",
+    "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/4dc4429d56ff9c5d7cc7dcbc971cfcd6a618d674/book/chapter4.md",
+    "sha256": "2b08715724e111bfae237e4b1660070ee844ccb3e5ed9f54b92e8d0ab4f30394",
+    "local_modules": [
+      "04-Tools与Runtime"
+    ],
+    "review_scope": "chapter identity and mapping checked; experiments not reproduced"
+  },
+  {
+    "file": "book-chapter5.md",
+    "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/4dc4429d56ff9c5d7cc7dcbc971cfcd6a618d674/book/chapter5.md",
+    "sha256": "f6153570ccd5dd763a4f1cfbb01bcc8eb3d6012738ec5645db720d733f86019f",
+    "local_modules": [
+      "06-Agent Harness",
+      "99-现代Agent架构与源码研究"
+    ],
+    "review_scope": "chapter identity and mapping checked; experiments not reproduced"
+  },
+  {
+    "file": "book-chapter6.md",
+    "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/4dc4429d56ff9c5d7cc7dcbc971cfcd6a618d674/book/chapter6.md",
+    "sha256": "952cd29bcd63e6bcf599a240b34487f852e55154f7ec21af65af06042558f1e6",
+    "local_modules": [
+      "04-Tools与Runtime/02-Browser Runtime",
+      "12-Production Agent"
+    ],
+    "review_scope": "chapter identity and mapping checked; experiments not reproduced"
+  },
+  {
+    "file": "book-chapter7.md",
+    "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/4dc4429d56ff9c5d7cc7dcbc971cfcd6a618d674/book/chapter7.md",
+    "sha256": "30bbc29c9826d0223bd9d10393378f3f01970d9af88b9f9d2115dfaca54218e8",
+    "local_modules": [
+      "08-Evaluation Observability Safety"
+    ],
+    "review_scope": "chapter identity and mapping checked; experiments not reproduced"
+  },
+  {
+    "file": "book-chapter8.md",
+    "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/4dc4429d56ff9c5d7cc7dcbc971cfcd6a618d674/book/chapter8.md",
+    "sha256": "000ee0097f74a53fdb4d6a2950b21cc5848a16e7d7501dce1ee7ad19bc366af7",
+    "local_modules": [
+      "11-Model Post-training"
+    ],
+    "review_scope": "chapter identity and mapping checked; experiments not reproduced"
+  },
+  {
+    "file": "book-chapter9.md",
+    "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/4dc4429d56ff9c5d7cc7dcbc971cfcd6a618d674/book/chapter9.md",
+    "sha256": "855e8b9af9cb72f891452542825fa5e2886e763af0429c715fc7d3a7f5a6592d",
+    "local_modules": [
+      "09-Agent Evolution"
+    ],
+    "review_scope": "chapter identity and mapping checked; experiments not reproduced"
+  },
+  {
+    "file": "book-chapter10.md",
+    "url": "https://raw.githubusercontent.com/bojieli/ai-agent-book/4dc4429d56ff9c5d7cc7dcbc971cfcd6a618d674/book/chapter10.md",
+    "sha256": "9d3ae92955cc8ca5fd8ed7e5e9f1bdb6ad6c6cf7aa3ea77cfee7931badaafd15",
+    "local_modules": [
+      "10-Multi-Agent"
+    ],
+    "review_scope": "chapter identity and mapping checked; experiments not reproduced"
+  }
+]

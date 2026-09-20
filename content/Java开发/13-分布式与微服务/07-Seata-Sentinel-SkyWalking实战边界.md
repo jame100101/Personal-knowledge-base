@@ -16,7 +16,9 @@
 
 AT 通过数据源代理、undo log 和全局锁协调关系数据库；TCC 要求业务实现 Try/Confirm/Cancel；Saga 用一系列本地事务与补偿处理长流程；XA 依赖数据库 XA 能力。
 
-**这里容易混淆的是：** 任何模式都需处理空回滚、悬挂、幂等、补偿失败和协调器可用性。
+**这里容易混淆的是：** 这些模式不是同一种补偿协议。AT 重点看本地事务、undo log 与全局锁；XA 看资源管理器的分支事务；Saga 看每一步业务补偿；TCC 则由业务实现 Try、Confirm、Cancel。空回滚和悬挂尤其是 TCC 设计中的典型问题，不应不加区分地套在全部模式上。
+
+举例说，Cancel 到达时 Try 尚未完成，就要避免随后到达的 Try 又把资源预留起来；重复 Confirm 或 Cancel 也不应重复变更余额。这就是 TCC 为什么需要幂等、空回滚和防悬挂处理。不同模式都要考虑失败恢复，但恢复依据与责任人不同。参见 [Seata TCC](https://seata.apache.org/docs/user/mode/tcc/)。
 
 ### 2. Sentinel 流量治理
 

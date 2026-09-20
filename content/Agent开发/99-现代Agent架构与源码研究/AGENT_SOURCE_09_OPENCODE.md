@@ -8,6 +8,14 @@ OpenCode 不只包含终端界面，界面背后还有会话服务、工具、�
 > - `source_type`: `official-repository + source-audit`
 > - `stability`: `fast-moving`
 
+## 2026-09-20 增量核对：现在从哪里读
+
+本轮证据固定在 [`ebb7b76eca82`](https://github.com/anomalyco/opencode/tree/ebb7b76eca82342642c78645109e865614533827)，入口为 [`packages/opencode/src/session/processor.ts`](https://github.com/anomalyco/opencode/blob/ebb7b76eca82342642c78645109e865614533827/packages/opencode/src/session/processor.ts)。下文旧快照与旧核验日期保留；本节不是对全部历史结论的重新背书。
+
+本轮 `session/processor.ts` 已明显使用 Effect：接口返回 `Effect.Effect`，并引入 `Scope`、`Layer`、`Deferred` 和核心数据库/会话类型。旧材料中如果只把它描述成普通异步函数串联，会遗漏当前的资源与依赖组织方式。
+
+可以先把 Effect 理解为“描述一段可能失败、需要依赖、需要清理资源的工作”，再追踪它在哪里被运行。Processor 的结果仍区分 `compact`、`stop` 和 `continue`：压缩后继续、真正停止和正常继续是不同控制结果。这里确认类型和源码入口，不推断任何未阅读的数据库事务与取消路径已经完全可靠。
+
 ## 1. 项目定位
 
 - 官方仓库：[anomalyco/opencode](https://github.com/anomalyco/opencode)

@@ -512,4 +512,4 @@ async function runAgent(
 ### 延伸阅读
 
 - [OpenAI Agents SDK：Running agents](https://openai.github.io/openai-agents-python/running_agents/)
-- [AI Agent 开发教程：一次模型请求中的上下文组成](https://bojieli.github.io/ai-agent-book/book/chapter1/)
+- [AI Agent 开发教程：一次模型请求中的上下文组成](https://bojieli.github.io/ai-agent-book/book/chapter2/)

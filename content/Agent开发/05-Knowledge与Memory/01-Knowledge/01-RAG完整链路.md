@@ -134,4 +134,4 @@ flowchart LR
 
 Agentic RAG 允许模型决定是否检索、改写查询、选择数据源并进行多跳检索。它提高开放问题的适应性，也引入查询漂移、循环检索和成本膨胀。运行时应限制检索轮次、每轮候选数、允许的数据源、总 token，并让模型在最终回答中说明证据缺口。
 
-参考：[原始 RAG 论文](https://arxiv.org/abs/2005.11401)与 [AI Agent 教程的上下文工程章节](https://bojieli.github.io/ai-agent-book/book/chapter1/)。
+参考：[原始 RAG 论文](https://arxiv.org/abs/2005.11401)与 [AI Agents in Depth：用户记忆和知识库](https://bojieli.github.io/ai-agent-book/book/chapter3/)。

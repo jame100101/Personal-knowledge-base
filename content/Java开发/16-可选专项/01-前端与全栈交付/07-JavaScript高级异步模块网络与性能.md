@@ -27,7 +27,9 @@ ES Modules 使用静态 import/export，模块默认严格模式并具有单例�
 
 ### 3. Fetch、取消与错误
 
-fetch 只有网络级失败才 reject，HTTP 404/500 仍返回 Response，必须检查 `ok/status`。AbortController 可取消过期请求；响应体是流且通常只能消费一次。
+`fetch` 收到了响应，不等于业务请求成功。HTTP 404/500 通常仍会兑现为 `Response`，需要检查 `ok` 或 `status`。网络故障、请求取消，以及某些无效地址、选项或权限限制则可能让 Promise 拒绝；读取响应体时也可能另行失败。
+
+实际界面可以分两层处理：先判断有没有拿到可用的 HTTP 响应，再判断返回的数据是否满足业务要求。用 `AbortController` 取消过期搜索请求时，将取消与真正的服务故障区分展示。响应体是流，读完后再调用另一个读取方法通常会出错；确需两份时，在消费前考虑 `clone()` 及其缓冲成本。参见 [MDN fetch](https://developer.mozilla.org/en-US/docs/Web/API/Window/fetch)。
 
 **这里容易混淆的是：** 取消客户端等待不保证服务端业务回滚；写请求仍需幂等和状态查询。
 

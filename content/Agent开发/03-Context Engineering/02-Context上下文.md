@@ -100,4 +100,4 @@ flowchart LR
 
 长上下文仍可能产生“中间信息被忽略”、旧信息干扰和成本升高，因此“能放下”不代表“应该全部放入”。Context Builder 应记录每段内容的来源、token、选择理由与截断状态。
 
-参考：[AI Agent 教程：上下文工程](https://bojieli.github.io/ai-agent-book/book/chapter1/)。
+参考：[AI Agent 教程：上下文工程](https://bojieli.github.io/ai-agent-book/book/chapter2/)。

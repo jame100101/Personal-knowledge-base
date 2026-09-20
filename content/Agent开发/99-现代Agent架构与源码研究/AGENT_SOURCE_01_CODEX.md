@@ -14,6 +14,14 @@
 > 快照日期：2026-07-25
 > 定位：面向真实代码库的交互式 coding-agent harness，而不是单一的模型 SDK。
 
+## 2026-09-20 增量核对：现在从哪里读
+
+本轮证据固定在 [`551844b3efc4`](https://github.com/openai/codex/tree/551844b3efc426c563128b0e011e36dad95a865b)，入口为 [`codex-rs/core/src/session/turn.rs`](https://github.com/openai/codex/blob/551844b3efc426c563128b0e011e36dad95a865b/codex-rs/core/src/session/turn.rs)。下文旧快照与旧核验日期保留；本节不是对全部历史结论的重新背书。
+
+这次最直接的变化是源码入口：历史章节引用的 `codex-rs/core/src/codex.rs` 已不在本次树中。现在应从 `session/session.rs` 看会话所有者，从 `session/turn.rs` 的 `run_turn` 看一次任务执行。旧链接固定在旧 commit 上仍有研究价值，但不要去新 checkout 里照着旧路径找文件。
+
+“会话”保存跨轮次状态，“一轮执行”处理这次输入。当前 `turn.rs` 还能找到 `build_skills_and_plugins`、`run_pre_sampling_compact` 与 `build_prompt` 等入口。学习时沿着输入如何形成请求去读，再追踪工具结果怎样进入下一轮；仅看到某个函数名，不足以证明所有调用路径都经过它。本次核对了这两个源码入口，尚未重新运行整套 Codex 测试。
+
 ## 2026-08-24 HEAD 新鲜度审计
 
 远端 HEAD 已推进到 [`77b30a2`](https://github.com/openai/codex/tree/77b30a21e17d6ec6317f712ab6d044cb1bd152e7)。本轮重新检查了 `codex-rs/core`、`core-skills`、`ext/memories`、`app-server` 与 protocol 目录：本文的 session/turn、tool runtime、skills、memory、compaction、sandbox 与 app-server 分层仍有对应实现；当前 core 还可见独立 `guardian`、`context_manager`、`plugins` 与 `realtime_conversation` 模块。正文中的逐文件链接继续固定在 `4c434651...`，用于保证行级证据可复现；HEAD 只作为结构存续与变更提醒，不用它悄悄替换旧快照的具体默认值。

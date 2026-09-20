@@ -10,6 +10,25 @@
 
 这条路线把 **模型能力**、**Agent 控制循环**、**Context Engineering**、**Tool Runtime** 与 **Harness 工程**分层学习。它不把“调用一次大模型”当成 Agent，也不把 RAG、长期记忆、计划器或 Multi-Agent 当作所有系统的默认组件。
 
+## 与 AI Agents in Depth 2.0 怎样一起读
+
+本次章节映射固定在[原书提交 4dc4429d56ff](https://github.com/bojieli/ai-agent-book/tree/4dc4429d56ff9c5d7cc7dcbc971cfcd6a618d674)，核对日期为 2026-09-20。原书和本站的编号不是同一套目录；按主题对应，不要拿本站的“08”去猜书里的第八章。
+
+| 原书章节 | 本站对应模块 | 阅读时带着的问题 |
+|---|---|---|
+| [1：Agent 基础](https://bojieli.github.io/ai-agent-book/book/chapter1/) | Agent 基础、Loop、Harness | 下一步是谁决定的，何时结束？ |
+| [2：上下文工程](https://bojieli.github.io/ai-agent-book/book/chapter2/) | Context Engineering、Skills | 这一轮到底把哪些材料交给了模型？ |
+| [3：用户记忆和知识库](https://bojieli.github.io/ai-agent-book/book/chapter3/) | Knowledge 与 Memory | 要保存的是用户偏好，还是可引用的资料？ |
+| [4：工具](https://bojieli.github.io/ai-agent-book/book/chapter4/) | Tools 与 Runtime | 请求怎样变成实际动作，错误怎样返回？ |
+| [5：Coding Agent 与通用 Agent](https://bojieli.github.io/ai-agent-book/book/chapter5/) | Harness、现代 Agent 源码研究 | 修改如何落盘，结果如何验收？ |
+| [6：交互](https://bojieli.github.io/ai-agent-book/book/chapter6/) | Browser Runtime、Production Agent | 外部事件到来时，正在执行的任务怎么办？ |
+| [7：评估](https://bojieli.github.io/ai-agent-book/book/chapter7/) | Evaluation Observability Safety | 什么证据说明任务真的完成了？ |
+| [8：模型后训练](https://bojieli.github.io/ai-agent-book/book/chapter8/) | Model Post-training | 改的是模型参数，还是外围程序？ |
+| [9：持续进化](https://bojieli.github.io/ai-agent-book/book/chapter9/) | Agent Evolution | 改动怎样经过评测，再发布或回滚？ |
+| [10：多 Agent 协作](https://bojieli.github.io/ai-agent-book/book/chapter10/) | Multi-Agent | 分工的收益是否超过通信与重复工作的成本？ |
+
+同步上游不是整本复制，也不是照搬所有结论。本站保留工程主题结构，修正旧链接，并补充与已有知识连接的说明。书中示例涉及的特定模型、价格、实验分数仍需按原实验条件阅读；章节映射完成不代表 109 个配套实验都已复现。
+
 ## 1. 两个工程心智模型
 
 - 实现视角：`Agent = Model + Context + Tools`。模型基于本轮上下文产生决定，工具把决定连接到外部世界。

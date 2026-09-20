@@ -1,0 +1,2495 @@
+{
+  "scope": "inventory only; not a correctness certificate",
+  "documents": 243,
+  "areas": {
+    "Agent开发": 91,
+    "Java开发": 127,
+    "语言基础": 25
+  },
+  "items": [
+    {
+      "path": "content/Agent开发/00-Agent开发学习路线.md",
+      "sha256": "4a8ef3c0c0c872f358cbc60ebf5f675e588786625f2c76eea8c767e674d18e6c",
+      "characters": 4496,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "targeted claims and explanatory revision; not a full executable proof"
+    },
+    {
+      "path": "content/Agent开发/01-Agent基础/000-Agent基础推荐阅读.md",
+      "sha256": "ae9f348df22e2c4f050c17fc96596503558562ef2163ff9049d59c13b7e6032a",
+      "characters": 4489,
+      "last_verified": null,
+      "review_flags": [
+        "example-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/01-Agent基础/01-Agent类型区分.md",
+      "sha256": "0a5151b9327fa7593bcd8217d13bef0ac887ac369e864b63d030bc511ec9c965",
+      "characters": 4305,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/01-Agent基础/02-Agent基本循环.md",
+      "sha256": "2a7ff5789f2a10f4c86cb601d4834593404054a1ad60e0e39ed2684433f8cfdf",
+      "characters": 15174,
+      "last_verified": null,
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "targeted claims and explanatory revision; not a full executable proof"
+    },
+    {
+      "path": "content/Agent开发/01-Agent基础/03-Agent适用范围.md",
+      "sha256": "94c02c2731f47ecd4cf301525c39ec2f362dcaa24e3274c6afc86e49ca27a06d",
+      "characters": 3195,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review"
+      ],
+      "semantic_review": "targeted claims and explanatory revision; not a full executable proof"
+    },
+    {
+      "path": "content/Agent开发/01-Agent基础/04-SWE Agent基础概念与ACI.md",
+      "sha256": "58ea48d6b7193ca3c19efe0cd91960f1b8ec69c51ddc26ca77d5525469850277",
+      "characters": 11414,
+      "last_verified": null,
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/01-Agent基础/05-统一工程模型与概念边界.md",
+      "sha256": "ae1370a8dbb926bb5db8759a0d3c2f0e26d5aabf7f23755659d53ca448a1171c",
+      "characters": 2413,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "example-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/02-Agent Loop/000-Agent Loop推荐阅读.md",
+      "sha256": "71b7f726541c3170e56dff2a52be29a9083fc7d0c7903f01ce5b12251b4eaeb5",
+      "characters": 748,
+      "last_verified": null,
+      "review_flags": [
+        "example-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/02-Agent Loop/01-最小Agent Loop实现.md",
+      "sha256": "e8b6880928424d82db727deb96e6469a1ddf0523a3bd05e72076d67d438e9f0b",
+      "characters": 8538,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/02-Agent Loop/02-结构化输出与状态机.md",
+      "sha256": "a932d698431f2d8081b9f9e539a74527f6f43ab467b864567e457079ff2f2031",
+      "characters": 2459,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/02-Agent Loop/03-终止超时与错误处理.md",
+      "sha256": "2f89f672c5bbf354b47d713ca68e3e1ee4bb13e088f77700ab410779ffd5621c",
+      "characters": 2343,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/02-Agent Loop/04-任务拆分与Plan表示.md",
+      "sha256": "a723eb80407080c169c7d44c1e7496d26292048c899291c3c64a8c7c21517ea7",
+      "characters": 23348,
+      "last_verified": null,
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/02-Agent Loop/05-Task Scheduler依赖并发与重规划.md",
+      "sha256": "cec0559038b06b9b739252105f6980ffd9799f708246a9fd233b4a1a13a9e544",
+      "characters": 23465,
+      "last_verified": null,
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/02-Agent Loop/06-Workflow流程控制模式.md",
+      "sha256": "697d04454d6ff0052c7b0500e880b65c899a4678f426e577d8f99eb585162c05",
+      "characters": 26132,
+      "last_verified": null,
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/02-Agent Loop/07-Output Parser与结构化响应.md",
+      "sha256": "4de75c41ea692198cff6b861cad674e9619cdfab093ed12fbe3cce228fdce86d",
+      "characters": 34221,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/02-Agent Loop/08-Loop分层与机制选择.md",
+      "sha256": "eaf9e0d550043df173bce72ca87da8b9f9a90f991b805188b1d1e2f3281dd232",
+      "characters": 3175,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/03-Context Engineering/01-Context Engineering总览.md",
+      "sha256": "604136fa0d5d3bf73e1c52dd598281e091d92230e88d836ebbba79689f533c56",
+      "characters": 1679,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "example-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/03-Context Engineering/02-Context上下文.md",
+      "sha256": "b9df1bbca028b730d8647a9bcc02f33eb873b5b22f7a52cc00e3bbdb7eae0130",
+      "characters": 1908,
+      "last_verified": null,
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "targeted claims and explanatory revision; not a full executable proof"
+    },
+    {
+      "path": "content/Agent开发/03-Context Engineering/03-Context Builder与Prompt Assembly.md",
+      "sha256": "adc757c197753ff92c79e3e5c3bd0dfec69d1e09a19d8766baf5dba7d62f6bd4",
+      "characters": 11448,
+      "last_verified": null,
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "targeted claims and explanatory revision; not a full executable proof"
+    },
+    {
+      "path": "content/Agent开发/03-Context Engineering/04-Context Manifest与Assembly.md",
+      "sha256": "58d55724c33d3833df730a260ef06d1c26b8a2982322337c3890457ddd83963d",
+      "characters": 1441,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "definition-needs-reader-review",
+        "example-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/03-Context Engineering/05-Token Budget Compaction Prompt Cache与History.md",
+      "sha256": "1c9502dc5caeb72ff09a4cfd6cfcb04780093a2cf510be4eaf7244efd6d5a2f4",
+      "characters": 1888,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "targeted claims and explanatory revision; not a full executable proof"
+    },
+    {
+      "path": "content/Agent开发/03-Context Engineering/06-JIT Retrieval与Progressive Disclosure.md",
+      "sha256": "975beacafd999d5fb2d765cc493b1633cbc6d27d4d344c5e5d74a501531b99a3",
+      "characters": 873,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "definition-needs-reader-review",
+        "example-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/03-Context Engineering/07-Context Trust与Prompt Injection边界.md",
+      "sha256": "87c41155583909c977f6fe92dd8f24acccf620fcbcb1658ade36e7c90457d5e6",
+      "characters": 1229,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "definition-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/00-Tool与Runtime边界.md",
+      "sha256": "d30945eaa740dfdcc993268b53084b46c442e20c9eba2b17691f15e173e00f08",
+      "characters": 1728,
+      "last_verified": "2026-08-24",
+      "review_flags": [],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/000-Tools Call推荐阅读.md",
+      "sha256": "3d2074a0231252f912b57850e5dc4ce64b38fd6e96890225da114b135421b276",
+      "characters": 1275,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review",
+        "example-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/01-工具调用完整链路.md",
+      "sha256": "eb1cf1277a38ea03d2e482d4c5d337fc2f4b8784d21738f05aa8c65a624c4200",
+      "characters": 4203,
+      "last_verified": null,
+      "review_flags": [],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/02-Browser Runtime/000-Browser Agent推荐阅读.md",
+      "sha256": "172dfd2c157af7051acabb5e2af41deb22d8d7308432dd845f142dbff49861ab",
+      "characters": 707,
+      "last_verified": null,
+      "review_flags": [
+        "example-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/02-Browser Runtime/01-Browser Agent观察动作循环.md",
+      "sha256": "277179be3f82a9c17c739e5584084a6a69ea338a2e1de8a317e4917cfe324fa4",
+      "characters": 997,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review",
+        "example-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/02-Browser Runtime/02-Playwright可靠操作与失败恢复.md",
+      "sha256": "3544c528a93ab061cd8b4654abd200bb030bdcee83fd3ff5d1e0e5c789eec4de",
+      "characters": 2088,
+      "last_verified": null,
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/02-Browser Runtime/03-截图DOM动作日志与评测.md",
+      "sha256": "99c858640641291ec0a2b6448112a939230e048d8a04bf88ad4006906da35c32",
+      "characters": 1236,
+      "last_verified": null,
+      "review_flags": [
+        "example-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/02-工具Schema权限与幂等.md",
+      "sha256": "379dba46594acb968977ad5706e5ee3b26bc697d5ca15b6d5d6fd0d9515e9ce8",
+      "characters": 2209,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review",
+        "example-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "targeted claims and explanatory revision; not a full executable proof"
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/03-工具失败空结果与证据.md",
+      "sha256": "498daa73cc95c00d98e0a14d09b70fbe45eef2ca14bf96998820ed60828cf6ea",
+      "characters": 3564,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/04-Terminal执行与进程生命周期.md",
+      "sha256": "f52f058498d44aca911cf9fc96bd8f276e05e3c5057544076890dbed3e4bf460",
+      "characters": 9445,
+      "last_verified": null,
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/05-Terminal输出流读取与结果归一化.md",
+      "sha256": "6798aade69e0e7b73d208a02928f1c23b234a5677dcfcf6b7c34958ab99f9039",
+      "characters": 9399,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/06-File IO读取写入补丁与原子更新.md",
+      "sha256": "17e116b8b1901374e5d18f1871c1b12564619d2ac389a02b53d68d02e3044c53",
+      "characters": 11502,
+      "last_verified": null,
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/05-Knowledge与Memory/00-Knowledge与Memory边界.md",
+      "sha256": "7a2d0e5aebaa2dc570d6f90c532037e1e41383491108f195d93440b1766c18d7",
+      "characters": 1421,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "definition-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/05-Knowledge与Memory/01-Knowledge/000-RAG推荐阅读.md",
+      "sha256": "dba75e1b1e15c408192acc092bffc510130ab7d57b494958a5ba3dfd03c34e89",
+      "characters": 781,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review",
+        "example-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/05-Knowledge与Memory/01-Knowledge/01-RAG完整链路.md",
+      "sha256": "6b9338a13356ceb44fc5b491d2396336d77654e1c78463e9e1f6f9e0329f0ea5",
+      "characters": 3078,
+      "last_verified": null,
+      "review_flags": [],
+      "semantic_review": "targeted claims and explanatory revision; not a full executable proof"
+    },
+    {
+      "path": "content/Agent开发/05-Knowledge与Memory/01-Knowledge/02-Chunk Embed Retrieve Rerank.md",
+      "sha256": "21a903f004faa75081aa2194b45bfe0e54c4661e20f168844ee65a461969ae93",
+      "characters": 2121,
+      "last_verified": null,
+      "review_flags": [
+        "example-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/05-Knowledge与Memory/01-Knowledge/03-引用Grounded Answer与失败处理.md",
+      "sha256": "fcf7ee649aaf0c91573a9245151b3cb4ccc4ea6ae9b481960a97542cb96acd68",
+      "characters": 2018,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review",
+        "example-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/05-Knowledge与Memory/02-Memory/000-Memory推荐阅读.md",
+      "sha256": "de50c1c7504d7cf3108badc852f0ee0d265e619f69d2ded05222bc8b4d5838e9",
+      "characters": 628,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review",
+        "example-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/05-Knowledge与Memory/02-Memory/02-Short-term Memory短期记忆.md",
+      "sha256": "219fbc9aa6ee0fd383e796353ab2ce040ae2fef36f53f83e774d83529a8d616d",
+      "characters": 2907,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/05-Knowledge与Memory/02-Memory/03-Long-term Memory长期记忆.md",
+      "sha256": "e483b7ae1ee8d0832b7a49f926b3b3e06eb1abc40433a2ccfd8535c1251fa41e",
+      "characters": 3863,
+      "last_verified": null,
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/05-Knowledge与Memory/02-Memory/04-记忆写入检索更新与遗忘.md",
+      "sha256": "30500857b1b9f247be5b8ac4a638cb1433dc7503fcea2baec7394b68f2b99995",
+      "characters": 1714,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review",
+        "example-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/06-Agent Harness/000-Agent Harness推荐阅读.md",
+      "sha256": "92c2ec0e633685aaa3b713add5c4fd3a325c2c0e07f78a10f1296a9a8bb29909",
+      "characters": 938,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review",
+        "example-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/06-Agent Harness/01-Agent Harness架构.md",
+      "sha256": "a8b8212b6d6af9b5f92be1e9f140e6d604904f66c32b7ba07f0e6502e280939a",
+      "characters": 2571,
+      "last_verified": null,
+      "review_flags": [
+        "example-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/06-Agent Harness/02-Registry Permission Session与Compaction.md",
+      "sha256": "e3582b018649424492edf52d456f3ea014c4ff5dbc8869a1427de6c5f48db09e",
+      "characters": 1450,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review",
+        "example-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "targeted claims and explanatory revision; not a full executable proof"
+    },
+    {
+      "path": "content/Agent开发/06-Agent Harness/03-Trace调试恢复与验证.md",
+      "sha256": "3e6f1b4375ac929f82d75601e2123eafcb25ec55ed3a56e73f6dbcda9214b552",
+      "characters": 2764,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/06-Agent Harness/05-Executor执行器与事件运行时.md",
+      "sha256": "6255be4d71d20e1262f6cd1ed96bab53fa7eedd4da8e833e35a2b6a98bbf408b",
+      "characters": 15491,
+      "last_verified": null,
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/06-Agent Harness/06-Middleware Hooks与Callbacks.md",
+      "sha256": "a18ad861d5fa6cb7e2d5930135d25f0e4f4fa03b3c75a78d02e0f9e305f02eae",
+      "characters": 12073,
+      "last_verified": null,
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/07-Skills与Protocols/000-Skills与协议推荐阅读.md",
+      "sha256": "0190f28e22a1dc47abd243e04a21e39f81de145de6326dc8b56704a02cb70399",
+      "characters": 816,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review",
+        "example-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/07-Skills与Protocols/01-Skill Tool Prompt与MCP边界.md",
+      "sha256": "7be33a6d01127655ad705f3e8d54f0ae4a05ee6faa839ffb72338f2e061fee7b",
+      "characters": 1273,
+      "last_verified": null,
+      "review_flags": [],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/07-Skills与Protocols/02-SKILL设计渐进加载与Smoke Test.md",
+      "sha256": "118d89960e8a465e50f7269f5161faab5a45383ae56659cde84296cf5dc61ecc",
+      "characters": 1280,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/07-Skills与Protocols/03-MCP A2A与ACP.md",
+      "sha256": "e77ea20953d950eef0f583ca43b335dbe5aceef199f639c78f9b84a357d111b7",
+      "characters": 3444,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "targeted claims and explanatory revision; not a full executable proof"
+    },
+    {
+      "path": "content/Agent开发/08-Evaluation Observability Safety/000-评测与可观测性推荐阅读.md",
+      "sha256": "d8100540df2e9ab4d3af3366322e3b6f149b98223821ef32c901030f3c7ca96a",
+      "characters": 683,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review",
+        "example-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/08-Evaluation Observability Safety/01-Eval数据集指标与回归测试.md",
+      "sha256": "8b0bce878010fd22b2fc0aa6b76c2b42cf9ed6967fb6fb0f37fab0faa38ba8c5",
+      "characters": 2891,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review"
+      ],
+      "semantic_review": "targeted claims and explanatory revision; not a full executable proof"
+    },
+    {
+      "path": "content/Agent开发/08-Evaluation Observability Safety/02-Trace指标与故障定位.md",
+      "sha256": "e1d2731d5bdd632ff149de01cff4bd56ae58b659b01ec57bfc11de716a30ccf5",
+      "characters": 1162,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review",
+        "example-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/08-Evaluation Observability Safety/03-Prompt Injection权限与Human in the loop.md",
+      "sha256": "6f3d5824be9df2ac43f62ea8ab6b1dd09e5b9542299197c59fad82ca4845aa10",
+      "characters": 1111,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review",
+        "example-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/08-Evaluation Observability Safety/04-Agent Benchmark Map.md",
+      "sha256": "db409307db7a1cfe55e62c51726db5553b10210f6bead73a9c4144e474d1755e",
+      "characters": 1617,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "definition-needs-reader-review",
+        "example-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/08-Evaluation Observability Safety/05-Evaluation闭环与发布门.md",
+      "sha256": "07c4055902062f221e2e8f9e4ef759eaba78a666fcaf037a044e9c546c45bb5c",
+      "characters": 1234,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "example-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/09-Agent Evolution/01-Agent Evolution总览与受控闭环.md",
+      "sha256": "9ad55b4bdf07cbe97e0ebaf9427deee46023f69a36394c47e04bebe74d0be29c",
+      "characters": 1704,
+      "last_verified": "2026-08-24",
+      "review_flags": [],
+      "semantic_review": "targeted claims and explanatory revision; not a full executable proof"
+    },
+    {
+      "path": "content/Agent开发/09-Agent Evolution/02-Skill Workflow与Program Evolution.md",
+      "sha256": "1e1a975d030518cf2df4adb411046ff6699282ac95c99ecef8c406dd4d7c180a",
+      "characters": 999,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "example-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/09-Agent Evolution/03-Evolution评测版本沙箱与回滚.md",
+      "sha256": "08a47970913028c276c8534a9ae8e107cb64264541c509b5eba9dc939b0c97fd",
+      "characters": 1367,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "definition-needs-reader-review"
+      ],
+      "semantic_review": "targeted claims and explanatory revision; not a full executable proof"
+    },
+    {
+      "path": "content/Agent开发/10-Multi-Agent/000-多Agent推荐阅读.md",
+      "sha256": "00b9ce8099e0fa2a4f6a2d06137b0fb5939769035ba76067c597999a59a69a52",
+      "characters": 1153,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review",
+        "example-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/10-Multi-Agent/01-角色职责与输入输出边界.md",
+      "sha256": "304a189498eca8c8271af9fa50f93dfbc0e9fb46c4f00e47359521591ac53b1e",
+      "characters": 3791,
+      "last_verified": null,
+      "review_flags": [],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/10-Multi-Agent/02-Supervisor Graph与停止条件.md",
+      "sha256": "49581fbda275705a0e7c97be5448f6813470ef95f2e149b21aa17a4c17f328b8",
+      "characters": 1121,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/10-Multi-Agent/03-故障模式与单Agent判断.md",
+      "sha256": "b335d6489e6ae4311b2a833aa679eec6357e6eb15ff34e546c1194bdc6b61bc1",
+      "characters": 1113,
+      "last_verified": null,
+      "review_flags": [
+        "example-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/11-Model Post-training/01-Model Post-training导学.md",
+      "sha256": "df67822800de7b07c2b886e6717f5c7eaa7304d574161332386c7dd67f4c144e",
+      "characters": 1486,
+      "last_verified": "2026-08-24",
+      "review_flags": [],
+      "semantic_review": "targeted claims and explanatory revision; not a full executable proof"
+    },
+    {
+      "path": "content/Agent开发/11-Model Post-training/02-Trajectory Reward与Agentic RL.md",
+      "sha256": "01276da28cf5b6418f3a9018e7d4519f3b1c929308326e1ded5d70e8ba2c7160",
+      "characters": 1447,
+      "last_verified": "2026-08-24",
+      "review_flags": [],
+      "semantic_review": "targeted claims and explanatory revision; not a full executable proof"
+    },
+    {
+      "path": "content/Agent开发/12-Production Agent/000-生产交付推荐阅读.md",
+      "sha256": "c273de1de35eb58bf4362709f589e44395bb3fb366eb4272b8ff9c3fc2d381c7",
+      "characters": 861,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review",
+        "example-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/12-Production Agent/01-用户任务与成功标准.md",
+      "sha256": "6745a54ee37515a48faee0273a8b91f0ea1b80dfa4444abf6393097ceea8c16b",
+      "characters": 1146,
+      "last_verified": null,
+      "review_flags": [
+        "example-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/12-Production Agent/02-重试超时预算部署与运维.md",
+      "sha256": "289ace644a38096af35d2952053f57bb8cd4b449ba898b74b3a9e9882f3b50bf",
+      "characters": 2259,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "targeted claims and explanatory revision; not a full executable proof"
+    },
+    {
+      "path": "content/Agent开发/12-Production Agent/03-README运行手册与交付检查表.md",
+      "sha256": "9fcaba36bd4ed6d4440c6eff72192d0297eb3e51fc03b5efc4e1e1a1830c47ff",
+      "characters": 1012,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review",
+        "example-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/13-Project Ladder/000-项目阶梯推荐阅读.md",
+      "sha256": "f5e7a969260742924de438a9f04cd4126ce127a1a184a3976ce12fe427521b85",
+      "characters": 772,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/13-Project Ladder/01-P0到P7 Agent工程项目阶梯.md",
+      "sha256": "3821820f2e6d8f7794507768349c73ae309e9a389fcf9a1686ef9e6deacb1f9c",
+      "characters": 1838,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "definition-needs-reader-review",
+        "example-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/14-完整Agent链路与架构对照/000-完整链路与框架推荐阅读.md",
+      "sha256": "7b119d8bbc01b428de6527ceb20921aef8f95b9ab69627b59fa5f0ab741d05f9",
+      "characters": 2191,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review",
+        "example-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/14-完整Agent链路与架构对照/01-端到端Agent完整链路.md",
+      "sha256": "8d94702a6196445c70af9db5d826f112dfee580a362e09fa4e18cedbc7cc246f",
+      "characters": 10823,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/14-完整Agent链路与架构对照/02-权威Agent路线横向对照.md",
+      "sha256": "e17b68a705b30b5ed8570cb26c871bf3c819cb0e844a09195900ef4d58f10736",
+      "characters": 10958,
+      "last_verified": null,
+      "review_flags": [
+        "example-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/00-统一研究模板与证据等级.md",
+      "sha256": "5dcf9e9988b15c463921aaaae67ef631df6efa60078dc50f61e7e2f93efab3e4",
+      "characters": 635,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "definition-needs-reader-review",
+        "example-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/000-Coding Agent研究阅读顺序.md",
+      "sha256": "6ec2d81bf08995b19bb92bc028bdc8457270d4fcdd44066de4ded2535cecc68c",
+      "characters": 2951,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "definition-needs-reader-review",
+        "example-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_01_CODEX.md",
+      "sha256": "d047ecc9808f5815366a3a0b94b06662870769ec543c1157a37a5ee1d4b649d2",
+      "characters": 30389,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "targeted claims and explanatory revision; not a full executable proof"
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_02_CLAUDE_CODE.md",
+      "sha256": "b51470520450e199ee5a6d50113a7b9f304cf69c6a55d2ec2b6071a9be5e1dc6",
+      "characters": 23200,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "targeted claims and explanatory revision; not a full executable proof"
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_04_HERMES_AGENT.md",
+      "sha256": "222584ff5346b53c5a7cd60fc5940b412253a3e7de22591a943a85fdf225ac7f",
+      "characters": 34383,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "targeted claims and explanatory revision; not a full executable proof"
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_05_OPENCLAW.md",
+      "sha256": "d54dc4073de1a2ea0fb30caad825ada3822bc34d3ede19fce627774e8f36302e",
+      "characters": 32439,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "targeted claims and explanatory revision; not a full executable proof"
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_06_COMPARISON.md",
+      "sha256": "4747d88bf08bbfc1ff9996ac865b0099f8878cc431924bf2d6764533aff7720e",
+      "characters": 15992,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "example-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_07_AIDER.md",
+      "sha256": "d37f792d562d4e246a4872596415a53f46c95bf02210af7785a47b4670dfbda5",
+      "characters": 7512,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "targeted claims and explanatory revision; not a full executable proof"
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_08_GOOSE.md",
+      "sha256": "cfcb191dbb0162b6a0f34a90589d3a697ecd308760621c093828ead26ac36135",
+      "characters": 10166,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "targeted claims and explanatory revision; not a full executable proof"
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_09_OPENCODE.md",
+      "sha256": "049ec3c08208bab7e8c8310761de40d4aab9c884e5efd0db0ba304ca7455d093",
+      "characters": 13500,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "targeted claims and explanatory revision; not a full executable proof"
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_10_DEEPSEEK_HARNESS_WEB.md",
+      "sha256": "86e6d03b96d6a2377118b669b19fa0c5d4cb1bd66b70c6b9f64b06a60c43043c",
+      "characters": 12241,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "targeted claims and explanatory revision; not a full executable proof"
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_11_PI_AGENT.md",
+      "sha256": "326adc24892c9e7592db659a9a150a5dd63aa947b1e54465248ddc2468078c7e",
+      "characters": 11886,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "targeted claims and explanatory revision; not a full executable proof"
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_12_GROK_BUILD.md",
+      "sha256": "1e3683d7933b2d24a0f7cd0bb3badbd5eeec4e3033acf7e1d72a3a0c482b2880",
+      "characters": 14514,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "targeted claims and explanatory revision; not a full executable proof"
+    },
+    {
+      "path": "content/Java开发/00-Java后端学习路线.md",
+      "sha256": "258588ccefa93f3b7ece470d4dd3bb84fc0a6415b38ed29f35715a622c55e8ec",
+      "characters": 1829,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "definition-needs-reader-review",
+        "example-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/000-Java基础推荐阅读.md",
+      "sha256": "5d4c72c93c9f04ff0374f4042ebff5d44f6560e25abe0113e2849cad542b15fc",
+      "characters": 844,
+      "last_verified": null,
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "targeted claims and explanatory revision; not a full executable proof"
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/01-Java开发入门.md",
+      "sha256": "39881b6a17a7c4b3437d022903c13c74e0abb654e20765073b22505d3fa97c8c",
+      "characters": 3988,
+      "last_verified": null,
+      "review_flags": [
+        "example-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "targeted claims and explanatory revision; not a full executable proof"
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/02-Java编程基础.md",
+      "sha256": "55078d713ebb2059ef8bf27e3e38c06d1029cac37c57adc578d20410bd05ae3c",
+      "characters": 3748,
+      "last_verified": null,
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/03-面向对象上.md",
+      "sha256": "cbbbf94b33271aeeddc7468b16dfe2f09f9409e78ca712698343dabf7eb82383",
+      "characters": 3280,
+      "last_verified": null,
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/04-面向对象下.md",
+      "sha256": "8a349143fbefc106b5a0715cd701ffc70972c5e326e27b3f8456679ca691cfa0",
+      "characters": 3957,
+      "last_verified": null,
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "targeted claims and explanatory revision; not a full executable proof"
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/05-异常处理.md",
+      "sha256": "083925782ceb462217fbea879749b04d83b4470fe83e1d7c7bacdfb99b5f462c",
+      "characters": 3211,
+      "last_verified": null,
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/06-Java核心API.md",
+      "sha256": "fb39711329dbe620dc2b580c7b98c3f5104cef40acc6467fb7f1b34f925114ed",
+      "characters": 4157,
+      "last_verified": null,
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/07-Java集合框架.md",
+      "sha256": "a7aaefc8f9687ec91b185e166fca70b45c3aa706a02fa161c44f9ee730e07a3f",
+      "characters": 4072,
+      "last_verified": null,
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/08-Java泛型.md",
+      "sha256": "f829941ba1d775c355286a866e883cfba97210c26e9a15a9b32ef9d961230aa8",
+      "characters": 2956,
+      "last_verified": null,
+      "review_flags": [],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/09-反射机制.md",
+      "sha256": "198e443f79da350de594b37831a4d509ced3468f2287a12a2f6ebd38fbc7a950",
+      "characters": 3426,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/10-IO与NIO.md",
+      "sha256": "5515d21fac4234bc64eb4d3f2464b7c0580a0ebd4c3f794f66b5036097fff374",
+      "characters": 3270,
+      "last_verified": null,
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/11-JDBC数据库访问.md",
+      "sha256": "fe50cb5ad4baf5742f1d27abddaf15ec6314fd01320a83c211a801392dababca",
+      "characters": 3619,
+      "last_verified": null,
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/14-泛型与集合框架综合.md",
+      "sha256": "2fcd9024d967564dbacafd4b7f0947f55c42f0004e00dcbf07e853720ec84961",
+      "characters": 2664,
+      "last_verified": null,
+      "review_flags": [],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/01-Version Baseline与Compatibility Matrix.md",
+      "sha256": "3f5fdcfff50a564ad76330b5fa8779844391cd620c985ee2675cc6d53711b831",
+      "characters": 3574,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "targeted claims and explanatory revision; not a full executable proof"
+    },
+    {
+      "path": "content/Java开发/02-JVM与并发/00-JVM与并发学习导图.md",
+      "sha256": "7d56ec7e46752922e9e345817d6a7b1c860358cdb2ee7077a5c38021ccd3ff7f",
+      "characters": 1146,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "example-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/02-JVM与并发/01-JVM内存类加载字节码与GC.md",
+      "sha256": "70cc6e66fd46ddc6e2c46a111373e37d767fd928bb6a046a30599ba9ba23fde3",
+      "characters": 1884,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/02-JVM与并发/02-Java并发与多线程.md",
+      "sha256": "a650af918aa980451bfcd3f983797a433539f20ea6691bca1b70a7b8be587965",
+      "characters": 4372,
+      "last_verified": null,
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/02-JVM与并发/03-JMM线程池锁原子类与CompletableFuture.md",
+      "sha256": "98e1d76fa0baaa754eaf51f2a54363a12b8b159fc8b2c0006000e1f9bca3fea0",
+      "characters": 1481,
+      "last_verified": "2026-08-24",
+      "review_flags": [],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/02-JVM与并发/04-Virtual Threads Scoped Values与Structured Concurrency.md",
+      "sha256": "7fb7720ea13b89ff18cf04056bcc47c4c1694c97495e2807ef243e59dd4c10a1",
+      "characters": 2220,
+      "last_verified": "2026-08-24",
+      "review_flags": [],
+      "semantic_review": "targeted claims and explanatory revision; not a full executable proof"
+    },
+    {
+      "path": "content/Java开发/03-工程基础与Internet-Linux/00-本阶段导学.md",
+      "sha256": "bfeab492f13ef4f8a68b9a2fe67b5fdb4772d3444d40bb8b46dfe6a9ea44e615",
+      "characters": 1833,
+      "last_verified": null,
+      "review_flags": [
+        "example-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/03-工程基础与Internet-Linux/000-Java 工程工具与 Linux推荐阅读.md",
+      "sha256": "969074d634c61f18277dbc1c96f40d09a3742ba0aeb403badbe27021e4af08c8",
+      "characters": 682,
+      "last_verified": null,
+      "review_flags": [
+        "example-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/03-工程基础与Internet-Linux/01-JDK-IDE-Maven与Gradle.md",
+      "sha256": "d0dc5478fb05950dc18dffaeb2ac747acfc29e8872bdac6b8a513f46ed55ebb4",
+      "characters": 3562,
+      "last_verified": null,
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "targeted claims and explanatory revision; not a full executable proof"
+    },
+    {
+      "path": "content/Java开发/03-工程基础与Internet-Linux/02-Git协作与版本治理.md",
+      "sha256": "bf01b8c7cdcf18780992b0e8515af8a3fdb4ac42b134cad042e783c1f6c7c83d",
+      "characters": 2163,
+      "last_verified": null,
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/03-工程基础与Internet-Linux/03-Linux-Shell与Docker.md",
+      "sha256": "f8893a06fe106fc5dc400d8811cda82cfcd858dc4742664b0aa70fa1590cc02e",
+      "characters": 2498,
+      "last_verified": null,
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/03-工程基础与Internet-Linux/04-Internet请求完整链路.md",
+      "sha256": "6725417eaa0c55d6fdb47ea77d0f4cf17f19b38a8a70e9be2b33aee4bf98a1e0",
+      "characters": 1417,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "example-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/03-工程基础与Internet-Linux/05-Java网络编程.md",
+      "sha256": "c49bde0f3f45c82e749db8697d06101c5b1ce28658803d32c5b32fd04f0c2535",
+      "characters": 3542,
+      "last_verified": null,
+      "review_flags": [],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/04-关系型数据库/00-本阶段导学.md",
+      "sha256": "fe61c42a02b90bf720e364b5bbb478aa401325a2f1438f0cd2507a32b8cb44ff",
+      "characters": 1815,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/04-关系型数据库/000-数据库、缓存与搜索推荐阅读.md",
+      "sha256": "ae6aaa1a23fcffd74cfbb43e2755ebde640b29550a7ea09cba0d2f4c4d90fccf",
+      "characters": 624,
+      "last_verified": null,
+      "review_flags": [
+        "example-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/04-关系型数据库/01-数据库原理与SQL.md",
+      "sha256": "d79843b9d6964e58105ccdebc1fa26e72412a4f0053f7306ce2949ff324dc28b",
+      "characters": 2675,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/04-关系型数据库/02-MySQL-InnoDB索引事务与调优.md",
+      "sha256": "5b2c6da7b0701e9d1c83022711b866b92b6b4995298a399151074e089052526d",
+      "characters": 2775,
+      "last_verified": null,
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/04-关系型数据库/03-PostgreSQL基础.md",
+      "sha256": "f9303ec0a202cd3e0ccacf2c869f5898db270fb243a515647212f75e06c82d4a",
+      "characters": 1686,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "targeted claims and explanatory revision; not a full executable proof"
+    },
+    {
+      "path": "content/Java开发/05-Spring Framework/00-本阶段导学.md",
+      "sha256": "86337b6f00cc00b4994a00414775831e31d5405aa97e30c426b90c279a590886",
+      "characters": 1647,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/05-Spring Framework/000-Spring Framework推荐阅读.md",
+      "sha256": "4c7bfedacd76a299a15e2aedf966a27343474bbed1916476363751986cb95af0",
+      "characters": 661,
+      "last_verified": null,
+      "review_flags": [
+        "example-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/05-Spring Framework/01-IoC依赖注入与Bean生命周期.md",
+      "sha256": "ec58ce773da892932d029ff52bac7ce287bdecbba24a9681fd3519d11dcd5895",
+      "characters": 3133,
+      "last_verified": null,
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "targeted claims and explanatory revision; not a full executable proof"
+    },
+    {
+      "path": "content/Java开发/05-Spring Framework/02-Spring-AOP代理与事务.md",
+      "sha256": "ebdff97c84e7daf3568422a1445a1386277c87eac8a556e8c50a92f6e8db64bc",
+      "characters": 3329,
+      "last_verified": null,
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "targeted claims and explanatory revision; not a full executable proof"
+    },
+    {
+      "path": "content/Java开发/05-Spring Framework/03-Spring资源事件校验缓存与调度.md",
+      "sha256": "8d337cc0ff33010aeac0fd05da81f711afd8a7e8a1d6bec1adccd0bceb6d0e3b",
+      "characters": 2591,
+      "last_verified": null,
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/05-Spring Framework/04-Spring异步定时任务Quartz与Batch.md",
+      "sha256": "a1236170560fc1e74ec2ec83788a8c79fe1f1333732a9e499aed57557ca4a055",
+      "characters": 2255,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/05-Spring Framework/05-Spring产品族责任边界.md",
+      "sha256": "d564e72780ceabc2cab111c1b4dcc3d52fc75df2b25a8438c14d1d38f370989c",
+      "characters": 1005,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "definition-needs-reader-review",
+        "example-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/06-Spring Boot与Web/00-本阶段导学.md",
+      "sha256": "afae2b55023ce04c89c2a3fa0a2d59c19c630181b6d78ace30b1d7f4c317afc6",
+      "characters": 1832,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/06-Spring Boot与Web/000-Spring Boot 与 Web 开发推荐阅读.md",
+      "sha256": "c191b64975ba643d752c7889ca8f112ca7c13cd5ddec31a3a1541b8050d69233",
+      "characters": 660,
+      "last_verified": null,
+      "review_flags": [
+        "example-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/06-Spring Boot与Web/01-Spring-Boot自动配置与启动.md",
+      "sha256": "1a7c44fe1770b5871a02a6e79cca3814aec6e5a35a854aade09707079def3822",
+      "characters": 3246,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "definition-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "targeted claims and explanatory revision; not a full executable proof"
+    },
+    {
+      "path": "content/Java开发/06-Spring Boot与Web/02-Servlet-Tomcat-Spring-MVC完整链路.md",
+      "sha256": "f92974eaea40b1dde573bb70b8a920a9ba4f401752b843b6bf9e79fe83eefdca",
+      "characters": 3036,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "definition-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/06-Spring Boot与Web/03-REST-API校验错误处理与版本.md",
+      "sha256": "a4924958c726ee37a6085de3cf3884452e93a7092a5af04f1c29624719437e94",
+      "characters": 2533,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/06-Spring Boot与Web/04-Actuator日志指标追踪与生产配置.md",
+      "sha256": "9615d593c55180a3a43ade9e5c25b83f99b56024814019c8b68225d6deb13bbb",
+      "characters": 2517,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/06-Spring Boot与Web/05-OpenAPI文件处理邮件与WebSocket.md",
+      "sha256": "340d2a6d64010f3ef42303fc2cda56511ea08d4a4f4221ac1a40851fedfa2957",
+      "characters": 2315,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/07-数据访问与事务/00-本阶段导学.md",
+      "sha256": "3e44d83f2d0531e76aab873989cdf7b4d7257df58c470db3b9669bfcff9ea5b2",
+      "characters": 1688,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/07-数据访问与事务/000-数据访问与 ORM推荐阅读.md",
+      "sha256": "017808c3424f954449b5f3e4b45ffa63d9ad12eca21cf04f1f8f0abb75ccae4d",
+      "characters": 648,
+      "last_verified": null,
+      "review_flags": [
+        "example-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/07-数据访问与事务/01-MyBatis映射与动态SQL.md",
+      "sha256": "966b50bc7848713eaf2cf7ddbf0f32758ed6ae69b5f4cff4070749e6a12658d4",
+      "characters": 2467,
+      "last_verified": null,
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/07-数据访问与事务/02-JPA-Hibernate与Spring-Data.md",
+      "sha256": "5a71c589293adc360fb8b3f4da3b8d64b88b5d8b9a67b8dbc7affe66f46dac2e",
+      "characters": 2410,
+      "last_verified": null,
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/07-数据访问与事务/03-连接池事务迁移与数据访问决策.md",
+      "sha256": "1951222224f3282a94c46e7da4850fa006fd49a73bdb69f80061aeef1bbc48b2",
+      "characters": 2166,
+      "last_verified": null,
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/07-数据访问与事务/04-MyBatis-Plus工程实践.md",
+      "sha256": "b1c4e17ee587e6e274715c760e6afe6a28ea26cd6f916270ca5d95fbc6015868",
+      "characters": 1965,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/07-数据访问与事务/05-JDBC vs MyBatis vs JPA决策.md",
+      "sha256": "6b0e2a271a40de00620d5e095b47ed5b0b136425df21d52b3f53c9f759412b88",
+      "characters": 1305,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "definition-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/08-测试与质量工程/00-本阶段导学.md",
+      "sha256": "492537db7df41c1a68be9550459509cbc88dfb39794ed47b2ca5583c9d3350a8",
+      "characters": 1489,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/08-测试与质量工程/000-测试与质量工程推荐阅读.md",
+      "sha256": "d4e041c7f2ea2250f4da987e5c44695d286dfe3153bdc383acb940a890fd952a",
+      "characters": 523,
+      "last_verified": null,
+      "review_flags": [
+        "example-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/08-测试与质量工程/01-测试策略-JUnit与Mockito.md",
+      "sha256": "ce4583f6b34aadf0da5efb8dab92df5a73236c1aa4d4725416d717e6a32915a4",
+      "characters": 2154,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/08-测试与质量工程/02-Spring集成-Testcontainers与契约测试.md",
+      "sha256": "259ce96142f766a2216fbb85dc174ab95b14eafd00eee9037b0dfa80e70ec5a2",
+      "characters": 2519,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/08-测试与质量工程/03-API-UI自动化与测试平台.md",
+      "sha256": "d3224023b674b12a8627b877c47adcfa3288234b002816f2c355606afb94bb0b",
+      "characters": 2074,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/08-测试与质量工程/04-性能稳定性与故障演练.md",
+      "sha256": "eebb56eac02f5c54474bb3085388375904c8ace4182991fcc920e86f5681c884",
+      "characters": 1917,
+      "last_verified": null,
+      "review_flags": [],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/08-测试与质量工程/05-Testing Portfolio与发布回归.md",
+      "sha256": "cea747bc09bad9676efd51642146a2a4fa8952f71008ca729d316311fb61c877",
+      "characters": 855,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "definition-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/09-安全认证与授权/00-本阶段导学.md",
+      "sha256": "6061386a101f177ee1c5a66673c50a5748517c9489ccb88c869c0b5646e9bc7e",
+      "characters": 1740,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/09-安全认证与授权/000-安全、认证与授权推荐阅读.md",
+      "sha256": "590ada679c3ad461c6664c405efe2270c4faa8a0652643d52c515fcfdcbada4d",
+      "characters": 566,
+      "last_verified": null,
+      "review_flags": [
+        "example-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/09-安全认证与授权/01-Spring-Security过滤链与方法授权.md",
+      "sha256": "d01b79b5c35893badb7cce2c201d70586e57a0c7c48d505cf3dfc4eea7766639",
+      "characters": 2262,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/09-安全认证与授权/02-OAuth2-OIDC-JWT与API安全.md",
+      "sha256": "3cf0f05dca0b76206380e92e5f293cee49fefbde0659f53cba0b53e591dbacca",
+      "characters": 2919,
+      "last_verified": "2026-08-24",
+      "review_flags": [],
+      "semantic_review": "targeted claims and explanatory revision; not a full executable proof"
+    },
+    {
+      "path": "content/Java开发/09-安全认证与授权/03-应用安全秘密供应链与审计.md",
+      "sha256": "148b7eca58ed851000513e6f3dcb6af6c0a34ee1384ce4a1ecbc22e78f0ddeec",
+      "characters": 1988,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/10-应用架构与模块化单体/00-应用架构导学.md",
+      "sha256": "1217dda2e7932b0423f2ce998a043c853e03a9b5001efb5697dbdd312520d4e5",
+      "characters": 966,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "definition-needs-reader-review",
+        "example-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/10-应用架构与模块化单体/01-分层按功能打包与领域边界.md",
+      "sha256": "6768ce9a137eea763e5964deffd79e8108e1d1400807d1fba32013d7c5f36011",
+      "characters": 973,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "definition-needs-reader-review",
+        "example-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/10-应用架构与模块化单体/02-Spring Modulith模块验证测试事件与可观测性.md",
+      "sha256": "1bec0c7791a025221323a8726f1465d3aa0c3b017bbcc95e9e1ccdf5eab1d909",
+      "characters": 1011,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "definition-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/10-应用架构与模块化单体/03-事务边界Outbox与幂等.md",
+      "sha256": "0e9baa7b52d85f43aec2655bc555fb1dd4fa4915fbdb7e3970a89c0b4fa999e9",
+      "characters": 978,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "definition-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/10-应用架构与模块化单体/04-模块化单体到微服务什么时候拆.md",
+      "sha256": "f75786145746261d3dc8d638d7780433d9739ada3e565a2ba2a26d5d61455917",
+      "characters": 804,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "definition-needs-reader-review",
+        "example-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/11-缓存与搜索/00-缓存与搜索导学.md",
+      "sha256": "2373bd41225f925f4fcaeb03b3c06a2e7149519fb4c062c4d040d57c927cdc1e",
+      "characters": 876,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "definition-needs-reader-review",
+        "example-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/11-缓存与搜索/01-Redis与缓存工程.md",
+      "sha256": "21b30a2c5f19671a92cba6ba72224fb4e9d46cab2c1cbc86470f7d8b405bdb25",
+      "characters": 3396,
+      "last_verified": null,
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "targeted claims and explanatory revision; not a full executable proof"
+    },
+    {
+      "path": "content/Java开发/11-缓存与搜索/02-Elasticsearch搜索工程.md",
+      "sha256": "4db4c67f5490aa080df01f06da8ee8de6c386882e086a077a18d213434265d74",
+      "characters": 2998,
+      "last_verified": null,
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/11-缓存与搜索/03-缓存CDN分库分表与热点治理.md",
+      "sha256": "27085d4ad9e16b53fe7c0461b76eef9757204d6447f447720d36c6e10f469d5d",
+      "characters": 1879,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/11-缓存与搜索/04-Caffeine本地缓存与多级缓存.md",
+      "sha256": "aa8b5e248fb90a89c5c68545b28c762de0d5de14107edb6165e98a48b0c8923c",
+      "characters": 1818,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/12-消息与事件驱动/00-本阶段导学.md",
+      "sha256": "65820d6a040bd5b5e28bb1ab4e5635984b6fb81b85bc15d9ae134c17b7834cdb",
+      "characters": 687,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "definition-needs-reader-review",
+        "example-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/12-消息与事件驱动/000-高性能与消息队列推荐阅读.md",
+      "sha256": "556f6c16374610f1b61a2e8575a8d0ab3aede8998689c7d7a346ed804944d8eb",
+      "characters": 581,
+      "last_verified": null,
+      "review_flags": [
+        "example-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/12-消息与事件驱动/02-消息队列基础与可靠消费.md",
+      "sha256": "eb5093ddb7d941e78d984918c46a4eb42aaad940d3c2cf17a45851f126b513ed",
+      "characters": 2135,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/12-消息与事件驱动/03-Kafka事件流平台.md",
+      "sha256": "6f8079fef753b54f676fcf31fef64bf0d44b83ce240eb23f71668ad63c028f73",
+      "characters": 2164,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/12-消息与事件驱动/04-RabbitMQ与RocketMQ.md",
+      "sha256": "cd046ecf4f7e5c5c5f450a57acadcccec9c6d5a0d716cef2bd1584b3f3f3dd8d",
+      "characters": 2428,
+      "last_verified": null,
+      "review_flags": [],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/00-本阶段导学.md",
+      "sha256": "41decf80df37c82d7bd60fdfee871cf54fcec13fdf9db29450e79d5cab93b61c",
+      "characters": 1511,
+      "last_verified": null,
+      "review_flags": [],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/000-分布式系统与微服务推荐阅读.md",
+      "sha256": "e72f46db83d7c0073c6e53534fd1f6d8182177771ff521ac4c74955ba8282c88",
+      "characters": 682,
+      "last_verified": null,
+      "review_flags": [
+        "example-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/01-分布式基础CAP-BASE与共识.md",
+      "sha256": "64397143582196bf13033660c4e8cad3f1aa7bf3e9d4477778bc2367f93227fc",
+      "characters": 2199,
+      "last_verified": null,
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/02-RPC-HTTP-OpenFeign-Dubbo-gRPC与Netty.md",
+      "sha256": "a41d1a3cb0a1afc93903a067eb892de63094d64f1ef74aea5e2407a46fb35b2b",
+      "characters": 2302,
+      "last_verified": null,
+      "review_flags": [],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/03-Nacos注册发现与配置治理.md",
+      "sha256": "0db18dc2b20b60ebcc51908993a749eff4b35bade420e8f1f423715b92e14e78",
+      "characters": 2016,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/04-网关负载均衡限流熔断与重试.md",
+      "sha256": "f3cf3c7a95485cba895a6a617d0c05048dae6875a661454c3335dd2795e55aa6",
+      "characters": 2110,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/05-分布式ID事务与可靠事件.md",
+      "sha256": "886d1958fb07603969c6bf2b2ebfd93039e533552e48e6a35601407c67eaa78c",
+      "characters": 2092,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/06-Spring-Cloud与Spring-Cloud-Alibaba组件图.md",
+      "sha256": "c6d54c16665985336cfc82aca852774f5cbed300850b2caf9c0fe44aba3d272d",
+      "characters": 2179,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "definition-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/07-Seata-Sentinel-SkyWalking实战边界.md",
+      "sha256": "ac7b7e0cf913333f5127b3dd31c991d67ac163075c7630071686bc9a16b4e150",
+      "characters": 2126,
+      "last_verified": null,
+      "review_flags": [],
+      "semantic_review": "targeted claims and explanatory revision; not a full executable proof"
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/08-Spring Cloud Compatibility Matrix与升级.md",
+      "sha256": "86b3681f95fe13751a01edf50a44612539f104b24ac65ed7143ed5b741febe61",
+      "characters": 1340,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/14-性能工程/00-性能工程导学.md",
+      "sha256": "5c6206f0eae0f641ec738d7f663357a0fdd44f848ecd0742a43fa708b1b29c18",
+      "characters": 813,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "definition-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/14-性能工程/01-性能工程容量规划与JVM诊断.md",
+      "sha256": "845c33910fa044f7eb768afb29a8db508b4419d46ac6d23207e14014925817d5",
+      "characters": 1962,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/15-云原生DevOps与可观测性/00-本阶段导学.md",
+      "sha256": "ebfeb7c3b771755486cf936fa93e9f12d40ae17995de2f6be04217f3dc519ee3",
+      "characters": 1727,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review",
+        "example-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/15-云原生DevOps与可观测性/000-云原生、DevOps 与可观测性推荐阅读.md",
+      "sha256": "7920ad62b62db733baff9f00556965ce0e514669341180a6fc0bc6b0143e3db3",
+      "characters": 507,
+      "last_verified": null,
+      "review_flags": [
+        "example-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/15-云原生DevOps与可观测性/01-Docker镜像-Compose与供应链.md",
+      "sha256": "71719f3c99aae68cf0382f7cfa4e8f3a3c72666fc5e8dd2334855b39bba84609",
+      "characters": 2050,
+      "last_verified": null,
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/15-云原生DevOps与可观测性/02-Kubernetes工作负载网络配置与探针.md",
+      "sha256": "bec8834dcb5a332cd75c8b4e792147a0874e247daa5a2d427f7a98aa8527b161",
+      "characters": 2763,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "targeted claims and explanatory revision; not a full executable proof"
+    },
+    {
+      "path": "content/Java开发/15-云原生DevOps与可观测性/03-CICD发布数据库迁移与回滚.md",
+      "sha256": "35d4eb17c6c27fb00e8273034f7f80e00c324b11726da2c10b698cb45127ad19",
+      "characters": 1831,
+      "last_verified": null,
+      "review_flags": [],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/15-云原生DevOps与可观测性/04-OpenTelemetry-SLO与故障响应.md",
+      "sha256": "c20cc4e6c29d07f3ef32345f0cc62b8a401c5c973152d0260cd4977702cb2d39",
+      "characters": 2384,
+      "last_verified": null,
+      "review_flags": [],
+      "semantic_review": "targeted claims and explanatory revision; not a full executable proof"
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/00-本阶段导学.md",
+      "sha256": "c2d9ae55367ff13a787a0cb0d59decb45211c0ce45b00a2efa8108c1402379ac",
+      "characters": 1860,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/000-前端基础与全栈交付推荐阅读.md",
+      "sha256": "93cfd0e1a4fc04c188af094a2e7292770f6fb948def298c7ae9db9de551358d6",
+      "characters": 505,
+      "last_verified": null,
+      "review_flags": [
+        "example-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/01-Web-HTML-CSS-JavaScript与TypeScript基础.md",
+      "sha256": "988cb4b6dddb4ea75518031a537f65547b5bd2d7e56c704975c219518ae1a9c1",
+      "characters": 2389,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/02-Vue3-TypeScript与后台管理界面.md",
+      "sha256": "e606af512b0aef88f40e391a82ff08f51c387730e021fc6e5b676fc1650ac705",
+      "characters": 2181,
+      "last_verified": null,
+      "review_flags": [],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/03-全栈契约认证上传下载WebSocket与Nginx.md",
+      "sha256": "56fff6d2f8e82a78386c6ff7bc7f4982475a38c0490d9e420f1a3a62a7d8a024",
+      "characters": 2271,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/04-HTML语义表单媒体与可访问性.md",
+      "sha256": "92d3207cbce057035a2756d41b20b1f1a2b68614846f412b7fde2d2b3c267e60",
+      "characters": 2444,
+      "last_verified": null,
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/05-CSS级联盒模型布局响应式与动画.md",
+      "sha256": "9371daf28eb0f3da10aff1928da61136e67885b1ba8330b971016a27fa4e24c1",
+      "characters": 2518,
+      "last_verified": null,
+      "review_flags": [],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/06-JavaScript基础类型函数集合DOM与事件.md",
+      "sha256": "861027483bb0b65e4c7a58f0206c0d02b191218cd877fef1e112d6ed15ff3762",
+      "characters": 2530,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "targeted claims and explanatory revision; not a full executable proof"
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/07-JavaScript高级异步模块网络与性能.md",
+      "sha256": "f5f76b7bb112f7e8b5645b3e11c4abe73d1a1c7e7033d75d613764f79232a3a9",
+      "characters": 2756,
+      "last_verified": null,
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "targeted claims and explanatory revision; not a full executable proof"
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/08-TypeScript-Vue工程化测试与性能.md",
+      "sha256": "8e9fba95f222d6a5eb41a6f5bc122e96256e41ae410f137d58e4f26df7f49047",
+      "characters": 3122,
+      "last_verified": null,
+      "review_flags": [],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/16-可选专项/02-计算机科学与工程选修/01-数据结构算法复杂度与刷题方法.md",
+      "sha256": "894fcca8f686070e7ea0bf44634c163530db6ed6b6555356f184689f2bde931a",
+      "characters": 1994,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/16-可选专项/02-计算机科学与工程选修/02-设计原则UML与常用设计模式.md",
+      "sha256": "bd7b913588516cedeb5497d27a096d3902e90b45291bf9be347ab0c9e28318e3",
+      "characters": 1879,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/16-可选专项/03-MongoDB数据模型/01-MongoDB文档模型与选型.md",
+      "sha256": "83721a2f29edf56ec14797ba9a49117e7e418b94e6b77519b06bfb81954e86d4",
+      "characters": 643,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "definition-needs-reader-review",
+        "example-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/16-可选专项/04-Spring AI/01-Spring AI工程实现总览.md",
+      "sha256": "a25e7ca5ed7359998736627d8e8f6c11c81618157e44cbe006bb3c1bc1892c9d",
+      "characters": 1356,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "definition-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/17-项目阶梯/00-本阶段导学.md",
+      "sha256": "c069c1e705e1ce27b077cf07a525118a650fb1edde77b65018b91cac9d2cca9d",
+      "characters": 1371,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/17-项目阶梯/000-Java 后端项目阶梯推荐阅读.md",
+      "sha256": "1acbb796b8dbb668c4226bc07972ebcbc2a641922fe4f35bd786ff72faae970f",
+      "characters": 440,
+      "last_verified": null,
+      "review_flags": [
+        "example-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/17-项目阶梯/01-P0到P8 Java后端项目阶梯.md",
+      "sha256": "651f10e8570b05a5aeb3a71f1908b5f7b320290e7152821605600f78a0387cb2",
+      "characters": 1785,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "definition-needs-reader-review",
+        "example-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/17-项目阶梯/01-项目一模块化单体任务系统.md",
+      "sha256": "5ec0e38622926fc5abbf5670c72f0cd092a3b459977259151b66b3b1761ae6f8",
+      "characters": 1865,
+      "last_verified": null,
+      "review_flags": [],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/17-项目阶梯/02-项目二事件驱动订单与库存系统.md",
+      "sha256": "8f78611de752e29ed6948c718f810d7d56661859f3892cdcfb3caa33fe22d056",
+      "characters": 1876,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/17-项目阶梯/03-项目三云原生高可用平台.md",
+      "sha256": "73e42acde98a77019a788ccfe64d90bb7ace1aad0b93d5b14d413ed4b33e921d",
+      "characters": 1942,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/17-项目阶梯/04-作品集验收与面试证据.md",
+      "sha256": "b9cdb37a40459d1c952be2f2c4d941cb8d161a28f698c5e92dc986326acc1455",
+      "characters": 1677,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/99-开源项目架构研究/00-统一源码研究模板.md",
+      "sha256": "e14cf42cb5d505db82e90f1d35c21280db9aecef17e8b407d8fd5f7942660beb",
+      "characters": 485,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "definition-needs-reader-review",
+        "example-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/99-开源项目架构研究/01-Spring Petclinic.md",
+      "sha256": "8c55ed9c5d51ad4e9d382547266f7fcd38b4d762287e93b2bee26218bc8cf89f",
+      "characters": 1468,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "definition-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/99-开源项目架构研究/02-Spring Modulith.md",
+      "sha256": "b6fde32b4343b56b3a7df5f6e69500936dee851c53e738a23f77169903275103",
+      "characters": 1518,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "definition-needs-reader-review",
+        "example-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/99-开源项目架构研究/03-Petclinic Microservices.md",
+      "sha256": "f1b1bb9112e19c43b54d2c0ea22871f2f0fb2be09ac757f984a9be4423ea2ce2",
+      "characters": 1474,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "definition-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/99-开源项目架构研究/04-Keycloak.md",
+      "sha256": "0dceed393942915336dd06171c53962a0c0499e7390ddb09e55922e5f455e477",
+      "characters": 1409,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "definition-needs-reader-review",
+        "example-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/99-开源项目架构研究/05-JHipster Generator.md",
+      "sha256": "9aff8c2fd2d54fa42e512308566552ecae37c8474c63ebbf3f651c1708b2e2f5",
+      "characters": 1394,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "definition-needs-reader-review",
+        "example-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/99-开源项目架构研究/06-RuoYi-Vue-Plus.md",
+      "sha256": "adc42e570a890063e4e9ad49a95d649ad330038dae0f609d4566ba7227efd35f",
+      "characters": 1389,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "definition-needs-reader-review",
+        "example-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/Java开发/99-开源项目架构研究/07-Spring AI.md",
+      "sha256": "4dc285ff82d4ab4f996ab4b0e886a7206e98b3f252d7cc40916ba1ccf8e815e5",
+      "characters": 1577,
+      "last_verified": "2026-08-24",
+      "review_flags": [
+        "definition-needs-reader-review",
+        "example-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/语言基础/00-语言基础学习路线.md",
+      "sha256": "c04f4636eb82e6aedad773dbd3b0015e24a257909e550d399d20c2a5eca3a7f6",
+      "characters": 3866,
+      "last_verified": null,
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/000-TypeScript官方资料与版本边界.md",
+      "sha256": "7fb6af4489ff0793174e95b2cd1e2abb7967b2002b1c1aebfeb871a303061af9",
+      "characters": 3408,
+      "last_verified": "2026-08-26",
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "targeted claims and explanatory revision; not a full executable proof"
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/01-环境配置与第一个TypeScript项目.md",
+      "sha256": "62b820d234deade5f59bdf4739943f5f44de21050b5811151aed48d6792fa324",
+      "characters": 5727,
+      "last_verified": null,
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/02-运行模型与编译产物.md",
+      "sha256": "81dde96cf442aa215ca8427b385e6288698f938bc692de39fadc2a89e97934dd",
+      "characters": 5028,
+      "last_verified": null,
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/03-变量原始类型与类型推断.md",
+      "sha256": "b380001a9392e93b64c99e8fc47da1216c7f78707ed8d231819309cceff5398e",
+      "characters": 6864,
+      "last_verified": null,
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/04-数组元组对象与只读.md",
+      "sha256": "4d021ed345dbee09b816dcf267999c3ceb473e07e26e4e8e653e8584a0c37fb3",
+      "characters": 3250,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/05-函数签名重载this与回调.md",
+      "sha256": "4782a5146f3cf665f6533bc1110fe74d0f5bee9befc4d5e151a32c7283fc6edd",
+      "characters": 3060,
+      "last_verified": null,
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/06-interface-type与结构化类型.md",
+      "sha256": "7bd171769734568947b940b5302fb7dc79995937c3cc59e59f43d9ed2e074d4a",
+      "characters": 2773,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/07-联合交叉收窄与穷尽检查.md",
+      "sha256": "c03b889a22f087e278bfd3a5c7c2989a0ef2bf02c800ec7357b3f2bfaf74d686",
+      "characters": 3495,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/08-泛型约束推断与变型.md",
+      "sha256": "f275cdb00e18a536dbee7a5ee4e191206c82aa1448f9330a39ed5244483f9223",
+      "characters": 7113,
+      "last_verified": null,
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/09-类继承抽象与访问控制.md",
+      "sha256": "93b8b2b17544897e65f57cf9c1a57e35d578759cf2c0387ca3f3aab4df579d11",
+      "characters": 3198,
+      "last_verified": null,
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/10-模块包与声明文件.md",
+      "sha256": "7a1125ed68513be5c97059de18feb31a6d8068789f023d29f6e338f7c6d06cd8",
+      "characters": 3423,
+      "last_verified": null,
+      "review_flags": [],
+      "semantic_review": "targeted claims and explanatory revision; not a full executable proof"
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/11-keyof-typeof索引访问与工具类型.md",
+      "sha256": "4d339f51c4840b081ae868ee0a4f765ef3a68455418b7164df1fb84d2fbb54e5",
+      "characters": 2882,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/12-映射条件模板字面量与infer.md",
+      "sha256": "8ddf5b2f732f0071f99e8450a9337e2f29d736dab3ae37089b2a3a438ba3ac5e",
+      "characters": 3222,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/13-tsconfig严格模式与工程编译.md",
+      "sha256": "4f46de1eea955a8222e175404d7ae26f9e51f7744eca6813796454b40f8449b6",
+      "characters": 3772,
+      "last_verified": "2026-08-26",
+      "review_flags": [
+        "example-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "targeted claims and explanatory revision; not a full executable proof"
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/14-异步错误边界DOM与Node.md",
+      "sha256": "56702b78dfcba487174e1009c6e278b16c3eb7b6112f0d852eb61b39b11a8ac8",
+      "characters": 3329,
+      "last_verified": null,
+      "review_flags": [],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/15-装饰器JSX与特殊语法边界.md",
+      "sha256": "312a517b7f4de1e6048784f6fca7c2256274199598a9df99515e059a640aafcc",
+      "characters": 2782,
+      "last_verified": null,
+      "review_flags": [],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/16-测试构建Lint发布与迁移.md",
+      "sha256": "86274f805247b2bc92c9a6026099d4269565603963ca4571d0f033cf58452182",
+      "characters": 3025,
+      "last_verified": "2026-08-26",
+      "review_flags": [
+        "definition-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/17-综合项目与检查清单.md",
+      "sha256": "e26333c016b75b159b00439ba70e406645a8663d9e8a47a6a4ab6051e7d23321",
+      "characters": 4265,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/语言基础/02-TypeScript跨语言对照/00-五语言总览矩阵.md",
+      "sha256": "1b4dd2acca0e7210ae4886daef6d54ca2dfa36c14bb3c1822b3e0287548001eb",
+      "characters": 3260,
+      "last_verified": null,
+      "review_flags": [],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/语言基础/02-TypeScript跨语言对照/01-TypeScript与JavaScript.md",
+      "sha256": "7b6c4298ffd02abab27bf7a608f35090c6e560a70d501ff8fc850bf366141829",
+      "characters": 2670,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/语言基础/02-TypeScript跨语言对照/02-TypeScript与Java.md",
+      "sha256": "20d57f74632751cbea14f05e4c7dc8fc1e74ea73ee8e95b4c2479ae53e308883",
+      "characters": 2739,
+      "last_verified": null,
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/语言基础/02-TypeScript跨语言对照/03-TypeScript与Python.md",
+      "sha256": "896eab5f1596f1896ae1a21ec4ad9894b92e03350cee63341ae963da1f66c492",
+      "characters": 2839,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/语言基础/02-TypeScript跨语言对照/04-TypeScript与Cpp.md",
+      "sha256": "521aedb3c94e5939fc0e1ac443ec98b5b970e05dc820755eaa34000b35e637ec",
+      "characters": 2635,
+      "last_verified": null,
+      "review_flags": [
+        "definition-needs-reader-review",
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    },
+    {
+      "path": "content/语言基础/02-TypeScript跨语言对照/05-TypeScript独有能力与缺失能力清单.md",
+      "sha256": "36251e04ddf05f3b0ce06edb989dfb6fdd27b08a83ac840a3eaca96cf5b97ac3",
+      "characters": 2746,
+      "last_verified": null,
+      "review_flags": [
+        "version-claims-need-evidence"
+      ],
+      "semantic_review": "inventory and risk screening; individual claims not all reverified"
+    }
+  ]
+}

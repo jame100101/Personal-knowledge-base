@@ -8,6 +8,14 @@
 > - `source_type`: `official-repository + local-source-audit`
 > - `stability`: `developer-preview / fast-moving`
 
+## 2026-09-20 增量核对：现在从哪里读
+
+本轮证据固定在 [`ddefc45fbc7f`](https://github.com/deepseek-ai/deepseek-harness/tree/ddefc45fbc7f8e46dd73185e68295696d1297887)，入口为 [`docs/architecture.md`](https://github.com/deepseek-ai/deepseek-harness/blob/ddefc45fbc7f8e46dd73185e68295696d1297887/docs/architecture.md)。下文旧快照与旧核验日期保留；本节不是对全部历史结论的重新背书。
+
+当前官方架构把启动统一到命名 profile：`web`、`headless`、`sdk`、`sdk-minimal`、`acp`。Profile 可以理解为“一套要装配哪些插件的运行方案”，bundle 是其中可复用的配置与代码集合，patch 用来覆盖选定的配置。先看最终装配树，再研究某个插件，才能解释为什么同一插件在两种启动方式下行为不同。
+
+Web 仍从 Host 与浏览器两端理解；但当前文档还列出 Desktop Host 与受管理的 desktop profile，不能把浏览器预览 Worker、桌面入口和公开 CLI 混成同一条启动链。源码运行步骤也变为先 `pnpm run build`，再 `pnpm dsh web`。下面保留旧本地 Web 快照；这次只读核对了官方 README 与架构文档，没有更改本地 DeepSeek 工程。
+
 ## 1. 研究对象与结论边界
 
 - **本地源码**：`D:\deepseek harness\deepseek-harness`，即本文研究的 Web 版本，不是 `deepseek-harness-tui`。

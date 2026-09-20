@@ -15,7 +15,9 @@ IDE 的运行按钮背后，仍然需要 JDK、依赖解析和构建命令。把
 
 ### 1. 工具链与目标字节码
 
-项目必须同时定义用于编译的 JDK、语言级别和目标 class 文件版本。Maven Compiler Plugin 的 `release` 与 Gradle Java Toolchains 能避免“编译机 API 太新、生产运行时太旧”。
+构建时先分清两个问题：由哪个 JDK 执行编译，以及生成的程序准备在哪个 Java 版本运行。Toolchain 解决前一个问题；`--release` 则同时约束语言、目标 class 版本和对应 Java 平台 API。它们互相配合，并非同一个选项。
+
+例如，用 JDK 25 构建但要运行在 Java 21 上，Gradle 可以选择 25 的 toolchain，同时给 `JavaCompile` 设置 `options.release = 21`；Maven Compiler Plugin 则配置 `release`。仅设置 `sourceCompatibility` / `targetCompatibility` 不足以拦住误用较新 JDK API。第三方依赖还要单独检查字节码和运行要求，最后在目标 JDK 上测试。参见 [Gradle Toolchains](https://docs.gradle.org/current/userguide/toolchains.html)。
 
 - 构建记录 `java -version`、操作系统、架构和依赖锁定信息。
 - preview 特性需要编译、测试、运行阶段一致启用，并与长期维护模块隔离。

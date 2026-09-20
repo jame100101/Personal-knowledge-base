@@ -8,6 +8,25 @@ Grok Build 的研究重点是编码任务怎样被执行：消息进入后，模
 > - `source_type`: `official-repository + official-documentation + source-audit`
 > - `stability`: `fast-moving / periodically-synced`
 
+## 2026-09-20 增量核对：现在从哪里读
+
+本轮证据固定在 [`4247f6616893`](https://github.com/xai-org/grok-build/tree/4247f661689354b831191f11eeeac8424993fe3d)，入口为 [`SOURCE_REV`](https://github.com/xai-org/grok-build/blob/4247f661689354b831191f11eeeac8424993fe3d/SOURCE_REV)。下文旧快照与旧核验日期保留；本节不是对全部历史结论的重新背书。
+
+本轮公开 GitHub 提交的 `SOURCE_REV` 为 `9bb727ccdff0a793ee73bcde4e2e09cbef6b5387`。它与 GitHub commit 是两个标识：前者指原 monorepo 的来源，后者固定读者实际能下载的公开树。排查问题或引用源码时，两者一起保存，避免把不同同步批次混在一起。
+
+README 继续说明 Rust CLI/TUI、headless 与 ACP 三种使用表面。研究它时，先看相同任务通过三种入口怎样进入运行时，而不是把三个界面当成三个不同模型。本轮进一步读取了下面四个新树实现入口。未列出的历史细节仍以原先固定提交为范围，未在本地编译整个 Rust workspace。
+
+### 新树里的四个阅读入口
+
+公开树的路径前缀是 `crates/codegen/`。下面不是四个互不相关的功能，而是从“收到任务”到“有序执行和恢复”的一条链。
+
+- **Session 命令泵**：[`run_loop.rs`](https://github.com/xai-org/grok-build/blob/4247f661689354b831191f11eeeac8424993fe3d/crates/codegen/xai-grok-shell/src/session/acp_session_impl/run_loop.rs) 的 `run_session` 用 `tokio::select!` 处理命令、计时等事件，并管理后台任务。模型执行期间仍可能有取消、插话和完成通知；集中处理入口的意义是协调它们，不是说所有耗时操作都在一个阻塞函数里串行执行。
+- **工具批次**：[`tool_calls.rs`](https://github.com/xai-org/grok-build/blob/4247f661689354b831191f11eeeac8424993fe3d/crates/codegen/xai-grok-shell/src/session/acp_session_impl/tool_calls.rs) 的 `execute_tool_calls_batch` 为获准调用构造执行 future，并为识别出的文件路径复用锁。可把它理解为“独立工作尽量同时推进，识别出的同文件访问要协调”。这个锁不是整个工作区事务，也不能据此保证任意 shell 命令都不会发生写冲突。
+- **Worktree 与会话恢复**：[`session/worktree.rs`](https://github.com/xai-org/grok-build/blob/4247f661689354b831191f11eeeac8424993fe3d/crates/codegen/xai-grok-shell/src/session/worktree.rs) 重导出 workspace 层能力，再增加恢复会话需要的封装。`create_worktree_for_resume` 在指定 `git_ref` 时选择 clean copy，并根据版本控制环境分流。Worktree 分离的是工作目录及相关版本状态，不是进程、网络或凭据沙箱。
+- **定时任务所有者**：[`scheduler/actor.rs`](https://github.com/xai-org/grok-build/blob/4247f661689354b831191f11eeeac8424993fe3d/crates/codegen/xai-grok-tools/src/implementations/grok_build/scheduler/actor.rs) 同时等待取消、调度命令和下一次到期时间。durable removal 还区分持久化确认与版本转换。这里要解决的不只是“几秒后运行”，而是删除通知、进程退出和重启以后，系统对任务是否仍存在有一致的记录。
+
+练习阅读时，可以追踪“用户取消一个正在等待子任务的请求”：找到命令入口、等待如何中断、工具结果如何归属、最终状态如何保存。单看函数名就断言 exactly-once 或所有副作用都能回滚，证据还不够。
+
 ## 1. 为什么替换 Grok-1 Model Backend 研究
 
 本章研究的是[xai-org/grok-build](https://github.com/xai-org/grok-build)，即真实 Coding Agent Harness，而不是 Grok-1 基础模型推理后端。两者解决的问题不同：

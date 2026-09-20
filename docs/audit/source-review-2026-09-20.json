@@ -1,0 +1,72 @@
+[
+  {
+    "file": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_01_CODEX.md",
+    "repo": "openai/codex",
+    "head": "551844b3efc426c563128b0e011e36dad95a865b",
+    "source": "https://github.com/openai/codex/blob/551844b3efc426c563128b0e011e36dad95a865b/codex-rs/core/src/session/turn.rs",
+    "scope": "incremental static review; historical full analysis not revalidated"
+  },
+  {
+    "file": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_02_CLAUDE_CODE.md",
+    "repo": "anthropics/claude-code",
+    "head": "bf7d404e26a5fb6167d21b46c93a2bf6c22ab274",
+    "source": "https://github.com/anthropics/claude-code/blob/bf7d404e26a5fb6167d21b46c93a2bf6c22ab274/CHANGELOG.md",
+    "scope": "incremental static review; historical full analysis not revalidated"
+  },
+  {
+    "file": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_04_HERMES_AGENT.md",
+    "repo": "NousResearch/hermes-agent",
+    "head": "8a92051f20e6b371c4ff1a46a5bcec7138cc4e8c",
+    "source": "https://github.com/NousResearch/hermes-agent/blob/8a92051f20e6b371c4ff1a46a5bcec7138cc4e8c/website/docs/developer-guide/agent-loop.md",
+    "scope": "incremental static review; historical full analysis not revalidated"
+  },
+  {
+    "file": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_05_OPENCLAW.md",
+    "repo": "openclaw/openclaw",
+    "head": "044f78eeae1a17af03ef07415641a98ead48830d",
+    "source": "https://github.com/openclaw/openclaw/blob/044f78eeae1a17af03ef07415641a98ead48830d/docs/agent-runtime-architecture.md",
+    "scope": "incremental static review; historical full analysis not revalidated"
+  },
+  {
+    "file": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_07_AIDER.md",
+    "repo": "Aider-AI/aider",
+    "head": "5dc9490bb35f9729ef2c95d00a19ccd30c26339c",
+    "source": "https://github.com/Aider-AI/aider/blob/5dc9490bb35f9729ef2c95d00a19ccd30c26339c/aider/coders/base_coder.py",
+    "scope": "incremental static review; historical full analysis not revalidated"
+  },
+  {
+    "file": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_08_GOOSE.md",
+    "repo": "aaif-goose/goose",
+    "head": "2090ad1c65ddb39497601a936a9fe17d66254bfe",
+    "source": "https://github.com/aaif-goose/goose/blob/2090ad1c65ddb39497601a936a9fe17d66254bfe/documentation/docs/goose-architecture/goose-architecture.md",
+    "scope": "incremental static review; historical full analysis not revalidated"
+  },
+  {
+    "file": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_09_OPENCODE.md",
+    "repo": "anomalyco/opencode",
+    "head": "ebb7b76eca82342642c78645109e865614533827",
+    "source": "https://github.com/anomalyco/opencode/blob/ebb7b76eca82342642c78645109e865614533827/packages/opencode/src/session/processor.ts",
+    "scope": "incremental static review; historical full analysis not revalidated"
+  },
+  {
+    "file": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_10_DEEPSEEK_HARNESS_WEB.md",
+    "repo": "deepseek-ai/deepseek-harness",
+    "head": "ddefc45fbc7f8e46dd73185e68295696d1297887",
+    "source": "https://github.com/deepseek-ai/deepseek-harness/blob/ddefc45fbc7f8e46dd73185e68295696d1297887/docs/architecture.md",
+    "scope": "incremental static review; historical full analysis not revalidated"
+  },
+  {
+    "file": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_11_PI_AGENT.md",
+    "repo": "earendil-works/pi",
+    "head": "d1230ea2000d876b479a69b8b061f9d670f262f5",
+    "source": "https://github.com/earendil-works/pi/blob/d1230ea2000d876b479a69b8b061f9d670f262f5/packages/agent/src/agent-loop.ts",
+    "scope": "incremental static review; historical full analysis not revalidated"
+  },
+  {
+    "file": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_12_GROK_BUILD.md",
+    "repo": "xai-org/grok-build",
+    "head": "4247f661689354b831191f11eeeac8424993fe3d",
+    "source": "https://github.com/xai-org/grok-build/blob/4247f661689354b831191f11eeeac8424993fe3d/SOURCE_REV",
+    "scope": "incremental static review: README, SOURCE_REV, session command pump, tool batch, worktree resume, scheduler actor; Rust workspace not built"
+  }
+]

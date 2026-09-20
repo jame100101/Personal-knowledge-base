@@ -4,6 +4,14 @@
 
 Spring AOP 通过代理拦截 Spring Bean 的方法执行，声明式事务是其最重要应用之一。理解代理边界才能解释事务为何有时“失效”。
 
+## 先把代理想成方法入口处的一层包装
+
+假设下单需要同时保存订单和扣减库存。业务方法负责两次写入，代理可以在进入方法前开启事务，在正常结束后提交，在符合回滚规则的失败后回滚。这让业务代码少写重复的事务管理步骤，但事务范围依然需要你设计。
+
+`@Transactional` 本身只是一份说明，运行时必须有对应基础设施处理它。默认代理模式下，调用要经过代理才能触发拦截；同一个对象内部调用另一个带注解的方法，不会因此再经过代理。排查时先画出调用方、代理、目标对象三者，而不是只检查注解拼写。
+
+也别把事务理解为“发生任何错误，所有系统自动恢复”。本地数据库事务通常不包含已经发出去的 HTTP 请求。涉及消息时，要区分普通提交后回调和可以持久重试的 Outbox；进程在提交后崩溃，普通回调可能还没执行。方法可见性、代理类型及回滚规则见 [Spring 官方说明](https://docs.spring.io/spring-framework/reference/data-access/transaction/declarative/annotations.html)。
+
 ## 1. 本文覆盖范围
 
 - join point、pointcut、advice、aspect 与 advisor
@@ -19,7 +27,7 @@ Spring AOP 只支持 Spring Bean 方法执行 join point，以 JDK 动态代理�
 
 - 横切关注点适合日志、指标、授权和事务，不承载核心业务流程。
 - pointcut 尽量精确，避免无意代理整个应用。
-- around advice 必须正确调用 proceed 并保留异常语义。
+- around advice 自己决定是否调用 `proceed()`：普通包装通常调用一次，缓存命中可以不调用，重试可能调用多次。每一种都要明确返回值、副作用和异常语义，不能把“必须调用一次”当作 AOP 的通用规则。参见 [Declaring Advice](https://docs.spring.io/spring-framework/reference/core/aop/ataspectj/advice.html)。
 
 **这里容易混淆的是：** Spring AOP 不是完整 AspectJ；字段访问和任意对象构造等 join point 不在代理式 AOP 范围。
 

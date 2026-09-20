@@ -1,0 +1,35 @@
+{
+  "method": "authenticated GitHub commits API; retries of initial network failures and OpenClaw refresh",
+  "results": [
+    {
+      "repo": "Aider-AI/aider",
+      "head": "5dc9490bb35f9729ef2c95d00a19ccd30c26339c",
+      "date": "2026-05-22T14:02:20Z",
+      "message": "Merge pull request #5173 from Cyberfilo/feat/anthropic_models-list-add-opus-4-5\n\nExpand ANTHROPIC_MODELS list with recent Claude model names"
+    },
+    {
+      "repo": "anomalyco/opencode",
+      "head": "ebb7b76eca82342642c78645109e865614533827",
+      "date": "2026-09-20T00:49:02Z",
+      "message": "docs(web): align Jev section heading"
+    },
+    {
+      "repo": "anthropics/claude-code",
+      "head": "bf7d404e26a5fb6167d21b46c93a2bf6c22ab274",
+      "date": "2026-09-19T03:10:24Z",
+      "message": "chore: Update CHANGELOG.md and feed.xml"
+    },
+    {
+      "repo": "openai/codex",
+      "head": "551844b3efc426c563128b0e011e36dad95a865b",
+      "date": "2026-09-20T00:34:38Z",
+      "message": "Add compact transcript browsing and prompt navigation to the TUI (#46739)\n\n## What changed\n\n- Make double `Esc` enter compact prompt browsing in the owned transcript view and inline overlay. Use left/right arrows to select prompts, up/down arrows to scroll, `Ctrl+T` to toggle details, and `Enter` to rewind and edit. `Esc` cancels browsing and restores the original reading position and presentation.\n- Add a responsive browsing footer, a pinned prompt header for answer context, and contextual composer tips that respect `show_tooltips` and configured shortcuts.\n- Load older history as prompt navigation needs it, preserve the selected prompt across pagination, and resolve rewind requests by cell identity. Reject remote prompt restoration when it contains local image paths or command syntax.\n- Bound initial owned-transcript history loading to a budget of three screenfuls plus an item scan limit, independently of terminal scrollback settings.\n\n## Testing\n\nAdd regression tests and snapshots for browsing, rewind, cancellation after resize and pagination, custom key bindings, search and selection precedence, offline input, prompt headers, composer tips, and history hydration.\n\nGitOrigin-RevId: 1d9ef7b627f47c3def43e7aee7148b5909f6d357"
+    },
+    {
+      "repo": "openclaw/openclaw",
+      "head": "044f78eeae1a17af03ef07415641a98ead48830d",
+      "date": "2026-09-20T01:15:21Z",
+      "message": "test: isolate retired agent cleanup transport fixture (#153286)"
+    }
+  ]
+}

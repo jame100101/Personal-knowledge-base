@@ -14,6 +14,14 @@ Claude Code 的公开资料与完整产品内部实现不是一回事。本篇�
 > 快照日期：2026-07-25
 > 主要补充证据：[Claude Code 官方文档](https://code.claude.com/docs/en/overview) 与 [Claude Agent SDK 文档](https://platform.claude.com/docs/en/agent-sdk/overview)
 
+## 2026-09-20 增量核对：现在从哪里读
+
+本轮证据固定在 [`bf7d404e26a5`](https://github.com/anthropics/claude-code/tree/bf7d404e26a5fb6167d21b46c93a2bf6c22ab274)，入口为 [`CHANGELOG.md`](https://github.com/anthropics/claude-code/blob/bf7d404e26a5fb6167d21b46c93a2bf6c22ab274/CHANGELOG.md)。下文旧快照与旧核验日期保留；本节不是对全部历史结论的重新背书。
+
+这里要更新的是公开产品行为，不是猜测内部源码。固定提交的变更日志列到 2.1.278；2.1.277 增加了在项目没有 `CLAUDE.md` 时读取 `AGENTS.md` 的行为，并列出尚未覆盖的运行平台。它不是把两个文件无条件合并，也不是所有历史版本都支持。
+
+2.1.278 还调整了部分用户与平台的 auto mode classifier 默认位置，并增加状态展示。理解这个变化时，先问“判断发生在哪里、适用哪个平台、状态怎样确认”，再问是否适合自己的部署。变更日志能证明官方公布了行为，不能证明私有 runtime 使用了某种具体调度算法；正文的闭源边界继续保留。
+
 ## 2026-08-24 HEAD 新鲜度审计
 
 公开仓库 HEAD 复核到 [`45bdfa9`](https://github.com/anthropics/claude-code/tree/45bdfa96ca415da92e62b6ca85a1d6e29adf3c44)。README、CHANGELOG、plugins、skills、hooks、agents 与配置示例仍是公开证据主体；核心产品 runtime 仍不是一套可逐行审计的完整开源实现。本文保留 `7ef6eec9...` 作为可复现快照，并用当前官方文档校验产品契约。任何关于内部 loop class、调度算法或私有 executor 的描述，仍保持在“官方行为”或“推断”层，不升级成源码事实。

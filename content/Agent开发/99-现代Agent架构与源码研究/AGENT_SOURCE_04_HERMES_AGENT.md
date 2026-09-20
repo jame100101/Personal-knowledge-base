@@ -14,6 +14,14 @@ Hermes Agent 涉及模型适配、工具、技能和多种交互入口。可以�
 > 快照日期：2026-07-25
 > 定位：Python 为主、支持多 provider、多工具、skills、持久 session、压缩和自改进的个人 agent harness。
 
+## 2026-09-20 增量核对：现在从哪里读
+
+本轮证据固定在 [`8a92051f20e6`](https://github.com/NousResearch/hermes-agent/tree/8a92051f20e6b371c4ff1a46a5bcec7138cc4e8c)，入口为 [`website/docs/developer-guide/agent-loop.md`](https://github.com/NousResearch/hermes-agent/blob/8a92051f20e6b371c4ff1a46a5bcec7138cc4e8c/website/docs/developer-guide/agent-loop.md)。下文旧快照与旧核验日期保留；本节不是对全部历史结论的重新背书。
+
+历史材料把 `run_agent.py` 当作主要循环入口；当前官方开发文档说明它已经是薄入口。循环主体移到 `agent/conversation_loop.py`，各轮准备、API 调用、错误、溢出和恢复分到 `agent/turn_*.py`，初始化在 `agent/agent_init.py`。继续研究时应按新的分工追踪，而不是把旧文件中的实现位置当成当前事实。
+
+可以把薄入口理解为接线台：它让调用者继续找到同一个接口，但工作已经分给不同模块。拆文件本身不等于循环语义改变；要确认重试是否增加调用次数、取消是否终止工具，还需读相应模块和测试。本轮依据官方 loop/architecture 文档更新导航，未把文档审阅冒充全量执行验证。
+
 ## 2026-08-24 HEAD 新鲜度审计
 
 远端 HEAD 复核到 [`057dcdf`](https://github.com/NousResearch/hermes-agent/tree/057dcdf236f8a6a26721c10fcc6ccb72726e272a)。本轮再次检查 `agent`、`providers`、`tools`、`skills`、`gateway`、`web` 与 tests：多 provider normalization、conversation loop、tool registry/executor、skills、session/context 与 Gateway/Web 产品面仍在。正文的固定链接保留在 `760112a...`；HEAD 审计用于确认架构主线，没有把当前默认模型、阈值或配置倒填进旧快照。

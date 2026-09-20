@@ -14,6 +14,14 @@ OpenClaw 的入口、会话与运行时分工较多。先选一条消息，看�
 > 快照日期：2026-07-25
 > 定位：local-first、长运行、多 channel、多 agent runtime、可插拔 memory/context/tools 的个人 agent 平台。
 
+## 2026-09-20 增量核对：现在从哪里读
+
+本轮证据固定在 [`044f78eeae1a`](https://github.com/openclaw/openclaw/tree/044f78eeae1a17af03ef07415641a98ead48830d)，入口为 [`docs/agent-runtime-architecture.md`](https://github.com/openclaw/openclaw/blob/044f78eeae1a17af03ef07415641a98ead48830d/docs/agent-runtime-architecture.md)。下文旧快照与旧核验日期保留；本节不是对全部历史结论的重新背书。
+
+当前官方架构文档把可复用核心放在 `packages/agent-core/`，模型和服务商传输放在 `src/llm/`，由 `src/agents/runtime/` 接线。文档明确区分内置核心与终端 UI 依赖：仍然使用 pi-tui 并不意味着内置 Agent Loop 仍由 pi-agent-core 提供。判断依赖关系要看谁调用谁，不要只看包名里有没有 pi。
+
+另一个容易踩坑的地方是 runtime selection。当前说明中，旧别名 `pi` 归一化为 `openclaw`；选哪个 runtime 还受 provider/model 路由和配置影响。更换模型并不必然更换执行器。下面保留旧快照的完整分析，本节只覆盖官方 runtime 架构与 loop 文档；插件内部和所有渠道尚未逐个复测。
+
 ## 2026-08-24 HEAD 新鲜度审计
 
 远端 HEAD 复核到 [`dea053e`](https://github.com/openclaw/openclaw/tree/dea053e32f4cca1207f980d643f7c6ef795fd9f9)。本轮重新检查 `src/agents`、`gateway`、`memory`、`sessions`、`tools` 及 concepts/gateway/tools 文档：Gateway、session lane、runtime selection、context/memory/tool policy 与协议生成仍是主线；当前源码还强化了 ACP/session binding、execution lineage、approval audience 与 shutdown 时 session-end 配对。正文的代码证据继续固定在 `6e604438...`；对当前 HEAD 的快速审计不等同于已经确认所有新增 channel、provider 和默认配置。
@@ -48,6 +56,8 @@ Runtime contract
 ```
 
 ---
+
+2026-09-20 后续复查固定到 `044f78eeae1a`：`docs/agent-runtime-architecture.md` 与 `docs/concepts/agent-loop.md` 相比本轮此前读取的 `1083c3fd` 内容逐字一致。这个结论只覆盖这两个架构入口，不表示两个提交之间所有实现文件都没有变化。
 
 ## 1. 总体架构
 

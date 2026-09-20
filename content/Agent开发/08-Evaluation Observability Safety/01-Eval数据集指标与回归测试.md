@@ -4,6 +4,16 @@
 
 Demo 只能证明某一次路径可能成功，Eval 才能估计系统在任务分布上的可靠性。评测对象是完整 Agent 系统，包括模型、prompt、工具、检索、状态、权限和 Harness。
 
+## 先弄清楚：评估到底在验收什么
+
+评估不是请另一个模型读完回答后打个分，而是事先约定“做到什么才算成功”，再检查真实结果。比如让 Agent 修改登录页，回答里说“已修复”不算完成；页面能加载、表单按预期工作、原有测试通过，才是可以核查的结果。
+
+可以先做一条最小评估：准备一个固定的起始仓库，给出一项修改要求，运行 Agent，然后执行验收脚本。每次从同样的初始状态开始，记录模型版本、工具配置、耗时、费用和失败位置。否则第二次恰好读到第一次留下的文件，分数上涨也未必说明能力提高。
+
+成功率之外，还要问结果是否稳定。一次运行成功与连续多次都成功是不同要求。测试集中的困难任务也别直接删除：先看是题目含糊、环境故障，还是 Agent 真正犯了错，再决定怎样修复评估或系统。
+
+上游 2.0 版的评估内容在[第 7 章](https://bojieli.github.io/ai-agent-book/book/chapter7/)，第 6 章现在讨论交互。这里同步章节定位，不把一次链接修正当作整章实验都已复现。
+
 ## 1. 任务集
 
 每个 case 至少包含：
@@ -115,4 +125,4 @@ flowchart LR
 
 数据集应覆盖正常任务、边界条件、工具失败、权限差异、长上下文和历史生产事故。每个缺陷修复都加入最小复现 case；固定模型、prompt、工具与环境版本；对非确定输出运行多次并报告均值、分位数和方差；用确定性 grader 检查可程序化事实，再用人工或模型 rubric 评估开放质量。
 
-[AI Agent 教程第 6 章](https://bojieli.github.io/ai-agent-book/book/chapter6/)强调评测需要同时考虑模型、Harness、环境、数据集和 rubric；[Anthropic 的 Agent eval 实践](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents)也将多轮轨迹、状态变化和最终结果作为核心评测对象。
+[AI Agents in Depth 2.0 第 7 章：Agent 的评估](https://bojieli.github.io/ai-agent-book/book/chapter7/)强调评测需要同时考虑模型、Harness、环境、数据集和 rubric；[Anthropic 的 Agent eval 实践](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents)也将多轮轨迹、状态变化和最终结果作为核心评测对象。

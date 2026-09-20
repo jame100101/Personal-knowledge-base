@@ -4,6 +4,14 @@
 
 IoC 容器创建对象图、解析依赖并管理生命周期。依赖注入的目的不是减少 `new`，而是让依赖显式、可替换和可测试。
 
+## 先从两个普通 Java 对象开始
+
+假设 `OrderService` 要调用 `OrderRepository` 保存订单。最直接的写法是在服务里 `new OrderRepository()`，但这样服务自己决定使用哪个实现，测试时也不容易换成测试用的实现。
+
+依赖注入就是把创建与使用分开：服务通过构造器接收 repository，调用者负责把合适的对象传进来。Spring 的容器帮你创建这些对象、连接依赖并管理生命周期；被它管理的对象称为 Bean。IoC（控制反转）说的是创建和组织对象的控制权不再全部写在业务类内部，不是说业务逻辑交给框架自动生成。
+
+先学构造器注入，再理解扫描和自动装配。遇到“找不到 Bean”，检查对象有没有注册、扫描范围是否覆盖、条件是否满足；遇到多个候选，则检查你真正想选哪个，而不是随手加一个注解把错误压下去。单例 Bean 表示容器默认复用该实例，并不自动让其中的可变字段线程安全。
+
 ## 1. 本文覆盖范围
 
 - ApplicationContext、BeanDefinition 与组件扫描
@@ -21,7 +29,7 @@ ApplicationContext 读取 Java 配置、组件扫描或 XML，形成 BeanDefinit
 - @Configuration/@Bean 适合第三方类型和显式装配。
 - 启动失败应定位 Bean 创建链和根 cause，而非盲目加注解。
 
-**这里容易混淆的是：** Spring Bean 默认 singleton 是“每个 ApplicationContext 一个实例”，不等于 JVM 全局单例，也不自动线程安全。
+**这里容易混淆的是：** Spring 的 singleton 是“每个容器、每个 Bean 定义共享一个实例”，不是“同一个类在容器里只能有一个对象”。同一类可以有两个不同的 Bean 定义。它也不等于 JVM 全局单例，不会自动获得线程安全。参见 [Bean Scopes](https://docs.spring.io/spring-framework/reference/core/beans/factory-scopes.html)。
 
 ### 2. 依赖注入选择
 

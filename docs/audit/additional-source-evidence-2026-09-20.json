@@ -1,0 +1,26 @@
+[
+  {
+    "file": "grok-actor.txt",
+    "sha256": "c0efc7aea14a94a64c1fa1efef11a0df49a566c48e5e39885052c11e0ea9b68c",
+    "source_commit": "4247f661689354b831191f11eeeac8424993fe3d",
+    "review": "static excerpt/flow review, not compilation"
+  },
+  {
+    "file": "grok-loop.txt",
+    "sha256": "14e03b779f6cee550fbdec95e8d8125416eb9a902a949f4b9e452f46610b02da",
+    "source_commit": "4247f661689354b831191f11eeeac8424993fe3d",
+    "review": "static excerpt/flow review, not compilation"
+  },
+  {
+    "file": "grok-tools.txt",
+    "sha256": "f9a7b674cd6e98ba19ac0930ca8c22672219caf4379b5187e233b806459e4984",
+    "source_commit": "4247f661689354b831191f11eeeac8424993fe3d",
+    "review": "static excerpt/flow review, not compilation"
+  },
+  {
+    "file": "grok-worktree.txt",
+    "sha256": "6e7fc3e7666c9550ffc56ab0302b4b740029e0460350a44998a0832570458db1",
+    "source_commit": "4247f661689354b831191f11eeeac8424993fe3d",
+    "review": "static excerpt/flow review, not compilation"
+  }
+]

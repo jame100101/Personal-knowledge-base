@@ -8,6 +8,14 @@ Aider 很适合用来观察“模型输出怎样真正变成代码改动”。�
 > - `source_type`: `official-repository + source-audit`
 > - `stability`: `mature / active`
 
+## 2026-09-20 增量核对：现在从哪里读
+
+本轮证据固定在 [`5dc9490bb35f`](https://github.com/Aider-AI/aider/tree/5dc9490bb35f9729ef2c95d00a19ccd30c26339c)，入口为 [`aider/coders/base_coder.py`](https://github.com/Aider-AI/aider/blob/5dc9490bb35f9729ef2c95d00a19ccd30c26339c/aider/coders/base_coder.py)。下文旧快照与旧核验日期保留；本节不是对全部历史结论的重新背书。
+
+本轮核对 `base_coder.py`：仍可沿 `run`、`run_one`、`send_message` 和 `send` 追踪用户输入到模型请求。阅读 Aider 时，先把对话组织与具体 edit format 分开：主流程准备材料、发送请求，具体 coder 决定怎样解释并应用修改。
+
+它的教学价值在于把“模型输出一段建议”和“文件真的被修改”分成两步。练习时可选一个很小的仓库，查看提交前后的 diff，运行测试，再故意制造一个定位不匹配的编辑来观察反馈。本次是固定源码的静态核对，不代表所有模型适配和编辑格式已执行验证。
+
 ## 1. 定位
 
 - 官方仓库：[Aider-AI/aider](https://github.com/Aider-AI/aider)

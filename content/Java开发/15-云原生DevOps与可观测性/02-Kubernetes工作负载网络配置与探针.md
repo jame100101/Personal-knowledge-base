@@ -35,7 +35,7 @@ Pod 是调度单元；Deployment 管理无状态 ReplicaSet；StatefulSet 提供
 Service 为动态 Pod 集合提供稳定虚拟地址，EndpointSlice 记录后端；Ingress 或 Gateway API 管理外部 L7 路由。
 
 - readiness 失败的 Pod 从服务端点移除。
-- NetworkPolicy 默认拒绝后按依赖开放。
+- NetworkPolicy 是流量准入规则。没有相关策略选中时，Pod 默认并非“全部拒绝”；入口、出口隔离分别计算。生产练习可以先**主动配置** default-deny，再按 DNS、数据库等实际依赖开放，前提是所用网络插件支持策略。参见 [Kubernetes 网络策略](https://kubernetes.io/docs/concepts/services-networking/network-policies/)。
 - DNS 缓存、连接复用和 Pod 终止配合。
 
 **这里容易混淆的是：** Service 可达不代表应用 ready，且 NetworkPolicy 是否生效取决于网络实现。

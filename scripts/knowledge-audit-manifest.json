@@ -1,0 +1,143 @@
+{
+  "base": "228a5821eb2c3f31e31575ea4b2b2fcb2bb7b4aa",
+  "articles": [
+    {
+      "path": "content/Agent开发/00-Agent开发学习路线.md"
+    },
+    {
+      "path": "content/Agent开发/01-Agent基础/02-Agent基本循环.md"
+    },
+    {
+      "path": "content/Agent开发/01-Agent基础/03-Agent适用范围.md"
+    },
+    {
+      "path": "content/Agent开发/03-Context Engineering/02-Context上下文.md"
+    },
+    {
+      "path": "content/Agent开发/03-Context Engineering/03-Context Builder与Prompt Assembly.md"
+    },
+    {
+      "path": "content/Agent开发/03-Context Engineering/05-Token Budget Compaction Prompt Cache与History.md"
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/02-工具Schema权限与幂等.md"
+    },
+    {
+      "path": "content/Agent开发/05-Knowledge与Memory/01-Knowledge/01-RAG完整链路.md"
+    },
+    {
+      "path": "content/Agent开发/06-Agent Harness/02-Registry Permission Session与Compaction.md"
+    },
+    {
+      "path": "content/Agent开发/07-Skills与Protocols/03-MCP A2A与ACP.md"
+    },
+    {
+      "path": "content/Agent开发/08-Evaluation Observability Safety/01-Eval数据集指标与回归测试.md"
+    },
+    {
+      "path": "content/Agent开发/09-Agent Evolution/01-Agent Evolution总览与受控闭环.md"
+    },
+    {
+      "path": "content/Agent开发/09-Agent Evolution/03-Evolution评测版本沙箱与回滚.md"
+    },
+    {
+      "path": "content/Agent开发/11-Model Post-training/01-Model Post-training导学.md"
+    },
+    {
+      "path": "content/Agent开发/11-Model Post-training/02-Trajectory Reward与Agentic RL.md"
+    },
+    {
+      "path": "content/Agent开发/12-Production Agent/02-重试超时预算部署与运维.md"
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_01_CODEX.md"
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_02_CLAUDE_CODE.md"
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_04_HERMES_AGENT.md"
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_05_OPENCLAW.md"
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_07_AIDER.md"
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_08_GOOSE.md"
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_09_OPENCODE.md"
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_10_DEEPSEEK_HARNESS_WEB.md"
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_11_PI_AGENT.md"
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_12_GROK_BUILD.md"
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/000-Java基础推荐阅读.md"
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/01-Java开发入门.md"
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/04-面向对象下.md"
+    },
+    {
+      "path": "content/Java开发/01-Version Baseline与Compatibility Matrix.md"
+    },
+    {
+      "path": "content/Java开发/02-JVM与并发/04-Virtual Threads Scoped Values与Structured Concurrency.md"
+    },
+    {
+      "path": "content/Java开发/03-工程基础与Internet-Linux/01-JDK-IDE-Maven与Gradle.md"
+    },
+    {
+      "path": "content/Java开发/04-关系型数据库/03-PostgreSQL基础.md"
+    },
+    {
+      "path": "content/Java开发/05-Spring Framework/01-IoC依赖注入与Bean生命周期.md"
+    },
+    {
+      "path": "content/Java开发/05-Spring Framework/02-Spring-AOP代理与事务.md"
+    },
+    {
+      "path": "content/Java开发/06-Spring Boot与Web/01-Spring-Boot自动配置与启动.md"
+    },
+    {
+      "path": "content/Java开发/09-安全认证与授权/02-OAuth2-OIDC-JWT与API安全.md"
+    },
+    {
+      "path": "content/Java开发/11-缓存与搜索/01-Redis与缓存工程.md"
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/07-Seata-Sentinel-SkyWalking实战边界.md"
+    },
+    {
+      "path": "content/Java开发/15-云原生DevOps与可观测性/02-Kubernetes工作负载网络配置与探针.md"
+    },
+    {
+      "path": "content/Java开发/15-云原生DevOps与可观测性/04-OpenTelemetry-SLO与故障响应.md"
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/06-JavaScript基础类型函数集合DOM与事件.md"
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/07-JavaScript高级异步模块网络与性能.md"
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/000-TypeScript官方资料与版本边界.md"
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/10-模块包与声明文件.md"
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/13-tsconfig严格模式与工程编译.md"
+    }
+  ]
+}

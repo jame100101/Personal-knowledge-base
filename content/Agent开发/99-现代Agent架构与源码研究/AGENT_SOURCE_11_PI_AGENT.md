@@ -8,9 +8,17 @@ pi 的仓库里既有较小的 Agent Core，也有完整 Coding Agent 所需的�
 > - `source_type`: `official-repository + source-audit`
 > - `stability`: `fast-moving`
 
+## 2026-09-20 增量核对：现在从哪里读
+
+本轮证据固定在 [`d1230ea2000d`](https://github.com/earendil-works/pi/tree/d1230ea2000d876b479a69b8b061f9d670f262f5)，入口为 [`packages/agent/src/agent-loop.ts`](https://github.com/earendil-works/pi/blob/d1230ea2000d876b479a69b8b061f9d670f262f5/packages/agent/src/agent-loop.ts)。下文旧快照与旧核验日期保留；本节不是对全部历史结论的重新背书。
+
+本次仓库地址解析到 `earendil-works/pi`；旧的 pi-mono 链接属于历史身份。核心 `agent-loop.ts` 仍有两层循环：内层处理工具调用和 steering，外层在本轮原本要结束时检查 follow-up。Steering 像“正在做的时候补一句新要求”，follow-up 像“这轮做完再接着处理的任务”，二者不应混作一个无差别队列。
+
+当前还应关注 `prepareNextTurn`：下一轮准备可以返回新的 context、messages、model 和 thinking level。若准备过程耗时，循环会在原先没有待处理 steering 时再次检查队列，避免把等待期间的新输入漏掉。工具批次里只要有 `executionMode: sequential`，或全局要求顺序执行，就走串行分支；其余走并行分支。这是执行策略，不是自动判断文件写冲突的证明。本次直接核对了该文件，session 后端和所有 provider 尚未重新测试。
+
 ## 1. 项目身份
 
-- **官方仓库**：[earendil-works/pi-mono](https://github.com/earendil-works/pi-mono)
+- **官方仓库**：[earendil-works/pi](https://github.com/earendil-works/pi)
 - **固定快照**：[`dcd4619`](https://github.com/earendil-works/pi-mono/tree/dcd461925db2edf69a43c8135db1180d418afd54)
 - **主要语言与运行时**：TypeScript；仓库要求 Node.js `>=22.19.0`
 - **当前包名**：`@earendil-works/pi-*`。旧资料中的 `badlogic/pi-mono` 与 `@mariozechner/pi-*` 属于历史命名，阅读时应先核对链接和 package scope。
