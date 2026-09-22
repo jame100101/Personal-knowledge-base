@@ -1,0 +1,282 @@
+[
+  {
+    "url": "https://alistair.cockburn.us/hexagonal-architecture",
+    "status": 200,
+    "resolved": "https://alistair.cockburn.us/hexagonal-architecture"
+  },
+  {
+    "url": "https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/",
+    "status": 200,
+    "resolved": "https://builder.aws.com/content/3EumjoZascWd1oZiEgL8ORlv3qE/timeouts-retries-and-backoff-with-jitter"
+  },
+  {
+    "url": "https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html",
+    "status": 200,
+    "resolved": "https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html"
+  },
+  {
+    "url": "https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html",
+    "status": 200,
+    "resolved": "https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html"
+  },
+  {
+    "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html",
+    "status": 200,
+    "resolved": "https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html"
+  },
+  {
+    "url": "https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html",
+    "status": 200,
+    "resolved": "https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html"
+  },
+  {
+    "url": "https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html",
+    "status": 200,
+    "resolved": "https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html"
+  },
+  {
+    "url": "https://datatracker.ietf.org/doc/html/rfc9111",
+    "status": 200,
+    "resolved": "https://datatracker.ietf.org/doc/html/rfc9111"
+  },
+  {
+    "url": "https://datatracker.ietf.org/doc/html/rfc9457",
+    "status": 200,
+    "resolved": "https://datatracker.ietf.org/doc/html/rfc9457"
+  },
+  {
+    "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview",
+    "status": 200,
+    "resolved": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Overview"
+  },
+  {
+    "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html",
+    "status": 200,
+    "resolved": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"
+  },
+  {
+    "url": "https://docs.aws.amazon.com/lambda/latest/dg/best-practices.html",
+    "status": 200,
+    "resolved": "https://docs.aws.amazon.com/lambda/latest/dg/best-practices.html"
+  },
+  {
+    "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/introduction.html",
+    "status": 200,
+    "resolved": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/introduction.html"
+  },
+  {
+    "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/saga-orchestration.html",
+    "status": 200,
+    "resolved": "https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/saga-orchestration.html"
+  },
+  {
+    "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/transactional-outbox.html",
+    "status": 200,
+    "resolved": "https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/transactional-outbox.html"
+  },
+  {
+    "url": "https://docs.python.org/3/library/asyncio-sync.html",
+    "status": 200,
+    "resolved": "https://docs.python.org/3/library/asyncio-sync.html"
+  },
+  {
+    "url": "https://docs.python.org/3/library/http.server.html",
+    "status": 200,
+    "resolved": "https://docs.python.org/3/library/http.server.html"
+  },
+  {
+    "url": "https://docs.python.org/3/library/sqlite3.html#transaction-control",
+    "status": 200,
+    "resolved": "https://docs.python.org/3/library/sqlite3.html#transaction-control"
+  },
+  {
+    "url": "https://docs.spring.io/spring-modulith/reference/fundamentals.html",
+    "status": 200,
+    "resolved": "https://docs.spring.io/spring-modulith/reference/fundamentals.html"
+  },
+  {
+    "url": "https://github.com/cloudevents/spec/blob/main/cloudevents/spec.md",
+    "status": 200,
+    "resolved": "https://github.com/cloudevents/spec/blob/main/cloudevents/spec.md"
+  },
+  {
+    "url": "https://kubernetes.io/docs/concepts/workloads/pods/probes/",
+    "status": 200,
+    "resolved": "https://kubernetes.io/docs/concepts/workloads/pods/probes/"
+  },
+  {
+    "url": "https://learn.microsoft.com/en-us/azure/architecture/guide/architecture-styles/",
+    "status": 200,
+    "resolved": "https://learn.microsoft.com/en-us/azure/architecture/guide/architecture-styles/"
+  },
+  {
+    "url": "https://learn.microsoft.com/en-us/azure/architecture/guide/architecture-styles/microservices",
+    "status": 200,
+    "resolved": "https://learn.microsoft.com/en-us/azure/architecture/guide/architecture-styles/microservices"
+  },
+  {
+    "url": "https://learn.microsoft.com/en-us/azure/architecture/guide/architecture-styles/n-tier",
+    "status": 200,
+    "resolved": "https://learn.microsoft.com/en-us/azure/architecture/guide/architecture-styles/n-tier"
+  },
+  {
+    "url": "https://learn.microsoft.com/en-us/azure/architecture/guide/architecture-styles/web-queue-worker",
+    "status": 200,
+    "resolved": "https://learn.microsoft.com/en-us/azure/architecture/guide/architecture-styles/web-queue-worker"
+  },
+  {
+    "url": "https://learn.microsoft.com/en-us/azure/architecture/microservices/model/domain-analysis",
+    "status": 200,
+    "resolved": "https://learn.microsoft.com/en-us/azure/architecture/microservices/model/domain-analysis"
+  },
+  {
+    "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/backends-for-frontends",
+    "status": 200,
+    "resolved": "https://learn.microsoft.com/en-us/azure/architecture/patterns/backends-for-frontends"
+  },
+  {
+    "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/bulkhead",
+    "status": 200,
+    "resolved": "https://learn.microsoft.com/en-us/azure/architecture/patterns/bulkhead"
+  },
+  {
+    "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/circuit-breaker",
+    "status": 200,
+    "resolved": "https://learn.microsoft.com/en-us/azure/architecture/patterns/circuit-breaker"
+  },
+  {
+    "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs",
+    "status": 200,
+    "resolved": "https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs"
+  },
+  {
+    "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/deployment-stamp",
+    "status": 200,
+    "resolved": "https://learn.microsoft.com/en-us/azure/architecture/patterns/deployment-stamp"
+  },
+  {
+    "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/event-sourcing",
+    "status": 200,
+    "resolved": "https://learn.microsoft.com/en-us/azure/architecture/patterns/event-sourcing"
+  },
+  {
+    "url": "https://learn.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/microservice-domain-model",
+    "status": 200,
+    "resolved": "https://learn.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/microservice-domain-model"
+  },
+  {
+    "url": "https://martinfowler.com/articles/microservices.html",
+    "status": 200,
+    "resolved": "https://martinfowler.com/articles/microservices.html"
+  },
+  {
+    "url": "https://martinfowler.com/bliki/MonolithFirst.html",
+    "status": 200,
+    "resolved": "https://martinfowler.com/bliki/MonolithFirst.html"
+  },
+  {
+    "url": "https://martinfowler.com/bliki/PresentationDomainDataLayering.html",
+    "status": 200,
+    "resolved": "https://martinfowler.com/bliki/PresentationDomainDataLayering.html"
+  },
+  {
+    "url": "https://nodejs.org/en/learn/asynchronous-work/dont-block-the-event-loop",
+    "status": 200,
+    "resolved": "https://nodejs.org/learn/asynchronous-work/dont-block-the-event-loop"
+  },
+  {
+    "url": "https://opentelemetry.io/docs/concepts/signals/",
+    "status": 200,
+    "resolved": "https://opentelemetry.io/docs/concepts/signals/"
+  },
+  {
+    "url": "https://redis.io/docs/latest/develop/clients/patterns/distributed-locks/",
+    "status": 200,
+    "resolved": "https://redis.io/docs/latest/develop/clients/patterns/distributed-locks/"
+  },
+  {
+    "url": "https://sre.google/sre-book/handling-overload/",
+    "status": 200,
+    "resolved": "https://sre.google/sre-book/handling-overload/"
+  },
+  {
+    "url": "https://sre.google/sre-book/monitoring-distributed-systems/",
+    "status": 200,
+    "resolved": "https://sre.google/sre-book/monitoring-distributed-systems/"
+  },
+  {
+    "url": "https://sre.google/workbook/implementing-slos/",
+    "status": 200,
+    "resolved": "https://sre.google/workbook/implementing-slos/"
+  },
+  {
+    "url": "https://users.ece.cmu.edu/~adrian/731-sp04/readings/GL-cap.pdf",
+    "status": 200,
+    "resolved": "https://users.ece.cmu.edu/~adrian/731-sp04/readings/GL-cap.pdf"
+  },
+  {
+    "url": "https://www.elastic.co/docs/manage-data/data-store/near-real-time-search",
+    "status": 200,
+    "resolved": "https://www.elastic.co/docs/manage-data/data-store/near-real-time-search"
+  },
+  {
+    "url": "https://www.postgresql.org/docs/18/backup.html",
+    "status": 200,
+    "resolved": "https://www.postgresql.org/docs/18/backup.html"
+  },
+  {
+    "url": "https://www.postgresql.org/docs/18/ddl-constraints.html",
+    "status": 200,
+    "resolved": "https://www.postgresql.org/docs/18/ddl-constraints.html"
+  },
+  {
+    "url": "https://www.postgresql.org/docs/18/explicit-locking.html",
+    "status": 200,
+    "resolved": "https://www.postgresql.org/docs/18/explicit-locking.html"
+  },
+  {
+    "url": "https://www.postgresql.org/docs/18/indexes-multicolumn.html",
+    "status": 200,
+    "resolved": "https://www.postgresql.org/docs/18/indexes-multicolumn.html"
+  },
+  {
+    "url": "https://www.postgresql.org/docs/18/queries-limit.html",
+    "status": 200,
+    "resolved": "https://www.postgresql.org/docs/18/queries-limit.html"
+  },
+  {
+    "url": "https://www.postgresql.org/docs/18/runtime-config-connection.html",
+    "status": 200,
+    "resolved": "https://www.postgresql.org/docs/18/runtime-config-connection.html"
+  },
+  {
+    "url": "https://www.postgresql.org/docs/18/sql-createindex.html",
+    "status": 200,
+    "resolved": "https://www.postgresql.org/docs/18/sql-createindex.html"
+  },
+  {
+    "url": "https://www.postgresql.org/docs/18/sql-explain.html",
+    "status": 200,
+    "resolved": "https://www.postgresql.org/docs/18/sql-explain.html"
+  },
+  {
+    "url": "https://www.postgresql.org/docs/18/transaction-iso.html",
+    "status": 200,
+    "resolved": "https://www.postgresql.org/docs/18/transaction-iso.html"
+  },
+  {
+    "url": "https://www.rabbitmq.com/docs/confirms",
+    "status": 200,
+    "resolved": "https://www.rabbitmq.com/docs/confirms"
+  },
+  {
+    "url": "https://www.rfc-editor.org/rfc/rfc9110.html",
+    "status": 200,
+    "resolved": "https://www.rfc-editor.org/rfc/rfc9110.html"
+  },
+  {
+    "url": "https://www.sqlite.org/lang_transaction.html",
+    "status": 200,
+    "resolved": "https://www.sqlite.org/lang_transaction.html"
+  }
+]
