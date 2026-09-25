@@ -31,7 +31,10 @@
     "content:sync": "node scripts/import-agent-learning.mjs && node scripts/import-java-learning.mjs && node scripts/import-language-foundations.mjs",
     "content:validate-code-groups": "node scripts/validate-code-language-groups.mjs",
     "content:import-backend": "node scripts/import-backend-knowledge.mjs",
-    "content:verify-backend": "node scripts/import-backend-knowledge.mjs --verify"
+    "content:verify-backend": "node scripts/import-backend-knowledge.mjs --verify",
+    "content:import-frontend": "node scripts/import-frontend-knowledge.mjs",
+    "content:verify-frontend": "node scripts/import-frontend-knowledge.mjs --verify",
+    "content:validate-frontend": "node scripts/validate-frontend-knowledge.mjs"
   },
   "overrides": {
     "brace-expansion": "5.0.8",

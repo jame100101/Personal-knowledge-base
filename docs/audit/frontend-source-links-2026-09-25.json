@@ -1,0 +1,431 @@
+{
+  "checkedAt": "2026-09-25T12:57:04.571Z",
+  "note": "Availability checks supplement manual review; HTTP success alone does not prove content correctness.",
+  "results": [
+    {
+      "url": "https://angular.dev/overview",
+      "status": 200,
+      "finalUrl": "https://angular.dev/overview"
+    },
+    {
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html",
+      "status": 200,
+      "finalUrl": "https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html"
+    },
+    {
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html",
+      "status": 200,
+      "finalUrl": "https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility/HTML",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility/HTML"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Frameworks_libraries",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Frameworks_libraries"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/AbortController",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/API/AbortController"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Grid_layout"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Execution_model",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Execution_model"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/Performance/Guides/How_browsers_work",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/Performance/Guides/How_browsers_work"
+    },
+    {
+      "url": "https://docs.astro.build/en/concepts/islands/",
+      "status": 200,
+      "finalUrl": "https://docs.astro.build/en/concepts/islands/"
+    },
+    {
+      "url": "https://docs.solidjs.com/",
+      "status": 200,
+      "finalUrl": "https://docs.solidjs.com/"
+    },
+    {
+      "url": "https://feature-sliced.design/docs/get-started/overview",
+      "status": 200,
+      "finalUrl": "https://feature-sliced.design/docs/get-started/overview"
+    },
+    {
+      "url": "https://fullstackopen.com/en/",
+      "status": 200,
+      "finalUrl": "https://fullstackopen.com/en/"
+    },
+    {
+      "url": "https://fullstackopen.com/en/part1/introduction_to_react/",
+      "status": 200,
+      "finalUrl": "https://fullstackopen.com/en/part1/introduction_to_react/"
+    },
+    {
+      "url": "https://github.com/alan2207/bulletproof-react",
+      "status": 200,
+      "finalUrl": "https://github.com/alan2207/bulletproof-react"
+    },
+    {
+      "url": "https://github.com/vuejs/core",
+      "status": 200,
+      "finalUrl": "https://github.com/vuejs/core"
+    },
+    {
+      "url": "https://javascript.info/",
+      "status": 200,
+      "finalUrl": "https://javascript.info/"
+    },
+    {
+      "url": "https://javascript.info/event-loop",
+      "status": 200,
+      "finalUrl": "https://javascript.info/event-loop"
+    },
+    {
+      "url": "https://martinfowler.com/articles/micro-frontends.html",
+      "status": 200,
+      "finalUrl": "https://martinfowler.com/articles/micro-frontends.html"
+    },
+    {
+      "url": "https://nextjs.org/docs/app",
+      "status": 200,
+      "finalUrl": "https://nextjs.org/docs/app"
+    },
+    {
+      "url": "https://nextjs.org/docs/app/getting-started/server-and-client-components",
+      "status": 200,
+      "finalUrl": "https://nextjs.org/docs/app/getting-started/server-and-client-components"
+    },
+    {
+      "url": "https://nuxt.com/docs/3.x/getting-started/data-fetching",
+      "status": 200,
+      "finalUrl": "https://nuxt.com/docs/3.x/getting-started/data-fetching"
+    },
+    {
+      "url": "https://nuxt.com/docs/3.x/getting-started/introduction",
+      "status": 200,
+      "finalUrl": "https://nuxt.com/docs/3.x/getting-started/introduction"
+    },
+    {
+      "url": "https://nuxt.com/docs/3.x/guide/concepts/rendering",
+      "status": 200,
+      "finalUrl": "https://nuxt.com/docs/3.x/guide/concepts/rendering"
+    },
+    {
+      "url": "https://pinia.vuejs.org/core-concepts/",
+      "status": 200,
+      "finalUrl": "https://pinia.vuejs.org/core-concepts/"
+    },
+    {
+      "url": "https://playwright.dev/docs/best-practices",
+      "status": 200,
+      "finalUrl": "https://playwright.dev/docs/best-practices"
+    },
+    {
+      "url": "https://react.dev/learn",
+      "status": 200,
+      "finalUrl": "https://react.dev/learn"
+    },
+    {
+      "url": "https://react.dev/learn/adding-interactivity",
+      "status": 200,
+      "finalUrl": "https://react.dev/learn/adding-interactivity"
+    },
+    {
+      "url": "https://react.dev/learn/creating-a-react-app",
+      "status": 200,
+      "finalUrl": "https://react.dev/learn/creating-a-react-app"
+    },
+    {
+      "url": "https://react.dev/learn/extracting-state-logic-into-a-reducer",
+      "status": 200,
+      "finalUrl": "https://react.dev/learn/extracting-state-logic-into-a-reducer"
+    },
+    {
+      "url": "https://react.dev/learn/passing-data-deeply-with-context",
+      "status": 200,
+      "finalUrl": "https://react.dev/learn/passing-data-deeply-with-context"
+    },
+    {
+      "url": "https://react.dev/learn/preserving-and-resetting-state",
+      "status": 200,
+      "finalUrl": "https://react.dev/learn/preserving-and-resetting-state"
+    },
+    {
+      "url": "https://react.dev/learn/queueing-a-series-of-state-updates",
+      "status": 200,
+      "finalUrl": "https://react.dev/learn/queueing-a-series-of-state-updates"
+    },
+    {
+      "url": "https://react.dev/learn/render-and-commit",
+      "status": 200,
+      "finalUrl": "https://react.dev/learn/render-and-commit"
+    },
+    {
+      "url": "https://react.dev/learn/reusing-logic-with-custom-hooks",
+      "status": 200,
+      "finalUrl": "https://react.dev/learn/reusing-logic-with-custom-hooks"
+    },
+    {
+      "url": "https://react.dev/learn/state-as-a-snapshot",
+      "status": 200,
+      "finalUrl": "https://react.dev/learn/state-as-a-snapshot"
+    },
+    {
+      "url": "https://react.dev/learn/thinking-in-react",
+      "status": 200,
+      "finalUrl": "https://react.dev/learn/thinking-in-react"
+    },
+    {
+      "url": "https://react.dev/learn/you-might-not-need-an-effect",
+      "status": 200,
+      "finalUrl": "https://react.dev/learn/you-might-not-need-an-effect"
+    },
+    {
+      "url": "https://react.dev/reference/react-dom/client/hydrateRoot",
+      "status": 200,
+      "finalUrl": "https://react.dev/reference/react-dom/client/hydrateRoot"
+    },
+    {
+      "url": "https://react.dev/reference/react/memo",
+      "status": 200,
+      "finalUrl": "https://react.dev/reference/react/memo"
+    },
+    {
+      "url": "https://react.dev/reference/react/Profiler",
+      "status": 200,
+      "finalUrl": "https://react.dev/reference/react/Profiler"
+    },
+    {
+      "url": "https://react.dev/reference/react/useActionState",
+      "status": 200,
+      "finalUrl": "https://react.dev/reference/react/useActionState"
+    },
+    {
+      "url": "https://react.dev/reference/react/useEffect",
+      "status": 200,
+      "finalUrl": "https://react.dev/reference/react/useEffect"
+    },
+    {
+      "url": "https://react.dev/reference/react/useTransition",
+      "status": 200,
+      "finalUrl": "https://react.dev/reference/react/useTransition"
+    },
+    {
+      "url": "https://react.dev/reference/rules/rules-of-hooks",
+      "status": 200,
+      "finalUrl": "https://react.dev/reference/rules/rules-of-hooks"
+    },
+    {
+      "url": "https://reactrouter.com/start/modes",
+      "status": 200,
+      "finalUrl": "https://reactrouter.com/start/modes"
+    },
+    {
+      "url": "https://router.vuejs.org/guide/",
+      "status": 200,
+      "finalUrl": "https://router.vuejs.org/guide/"
+    },
+    {
+      "url": "https://router.vuejs.org/guide/advanced/navigation-guards.html",
+      "status": 200,
+      "finalUrl": "https://router.vuejs.org/guide/advanced/navigation-guards.html"
+    },
+    {
+      "url": "https://router.vuejs.org/guide/essentials/history-mode.html",
+      "status": 200,
+      "finalUrl": "https://router.vuejs.org/guide/essentials/history-mode.html"
+    },
+    {
+      "url": "https://supabase.com/docs/guides/database/postgres/row-level-security",
+      "status": 200,
+      "finalUrl": "https://supabase.com/docs/guides/database/postgres/row-level-security"
+    },
+    {
+      "url": "https://svelte.dev/docs",
+      "status": 200,
+      "finalUrl": "https://svelte.dev/docs"
+    },
+    {
+      "url": "https://tanstack.com/query/latest/docs/framework/react/guides/important-defaults",
+      "status": 200,
+      "finalUrl": "https://tanstack.com/query/latest/docs/framework/react/guides/important-defaults"
+    },
+    {
+      "url": "https://tanstack.com/query/latest/docs/framework/react/guides/optimistic-updates",
+      "status": 200,
+      "finalUrl": "https://tanstack.com/query/latest/docs/framework/react/guides/optimistic-updates"
+    },
+    {
+      "url": "https://tanstack.com/query/latest/docs/framework/react/guides/query-keys",
+      "status": 200,
+      "finalUrl": "https://tanstack.com/query/latest/docs/framework/react/guides/query-keys"
+    },
+    {
+      "url": "https://tanstack.com/query/latest/docs/framework/react/overview",
+      "status": 200,
+      "finalUrl": "https://tanstack.com/query/latest/docs/framework/react/overview"
+    },
+    {
+      "url": "https://testing-library.com/docs/guiding-principles/",
+      "status": 200,
+      "finalUrl": "https://testing-library.com/docs/guiding-principles/"
+    },
+    {
+      "url": "https://vercel.com/docs/deployments",
+      "status": 200,
+      "finalUrl": "https://vercel.com/docs/deployments"
+    },
+    {
+      "url": "https://vercel.com/docs/environment-variables",
+      "status": 200,
+      "finalUrl": "https://vercel.com/docs/environment-variables"
+    },
+    {
+      "url": "https://vercel.com/docs/instant-rollback",
+      "status": 200,
+      "finalUrl": "https://vercel.com/docs/instant-rollback"
+    },
+    {
+      "url": "https://vite.dev/guide/",
+      "status": 200,
+      "finalUrl": "https://vite.dev/guide/"
+    },
+    {
+      "url": "https://vite.dev/guide/build.html#multi-page-app",
+      "status": 200,
+      "finalUrl": "https://vite.dev/guide/build.html"
+    },
+    {
+      "url": "https://vite.dev/guide/env-and-mode",
+      "status": 200,
+      "finalUrl": "https://vite.dev/guide/env-and-mode"
+    },
+    {
+      "url": "https://vuejs.org/api/sfc-script-setup.html#reactive-props-destructure",
+      "status": 200,
+      "finalUrl": "https://vuejs.org/api/sfc-script-setup.html"
+    },
+    {
+      "url": "https://vuejs.org/guide/best-practices/performance.html",
+      "status": 200,
+      "finalUrl": "https://vuejs.org/guide/best-practices/performance.html"
+    },
+    {
+      "url": "https://vuejs.org/guide/best-practices/security.html",
+      "status": 200,
+      "finalUrl": "https://vuejs.org/guide/best-practices/security.html"
+    },
+    {
+      "url": "https://vuejs.org/guide/components/events.html",
+      "status": 200,
+      "finalUrl": "https://vuejs.org/guide/components/events.html"
+    },
+    {
+      "url": "https://vuejs.org/guide/components/props.html",
+      "status": 200,
+      "finalUrl": "https://vuejs.org/guide/components/props.html"
+    },
+    {
+      "url": "https://vuejs.org/guide/components/provide-inject.html",
+      "status": 200,
+      "finalUrl": "https://vuejs.org/guide/components/provide-inject.html"
+    },
+    {
+      "url": "https://vuejs.org/guide/essentials/computed.html",
+      "status": 200,
+      "finalUrl": "https://vuejs.org/guide/essentials/computed.html"
+    },
+    {
+      "url": "https://vuejs.org/guide/essentials/list.html",
+      "status": 200,
+      "finalUrl": "https://vuejs.org/guide/essentials/list.html"
+    },
+    {
+      "url": "https://vuejs.org/guide/essentials/reactivity-fundamentals.html",
+      "status": 200,
+      "finalUrl": "https://vuejs.org/guide/essentials/reactivity-fundamentals.html"
+    },
+    {
+      "url": "https://vuejs.org/guide/essentials/watchers.html",
+      "status": 200,
+      "finalUrl": "https://vuejs.org/guide/essentials/watchers.html"
+    },
+    {
+      "url": "https://vuejs.org/guide/extras/reactivity-in-depth.html",
+      "status": 200,
+      "finalUrl": "https://vuejs.org/guide/extras/reactivity-in-depth.html"
+    },
+    {
+      "url": "https://vuejs.org/guide/extras/rendering-mechanism.html",
+      "status": 200,
+      "finalUrl": "https://vuejs.org/guide/extras/rendering-mechanism.html"
+    },
+    {
+      "url": "https://vuejs.org/guide/extras/ways-of-using-vue.html",
+      "status": 200,
+      "finalUrl": "https://vuejs.org/guide/extras/ways-of-using-vue.html"
+    },
+    {
+      "url": "https://vuejs.org/guide/introduction.html",
+      "status": 200,
+      "finalUrl": "https://vuejs.org/guide/introduction.html"
+    },
+    {
+      "url": "https://vuejs.org/guide/reusability/composables.html",
+      "status": 200,
+      "finalUrl": "https://vuejs.org/guide/reusability/composables.html"
+    },
+    {
+      "url": "https://vuejs.org/guide/scaling-up/ssr.html",
+      "status": 200,
+      "finalUrl": "https://vuejs.org/guide/scaling-up/ssr.html"
+    },
+    {
+      "url": "https://vuejs.org/guide/scaling-up/testing.html",
+      "status": 200,
+      "finalUrl": "https://vuejs.org/guide/scaling-up/testing.html"
+    },
+    {
+      "url": "https://vuejs.org/tutorial/",
+      "status": 200,
+      "finalUrl": "https://vuejs.org/tutorial/"
+    },
+    {
+      "url": "https://web.dev/articles/optimize-lcp",
+      "status": 200,
+      "finalUrl": "https://web.dev/articles/optimize-lcp"
+    },
+    {
+      "url": "https://web.dev/articles/vitals",
+      "status": 200,
+      "finalUrl": "https://web.dev/articles/vitals"
+    },
+    {
+      "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html",
+      "status": 200,
+      "finalUrl": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+    },
+    {
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/",
+      "status": 200,
+      "finalUrl": "https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "name": "knowledge-frontend-lab",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "typecheck": "vue-tsc --noEmit",
+    "test": "node --experimental-strip-types --test tests/*.test.ts"
+  },
+  "dependencies": {
+    "vue": "3.5.22",
+    "react": "19.1.1",
+    "react-dom": "19.1.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "5.2.4",
+    "@types/react": "19.1.16",
+    "@types/react-dom": "19.1.9",
+    "vite": "6.4.1",
+    "typescript": "5.9.3",
+    "vue-tsc": "3.1.1",
+    "@types/node": "24.5.2"
+  }
+}

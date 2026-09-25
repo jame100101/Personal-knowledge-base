@@ -1,6 +1,6 @@
 # Damnatiox Knowledge
 
-基于 Nuxt 3、Vue 3、TypeScript 与 Supabase 的动态 Markdown 知识库。公开运行时从 Supabase 读取文件夹、文章正文与元数据；`content/Agent开发`、`content/Java开发`、`content/语言基础` 是三条课程的 Git 审查与批量同步源。
+基于 Nuxt 3、Vue 3、TypeScript 与 Supabase 的动态 Markdown 知识库。公开运行时从 Supabase 读取文件夹、文章正文与元数据；`content/Agent开发`、`content/Java开发`、`content/语言基础`、`content/后端知识`、`content/前端架构` 是课程的 Git 审查与批量同步源。
 
 ## 功能
 
@@ -208,3 +208,16 @@ tests/
 - 图片 Bucket 与 Policy 已就绪，第一版编辑器保留图片上传入口，完整的 MIME 文件头检测和自动插入 URL 待补充。
 - Wiki Link 以模块化占位链接渲染，尚未建立标题解析 RPC。
 - 拖放移动未启用；文件夹父级下拉与文档编辑器文件夹下拉已完整支持移动。
+
+## 前端架构课程
+
+新增 7 个分区，覆盖浏览器、组件设计、Vue、React、路由与数据、渲染、安全、测试和部署；独立双框架练习见 [examples/frontend](examples/frontend/README.md)。
+
+```bash
+npm run content:validate-frontend
+npm run content:import-frontend             # 只读检查发布计划
+npm run content:import-frontend -- --apply   # 需要现有管理员环境凭据
+npm run content:verify-frontend
+```
+
+发布脚本只新增本模块，已有正文出现差异时停止；本地备份放在 Git 忽略的 `.tools/content-backups`。不要将管理员密码或高权限 Key 提交到仓库。Vercel 代码部署与 Supabase 内容发布是两个步骤，缺一不能视为课程上线。

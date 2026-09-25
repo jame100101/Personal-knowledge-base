@@ -1,0 +1,49 @@
+# Vue 与 React 怎么选：先看团队和产品，再看语法偏好
+
+“Vue 简单，React 灵活”有一点直觉价值，却不足以支撑项目决定。简单在哪，灵活带来多少维护工作，要放进你的需求里讨论。一个熟悉 Vue 的两人团队，不会因为换成 React 就自动获得更好的架构。
+
+## 用同一个问题比较
+
+| 问题       | Vue 常见表达                   | React 常见表达                     |
+| ---------- | ------------------------------ | ---------------------------------- |
+| 描述界面   | SFC 模板，也可使用 JSX         | JSX 与组件函数                     |
+| 本地状态   | ref / reactive                 | useState / useReducer              |
+| 派生结果   | computed                       | 渲染中计算，必要时 useMemo         |
+| 副作用同步 | watch / watchEffect 与生命周期 | useEffect 与清理                   |
+| 逻辑复用   | composable                     | 自定义 Hook                        |
+| 跨层传递   | provide / inject               | Context                            |
+| 共享状态   | Pinia 等                       | Context、Redux、Zustand 等         |
+| 全栈组织   | Nuxt 等                        | Next.js、React Router Framework 等 |
+
+这张表只帮助定位职责，不说明 API 可以逐个翻译。computed 会追踪依赖，useMemo 依赖显式依赖列表；Vue setup 与 React 函数组件执行时机不同。最容易出错的迁移，是语法改了，脑中的状态模型没有改。
+
+## 选型先回答五个问题
+
+第一，团队已经能熟练交付哪套技术？第二，现有设计系统和第三方组件支持什么？第三，产品主要是内容阅读、管理后台，还是复杂交互工具？第四，SSR、部署和数据层有什么硬约束？第五，半年后谁维护，招聘和交接成本如何？
+
+可以做一个半天到两天的技术试验，选最有风险的页面，例如带权限、长列表和富文本的编辑器。记录实现难点、类型支持、性能和测试体验。不要用一个计数器的行数决定复杂产品技术栈。
+
+## 本知识库为什么继续用 Vue / Nuxt
+
+仓库已经有 Nuxt 3 页面、Vue 组件、Markdown 渲染、安全测试和 Supabase 数据链路。新增 React 教学不需要把网站重写成 React。延续现有栈能把工作集中在课程质量和发布完整性上；独立示例让读者仍能动手学习另一套技术。
+
+未来如果某个独立工具确实需要 React 专属生态，可以先评估独立页面或独立应用，而不是为了一个组件把整站微前端化。迁移成本包括路由、状态、可访问性、测试和运营，不只是模板改成 JSX。
+
+## 再认识几种前端方向
+
+Angular 提供较完整的框架约定与依赖注入体系；Svelte 强调编译期处理；Solid 强调细粒度响应式；Astro 常用于内容站点并通过 islands 组织交互。这些是理解设计空间的入口，不代表某种一定更快或更省心。比较时使用相同功能、设备和产物设置，别拿演示性能代替业务结果。
+
+## 写一份自己的架构决定
+
+用四段话说明：产品约束、考虑过的方案、选中的理由、什么时候重新评估。例如“继续 Nuxt，因为团队和代码已成熟；当编辑器需要关键 React 专属能力且独立集成成本可控时再评估”。好的决定允许被新证据修正，不需要宣布另一个框架落后。
+
+## 练习与参考
+
+为“个人知识库”和“十人团队协作设计工具”分别写选型记录，列出一个可能推翻你决定的新条件。若两份记录只是换产品名字，说明还没有认真处理约束。
+
+- [Vue：使用方式](https://vuejs.org/guide/extras/ways-of-using-vue.html)
+- [React：创建 React 应用](https://react.dev/learn/creating-a-react-app)
+- [Angular：概览](https://angular.dev/overview)
+- [Svelte：文档](https://svelte.dev/docs)
+- [Solid：介绍](https://docs.solidjs.com/)
+- [Astro：Islands](https://docs.astro.build/en/concepts/islands/)
