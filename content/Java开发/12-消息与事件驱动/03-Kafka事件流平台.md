@@ -66,22 +66,25 @@ flowchart LR
   P2 --> C1
 ```
 
-## 4. 最小可运行示例
+## 4. 教学片段：处理与提交位置的先后
 
-这里的转账代码展示的是本地数据库事务，不是 Kafka 的生产者或消费代码。它用来提醒我们：数据库提交和消息发送分属不同系统。不能因为方法有 `@Transactional`，就推断消息与数据库一定一起提交。
+假设已有正确配置的 `KafkaConsumer<String, String> consumer`，关闭 `enable.auto.commit`，并在同一个线程执行下面的循环。`processIdempotently` 是你实现的业务函数，不是 Kafka SDK 方法。需要导入 `java.time.Duration`；真实项目还需订阅主题、关闭资源和处理再均衡。
 
 ```java
-@Service
-class TransferService {
-  @Transactional
-  public void transfer(long from, long to, BigDecimal amount) {
-    accounts.debit(from, amount);
-    accounts.credit(to, amount);
+while (running) {
+  var records = consumer.poll(Duration.ofMillis(500));
+  for (var record : records) {
+    processIdempotently(record.key(), record.value());
   }
+  consumer.commitSync();
 }
-
-// 事务方法应从代理外部调用；同类自调用不会经过代理拦截。
 ```
+
+设一次取到 offset 10、11、12。全部业务处理成功后再提交，表示下次从这些已处理记录之后继续；提交的是下一条读取位置，不是“删除这些消息”。如果处理 11 时抛异常，循环不能跳过错误却继续提交整个批次的位置，否则可能漏掉 11。
+
+这个简化循环让异常退出处理路径，交给外围记录故障并关闭消费者。10 已成功而提交尚未发生，恢复后可能再次处理 10，因此业务端仍需去重。若处理成功、提交时断网，也不能确定提交是否已到达 broker；查询和恢复必须容忍重复。不要在捕获异常后无条件执行 `commitSync()`。
+
+为了在单线程模型下方便理解，这里没有异步派发记录。把处理交给线程池后，提交位置必须依据每个分区连续完成的进度计算，不能直接照搬这段代码。Kafka 事务可用于 Kafka 内的消费—处理—生产链路，普通数据库写入不会因此自动加入同一事务。
 
 ## 5. 实践与验证
 

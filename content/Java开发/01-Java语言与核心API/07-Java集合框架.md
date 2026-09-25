@@ -101,7 +101,7 @@ ConcurrentHashMap、CopyOnWriteArrayList、BlockingQueue 等提供特定并发�
 
 **常见误区：** 使用线程安全集合后，把“先检查再执行”的多步逻辑误认为整体原子。
 
-## 3.9 最小可运行示例
+## 3.9 教学示例（结合本章运行前提）
 
 ```java
 Map<String, Long> counts = orders.stream()
@@ -141,3 +141,8 @@ List<Order> newest = orders.stream()
 - [Java Collections Framework](https://docs.oracle.com/en/java/javase/26/core/java-collections-framework.html)
 - [Java SE 26 API](https://docs.oracle.com/en/java/javase/26/docs/api/)
 - [Dev.java Learn](https://dev.java/learn/)
+
+
+## 补充实验与适用边界
+
+`List.copyOf` 是结构层面的不可修改快照，元素若本身可变，仍与原集合共享对象。Stream 的实现还可能优化掉对最终结果无影响的阶段，例如某些 `count()` 不必逐项执行 `map()`；不要把必要业务副作用藏在中间操作里。

@@ -1,0 +1,2670 @@
+{
+  "date": "2026-09-25",
+  "scope": "All local Markdown articles: structural inventory; semantic review depth is documented in the accompanying report.",
+  "articles": [
+    {
+      "path": "content/Agent开发/00-Agent开发学习路线.md",
+      "module": "Agent开发",
+      "sha256": "4a8ef3c0c0c872f358cbc60ebf5f675e588786625f2c76eea8c767e674d18e6c",
+      "characters": 4496,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/01-Agent基础/000-Agent基础推荐阅读.md",
+      "module": "Agent开发",
+      "sha256": "ae9f348df22e2c4f050c17fc96596503558562ef2163ff9049d59c13b7e6032a",
+      "characters": 4489,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/01-Agent基础/01-Agent类型区分.md",
+      "module": "Agent开发",
+      "sha256": "0a5151b9327fa7593bcd8217d13bef0ac887ac369e864b63d030bc511ec9c965",
+      "characters": 4305,
+      "h1Count": 1,
+      "fenceCount": 8,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/01-Agent基础/02-Agent基本循环.md",
+      "module": "Agent开发",
+      "sha256": "2a7ff5789f2a10f4c86cb601d4834593404054a1ad60e0e39ed2684433f8cfdf",
+      "characters": 15174,
+      "h1Count": 1,
+      "fenceCount": 22,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/01-Agent基础/03-Agent适用范围.md",
+      "module": "Agent开发",
+      "sha256": "94c02c2731f47ecd4cf301525c39ec2f362dcaa24e3274c6afc86e49ca27a06d",
+      "characters": 3195,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/01-Agent基础/04-SWE Agent基础概念与ACI.md",
+      "module": "Agent开发",
+      "sha256": "58ea48d6b7193ca3c19efe0cd91960f1b8ec69c51ddc26ca77d5525469850277",
+      "characters": 11414,
+      "h1Count": 1,
+      "fenceCount": 12,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/01-Agent基础/05-统一工程模型与概念边界.md",
+      "module": "Agent开发",
+      "sha256": "ae1370a8dbb926bb5db8759a0d3c2f0e26d5aabf7f23755659d53ca448a1171c",
+      "characters": 2413,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/02-Agent Loop/000-Agent Loop推荐阅读.md",
+      "module": "Agent开发",
+      "sha256": "71b7f726541c3170e56dff2a52be29a9083fc7d0c7903f01ce5b12251b4eaeb5",
+      "characters": 748,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/02-Agent Loop/01-最小Agent Loop实现.md",
+      "module": "Agent开发",
+      "sha256": "1987baff49a4da1866277cc0d44f94673845ae91b4ccc9470edc04de41e441bc",
+      "characters": 9800,
+      "h1Count": 1,
+      "fenceCount": 22,
+      "modified": true
+    },
+    {
+      "path": "content/Agent开发/02-Agent Loop/02-结构化输出与状态机.md",
+      "module": "Agent开发",
+      "sha256": "a932d698431f2d8081b9f9e539a74527f6f43ab467b864567e457079ff2f2031",
+      "characters": 2459,
+      "h1Count": 1,
+      "fenceCount": 6,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/02-Agent Loop/03-终止超时与错误处理.md",
+      "module": "Agent开发",
+      "sha256": "983b6eed740b2ed0febdb99c815e2824e081d004ebdbf13ab30d2bfc7989d894",
+      "characters": 2943,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Agent开发/02-Agent Loop/04-任务拆分与Plan表示.md",
+      "module": "Agent开发",
+      "sha256": "a723eb80407080c169c7d44c1e7496d26292048c899291c3c64a8c7c21517ea7",
+      "characters": 23348,
+      "h1Count": 1,
+      "fenceCount": 34,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/02-Agent Loop/05-Task Scheduler依赖并发与重规划.md",
+      "module": "Agent开发",
+      "sha256": "cec0559038b06b9b739252105f6980ffd9799f708246a9fd233b4a1a13a9e544",
+      "characters": 23465,
+      "h1Count": 1,
+      "fenceCount": 54,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/02-Agent Loop/06-Workflow流程控制模式.md",
+      "module": "Agent开发",
+      "sha256": "697d04454d6ff0052c7b0500e880b65c899a4678f426e577d8f99eb585162c05",
+      "characters": 26132,
+      "h1Count": 1,
+      "fenceCount": 68,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/02-Agent Loop/07-Output Parser与结构化响应.md",
+      "module": "Agent开发",
+      "sha256": "4de75c41ea692198cff6b861cad674e9619cdfab093ed12fbe3cce228fdce86d",
+      "characters": 34221,
+      "h1Count": 1,
+      "fenceCount": 84,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/02-Agent Loop/08-Loop分层与机制选择.md",
+      "module": "Agent开发",
+      "sha256": "eaf9e0d550043df173bce72ca87da8b9f9a90f991b805188b1d1e2f3281dd232",
+      "characters": 3175,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/03-Context Engineering/01-Context Engineering总览.md",
+      "module": "Agent开发",
+      "sha256": "604136fa0d5d3bf73e1c52dd598281e091d92230e88d836ebbba79689f533c56",
+      "characters": 1679,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/03-Context Engineering/02-Context上下文.md",
+      "module": "Agent开发",
+      "sha256": "b9df1bbca028b730d8647a9bcc02f33eb873b5b22f7a52cc00e3bbdb7eae0130",
+      "characters": 1908,
+      "h1Count": 1,
+      "fenceCount": 6,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/03-Context Engineering/03-Context Builder与Prompt Assembly.md",
+      "module": "Agent开发",
+      "sha256": "adc757c197753ff92c79e3e5c3bd0dfec69d1e09a19d8766baf5dba7d62f6bd4",
+      "characters": 11448,
+      "h1Count": 1,
+      "fenceCount": 28,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/03-Context Engineering/04-Context Manifest与Assembly.md",
+      "module": "Agent开发",
+      "sha256": "58d55724c33d3833df730a260ef06d1c26b8a2982322337c3890457ddd83963d",
+      "characters": 1441,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/03-Context Engineering/05-Token Budget Compaction Prompt Cache与History.md",
+      "module": "Agent开发",
+      "sha256": "1c9502dc5caeb72ff09a4cfd6cfcb04780093a2cf510be4eaf7244efd6d5a2f4",
+      "characters": 1888,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/03-Context Engineering/06-JIT Retrieval与Progressive Disclosure.md",
+      "module": "Agent开发",
+      "sha256": "975beacafd999d5fb2d765cc493b1633cbc6d27d4d344c5e5d74a501531b99a3",
+      "characters": 873,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/03-Context Engineering/07-Context Trust与Prompt Injection边界.md",
+      "module": "Agent开发",
+      "sha256": "87c41155583909c977f6fe92dd8f24acccf620fcbcb1658ade36e7c90457d5e6",
+      "characters": 1229,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/00-Tool与Runtime边界.md",
+      "module": "Agent开发",
+      "sha256": "d30945eaa740dfdcc993268b53084b46c442e20c9eba2b17691f15e173e00f08",
+      "characters": 1728,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/000-Tools Call推荐阅读.md",
+      "module": "Agent开发",
+      "sha256": "3d2074a0231252f912b57850e5dc4ce64b38fd6e96890225da114b135421b276",
+      "characters": 1275,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/01-工具调用完整链路.md",
+      "module": "Agent开发",
+      "sha256": "eb1cf1277a38ea03d2e482d4c5d337fc2f4b8784d21738f05aa8c65a624c4200",
+      "characters": 4203,
+      "h1Count": 1,
+      "fenceCount": 16,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/02-Browser Runtime/000-Browser Agent推荐阅读.md",
+      "module": "Agent开发",
+      "sha256": "172dfd2c157af7051acabb5e2af41deb22d8d7308432dd845f142dbff49861ab",
+      "characters": 707,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/02-Browser Runtime/01-Browser Agent观察动作循环.md",
+      "module": "Agent开发",
+      "sha256": "277179be3f82a9c17c739e5584084a6a69ea338a2e1de8a317e4917cfe324fa4",
+      "characters": 997,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/02-Browser Runtime/02-Playwright可靠操作与失败恢复.md",
+      "module": "Agent开发",
+      "sha256": "3544c528a93ab061cd8b4654abd200bb030bdcee83fd3ff5d1e0e5c789eec4de",
+      "characters": 2088,
+      "h1Count": 1,
+      "fenceCount": 10,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/02-Browser Runtime/03-截图DOM动作日志与评测.md",
+      "module": "Agent开发",
+      "sha256": "99c858640641291ec0a2b6448112a939230e048d8a04bf88ad4006906da35c32",
+      "characters": 1236,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/02-工具Schema权限与幂等.md",
+      "module": "Agent开发",
+      "sha256": "379dba46594acb968977ad5706e5ee3b26bc697d5ca15b6d5d6fd0d9515e9ce8",
+      "characters": 2209,
+      "h1Count": 1,
+      "fenceCount": 8,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/03-工具失败空结果与证据.md",
+      "module": "Agent开发",
+      "sha256": "498daa73cc95c00d98e0a14d09b70fbe45eef2ca14bf96998820ed60828cf6ea",
+      "characters": 3564,
+      "h1Count": 1,
+      "fenceCount": 18,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/04-Terminal执行与进程生命周期.md",
+      "module": "Agent开发",
+      "sha256": "f52f058498d44aca911cf9fc96bd8f276e05e3c5057544076890dbed3e4bf460",
+      "characters": 9445,
+      "h1Count": 1,
+      "fenceCount": 22,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/05-Terminal输出流读取与结果归一化.md",
+      "module": "Agent开发",
+      "sha256": "6798aade69e0e7b73d208a02928f1c23b234a5677dcfcf6b7c34958ab99f9039",
+      "characters": 9399,
+      "h1Count": 1,
+      "fenceCount": 26,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/06-File IO读取写入补丁与原子更新.md",
+      "module": "Agent开发",
+      "sha256": "6f56e530cb665353e0a3af98f797d7ea617d11f4fe37acd7a60195a55a054619",
+      "characters": 12129,
+      "h1Count": 1,
+      "fenceCount": 32,
+      "modified": true
+    },
+    {
+      "path": "content/Agent开发/05-Knowledge与Memory/00-Knowledge与Memory边界.md",
+      "module": "Agent开发",
+      "sha256": "7a2d0e5aebaa2dc570d6f90c532037e1e41383491108f195d93440b1766c18d7",
+      "characters": 1421,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/05-Knowledge与Memory/01-Knowledge/000-RAG推荐阅读.md",
+      "module": "Agent开发",
+      "sha256": "dba75e1b1e15c408192acc092bffc510130ab7d57b494958a5ba3dfd03c34e89",
+      "characters": 781,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/05-Knowledge与Memory/01-Knowledge/01-RAG完整链路.md",
+      "module": "Agent开发",
+      "sha256": "6b9338a13356ceb44fc5b491d2396336d77654e1c78463e9e1f6f9e0329f0ea5",
+      "characters": 3078,
+      "h1Count": 1,
+      "fenceCount": 8,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/05-Knowledge与Memory/01-Knowledge/02-Chunk Embed Retrieve Rerank.md",
+      "module": "Agent开发",
+      "sha256": "21a903f004faa75081aa2194b45bfe0e54c4661e20f168844ee65a461969ae93",
+      "characters": 2121,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/05-Knowledge与Memory/01-Knowledge/03-引用Grounded Answer与失败处理.md",
+      "module": "Agent开发",
+      "sha256": "fcf7ee649aaf0c91573a9245151b3cb4ccc4ea6ae9b481960a97542cb96acd68",
+      "characters": 2018,
+      "h1Count": 1,
+      "fenceCount": 8,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/05-Knowledge与Memory/02-Memory/000-Memory推荐阅读.md",
+      "module": "Agent开发",
+      "sha256": "de50c1c7504d7cf3108badc852f0ee0d265e619f69d2ded05222bc8b4d5838e9",
+      "characters": 628,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/05-Knowledge与Memory/02-Memory/02-Short-term Memory短期记忆.md",
+      "module": "Agent开发",
+      "sha256": "219fbc9aa6ee0fd383e796353ab2ce040ae2fef36f53f83e774d83529a8d616d",
+      "characters": 2907,
+      "h1Count": 1,
+      "fenceCount": 10,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/05-Knowledge与Memory/02-Memory/03-Long-term Memory长期记忆.md",
+      "module": "Agent开发",
+      "sha256": "e483b7ae1ee8d0832b7a49f926b3b3e06eb1abc40433a2ccfd8535c1251fa41e",
+      "characters": 3863,
+      "h1Count": 1,
+      "fenceCount": 10,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/05-Knowledge与Memory/02-Memory/04-记忆写入检索更新与遗忘.md",
+      "module": "Agent开发",
+      "sha256": "30500857b1b9f247be5b8ac4a638cb1433dc7503fcea2baec7394b68f2b99995",
+      "characters": 1714,
+      "h1Count": 1,
+      "fenceCount": 6,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/06-Agent Harness/000-Agent Harness推荐阅读.md",
+      "module": "Agent开发",
+      "sha256": "92c2ec0e633685aaa3b713add5c4fd3a325c2c0e07f78a10f1296a9a8bb29909",
+      "characters": 938,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/06-Agent Harness/01-Agent Harness架构.md",
+      "module": "Agent开发",
+      "sha256": "a8b8212b6d6af9b5f92be1e9f140e6d604904f66c32b7ba07f0e6502e280939a",
+      "characters": 2571,
+      "h1Count": 1,
+      "fenceCount": 6,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/06-Agent Harness/02-Registry Permission Session与Compaction.md",
+      "module": "Agent开发",
+      "sha256": "e3582b018649424492edf52d456f3ea014c4ff5dbc8869a1427de6c5f48db09e",
+      "characters": 1450,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/06-Agent Harness/03-Trace调试恢复与验证.md",
+      "module": "Agent开发",
+      "sha256": "3e6f1b4375ac929f82d75601e2123eafcb25ec55ed3a56e73f6dbcda9214b552",
+      "characters": 2764,
+      "h1Count": 1,
+      "fenceCount": 10,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/06-Agent Harness/05-Executor执行器与事件运行时.md",
+      "module": "Agent开发",
+      "sha256": "4d56d7bf715697acf6f795b03fa4c8a63ce1c8902b4615d71ecd162fed0da46f",
+      "characters": 15506,
+      "h1Count": 1,
+      "fenceCount": 36,
+      "modified": true
+    },
+    {
+      "path": "content/Agent开发/06-Agent Harness/06-Middleware Hooks与Callbacks.md",
+      "module": "Agent开发",
+      "sha256": "a18ad861d5fa6cb7e2d5930135d25f0e4f4fa03b3c75a78d02e0f9e305f02eae",
+      "characters": 12073,
+      "h1Count": 1,
+      "fenceCount": 36,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/07-Skills与Protocols/000-Skills与协议推荐阅读.md",
+      "module": "Agent开发",
+      "sha256": "0190f28e22a1dc47abd243e04a21e39f81de145de6326dc8b56704a02cb70399",
+      "characters": 816,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/07-Skills与Protocols/01-Skill Tool Prompt与MCP边界.md",
+      "module": "Agent开发",
+      "sha256": "7be33a6d01127655ad705f3e8d54f0ae4a05ee6faa839ffb72338f2e061fee7b",
+      "characters": 1273,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/07-Skills与Protocols/02-SKILL设计渐进加载与Smoke Test.md",
+      "module": "Agent开发",
+      "sha256": "118d89960e8a465e50f7269f5161faab5a45383ae56659cde84296cf5dc61ecc",
+      "characters": 1280,
+      "h1Count": 1,
+      "fenceCount": 6,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/07-Skills与Protocols/03-MCP A2A与ACP.md",
+      "module": "Agent开发",
+      "sha256": "e77ea20953d950eef0f583ca43b335dbe5aceef199f639c78f9b84a357d111b7",
+      "characters": 3444,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/08-Evaluation Observability Safety/000-评测与可观测性推荐阅读.md",
+      "module": "Agent开发",
+      "sha256": "d8100540df2e9ab4d3af3366322e3b6f149b98223821ef32c901030f3c7ca96a",
+      "characters": 683,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/08-Evaluation Observability Safety/01-Eval数据集指标与回归测试.md",
+      "module": "Agent开发",
+      "sha256": "8b0bce878010fd22b2fc0aa6b76c2b42cf9ed6967fb6fb0f37fab0faa38ba8c5",
+      "characters": 2891,
+      "h1Count": 1,
+      "fenceCount": 6,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/08-Evaluation Observability Safety/02-Trace指标与故障定位.md",
+      "module": "Agent开发",
+      "sha256": "e1d2731d5bdd632ff149de01cff4bd56ae58b659b01ec57bfc11de716a30ccf5",
+      "characters": 1162,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/08-Evaluation Observability Safety/03-Prompt Injection权限与Human in the loop.md",
+      "module": "Agent开发",
+      "sha256": "6f3d5824be9df2ac43f62ea8ab6b1dd09e5b9542299197c59fad82ca4845aa10",
+      "characters": 1111,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/08-Evaluation Observability Safety/04-Agent Benchmark Map.md",
+      "module": "Agent开发",
+      "sha256": "db409307db7a1cfe55e62c51726db5553b10210f6bead73a9c4144e474d1755e",
+      "characters": 1617,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/08-Evaluation Observability Safety/05-Evaluation闭环与发布门.md",
+      "module": "Agent开发",
+      "sha256": "07c4055902062f221e2e8f9e4ef759eaba78a666fcaf037a044e9c546c45bb5c",
+      "characters": 1234,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/09-Agent Evolution/01-Agent Evolution总览与受控闭环.md",
+      "module": "Agent开发",
+      "sha256": "9ad55b4bdf07cbe97e0ebaf9427deee46023f69a36394c47e04bebe74d0be29c",
+      "characters": 1704,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/09-Agent Evolution/02-Skill Workflow与Program Evolution.md",
+      "module": "Agent开发",
+      "sha256": "1e1a975d030518cf2df4adb411046ff6699282ac95c99ecef8c406dd4d7c180a",
+      "characters": 999,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/09-Agent Evolution/03-Evolution评测版本沙箱与回滚.md",
+      "module": "Agent开发",
+      "sha256": "08a47970913028c276c8534a9ae8e107cb64264541c509b5eba9dc939b0c97fd",
+      "characters": 1367,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/10-Multi-Agent/000-多Agent推荐阅读.md",
+      "module": "Agent开发",
+      "sha256": "00b9ce8099e0fa2a4f6a2d06137b0fb5939769035ba76067c597999a59a69a52",
+      "characters": 1153,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/10-Multi-Agent/01-角色职责与输入输出边界.md",
+      "module": "Agent开发",
+      "sha256": "304a189498eca8c8271af9fa50f93dfbc0e9fb46c4f00e47359521591ac53b1e",
+      "characters": 3791,
+      "h1Count": 1,
+      "fenceCount": 16,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/10-Multi-Agent/02-Supervisor Graph与停止条件.md",
+      "module": "Agent开发",
+      "sha256": "49581fbda275705a0e7c97be5448f6813470ef95f2e149b21aa17a4c17f328b8",
+      "characters": 1121,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/10-Multi-Agent/03-故障模式与单Agent判断.md",
+      "module": "Agent开发",
+      "sha256": "b335d6489e6ae4311b2a833aa679eec6357e6eb15ff34e546c1194bdc6b61bc1",
+      "characters": 1113,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/11-Model Post-training/01-Model Post-training导学.md",
+      "module": "Agent开发",
+      "sha256": "df67822800de7b07c2b886e6717f5c7eaa7304d574161332386c7dd67f4c144e",
+      "characters": 1486,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/11-Model Post-training/02-Trajectory Reward与Agentic RL.md",
+      "module": "Agent开发",
+      "sha256": "01276da28cf5b6418f3a9018e7d4519f3b1c929308326e1ded5d70e8ba2c7160",
+      "characters": 1447,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/12-Production Agent/000-生产交付推荐阅读.md",
+      "module": "Agent开发",
+      "sha256": "c273de1de35eb58bf4362709f589e44395bb3fb366eb4272b8ff9c3fc2d381c7",
+      "characters": 861,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/12-Production Agent/01-用户任务与成功标准.md",
+      "module": "Agent开发",
+      "sha256": "6745a54ee37515a48faee0273a8b91f0ea1b80dfa4444abf6393097ceea8c16b",
+      "characters": 1146,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/12-Production Agent/02-重试超时预算部署与运维.md",
+      "module": "Agent开发",
+      "sha256": "289ace644a38096af35d2952053f57bb8cd4b449ba898b74b3a9e9882f3b50bf",
+      "characters": 2259,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/12-Production Agent/03-README运行手册与交付检查表.md",
+      "module": "Agent开发",
+      "sha256": "9fcaba36bd4ed6d4440c6eff72192d0297eb3e51fc03b5efc4e1e1a1830c47ff",
+      "characters": 1012,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/13-Project Ladder/000-项目阶梯推荐阅读.md",
+      "module": "Agent开发",
+      "sha256": "f5e7a969260742924de438a9f04cd4126ce127a1a184a3976ce12fe427521b85",
+      "characters": 772,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/13-Project Ladder/01-P0到P7 Agent工程项目阶梯.md",
+      "module": "Agent开发",
+      "sha256": "3821820f2e6d8f7794507768349c73ae309e9a389fcf9a1686ef9e6deacb1f9c",
+      "characters": 1838,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/14-完整Agent链路与架构对照/000-完整链路与框架推荐阅读.md",
+      "module": "Agent开发",
+      "sha256": "7b119d8bbc01b428de6527ceb20921aef8f95b9ab69627b59fa5f0ab741d05f9",
+      "characters": 2191,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/14-完整Agent链路与架构对照/01-端到端Agent完整链路.md",
+      "module": "Agent开发",
+      "sha256": "81c4bb09952a57b8db84109c556d293ccc8934a0b41cc339440bc1962c6eae52",
+      "characters": 10859,
+      "h1Count": 1,
+      "fenceCount": 28,
+      "modified": true
+    },
+    {
+      "path": "content/Agent开发/14-完整Agent链路与架构对照/02-权威Agent路线横向对照.md",
+      "module": "Agent开发",
+      "sha256": "e17b68a705b30b5ed8570cb26c871bf3c819cb0e844a09195900ef4d58f10736",
+      "characters": 10958,
+      "h1Count": 1,
+      "fenceCount": 8,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/00-统一研究模板与证据等级.md",
+      "module": "Agent开发",
+      "sha256": "5dcf9e9988b15c463921aaaae67ef631df6efa60078dc50f61e7e2f93efab3e4",
+      "characters": 635,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/000-Coding Agent研究阅读顺序.md",
+      "module": "Agent开发",
+      "sha256": "6ec2d81bf08995b19bb92bc028bdc8457270d4fcdd44066de4ded2535cecc68c",
+      "characters": 2951,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_01_CODEX.md",
+      "module": "Agent开发",
+      "sha256": "d047ecc9808f5815366a3a0b94b06662870769ec543c1157a37a5ee1d4b649d2",
+      "characters": 30389,
+      "h1Count": 1,
+      "fenceCount": 56,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_02_CLAUDE_CODE.md",
+      "module": "Agent开发",
+      "sha256": "b51470520450e199ee5a6d50113a7b9f304cf69c6a55d2ec2b6071a9be5e1dc6",
+      "characters": 23200,
+      "h1Count": 1,
+      "fenceCount": 56,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_04_HERMES_AGENT.md",
+      "module": "Agent开发",
+      "sha256": "222584ff5346b53c5a7cd60fc5940b412253a3e7de22591a943a85fdf225ac7f",
+      "characters": 34383,
+      "h1Count": 1,
+      "fenceCount": 92,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_05_OPENCLAW.md",
+      "module": "Agent开发",
+      "sha256": "d54dc4073de1a2ea0fb30caad825ada3822bc34d3ede19fce627774e8f36302e",
+      "characters": 32439,
+      "h1Count": 1,
+      "fenceCount": 64,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_06_COMPARISON.md",
+      "module": "Agent开发",
+      "sha256": "4747d88bf08bbfc1ff9996ac865b0099f8878cc431924bf2d6764533aff7720e",
+      "characters": 15992,
+      "h1Count": 1,
+      "fenceCount": 10,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_07_AIDER.md",
+      "module": "Agent开发",
+      "sha256": "d37f792d562d4e246a4872596415a53f46c95bf02210af7785a47b4670dfbda5",
+      "characters": 7512,
+      "h1Count": 1,
+      "fenceCount": 8,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_08_GOOSE.md",
+      "module": "Agent开发",
+      "sha256": "cfcb191dbb0162b6a0f34a90589d3a697ecd308760621c093828ead26ac36135",
+      "characters": 10166,
+      "h1Count": 1,
+      "fenceCount": 10,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_09_OPENCODE.md",
+      "module": "Agent开发",
+      "sha256": "049ec3c08208bab7e8c8310761de40d4aab9c884e5efd0db0ba304ca7455d093",
+      "characters": 13500,
+      "h1Count": 1,
+      "fenceCount": 12,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_10_DEEPSEEK_HARNESS_WEB.md",
+      "module": "Agent开发",
+      "sha256": "86e6d03b96d6a2377118b669b19fa0c5d4cb1bd66b70c6b9f64b06a60c43043c",
+      "characters": 12241,
+      "h1Count": 1,
+      "fenceCount": 10,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_11_PI_AGENT.md",
+      "module": "Agent开发",
+      "sha256": "326adc24892c9e7592db659a9a150a5dd63aa947b1e54465248ddc2468078c7e",
+      "characters": 11886,
+      "h1Count": 1,
+      "fenceCount": 10,
+      "modified": false
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_12_GROK_BUILD.md",
+      "module": "Agent开发",
+      "sha256": "1e3683d7933b2d24a0f7cd0bb3badbd5eeec4e3033acf7e1d72a3a0c482b2880",
+      "characters": 14514,
+      "h1Count": 1,
+      "fenceCount": 14,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/00-Java后端学习路线.md",
+      "module": "Java开发",
+      "sha256": "258588ccefa93f3b7ece470d4dd3bb84fc0a6415b38ed29f35715a622c55e8ec",
+      "characters": 1829,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/000-Java基础推荐阅读.md",
+      "module": "Java开发",
+      "sha256": "5d4c72c93c9f04ff0374f4042ebff5d44f6560e25abe0113e2849cad542b15fc",
+      "characters": 844,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/01-Java开发入门.md",
+      "module": "Java开发",
+      "sha256": "39881b6a17a7c4b3437d022903c13c74e0abb654e20765073b22505d3fa97c8c",
+      "characters": 3988,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/02-Java编程基础.md",
+      "module": "Java开发",
+      "sha256": "850d1702234132dca09a02b7f26a1e2c3441a08d555fb2ae626d5cf07f2fab84",
+      "characters": 3767,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/03-面向对象上.md",
+      "module": "Java开发",
+      "sha256": "df261fc035de47bf1d5572b527ab7ad9f97854b0a2f8fe8e780e53660106add1",
+      "characters": 4326,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/04-面向对象下.md",
+      "module": "Java开发",
+      "sha256": "8505a24006ddb72eb3c8264db129dcc661f3a9da54e116c8ad1995812865d327",
+      "characters": 4876,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/05-异常处理.md",
+      "module": "Java开发",
+      "sha256": "083925782ceb462217fbea879749b04d83b4470fe83e1d7c7bacdfb99b5f462c",
+      "characters": 3211,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/06-Java核心API.md",
+      "module": "Java开发",
+      "sha256": "75ee8d26586c80acaa8e31a2ec5d66613b9f89d8848ac76254577a5580aab4b8",
+      "characters": 5050,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/07-Java集合框架.md",
+      "module": "Java开发",
+      "sha256": "2f2937e8d31b9e2433e1796cdedfe8ad876cd963b676c78139b68e321630298a",
+      "characters": 4217,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/08-Java泛型.md",
+      "module": "Java开发",
+      "sha256": "097258f572e4620babf42ae11e750f6b88af771369430c6798de031680beed19",
+      "characters": 3099,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/09-反射机制.md",
+      "module": "Java开发",
+      "sha256": "d4626fc65e7e63a4888e256a7e3a6620c48e7176d50029a4c6bcd7f0d32d3e9b",
+      "characters": 3562,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/10-IO与NIO.md",
+      "module": "Java开发",
+      "sha256": "d091131ec22fd2b4cc6bb27435942dcec43885cfa400c8f5980057dab218b9b5",
+      "characters": 3435,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/11-JDBC数据库访问.md",
+      "module": "Java开发",
+      "sha256": "73c60dbab1cb2059e79ca0c8b5b35bde88ab8868cc510bfd18ccf78b670daf0a",
+      "characters": 4162,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/14-泛型与集合框架综合.md",
+      "module": "Java开发",
+      "sha256": "2fcd9024d967564dbacafd4b7f0947f55c42f0004e00dcbf07e853720ec84961",
+      "characters": 2664,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/01-Version Baseline与Compatibility Matrix.md",
+      "module": "Java开发",
+      "sha256": "3f5fdcfff50a564ad76330b5fa8779844391cd620c985ee2675cc6d53711b831",
+      "characters": 3574,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/02-JVM与并发/00-JVM与并发学习导图.md",
+      "module": "Java开发",
+      "sha256": "7d56ec7e46752922e9e345817d6a7b1c860358cdb2ee7077a5c38021ccd3ff7f",
+      "characters": 1146,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/02-JVM与并发/01-JVM内存类加载字节码与GC.md",
+      "module": "Java开发",
+      "sha256": "947add3674a43b245be37035415e4a0ef56ba4ff3185a8db4524310b01af0b17",
+      "characters": 1923,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/02-JVM与并发/02-Java并发与多线程.md",
+      "module": "Java开发",
+      "sha256": "db0fc39a58cd3d4c7703d37f0e2ca6d1e3eeccac64d336a284fb2ee343af8dd0",
+      "characters": 4638,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/02-JVM与并发/03-JMM线程池锁原子类与CompletableFuture.md",
+      "module": "Java开发",
+      "sha256": "0fd2fa9454776816c465555ceed97c491cfc339cf2950aafa6b4f8c02e91d7dc",
+      "characters": 1493,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/02-JVM与并发/04-Virtual Threads Scoped Values与Structured Concurrency.md",
+      "module": "Java开发",
+      "sha256": "7fb7720ea13b89ff18cf04056bcc47c4c1694c97495e2807ef243e59dd4c10a1",
+      "characters": 2220,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/03-工程基础与Internet-Linux/00-本阶段导学.md",
+      "module": "Java开发",
+      "sha256": "bfeab492f13ef4f8a68b9a2fe67b5fdb4772d3444d40bb8b46dfe6a9ea44e615",
+      "characters": 1833,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/03-工程基础与Internet-Linux/000-Java 工程工具与 Linux推荐阅读.md",
+      "module": "Java开发",
+      "sha256": "969074d634c61f18277dbc1c96f40d09a3742ba0aeb403badbe27021e4af08c8",
+      "characters": 682,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/03-工程基础与Internet-Linux/01-JDK-IDE-Maven与Gradle.md",
+      "module": "Java开发",
+      "sha256": "c6127ffe88b6b422d5ac2d968acb04b60fc27fa1737970f66f03500b7fd32903",
+      "characters": 3569,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/03-工程基础与Internet-Linux/02-Git协作与版本治理.md",
+      "module": "Java开发",
+      "sha256": "738702726a290fbd0958b8421cf5e6ce4c728afc728d11ee857a09ee86b16fc9",
+      "characters": 2170,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/03-工程基础与Internet-Linux/03-Linux-Shell与Docker.md",
+      "module": "Java开发",
+      "sha256": "8d8a96e2135b05215a234db434a2e2be1300139efa87b994c981751cd7531734",
+      "characters": 2505,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/03-工程基础与Internet-Linux/04-Internet请求完整链路.md",
+      "module": "Java开发",
+      "sha256": "6725417eaa0c55d6fdb47ea77d0f4cf17f19b38a8a70e9be2b33aee4bf98a1e0",
+      "characters": 1417,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/03-工程基础与Internet-Linux/05-Java网络编程.md",
+      "module": "Java开发",
+      "sha256": "3e527c43e558038c58d203b9bf280a95f7a434d2cd3c64f45b84340dec6bf15f",
+      "characters": 3549,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/04-关系型数据库/00-本阶段导学.md",
+      "module": "Java开发",
+      "sha256": "fe61c42a02b90bf720e364b5bbb478aa401325a2f1438f0cd2507a32b8cb44ff",
+      "characters": 1815,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/04-关系型数据库/000-数据库、缓存与搜索推荐阅读.md",
+      "module": "Java开发",
+      "sha256": "ae6aaa1a23fcffd74cfbb43e2755ebde640b29550a7ea09cba0d2f4c4d90fccf",
+      "characters": 624,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/04-关系型数据库/01-数据库原理与SQL.md",
+      "module": "Java开发",
+      "sha256": "79f6bc1d74dc63f04893f2cf383fa236463d84e919f9779c2641e07bde9cad55",
+      "characters": 2682,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/04-关系型数据库/02-MySQL-InnoDB索引事务与调优.md",
+      "module": "Java开发",
+      "sha256": "f7e95a11b907ee95057b4121f8eee68b68f23531114c9d9a343612a75182edda",
+      "characters": 2782,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/04-关系型数据库/03-PostgreSQL基础.md",
+      "module": "Java开发",
+      "sha256": "f9303ec0a202cd3e0ccacf2c869f5898db270fb243a515647212f75e06c82d4a",
+      "characters": 1686,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/05-Spring Framework/00-本阶段导学.md",
+      "module": "Java开发",
+      "sha256": "86337b6f00cc00b4994a00414775831e31d5405aa97e30c426b90c279a590886",
+      "characters": 1647,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/05-Spring Framework/000-Spring Framework推荐阅读.md",
+      "module": "Java开发",
+      "sha256": "4c7bfedacd76a299a15e2aedf966a27343474bbed1916476363751986cb95af0",
+      "characters": 661,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/05-Spring Framework/01-IoC依赖注入与Bean生命周期.md",
+      "module": "Java开发",
+      "sha256": "4001c9ab888704ab424ab2db6b8c37e5d82940a04cf810e6a31b1fcc43ac9980",
+      "characters": 3140,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/05-Spring Framework/02-Spring-AOP代理与事务.md",
+      "module": "Java开发",
+      "sha256": "8b2973d4ac335edbdf5ca63934aed642c39ff4fc047d19565264ae76f9259a7d",
+      "characters": 3336,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/05-Spring Framework/03-Spring资源事件校验缓存与调度.md",
+      "module": "Java开发",
+      "sha256": "12d2be06cb497945c4b904e92ac1ab93202cfb816cdc11c79d7dca843e875e7c",
+      "characters": 2598,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/05-Spring Framework/04-Spring异步定时任务Quartz与Batch.md",
+      "module": "Java开发",
+      "sha256": "a1236170560fc1e74ec2ec83788a8c79fe1f1333732a9e499aed57557ca4a055",
+      "characters": 2255,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/05-Spring Framework/05-Spring产品族责任边界.md",
+      "module": "Java开发",
+      "sha256": "d564e72780ceabc2cab111c1b4dcc3d52fc75df2b25a8438c14d1d38f370989c",
+      "characters": 1005,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/06-Spring Boot与Web/00-本阶段导学.md",
+      "module": "Java开发",
+      "sha256": "afae2b55023ce04c89c2a3fa0a2d59c19c630181b6d78ace30b1d7f4c317afc6",
+      "characters": 1832,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/06-Spring Boot与Web/000-Spring Boot 与 Web 开发推荐阅读.md",
+      "module": "Java开发",
+      "sha256": "c191b64975ba643d752c7889ca8f112ca7c13cd5ddec31a3a1541b8050d69233",
+      "characters": 660,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/06-Spring Boot与Web/01-Spring-Boot自动配置与启动.md",
+      "module": "Java开发",
+      "sha256": "1c26babe5a5433a42529d78d83d913ef25071f647d71a16ca762a43679278997",
+      "characters": 3253,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/06-Spring Boot与Web/02-Servlet-Tomcat-Spring-MVC完整链路.md",
+      "module": "Java开发",
+      "sha256": "95130adbfbde24bbfeef34efc4fb8227c0f0665b49eb3d03c634aa0b55b6e740",
+      "characters": 3043,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/06-Spring Boot与Web/03-REST-API校验错误处理与版本.md",
+      "module": "Java开发",
+      "sha256": "b11bb838253e93f9094f675be0a4b1c9ef1dbffae4fce6c7735c4ca9835d0ec6",
+      "characters": 3147,
+      "h1Count": 1,
+      "fenceCount": 6,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/06-Spring Boot与Web/04-Actuator日志指标追踪与生产配置.md",
+      "module": "Java开发",
+      "sha256": "2661a63f67ddb7b04c27c051aebfc0cf097ec841dd922c76e634af9f9713c1df",
+      "characters": 2524,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/06-Spring Boot与Web/05-OpenAPI文件处理邮件与WebSocket.md",
+      "module": "Java开发",
+      "sha256": "340d2a6d64010f3ef42303fc2cda56511ea08d4a4f4221ac1a40851fedfa2957",
+      "characters": 2315,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/07-数据访问与事务/00-本阶段导学.md",
+      "module": "Java开发",
+      "sha256": "3e44d83f2d0531e76aab873989cdf7b4d7257df58c470db3b9669bfcff9ea5b2",
+      "characters": 1688,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/07-数据访问与事务/000-数据访问与 ORM推荐阅读.md",
+      "module": "Java开发",
+      "sha256": "017808c3424f954449b5f3e4b45ffa63d9ad12eca21cf04f1f8f0abb75ccae4d",
+      "characters": 648,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/07-数据访问与事务/01-MyBatis映射与动态SQL.md",
+      "module": "Java开发",
+      "sha256": "260994e62f03a7706d7497c3638784631c9032c40b386075f62940bba8da5f21",
+      "characters": 2474,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/07-数据访问与事务/02-JPA-Hibernate与Spring-Data.md",
+      "module": "Java开发",
+      "sha256": "ce730d8c92227924c9de845dc57a76070314e90fa9433b5ad2b190624d538504",
+      "characters": 2411,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/07-数据访问与事务/03-连接池事务迁移与数据访问决策.md",
+      "module": "Java开发",
+      "sha256": "31d94ed2d8812384372c522bc13bfaf6999af755970c968477f0227ef39d4075",
+      "characters": 2173,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/07-数据访问与事务/04-MyBatis-Plus工程实践.md",
+      "module": "Java开发",
+      "sha256": "b1c4e17ee587e6e274715c760e6afe6a28ea26cd6f916270ca5d95fbc6015868",
+      "characters": 1965,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/07-数据访问与事务/05-JDBC vs MyBatis vs JPA决策.md",
+      "module": "Java开发",
+      "sha256": "6b0e2a271a40de00620d5e095b47ed5b0b136425df21d52b3f53c9f759412b88",
+      "characters": 1305,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/08-测试与质量工程/00-本阶段导学.md",
+      "module": "Java开发",
+      "sha256": "492537db7df41c1a68be9550459509cbc88dfb39794ed47b2ca5583c9d3350a8",
+      "characters": 1489,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/08-测试与质量工程/000-测试与质量工程推荐阅读.md",
+      "module": "Java开发",
+      "sha256": "d4e041c7f2ea2250f4da987e5c44695d286dfe3153bdc383acb940a890fd952a",
+      "characters": 523,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/08-测试与质量工程/01-测试策略-JUnit与Mockito.md",
+      "module": "Java开发",
+      "sha256": "3c12aa3d7de4589b0053da4b2f13604c5f5169c33592b7a61d918a259a1ee3b5",
+      "characters": 2161,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/08-测试与质量工程/02-Spring集成-Testcontainers与契约测试.md",
+      "module": "Java开发",
+      "sha256": "915c79a904e47accb941407e2d77715ee0533de85ccf77d8d11af667537e2ea8",
+      "characters": 2526,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/08-测试与质量工程/03-API-UI自动化与测试平台.md",
+      "module": "Java开发",
+      "sha256": "4e9c79afdc012d16cc669a74f8b7fa54a9db7aefccd05c7e12e5cc87259e3ff6",
+      "characters": 2081,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/08-测试与质量工程/04-性能稳定性与故障演练.md",
+      "module": "Java开发",
+      "sha256": "9c82f57a025b618759070212974861fad948b19f09278a08758e8b186b49d011",
+      "characters": 1924,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/08-测试与质量工程/05-Testing Portfolio与发布回归.md",
+      "module": "Java开发",
+      "sha256": "cea747bc09bad9676efd51642146a2a4fa8952f71008ca729d316311fb61c877",
+      "characters": 855,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/09-安全认证与授权/00-本阶段导学.md",
+      "module": "Java开发",
+      "sha256": "6061386a101f177ee1c5a66673c50a5748517c9489ccb88c869c0b5646e9bc7e",
+      "characters": 1740,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/09-安全认证与授权/000-安全、认证与授权推荐阅读.md",
+      "module": "Java开发",
+      "sha256": "590ada679c3ad461c6664c405efe2270c4faa8a0652643d52c515fcfdcbada4d",
+      "characters": 566,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/09-安全认证与授权/01-Spring-Security过滤链与方法授权.md",
+      "module": "Java开发",
+      "sha256": "5ba6f8b7366ed02ba4c31658bde946f2effeff9d2acb7b81c0ce9784b154a08d",
+      "characters": 3087,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/09-安全认证与授权/02-OAuth2-OIDC-JWT与API安全.md",
+      "module": "Java开发",
+      "sha256": "d0143ba372f35f2c56d3f699efe9755f6629645b099e33d7b9fa2b9cafeb5faf",
+      "characters": 2926,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/09-安全认证与授权/03-应用安全秘密供应链与审计.md",
+      "module": "Java开发",
+      "sha256": "d6a86eed8849bb42888df965f6761a60af9e38c1f18535e192ff80a4701616ea",
+      "characters": 1995,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/10-应用架构与模块化单体/00-应用架构导学.md",
+      "module": "Java开发",
+      "sha256": "1217dda2e7932b0423f2ce998a043c853e03a9b5001efb5697dbdd312520d4e5",
+      "characters": 966,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/10-应用架构与模块化单体/01-分层按功能打包与领域边界.md",
+      "module": "Java开发",
+      "sha256": "6768ce9a137eea763e5964deffd79e8108e1d1400807d1fba32013d7c5f36011",
+      "characters": 973,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/10-应用架构与模块化单体/02-Spring Modulith模块验证测试事件与可观测性.md",
+      "module": "Java开发",
+      "sha256": "1bec0c7791a025221323a8726f1465d3aa0c3b017bbcc95e9e1ccdf5eab1d909",
+      "characters": 1011,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/10-应用架构与模块化单体/03-事务边界Outbox与幂等.md",
+      "module": "Java开发",
+      "sha256": "0e9baa7b52d85f43aec2655bc555fb1dd4fa4915fbdb7e3970a89c0b4fa999e9",
+      "characters": 978,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/10-应用架构与模块化单体/04-模块化单体到微服务什么时候拆.md",
+      "module": "Java开发",
+      "sha256": "f75786145746261d3dc8d638d7780433d9739ada3e565a2ba2a26d5d61455917",
+      "characters": 804,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/11-缓存与搜索/00-缓存与搜索导学.md",
+      "module": "Java开发",
+      "sha256": "2373bd41225f925f4fcaeb03b3c06a2e7149519fb4c062c4d040d57c927cdc1e",
+      "characters": 876,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/11-缓存与搜索/01-Redis与缓存工程.md",
+      "module": "Java开发",
+      "sha256": "2f820ffe742107189f5fbb90487e3b5a794f8e328daafa2aeed332aa844c519a",
+      "characters": 3403,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/11-缓存与搜索/02-Elasticsearch搜索工程.md",
+      "module": "Java开发",
+      "sha256": "dbd3a07bbffe2a09c50c1bbad0f32e0951c27aa2bc3428e670faee95a792b9c5",
+      "characters": 3005,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/11-缓存与搜索/03-缓存CDN分库分表与热点治理.md",
+      "module": "Java开发",
+      "sha256": "2ac536123a74cf7249d27a8487cb1349c485115c9a8734a90a2562b8ed9976ec",
+      "characters": 1886,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/11-缓存与搜索/04-Caffeine本地缓存与多级缓存.md",
+      "module": "Java开发",
+      "sha256": "aa8b5e248fb90a89c5c68545b28c762de0d5de14107edb6165e98a48b0c8923c",
+      "characters": 1818,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/12-消息与事件驱动/00-本阶段导学.md",
+      "module": "Java开发",
+      "sha256": "65820d6a040bd5b5e28bb1ab4e5635984b6fb81b85bc15d9ae134c17b7834cdb",
+      "characters": 687,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/12-消息与事件驱动/000-高性能与消息队列推荐阅读.md",
+      "module": "Java开发",
+      "sha256": "556f6c16374610f1b61a2e8575a8d0ab3aede8998689c7d7a346ed804944d8eb",
+      "characters": 581,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/12-消息与事件驱动/02-消息队列基础与可靠消费.md",
+      "module": "Java开发",
+      "sha256": "e4b6c30da670ab113682fc692bc6541f775895868e498df3fbc9740ee6863789",
+      "characters": 2142,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/12-消息与事件驱动/03-Kafka事件流平台.md",
+      "module": "Java开发",
+      "sha256": "4a077cb9355b6293c72e54f37c8e111d34dc1180bde676e51d59fce9c0276896",
+      "characters": 2610,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/12-消息与事件驱动/04-RabbitMQ与RocketMQ.md",
+      "module": "Java开发",
+      "sha256": "c7b038c5203880d6857b2fda67687dae0e5c667d2f0e5ef9693f94ad43e8bf9b",
+      "characters": 2435,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/00-本阶段导学.md",
+      "module": "Java开发",
+      "sha256": "41decf80df37c82d7bd60fdfee871cf54fcec13fdf9db29450e79d5cab93b61c",
+      "characters": 1511,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/000-分布式系统与微服务推荐阅读.md",
+      "module": "Java开发",
+      "sha256": "e72f46db83d7c0073c6e53534fd1f6d8182177771ff521ac4c74955ba8282c88",
+      "characters": 682,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/01-分布式基础CAP-BASE与共识.md",
+      "module": "Java开发",
+      "sha256": "beaff753555a42bd8b0981a55efebd444caf8778364bd9d48972682e2a8a1795",
+      "characters": 2206,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/02-RPC-HTTP-OpenFeign-Dubbo-gRPC与Netty.md",
+      "module": "Java开发",
+      "sha256": "0e0142384d69f33834f40fae06b6d250cf3a6cca941c5c8b38929f7b23a9c633",
+      "characters": 2309,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/03-Nacos注册发现与配置治理.md",
+      "module": "Java开发",
+      "sha256": "338ed409aec8181cd3ddad1bf4c48449dec6c257202a74e175153c894e9c4a0d",
+      "characters": 2046,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/04-网关负载均衡限流熔断与重试.md",
+      "module": "Java开发",
+      "sha256": "08345ba1bb620a5f3d67feaae4e9ba92aa87db74d0b9a40c3896795fd68fa2cd",
+      "characters": 2357,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/05-分布式ID事务与可靠事件.md",
+      "module": "Java开发",
+      "sha256": "24d12e402fd13760bc5b0538afb0dacbdb5315bd8466d2b6d8dedc6b7b9b1015",
+      "characters": 2099,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/06-Spring-Cloud与Spring-Cloud-Alibaba组件图.md",
+      "module": "Java开发",
+      "sha256": "c6d54c16665985336cfc82aca852774f5cbed300850b2caf9c0fe44aba3d272d",
+      "characters": 2179,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/07-Seata-Sentinel-SkyWalking实战边界.md",
+      "module": "Java开发",
+      "sha256": "ac7b7e0cf913333f5127b3dd31c991d67ac163075c7630071686bc9a16b4e150",
+      "characters": 2126,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/08-Spring Cloud Compatibility Matrix与升级.md",
+      "module": "Java开发",
+      "sha256": "86b3681f95fe13751a01edf50a44612539f104b24ac65ed7143ed5b741febe61",
+      "characters": 1340,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/14-性能工程/00-性能工程导学.md",
+      "module": "Java开发",
+      "sha256": "5c6206f0eae0f641ec738d7f663357a0fdd44f848ecd0742a43fa708b1b29c18",
+      "characters": 813,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/14-性能工程/01-性能工程容量规划与JVM诊断.md",
+      "module": "Java开发",
+      "sha256": "8a23b5b75cdb6e59186001aebc50c59823d9f2b6bcf85f0e13382dccf324c9ad",
+      "characters": 2274,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/15-云原生DevOps与可观测性/00-本阶段导学.md",
+      "module": "Java开发",
+      "sha256": "ebfeb7c3b771755486cf936fa93e9f12d40ae17995de2f6be04217f3dc519ee3",
+      "characters": 1727,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/15-云原生DevOps与可观测性/000-云原生、DevOps 与可观测性推荐阅读.md",
+      "module": "Java开发",
+      "sha256": "7920ad62b62db733baff9f00556965ce0e514669341180a6fc0bc6b0143e3db3",
+      "characters": 507,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/15-云原生DevOps与可观测性/01-Docker镜像-Compose与供应链.md",
+      "module": "Java开发",
+      "sha256": "48be4684c1dd4ab2394bbabddd06704bdb7e94c11ca7f6914e10f178289688d7",
+      "characters": 2057,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/15-云原生DevOps与可观测性/02-Kubernetes工作负载网络配置与探针.md",
+      "module": "Java开发",
+      "sha256": "472211d84fb1cc76082f37632cc6dcd49456c0eaba7e15d037b3d143c00ae890",
+      "characters": 2770,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/15-云原生DevOps与可观测性/03-CICD发布数据库迁移与回滚.md",
+      "module": "Java开发",
+      "sha256": "92701bef52638a053cf04b9b60722e9da21dc26bbb4bfe10e34b37858f35ee3e",
+      "characters": 1838,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/15-云原生DevOps与可观测性/04-OpenTelemetry-SLO与故障响应.md",
+      "module": "Java开发",
+      "sha256": "07dc4b80b702df43a2865b50fe3aa2bec9ebefbdea03ae9b07cb739543011efd",
+      "characters": 2419,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/00-本阶段导学.md",
+      "module": "Java开发",
+      "sha256": "c2d9ae55367ff13a787a0cb0d59decb45211c0ce45b00a2efa8108c1402379ac",
+      "characters": 1860,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/000-前端基础与全栈交付推荐阅读.md",
+      "module": "Java开发",
+      "sha256": "93cfd0e1a4fc04c188af094a2e7292770f6fb948def298c7ae9db9de551358d6",
+      "characters": 505,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/01-Web-HTML-CSS-JavaScript与TypeScript基础.md",
+      "module": "Java开发",
+      "sha256": "fcf30e77fee0cedecf886fe250b2268937fbe8d05feeb5952ed3fd47b6027bdb",
+      "characters": 2396,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/02-Vue3-TypeScript与后台管理界面.md",
+      "module": "Java开发",
+      "sha256": "18d2133c85698011fd6f12acddc5c53922025288db619c6b060df116447a3c4f",
+      "characters": 3378,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/03-全栈契约认证上传下载WebSocket与Nginx.md",
+      "module": "Java开发",
+      "sha256": "aa723cc56b20234a1dc6975657cb5230f1cadd27ac0a8a314ad416dca50a11e0",
+      "characters": 2278,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/04-HTML语义表单媒体与可访问性.md",
+      "module": "Java开发",
+      "sha256": "92d3207cbce057035a2756d41b20b1f1a2b68614846f412b7fde2d2b3c267e60",
+      "characters": 2444,
+      "h1Count": 1,
+      "fenceCount": 6,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/05-CSS级联盒模型布局响应式与动画.md",
+      "module": "Java开发",
+      "sha256": "9371daf28eb0f3da10aff1928da61136e67885b1ba8330b971016a27fa4e24c1",
+      "characters": 2518,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/06-JavaScript基础类型函数集合DOM与事件.md",
+      "module": "Java开发",
+      "sha256": "861027483bb0b65e4c7a58f0206c0d02b191218cd877fef1e112d6ed15ff3762",
+      "characters": 2530,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/07-JavaScript高级异步模块网络与性能.md",
+      "module": "Java开发",
+      "sha256": "f5f76b7bb112f7e8b5645b3e11c4abe73d1a1c7e7033d75d613764f79232a3a9",
+      "characters": 2756,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/08-TypeScript-Vue工程化测试与性能.md",
+      "module": "Java开发",
+      "sha256": "8e9fba95f222d6a5eb41a6f5bc122e96256e41ae410f137d58e4f26df7f49047",
+      "characters": 3122,
+      "h1Count": 1,
+      "fenceCount": 6,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/16-可选专项/02-计算机科学与工程选修/01-数据结构算法复杂度与刷题方法.md",
+      "module": "Java开发",
+      "sha256": "894fcca8f686070e7ea0bf44634c163530db6ed6b6555356f184689f2bde931a",
+      "characters": 1994,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/16-可选专项/02-计算机科学与工程选修/02-设计原则UML与常用设计模式.md",
+      "module": "Java开发",
+      "sha256": "bd7b913588516cedeb5497d27a096d3902e90b45291bf9be347ab0c9e28318e3",
+      "characters": 1879,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/16-可选专项/03-MongoDB数据模型/01-MongoDB文档模型与选型.md",
+      "module": "Java开发",
+      "sha256": "83721a2f29edf56ec14797ba9a49117e7e418b94e6b77519b06bfb81954e86d4",
+      "characters": 643,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/16-可选专项/04-Spring AI/01-Spring AI工程实现总览.md",
+      "module": "Java开发",
+      "sha256": "a25e7ca5ed7359998736627d8e8f6c11c81618157e44cbe006bb3c1bc1892c9d",
+      "characters": 1356,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/17-项目阶梯/00-本阶段导学.md",
+      "module": "Java开发",
+      "sha256": "c069c1e705e1ce27b077cf07a525118a650fb1edde77b65018b91cac9d2cca9d",
+      "characters": 1371,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/17-项目阶梯/000-Java 后端项目阶梯推荐阅读.md",
+      "module": "Java开发",
+      "sha256": "1acbb796b8dbb668c4226bc07972ebcbc2a641922fe4f35bd786ff72faae970f",
+      "characters": 440,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/17-项目阶梯/01-P0到P8 Java后端项目阶梯.md",
+      "module": "Java开发",
+      "sha256": "651f10e8570b05a5aeb3a71f1908b5f7b320290e7152821605600f78a0387cb2",
+      "characters": 1785,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/17-项目阶梯/01-项目一模块化单体任务系统.md",
+      "module": "Java开发",
+      "sha256": "5025da8f4bd34ca9f9fb0a0b8dda3243a1a4c840d33567807e67eb50e15423a2",
+      "characters": 1872,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/17-项目阶梯/02-项目二事件驱动订单与库存系统.md",
+      "module": "Java开发",
+      "sha256": "00d8247aeb643cef41b7da0925426c983a7974740ffeac6e51274b816721fd68",
+      "characters": 1883,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/17-项目阶梯/03-项目三云原生高可用平台.md",
+      "module": "Java开发",
+      "sha256": "1162a0bcf0900521a2b30efb0fe7ba3f59f73d84a439c9885954d1b2cd862461",
+      "characters": 2149,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/17-项目阶梯/04-作品集验收与面试证据.md",
+      "module": "Java开发",
+      "sha256": "49317f2f20627cde10df7fe5a15d529d9d995840ff428ebe1d87dd0f76cd77be",
+      "characters": 1884,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": true
+    },
+    {
+      "path": "content/Java开发/99-开源项目架构研究/00-统一源码研究模板.md",
+      "module": "Java开发",
+      "sha256": "e14cf42cb5d505db82e90f1d35c21280db9aecef17e8b407d8fd5f7942660beb",
+      "characters": 485,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/99-开源项目架构研究/01-Spring Petclinic.md",
+      "module": "Java开发",
+      "sha256": "8c55ed9c5d51ad4e9d382547266f7fcd38b4d762287e93b2bee26218bc8cf89f",
+      "characters": 1468,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/99-开源项目架构研究/02-Spring Modulith.md",
+      "module": "Java开发",
+      "sha256": "b6fde32b4343b56b3a7df5f6e69500936dee851c53e738a23f77169903275103",
+      "characters": 1518,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/99-开源项目架构研究/03-Petclinic Microservices.md",
+      "module": "Java开发",
+      "sha256": "f1b1bb9112e19c43b54d2c0ea22871f2f0fb2be09ac757f984a9be4423ea2ce2",
+      "characters": 1474,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/99-开源项目架构研究/04-Keycloak.md",
+      "module": "Java开发",
+      "sha256": "0dceed393942915336dd06171c53962a0c0499e7390ddb09e55922e5f455e477",
+      "characters": 1409,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/99-开源项目架构研究/05-JHipster Generator.md",
+      "module": "Java开发",
+      "sha256": "9aff8c2fd2d54fa42e512308566552ecae37c8474c63ebbf3f651c1708b2e2f5",
+      "characters": 1394,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/99-开源项目架构研究/06-RuoYi-Vue-Plus.md",
+      "module": "Java开发",
+      "sha256": "adc42e570a890063e4e9ad49a95d649ad330038dae0f609d4566ba7227efd35f",
+      "characters": 1389,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/Java开发/99-开源项目架构研究/07-Spring AI.md",
+      "module": "Java开发",
+      "sha256": "4dc285ff82d4ab4f996ab4b0e886a7206e98b3f252d7cc40916ba1ccf8e815e5",
+      "characters": 1577,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/前端架构/00-从网页基础开始/01-HTML-CSS-JavaScript-Vue-React到底是什么.md",
+      "module": "前端架构",
+      "sha256": "f18b45c24fc131da54e89843334346a8fd53e0e082e78e0883cb581fa2e4d97a",
+      "characters": 6199,
+      "h1Count": 1,
+      "fenceCount": 10,
+      "modified": false
+    },
+    {
+      "path": "content/前端架构/00-从网页基础开始/02-HTML从文档结构到表单.md",
+      "module": "前端架构",
+      "sha256": "c4b958dab9008c02538b7f60d06bff0309bd09f480111a353540a9b35c80ab0a",
+      "characters": 4329,
+      "h1Count": 1,
+      "fenceCount": 6,
+      "modified": false
+    },
+    {
+      "path": "content/前端架构/00-从网页基础开始/03-CSS从选择器到响应式布局.md",
+      "module": "前端架构",
+      "sha256": "7e7a4736707294182ce7c7a970a2a4a03cd645b34d536f5fe5c1b6481b77d718",
+      "characters": 5271,
+      "h1Count": 1,
+      "fenceCount": 12,
+      "modified": false
+    },
+    {
+      "path": "content/前端架构/00-从网页基础开始/04-JavaScript事件数据与DOM.md",
+      "module": "前端架构",
+      "sha256": "d4cc692d4f96ae62772707e5190585e21d431385a06b2bee75cef98ae01b327a",
+      "characters": 6237,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": false
+    },
+    {
+      "path": "content/前端架构/00-从网页基础开始/05-Vue从安装到第一个完整页面.md",
+      "module": "前端架构",
+      "sha256": "66d7d50daf4765035d0139705bc4c5d26e85cfaf91233cb6db7a2de70eb660b2",
+      "characters": 5930,
+      "h1Count": 1,
+      "fenceCount": 12,
+      "modified": false
+    },
+    {
+      "path": "content/前端架构/00-从网页基础开始/06-React从安装到第一个完整页面.md",
+      "module": "前端架构",
+      "sha256": "c39c44f1c9dc89ba1911f4b7355126de6ed62183290608aa7facb2bc4784d351",
+      "characters": 6340,
+      "h1Count": 1,
+      "fenceCount": 12,
+      "modified": false
+    },
+    {
+      "path": "content/前端架构/00-前端架构学习路线.md",
+      "module": "前端架构",
+      "sha256": "4f12e69270b4952ec5dd8e637aa5222b40f69b14de283cbde96224dc7783f393",
+      "characters": 2297,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": true
+    },
+    {
+      "path": "content/前端架构/000-前端学习推荐阅读.md",
+      "module": "前端架构",
+      "sha256": "d9ca927754535adf53e9d1510ccd17844e7b984166af6a256e8e4a106c9e9d1a",
+      "characters": 2394,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": true
+    },
+    {
+      "path": "content/前端架构/01-浏览器与工程基础/01-浏览器渲染与事件循环.md",
+      "module": "前端架构",
+      "sha256": "b2bb9dcf051b057a6105feca0bc64afd3c1bcdd25629d640577e9681363ff591",
+      "characters": 2130,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/前端架构/01-浏览器与工程基础/02-语义HTML布局与无障碍.md",
+      "module": "前端架构",
+      "sha256": "754802bd205316a581d961bd67e3354ae5b159c0c55771561b099a5e5643cf41",
+      "characters": 2151,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/前端架构/01-浏览器与工程基础/03-TypeScript模块与Vite工程.md",
+      "module": "前端架构",
+      "sha256": "dd048bf6076043f21706ed3b02f50c362340d31d69359db8c0f561ddb25bd5d8",
+      "characters": 2138,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/前端架构/02-组件与架构设计/01-组件边界与状态归属.md",
+      "module": "前端架构",
+      "sha256": "e890f7c7fdaad1f377a0efc8b0dc073a84ac4738c3ab8e00e1975997f15ba4f2",
+      "characters": 1996,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": true
+    },
+    {
+      "path": "content/前端架构/02-组件与架构设计/02-目录分层设计系统与微前端.md",
+      "module": "前端架构",
+      "sha256": "c4bb450463ccc7ba2f1cb44000c6be59d391bef9a8c40ce0007d9dcd5bfdc454",
+      "characters": 2051,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": true
+    },
+    {
+      "path": "content/前端架构/03-Vue从入门到原理/01-模板组件与响应式入门.md",
+      "module": "前端架构",
+      "sha256": "ac13647111c69c7a9aa461354e565ef860b982eeb4cbd37cf3f99bd1cd65a3f2",
+      "characters": 2606,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": true
+    },
+    {
+      "path": "content/前端架构/03-Vue从入门到原理/02-computed-watch与副作用清理.md",
+      "module": "前端架构",
+      "sha256": "c21a581203afa9a65b1034b1db981325cf4bcdaaf939f9af4c42cc9ed0a26d75",
+      "characters": 2707,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": true
+    },
+    {
+      "path": "content/前端架构/03-Vue从入门到原理/03-组件通信Composables与Pinia.md",
+      "module": "前端架构",
+      "sha256": "08eadadc196d8f08eca31b2804114b35e3491c67bde9bd13a287ba51872f8dee",
+      "characters": 2183,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": true
+    },
+    {
+      "path": "content/前端架构/03-Vue从入门到原理/04-Vue渲染机制与性能边界.md",
+      "module": "前端架构",
+      "sha256": "50833d6fc79931d8fc94f331c632bd3ebe1eeeb4061fc883eeb1b902562d54d8",
+      "characters": 1879,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": true
+    },
+    {
+      "path": "content/前端架构/04-React从入门到原理/01-JSX组件与状态快照.md",
+      "module": "前端架构",
+      "sha256": "e5470d4b7ac5510cc09613c1fbbd80db4013d314315baffe034f80fb341c84a2",
+      "characters": 2598,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/前端架构/04-React从入门到原理/02-Hooks-Effect与请求竞态.md",
+      "module": "前端架构",
+      "sha256": "91bfc4410d5e95090a5925ee46c2cc8945c3ed24118cef75b80d59e102a37293",
+      "characters": 2956,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": true
+    },
+    {
+      "path": "content/前端架构/04-React从入门到原理/03-Reducer-Context与自定义Hook.md",
+      "module": "前端架构",
+      "sha256": "899ab3dc915ef1df7f959f50666fa38a7989b95a0e35c069941bc74547f15d76",
+      "characters": 2711,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": true
+    },
+    {
+      "path": "content/前端架构/04-React从入门到原理/04-渲染提交协调与性能.md",
+      "module": "前端架构",
+      "sha256": "44d2614dab0b8d94e59d7a269ad18094829aba8728ccdb9bea1e377469848337",
+      "characters": 1955,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": true
+    },
+    {
+      "path": "content/前端架构/05-路由数据与渲染/01-路由URL与页面生命周期.md",
+      "module": "前端架构",
+      "sha256": "8949edde87e0c87c00dee3e15969db660c6882cc3d0e031d793f49456e8b37b2",
+      "characters": 1868,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": true
+    },
+    {
+      "path": "content/前端架构/05-路由数据与渲染/02-服务端状态缓存与乐观更新.md",
+      "module": "前端架构",
+      "sha256": "06cc7086664d92db48320852a87b1313e394cc7c7d37d9802e3099e0baa5bd1b",
+      "characters": 2129,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": true
+    },
+    {
+      "path": "content/前端架构/05-路由数据与渲染/03-CSR-SSR-SSG与Hydration.md",
+      "module": "前端架构",
+      "sha256": "40708cc106e64ac8a065c37c50a0379fc3d3eb3c43e504cea2fa149082692866",
+      "characters": 2139,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": true
+    },
+    {
+      "path": "content/前端架构/05-路由数据与渲染/04-Nuxt与Next全栈边界.md",
+      "module": "前端架构",
+      "sha256": "1a6ed42fb67f4dfe0f0a8d495c53fcc98e725db4471ce690ef0ea6b3ed1aa621",
+      "characters": 2587,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": true
+    },
+    {
+      "path": "content/前端架构/06-质量安全与交付/01-表单身份与前端安全.md",
+      "module": "前端架构",
+      "sha256": "36c948931fea73a7d42afc1341765851c927a58972677fdf2231803a346bc4ef",
+      "characters": 2156,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": true
+    },
+    {
+      "path": "content/前端架构/06-质量安全与交付/02-测试策略与故障演练.md",
+      "module": "前端架构",
+      "sha256": "a46e06fbca3f8f75f2db798a4c249b52b59c77f49eea71687373ff2c9cfd1ee1",
+      "characters": 2235,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": true
+    },
+    {
+      "path": "content/前端架构/06-质量安全与交付/03-性能指标与资源加载.md",
+      "module": "前端架构",
+      "sha256": "c4e28425b86c41ddd5abea7599deada5c7ade5b7e96c2ab12c7da66136d643e4",
+      "characters": 1663,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": true
+    },
+    {
+      "path": "content/前端架构/06-质量安全与交付/04-Vercel部署配置与回滚.md",
+      "module": "前端架构",
+      "sha256": "02f2ce1393f0544c08df42cb838cb5a2e0535f7c8a635a825f379bcea202cbe4",
+      "characters": 1735,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": true
+    },
+    {
+      "path": "content/前端架构/07-双框架实战与选型/01-双框架文章搜索实战.md",
+      "module": "前端架构",
+      "sha256": "52565d57565203613a0959f601512bc061e386d26f2bf169fe9e4c79013b77db",
+      "characters": 1984,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": true
+    },
+    {
+      "path": "content/前端架构/07-双框架实战与选型/02-Vue与React对照和选型.md",
+      "module": "前端架构",
+      "sha256": "f457bb16143d0e815b02a8a652ec0483f6e6634c766b6700ac192cf891f71bd9",
+      "characters": 2661,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": true
+    },
+    {
+      "path": "content/后端知识/00-后端知识学习路线.md",
+      "module": "后端知识",
+      "sha256": "177372928db14f7e396ae948466b7bac90c7d7cfe95e45b54604211d79005d27",
+      "characters": 1868,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": false
+    },
+    {
+      "path": "content/后端知识/000-后端学习推荐阅读.md",
+      "module": "后端知识",
+      "sha256": "9493651b52704b0998191f3a580b94a086cc680de28a09b523dd1a4db938fcf1",
+      "characters": 2089,
+      "h1Count": 1,
+      "fenceCount": 0,
+      "modified": false
+    },
+    {
+      "path": "content/后端知识/01-请求与接口基础/01-一次请求的完整旅程.md",
+      "module": "后端知识",
+      "sha256": "02ae600ea727c00cc831f52aa145af14d1a6f25cd43b637b6aed63e3175a61e8",
+      "characters": 2219,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": false
+    },
+    {
+      "path": "content/后端知识/01-请求与接口基础/02-API契约错误分页与幂等.md",
+      "module": "后端知识",
+      "sha256": "5923c868af943afa43e90d3d0566790bad6c0604b5f07b8ff8ae32f67ae2e809",
+      "characters": 2050,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": false
+    },
+    {
+      "path": "content/后端知识/01-请求与接口基础/03-进程线程异步与连接池.md",
+      "module": "后端知识",
+      "sha256": "27372ba609f545dfd29a054b6eb598cd0bd222b1944c92585bd9d543836b8a7a",
+      "characters": 1833,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": false
+    },
+    {
+      "path": "content/后端知识/02-常见后端架构/01-分层架构MVC与调用边界.md",
+      "module": "后端知识",
+      "sha256": "8dce800474fb0c6da8e145e00b9340223d0b3176b61f0e261133eed8ff09a4ac",
+      "characters": 2221,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": false
+    },
+    {
+      "path": "content/后端知识/02-常见后端架构/02-模块化单体与领域边界.md",
+      "module": "后端知识",
+      "sha256": "d45cb8afa4ff34bbcba1004b3f00a75cd7a18abf87e311a01be2f1f512b7112e",
+      "characters": 1630,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": false
+    },
+    {
+      "path": "content/后端知识/02-常见后端架构/03-六边形Clean与DDD入门.md",
+      "module": "后端知识",
+      "sha256": "1c18f0805b3809fb232a9f8366b94770600f1d22fa54cb0e3d1ffd1cd898d51f",
+      "characters": 2479,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/后端知识/02-常见后端架构/04-微服务SOA与服务治理.md",
+      "module": "后端知识",
+      "sha256": "fdacdd8afef04c02e61a0dbc83e85f58eef45796d450fd07cacab90ce7fd6fb2",
+      "characters": 1518,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": false
+    },
+    {
+      "path": "content/后端知识/02-常见后端架构/05-事件驱动CQRS与EventSourcing.md",
+      "module": "后端知识",
+      "sha256": "d5622900821797c82152ad80f3d6b9929530455a05c88b8425f9de32d152d524",
+      "characters": 1684,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": false
+    },
+    {
+      "path": "content/后端知识/02-常见后端架构/06-ServerlessBFF与WebQueueWorker.md",
+      "module": "后端知识",
+      "sha256": "48a02a53e4287a1ee5153cb72a0b740f06239945fbeea799678afb7b04a35575",
+      "characters": 1761,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": false
+    },
+    {
+      "path": "content/后端知识/03-数据与存储/01-关系模型约束与事务隔离.md",
+      "module": "后端知识",
+      "sha256": "6bdea650e618ab3ab6cae9dafccfede57e8e9cc100826055b5cc051e6d952eb0",
+      "characters": 2580,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/后端知识/03-数据与存储/02-索引查询计划与数据演进.md",
+      "module": "后端知识",
+      "sha256": "8a54c391ed17b05a1f550866c3966196a95f73718d33bcf52456dd8bbc0e0ffe",
+      "characters": 1808,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": false
+    },
+    {
+      "path": "content/后端知识/03-数据与存储/03-缓存搜索对象存储与一致性.md",
+      "module": "后端知识",
+      "sha256": "b73a558cb9e1e9610349e8d6a502199de5b70e6147a063fe08d7227f450ed42a",
+      "characters": 1730,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": false
+    },
+    {
+      "path": "content/后端知识/04-分布式与可靠性/01-消息队列Outbox与幂等消费.md",
+      "module": "后端知识",
+      "sha256": "7c673753a0e0ee72025b5543d6db7c4183bf30dfab2f044a78785ce5dc50c66b",
+      "characters": 1698,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": false
+    },
+    {
+      "path": "content/后端知识/04-分布式与可靠性/02-一致性CAP与Saga状态机.md",
+      "module": "后端知识",
+      "sha256": "736e245e9dde66564c6188102f9bb76ba05b29065751dc519ad14db016bf1a6e",
+      "characters": 1617,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": false
+    },
+    {
+      "path": "content/后端知识/04-分布式与可靠性/03-超时重试限流熔断与隔离.md",
+      "module": "后端知识",
+      "sha256": "2eb362fde159200f9a0bf2ca114f46f5c7a5a24c2efd6146b626cacbcc33771c",
+      "characters": 2066,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": true
+    },
+    {
+      "path": "content/后端知识/05-身份权限与安全/01-认证授权多租户与输入边界.md",
+      "module": "后端知识",
+      "sha256": "9d5f46eb0e7ea79a0e4459bdd62a36a1d941cd127e0a065bacc71fdfaa900cb6",
+      "characters": 1940,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": false
+    },
+    {
+      "path": "content/后端知识/06-部署与可观测性/01-日志指标追踪与SLO.md",
+      "module": "后端知识",
+      "sha256": "8373424679cb60ec4c91a5a3d60836d92ad477f5320fee44969ec85100e143af",
+      "characters": 1572,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": false
+    },
+    {
+      "path": "content/后端知识/06-部署与可观测性/02-部署配置迁移备份与回滚.md",
+      "module": "后端知识",
+      "sha256": "ca82ab7bce8f0967fb5f2d0a36975e70ccd862f216724470e011970d062b620b",
+      "characters": 1732,
+      "h1Count": 1,
+      "fenceCount": 2,
+      "modified": false
+    },
+    {
+      "path": "content/后端知识/07-项目实战与选型/01-订单服务从零到可靠交付.md",
+      "module": "后端知识",
+      "sha256": "139cf7884bb83394b5af1c9ac62134baff22e9ca831a94a941a9ae687ca450e9",
+      "characters": 2273,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": false
+    },
+    {
+      "path": "content/后端知识/07-项目实战与选型/02-架构选型容量估算与ADR.md",
+      "module": "后端知识",
+      "sha256": "f73543a54e071bbd94fc200e2147fe36528c504a1c64b784ab5dfe16643270ee",
+      "characters": 1923,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": false
+    },
+    {
+      "path": "content/语言基础/00-语言基础学习路线.md",
+      "module": "语言基础",
+      "sha256": "53f0572da0acd8234b06b2e4405cd0051441f18b616d7d4a94f3fca93fb3d7c5",
+      "characters": 3907,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": true
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/000-TypeScript官方资料与版本边界.md",
+      "module": "语言基础",
+      "sha256": "cd21d1dd7ff8bb1cc2bd75b048c880d22b2e7d916fe73eb4485fb80e17aabaef",
+      "characters": 3408,
+      "h1Count": 1,
+      "fenceCount": 6,
+      "modified": true
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/01-环境配置与第一个TypeScript项目.md",
+      "module": "语言基础",
+      "sha256": "25aef8adf71ac6387787d6f47a88d0a22e5b4a935180a02c4e14fa48cfb1eaed",
+      "characters": 5766,
+      "h1Count": 1,
+      "fenceCount": 20,
+      "modified": true
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/02-运行模型与编译产物.md",
+      "module": "语言基础",
+      "sha256": "81dde96cf442aa215ca8427b385e6288698f938bc692de39fadc2a89e97934dd",
+      "characters": 5028,
+      "h1Count": 1,
+      "fenceCount": 18,
+      "modified": false
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/03-变量原始类型与类型推断.md",
+      "module": "语言基础",
+      "sha256": "b380001a9392e93b64c99e8fc47da1216c7f78707ed8d231819309cceff5398e",
+      "characters": 6864,
+      "h1Count": 1,
+      "fenceCount": 24,
+      "modified": false
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/04-数组元组对象与只读.md",
+      "module": "语言基础",
+      "sha256": "4d021ed345dbee09b816dcf267999c3ceb473e07e26e4e8e653e8584a0c37fb3",
+      "characters": 3250,
+      "h1Count": 1,
+      "fenceCount": 20,
+      "modified": false
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/05-函数签名重载this与回调.md",
+      "module": "语言基础",
+      "sha256": "a9c5873f48fc22074a599bfc5f7d83e940a09ff7ffc05d7e1a9da79813525c7b",
+      "characters": 3129,
+      "h1Count": 1,
+      "fenceCount": 20,
+      "modified": true
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/06-interface-type与结构化类型.md",
+      "module": "语言基础",
+      "sha256": "485b22c621412424eb0d0261747f803fc8a1edaf32d4b58d522f11128c1bea55",
+      "characters": 2811,
+      "h1Count": 1,
+      "fenceCount": 16,
+      "modified": true
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/07-联合交叉收窄与穷尽检查.md",
+      "module": "语言基础",
+      "sha256": "5c5f9fee37bacc06dcfccde4ec96a856f04f0b204b9b80c0e647d092d7de5515",
+      "characters": 3760,
+      "h1Count": 1,
+      "fenceCount": 16,
+      "modified": true
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/08-泛型约束推断与变型.md",
+      "module": "语言基础",
+      "sha256": "f275cdb00e18a536dbee7a5ee4e191206c82aa1448f9330a39ed5244483f9223",
+      "characters": 7113,
+      "h1Count": 1,
+      "fenceCount": 24,
+      "modified": false
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/09-类继承抽象与访问控制.md",
+      "module": "语言基础",
+      "sha256": "c1169b1e4cb1408146e9ebe662a45afc493775d3c4945551fb194f45d5b3345f",
+      "characters": 3774,
+      "h1Count": 1,
+      "fenceCount": 14,
+      "modified": true
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/10-模块包与声明文件.md",
+      "module": "语言基础",
+      "sha256": "7a1125ed68513be5c97059de18feb31a6d8068789f023d29f6e338f7c6d06cd8",
+      "characters": 3423,
+      "h1Count": 1,
+      "fenceCount": 18,
+      "modified": false
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/11-keyof-typeof索引访问与工具类型.md",
+      "module": "语言基础",
+      "sha256": "f20217ef146ee97bf5eda1d367c8a790e4b5e1c495d71f8c1d83a66bf298b3a2",
+      "characters": 3003,
+      "h1Count": 1,
+      "fenceCount": 16,
+      "modified": true
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/12-映射条件模板字面量与infer.md",
+      "module": "语言基础",
+      "sha256": "2068864c6bf37ac3f1913d9b6f51eb24b1e7dcefbfcd435c4b859d76a7da1d4d",
+      "characters": 3497,
+      "h1Count": 1,
+      "fenceCount": 18,
+      "modified": true
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/13-tsconfig严格模式与工程编译.md",
+      "module": "语言基础",
+      "sha256": "4f46de1eea955a8222e175404d7ae26f9e51f7744eca6813796454b40f8449b6",
+      "characters": 3772,
+      "h1Count": 1,
+      "fenceCount": 18,
+      "modified": false
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/14-异步错误边界DOM与Node.md",
+      "module": "语言基础",
+      "sha256": "6efbf1371c37d215857dc4873a62e695bf147d59563baeaf46d0e172ce82f71d",
+      "characters": 3677,
+      "h1Count": 1,
+      "fenceCount": 14,
+      "modified": true
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/15-装饰器JSX与特殊语法边界.md",
+      "module": "语言基础",
+      "sha256": "312a517b7f4de1e6048784f6fca7c2256274199598a9df99515e059a640aafcc",
+      "characters": 2782,
+      "h1Count": 1,
+      "fenceCount": 10,
+      "modified": false
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/16-测试构建Lint发布与迁移.md",
+      "module": "语言基础",
+      "sha256": "86274f805247b2bc92c9a6026099d4269565603963ca4571d0f033cf58452182",
+      "characters": 3025,
+      "h1Count": 1,
+      "fenceCount": 14,
+      "modified": false
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/17-综合项目与检查清单.md",
+      "module": "语言基础",
+      "sha256": "67bc09be99f6e5b94be8d6b6cb86e90ac10395240a97874ff6b20f9d6d9c7b94",
+      "characters": 5749,
+      "h1Count": 1,
+      "fenceCount": 12,
+      "modified": true
+    },
+    {
+      "path": "content/语言基础/02-TypeScript跨语言对照/00-五语言总览矩阵.md",
+      "module": "语言基础",
+      "sha256": "d7520bbd8e65540077a116dd1bb792dc31f34e1dde720499843bf71c9ebec92c",
+      "characters": 3526,
+      "h1Count": 1,
+      "fenceCount": 10,
+      "modified": true
+    },
+    {
+      "path": "content/语言基础/02-TypeScript跨语言对照/01-TypeScript与JavaScript.md",
+      "module": "语言基础",
+      "sha256": "7b6c4298ffd02abab27bf7a608f35090c6e560a70d501ff8fc850bf366141829",
+      "characters": 2670,
+      "h1Count": 1,
+      "fenceCount": 12,
+      "modified": false
+    },
+    {
+      "path": "content/语言基础/02-TypeScript跨语言对照/02-TypeScript与Java.md",
+      "module": "语言基础",
+      "sha256": "0f7e35579f55dab0ea3b2c0bc36c3e22e4a1a027cb4394808794c83f0e5afd7e",
+      "characters": 2991,
+      "h1Count": 1,
+      "fenceCount": 10,
+      "modified": true
+    },
+    {
+      "path": "content/语言基础/02-TypeScript跨语言对照/03-TypeScript与Python.md",
+      "module": "语言基础",
+      "sha256": "52c3bbe9d32ef5dd31a8e91dc85b95d92c4e53f3263185369d20362de7464916",
+      "characters": 3091,
+      "h1Count": 1,
+      "fenceCount": 14,
+      "modified": true
+    },
+    {
+      "path": "content/语言基础/02-TypeScript跨语言对照/04-TypeScript与Cpp.md",
+      "module": "语言基础",
+      "sha256": "c31fb50439145228ab44018696ee0874f21aaaf7e4b6bfc4082a0e1e9717062b",
+      "characters": 2823,
+      "h1Count": 1,
+      "fenceCount": 12,
+      "modified": true
+    },
+    {
+      "path": "content/语言基础/02-TypeScript跨语言对照/05-TypeScript独有能力与缺失能力清单.md",
+      "module": "语言基础",
+      "sha256": "36251e04ddf05f3b0ce06edb989dfb6fdd27b08a83ac840a3eaca96cf5b97ac3",
+      "characters": 2746,
+      "h1Count": 1,
+      "fenceCount": 4,
+      "modified": false
+    }
+  ]
+}

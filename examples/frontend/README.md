@@ -7,7 +7,9 @@ npm ci
 npm run dev
 ```
 
-打开终端地址的 `/vue.html` 与 `/react.html`，搜索、清空、筛选收藏并切换收藏状态。
+直接打开终端地址可看到练习索引。基础课 `/foundations/native.html`、`/foundations/vue.html`、`/foundations/react.html` 使用相同三条文章，代码与六篇零基础课程对应。
+
+进阶课打开终端地址的 `/vue.html` 与 `/react.html`，搜索、清空、筛选收藏并切换收藏状态。
 
 ```bash
 npm test

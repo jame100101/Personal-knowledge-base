@@ -67,20 +67,22 @@ flowchart LR
   G -->|是| H["灰度与持续观测"]
 ```
 
-## 4. 最小可运行示例
+## 4. 操作练习：给真实慢请求收集一份 JFR
 
-集合复制可以作为观察分配行为的小例子，但这段函数本身不是性能测试。需要规定输入规模、运行方式与测量指标，再比较结果；不要凭一次运行耗时判断优化，也不要把不可修改误认为没有复制成本。
+前置条件是本机已有运行中的 HotSpot Java 服务，你有权附加到该进程，磁盘有足够空间。以下命令使用 JDK 自带工具；把 `12345` 换成 `jcmd -l` 列出的目标 PID，不要把它当成固定端口。
 
-```java
-public final class Example {
-  private Example() {}
-
-  public static <T> List<T> immutableCopy(Collection<? extends T> source) {
-    Objects.requireNonNull(source, "source");
-    return List.copyOf(source);
-  }
-}
+```bash
+jcmd -l
+jcmd 12345 JFR.start name=slow-request settings=profile duration=60s filename=slow-request.jfr
+jcmd 12345 JFR.check
+jfr summary slow-request.jfr
 ```
+
+在这 60 秒内用同样的输入重复那条慢操作。录制完成后再运行 `jfr summary`，并用 JDK Mission Control 打开文件。先看线程是在运行还是等待，再检查 CPU 样本、分配、锁和 GC 事件。采样事件是统计证据，某个栈没有出现不代表它从未执行；录制策略和事件阈值也会影响可见性。
+
+举例：如果请求慢时线程主要等数据库连接，先查池等待和慢 SQL；盲目改 Java 循环不会解决等待。若 CPU 样本集中在解析同一份大配置，才有理由研究重复解析。记录优化前后的负载、成功率、p95 和资源占用，不要只保存“感觉变快”的截图。
+
+`settings=profile` 有额外开销，应先在测试环境估计影响。采集文件可能含业务路径、线程名等信息，分享前检查内容。
 
 ## 5. 实践与验证
 

@@ -70,8 +70,8 @@ async function withTimeout<T>(
 ## 5. DOM 类型与空值
 
 ```typescript
-const form = document.querySelector<HTMLFormElement>("#signup")
-if (form === null) throw new Error("#signup not found")
+const form = document.querySelector("#signup")
+if (!(form instanceof HTMLFormElement)) throw new Error("#signup must be a form")
 
 form.addEventListener("submit", (event: SubmitEvent) => {
   event.preventDefault()
@@ -82,7 +82,7 @@ form.addEventListener("submit", (event: SubmitEvent) => {
 })
 ```
 
-泛型参数只改善静态返回类型，不保证选择器实际匹配正确元素；仍要检查 `null`。DOM 的事件对象和 `EventTarget` 较宽，必要时通过 `currentTarget` 验证或封装绑定函数。
+querySelector 的泛型参数不能证明实际元素类型。这里在同一文档环境用 instanceof 同时排除 null 与错误元素；跨窗口 DOM 还要考虑构造器所属的 realm。DOM 事件对象和 EventTarget 较宽，必要时验证 currentTarget 或封装绑定函数。
 
 ## 6. Node.js 类型与平台版本
 
@@ -109,8 +109,9 @@ type Result<T, E> =
 type ValidationError = { field: string; message: string }
 
 function parseAge(value: string): Result<number, ValidationError> {
-  const age = Number(value)
-  if (!Number.isInteger(age) || age < 0) {
+  const normalized = value.trim()
+  const age = Number(normalized)
+  if (!/^(0|[1-9]\d*)$/.test(normalized) || !Number.isSafeInteger(age)) {
     return { ok: false, error: { field: "age", message: "invalid age" } }
   }
   return { ok: true, value: age }
@@ -118,6 +119,10 @@ function parseAge(value: string): Result<number, ValidationError> {
 ```
 
 TypeScript 没有 Java 风格受检异常，函数签名不会强制列出所有 `throw`。
+
+parseAge 这里约定无符号十进制整数，可有首尾空白；不接受空串、指数或十六进制形式。否则 Number("") 会得到 0，漏填就被误认成零岁。业务若有年龄上限，再单独增加范围条件。
+
+前面的 withTimeout 只在时间到达后发出取消信号。若 operation 忽略 signal，包装器仍可能迟迟不返回；它不是强制终止任意函数的执行器。Promise.all 中一个任务拒绝也不会自动取消其他任务，停止等待和释放资源必须分别设计。
 
 ## 8. 异步检查清单
 
@@ -129,4 +134,3 @@ TypeScript 没有 Java 风格受检异常，函数签名不会强制列出所有
 - 重试是否仅用于可重试错误，并有幂等性与退避？
 
 参考：[MDN Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises)、[Type Declarations](https://www.typescriptlang.org/docs/handbook/2/type-declarations.html)。
-

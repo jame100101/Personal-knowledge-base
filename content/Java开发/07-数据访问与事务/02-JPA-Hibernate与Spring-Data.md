@@ -65,7 +65,7 @@ stateDiagram-v2
   Managed --> Database: flush SQL
 ```
 
-## 4. 最小可运行示例
+## 4. 教学示例（结合本章运行前提）
 
 `@Version` 用来参与乐观锁检查，关联集合则描述订单与明细的关系。例子省略了明细实体、双向关系维护和访问方法；它用于观察映射含义，不是完整项目。还要通过 SQL 日志确认 flush 时实际发出了什么语句。
 
@@ -79,7 +79,7 @@ class PurchaseOrder {
   private long version;
 
   @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
-  private final List<OrderLine> lines = new ArrayList<>();
+  private List<OrderLine> lines = new ArrayList<>();
 }
 ```
 

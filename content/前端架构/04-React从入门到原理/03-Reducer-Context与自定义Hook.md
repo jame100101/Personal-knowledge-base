@@ -53,8 +53,18 @@ Context 让子树中的组件读取共同上下文，适合主题、语言或稳
 
 ## 练习与参考
 
-给 reducer 写三条行为测试：保存中忽略输入，失败保留草稿，失败后可以重新提交。再讨论“旧保存请求晚到”的情况：本例不允许并发保存，但真实应用若放开并发，必须用请求或版本身份过滤旧响应。
+给 reducer 写三条行为测试：保存中忽略输入，失败保留草稿，失败后可以重新提交。再讨论“旧保存请求晚到”的情况：本例的状态模型要求串行保存，但调用层仍必须落实该约束；真实应用若放开并发，必须用请求或版本身份过滤旧响应。
 
 - [React：用 reducer 提取状态逻辑](https://react.dev/learn/extracting-state-logic-into-a-reducer)
 - [React：Context](https://react.dev/learn/passing-data-deeply-with-context)
 - [React：自定义 Hooks](https://react.dev/learn/reusing-logic-with-custom-hooks)
+
+## 状态机保护了什么，还没有保护什么
+
+SaveState 的联合类型让保存失败必须带 error，保存中不会同时拥有另一个独立的 saved=true 标志。reducer 再约束哪些事件在哪些状态有效。这减少了不合法组合，但不会自动控制网络层：即使 reducer 忽略第二次 submit，事件处理函数仍可能发出第二个请求。
+
+因此实际提交入口需要合适的并发策略。可以在同步入口用正在进行的请求引用阻止重复发送，也可以排队；服务端仍应有幂等键或版本条件。按钮 disabled 主要保护正常界面操作，不能代替这些协议。若允许并行保存，success/failure 必须携带请求版本，reducer 只接纳当前版本的响应。
+
+连接 useReducer 后，事件处理函数 dispatch submit，再执行请求，成功或失败再 dispatch 对应事件。不要在 reducer 里 await 请求，因为 reducer 是给定旧状态和事件计算新状态的纯函数，可能被重复求值。
+
+测试时除了三条状态转换，再增加“失败后草稿内容仍在”和“非 saving 状态收到旧 success 不改状态”。这些检查针对业务约束；检查 dispatch 被调用几次，却不观察最终草稿和提示，价值要小得多。

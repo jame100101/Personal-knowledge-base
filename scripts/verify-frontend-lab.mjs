@@ -7,6 +7,42 @@ const browser = await chromium.launch({
 const base = process.env.FRONTEND_LAB_URL || 'http://127.0.0.1:5173'
 await fs.mkdir('.tools/frontend/screenshots', { recursive: true })
 try {
+  for (const version of ['native', 'vue', 'react']) {
+    const page = await browser.newPage()
+    const errors = []
+    page.on('pageerror', (error) => errors.push(error.message))
+    await page.goto(`${base}/foundations/${version}.html`)
+    await expect(page.getByRole('heading', { level: 1 })).toHaveText('文章搜索')
+    await expect(page.getByRole('listitem')).toHaveCount(3)
+    const input = page.getByLabel('搜索标题')
+    await input.fill('  REACT  ')
+    await expect(page.getByRole('listitem')).toHaveText(['React 状态入门'])
+    await expect(page.getByRole('status')).toHaveText('找到 1 篇文章')
+    await input.fill('不存在')
+    await expect(page.getByRole('listitem')).toHaveCount(0)
+    await expect(page.getByText('没有匹配的文章，换一个词试试。')).toBeVisible()
+    await page.getByRole('button', { name: '清空', exact: true }).click()
+    await expect(input).toHaveValue('')
+    await expect(input).toBeFocused()
+    await expect(page.getByRole('listitem')).toHaveCount(3)
+    await expect(page.getByRole('status')).toHaveText('找到 3 篇文章')
+    for (const width of [390, 1280]) {
+      await page.setViewportSize({ width, height: 900 })
+      assert(
+        await page.evaluate(
+          () => document.documentElement.scrollWidth <= innerWidth + 1,
+        ),
+      )
+      await page.screenshot({
+        path: `.tools/frontend/screenshots/basics-${version}-${width}.png`,
+      })
+    }
+    assert.deepEqual(errors, [])
+    console.log(
+      `basics ${version}: search, empty, clear/focus, responsive and console passed`,
+    )
+    await page.close()
+  }
   for (const framework of ['vue', 'react']) {
     const page = await browser.newPage()
     const errors = []

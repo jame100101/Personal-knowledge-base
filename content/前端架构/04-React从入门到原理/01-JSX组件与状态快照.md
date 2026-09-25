@@ -69,3 +69,13 @@ setCount((previous) => previous + 1)
 - [React：State as a Snapshot](https://react.dev/learn/state-as-a-snapshot)
 - [React：更新队列](https://react.dev/learn/queueing-a-series-of-state-updates)
 - [Full Stack Open：React 入门](https://fullstackopen.com/en/part1/introduction_to_react/)
+
+## 用三轮渲染理解“快照”
+
+第一次调用组件时 query 是空字符串，visibleArticles 包含全部记录；用户输入 v 后，事件处理器请求 query 变为 v；下一轮组件调用拿到 v，再重新计算筛选结果。前一轮创建的函数仍关联那一轮变量，这就是普通 JavaScript 闭包与 React 更新模型共同产生的行为。
+
+试着在事件中先打印 query，再 setQuery('vue')，最后又打印 query。两次打印可能都是该轮旧值，这不证明 React 没工作。应观察下一轮渲染或最终界面，而不是期待 setter 改写已存在的 const 绑定。
+
+同一事件中三次 setCount(count+1) 在这里请求相同目标值；函数式更新则把计算排进队列，依次获得前一个结果。更新函数必须纯净，因为 React 可能在开发检查中再次调用它。发送邮件、扣款或发布文章绝不能藏在这个计算函数里。
+
+给对象 state 更新时，复制的是需要变化的路径。比如文章列表用 map，目标文章返回 `{...article, favorite: !article.favorite}`，其他文章保持原引用。它既避免改写旧快照，也保留未变化数据的身份，不需要每次 JSON 序列化整个状态树。

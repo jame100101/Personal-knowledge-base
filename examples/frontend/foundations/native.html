@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>原生 JavaScript 文章搜索</title>
+  <style>
+    body { font: 1rem/1.7 system-ui; max-width: 42rem; margin: 2rem auto; padding: 0 1rem; }
+    input, button { font: inherit; padding: .5rem; }
+    input { max-width: 100%; box-sizing: border-box; }
+    button:focus-visible, input:focus-visible { outline: 3px solid #a65200; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>文章搜索</h1>
+    <label for="query">搜索标题</label>
+    <input id="query" type="search" autocomplete="off">
+    <button id="clear" type="button">清空</button>
+    <p id="count" role="status"></p>
+    <ul id="results"></ul>
+    <p id="empty" hidden>没有匹配的文章，换一个词试试。</p>
+  </main>
+  <script>
+    const articles = [
+      { id: 'html', title: 'HTML 页面结构' },
+      { id: 'vue', title: 'Vue 响应式入门' },
+      { id: 'react', title: 'React 状态入门' },
+    ]
+    const input = document.querySelector('#query')
+    const clearButton = document.querySelector('#clear')
+    const results = document.querySelector('#results')
+    const count = document.querySelector('#count')
+    const empty = document.querySelector('#empty')
+    let query = ''
+
+    function render() {
+      const word = query.trim().toLowerCase()
+      const visible = articles.filter(article =>
+        article.title.toLowerCase().includes(word)
+      )
+      const items = visible.map(article => {
+        const li = document.createElement('li')
+        li.textContent = article.title
+        return li
+      })
+      results.replaceChildren(...items)
+      count.textContent = `找到 ${visible.length} 篇文章`
+      empty.hidden = visible.length !== 0
+    }
+
+    input.addEventListener('input', event => {
+      query = event.target.value
+      render()
+    })
+    clearButton.addEventListener('click', () => {
+      query = ''
+      input.value = ''
+      render()
+      input.focus()
+    })
+    render()
+  </script>
+</body>
+</html>

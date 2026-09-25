@@ -65,3 +65,13 @@ abort 尽量停止无用网络工作，active 防止已经失效的流程提交�
 - [Vue：Watchers 与清理时机](https://vuejs.org/guide/essentials/watchers.html)
 - [Vue：Computed](https://vuejs.org/guide/essentials/computed.html)
 - [MDN：AbortController](https://developer.mozilla.org/en-US/docs/Web/API/AbortController)
+
+## 给竞态画一条时间线
+
+假设第 0ms 输入 vue，第 100ms 输入 react；React 请求在第 200ms 完成，Vue 请求在第 800ms 才完成。需要保护的是“当前查询拥有结果提交权”，不是“最后收到的响应总是最新”。每轮回调创建自己的 active，清理旧轮时将它设为 false。旧响应即使返回，也不能提交结果或关闭新轮 loading。
+
+watch 默认不会仅因注册就执行回调。本文 query 初始为空，等用户修改后开始搜索；如果要初始有查询就立即加载，可按需求增加 immediate:true。观察对象时还要区分观察整个响应式对象、getter 返回值和深层变化，不能把所有来源都当作简单 ref。
+
+调试时在回调建立、清理、请求返回三个位置记录不含敏感数据的请求序号，故意延迟旧请求，再观察日志。只验证“正常网络下搜一次能出结果”，无法证明竞态处理正确。防抖可以减少请求数量，但旧请求已经发出时，仍然需要失效处理。
+
+若请求改成保存文章，客户端取消只能停止等待或尽量中断传输，不能撤销服务器已提交的事务。保存要使用版本条件、幂等协议或明确的状态查询；不要把读取搜索的清理逻辑当作写入事务方案。

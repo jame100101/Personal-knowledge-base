@@ -1,0 +1,4 @@
+body { margin: 0; }
+.page { font: 1rem/1.7 system-ui; max-width: 42rem; margin: 2rem auto; padding: 0 1rem; }
+input, button { font: inherit; padding: .5rem; }
+input { max-width: 100%; box-sizing: border-box; }

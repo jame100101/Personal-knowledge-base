@@ -64,7 +64,7 @@ interrupt 设置中断状态，阻塞方法可能抛 InterruptedException 并清
 
 ### 5. 竞态、可见性、原子性与 happens-before
 
-多个线程无同步访问共享可变状态会产生数据竞争。volatile 提供可见性和特定顺序保证，但 `count++` 仍不是原子。锁、volatile、线程启动/结束和并发容器建立 happens-before 关系。
+多个线程访问同一变量，其中至少一个访问是写入，且这些访问没有按 happens-before 排序时，存在数据竞争。volatile 提供可见性和特定顺序保证，但 `count++` 仍不是原子。锁、volatile、线程启动/结束和并发容器建立 happens-before 关系。
 
 **工程理解：** 优先不可变数据、线程封闭和消息传递；共享状态使用锁或原子 API。
 
@@ -110,7 +110,7 @@ CompletableFuture 组合异步阶段，但默认 commonPool 与异常链需谨�
 
 **常见误区：** 只组合成功路径，忽略 exceptionally/handle、超时和取消；把 preview 当稳定长期 API。
 
-## 3.9 最小可运行示例
+## 3.9 教学示例（结合本章运行前提）
 
 ```java
 try (var executor = Executors.newVirtualThreadPerTaskExecutor()) {
@@ -149,3 +149,8 @@ try (var executor = Executors.newVirtualThreadPerTaskExecutor()) {
 - [Java Concurrency Utilities](https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/util/concurrent/package-summary.html)
 - [Java Virtual Threads Guide](https://docs.oracle.com/en/java/javase/26/core/virtual-threads.html)
 - [JEP 525 Structured Concurrency](https://openjdk.org/jeps/525)
+
+
+## 补充实验与适用边界
+
+示例中的 `future.get(2, TimeUnit.SECONDS)` 分别限制每次等待，并不构成整个操作共用的两秒 deadline。超时本身不会取消任务；`ExecutorService.close()` 又会等待任务结束，所以 try-with-resources 退出也可能继续等待。真实调用需要共享剩余预算、显式取消以及任务配合中断；忽略中断的任务仍不能靠 `cancel(true)` 强制停止。

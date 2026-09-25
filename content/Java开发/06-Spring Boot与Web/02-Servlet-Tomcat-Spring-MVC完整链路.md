@@ -77,7 +77,7 @@ sequenceDiagram
   D-->>C: message conversion response
 ```
 
-## 4. 最小可运行示例
+## 4. 教学示例（结合本章运行前提）
 
 用一次 `GET /api/orders/42` 对照这段控制器：路径里的 ID 被转换成参数，再交给业务服务。示例省略了 `service` 注入和 `OrderView` 定义；找不到订单时如何返回错误，也要在应用中另行约定。
 

@@ -37,3 +37,13 @@ Vue Router 的导航守卫适合登录跳转、离开未保存编辑器的提示
 - [Vue Router：导航守卫](https://router.vuejs.org/guide/advanced/navigation-guards.html)
 - [Vue Router：不同 History 模式](https://router.vuejs.org/guide/essentials/history-mode.html)
 - [React Router：模式选择](https://reactrouter.com/start/modes)
+
+## 从地址栏到页面状态，做一次手工验收
+
+先规定 URL 契约：q 是关键词，page 是从 1 开始的正整数，sort 只允许 updated 或 title。读取时对缺失、非法和超范围值做处理，再把合法结果交给页面。`parseInt('2abc')` 会得到 2，所以如果契约要求完整数字，不能只靠 parseInt 判断有效性。
+
+可以先检查字符串是否匹配正整数形式，再 Number 转换并确认 Number.isSafeInteger；同时限制允许的最大页码或交由后端分页协议校验。类型写成 number 并不代表任意地址栏字符串已经被验证。
+
+接着测试四条路径：从首页点击进入、直接粘贴深层地址、刷新、返回上一页。它们分别覆盖客户端导航、服务器入口、初始化和历史恢复。只测试第一条，会漏掉常见的 SPA 回退配置问题。
+
+登录回跳也要校验实际目标。只检查 startsWith('/') 不够，因为 //example.com 在 URL 解析中可能表示另一个主机。使用受控的站内路径集合，或基于当前站点解析并严格比较 origin，再决定是否允许导航。

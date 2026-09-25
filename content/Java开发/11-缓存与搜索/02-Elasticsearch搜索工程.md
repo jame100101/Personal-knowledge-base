@@ -74,11 +74,11 @@ flowchart LR
   E --> F["搜索 API"]
 ```
 
-## 4. 最小可运行示例
+## 4. 教学示例（结合本章运行前提）
 
 先确认 `available` 的映射适合精确过滤，`name` 的映射适合文本搜索。`must` 参与匹配评分，`filter` 限制可售商品。此处按 `_score` 排序，只演示相关度；若要稳定翻页，还需设计排序键与分页方式。
 
-```json
+```text
 POST /products/_search
 {
   "query": {

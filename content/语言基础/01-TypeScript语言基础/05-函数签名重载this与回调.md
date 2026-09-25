@@ -96,7 +96,7 @@ const values: number[] = []
 const pushValue: (value: number) => void = (value) => values.push(value)
 ```
 
-但显式声明为 `function f(): void` 的函数体不能返回具体值。这两种情境要区分。
+但显式声明为 `function f(): void` 的函数体不能直接返回 number、string 等不符合 void 的值；裸 return、return undefined 或返回 void 表达式可以成立。这两种情境要区分。
 
 ## 7. 泛型函数应保留关系
 

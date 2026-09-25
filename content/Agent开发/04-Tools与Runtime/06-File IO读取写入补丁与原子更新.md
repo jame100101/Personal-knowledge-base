@@ -33,7 +33,7 @@ requested path
   -> 执行
 ```
 
-仅检查字符串是否以 workspace 路径开头并不充分，例如相似前缀、`..`、符号链接或 Windows junction 都可能改变真实目标。对于新文件，应解析最近的已存在父目录，再验证将创建的相对尾部。
+仅检查字符串是否以 workspace 路径开头并不充分，例如相似前缀、`..`、符号链接或 Windows junction 都可能改变真实目标。对于新文件，应解析最近的已存在父目录，再验证将创建的相对尾部。检查后到打开前还存在路径被替换的竞态（TOCTOU）；不可信用户可改动目录时，需要操作系统沙箱、基于目录句柄的相对访问和相应的禁跟随策略，不能只靠 `realpath` 检查。
 
 结果中同时记录：
 
@@ -175,7 +175,7 @@ sequenceDiagram
   participant D as Disk
   A->>F: write(path, content, expected_sha256)
   F->>D: stat + read current hash
-  F->>F: compare-and-swap
+  F->>F: 在写入协调锁内核对版本
   F->>D: create temp in same directory
   F->>D: write + flush + close
   F->>D: atomic rename/replace
@@ -183,7 +183,7 @@ sequenceDiagram
   F-->>A: FileWriteResult + diff/evidence
 ```
 
-`expected_sha256` 实现乐观并发控制：只有磁盘版本仍等于 Agent 阅读过的版本时才写入。若不相等，返回 `STALE_SNAPSHOT`，让 Agent重新读取和合并，而不是覆盖其他进程的修改。
+`expected_sha256` 是版本检查条件，本身不是文件系统的原子 compare-and-swap。先读 hash、再 rename，中间仍可能被另一个写者插入修改。若需要防止丢失更新，所有写者必须通过同一个协调器，或遵守覆盖“核对到替换”整个区间的锁协议；不受控的外部进程不会自动遵守应用锁。受协调保护时，版本不符应返回 `STALE_SNAPSHOT`，重新读取并合并。不能仅凭一次 hash 比较就承诺并发写安全。
 
 临时文件放在目标同一目录，通常更容易保证 rename 位于同一文件系统。需要区分：
 
@@ -250,17 +250,17 @@ def atomic_write(path: Path, content: str) -> None:
 
 ```rust group=atomic-write label=Rust
 use std::{fs, io::{self, Write}, path::Path};
+use tempfile::NamedTempFile;
 
 fn atomic_write(path: &Path, content: &[u8]) -> io::Result<()> {
-    let parent = path.parent().ok_or_else(|| io::Error::other("missing parent"))?;
+    let parent = path.parent()
+        .filter(|p| !p.as_os_str().is_empty())
+        .unwrap_or_else(|| Path::new("."));
     fs::create_dir_all(parent)?;
-    let temp = parent.join(format!(".{}.tmp", path.file_name().unwrap().to_string_lossy()));
-    {
-        let mut file = fs::File::create(&temp)?;
-        file.write_all(content)?;
-        file.sync_all()?;
-    }
-    fs::rename(temp, path)?;
+    let mut temp = NamedTempFile::new_in(parent)?;
+    temp.write_all(content)?;
+    temp.as_file().sync_all()?;
+    temp.persist(path).map_err(|error| error.error)?;
     Ok(())
 }
 ```
@@ -274,8 +274,10 @@ export async function atomicWrite(path, content) {
   const parent = dirname(path)
   await mkdir(parent, { recursive: true })
   const temp = join(parent, `.${basename(path)}.${randomUUID()}.tmp`)
+  let ownsTemp = false
   try {
     const file = await open(temp, 'wx')
+    ownsTemp = true
     try {
       await file.writeFile(content, 'utf8')
       await file.sync()
@@ -284,7 +286,7 @@ export async function atomicWrite(path, content) {
     }
     await rename(temp, path)
   } catch (error) {
-    await rm(temp, { force: true })
+    if (ownsTemp) await rm(temp, { force: true }).catch(() => {})
     throw error
   }
 }
@@ -299,8 +301,10 @@ export async function atomicWrite(path: string, content: string): Promise<void> 
   const parent = dirname(path)
   await mkdir(parent, { recursive: true })
   const temp = join(parent, `.${basename(path)}.${randomUUID()}.tmp`)
+  let ownsTemp = false
   try {
     const file = await open(temp, 'wx')
+    ownsTemp = true
     try {
       await file.writeFile(content, { encoding: 'utf8' })
       await file.sync()
@@ -309,11 +313,13 @@ export async function atomicWrite(path: string, content: string): Promise<void> 
     }
     await rename(temp, path)
   } catch (error) {
-    await rm(temp, { force: true })
+    if (ownsTemp) await rm(temp, { force: true }).catch(() => {})
     throw error
   }
 }
 ```
+
+Rust 示例依赖 `tempfile = "3"`，由 `NamedTempFile` 创建独占临时文件并在普通错误路径清理；不再使用固定 `.文件名.tmp`，避免两个写者互相截断临时文件。四个例子都**没有实现版本锁**，并发替换仍可能是最后写入者覆盖前者；它们演示的是单次替换的可见性。文件 `sync` 与父目录项持久化也不同，掉电保证需要按文件系统补充目录同步和实测。运行目录应由应用控制。
 
 ## 7. FileResult 与变更证据
 
@@ -444,5 +450,6 @@ read snapshot
 
 - [Node.js File system 官方文档](https://nodejs.org/api/fs.html)
 - [Python `pathlib` 官方文档](https://docs.python.org/3/library/pathlib.html)
+- [tempfile NamedTempFile](https://docs.rs/tempfile/latest/tempfile/struct.NamedTempFile.html)
 - [Rust `std::fs` 官方文档](https://doc.rust-lang.org/std/fs/)
 - [SWE-agent ACI Commands](https://swe-agent.com/0.7/config/commands/)

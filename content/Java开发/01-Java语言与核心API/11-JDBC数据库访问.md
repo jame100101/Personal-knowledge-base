@@ -95,22 +95,31 @@ JDBC 提供最底层可控能力，MyBatis/JPA 在其上减少映射样板，但
 
 ## 3.9 安全查询与事务
 
+这里只展示事务体，需在声明 `throws SQLException` 的方法中运行，并提供已配置的 `DataSource`、正数 `BigDecimal amount` 和账户 ID。数据库表需要主键以及余额非负约束。
+
 ```java
+if (amount == null || amount.signum() <= 0) {
+    throw new IllegalArgumentException("扣减金额必须为正");
+}
 try (Connection c = dataSource.getConnection()) {
     c.setAutoCommit(false);
     try (PreparedStatement ps = c.prepareStatement(
-            "update account set balance = balance - ? where id = ?")) {
+            "update account set balance = balance - ? where id = ? and balance >= ?")) {
         ps.setBigDecimal(1, amount);
         ps.setLong(2, accountId);
-        if (ps.executeUpdate() != 1) throw new SQLException("账户不存在");
+        ps.setBigDecimal(3, amount);
+        if (ps.executeUpdate() != 1) throw new SQLException("账户不存在或余额不足");
         c.commit();
-    } catch (Exception e) {
-        c.rollback();
+    } catch (SQLException | RuntimeException e) {
+        try { c.rollback(); }
+        catch (SQLException rollbackFailure) { e.addSuppressed(rollbackFailure); }
         throw e;
     }
 }
 ```
 
+
+余额条件与扣减放在同一条语句，避免“先查余额、随后无条件扣款”的竞争窗口。连接池需要在归还时恢复连接状态；使用前确认池的复位策略，不应把带未完成事务的裸连接自行交给下一个请求。网络在提交附近断开时，客户端可能无法确定提交是否成功，业务仍需幂等键或状态查询；`rollback()` 不能撤销数据库已经确认的提交。
 
 ## 4. 现代 Java 校准
 

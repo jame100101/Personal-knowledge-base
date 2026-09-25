@@ -68,3 +68,13 @@ StrictMode 在开发环境会额外检查，包括 Effect 的建立与清理。�
 - [React：useEffect](https://react.dev/reference/react/useEffect)
 - [React：You Might Not Need an Effect](https://react.dev/learn/you-might-not-need-an-effect)
 - [React：Hooks 规则](https://react.dev/reference/rules/rules-of-hooks)
+
+## 把 Effect 当作一段有开始和结束的同步过程
+
+例如订阅文章通知：建立时连接 articleId 对应的频道，清理时取消那个频道。articleId 变化后，旧连接不再代表当前页面，必须先结束旧同步再建立新同步。依赖数组是这段同步读取了哪些响应式输入的说明，不是让开发者任意指定执行次数的开关。
+
+在手动请求例子里，active 属于某一轮 Effect 的闭包，清理只会使那一轮失效。不要把 active 放到所有请求共享的模块变量，再在新请求开始时设回 true，否则旧请求可能重新获得提交资格。
+
+请求状态附带 query 身份，是进一步避免旧内容闪现的方法：存 `{query, items}`，显示时确认结果 query 等于当前 query。不一致时明确显示等待或保留旧结果并标明正在刷新，取决于产品要求。单纯 abort 不覆盖所有“异步结果仍可能到达”的情况。
+
+调试流程是先开启开发检查，依次挂载、修改查询、卸载，再检查是否仍有监听器或订阅存活。重复执行应暴露清理缺口；不能通过关掉 StrictMode 来证明实现正确。也不要据开发模式中的调用次数，推断生产环境每次都执行相同次数。

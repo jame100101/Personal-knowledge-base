@@ -13,6 +13,8 @@ supabase/.temp
 playwright-report
 test-results
 coverage
+__pycache__/
+*.pyc
 *.log
 .DS_Store
 Thumbs.db

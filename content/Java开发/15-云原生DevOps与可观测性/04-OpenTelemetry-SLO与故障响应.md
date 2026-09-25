@@ -65,9 +65,9 @@ flowchart LR
   F --> G["Runbook/响应/复盘"]
 ```
 
-## 4. 最小可运行示例
+## 4. 教学示例（结合本章运行前提）
 
-Collector 在这里接收 OTLP trace，批量处理后转发。配置省略了具体认证和部署设置，`${OBSERVABILITY_ENDPOINT}` 是需要按所用 Collector 版本确认的环境变量写法。先用一条测试 trace 验证全程，再接入真实流量。
+Collector 在这里接收 OTLP trace，批量处理后转发。配置省略了具体认证和部署设置，`${env:OBSERVABILITY_ENDPOINT}` 使用 Collector 的显式环境变量提供者；启动前配置该变量，并按选用发行版检查组件是否可用。先用一条测试 trace 验证全程，再接入真实流量。
 
 ```yaml
 receivers:
@@ -77,7 +77,7 @@ processors:
   batch: {}
 exporters:
   otlphttp:
-    endpoint: ${OBSERVABILITY_ENDPOINT}
+    endpoint: ${env:OBSERVABILITY_ENDPOINT}
 service:
   pipelines:
     traces: { receivers: [otlp], processors: [batch], exporters: [otlphttp] }

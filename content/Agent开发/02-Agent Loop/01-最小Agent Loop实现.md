@@ -31,7 +31,9 @@ assistant: tool_call(...) 或 final_answer
 
 关键不变量是每个调用 ID 与结果对应。并行调用时，也要保持协议要求的结果集合和顺序。
 
-## 3. 参考实现
+## 3. 协议伪代码：先看清每轮先后关系
+
+下面四段是同一逻辑的教学伪代码，`Tool`、模型适配器、schema 与执行器都需另行实现，并非可直接复制运行的 SDK。执行器必须负责权限、异常归一化与取消；循环条件只检查轮与轮之间，不能打断已经卡住的调用。计时预算应使用单调时钟，重启后的 deadline 则需另外持久化和换算。
 
 ```python group=multi-3d8a038d43df label=Python
 async def run_agent(goal, tools, options):
@@ -46,8 +48,13 @@ async def run_agent(goal, tools, options):
         if response.type == "final":
             return validate_final(response.text, state)
 
+        state.messages.append(to_assistant_message(response))
         for call in response.tool_calls:
+            check_remaining_budget_and_cancellation(state)
             tool = find_tool(tools, call.name)
+            if tool is None:
+                state.messages.append(to_tool_result_message(call.id, unknown_tool_result(call.name)))
+                continue
             parsed = tool.input_schema.safe_parse(call.arguments)
             result = (
                 await execute_with_timeout(tool, parsed.data)
@@ -80,7 +87,9 @@ async fn run_agent(
             return Ok(validate_final(&text, &state));
         }
 
+        state.messages.push(to_assistant_message(&response));
         for call in response.tool_calls() {
+            check_remaining_budget_and_cancellation(&state)?;
             let tool = find_tool(tools, &call.name)?;
             let result = match tool.input_schema.safe_parse(&call.arguments) {
                 Ok(input) => execute_with_timeout(tool, input).await,
@@ -108,8 +117,14 @@ async function runAgent(goal, tools, options) {
     })
     if (response.type === 'final') return validateFinal(response.text, state)
 
+    state.messages.push(toAssistantMessage(response))
     for (const call of response.toolCalls) {
+      checkRemainingBudgetAndCancellation(state)
       const tool = findTool(tools, call.name)
+      if (!tool) {
+        state.messages.push(toToolResultMessage(call.id, unknownToolResult(call.name)))
+        continue
+      }
       const parsed = tool.inputSchema.safeParse(call.arguments)
       const result = parsed.success
         ? await executeWithTimeout(tool, parsed.data)
@@ -139,8 +154,14 @@ async function runAgent(goal: string, tools: Tool[], options: Options) {
       return validateFinal(response.text, state)
     }
 
+    state.messages.push(toAssistantMessage(response))
     for (const call of response.toolCalls) {
+      checkRemainingBudgetAndCancellation(state)
       const tool = findTool(tools, call.name)
+      if (!tool) {
+        state.messages.push(toToolResultMessage(call.id, unknownToolResult(call.name)))
+        continue
+      }
       const parsed = tool.inputSchema.safeParse(call.arguments)
       const result = parsed.success
         ? await executeWithTimeout(tool, parsed.data)
@@ -156,6 +177,8 @@ async function runAgent(goal: string, tools: Tool[], options: Options) {
   return stopResult(state)
 }
 ```
+
+先记录包含 tool call 的 assistant 消息，再追加对应 tool result；不能只把结果塞进历史而丢掉发起调用的消息。Rust 分支的 `?` 对未知工具直接结束运行，Python/JS/TS 分支则把未知工具作为观察回填，这是两种明确策略，接入时应按产品要求统一。所有分支还需限制单轮调用数量，否则“最多十轮”仍可能包含上千次调用。
 
 ## 4. 错误要进入观察
 
@@ -218,7 +241,7 @@ sequenceDiagram
 运行时必须保持三个不变量：
 
 1. **协议不变量**：每个调用都有唯一 ID，每个结果引用原调用；未知工具和非法参数不会进入 handler。
-2. **状态不变量**：模型看到的历史与 Runner 持久化的状态一致；恢复运行不会重复提交已成功的副作用。
+2. **状态目标**：模型所见历史应与持久化状态相符。崩溃可能发生在“外部动作成功，但本地结果尚未保存”之间；只保存历史不能保证副作用恰好一次。写操作需要服务端幂等键、同事务去重或状态查询，未知结果不可直接当失败重发。
 3. **资源不变量**：每轮都先检查 deadline、取消信号与预算，模型也不能延长运行时强制上限。
 
 ## 7. 决策、执行和验证要使用不同类型

@@ -52,3 +52,13 @@ React 19 的 Actions、useActionState、useOptimistic 等能力可以组织异�
 - [Nuxt 3：数据获取](https://nuxt.com/docs/3.x/getting-started/data-fetching)
 - [Next.js：服务器与客户端组件](https://nextjs.org/docs/app/getting-started/server-and-client-components)
 - [React：useActionState](https://react.dev/reference/react/useActionState)
+
+## 全栈框架中的一次保存怎样流动
+
+用户在浏览器编辑标题，提交到可信服务端入口；入口验证会话、文章权限、输入长度和版本，再进行数据库更新，返回明确结果；客户端保留或更新草稿并刷新相关查询。Nuxt 或 Next.js 能提供组织这些步骤的约定，却不会自动知道谁拥有文章。
+
+服务端代码里的私钥只要作为 props、序列化数据或接口响应发给客户端，仍然会泄露。文件所在目录不是唯一安全边界，必须追踪实际输出。反过来，Client Component 的名称也不意味着它的首屏 HTML 必然完全不经服务器生成。
+
+对初学者，先做一个只有读取功能的服务器端点，明确返回类型和错误，再连接页面数据获取。之后加写操作、身份与版本冲突。不要把自动导入、文件路由、数据缓存和业务事务同时作为一团“框架魔法”记住。
+
+阅读不同版本教程时，先核对 Nuxt 主版本与目录配置，或 Next.js 的 App Router/Pages Router。名称相似的函数不能跨框架互换。缓存默认行为尤其需要查对应版本文档，并通过两次请求、数据更新、再次读取验证实际结果。

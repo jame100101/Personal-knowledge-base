@@ -10,7 +10,7 @@
 
 ## 1. JMM 基础
 
-JMM 规定线程间读取允许观察到哪些写入。常用 happens-before：程序顺序、monitor unlock→后续 lock、volatile write→后续 read、thread start/join、传递性。数据竞争是多个线程访问同一变量且至少一个写、缺少足够同步。
+JMM 规定线程间读取允许观察到哪些写入。常用 happens-before：程序顺序、同一 monitor 的 unlock→后续 lock、同一 volatile 变量的 write→后续 read、thread start/join、传递性。数据竞争是多个线程访问同一变量且至少一个写、缺少足够同步。
 
 ```java
 final class Sequence {

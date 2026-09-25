@@ -67,7 +67,7 @@ flowchart LR
 
 ### 6. 类型擦除与 reifiable 类型
 
-多数泛型信息在编译后擦除为上界，并可能生成 bridge method 保持多态。运行时不能直接检查 `instanceof List<String>`，也不能 `new T()` 或创建 `new T[]`。
+多数泛型信息在编译后擦除为上界，并可能生成 bridge method 保持多态。不能从任意 `Object` 通过 `instanceof List<String>` 验证元素类型；Java 16 起，一些由静态类型可证明安全的参数化类型测试允许编译，但不代表运行时逐个验证泛型元素，也不能 `new T()` 或创建 `new T[]`。
 
 **工程理解：** 需要运行时类型时显式传入 `Class<T>`、TypeToken 或工厂函数。
 
@@ -75,7 +75,7 @@ flowchart LR
 
 ### 7. 泛型数组、可变参数与堆污染
 
-数组协变且运行时检查元素类型，泛型不变且擦除，两者组合会破坏类型安全，因此禁止直接创建泛型数组。泛型 varargs 可能产生 heap pollution，`@SafeVarargs` 只用于实现确实不泄漏/写坏数组时。
+数组协变且运行时检查元素类型，泛型不变且擦除，两者组合会破坏类型安全，因此不能直接创建不可具体化元素类型的数组，例如 `new List<String>[3]` 或 `new T[3]`；`new List<?>[3]` 的元素类型可具体化，则允许。泛型 varargs 可能产生 heap pollution，`@SafeVarargs` 只用于实现确实不泄漏/写坏数组时。
 
 **工程理解：** 优先 List 替代泛型数组；对外 API 减少泛型 varargs。
 

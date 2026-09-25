@@ -386,7 +386,7 @@ sequenceDiagram
 逐步解释：
 
 1. 先定位和复现，避免依据 issue 文本直接改代码；
-2. 文件读取带 hash，patch 使用 compare-and-swap；
+2. 文件读取带 hash；patch 在写者协调锁内核对并替换，单独的“比较 hash + rename”并非原子 compare-and-swap；
 3. Terminal 结果区分 stdout、stderr、退出码和 timeout；
 4. 目标测试验证修复，相关回归减少邻近破坏；
 5. Finalizer 还检查 diff 范围、产物和未提交文件；

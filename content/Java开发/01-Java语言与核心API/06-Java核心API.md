@@ -106,18 +106,34 @@ Pattern 是编译后的正则，可复用；Matcher 保存一次匹配状态。`
 
 **常见误区：** 用正则解析完整 HTML/JSON，或在循环中重复编译同一表达式。
 
-## 3.9 最小可运行示例
+## 3.9 完整可运行练习：金额与时区
+
+保存为 `ApiDemo.java`，执行 `java ApiDemo.java`（JDK 21+）。输入固定，便于你对照结果。
 
 ```java
-public final class Example {
-  private Example() {}
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.time.Instant;
+import java.time.ZoneId;
 
-  public static <T> List<T> immutableCopy(Collection<? extends T> source) {
-    Objects.requireNonNull(source, "source");
-    return List.copyOf(source);
+public class ApiDemo {
+  public static void main(String[] args) {
+    BigDecimal total = new BigDecimal("10.00");
+    BigDecimal share = total.divide(new BigDecimal("3"), 2, RoundingMode.HALF_UP);
+    System.out.println(share); // 3.33
+    System.out.println(total.subtract(share.multiply(new BigDecimal("3")))); // 0.01
+    BigDecimal a = new BigDecimal("1.0"), b = new BigDecimal("1.00");
+    System.out.println(a.equals(b)); // false：scale 不同
+    System.out.println(a.compareTo(b) == 0); // true：数值相等
+    Instant meeting = Instant.parse("2026-01-15T09:00:00Z");
+    System.out.println(meeting.atZone(ZoneId.of("Asia/Shanghai"))); // 当地 17:00
   }
 }
 ```
+
+这里的舍入规则是一项业务选择，不是所有金额都必须“四舍五入”。三个人各分 3.33，剩下的 0.01 要按产品规则分配，不能因为使用了 `BigDecimal` 就忽略它。`equals` 与 `compareTo` 的差异还会影响去重、映射键等操作。
+
+`Instant` 描述同一条时间线上的位置；`atZone` 只是用某个地区的日历和时区规则显示它。换成 `America/New_York`，瞬时没有变化，显示的钟点却变了。反过来，只有“某天早上九点”的 `LocalDateTime` 尚未提供时区，不能直接认定它是 UTC。
 
 ## 4. 现代 Java 校准
 

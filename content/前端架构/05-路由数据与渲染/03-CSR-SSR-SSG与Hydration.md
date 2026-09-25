@@ -48,3 +48,13 @@ SSR 中没有可直接使用的 window、document、localStorage。模块顶层�
 - [Vue：服务端渲染](https://vuejs.org/guide/scaling-up/ssr.html)
 - [Nuxt 3：渲染模式](https://nuxt.com/docs/3.x/guide/concepts/rendering)
 - [React：hydrateRoot](https://react.dev/reference/react-dom/client/hydrateRoot)
+
+## 用查看源码和关闭脚本理解三种模式
+
+打开页面后，浏览器开发者工具 Elements 面板展示的是当前 DOM，可能已经被 JavaScript 改过；“查看网页源代码”或检查首个 HTML 响应，才更接近服务端实际返回的文档。不要看到 Elements 里有正文，就认定服务器发送了正文。
+
+在练习环境关闭 JavaScript 再刷新：纯 CSR 页面可能只剩入口壳；SSR 或 SSG 页面通常仍能显示预生成的文字，但依赖脚本的收藏和筛选不能照常运行。原生链接和表单能否工作，还取决于页面是否提供了相应 HTML 与服务器端点。
+
+Hydration 要匹配服务器输出与客户端首次计算。服务端输出“未登录”，客户端首轮立刻从本地存储读到用户并输出“你好”，就可能不匹配。可以传递一致的初始会话信息，或先显示稳定占位再在客户端确认状态，但不能把私密信息塞进公开缓存解决问题。
+
+SSG 的“构建时生成”是基础定义；某些框架还能按需重新生成或缓存请求结果，那是额外机制，需要明确失效与更新条件。SSR 也可以被缓存，因此不能简单说“每个访客必然重新查一次数据库”。讨论性能时必须描述具体配置。

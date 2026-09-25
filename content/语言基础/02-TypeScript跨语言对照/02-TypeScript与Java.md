@@ -49,7 +49,7 @@ function first<T>(values: readonly T[]): T | undefined {
 
 ```java
 static <T> Optional<T> first(List<T> values) {
-  return values.isEmpty() ? Optional.empty() : Optional.of(values.getFirst());
+  return values.isEmpty() ? Optional.empty() : Optional.ofNullable(values.getFirst());
 }
 ```
 
@@ -100,3 +100,6 @@ type Payment =
 
 参考：[Type Compatibility](https://www.typescriptlang.org/docs/handbook/type-compatibility.html)、[Java Generics Type Erasure](https://docs.oracle.com/javase/tutorial/java/generics/erasure.html)、[Java Language Specification](https://docs.oracle.com/javase/specs/)。
 
+## 对照示例的空值约定
+
+Java 示例使用 Java 21+ 的 List.getFirst，并需导入 java.util.List 与 java.util.Optional。ofNullable 让首项为 null 时也返回空 Optional，因此合并了空列表与首项为 null 两种情况。TS 的 undefined、Python 的 None 示例也有相应歧义。业务若必须区分存在性和元素值，应返回带 exists/hasValue 的结果，而不是认为这些最小表达完全等价。

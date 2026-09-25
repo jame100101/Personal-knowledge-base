@@ -58,3 +58,13 @@
 - [MDN：HTML 与无障碍](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility/HTML)
 - [MDN：CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout)
 - [WAI：Dialog 模式](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/)
+
+## 一张表单怎样才算讲清楚了
+
+以“给文章改标题”为例。先用 form 包住 label、input 和提交按钮，label 的 for 与 input 的 id 对应；name 决定原生表单提交时使用的字段名。required 提供浏览器约束验证，但这不是服务端校验。错误文字应通过 aria-describedby 与输入关联，确认错误时可设置 aria-invalid，让视觉和辅助技术都知道哪个字段有问题。
+
+试着按 Tab：焦点应先到标题，再到提交按钮；按 Enter 应触发符合预期的提交行为。若用 div 模拟按钮，开发者还要补语义、焦点和键盘行为，容易漏掉。选择原生 button 是在使用浏览器已经实现的交互约定。
+
+视觉顺序也不要随便用 CSS 调换。屏幕上的按钮如果被排到标题前面，DOM 顺序却在后面，键盘顺序和视觉顺序可能冲突。无障碍不是最后加几个 aria 属性，而是从结构、状态到操作顺序保持一致。
+
+验收时故意提交空标题、输入很长的标题、断网提交，再缩放到 200%。合理结果是用户仍知道哪里错、输入没有丢、提示不只靠颜色、焦点没有被弹窗困住。自动化扫描只能找出部分问题，这些操作仍要验证。

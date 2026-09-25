@@ -1,0 +1,324 @@
+{
+  "base": "9499503ad47c62c2b760f4314f578504138d277e",
+  "scope": "Concept-first frontend expansion and cross-module corrections; baseline-checked publication, not a claim that every historical source has been reverified.",
+  "articles": [
+    {
+      "path": "content/Agent开发/02-Agent Loop/01-最小Agent Loop实现.md"
+    },
+    {
+      "path": "content/Agent开发/02-Agent Loop/03-终止超时与错误处理.md"
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/06-File IO读取写入补丁与原子更新.md"
+    },
+    {
+      "path": "content/Agent开发/06-Agent Harness/05-Executor执行器与事件运行时.md"
+    },
+    {
+      "path": "content/Agent开发/14-完整Agent链路与架构对照/01-端到端Agent完整链路.md"
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/02-Java编程基础.md"
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/03-面向对象上.md"
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/04-面向对象下.md"
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/06-Java核心API.md"
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/07-Java集合框架.md"
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/08-Java泛型.md"
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/09-反射机制.md"
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/10-IO与NIO.md"
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/11-JDBC数据库访问.md"
+    },
+    {
+      "path": "content/Java开发/02-JVM与并发/01-JVM内存类加载字节码与GC.md"
+    },
+    {
+      "path": "content/Java开发/02-JVM与并发/02-Java并发与多线程.md"
+    },
+    {
+      "path": "content/Java开发/02-JVM与并发/03-JMM线程池锁原子类与CompletableFuture.md"
+    },
+    {
+      "path": "content/Java开发/03-工程基础与Internet-Linux/01-JDK-IDE-Maven与Gradle.md"
+    },
+    {
+      "path": "content/Java开发/03-工程基础与Internet-Linux/02-Git协作与版本治理.md"
+    },
+    {
+      "path": "content/Java开发/03-工程基础与Internet-Linux/03-Linux-Shell与Docker.md"
+    },
+    {
+      "path": "content/Java开发/03-工程基础与Internet-Linux/05-Java网络编程.md"
+    },
+    {
+      "path": "content/Java开发/04-关系型数据库/01-数据库原理与SQL.md"
+    },
+    {
+      "path": "content/Java开发/04-关系型数据库/02-MySQL-InnoDB索引事务与调优.md"
+    },
+    {
+      "path": "content/Java开发/05-Spring Framework/01-IoC依赖注入与Bean生命周期.md"
+    },
+    {
+      "path": "content/Java开发/05-Spring Framework/02-Spring-AOP代理与事务.md"
+    },
+    {
+      "path": "content/Java开发/05-Spring Framework/03-Spring资源事件校验缓存与调度.md"
+    },
+    {
+      "path": "content/Java开发/06-Spring Boot与Web/01-Spring-Boot自动配置与启动.md"
+    },
+    {
+      "path": "content/Java开发/06-Spring Boot与Web/02-Servlet-Tomcat-Spring-MVC完整链路.md"
+    },
+    {
+      "path": "content/Java开发/06-Spring Boot与Web/03-REST-API校验错误处理与版本.md"
+    },
+    {
+      "path": "content/Java开发/06-Spring Boot与Web/04-Actuator日志指标追踪与生产配置.md"
+    },
+    {
+      "path": "content/Java开发/07-数据访问与事务/01-MyBatis映射与动态SQL.md"
+    },
+    {
+      "path": "content/Java开发/07-数据访问与事务/02-JPA-Hibernate与Spring-Data.md"
+    },
+    {
+      "path": "content/Java开发/07-数据访问与事务/03-连接池事务迁移与数据访问决策.md"
+    },
+    {
+      "path": "content/Java开发/08-测试与质量工程/01-测试策略-JUnit与Mockito.md"
+    },
+    {
+      "path": "content/Java开发/08-测试与质量工程/02-Spring集成-Testcontainers与契约测试.md"
+    },
+    {
+      "path": "content/Java开发/08-测试与质量工程/03-API-UI自动化与测试平台.md"
+    },
+    {
+      "path": "content/Java开发/08-测试与质量工程/04-性能稳定性与故障演练.md"
+    },
+    {
+      "path": "content/Java开发/09-安全认证与授权/01-Spring-Security过滤链与方法授权.md"
+    },
+    {
+      "path": "content/Java开发/09-安全认证与授权/02-OAuth2-OIDC-JWT与API安全.md"
+    },
+    {
+      "path": "content/Java开发/09-安全认证与授权/03-应用安全秘密供应链与审计.md"
+    },
+    {
+      "path": "content/Java开发/11-缓存与搜索/01-Redis与缓存工程.md"
+    },
+    {
+      "path": "content/Java开发/11-缓存与搜索/02-Elasticsearch搜索工程.md"
+    },
+    {
+      "path": "content/Java开发/11-缓存与搜索/03-缓存CDN分库分表与热点治理.md"
+    },
+    {
+      "path": "content/Java开发/12-消息与事件驱动/02-消息队列基础与可靠消费.md"
+    },
+    {
+      "path": "content/Java开发/12-消息与事件驱动/03-Kafka事件流平台.md"
+    },
+    {
+      "path": "content/Java开发/12-消息与事件驱动/04-RabbitMQ与RocketMQ.md"
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/01-分布式基础CAP-BASE与共识.md"
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/02-RPC-HTTP-OpenFeign-Dubbo-gRPC与Netty.md"
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/03-Nacos注册发现与配置治理.md"
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/04-网关负载均衡限流熔断与重试.md"
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/05-分布式ID事务与可靠事件.md"
+    },
+    {
+      "path": "content/Java开发/14-性能工程/01-性能工程容量规划与JVM诊断.md"
+    },
+    {
+      "path": "content/Java开发/15-云原生DevOps与可观测性/01-Docker镜像-Compose与供应链.md"
+    },
+    {
+      "path": "content/Java开发/15-云原生DevOps与可观测性/02-Kubernetes工作负载网络配置与探针.md"
+    },
+    {
+      "path": "content/Java开发/15-云原生DevOps与可观测性/03-CICD发布数据库迁移与回滚.md"
+    },
+    {
+      "path": "content/Java开发/15-云原生DevOps与可观测性/04-OpenTelemetry-SLO与故障响应.md"
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/01-Web-HTML-CSS-JavaScript与TypeScript基础.md"
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/02-Vue3-TypeScript与后台管理界面.md"
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/03-全栈契约认证上传下载WebSocket与Nginx.md"
+    },
+    {
+      "path": "content/Java开发/17-项目阶梯/01-项目一模块化单体任务系统.md"
+    },
+    {
+      "path": "content/Java开发/17-项目阶梯/02-项目二事件驱动订单与库存系统.md"
+    },
+    {
+      "path": "content/Java开发/17-项目阶梯/03-项目三云原生高可用平台.md"
+    },
+    {
+      "path": "content/Java开发/17-项目阶梯/04-作品集验收与面试证据.md"
+    },
+    {
+      "path": "content/前端架构/00-前端架构学习路线.md"
+    },
+    {
+      "path": "content/前端架构/000-前端学习推荐阅读.md"
+    },
+    {
+      "path": "content/前端架构/01-浏览器与工程基础/01-浏览器渲染与事件循环.md"
+    },
+    {
+      "path": "content/前端架构/01-浏览器与工程基础/02-语义HTML布局与无障碍.md"
+    },
+    {
+      "path": "content/前端架构/01-浏览器与工程基础/03-TypeScript模块与Vite工程.md"
+    },
+    {
+      "path": "content/前端架构/02-组件与架构设计/01-组件边界与状态归属.md"
+    },
+    {
+      "path": "content/前端架构/02-组件与架构设计/02-目录分层设计系统与微前端.md"
+    },
+    {
+      "path": "content/前端架构/03-Vue从入门到原理/01-模板组件与响应式入门.md"
+    },
+    {
+      "path": "content/前端架构/03-Vue从入门到原理/02-computed-watch与副作用清理.md"
+    },
+    {
+      "path": "content/前端架构/03-Vue从入门到原理/03-组件通信Composables与Pinia.md"
+    },
+    {
+      "path": "content/前端架构/03-Vue从入门到原理/04-Vue渲染机制与性能边界.md"
+    },
+    {
+      "path": "content/前端架构/04-React从入门到原理/01-JSX组件与状态快照.md"
+    },
+    {
+      "path": "content/前端架构/04-React从入门到原理/02-Hooks-Effect与请求竞态.md"
+    },
+    {
+      "path": "content/前端架构/04-React从入门到原理/03-Reducer-Context与自定义Hook.md"
+    },
+    {
+      "path": "content/前端架构/04-React从入门到原理/04-渲染提交协调与性能.md"
+    },
+    {
+      "path": "content/前端架构/05-路由数据与渲染/01-路由URL与页面生命周期.md"
+    },
+    {
+      "path": "content/前端架构/05-路由数据与渲染/02-服务端状态缓存与乐观更新.md"
+    },
+    {
+      "path": "content/前端架构/05-路由数据与渲染/03-CSR-SSR-SSG与Hydration.md"
+    },
+    {
+      "path": "content/前端架构/05-路由数据与渲染/04-Nuxt与Next全栈边界.md"
+    },
+    {
+      "path": "content/前端架构/06-质量安全与交付/01-表单身份与前端安全.md"
+    },
+    {
+      "path": "content/前端架构/06-质量安全与交付/02-测试策略与故障演练.md"
+    },
+    {
+      "path": "content/前端架构/06-质量安全与交付/03-性能指标与资源加载.md"
+    },
+    {
+      "path": "content/前端架构/06-质量安全与交付/04-Vercel部署配置与回滚.md"
+    },
+    {
+      "path": "content/前端架构/07-双框架实战与选型/01-双框架文章搜索实战.md"
+    },
+    {
+      "path": "content/前端架构/07-双框架实战与选型/02-Vue与React对照和选型.md"
+    },
+    {
+      "path": "content/后端知识/02-常见后端架构/03-六边形Clean与DDD入门.md"
+    },
+    {
+      "path": "content/后端知识/03-数据与存储/01-关系模型约束与事务隔离.md"
+    },
+    {
+      "path": "content/后端知识/04-分布式与可靠性/03-超时重试限流熔断与隔离.md"
+    },
+    {
+      "path": "content/语言基础/00-语言基础学习路线.md"
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/000-TypeScript官方资料与版本边界.md"
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/01-环境配置与第一个TypeScript项目.md"
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/05-函数签名重载this与回调.md"
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/06-interface-type与结构化类型.md"
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/07-联合交叉收窄与穷尽检查.md"
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/09-类继承抽象与访问控制.md"
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/11-keyof-typeof索引访问与工具类型.md"
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/12-映射条件模板字面量与infer.md"
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/14-异步错误边界DOM与Node.md"
+    },
+    {
+      "path": "content/语言基础/01-TypeScript语言基础/17-综合项目与检查清单.md"
+    },
+    {
+      "path": "content/语言基础/02-TypeScript跨语言对照/00-五语言总览矩阵.md"
+    },
+    {
+      "path": "content/语言基础/02-TypeScript跨语言对照/02-TypeScript与Java.md"
+    },
+    {
+      "path": "content/语言基础/02-TypeScript跨语言对照/03-TypeScript与Python.md"
+    },
+    {
+      "path": "content/语言基础/02-TypeScript跨语言对照/04-TypeScript与Cpp.md"
+    }
+  ]
+}

@@ -34,8 +34,8 @@ class CanQuote:
         self.stock = stock
 
     def check(self, sku: str, quantity: int) -> bool:
-        if quantity <= 0:
-            raise ValueError("quantity must be positive")
+        if type(quantity) is not int or quantity <= 0:
+            raise ValueError("quantity must be a positive integer")
         return self.stock.available(sku) >= quantity
 
 class DemoStock:
@@ -45,6 +45,8 @@ class DemoStock:
 assert CanQuote(DemoStock()).check("book", 3)
 assert not CanQuote(DemoStock()).check("book", 6)
 ```
+
+`quantity: int` 是给类型检查器的提示，不会在运行时拒绝 `1.5`。这里用 `type(quantity) is int` 明确只接受内置整数，连 Python 中属于整数子类的 `True` 也拒绝；如果领域允许特殊数字类型，需要另外规定转换规则。
 
 这里查询得到的库存只适合报价提示，不应拿它当最终扣库存保证。实际下单仍要原子检查并扣减。把方法藏在接口后面，不会自动消除并发竞态。
 

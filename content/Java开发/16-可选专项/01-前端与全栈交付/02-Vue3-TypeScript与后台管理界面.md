@@ -66,25 +66,59 @@ flowchart LR
   B --> G["Table/Form/Dialog"]
 ```
 
-## 4. 最小可运行示例
+## 4. 教学示例：在 Vue 中连接输入、状态和列表
 
-先用这段原生表单理解提交事件和数据读取，再与 Vue 的绑定与事件处理对照。它本身不是 Vue 单文件组件。两种写法最终都要处理校验、重复提交和错误反馈，框架不会自动决定这些业务行为。
+在已经建立的 Vue 3 + Vite + TypeScript 项目中，把下面整段保存为 `src/App.vue`，保留脚手架的入口文件，再运行开发服务。这是完整的单文件组件；它没有调用后端，所以先排除网络和权限干扰，专心看数据怎样驱动界面。
 
-```html
-<form id="search">
-  <label for="keyword">关键字</label>
-  <input id="keyword" name="keyword" required minlength="2">
-  <button type="submit">搜索</button>
-</form>
-<script type="module">
-  const form = document.querySelector('#search')
-  form.addEventListener('submit', event => {
-    event.preventDefault()
-    const data = new FormData(form)
-    console.log(data.get('keyword'))
-  })
+```vue
+<script setup lang="ts">
+import { computed, ref } from 'vue'
+
+const articles = [
+  { id: 'html', title: 'HTML 页面结构' },
+  { id: 'vue', title: 'Vue 响应式入门' },
+  { id: 'react', title: 'React 状态入门' },
+]
+const query = ref('')
+const input = ref<HTMLInputElement | null>(null)
+const visibleArticles = computed(() => {
+  const word = query.value.trim().toLowerCase()
+  return articles.filter(article =>
+    article.title.toLowerCase().includes(word)
+  )
+})
+function clearSearch() {
+  query.value = ''
+  input.value?.focus()
+}
 </script>
+
+<template>
+  <main class="page">
+    <h1>文章搜索</h1>
+    <label for="query">搜索标题</label>
+    <input id="query" ref="input" v-model="query" type="search" autocomplete="off">
+    <button type="button" @click="clearSearch">清空</button>
+    <p role="status">找到 {{ visibleArticles.length }} 篇文章</p>
+    <ul>
+      <li v-for="article in visibleArticles" :key="article.id">
+        {{ article.title }}
+      </li>
+    </ul>
+    <p v-if="visibleArticles.length === 0">没有匹配的文章，换一个词试试。</p>
+  </main>
+</template>
+
+<style scoped>
+.page { font: 1rem/1.7 system-ui; max-width: 42rem; margin: 2rem auto; padding: 0 1rem; }
+input, button { font: inherit; padding: .5rem; }
+input { max-width: 100%; box-sizing: border-box; }
+</style>
 ```
+
+输入 `vue` 后只剩 Vue 那一项；清空后恢复三项并把焦点移回搜索框。`query` 保存用户输入，`computed` 从输入计算结果，模板描述结果怎样显示。你没有手工删除旧 `li` 再创建新 `li`，框架负责把新状态反映到 DOM。`ref<HTMLInputElement | null>` 则用于真实输入元素，挂载前允许为空，不能把它当成搜索文字。
+
+这段例子是列表筛选，不包含服务端分页。接上接口时，需要明确加载、失败和空结果三种状态，并处理旧请求晚到。若对 HTML、CSS 和 Vue 的关系还不熟，先到“前端架构 → 从网页基础开始”完成六篇入门课，再回来做后台管理页面。
 
 ## 5. 实践与验证
 

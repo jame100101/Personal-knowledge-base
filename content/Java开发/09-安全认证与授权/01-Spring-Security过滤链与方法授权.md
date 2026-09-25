@@ -66,20 +66,34 @@ flowchart LR
   G --> H["方法/对象级授权"]
 ```
 
-## 4. 最小可运行示例
+## 4. 教学片段：真的建立一条授权过滤链
 
-下面的集合复制片段只涉及输入非空和只读结果，不是 Spring Security 配置，也不能验证访问控制。安全规则应通过过滤链和方法授权测试单独验证：至少覆盖未登录、权限不足和拥有权限的请求。
+下面是 Spring Boot 4 / Spring Security 7 的 Servlet 配置类，放在应用扫描路径下。需要 Web、安全依赖，以及你自己的用户来源或认证提供者；它不是独立 `main` 程序。省略 import，由 IDE 导入对应 Spring 类型。
 
 ```java
-public final class Example {
-  private Example() {}
-
-  public static <T> List<T> immutableCopy(Collection<? extends T> source) {
-    Objects.requireNonNull(source, "source");
-    return List.copyOf(source);
+@Configuration
+@EnableMethodSecurity
+public class SecurityConfig {
+  @Bean
+  SecurityFilterChain web(HttpSecurity http) throws Exception {
+    return http
+      .authorizeHttpRequests(auth -> auth
+        .requestMatchers("/public/**").permitAll()
+        .requestMatchers("/admin/**").hasAuthority("admin:read")
+        .anyRequest().authenticated())
+      .formLogin(Customizer.withDefaults())
+      .build();
   }
 }
 ```
+
+请求 `/public/help` 允许匿名访问；请求 `/admin/report` 要求已认证主体带有 `admin:read` 权限；其余路径要求登录。匹配规则有顺序，专用规则写在兜底规则之前。`hasAuthority` 按给出的权限字符串匹配，不会自动补 `ROLE_`。
+
+本例采用浏览器表单登录：未认证请求可能被重定向到登录页，而不是一概返回 401。JSON API 若约定返回 401，需要另外配置认证入口和响应格式。权限不足与未认证也不能混成同一种错误。CSRF 防护保持开启；会话表单写请求需带有效 CSRF token，不能为了“请求能过”直接删掉保护。
+
+方法授权可在由 Spring 管理的服务方法上写 `@PreAuthorize("hasAuthority('order:refund')")`。它仍受代理调用边界影响，自调用不会自动穿过代理；订单归属和租户条件也需要在服务端另行检查。用三种身份实际请求验证，再添加“用户 A 请求用户 B 订单”的测试，才能证明规则覆盖了业务边界。
+
+配置依据：[Java Configuration](https://docs.spring.io/spring-security/reference/servlet/configuration/java.html)。
 
 ## 5. 实践与验证
 

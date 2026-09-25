@@ -48,7 +48,7 @@ async function scan(directory) {
   }
 }
 await scan(root)
-assert.equal(records.length, 25, 'Unexpected curriculum article count')
+assert.equal(records.length, 31, 'Unexpected curriculum article count')
 await fs.mkdir('.tools/frontend', { recursive: true })
 await fs.writeFile('.tools/frontend/inventory.json', JSON.stringify(records, null, 2))
 console.log(

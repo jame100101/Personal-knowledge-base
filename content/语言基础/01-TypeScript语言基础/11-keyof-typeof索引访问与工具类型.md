@@ -89,15 +89,17 @@ type Loaded = Awaited<LoadPromise>
 
 ```typescript
 function choose<C extends string>(
-  options: readonly C[],
+  options: readonly [C, ...C[]],
   defaultValue?: NoInfer<C>,
 ): C {
-  return defaultValue ?? options[0]!
+  return defaultValue ?? options[0]
 }
 
 choose(["red", "yellow", "green"] as const, "red")
 // choose([...], "blue") // blue 不应扩宽 C
 ```
+
+这里要求非空元组，才有资格承诺返回 C。任意数组加 options[0]! 会在空数组时返回 undefined，非空断言不会修复它。若选项来自外部数据，仍需先在运行时验证非空；NoInfer 只控制推断来源，不验证数组长度。
 
 ## 6. 工具类型是浅层的
 
@@ -121,4 +123,3 @@ function isRole(value: string): value is Role {
 导出的公共类型应有业务名称。把五层工具类型直接写在函数参数上会让错误信息和文档难读；可先定义中间别名，并为类型级逻辑写编译期断言测试。
 
 参考：[Keyof](https://www.typescriptlang.org/docs/handbook/2/keyof-types.html)、[Typeof](https://www.typescriptlang.org/docs/handbook/2/typeof-types.html)、[Indexed Access](https://www.typescriptlang.org/docs/handbook/2/indexed-access-types.html)、[Utility Types](https://www.typescriptlang.org/docs/handbook/utility-types.html)。
-

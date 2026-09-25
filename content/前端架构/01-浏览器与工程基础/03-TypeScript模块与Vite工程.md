@@ -46,3 +46,13 @@ export function parseArticle(value: unknown): Article {
 - [Vite：入门与版本要求](https://vite.dev/guide/)
 - [Vite：环境变量](https://vite.dev/guide/env-and-mode)
 - [TypeScript：日常类型](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html)
+
+## 从源码到产物，实际走一遍
+
+在练习工程里找到 package.json、锁文件、入口 HTML、main 文件和根组件。package.json 的 scripts 定义命令名称，dependencies 描述运行或构建所依赖的包；锁文件进一步记录实际解析出的依赖树。node_modules 是安装结果，不是应该手工维护的源码目录。
+
+运行开发命令时，浏览器请求模块，开发服务器根据工具配置转换源码并处理依赖。运行 build 时，工具生成可部署资源。这里的“模块”是组织代码的 import/export 单元，不等于某个业务页面，也不等于单独的网络服务。
+
+做一个有意的类型错误：把 Article 的 title 写成数字，再分别运行开发服务器、构建、独立类型检查。记录哪个环节报错。不同模板可能把类型检查接在 build 前，也可能没有；因此必须看 scripts，不能靠工具名字推断保证范围。
+
+再观察构建目录中的 JavaScript：类型标注通常已经不在了，字符串常量和客户端配置却可能仍可搜索到。压缩是减小体积，不是加密。能发到浏览器运行的私密凭据，就已经交给访客；应该把需要保密的操作移到可信服务端，并在那里做授权。

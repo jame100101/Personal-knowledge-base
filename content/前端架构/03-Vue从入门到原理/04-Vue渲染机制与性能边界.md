@@ -42,3 +42,13 @@ KeepAlive 缓存组件实例，代价是状态和资源继续存在。订阅或�
 - [Vue：渲染机制](https://vuejs.org/guide/extras/rendering-mechanism.html)
 - [Vue：深入响应式系统](https://vuejs.org/guide/extras/reactivity-in-depth.html)
 - [Vue：性能](https://vuejs.org/guide/best-practices/performance.html)
+
+## 把“响应式”拆成可以观察的三件事
+
+先有状态读取，Vue 知道当前相关工作依赖哪个值；再有写入，触发与该值有关的更新；最后调度和渲染把界面落实到 DOM。它不意味着浏览器认识 ref，也不意味着修改所有 JavaScript 对象都会被 Vue 接管。
+
+在一个按钮事件中连续增加 count 三次，紧接着读取 state 和 DOM 文本。状态值已经变化，DOM 可能仍等待批处理；await nextTick() 后再读，应该与相应更新一致。这个实验说明“状态变化时刻”“框架提交时刻”“浏览器显示时刻”不是同一个概念。
+
+列表 key 实验要包含本地状态才看得清：给每行一个没有由数组值完全控制的输入框，输入文字，再反转列表。下标 key 让身份与位置绑定，业务 ID key 让身份与记录绑定。纯文本列表可能看起来都正确，因此不能只用纯文本截图验证身份设计。
+
+如果卡顿来自一万个节点，先减少实际显示数量。如果卡顿来自重复深层对象处理，再评估 shallowRef 或数据归一化。优化后重新测量相同数据和设备，确认没有以丢失更新或错误复用状态换取表面上的速度。

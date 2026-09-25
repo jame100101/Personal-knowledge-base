@@ -131,7 +131,7 @@ type ToolExecutionRequest = {
 - `callId` 在一次 run 中唯一；
 - 请求绑定 workspace、actor 和 deadline；
 - 审批绑定规范化后的工具版本与精确参数；
-- `expectedState` 可携带文件 hash、数据库版本等 compare-and-swap 条件；
+- `expectedState` 可携带文件 hash、数据库版本等预期版本条件；文件核对与替换需要额外协调，不天然等价于数据库的条件更新；
 - Adapter 接收的是校验后的 typed input，不再接触模型原始 JSON。
 
 ## 3. 十阶段执行管线

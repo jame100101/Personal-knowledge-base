@@ -64,21 +64,33 @@ flowchart LR
   E --> F["稳定响应/Problem Details"]
 ```
 
-## 4. 最小可运行示例
+## 4. 教学片段：把业务拒绝映射成 Problem Detail
 
-下面是事务后通知与定时补偿的片段，说明一次请求成功后仍可能有后台工作；它不是 REST 控制器示例。阅读时联系前面的响应语义：接口返回的状态应说明已经完成到哪一步，而不是暗示所有异步任务都已结束。
+在 Spring Boot 4 的 MVC 项目中，下面两个类分别放进对应 Java 文件，并位于组件扫描范围。省略 import：需要 Spring 的 `RestControllerAdvice`、`ExceptionHandler`、`ProblemDetail`、`HttpStatus`。业务服务在库存冲突时抛出 `StockConflict`，由统一处理器转换响应。
 
 ```java
-record OrderCreated(long orderId) {}
-
-@TransactionalEventListener(phase = TransactionPhase.AFTER_COMMIT)
-public void on(OrderCreated event) {
-  notificationQueue.enqueue(event.orderId());
+public class StockConflict extends RuntimeException {
+  public StockConflict() { super("stock conflict"); }
 }
-
-@Scheduled(cron = "0 */5 * * * *", zone = "Asia/Taipei")
-void reconcilePendingOrders() { /* 幂等扫描 */ }
 ```
+
+```java
+@RestControllerAdvice
+public class ApiErrors {
+  @ExceptionHandler(StockConflict.class)
+  public ProblemDetail stockConflict(StockConflict ignored) {
+    ProblemDetail problem = ProblemDetail.forStatusAndDetail(
+        HttpStatus.CONFLICT, "库存已变化，请刷新后重试");
+    problem.setTitle("库存冲突");
+    problem.setProperty("code", "STOCK_CONFLICT");
+    return problem;
+  }
+}
+```
+
+这里选择 409，是因为请求与当前库存状态冲突，不是把所有异常都归为 409。响应标题用于阅读，稳定的 `code` 用于客户端分支；不要把数据库异常原文塞进 `detail`。未显式设置 `type` 时使用 Problem Details 默认的 `about:blank` 语义。实际应用可定义稳定的问题类型文档 URI。
+
+验证时检查 HTTP 状态、`application/problem+json` 内容类型和字段，而不是只看 JSON 中 `status`。再模拟一个未知异常，确认它进入通用 500 路径并在内部留下可关联日志。这个处理器没有覆盖输入校验、授权或全部异常，需要分别配置和测试。
 
 ## 5. 实践与验证
 

@@ -126,3 +126,8 @@ try (var reader = Files.newBufferedReader(path, StandardCharsets.UTF_8)) {
 - [Java NIO File API](https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/nio/file/package-summary.html)
 - [Java I/O API](https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/io/package-summary.html)
 - [Serialization Filtering](https://docs.oracle.com/en/java/javase/26/core/serialization-filtering1.html)
+
+
+## 补充实验与适用边界
+
+`normalize` 或 `toRealPath` 检查后再打开文件仍可能遇到路径被替换的竞态；攻击者能修改目录时，需要目录句柄、文件系统权限和沙箱配合。`ATOMIC_MOVE` 也不等于掉电持久化，目标存在时的替换行为取决于实现；不支持原子移动时应显式处理失败，不能悄悄降级却继续宣称原子。

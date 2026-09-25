@@ -47,3 +47,13 @@ export function useArticleFilter(articles: Ref<Article[]>) {
 - [Vue：Composables](https://vuejs.org/guide/reusability/composables.html)
 - [Vue：Provide / Inject](https://vuejs.org/guide/components/provide-inject.html)
 - [Pinia：核心概念](https://pinia.vuejs.org/core-concepts/)
+
+## 先做两个实例，再决定是否共享
+
+把两个搜索组件放在同一页，各调用一次 useArticleFilter。第一个输入 vue，第二个仍显示全部。原因是每次调用函数都会创建自己的 query ref；函数定义只有一份，状态实例可以有两份。代码复用与数据共享由此分开。
+
+接下来把收藏状态放到页面父级，两个列表接收同一个数据来源，点击任一列表里的收藏都通过同一更新入口改变数据。此时共享的是收藏业务事实，不是搜索框的输入。若这份收藏跨很多页面使用，再评估 store 的生命周期和持久化规则。
+
+Pinia 需要在应用中安装并注册。定义 store 只是说明状态与操作的结构，不能因此省略应用上下文；SSR 还需要每个请求有合适的实例隔离。浏览器 localStorage 持久化是另一项功能，既不是 Pinia 的所有状态默认行为，也不等于服务端账户同步。
+
+设计 action 时用业务意图命名，例如 toggleFavorite(articleId)，并明确失败如何反馈。若到处暴露底层数组任意修改，虽然技术上能运行，业务约束却很难集中维护。需要撤销、乐观反馈或重试时，一个清楚的修改入口会更容易演进。

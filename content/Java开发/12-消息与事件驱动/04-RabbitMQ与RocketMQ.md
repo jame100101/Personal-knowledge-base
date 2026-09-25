@@ -64,7 +64,7 @@ flowchart LR
   C -->|失败到上限| DLQ["死信/人工队列"]
 ```
 
-## 4. 最小可运行示例
+## 4. 教学示例（结合本章运行前提）
 
 这段发送代码需要已配置的 RabbitTemplate、exchange、绑定和消费者。持久化消息属性只是一环，可靠发送还需结合队列持久化、publisher confirm 与失败处理；`eventId` 则为后续去重提供标识。
 

@@ -66,7 +66,7 @@ mkdir src
 
 | 配置 | 在这个项目里做什么 |
 | --- | --- |
-| `rootDir` / `outDir` | 在 `src` 里写代码，把生成的文件放到 `dist`，避免混在一起 |
+| `rootDir` / `outDir` | rootDir 决定源码到产物的目录映射，outDir 指定产物目录；文件选择由 include、files、导入等决定，不由 rootDir 筛选 |
 | `strict` | 打开一组更严格的类型检查，例如检查可能为空的值 |
 | `noEmitOnError` | 这次编译存在错误时，不生成新的输出文件；已有的旧文件仍然保留 |
 | `sourceMap` | 生成源码映射，方便调试时找到原来的 `.ts` 行号 |

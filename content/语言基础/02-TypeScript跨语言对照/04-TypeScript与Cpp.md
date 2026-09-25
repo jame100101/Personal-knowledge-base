@@ -38,10 +38,11 @@ function max<T>(left: T, right: T, compare: (a: T, b: T) => number): T {
 
 ```cpp
 #include <concepts>
+#include <utility>
 
 template<std::totally_ordered T>
-const T& max_value(const T& left, const T& right) {
-    return left < right ? right : left;
+T max_value(T left, T right) {
+    return left < right ? std::move(right) : std::move(left);
 }
 ```
 
@@ -104,3 +105,6 @@ C++ 标准定义线程、原子和内存序，可直接面对数据竞争与未�
 
 参考：[ISO C++ FAQ: Templates](https://isocpp.org/wiki/faq/templates)、[ISO C++ FAQ: RAII](https://isocpp.org/wiki/faq/exceptions)、[TypeScript Generics](https://www.typescriptlang.org/docs/handbook/2/generics.html)。
 
+## 返回引用要考虑对象是否还活着
+
+max_value 这里按值接收并返回，避免把临时实参的引用带出调用。若为了减少复制改成 const T& 返回，调用者保存 max_value(1, 2) 的引用，临时对象在完整表达式结束后销毁，引用就悬空了。按值版本有移动或复制成本，也要求类型支持相应操作；讲优化时必须同时说明生命周期条件。

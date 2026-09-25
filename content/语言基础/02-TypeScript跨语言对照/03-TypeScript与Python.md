@@ -110,3 +110,6 @@ Python 可通过测试、运行时验证、严格检查器和清晰边界构建�
 
 参考：[Python typing](https://docs.python.org/3/library/typing.html)、[Python Data Model](https://docs.python.org/3/reference/datamodel.html)、[TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/)。
 
+## 版本边界：GIL 不是所有 Python 实现的定律
+
+讨论 GIL 应注明 CPython 构建方式与版本。支持 free-threaded 的构建可以在适当条件下禁用 GIL，扩展模块兼容性也影响实际行为，不能把 Python 永远无法多线程并行当作语言结论。有无 GIL 都要按同步规则设计共享状态的复合操作。参见 [Python free-threading 文档](https://docs.python.org/3/howto/free-threading-python.html)。

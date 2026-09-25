@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-25T12:57:04.571Z",
+  "checkedAt": "2026-09-25T14:12:48.668Z",
   "note": "Availability checks supplement manual review; HTTP success alone does not prove content correctness.",
   "results": [
     {
@@ -18,6 +18,11 @@
       "finalUrl": "https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html"
     },
     {
+      "url": "https://developer.mozilla.org/en-US/docs/Glossary/Boolean/HTML",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Glossary/Boolean/HTML"
+    },
+    {
       "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development",
       "status": 200,
       "finalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development"
@@ -28,9 +33,64 @@
       "finalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility/HTML"
     },
     {
+      "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Flexbox",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Flexbox"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Grids",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Grids"
+    },
+    {
       "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Frameworks_libraries",
       "status": 200,
       "finalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Frameworks_libraries"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/DOM_scripting",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/DOM_scripting"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Events",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Events"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/What_is_JavaScript",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/What_is_JavaScript"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Basic_HTML_syntax",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Basic_HTML_syntax"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Structuring_documents",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Structuring_documents"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Box_model",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Box_model"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Handling_conflicts",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Handling_conflicts"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/What_is_CSS",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/What_is_CSS"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Your_first_form",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Your_first_form"
     },
     {
       "url": "https://developer.mozilla.org/en-US/docs/Web/API/AbortController",
@@ -38,14 +98,34 @@
       "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/API/AbortController"
     },
     {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_cascade/Cascade",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Cascade/Introduction"
+    },
+    {
       "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout",
       "status": 200,
       "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Grid_layout"
     },
     {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+    },
+    {
       "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Execution_model",
       "status": 200,
       "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Execution_model"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter"
     },
     {
       "url": "https://developer.mozilla.org/en-US/docs/Web/Performance/Guides/How_browsers_work",
@@ -86,6 +166,11 @@
       "url": "https://github.com/vuejs/core",
       "status": 200,
       "finalUrl": "https://github.com/vuejs/core"
+    },
+    {
+      "url": "https://html.spec.whatwg.org/multipage/semantics.html",
+      "status": 200,
+      "finalUrl": "https://html.spec.whatwg.org/multipage/semantics.html"
     },
     {
       "url": "https://javascript.info/",
@@ -178,9 +263,19 @@
       "finalUrl": "https://react.dev/learn/render-and-commit"
     },
     {
+      "url": "https://react.dev/learn/responding-to-events",
+      "status": 200,
+      "finalUrl": "https://react.dev/learn/responding-to-events"
+    },
+    {
       "url": "https://react.dev/learn/reusing-logic-with-custom-hooks",
       "status": 200,
       "finalUrl": "https://react.dev/learn/reusing-logic-with-custom-hooks"
+    },
+    {
+      "url": "https://react.dev/learn/state-a-components-memory",
+      "status": 200,
+      "finalUrl": "https://react.dev/learn/state-a-components-memory"
     },
     {
       "url": "https://react.dev/learn/state-as-a-snapshot",
@@ -193,14 +288,29 @@
       "finalUrl": "https://react.dev/learn/thinking-in-react"
     },
     {
+      "url": "https://react.dev/learn/writing-markup-with-jsx",
+      "status": 200,
+      "finalUrl": "https://react.dev/learn/writing-markup-with-jsx"
+    },
+    {
       "url": "https://react.dev/learn/you-might-not-need-an-effect",
       "status": 200,
       "finalUrl": "https://react.dev/learn/you-might-not-need-an-effect"
     },
     {
+      "url": "https://react.dev/learn/your-first-component",
+      "status": 200,
+      "finalUrl": "https://react.dev/learn/your-first-component"
+    },
+    {
       "url": "https://react.dev/reference/react-dom/client/hydrateRoot",
       "status": 200,
       "finalUrl": "https://react.dev/reference/react-dom/client/hydrateRoot"
+    },
+    {
+      "url": "https://react.dev/reference/react-dom/components/input",
+      "status": 200,
+      "finalUrl": "https://react.dev/reference/react-dom/components/input"
     },
     {
       "url": "https://react.dev/reference/react/memo",
@@ -353,6 +463,11 @@
       "finalUrl": "https://vuejs.org/guide/essentials/computed.html"
     },
     {
+      "url": "https://vuejs.org/guide/essentials/forms.html",
+      "status": 200,
+      "finalUrl": "https://vuejs.org/guide/essentials/forms.html"
+    },
+    {
       "url": "https://vuejs.org/guide/essentials/list.html",
       "status": 200,
       "finalUrl": "https://vuejs.org/guide/essentials/list.html"
@@ -361,6 +476,11 @@
       "url": "https://vuejs.org/guide/essentials/reactivity-fundamentals.html",
       "status": 200,
       "finalUrl": "https://vuejs.org/guide/essentials/reactivity-fundamentals.html"
+    },
+    {
+      "url": "https://vuejs.org/guide/essentials/template-refs.html",
+      "status": 200,
+      "finalUrl": "https://vuejs.org/guide/essentials/template-refs.html"
     },
     {
       "url": "https://vuejs.org/guide/essentials/watchers.html",
@@ -391,6 +511,11 @@
       "url": "https://vuejs.org/guide/reusability/composables.html",
       "status": 200,
       "finalUrl": "https://vuejs.org/guide/reusability/composables.html"
+    },
+    {
+      "url": "https://vuejs.org/guide/scaling-up/sfc.html",
+      "status": 200,
+      "finalUrl": "https://vuejs.org/guide/scaling-up/sfc.html"
     },
     {
       "url": "https://vuejs.org/guide/scaling-up/ssr.html",

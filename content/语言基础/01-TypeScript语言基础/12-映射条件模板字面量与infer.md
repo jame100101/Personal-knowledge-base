@@ -97,13 +97,18 @@ class EventBus<TEvents extends Record<string, unknown>> {
     return () => set.delete(handler as (value: unknown) => void)
   }
 
-  emit<K extends keyof TEvents>(key: K, event: TEvents[K]): void {
+  emit(...args: {
+    [K in keyof TEvents]: [key: K, event: TEvents[K]]
+  }[keyof TEvents]): void {
+    const [key, event] = args
     this.handlers.get(key)?.forEach((handler) => handler(event))
   }
 }
 ```
 
-实现内部因异构集合需要受控断言，公共 API 仍保证事件名与负载关联。真实系统还需处理异常隔离、异步顺序和退订生命周期。
+实现内部因异构集合需要受控断言。emit 使用按键生成的元组联合，保持单次调用的名称与负载关联；只写泛型 K 和 TEvents[K] 两个独立参数时，K 若是联合，可能接受不匹配组合。真实系统还需处理异常隔离、异步顺序和退订生命周期。
+
+例如 key 的类型是 "user:created" | "order:paid"，就不能在尚未收窄时随意传入用户负载，因为运行时 key 也可能是订单事件。调用者应先收窄，或把名称和负载一起保存为有对应关系的元组。这个总线是同步、内存内的教学模型，监听器抛错会影响当前分发，也没有持久化和跨进程投递保证。
 
 ## 7. 递归类型的性能与终止
 
@@ -133,4 +138,3 @@ type Case = Expect<Equal<ElementOf<readonly string[]>, string>>
 库项目可使用专门的类型测试工具，但核心是把预期兼容与预期错误都纳入 CI。
 
 参考：[Mapped Types](https://www.typescriptlang.org/docs/handbook/2/mapped-types.html)、[Conditional Types](https://www.typescriptlang.org/docs/handbook/2/conditional-types.html)、[Template Literal Types](https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html)。
-
