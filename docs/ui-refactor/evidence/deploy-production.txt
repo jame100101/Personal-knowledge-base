@@ -1,0 +1,50 @@
+Vercel CLI 62.2.0
+Fetching deployment "dpl_5ne4kffAVXy6o7WVD1QrBwmtW5Yz" in 67yq98k79w-2675s-projects
+> Fetched deployment "damnatiox-knowledge-q1fvs4d1g-67yq98k79w-2675s-projects.vercel.app" in 67yq98k79w-2675s-projects [2s]
+
+  General
+
+    id		dpl_5ne4kffAVXy6o7WVD1QrBwmtW5Yz
+    name	damnatiox-knowledge
+    target	production
+    status	● Ready
+    url		https://damnatiox-knowledge-q1fvs4d1g-67yq98k79w-2675s-projects.vercel.app
+    created	Mon Oct 05 2026 22:06:14 GMT+0800 (China Standard Time) [3m ago]
+
+
+  Build Machine
+
+    requested build machine basic
+    actual assigned cores   2 vCPU (actual assignment)
+    memory                  8192 MiB
+    selection type          fixed
+    selection source        plan-default
+
+
+  Duration
+
+    build duration	1m 21s
+    post-build duration	unavailable
+    billable duration	unavailable
+    CPU Minutes Usage	unavailable
+
+
+  Aliases
+
+    ╶ https://knowledge.damnatiox.com
+    ╶ https://damnatiox-knowledge.vercel.app
+    ╶ https://damnatiox-knowledge-67yq98k79w-2675s-projects.vercel.app
+    ╶ https://damnatiox-knowledge-git-main-67yq98k79w-2675s-projects.vercel.app
+    
+
+  Builds
+
+    ┌ .        [0ms]
+    ├── λ index (5MB) [iad1]
+    ├── λ __fallback (5MB) [iad1]
+    ├── λ __nuxt_error (5MB) [iad1]
+    ├── λ __nuxt_island/[...] (5MB) [iad1]
+    ├── λ admin (5MB) [iad1]
+    └── 7 output items hidden
+    
+

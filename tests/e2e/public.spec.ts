@@ -85,7 +85,9 @@ test('public knowledge flow renders dynamic folder and document routes', async (
   }
 
   expect(new URL(page.url()).pathname).toBe(fixture.documentPath)
-  await expect(page.getByText('知识库').first()).toBeVisible()
+  await expect(
+    page.locator('.breadcrumbs').getByRole('link', { name: '知识库', exact: true }),
+  ).toBeVisible()
 })
 
 test('TypeScript language foundations are published with detailed comparisons', async ({

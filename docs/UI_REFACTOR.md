@@ -119,3 +119,13 @@ NUXT_PUBLIC_SUPABASE_URL='' NUXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY='' npm run dev 
 未验证：真实账户登录/退出/角色变化、生产 Realtime 推送、后端断网后重试、真实 Storage 保存/删除、物理 Safari/iOS 软键盘/安全区、系统 200% 缩放、真实屏幕阅读器和操作系统输入法。IME 使用浏览器 composition 事件，WebKit 自动化不能替代所有 Safari 设备；CSS/dvh/安全区和 16px 字号只是实现与模拟检查，不是实机认证。已有 backend/frontend/software-engineering 专项 E2E 依赖生产课程数据，本轮未用 demo 冒充执行通过。对比度为代表样本，未宣称原图任意位置或全部渐变组合均测完。原有依赖 audit 风险未借 UI 重构升级主版本。
 
 回退：所有本轮代码、设计规范与证据集中在 `codex/ui-ux-refactor` 的本地提交，主分支保持 `1270e58` 起点。工作区干净时切回原分支即可恢复旧界面；若以后合并，可 revert 本轮提交，不需数据库回滚。没有生产部署、内容同步、迁移、种子或在线内容写入。
+
+## 后续授权生产发布（2026-10-05）
+
+用户在本轮本地交付后明确要求“推送部署”，因此此前“不推送/不部署”的范围限制已被该后续授权更新。应用提交 `1e55c0f` 已推送到 GitHub 的 `main` 与 `codex/ui-ux-refactor`。Git 集成自动触发生产部署 `dpl_5ne4kffAVXy6o7WVD1QrBwmtW5Yz`，READY，云端构建 81 秒，正式域名 https://knowledge.damnatiox.com 。
+
+生产只读回归运行 20 项：19 项首次通过；原有通用文本定位器误命中折叠树中包含“知识库”的隐藏文章摘要。已将它限定到面包屑的精确链接，保留可见性断言，目标用例复验通过（19 + 1，共 20 项）。未修改产品逻辑来迁就测试。另验证新标签条件搜索、ArrowDown 活动项、关闭后焦点恢复；HTTP200、非 demo、浏览器运行异常 0，线上原图 SHA-256 与保护基线一致。
+
+本次部署最近 10 分钟错误级日志查询无记录；这是查询窗口的观测，不代表长期无错误。本次未新增监控或 Drains。未执行认证后的生产写入、内容同步或数据库变更，前述数据风险仍保留。
+
+证据：[部署状态](ui-refactor/evidence/deploy-production.txt)、[20 项首轮记录](ui-refactor/evidence/production-tests.txt)、[定位修正复验](ui-refactor/evidence/production-route-retest.txt)、[新交互与原图校验](ui-refactor/evidence/production-smoke.json)、[错误日志查询](ui-refactor/evidence/production-errors.txt)。

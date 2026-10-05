@@ -1,0 +1,5 @@
+Vercel CLI 62.2.0
+Resolving deployment "dpl_5ne4kffAVXy6o7WVD1QrBwmtW5Yz"
+Fetching project "prj_0eJTeM8mQAReKMUFDcRiC47IfGkf"
+Fetching logs...
+No logs found for 67yq98k79w-2675s-projects/damnatiox-knowledge

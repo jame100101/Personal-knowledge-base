@@ -1,0 +1,61 @@
+
+Running 20 tests using 2 workers
+
+(node:42119) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:42120) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › tests/e2e/backend.spec.ts:3:1 › backend curriculum is discoverable with learning route first and seven sections (8.8s)
+  ✓   2 [chromium] › tests/e2e/frontend.spec.ts:4:1 › frontend curriculum is reachable from home with learning route first and eight sections (8.9s)
+  ✓   4 [chromium] › tests/e2e/software-engineering.spec.ts:4:1 › home, sidebar and course directory follow a beginner learning order (8.9s)
+  ✘   3 [chromium] › tests/e2e/public.spec.ts:72:1 › public knowledge flow renders dynamic folder and document routes (11.7s)
+(node:42229) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   5 [chromium] › tests/e2e/public.spec.ts:91:1 › TypeScript language foundations are published with detailed comparisons (9.6s)
+  ✓   6 [chromium] › tests/e2e/public.spec.ts:141:1 › global search opens with keyboard shortcut and finds a document (6.1s)
+  ✓   7 [chromium] › tests/e2e/public.spec.ts:157:1 › theme toggle switches to light mode and persists the preference (6.7s)
+  ✓   8 [chromium] › tests/e2e/public.spec.ts:168:1 › home line art stays subtle and inverts without changing its composition (4.4s)
+  ✓   9 [chromium] › tests/e2e/public.spec.ts:225:1 › branding and light theme controls keep their intended visual tokens (7.4s)
+  ✓  10 [chromium] › tests/e2e/public.spec.ts:297:1 › Mermaid enlarge control stays compact without inheriting diagram SVG width (10.8s)
+  ✓  11 [chromium] › tests/e2e/public.spec.ts:369:1 › language selector switches public UI between all supported locales (5.4s)
+  ✓  12 [chromium] › tests/e2e/public.spec.ts:386:1 › folder labels collapse the current folder and the TOC remains sticky (8.4s)
+  ✓  13 [chromium] › tests/e2e/public.spec.ts:422:1 › sidebar document icons stay uniform after long titles and reading lists are flat (8.9s)
+  ✓  14 [chromium] › tests/e2e/public.spec.ts:458:1 › source-analysis TOC mirrors every rendered heading level (10.0s)
+  ✓  15 [chromium] › tests/e2e/public.spec.ts:487:1 › mobile layout has no horizontal overflow (7.9s)
+  ✓  16 [chromium] › tests/e2e/public.spec.ts:498:3 › responsive reading and accessible navigation at 390px (8.1s)
+  ✓  17 [chromium] › tests/e2e/public.spec.ts:498:3 › responsive reading and accessible navigation at 768px (7.8s)
+  ✓  18 [chromium] › tests/e2e/public.spec.ts:498:3 › responsive reading and accessible navigation at 820px (7.6s)
+  ✓  19 [chromium] › tests/e2e/public.spec.ts:498:3 › responsive reading and accessible navigation at 1024px (8.4s)
+  ✓  20 [chromium] › tests/e2e/public.spec.ts:498:3 › responsive reading and accessible navigation at 1180px (7.8s)
+
+
+  1) [chromium] › tests/e2e/public.spec.ts:72:1 › public knowledge flow renders dynamic folder and document routes 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator:  getByText('知识库').first()
+    Expected: visible
+    Received: hidden
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for getByText('知识库').first()
+        13 × locator resolved to <small data-v-2ef0fd24="">第一次打开前端项目，最吓人的往往不是代码，而是那一排名字：Vue、React、Vite、Route…</small>
+           - unexpected value "hidden"
+
+
+      86 |
+      87 |   expect(new URL(page.url()).pathname).toBe(fixture.documentPath)
+    > 88 |   await expect(page.getByText('知识库').first()).toBeVisible()
+         |                                               ^
+      89 | })
+      90 |
+      91 | test('TypeScript language foundations are published with detailed comparisons', async ({
+        at /Users/apple/Documents/ChatGPT/knowledgebase/Personal-knowledge-base/tests/e2e/public.spec.ts:88:47
+
+    Error Context: test-results/public-public-knowledge-fl-d3866--folder-and-document-routes-chromium/error-context.md
+
+  1 failed
+    [chromium] › tests/e2e/public.spec.ts:72:1 › public knowledge flow renders dynamic folder and document routes 
+  19 passed (2.5m)
