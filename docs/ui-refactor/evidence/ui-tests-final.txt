@@ -1,0 +1,37 @@
+
+Running 28 tests using 2 workers
+
+(node:39848) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:39849) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › tests/e2e/ui-refactor.spec.ts:11:1 › search supports tags, full text, keyboard, composition, clearing and focus restoration (2.4s)
+  ✓   2 [webkit] › tests/e2e/ui-refactor.spec.ts:11:1 › search supports tags, full text, keyboard, composition, clearing and focus restoration (2.8s)
+  ✓   3 [chromium] › tests/e2e/ui-refactor.spec.ts:42:1 › native modal traps Tab and rapid shortcuts keep final state correct (1.8s)
+  ✓   4 [webkit] › tests/e2e/ui-refactor.spec.ts:42:1 › native modal traps Tab and rapid shortcuts keep final state correct (1.9s)
+  ✓   5 [chromium] › tests/e2e/ui-refactor.spec.ts:61:1 › mobile nested drawer and search preserve scroll lock, focus and Escape order (1.8s)
+  ✓   6 [webkit] › tests/e2e/ui-refactor.spec.ts:61:1 › mobile nested drawer and search preserve scroll lock, focus and Escape order (2.0s)
+  ✓   7 [chromium] › tests/e2e/ui-refactor.spec.ts:79:1 › editor validates, preserves panels/theme, protects route leave and saves once (3.8s)
+  ✓   8 [webkit] › tests/e2e/ui-refactor.spec.ts:79:1 › editor validates, preserves panels/theme, protects route leave and saves once (3.1s)
+  ✓  10 [webkit] › tests/e2e/ui-refactor.spec.ts:110:1 › editor rejects invalid/multiple import without clearing input; back navigation can be cancelled (2.9s)
+  ✓   9 [chromium] › tests/e2e/ui-refactor.spec.ts:110:1 › editor rejects invalid/multiple import without clearing input; back navigation can be cancelled (3.2s)
+  ✓  11 [webkit] › tests/e2e/ui-refactor.spec.ts:141:1 › folder creation modal works above mobile admin drawer (2.7s)
+  ✓  12 [chromium] › tests/e2e/ui-refactor.spec.ts:141:1 › folder creation modal works above mobile admin drawer (2.8s)
+  ✓  13 [webkit] › tests/e2e/ui-refactor.spec.ts:159:1 › copy reports real success and failure, diagram restores focus, article anchors remain usable (2.4s)
+  ✓  14 [chromium] › tests/e2e/ui-refactor.spec.ts:159:1 › copy reports real success and failure, diagram restores focus, article anchors remain usable (2.9s)
+  ✓  15 [webkit] › tests/e2e/ui-refactor.spec.ts:200:3 › theme and language with reduced motion: zh-CN (2.7s)
+  ✓  16 [chromium] › tests/e2e/ui-refactor.spec.ts:200:3 › theme and language with reduced motion: zh-CN (3.1s)
+  ✓  17 [webkit] › tests/e2e/ui-refactor.spec.ts:200:3 › theme and language with reduced motion: en (2.9s)
+  ✓  18 [chromium] › tests/e2e/ui-refactor.spec.ts:200:3 › theme and language with reduced motion: en (2.7s)
+  ✓  19 [webkit] › tests/e2e/ui-refactor.spec.ts:200:3 › theme and language with reduced motion: zh-TW (2.6s)
+  ✓  20 [chromium] › tests/e2e/ui-refactor.spec.ts:200:3 › theme and language with reduced motion: zh-TW (2.6s)
+  ✓  21 [webkit] › tests/e2e/ui-refactor.spec.ts:224:1 › SSR and core navigation stay readable without JavaScript (2.0s)
+  ✓  22 [chromium] › tests/e2e/ui-refactor.spec.ts:224:1 › SSR and core navigation stay readable without JavaScript (3.4s)
+  ✓  23 [webkit] › tests/e2e/ui-refactor.spec.ts:235:1 › mobile outline retains reading focus and language menu supports keyboard selection (3.5s)
+  ✓  24 [chromium] › tests/e2e/ui-refactor.spec.ts:235:1 › mobile outline retains reading focus and language menu supports keyboard selection (5.0s)
+  ✓  25 [webkit] › tests/e2e/ui-refactor.spec.ts:255:1 › long Markdown preview preserves math, tables, tasks, diagrams and latest input (4.5s)
+  ✓  27 [webkit] › tests/e2e/ui-refactor.spec.ts:302:1 › login configuration and missing routes show explicit recoverable states (3.9s)
+  ✓  26 [chromium] › tests/e2e/ui-refactor.spec.ts:255:1 › long Markdown preview preserves math, tables, tasks, diagrams and latest input (7.4s)
+  ✓  28 [chromium] › tests/e2e/ui-refactor.spec.ts:302:1 › login configuration and missing routes show explicit recoverable states (1.3s)
+
+  28 passed (45.1s)

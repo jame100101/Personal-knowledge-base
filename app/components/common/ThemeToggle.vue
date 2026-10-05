@@ -25,16 +25,19 @@ onMounted(() => {
     :disabled="!ready"
     @click="toggleTheme"
   >
-    <Sun v-if="isDark" :size="16" />
-    <Moon v-else :size="16" />
+    <span class="theme-icon" aria-hidden="true"
+      ><Sun :size="16" :class="{ visible: isDark }" /><Moon
+        :size="16"
+        :class="{ visible: !isDark }"
+    /></span>
     <span v-if="showLabel">{{ isDark ? t('lightMode') : t('darkMode') }}</span>
   </button>
 </template>
 
 <style scoped>
 .theme-toggle {
-  min-width: 34px;
-  min-height: 34px;
+  min-width: 40px;
+  min-height: 40px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -55,7 +58,7 @@ onMounted(() => {
   background: var(--kb-surface-hover);
   color: var(--kb-text);
 }
-.theme-toggle span {
+.theme-toggle > span:not(.theme-icon) {
   flex: 1;
   text-align: left;
   font-size: 13px;
@@ -63,5 +66,30 @@ onMounted(() => {
 .theme-toggle:disabled {
   cursor: wait;
   opacity: 0.6;
+}
+.theme-icon {
+  position: relative;
+  display: block;
+  width: 16px;
+  height: 16px;
+  flex: none;
+}
+.theme-icon svg {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: rotate(-30deg) scale(0.7);
+  transition:
+    opacity var(--kb-duration-fast),
+    transform var(--kb-duration-dialog) var(--kb-ease-out);
+}
+.theme-icon svg.visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .theme-icon svg {
+    transform: none;
+  }
 }
 </style>

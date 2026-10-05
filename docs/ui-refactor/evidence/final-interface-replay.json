@@ -1,0 +1,47 @@
+[
+  {
+    "textareaFont": "16px"
+  },
+  {
+    "searchFocus": {
+      "outline": "rgb(216, 255, 100) solid 2px",
+      "font": "16px"
+    },
+    "languageBackground": "rgba(0, 0, 0, 0)"
+  },
+  {
+    "menuHits": [
+      {
+        "text": "新建子文件夹",
+        "hit": true
+      },
+      {
+        "text": "新建 Markdown",
+        "hit": true
+      },
+      {
+        "text": "导入 Markdown",
+        "hit": true
+      },
+      {
+        "text": "重命名",
+        "hit": true
+      },
+      {
+        "text": "上移",
+        "hit": true
+      },
+      {
+        "text": "下移",
+        "hit": true
+      },
+      {
+        "text": "删除文件夹",
+        "hit": true
+      }
+    ]
+  },
+  {
+    "searchStatus": "1 / 2 · Chunking"
+  }
+]

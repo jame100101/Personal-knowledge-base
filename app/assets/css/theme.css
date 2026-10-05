@@ -9,7 +9,7 @@
   --kb-control-border: #4a5561;
   --kb-text: #edf0f3;
   --kb-text-muted: #9ca5ae;
-  --kb-text-subtle: #69737d;
+  --kb-text-subtle: #929ca6;
   --kb-icon: #8f99a3;
   --kb-icon-strong: #c0c7ce;
   --kb-accent: #d8ff64;
@@ -56,8 +56,25 @@
   --kb-space-4: 16px;
   --kb-space-5: 24px;
   --kb-space-6: 32px;
+  --kb-duration-press: 100ms;
+  --kb-duration-fast: 150ms;
+  --kb-duration-dialog: 200ms;
+  --kb-duration-panel: 240ms;
+  --kb-ease-out: cubic-bezier(0.2, 0, 0, 1);
+  --kb-motion-distance: 6px;
+  --kb-layer-navigation: 30;
+  --kb-layer-overlay: 100;
+  --kb-admin-sidebar-width: 294px;
+  --kb-text-caption: 12px;
+  --kb-text-ui: 14px;
+  --kb-text-body: 17px;
+  --kb-focus: var(--kb-accent);
+  --kb-selected-bg: #242c19;
+  --kb-selected-border: #556335;
+  --kb-overlay: rgb(3 5 7 / 66%);
+  --kb-warning: #e7be74;
+  --kb-spotlight: rgb(216 255 100 / 12%);
   font-family:
-    Inter,
     ui-sans-serif,
     system-ui,
     -apple-system,
@@ -67,11 +84,15 @@
     sans-serif;
   background: var(--kb-bg);
   color: var(--kb-text);
-  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
 }
 
 :root[data-theme='light'] {
   color-scheme: light;
+  --kb-selected-bg: #eef3e1;
+  --kb-selected-border: #849b53;
+  --kb-warning: #805b16;
+  --kb-spotlight: rgb(79 104 0 / 10%);
   --kb-bg: #f3f6f1;
   --kb-surface: #ffffff;
   --kb-surface-secondary: #e9eee8;
@@ -81,7 +102,7 @@
   --kb-control-border: #87958b;
   --kb-text: #152019;
   --kb-text-muted: #45534a;
-  --kb-text-subtle: #5f6d64;
+  --kb-text-subtle: #536158;
   --kb-icon: #536259;
   --kb-icon-strong: #34443a;
   --kb-accent: #4f6800;
@@ -124,6 +145,8 @@
 html {
   background: var(--kb-bg);
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+  -webkit-text-size-adjust: 100%;
 }
 body {
   margin: 0;
@@ -145,9 +168,6 @@ a {
   color: inherit;
   text-decoration: none;
 }
-button {
-  color: inherit;
-}
 ::selection {
   color: var(--kb-text);
   background: var(--kb-selection);
@@ -167,12 +187,12 @@ button {
 }
 
 :focus-visible {
-  outline: 2px solid var(--kb-accent);
+  outline: 2px solid var(--kb-focus);
   outline-offset: 2px;
 }
 
 .button {
-  min-height: 38px;
+  min-height: 40px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -186,9 +206,10 @@ button {
   transition:
     background 160ms ease,
     border-color 160ms ease,
-    color 160ms ease;
+    color var(--kb-duration-fast) ease,
+    transform var(--kb-duration-press) var(--kb-ease-out);
 }
-.button:hover {
+.button:hover:not(:disabled) {
   background: var(--kb-surface-hover);
   border-color: var(--kb-border-strong);
 }
@@ -198,7 +219,7 @@ button {
   border-color: var(--kb-accent);
   font-weight: 700;
 }
-.button.primary:hover {
+.button.primary:hover:not(:disabled) {
   background: var(--kb-accent-hover);
 }
 .button.danger {
@@ -226,7 +247,6 @@ button {
   color: var(--kb-text-muted);
   font-size: 12px;
   font-weight: 650;
-  letter-spacing: 0.03em;
 }
 .input,
 .textarea,
@@ -359,23 +379,126 @@ button {
   color: var(--kb-text-muted);
 }
 
+.icon-control {
+  display: inline-grid;
+  place-items: center;
+  min-width: 40px;
+  min-height: 40px;
+  padding: 8px;
+  border: 1px solid transparent;
+  border-radius: var(--kb-radius-sm);
+  background: transparent;
+  color: var(--kb-text-muted);
+  cursor: pointer;
+}
+.icon-control:hover {
+  background: var(--kb-surface-hover);
+  color: var(--kb-text);
+}
+button,
+a,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+button {
+  color: inherit;
+  transition:
+    background-color var(--kb-duration-fast),
+    border-color var(--kb-duration-fast),
+    color var(--kb-duration-fast);
+}
+button:disabled {
+  cursor: not-allowed;
+}
+.button:active:not(:disabled),
+.icon-control:active,
+.command-search:active,
+.theme-toggle:active {
+  transform: translateY(1px);
+}
+input[aria-invalid='true'],
+select[aria-invalid='true'] {
+  border-color: var(--kb-danger);
+}
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+.metrics strong,
+time,
+kbd,
+.tree-count {
+  font-variant-numeric: tabular-nums;
+}
+.skip-link {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 200;
+  padding: 12px 18px;
+  border-radius: var(--kb-radius-sm);
+  background: var(--kb-accent);
+  color: var(--kb-accent-ink);
+  transform: translateY(-180%);
+}
+.skip-link:focus {
+  transform: none;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity var(--kb-duration-fast) ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+.status-panel {
+  margin: 24px 0;
+  padding: 24px;
+  border: 1px solid var(--kb-border-strong);
+  border-radius: var(--kb-radius-md);
+  background: var(--kb-surface);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  color: var(--kb-text-muted);
+}
+.status-panel[role='alert'] {
+  border-left: 3px solid var(--kb-danger);
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  clip-path: inset(50%);
+  overflow: hidden;
+  white-space: nowrap;
+}
+@media (forced-colors: active) {
+  :focus-visible {
+    outline-color: Highlight;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .button:active,
+  .icon-control:active,
+  .command-search:active,
+  .theme-toggle:active {
+    transform: none;
+  }
+}
 @media (max-width: 760px) {
   .button {
-    min-height: 42px;
+    min-height: 44px;
   }
 }
 
-/* Comfortable reading and touch navigation; background artwork is untouched. */
-:root {
-  --kb-text-subtle: #929ca6;
-}
-:root[data-theme='light'] {
-  --kb-text-subtle: #536158;
-}
-html {
-  scroll-padding-top: 80px;
-  -webkit-text-size-adjust: 100%;
-}
 @media (max-width: 1180px) {
   .left-sidebar .tree-row,
   .left-sidebar .tree-document {
@@ -401,4 +524,32 @@ html {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .workspace-header,
+  .document-header,
+  .folder-page > header {
+    animation: kb-enter 200ms var(--kb-ease-out);
+  }
+  .home .workspace-header {
+    animation-duration: 300ms;
+  }
+}
+@keyframes kb-enter {
+  from {
+    opacity: 0.7;
+    transform: translateY(var(--kb-motion-distance));
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* A theme flip recolors once; retain local icon and panel motion. */
+:root[data-theme-changing] *,
+:root[data-theme-changing] *::before,
+:root[data-theme-changing] *::after {
+  transition-property: opacity, transform !important;
 }

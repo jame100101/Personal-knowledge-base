@@ -1,0 +1,160 @@
+[
+  {
+    "width": 1440,
+    "reading": {
+      "overflow": 0,
+      "body": [
+        {
+          "text": "Spring Boot 通过自动配置、Starter 依赖和内嵌服务器，让 Spring 应用更快进入业务开发阶段。",
+          "font": "17px",
+          "lineHeight": "31.45px",
+          "width": 820
+        },
+        {
+          "text": "它没有隐藏 Spring，而是为常见组合提供合理默认值。",
+          "font": "17px",
+          "lineHeight": "31.45px",
+          "width": 784
+        },
+        {
+          "text": "应用启动时，框架会根据 classpath、配置项和已有 Bean 判断应启用哪些配置。",
+          "font": "17px",
+          "lineHeight": "31.45px",
+          "width": 820
+        },
+        {
+          "text": "main",
+          "font": "13px",
+          "lineHeight": "19.5px",
+          "width": 56.13275146484375
+        }
+      ],
+      "headings": [
+        {
+          "text": "最近文档",
+          "size": "12px"
+        },
+        {
+          "text": "Spring Boot 简介",
+          "size": "44px"
+        },
+        {
+          "text": "为什么选择 Spring Boot",
+          "size": "26.35px"
+        },
+        {
+          "text": "核心机制",
+          "size": "26.35px"
+        },
+        {
+          "text": "自动配置",
+          "size": "20.74px"
+        },
+        {
+          "text": "启动流程",
+          "size": "26.35px"
+        },
+        {
+          "text": "下一步",
+          "size": "26.35px"
+        }
+      ]
+    }
+  },
+  {
+    "width": 1440,
+    "themeTransitions": [
+      {
+        "type": "CSSTransition",
+        "property": "opacity",
+        "target": {}
+      },
+      {
+        "type": "CSSTransition",
+        "property": "transform",
+        "target": {}
+      },
+      {
+        "type": "CSSTransition",
+        "property": "opacity",
+        "target": {}
+      },
+      {
+        "type": "CSSTransition",
+        "property": "transform",
+        "target": {}
+      }
+    ]
+  },
+  {
+    "width": 320,
+    "reading": {
+      "overflow": 0,
+      "body": [
+        {
+          "text": "Spring Boot 通过自动配置、Starter 依赖和内嵌服务器，让 Spring 应用更快进入业务开发阶段。",
+          "font": "16px",
+          "lineHeight": "29.6px",
+          "width": 288
+        },
+        {
+          "text": "它没有隐藏 Spring，而是为常见组合提供合理默认值。",
+          "font": "16px",
+          "lineHeight": "29.6px",
+          "width": 254
+        },
+        {
+          "text": "应用启动时，框架会根据 classpath、配置项和已有 Bean 判断应启用哪些配置。",
+          "font": "16px",
+          "lineHeight": "29.6px",
+          "width": 288
+        },
+        {
+          "text": "main",
+          "font": "13px",
+          "lineHeight": "19.5px",
+          "width": 56.13275146484375
+        }
+      ],
+      "headings": [
+        {
+          "text": "最近文档",
+          "size": "12px"
+        },
+        {
+          "text": "Spring Boot 简介",
+          "size": "30px"
+        },
+        {
+          "text": "为什么选择 Spring Boot",
+          "size": "24px"
+        },
+        {
+          "text": "核心机制",
+          "size": "24px"
+        },
+        {
+          "text": "自动配置",
+          "size": "20px"
+        },
+        {
+          "text": "启动流程",
+          "size": "24px"
+        },
+        {
+          "text": "下一步",
+          "size": "24px"
+        }
+      ]
+    }
+  },
+  {
+    "width": 320,
+    "toc": {
+      "hash": "#item-04nmrnl",
+      "active": "<h2 id=\"item-04nmrnl\" tabindex=\"-1\">下一步</h2>",
+      "targetTop": 638.078125,
+      "expanded": "false"
+    }
+  }
+]

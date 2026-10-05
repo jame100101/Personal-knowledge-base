@@ -1,0 +1,31 @@
+
+> damnatiox-knowledge@1.0.0 test
+> vitest run
+
+
+ RUN  v3.2.7 /Users/apple/Documents/ChatGPT/knowledgebase/Personal-knowledge-base
+
+ ✓ tests/unit/slug.test.ts (6 tests) 6ms
+ ✓ tests/unit/language-foundations.test.ts (3 tests) 6ms
+ ✓ tests/unit/health.test.ts (7 tests) 8ms
+stderr | tests/unit/markdown.test.ts
+Warning: KaTeX doesn't work in quirks mode. Make sure your website has a suitable doctype.
+
+stderr | tests/security/markdown-security.test.ts
+Warning: KaTeX doesn't work in quirks mode. Make sure your website has a suitable doctype.
+
+ ✓ tests/component/FolderSelect.test.ts (2 tests) 36ms
+ ✓ tests/security/markdown-security.test.ts (2 tests) 6ms
+stderr | tests/component/MarkdownRenderer.test.ts
+Warning: KaTeX doesn't work in quirks mode. Make sure your website has a suitable doctype.
+
+ ✓ tests/unit/folders.test.ts (7 tests) 3ms
+ ✓ tests/component/MarkdownRenderer.test.ts (3 tests) 101ms
+ ✓ tests/unit/markdown.test.ts (7 tests) 1936ms
+   ✓ Markdown pipeline > keeps the TOC complete for every Markdown article in the knowledge base  1902ms
+
+ Test Files  8 passed (8)
+      Tests  37 passed (37)
+   Start at  21:52:30
+   Duration  3.12s (transform 530ms, setup 0ms, collect 1.88s, tests 2.10s, environment 3.21s, prepare 726ms)
+

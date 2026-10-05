@@ -45,6 +45,8 @@ const {
 
 await load(false, true)
 
+const { t } = useLocale()
+const { shortcut } = useSearch()
 const query = ref('')
 const searchInput = ref<HTMLInputElement>()
 const openMenuId = ref<string | null>(null)
@@ -54,6 +56,15 @@ const notice = ref('')
 const error = ref('')
 const busy = ref(false)
 const folderDialogOpen = ref(false)
+const folderDialogTrigger = shallowRef<HTMLElement>()
+function rememberDialogTrigger(event: MouseEvent) {
+  const button = (event.target as HTMLElement).closest<HTMLElement>('button')
+  if (!button) return
+  folderDialogTrigger.value =
+    button
+      .closest('.row-menu')
+      ?.parentElement?.querySelector<HTMLElement>('.more-button') || button
+}
 const folderEditingId = ref<string | null>(null)
 const folderParentId = ref<string | null>(null)
 const folderName = ref('')
@@ -123,6 +134,7 @@ function openRenameDialog(folder: KnowledgeFolder) {
 }
 
 async function createFolder() {
+  if (busy.value) return
   const name = folderName.value.trim()
   const slug = slugify(name)
   const editingFolder = folders.value.find((item) => item.id === folderEditingId.value)
@@ -194,7 +206,7 @@ function requestUpload(folderId: string | null) {
 }
 
 async function uploadMarkdown(files: FileList | null) {
-  if (!files?.length || !uploadFolderId.value) return
+  if (!files?.length || !uploadFolderId.value || busy.value) return
   error.value = ''
   notice.value = ''
   busy.value = true
@@ -233,8 +245,12 @@ async function uploadMarkdown(files: FileList | null) {
     expandFolder(uploadFolderId.value)
     notice.value = `已导入 ${imported} 个 Markdown 文件，状态为草稿`
   } catch (cause) {
-    error.value =
-      cause instanceof Error ? cause.message : `导入在第 ${imported + 1} 个文件停止`
+    error.value = `${t('importPartial')
+      .replace('{count}', String(imported))
+      .replace(
+        '{next}',
+        String(imported + 1),
+      )} ${cause instanceof Error ? cause.message : t('fileFailed')}`
   } finally {
     busy.value = false
     if (fileInput.value) fileInput.value.value = ''
@@ -282,6 +298,7 @@ async function runAction(payload: {
   action: ExplorerAction
   id: string
 }) {
+  if (busy.value) return
   error.value = ''
   notice.value = ''
   try {
@@ -342,14 +359,24 @@ function openSearchResult(result: (typeof searchResults.value)[number]) {
 </script>
 
 <template>
-  <section class="admin-explorer" :class="{ busy }">
+  <section
+    class="admin-explorer"
+    :class="{ busy }"
+    @click.capture="rememberDialogTrigger"
+  >
     <label class="explorer-search">
       <Search :size="16" />
-      <input ref="searchInput" v-model="query" type="search" placeholder="搜索知识库" />
-      <kbd>⌘ K</kbd>
+      <input
+        ref="searchInput"
+        v-model="query"
+        type="search"
+        :aria-label="t('searchKnowledge')"
+        :placeholder="t('searchKnowledge')"
+      />
+      <kbd>{{ shortcut }}</kbd>
     </label>
 
-    <div class="quick-actions">
+    <div class="quick-actions" :inert="busy">
       <button type="button" title="新建根文件夹" @click="openFolderDialog(null)">
         <FolderPlus :size="16" /><span>文件夹</span>
       </button>
@@ -377,13 +404,13 @@ function openSearchResult(result: (typeof searchResults.value)[number]) {
       />
     </div>
 
-    <p v-if="error" class="explorer-message error">
+    <p v-if="error" class="explorer-message error" role="alert">
       <span>{{ error }}</span
       ><button type="button" aria-label="关闭错误" @click="error = ''">
         <X :size="13" />
       </button>
     </p>
-    <p v-else-if="notice" class="explorer-message success">
+    <p v-else-if="notice" class="explorer-message success" role="status">
       <span>{{ notice }}</span
       ><button type="button" aria-label="关闭提示" @click="notice = ''">
         <X :size="13" />
@@ -395,7 +422,7 @@ function openSearchResult(result: (typeof searchResults.value)[number]) {
       <span>{{ documents.length }}</span>
     </div>
 
-    <div class="explorer-scroll">
+    <div class="explorer-scroll" :inert="busy" :aria-busy="busy">
       <div v-if="loading" class="loading-state">正在读取知识库…</div>
       <div v-else-if="query" class="search-results">
         <button
@@ -448,59 +475,60 @@ function openSearchResult(result: (typeof searchResults.value)[number]) {
       <span>{{ selectedFolder?.name || '尚未选择文件夹' }}</span>
     </footer>
 
-    <Teleport to="body">
-      <div
-        v-if="folderDialogOpen"
-        class="explorer-modal"
-        @mousedown.self="folderDialogOpen = false"
-      >
-        <form class="folder-form" @submit.prevent="createFolder">
-          <header>
-            <div>
-              <span>{{ folderEditingId ? 'RENAME FOLDER' : 'NEW FOLDER' }}</span>
-              <h2>
-                {{
-                  folderEditingId
-                    ? '重命名文件夹'
-                    : folderParentId
-                      ? '新建子文件夹'
-                      : '新建根文件夹'
-                }}
-              </h2>
-            </div>
-            <button type="button" aria-label="关闭" @click="folderDialogOpen = false">
-              <X :size="17" />
-            </button>
-          </header>
-          <label>
-            文件夹名称
-            <input
-              v-model="folderName"
-              class="input"
-              autofocus
-              required
-              placeholder="例如：Agent 基础"
-            />
-          </label>
-          <p v-if="folderParentId">
-            创建位置：{{
-              findFolderPath(folderParentId, folders)
-                .map((item) => item.name)
-                .join(' / ')
-            }}
-          </p>
-          <p v-if="error" class="error-text">{{ error }}</p>
-          <footer>
-            <button class="button" type="button" @click="folderDialogOpen = false">
-              取消
-            </button>
-            <button class="button primary" type="submit" :disabled="busy">
-              {{ folderEditingId ? '保存' : '创建' }}
-            </button>
-          </footer>
-        </form>
-      </div>
-    </Teleport>
+    <UiDialog
+      compact
+      :open="folderDialogOpen"
+      :return-focus="folderDialogTrigger"
+      :label="folderEditingId ? '重命名文件夹' : '新建文件夹'"
+      @close="!busy && (folderDialogOpen = false)"
+    >
+      <form class="folder-form" @submit.prevent="createFolder">
+        <header>
+          <div>
+            <span>{{ folderEditingId ? 'RENAME FOLDER' : 'NEW FOLDER' }}</span>
+            <h2>
+              {{
+                folderEditingId
+                  ? '重命名文件夹'
+                  : folderParentId
+                    ? '新建子文件夹'
+                    : '新建根文件夹'
+              }}
+            </h2>
+          </div>
+          <button type="button" aria-label="关闭" @click="folderDialogOpen = false">
+            <X :size="17" />
+          </button>
+        </header>
+        <label>
+          文件夹名称
+          <input
+            v-model="folderName"
+            :disabled="busy"
+            class="input"
+            autofocus
+            required
+            placeholder="例如：Agent 基础"
+          />
+        </label>
+        <p v-if="folderParentId">
+          创建位置：{{
+            findFolderPath(folderParentId, folders)
+              .map((item) => item.name)
+              .join(' / ')
+          }}
+        </p>
+        <p v-if="error" class="error-text" role="alert">{{ error }}</p>
+        <footer>
+          <button class="button" type="button" @click="folderDialogOpen = false">
+            取消
+          </button>
+          <button class="button primary" type="submit" :disabled="busy">
+            {{ busy ? t('saving') : folderEditingId ? '保存' : '创建' }}
+          </button>
+        </footer>
+      </form>
+    </UiDialog>
   </section>
 </template>
 
@@ -534,7 +562,7 @@ function openSearchResult(result: (typeof searchResults.value)[number]) {
   min-width: 0;
   flex: 1;
   border: 0;
-  outline: 0;
+  outline-offset: 2px;
   background: transparent;
   color: var(--kb-text);
   font-size: 12px;
@@ -562,7 +590,7 @@ function openSearchResult(result: (typeof searchResults.value)[number]) {
   border-radius: 7px;
   background: transparent;
   color: var(--kb-text-muted);
-  font-size: 9px;
+  font-size: 12px;
   cursor: pointer;
 }
 .quick-actions button:hover {
@@ -582,7 +610,7 @@ function openSearchResult(result: (typeof searchResults.value)[number]) {
   padding: 7px 8px;
   border: 1px solid var(--kb-border);
   border-radius: 6px;
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1.4;
 }
 .explorer-message.error {
@@ -627,7 +655,7 @@ function openSearchResult(result: (typeof searchResults.value)[number]) {
 .search-results > p {
   padding: 18px 10px;
   color: var(--kb-text-subtle);
-  font-size: 11px;
+  font-size: 13px;
   line-height: 1.5;
 }
 .empty-tree {
@@ -667,11 +695,11 @@ function openSearchResult(result: (typeof searchResults.value)[number]) {
 }
 .search-results strong {
   color: var(--kb-text);
-  font-size: 11px;
+  font-size: 13px;
 }
 .search-results small {
   color: var(--kb-text-subtle);
-  font-size: 9px;
+  font-size: 12px;
 }
 .selection-status {
   min-height: 34px;
@@ -681,29 +709,15 @@ function openSearchResult(result: (typeof searchResults.value)[number]) {
   padding: 0 7px;
   border-top: 1px solid var(--kb-border);
   color: var(--kb-text-subtle);
-  font-size: 10px;
+  font-size: 12px;
 }
 .selection-status span {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.explorer-modal {
-  position: fixed;
-  inset: 0;
-  z-index: 200;
-  display: grid;
-  place-items: center;
-  padding: 18px;
-  background: rgb(0 0 0 / 70%);
-}
 .folder-form {
-  width: min(430px, 100%);
-  padding: 22px;
-  border: 1px solid var(--kb-border-strong);
-  border-radius: var(--kb-radius-lg);
-  background: var(--kb-surface);
-  box-shadow: var(--kb-shadow);
+  padding: 24px;
 }
 .folder-form header {
   display: flex;
@@ -730,11 +744,11 @@ function openSearchResult(result: (typeof searchResults.value)[number]) {
   display: grid;
   gap: 7px;
   color: var(--kb-text-muted);
-  font-size: 11px;
+  font-size: 13px;
 }
 .folder-form > p {
   color: var(--kb-text-subtle);
-  font-size: 10px;
+  font-size: 12px;
 }
 .folder-form > footer {
   display: flex;
@@ -743,5 +757,14 @@ function openSearchResult(result: (typeof searchResults.value)[number]) {
   margin-top: 20px;
   padding-top: 15px;
   border-top: 1px solid var(--kb-border);
+}
+@media (max-width: 760px) {
+  .explorer-search input {
+    font-size: 16px;
+    min-height: 44px;
+  }
+  .quick-actions button {
+    min-height: 44px;
+  }
 }
 </style>

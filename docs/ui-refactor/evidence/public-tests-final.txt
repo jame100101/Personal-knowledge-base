@@ -1,0 +1,25 @@
+
+Running 17 tests using 1 worker
+
+(node:39799) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › tests/e2e/public.spec.ts:72:1 › public knowledge flow renders dynamic folder and document routes (2.2s)
+  -   2 [chromium] › tests/e2e/public.spec.ts:91:1 › TypeScript language foundations are published with detailed comparisons
+  ✓   3 [chromium] › tests/e2e/public.spec.ts:141:1 › global search opens with keyboard shortcut and finds a document (1.8s)
+  ✓   4 [chromium] › tests/e2e/public.spec.ts:157:1 › theme toggle switches to light mode and persists the preference (1.5s)
+  ✓   5 [chromium] › tests/e2e/public.spec.ts:168:1 › home line art stays subtle and inverts without changing its composition (1.1s)
+  ✓   6 [chromium] › tests/e2e/public.spec.ts:225:1 › branding and light theme controls keep their intended visual tokens (2.1s)
+  ✓   7 [chromium] › tests/e2e/public.spec.ts:297:1 › Mermaid enlarge control stays compact without inheriting diagram SVG width (2.3s)
+  ✓   8 [chromium] › tests/e2e/public.spec.ts:369:1 › language selector switches public UI between all supported locales (2.0s)
+  ✓   9 [chromium] › tests/e2e/public.spec.ts:386:1 › folder labels collapse the current folder and the TOC remains sticky (3.8s)
+  ✓  10 [chromium] › tests/e2e/public.spec.ts:422:1 › sidebar document icons stay uniform after long titles and reading lists are flat (3.1s)
+  -  11 [chromium] › tests/e2e/public.spec.ts:458:1 › source-analysis TOC mirrors every rendered heading level
+  ✓  12 [chromium] › tests/e2e/public.spec.ts:487:1 › mobile layout has no horizontal overflow (2.1s)
+  ✓  13 [chromium] › tests/e2e/public.spec.ts:498:3 › responsive reading and accessible navigation at 390px (2.8s)
+  ✓  14 [chromium] › tests/e2e/public.spec.ts:498:3 › responsive reading and accessible navigation at 768px (3.2s)
+  ✓  15 [chromium] › tests/e2e/public.spec.ts:498:3 › responsive reading and accessible navigation at 820px (4.6s)
+  ✓  16 [chromium] › tests/e2e/public.spec.ts:498:3 › responsive reading and accessible navigation at 1024px (4.3s)
+  ✓  17 [chromium] › tests/e2e/public.spec.ts:498:3 › responsive reading and accessible navigation at 1180px (2.0s)
+
+  2 skipped
+  15 passed (43.7s)

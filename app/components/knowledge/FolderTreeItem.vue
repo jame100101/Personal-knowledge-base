@@ -10,6 +10,7 @@ import {
   documentPublicPath,
   folderPublicPath,
   orderedFolderEntries,
+  findFolderPath,
 } from '~/utils/folders'
 
 const props = defineProps<{
@@ -22,7 +23,13 @@ const props = defineProps<{
 const entries = computed(() =>
   orderedFolderEntries(props.node.children, props.node.documents),
 )
-const expanded = ref((props.level || 0) < 1)
+const expansion = useState<Record<string, boolean>>('kb-folder-expansion', () => ({}))
+const expanded = computed({
+  get: () => expansion.value[props.node.id] ?? (props.level || 0) < 1,
+  set: (value) => {
+    expansion.value[props.node.id] = value
+  },
+})
 const hasChildren = computed(
   () => props.node.children.length > 0 || props.node.documents.length > 0,
 )
@@ -30,7 +37,16 @@ const { t } = useLocale()
 function toggleExpanded() {
   if (hasChildren.value) expanded.value = !expanded.value
 }
-async function handleLabelClick() {
+async function handleLabelClick(event: MouseEvent) {
+  if (
+    event.ctrlKey ||
+    event.metaKey ||
+    event.shiftKey ||
+    event.altKey ||
+    event.button !== 0
+  )
+    return
+  event.preventDefault()
   if (hasChildren.value && expanded.value) {
     expanded.value = false
     return
@@ -43,13 +59,19 @@ watch(
   [() => props.currentFolderId, () => props.currentDocumentId],
   () => {
     if (
-      props.currentFolderId === props.node.id ||
+      findFolderPath(props.currentFolderId || null, props.allFolders).some(
+        (folder) => folder.id === props.node.id,
+      ) ||
       props.node.documents.some((doc) => doc.id === props.currentDocumentId)
     )
       expanded.value = true
   },
   { immediate: true },
 )
+const visited = ref(expanded.value)
+watch(expanded, (value) => {
+  if (value) visited.value = true
+})
 </script>
 
 <template>
@@ -61,12 +83,12 @@ watch(
         expandable: hasChildren,
       }"
       :style="{ '--depth': level || 0 }"
-      @click="toggleExpanded"
     >
       <button
         class="tree-toggle"
         type="button"
         :disabled="!hasChildren"
+        :aria-expanded="hasChildren ? expanded : undefined"
         :aria-label="expanded ? t('collapseFolder') : t('expandFolder')"
         @click.stop="toggleExpanded"
       >
@@ -80,35 +102,43 @@ watch(
       <a
         :href="folderPublicPath(node.id, allFolders)"
         class="tree-label"
-        @click.stop.prevent="handleLabelClick"
+        :title="node.name"
+        :aria-current="
+          currentFolderId === node.id && !currentDocumentId ? 'page' : undefined
+        "
+        @click.stop="handleLabelClick"
       >
         {{ node.name }}
       </a>
       <span class="tree-count">{{ node.documentCount }}</span>
     </div>
-    <ul v-if="expanded" class="tree-children">
-      <template v-for="entry in entries" :key="`${entry.kind}-${entry.item.id}`">
-        <FolderTreeItem
-          v-if="entry.kind === 'folder'"
-          :node="entry.item"
-          :all-folders="allFolders"
-          :level="(level || 0) + 1"
-          :current-folder-id="currentFolderId"
-          :current-document-id="currentDocumentId"
-        />
-        <li v-else>
-          <NuxtLink
-            :to="documentPublicPath(entry.item, allFolders)"
-            class="tree-document"
-            :class="{ active: currentDocumentId === entry.item.id }"
-            :style="{ '--depth': (level || 0) + 1 }"
-          >
-            <FileText :size="13" />
-            <span>{{ entry.item.title }}</span>
-          </NuxtLink>
-        </li>
-      </template>
-    </ul>
+    <Transition name="tree"
+      ><ul v-if="visited" v-show="expanded" class="tree-children">
+        <template v-for="entry in entries" :key="`${entry.kind}-${entry.item.id}`">
+          <FolderTreeItem
+            v-if="entry.kind === 'folder'"
+            :node="entry.item"
+            :all-folders="allFolders"
+            :level="(level || 0) + 1"
+            :current-folder-id="currentFolderId"
+            :current-document-id="currentDocumentId"
+          />
+          <li v-else>
+            <NuxtLink
+              :to="documentPublicPath(entry.item, allFolders)"
+              class="tree-document"
+              :title="entry.item.title"
+              :aria-current="currentDocumentId === entry.item.id ? 'page' : undefined"
+              :class="{ active: currentDocumentId === entry.item.id }"
+              :style="{ '--depth': (level || 0) + 1 }"
+            >
+              <FileText :size="13" />
+              <span>{{ entry.item.title }}</span>
+            </NuxtLink>
+          </li>
+        </template>
+      </ul></Transition
+    >
   </li>
 </template>
 
@@ -120,7 +150,7 @@ ul {
   padding: 0;
 }
 .tree-row {
-  height: 34px;
+  min-height: 38px;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -138,14 +168,14 @@ ul {
   color: var(--kb-text);
 }
 .tree-row.expandable {
-  cursor: pointer;
 }
 .tree-row.active {
   box-shadow: inset 2px 0 var(--kb-accent);
 }
 .tree-toggle {
-  width: 18px;
-  height: 24px;
+  width: 24px;
+  height: 32px;
+  flex: none;
   display: grid;
   place-items: center;
   border: 0;
@@ -211,5 +241,28 @@ ul {
 }
 .tree-document.active {
   color: var(--kb-accent);
+  box-shadow: inset 2px 0 var(--kb-accent);
+  background: var(--kb-selected-bg);
+}
+.tree-enter-active,
+.tree-leave-active {
+  transition: opacity var(--kb-duration-fast);
+}
+.tree-enter-from,
+.tree-leave-to {
+  opacity: 0;
+}
+@media (max-width: 1180px) {
+  .tree-toggle {
+    width: 44px;
+    height: 44px;
+  }
+  .tree-row {
+    padding-left: calc(var(--depth) * 10px);
+    gap: 4px;
+  }
+  .tree-document {
+    min-height: 44px;
+  }
 }
 </style>

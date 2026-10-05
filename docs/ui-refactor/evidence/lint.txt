@@ -1,0 +1,28 @@
+
+> damnatiox-knowledge@1.0.0 lint
+> eslint .
+
+
+/Users/apple/Documents/ChatGPT/knowledgebase/Personal-knowledge-base/app/components/admin/AdminExplorer.vue
+  375:7   warning  Disallow self-closing on HTML void elements (<input/>)  vue/html-self-closing
+  404:7   warning  Disallow self-closing on HTML void elements (<input/>)  vue/html-self-closing
+  512:11  warning  Disallow self-closing on HTML void elements (<input/>)  vue/html-self-closing
+
+/Users/apple/Documents/ChatGPT/knowledgebase/Personal-knowledge-base/app/components/admin/DocumentEditor.vue
+  210:11  warning  Disallow self-closing on HTML void elements (<input/>)  vue/html-self-closing
+  221:11  warning  Disallow self-closing on HTML void elements (<input/>)  vue/html-self-closing
+  241:11  warning  Disallow self-closing on HTML void elements (<input/>)  vue/html-self-closing
+  250:11  warning  Disallow self-closing on HTML void elements (<input/>)  vue/html-self-closing
+  259:11  warning  Disallow self-closing on HTML void elements (<input/>)  vue/html-self-closing
+  284:9   warning  Disallow self-closing on HTML void elements (<input/>)  vue/html-self-closing
+
+/Users/apple/Documents/ChatGPT/knowledgebase/Personal-knowledge-base/app/components/common/SearchDialog.vue
+  121:9  warning  Disallow self-closing on HTML void elements (<input/>)  vue/html-self-closing
+
+/Users/apple/Documents/ChatGPT/knowledgebase/Personal-knowledge-base/app/pages/admin/login.vue
+  67:13  warning  Disallow self-closing on HTML void elements (<input/>)  vue/html-self-closing
+  83:13  warning  Disallow self-closing on HTML void elements (<input/>)  vue/html-self-closing
+
+✖ 12 problems (0 errors, 12 warnings)
+  0 errors and 12 warnings potentially fixable with the `--fix` option.
+

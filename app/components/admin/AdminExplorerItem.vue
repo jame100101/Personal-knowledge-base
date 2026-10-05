@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import {
-  ChevronDown,
   ChevronRight,
   FilePenLine,
   FilePlus2,
@@ -47,6 +46,30 @@ const emit = defineEmits<{
   ]
 }>()
 
+function menuKey(event: KeyboardEvent) {
+  const target = event.target as HTMLElement
+  const menu = target.closest('.row-menu')
+  if (event.key === 'Escape') {
+    event.stopPropagation()
+    event.preventDefault()
+    const trigger =
+      menu?.parentElement?.querySelector<HTMLButtonElement>('.more-button')
+    emit('menu', null)
+    nextTick(() => trigger?.focus())
+  }
+  if (!menu || !['ArrowDown', 'ArrowUp', 'Home', 'End'].includes(event.key)) return
+  event.preventDefault()
+  const buttons = [...menu.querySelectorAll<HTMLButtonElement>('button')]
+  const index = buttons.indexOf(target as HTMLButtonElement)
+  const next =
+    event.key === 'Home'
+      ? 0
+      : event.key === 'End'
+        ? buttons.length - 1
+        : (index + (event.key === 'ArrowDown' ? 1 : -1) + buttons.length) %
+          buttons.length
+  buttons[next]?.focus()
+}
 const level = computed(() => props.level || 0)
 const expanded = computed(() => props.expandedFolderIds.includes(props.node.id))
 const hasChildren = computed(() =>
@@ -68,29 +91,36 @@ function runDocumentAction(
 </script>
 
 <template>
-  <li class="explorer-node">
+  <li class="explorer-node" @keydown="menuKey">
     <div
       class="explorer-row folder-row"
       :class="{ selected: selectedFolderId === node.id }"
       :style="{ '--tree-level': level }"
-      @click="emit('select', node.id)"
     >
       <button
         class="tree-toggle"
         type="button"
         :aria-label="expanded ? '收起文件夹' : '展开文件夹'"
         :disabled="!hasChildren"
+        :aria-expanded="hasChildren ? expanded : undefined"
         @click.stop="emit('toggle', node.id)"
       >
-        <ChevronDown v-if="expanded && hasChildren" :size="14" />
-        <ChevronRight v-else :size="14" />
+        <ChevronRight :size="14" :class="{ rotated: expanded && hasChildren }" />
       </button>
       <FolderOpen v-if="expanded" class="type-icon" :size="16" />
       <Folder v-else class="type-icon" :size="16" />
-      <span class="row-name">{{ node.name }}</span>
+      <button
+        class="row-name"
+        type="button"
+        :title="node.name"
+        @click="emit('select', node.id)"
+      >
+        {{ node.name }}
+      </button>
       <span class="row-count">{{ node.documentCount }}</span>
       <button
         class="more-button"
+        :aria-expanded="openMenuId === `folder:${node.id}`"
         type="button"
         :aria-label="`${node.name}操作`"
         @click.stop="
@@ -145,17 +175,16 @@ function runDocumentAction(
         class="explorer-row document-row"
         :class="{ draft: document.status === 'draft' }"
         :style="{ '--tree-level': level + 1 }"
-        @dblclick="runDocumentAction('edit', document.id)"
       >
         <span class="tree-spacer" />
         <FileText class="type-icon" :size="15" />
-        <button
+        <NuxtLink
           class="document-name"
-          type="button"
-          @click="runDocumentAction('edit', document.id)"
+          :to="`/admin/documents/${document.id}`"
+          @click="emit('menu', null)"
         >
           {{ document.title }}
-        </button>
+        </NuxtLink>
         <i
           class="status-dot"
           :title="document.status === 'draft' ? '草稿' : '已发布'"
@@ -234,7 +263,8 @@ li {
 }
 .tree-toggle,
 .more-button,
-.document-name {
+.document-name,
+.row-name {
   border: 0;
   background: transparent;
   color: inherit;
@@ -277,7 +307,7 @@ li {
   place-items: center;
   padding: 0;
   border-radius: 5px;
-  opacity: 0;
+  opacity: 0.65;
 }
 .explorer-row:hover .more-button,
 .more-button:focus-visible,
@@ -298,7 +328,7 @@ li {
   cursor: default;
 }
 .document-row.draft .type-icon {
-  color: #bc944c;
+  color: var(--kb-warning);
 }
 .status-dot {
   width: 6px;
@@ -307,14 +337,12 @@ li {
   background: var(--kb-success);
 }
 .document-row.draft .status-dot {
-  background: #bc944c;
+  background: var(--kb-warning);
 }
 .row-menu {
-  position: absolute;
-  z-index: 80;
-  top: calc(100% - 2px);
-  right: 3px;
-  width: 174px;
+  grid-column: 1 / -1;
+  width: 100%;
+  margin-top: 4px;
   display: grid;
   gap: 2px;
   padding: 5px;
@@ -333,7 +361,7 @@ li {
   border-radius: 5px;
   background: transparent;
   color: var(--kb-text-muted);
-  font-size: 11px;
+  font-size: 13px;
   cursor: pointer;
 }
 .row-menu button:hover {
@@ -347,5 +375,45 @@ li {
 }
 .row-menu button.danger:hover {
   color: var(--kb-danger);
+}
+.tree-toggle svg {
+  transition: transform var(--kb-duration-panel) var(--kb-ease-out);
+}
+.tree-toggle .rotated {
+  transform: rotate(90deg);
+}
+.row-name {
+  padding: 4px 0;
+}
+.explorer-row {
+  transition:
+    background-color var(--kb-duration-fast),
+    border-color var(--kb-duration-fast);
+}
+.row-menu button.danger {
+  color: var(--kb-danger);
+}
+@media (max-width: 760px) {
+  .explorer-row {
+    grid-template-columns: 32px 16px minmax(0, 1fr) auto 44px;
+    min-height: 44px;
+  }
+  .tree-toggle {
+    width: 32px;
+    height: 44px;
+  }
+  .more-button {
+    width: 44px;
+    height: 44px;
+    opacity: 1;
+  }
+  .row-name,
+  .document-name {
+    min-height: 44px;
+    font-size: 13px;
+  }
+  .row-menu button {
+    min-height: 44px;
+  }
 }
 </style>

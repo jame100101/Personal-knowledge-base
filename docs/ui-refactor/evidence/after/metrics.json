@@ -1,0 +1,228 @@
+{
+  "note": "Development-server observations; fresh browser context per case, unthrottled, networkidle + fonts + 500ms. Dev module request/byte totals are not production bundle metrics.",
+  "results": [
+    {
+      "width": 1440,
+      "theme": "dark",
+      "kind": "home",
+      "requests": 236,
+      "metrics": {
+        "cls": 0.000018869267216435182,
+        "resourceCount": 235,
+        "transferBytes": 14599942,
+        "decodedBodyBytes": 14529442,
+        "horizontalOverflow": 0,
+        "title": "Knowledge Base",
+        "url": "/",
+        "headings": [
+          "Damnatiox Knowledge"
+        ]
+      },
+      "errors": [],
+      "failures": []
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "kind": "reading",
+      "requests": 267,
+      "metrics": {
+        "cls": 0.00018160777150848763,
+        "resourceCount": 250,
+        "transferBytes": 14266713,
+        "decodedBodyBytes": 14191713,
+        "horizontalOverflow": 0,
+        "title": "Spring Boot 简介 · Knowledge Base",
+        "url": "/knowledge/java-backend/spring/spring-boot/spring-boot-introduction",
+        "headings": [
+          "Spring Boot 简介"
+        ]
+      },
+      "errors": [],
+      "failures": []
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "kind": "search",
+      "requests": 236,
+      "metrics": {
+        "cls": 0.000018869267216435182,
+        "resourceCount": 235,
+        "transferBytes": 14599942,
+        "decodedBodyBytes": 14529442,
+        "horizontalOverflow": 0,
+        "title": "Knowledge Base",
+        "url": "/",
+        "headings": [
+          "Damnatiox Knowledge"
+        ]
+      },
+      "errors": [],
+      "failures": []
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "kind": "editor",
+      "requests": 231,
+      "metrics": {
+        "cls": 0.000005240885416666666,
+        "resourceCount": 230,
+        "transferBytes": 12847703,
+        "decodedBodyBytes": 12778703,
+        "horizontalOverflow": 0,
+        "title": "新建文档 · Knowledge Base",
+        "url": "/admin/documents/new",
+        "headings": [
+          "新建 Markdown 文档",
+          "新文档"
+        ]
+      },
+      "errors": [],
+      "failures": []
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "kind": "home",
+      "requests": 236,
+      "metrics": {
+        "cls": 0.000018869267216435182,
+        "resourceCount": 235,
+        "transferBytes": 14599942,
+        "decodedBodyBytes": 14529442,
+        "horizontalOverflow": 0,
+        "title": "Knowledge Base",
+        "url": "/",
+        "headings": [
+          "Damnatiox Knowledge"
+        ]
+      },
+      "errors": [],
+      "failures": []
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "kind": "reading",
+      "requests": 267,
+      "metrics": {
+        "cls": 0.00018160777150848763,
+        "resourceCount": 250,
+        "transferBytes": 14266713,
+        "decodedBodyBytes": 14191713,
+        "horizontalOverflow": 0,
+        "title": "Spring Boot 简介 · Knowledge Base",
+        "url": "/knowledge/java-backend/spring/spring-boot/spring-boot-introduction",
+        "headings": [
+          "Spring Boot 简介"
+        ]
+      },
+      "errors": [],
+      "failures": []
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "kind": "search",
+      "requests": 236,
+      "metrics": {
+        "cls": 0.000018869267216435182,
+        "resourceCount": 235,
+        "transferBytes": 14599942,
+        "decodedBodyBytes": 14529442,
+        "horizontalOverflow": 0,
+        "title": "Knowledge Base",
+        "url": "/",
+        "headings": [
+          "Damnatiox Knowledge"
+        ]
+      },
+      "errors": [],
+      "failures": []
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "kind": "editor",
+      "requests": 231,
+      "metrics": {
+        "cls": 0.000005240885416666666,
+        "resourceCount": 229,
+        "transferBytes": 12847348,
+        "decodedBodyBytes": 12778648,
+        "horizontalOverflow": 0,
+        "title": "新建文档 · Knowledge Base",
+        "url": "/admin/documents/new",
+        "headings": [
+          "新建 Markdown 文档",
+          "新文档"
+        ]
+      },
+      "errors": [],
+      "failures": []
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "kind": "home",
+      "requests": 226,
+      "metrics": {
+        "cls": 0,
+        "resourceCount": 225,
+        "transferBytes": 14362014,
+        "decodedBodyBytes": 14294514,
+        "horizontalOverflow": 0,
+        "title": "Knowledge Base",
+        "url": "/",
+        "headings": [
+          "Damnatiox Knowledge"
+        ]
+      },
+      "errors": [],
+      "failures": []
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "kind": "reading",
+      "requests": 311,
+      "metrics": {
+        "cls": 0,
+        "resourceCount": 250,
+        "transferBytes": 14245889,
+        "decodedBodyBytes": 14170889,
+        "horizontalOverflow": 0,
+        "title": "Spring Boot 简介 · Knowledge Base",
+        "url": "/knowledge/java-backend/spring/spring-boot/spring-boot-introduction",
+        "headings": [
+          "Spring Boot 简介"
+        ]
+      },
+      "errors": [],
+      "failures": []
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "kind": "editor",
+      "requests": 231,
+      "metrics": {
+        "cls": 0,
+        "resourceCount": 230,
+        "transferBytes": 12867374,
+        "decodedBodyBytes": 12798374,
+        "horizontalOverflow": 0,
+        "title": "新建文档 · Knowledge Base",
+        "url": "/admin/documents/new",
+        "headings": [
+          "新建 Markdown 文档",
+          "新文档"
+        ]
+      },
+      "errors": [],
+      "failures": []
+    }
+  ]
+}

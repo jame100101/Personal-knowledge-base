@@ -1,0 +1,1430 @@
+[
+  {
+    "theme": "dark",
+    "path": "/",
+    "failed": [],
+    "pairs": [
+      {
+        "text": "输入标题、正文或标签，查找知识。",
+        "tag": "P",
+        "cls": "search-help",
+        "fg": "rgb(146, 156, 166)",
+        "bg": [
+          17,
+          20,
+          24
+        ],
+        "ratio": 6.62,
+        "required": 4.5
+      },
+      {
+        "text": "最近文档",
+        "tag": "H2",
+        "cls": "result-label",
+        "fg": "rgb(146, 156, 166)",
+        "bg": [
+          17,
+          20,
+          24
+        ],
+        "ratio": 6.62,
+        "required": 4.5
+      },
+      {
+        "text": "Java 后端 / Spring / Spring Boot",
+        "tag": "SMALL",
+        "cls": "result-path",
+        "fg": "rgb(146, 156, 166)",
+        "bg": [
+          36,
+          44,
+          25
+        ],
+        "ratio": 5.19,
+        "required": 4.5
+      },
+      {
+        "text": "Spring Boot 简介 ",
+        "tag": "STRONG",
+        "cls": "",
+        "fg": "rgb(237, 240, 243)",
+        "bg": [
+          36,
+          44,
+          25
+        ],
+        "ratio": 12.67,
+        "required": 4.5
+      },
+      {
+        "text": "理解 Spring Boot 的核心价值、自动配置机制与工程结构。",
+        "tag": "SMALL",
+        "cls": "",
+        "fg": "rgb(146, 156, 166)",
+        "bg": [
+          36,
+          44,
+          25
+        ],
+        "ratio": 5.19,
+        "required": 4.5
+      },
+      {
+        "text": "Agent 开发 / Tool Calling",
+        "tag": "SMALL",
+        "cls": "result-path",
+        "fg": "rgb(146, 156, 166)",
+        "bg": [
+          17,
+          20,
+          24
+        ],
+        "ratio": 6.62,
+        "required": 4.5
+      },
+      {
+        "text": "Tool Calling 基础 ",
+        "tag": "STRONG",
+        "cls": "",
+        "fg": "rgb(156, 165, 174)",
+        "bg": [
+          17,
+          20,
+          24
+        ],
+        "ratio": 7.39,
+        "required": 4.5
+      },
+      {
+        "text": "从 Schema 设计到调用闭环，构建可靠的工具使用能力。",
+        "tag": "SMALL",
+        "cls": "",
+        "fg": "rgb(146, 156, 166)",
+        "bg": [
+          17,
+          20,
+          24
+        ],
+        "ratio": 6.62,
+        "required": 4.5
+      },
+      {
+        "text": "RAG / Chunking",
+        "tag": "SMALL",
+        "cls": "result-path",
+        "fg": "rgb(146, 156, 166)",
+        "bg": [
+          17,
+          20,
+          24
+        ],
+        "ratio": 6.62,
+        "required": 4.5
+      },
+      {
+        "text": "文档切分基础 ",
+        "tag": "STRONG",
+        "cls": "",
+        "fg": "rgb(156, 165, 174)",
+        "bg": [
+          17,
+          20,
+          24
+        ],
+        "ratio": 7.39,
+        "required": 4.5
+      },
+      {
+        "text": "根据文档结构、语义边界和检索目标选择切分策略。",
+        "tag": "SMALL",
+        "cls": "",
+        "fg": "rgb(146, 156, 166)",
+        "bg": [
+          17,
+          20,
+          24
+        ],
+        "ratio": 6.62,
+        "required": 4.5
+      },
+      {
+        "text": "Spring Boot 简介",
+        "tag": "SPAN",
+        "cls": "sr-only",
+        "fg": "rgb(237, 240, 243)",
+        "bg": [
+          17,
+          20,
+          24
+        ],
+        "ratio": 16.15,
+        "required": 4.5
+      },
+      {
+        "text": "浏览 打开",
+        "tag": "SPAN",
+        "cls": "",
+        "fg": "rgb(146, 156, 166)",
+        "bg": [
+          17,
+          20,
+          24
+        ],
+        "ratio": 6.62,
+        "required": 4.5
+      },
+      {
+        "text": "↑↓",
+        "tag": "KBD",
+        "cls": "",
+        "fg": "rgb(207, 213, 219)",
+        "bg": [
+          9,
+          11,
+          13
+        ],
+        "ratio": 13.32,
+        "required": 4.5
+      },
+      {
+        "text": "Enter",
+        "tag": "KBD",
+        "cls": "",
+        "fg": "rgb(207, 213, 219)",
+        "bg": [
+          9,
+          11,
+          13
+        ],
+        "ratio": 13.32,
+        "required": 4.5
+      },
+      {
+        "text": "关闭",
+        "tag": "SPAN",
+        "cls": "",
+        "fg": "rgb(146, 156, 166)",
+        "bg": [
+          17,
+          20,
+          24
+        ],
+        "ratio": 6.62,
+        "required": 4.5
+      },
+      {
+        "text": "Esc",
+        "tag": "KBD",
+        "cls": "",
+        "fg": "rgb(207, 213, 219)",
+        "bg": [
+          9,
+          11,
+          13
+        ],
+        "ratio": 13.32,
+        "required": 4.5
+      },
+      {
+        "text": "Damnatiox",
+        "tag": "STRONG",
+        "cls": "",
+        "fg": "rgb(237, 240, 243)",
+        "bg": [
+          11,
+          13,
+          15
+        ],
+        "ratio": 17.02,
+        "required": 4.5
+      },
+      {
+        "text": "DEMO DATA",
+        "tag": "SPAN",
+        "cls": "",
+        "fg": "rgb(216, 255, 100)",
+        "bg": [
+          21,
+          24,
+          14
+        ],
+        "ratio": 15.75,
+        "required": 4.5
+      },
+      {
+        "text": "PERSONAL KNOWLEDGE SYSTEM",
+        "tag": "SPAN",
+        "cls": "eyebrow",
+        "fg": "rgb(216, 255, 100)",
+        "bg": [
+          11,
+          13,
+          15
+        ],
+        "ratio": 17.06,
+        "required": 4.5
+      },
+      {
+        "text": "Damnatiox Knowledge",
+        "tag": "H1",
+        "cls": "",
+        "fg": "rgb(237, 240, 243)",
+        "bg": [
+          11,
+          13,
+          15
+        ],
+        "ratio": 17.02,
+        "required": 3
+      },
+      {
+        "text": "把工程实践、系统原理与 AI 开发经验组织成可持续维护的知识结构。",
+        "tag": "P",
+        "cls": "",
+        "fg": "rgb(156, 165, 174)",
+        "bg": [
+          11,
+          13,
+          15
+        ],
+        "ratio": 7.79,
+        "required": 4.5
+      },
+      {
+        "text": "搜索所有知识、标签和正文",
+        "tag": "SPAN",
+        "cls": "",
+        "fg": "rgb(156, 165, 174)",
+        "bg": [
+          14,
+          16.5,
+          19.5
+        ],
+        "ratio": 7.6,
+        "required": 4.5
+      },
+      {
+        "text": "⌘ K",
+        "tag": "KBD",
+        "cls": "",
+        "fg": "rgb(207, 213, 219)",
+        "bg": [
+          9,
+          11,
+          13
+        ],
+        "ratio": 13.32,
+        "required": 4.5
+      },
+      {
+        "text": "17",
+        "tag": "STRONG",
+        "cls": "",
+        "fg": "rgb(237, 240, 243)",
+        "bg": [
+          11,
+          13,
+          15
+        ],
+        "ratio": 17.02,
+        "required": 4.5
+      },
+      {
+        "text": "文件夹",
+        "tag": "SMALL",
+        "cls": "",
+        "fg": "rgb(146, 156, 166)",
+        "bg": [
+          11,
+          13,
+          15
+        ],
+        "ratio": 6.98,
+        "required": 4.5
+      },
+      {
+        "text": "3",
+        "tag": "STRONG",
+        "cls": "",
+        "fg": "rgb(237, 240, 243)",
+        "bg": [
+          11,
+          13,
+          15
+        ],
+        "ratio": 17.02,
+        "required": 4.5
+      },
+      {
+        "text": "已发布文档",
+        "tag": "SMALL",
+        "cls": "",
+        "fg": "rgb(146, 156, 166)",
+        "bg": [
+          11,
+          13,
+          15
+        ],
+        "ratio": 6.98,
+        "required": 4.5
+      },
+      {
+        "text": "9",
+        "tag": "STRONG",
+        "cls": "",
+        "fg": "rgb(237, 240, 243)",
+        "bg": [
+          11,
+          13,
+          15
+        ],
+        "ratio": 17.02,
+        "required": 4.5
+      },
+      {
+        "text": "活跃标签",
+        "tag": "SMALL",
+        "cls": "",
+        "fg": "rgb(146, 156, 166)",
+        "bg": [
+          11,
+          13,
+          15
+        ],
+        "ratio": 6.98,
+        "required": 4.5
+      },
+      {
+        "text": "7月25日",
+        "tag": "STRONG",
+        "cls": "",
+        "fg": "rgb(237, 240, 243)",
+        "bg": [
+          11,
+          13,
+          15
+        ],
+        "ratio": 17.02,
+        "required": 4.5
+      },
+      {
+        "text": "最近更新",
+        "tag": "SMALL",
+        "cls": "",
+        "fg": "rgb(146, 156, 166)",
+        "bg": [
+          11,
+          13,
+          15
+        ],
+        "ratio": 6.98,
+        "required": 4.5
+      },
+      {
+        "text": "LIBRARY",
+        "tag": "SPAN",
+        "cls": "eyebrow",
+        "fg": "rgb(216, 255, 100)",
+        "bg": [
+          11,
+          13,
+          15
+        ],
+        "ratio": 17.06,
+        "required": 4.5
+      },
+      {
+        "text": "知识领域",
+        "tag": "H2",
+        "cls": "",
+        "fg": "rgb(237, 240, 243)",
+        "bg": [
+          11,
+          13,
+          15
+        ],
+        "ratio": 17.02,
+        "required": 4.5
+      },
+      {
+        "text": "3 个顶级目录",
+        "tag": "SPAN",
+        "cls": "muted",
+        "fg": "rgb(156, 165, 174)",
+        "bg": [
+          11,
+          13,
+          15
+        ],
+        "ratio": 7.79,
+        "required": 4.5
+      }
+    ],
+    "fonts": [
+      {
+        "tag": "INPUT",
+        "id": "",
+        "cls": "",
+        "font": "17px"
+      }
+    ],
+    "overflow": 0,
+    "animations": []
+  },
+  {
+    "theme": "dark",
+    "path": "/admin/documents/new?folder=java-backend",
+    "failed": [],
+    "pairs": [
+      {
+        "text": "Damnatiox",
+        "tag": "STRONG",
+        "cls": "",
+        "fg": "rgb(237, 240, 243)",
+        "bg": [
+          16.76,
+          19.72,
+          23.64
+        ],
+        "ratio": 16.18,
+        "required": 4.5
+      },
+      {
+        "text": "开发演示模式 · 更改仅保存在当前内存",
+        "tag": "DIV",
+        "cls": "admin-demo",
+        "fg": "rgb(164, 175, 104)",
+        "bg": [
+          21,
+          24,
+          14
+        ],
+        "ratio": 7.62,
+        "required": 4.5
+      },
+      {
+        "text": "EDITOR",
+        "tag": "SPAN",
+        "cls": "eyebrow",
+        "fg": "rgb(216, 255, 100)",
+        "bg": [
+          11,
+          13,
+          15
+        ],
+        "ratio": 17.06,
+        "required": 4.5
+      },
+      {
+        "text": "新建 Markdown 文档",
+        "tag": "H1",
+        "cls": "",
+        "fg": "rgb(237, 240, 243)",
+        "bg": [
+          11,
+          13,
+          15
+        ],
+        "ratio": 17.02,
+        "required": 3
+      },
+      {
+        "text": "上传文件、核对元数据并实时预览。",
+        "tag": "P",
+        "cls": "",
+        "fg": "rgb(156, 165, 174)",
+        "bg": [
+          11,
+          13,
+          15
+        ],
+        "ratio": 7.79,
+        "required": 4.5
+      },
+      {
+        "text": "标题",
+        "tag": "LABEL",
+        "cls": "",
+        "fg": "rgb(156, 165, 174)",
+        "bg": [
+          11,
+          13,
+          15
+        ],
+        "ratio": 7.79,
+        "required": 4.5
+      },
+      {
+        "text": "Slug",
+        "tag": "LABEL",
+        "cls": "",
+        "fg": "rgb(156, 165, 174)",
+        "bg": [
+          11,
+          13,
+          15
+        ],
+        "ratio": 7.79,
+        "required": 4.5
+      },
+      {
+        "text": "目标文件夹",
+        "tag": "LABEL",
+        "cls": "",
+        "fg": "rgb(156, 165, 174)",
+        "bg": [
+          11,
+          13,
+          15
+        ],
+        "ratio": 7.79,
+        "required": 4.5
+      },
+      {
+        "text": "描述",
+        "tag": "LABEL",
+        "cls": "",
+        "fg": "rgb(156, 165, 174)",
+        "bg": [
+          11,
+          13,
+          15
+        ],
+        "ratio": 7.79,
+        "required": 4.5
+      },
+      {
+        "text": "标签（逗号分隔）",
+        "tag": "LABEL",
+        "cls": "",
+        "fg": "rgb(156, 165, 174)",
+        "bg": [
+          11,
+          13,
+          15
+        ],
+        "ratio": 7.79,
+        "required": 4.5
+      },
+      {
+        "text": "排序",
+        "tag": "LABEL",
+        "cls": "",
+        "fg": "rgb(156, 165, 174)",
+        "bg": [
+          11,
+          13,
+          15
+        ],
+        "ratio": 7.79,
+        "required": 4.5
+      },
+      {
+        "text": "拖入 Markdown",
+        "tag": "STRONG",
+        "cls": "",
+        "fg": "rgb(156, 165, 174)",
+        "bg": [
+          17,
+          20,
+          24
+        ],
+        "ratio": 7.39,
+        "required": 4.5
+      },
+      {
+        "text": "一次一个 .md / .markdown 文件，最大 2 MB",
+        "tag": "SMALL",
+        "cls": "",
+        "fg": "rgb(146, 156, 166)",
+        "bg": [
+          17,
+          20,
+          24
+        ],
+        "ratio": 6.62,
+        "required": 4.5
+      },
+      {
+        "text": "保存草稿",
+        "tag": "BUTTON",
+        "cls": "button",
+        "fg": "rgb(237, 240, 243)",
+        "bg": [
+          23,
+          27,
+          32
+        ],
+        "ratio": 15.12,
+        "required": 4.5
+      },
+      {
+        "text": "发布文档",
+        "tag": "BUTTON",
+        "cls": "button primary",
+        "fg": "rgb(20, 23, 12)",
+        "bg": [
+          216,
+          255,
+          100
+        ],
+        "ratio": 15.9,
+        "required": 4.5
+      }
+    ],
+    "fonts": [
+      {
+        "tag": "INPUT",
+        "id": "editor-title",
+        "cls": "input",
+        "font": "16px"
+      },
+      {
+        "tag": "INPUT",
+        "id": "editor-slug",
+        "cls": "input mono",
+        "font": "16px"
+      },
+      {
+        "tag": "SELECT",
+        "id": "editor-folder",
+        "cls": "select",
+        "font": "16px"
+      },
+      {
+        "tag": "INPUT",
+        "id": "editor-description",
+        "cls": "input",
+        "font": "16px"
+      },
+      {
+        "tag": "INPUT",
+        "id": "editor-tags",
+        "cls": "input",
+        "font": "16px"
+      },
+      {
+        "tag": "INPUT",
+        "id": "editor-order",
+        "cls": "input",
+        "font": "16px"
+      }
+    ],
+    "overflow": 0,
+    "animations": []
+  },
+  {
+    "theme": "light",
+    "path": "/",
+    "failed": [],
+    "pairs": [
+      {
+        "text": "输入标题、正文或标签，查找知识。",
+        "tag": "P",
+        "cls": "search-help",
+        "fg": "rgb(83, 97, 88)",
+        "bg": [
+          255,
+          255,
+          255
+        ],
+        "ratio": 6.52,
+        "required": 4.5
+      },
+      {
+        "text": "最近文档",
+        "tag": "H2",
+        "cls": "result-label",
+        "fg": "rgb(83, 97, 88)",
+        "bg": [
+          255,
+          255,
+          255
+        ],
+        "ratio": 6.52,
+        "required": 4.5
+      },
+      {
+        "text": "Java 后端 / Spring / Spring Boot",
+        "tag": "SMALL",
+        "cls": "result-path",
+        "fg": "rgb(83, 97, 88)",
+        "bg": [
+          238,
+          243,
+          225
+        ],
+        "ratio": 5.76,
+        "required": 4.5
+      },
+      {
+        "text": "Spring Boot 简介 ",
+        "tag": "STRONG",
+        "cls": "",
+        "fg": "rgb(21, 32, 25)",
+        "bg": [
+          238,
+          243,
+          225
+        ],
+        "ratio": 14.8,
+        "required": 4.5
+      },
+      {
+        "text": "理解 Spring Boot 的核心价值、自动配置机制与工程结构。",
+        "tag": "SMALL",
+        "cls": "",
+        "fg": "rgb(83, 97, 88)",
+        "bg": [
+          238,
+          243,
+          225
+        ],
+        "ratio": 5.76,
+        "required": 4.5
+      },
+      {
+        "text": "Agent 开发 / Tool Calling",
+        "tag": "SMALL",
+        "cls": "result-path",
+        "fg": "rgb(83, 97, 88)",
+        "bg": [
+          255,
+          255,
+          255
+        ],
+        "ratio": 6.52,
+        "required": 4.5
+      },
+      {
+        "text": "Tool Calling 基础 ",
+        "tag": "STRONG",
+        "cls": "",
+        "fg": "rgb(69, 83, 74)",
+        "bg": [
+          255,
+          255,
+          255
+        ],
+        "ratio": 8.11,
+        "required": 4.5
+      },
+      {
+        "text": "从 Schema 设计到调用闭环，构建可靠的工具使用能力。",
+        "tag": "SMALL",
+        "cls": "",
+        "fg": "rgb(83, 97, 88)",
+        "bg": [
+          255,
+          255,
+          255
+        ],
+        "ratio": 6.52,
+        "required": 4.5
+      },
+      {
+        "text": "RAG / Chunking",
+        "tag": "SMALL",
+        "cls": "result-path",
+        "fg": "rgb(83, 97, 88)",
+        "bg": [
+          255,
+          255,
+          255
+        ],
+        "ratio": 6.52,
+        "required": 4.5
+      },
+      {
+        "text": "文档切分基础 ",
+        "tag": "STRONG",
+        "cls": "",
+        "fg": "rgb(69, 83, 74)",
+        "bg": [
+          255,
+          255,
+          255
+        ],
+        "ratio": 8.11,
+        "required": 4.5
+      },
+      {
+        "text": "根据文档结构、语义边界和检索目标选择切分策略。",
+        "tag": "SMALL",
+        "cls": "",
+        "fg": "rgb(83, 97, 88)",
+        "bg": [
+          255,
+          255,
+          255
+        ],
+        "ratio": 6.52,
+        "required": 4.5
+      },
+      {
+        "text": "Spring Boot 简介",
+        "tag": "SPAN",
+        "cls": "sr-only",
+        "fg": "rgb(21, 32, 25)",
+        "bg": [
+          255,
+          255,
+          255
+        ],
+        "ratio": 16.77,
+        "required": 4.5
+      },
+      {
+        "text": "浏览 打开",
+        "tag": "SPAN",
+        "cls": "",
+        "fg": "rgb(83, 97, 88)",
+        "bg": [
+          255,
+          255,
+          255
+        ],
+        "ratio": 6.52,
+        "required": 4.5
+      },
+      {
+        "text": "↑↓",
+        "tag": "KBD",
+        "cls": "",
+        "fg": "rgb(52, 68, 58)",
+        "bg": [
+          233,
+          238,
+          232
+        ],
+        "ratio": 8.78,
+        "required": 4.5
+      },
+      {
+        "text": "Enter",
+        "tag": "KBD",
+        "cls": "",
+        "fg": "rgb(52, 68, 58)",
+        "bg": [
+          233,
+          238,
+          232
+        ],
+        "ratio": 8.78,
+        "required": 4.5
+      },
+      {
+        "text": "关闭",
+        "tag": "SPAN",
+        "cls": "",
+        "fg": "rgb(83, 97, 88)",
+        "bg": [
+          255,
+          255,
+          255
+        ],
+        "ratio": 6.52,
+        "required": 4.5
+      },
+      {
+        "text": "Esc",
+        "tag": "KBD",
+        "cls": "",
+        "fg": "rgb(52, 68, 58)",
+        "bg": [
+          233,
+          238,
+          232
+        ],
+        "ratio": 8.78,
+        "required": 4.5
+      },
+      {
+        "text": "Damnatiox",
+        "tag": "STRONG",
+        "cls": "",
+        "fg": "rgb(21, 32, 25)",
+        "bg": [
+          243,
+          246,
+          241
+        ],
+        "ratio": 15.38,
+        "required": 4.5
+      },
+      {
+        "text": "DEMO DATA",
+        "tag": "SPAN",
+        "cls": "",
+        "fg": "rgb(79, 104, 0)",
+        "bg": [
+          240,
+          244,
+          229
+        ],
+        "ratio": 5.67,
+        "required": 4.5
+      },
+      {
+        "text": "PERSONAL KNOWLEDGE SYSTEM",
+        "tag": "SPAN",
+        "cls": "eyebrow",
+        "fg": "rgb(79, 104, 0)",
+        "bg": [
+          243,
+          246,
+          241
+        ],
+        "ratio": 5.82,
+        "required": 4.5
+      },
+      {
+        "text": "Damnatiox Knowledge",
+        "tag": "H1",
+        "cls": "",
+        "fg": "rgb(21, 32, 25)",
+        "bg": [
+          243,
+          246,
+          241
+        ],
+        "ratio": 15.38,
+        "required": 3
+      },
+      {
+        "text": "把工程实践、系统原理与 AI 开发经验组织成可持续维护的知识结构。",
+        "tag": "P",
+        "cls": "",
+        "fg": "rgb(69, 83, 74)",
+        "bg": [
+          243,
+          246,
+          241
+        ],
+        "ratio": 7.44,
+        "required": 4.5
+      },
+      {
+        "text": "搜索所有知识、标签和正文",
+        "tag": "SPAN",
+        "cls": "",
+        "fg": "rgb(69, 83, 74)",
+        "bg": [
+          247.56,
+          249.42000000000002,
+          246.32
+        ],
+        "ratio": 7.69,
+        "required": 4.5
+      },
+      {
+        "text": "⌘ K",
+        "tag": "KBD",
+        "cls": "",
+        "fg": "rgb(52, 68, 58)",
+        "bg": [
+          233,
+          238,
+          232
+        ],
+        "ratio": 8.78,
+        "required": 4.5
+      },
+      {
+        "text": "17",
+        "tag": "STRONG",
+        "cls": "",
+        "fg": "rgb(21, 32, 25)",
+        "bg": [
+          243,
+          246,
+          241
+        ],
+        "ratio": 15.38,
+        "required": 4.5
+      },
+      {
+        "text": "文件夹",
+        "tag": "SMALL",
+        "cls": "",
+        "fg": "rgb(83, 97, 88)",
+        "bg": [
+          243,
+          246,
+          241
+        ],
+        "ratio": 5.99,
+        "required": 4.5
+      },
+      {
+        "text": "3",
+        "tag": "STRONG",
+        "cls": "",
+        "fg": "rgb(21, 32, 25)",
+        "bg": [
+          243,
+          246,
+          241
+        ],
+        "ratio": 15.38,
+        "required": 4.5
+      },
+      {
+        "text": "已发布文档",
+        "tag": "SMALL",
+        "cls": "",
+        "fg": "rgb(83, 97, 88)",
+        "bg": [
+          243,
+          246,
+          241
+        ],
+        "ratio": 5.99,
+        "required": 4.5
+      },
+      {
+        "text": "9",
+        "tag": "STRONG",
+        "cls": "",
+        "fg": "rgb(21, 32, 25)",
+        "bg": [
+          243,
+          246,
+          241
+        ],
+        "ratio": 15.38,
+        "required": 4.5
+      },
+      {
+        "text": "活跃标签",
+        "tag": "SMALL",
+        "cls": "",
+        "fg": "rgb(83, 97, 88)",
+        "bg": [
+          243,
+          246,
+          241
+        ],
+        "ratio": 5.99,
+        "required": 4.5
+      },
+      {
+        "text": "7月25日",
+        "tag": "STRONG",
+        "cls": "",
+        "fg": "rgb(21, 32, 25)",
+        "bg": [
+          243,
+          246,
+          241
+        ],
+        "ratio": 15.38,
+        "required": 4.5
+      },
+      {
+        "text": "最近更新",
+        "tag": "SMALL",
+        "cls": "",
+        "fg": "rgb(83, 97, 88)",
+        "bg": [
+          243,
+          246,
+          241
+        ],
+        "ratio": 5.99,
+        "required": 4.5
+      },
+      {
+        "text": "LIBRARY",
+        "tag": "SPAN",
+        "cls": "eyebrow",
+        "fg": "rgb(79, 104, 0)",
+        "bg": [
+          243,
+          246,
+          241
+        ],
+        "ratio": 5.82,
+        "required": 4.5
+      },
+      {
+        "text": "知识领域",
+        "tag": "H2",
+        "cls": "",
+        "fg": "rgb(21, 32, 25)",
+        "bg": [
+          243,
+          246,
+          241
+        ],
+        "ratio": 15.38,
+        "required": 4.5
+      },
+      {
+        "text": "3 个顶级目录",
+        "tag": "SPAN",
+        "cls": "muted",
+        "fg": "rgb(69, 83, 74)",
+        "bg": [
+          243,
+          246,
+          241
+        ],
+        "ratio": 7.44,
+        "required": 4.5
+      }
+    ],
+    "fonts": [
+      {
+        "tag": "INPUT",
+        "id": "",
+        "cls": "",
+        "font": "17px"
+      }
+    ],
+    "overflow": 0,
+    "animations": []
+  },
+  {
+    "theme": "light",
+    "path": "/admin/documents/new?folder=java-backend",
+    "failed": [],
+    "pairs": [
+      {
+        "text": "Damnatiox",
+        "tag": "STRONG",
+        "cls": "",
+        "fg": "rgb(21, 32, 25)",
+        "bg": [
+          254.51999999999998,
+          254.64,
+          254.44
+        ],
+        "ratio": 16.71,
+        "required": 4.5
+      },
+      {
+        "text": "开发演示模式 · 更改仅保存在当前内存",
+        "tag": "DIV",
+        "cls": "admin-demo",
+        "fg": "rgb(82, 97, 38)",
+        "bg": [
+          240,
+          244,
+          229
+        ],
+        "ratio": 6.06,
+        "required": 4.5
+      },
+      {
+        "text": "EDITOR",
+        "tag": "SPAN",
+        "cls": "eyebrow",
+        "fg": "rgb(79, 104, 0)",
+        "bg": [
+          243,
+          246,
+          241
+        ],
+        "ratio": 5.82,
+        "required": 4.5
+      },
+      {
+        "text": "新建 Markdown 文档",
+        "tag": "H1",
+        "cls": "",
+        "fg": "rgb(21, 32, 25)",
+        "bg": [
+          243,
+          246,
+          241
+        ],
+        "ratio": 15.38,
+        "required": 3
+      },
+      {
+        "text": "上传文件、核对元数据并实时预览。",
+        "tag": "P",
+        "cls": "",
+        "fg": "rgb(69, 83, 74)",
+        "bg": [
+          243,
+          246,
+          241
+        ],
+        "ratio": 7.44,
+        "required": 4.5
+      },
+      {
+        "text": "标题",
+        "tag": "LABEL",
+        "cls": "",
+        "fg": "rgb(69, 83, 74)",
+        "bg": [
+          243,
+          246,
+          241
+        ],
+        "ratio": 7.44,
+        "required": 4.5
+      },
+      {
+        "text": "Slug",
+        "tag": "LABEL",
+        "cls": "",
+        "fg": "rgb(69, 83, 74)",
+        "bg": [
+          243,
+          246,
+          241
+        ],
+        "ratio": 7.44,
+        "required": 4.5
+      },
+      {
+        "text": "目标文件夹",
+        "tag": "LABEL",
+        "cls": "",
+        "fg": "rgb(69, 83, 74)",
+        "bg": [
+          243,
+          246,
+          241
+        ],
+        "ratio": 7.44,
+        "required": 4.5
+      },
+      {
+        "text": "描述",
+        "tag": "LABEL",
+        "cls": "",
+        "fg": "rgb(69, 83, 74)",
+        "bg": [
+          243,
+          246,
+          241
+        ],
+        "ratio": 7.44,
+        "required": 4.5
+      },
+      {
+        "text": "标签（逗号分隔）",
+        "tag": "LABEL",
+        "cls": "",
+        "fg": "rgb(69, 83, 74)",
+        "bg": [
+          243,
+          246,
+          241
+        ],
+        "ratio": 7.44,
+        "required": 4.5
+      },
+      {
+        "text": "排序",
+        "tag": "LABEL",
+        "cls": "",
+        "fg": "rgb(69, 83, 74)",
+        "bg": [
+          243,
+          246,
+          241
+        ],
+        "ratio": 7.44,
+        "required": 4.5
+      },
+      {
+        "text": "拖入 Markdown",
+        "tag": "STRONG",
+        "cls": "",
+        "fg": "rgb(69, 83, 74)",
+        "bg": [
+          255,
+          255,
+          255
+        ],
+        "ratio": 8.11,
+        "required": 4.5
+      },
+      {
+        "text": "一次一个 .md / .markdown 文件，最大 2 MB",
+        "tag": "SMALL",
+        "cls": "",
+        "fg": "rgb(83, 97, 88)",
+        "bg": [
+          255,
+          255,
+          255
+        ],
+        "ratio": 6.52,
+        "required": 4.5
+      },
+      {
+        "text": "保存草稿",
+        "tag": "BUTTON",
+        "cls": "button",
+        "fg": "rgb(21, 32, 25)",
+        "bg": [
+          233,
+          238,
+          232
+        ],
+        "ratio": 14.26,
+        "required": 4.5
+      },
+      {
+        "text": "发布文档",
+        "tag": "BUTTON",
+        "cls": "button primary",
+        "fg": "rgb(249, 255, 233)",
+        "bg": [
+          79,
+          104,
+          0
+        ],
+        "ratio": 6.19,
+        "required": 4.5
+      }
+    ],
+    "fonts": [
+      {
+        "tag": "INPUT",
+        "id": "editor-title",
+        "cls": "input",
+        "font": "16px"
+      },
+      {
+        "tag": "INPUT",
+        "id": "editor-slug",
+        "cls": "input mono",
+        "font": "16px"
+      },
+      {
+        "tag": "SELECT",
+        "id": "editor-folder",
+        "cls": "select",
+        "font": "16px"
+      },
+      {
+        "tag": "INPUT",
+        "id": "editor-description",
+        "cls": "input",
+        "font": "16px"
+      },
+      {
+        "tag": "INPUT",
+        "id": "editor-tags",
+        "cls": "input",
+        "font": "16px"
+      },
+      {
+        "tag": "INPUT",
+        "id": "editor-order",
+        "cls": "input",
+        "font": "16px"
+      }
+    ],
+    "overflow": 0,
+    "animations": []
+  }
+]

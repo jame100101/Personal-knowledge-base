@@ -11,8 +11,9 @@ import {
 } from '~/utils/folders'
 
 const route = useRoute()
+const { show: showSearch } = useSearch()
 const { t, dateLocale } = useLocale()
-const { folders, documents, load, loaded } = useKnowledge()
+const { folders, documents, load, loaded, error, loading } = useKnowledge()
 await load()
 const segments = computed(() => {
   const value = route.params.path
@@ -77,8 +78,13 @@ useHead(() => ({
 </script>
 
 <template>
-  <div v-if="document" class="reader-grid">
-    <main class="document-page">
+  <div v-if="error" class="status-panel" role="alert">
+    <span>{{ t('loadFailed') }}</span
+    ><button class="button" type="button" @click="load(true)">{{ t('retry') }}</button>
+  </div>
+  <div v-else-if="loading" class="status-panel" role="status">{{ t('loading') }}</div>
+  <div v-else-if="document" class="reader-grid">
+    <article class="document-page">
       <Breadcrumbs :items="breadcrumbs" />
       <header class="document-header">
         <span class="eyebrow">DOCUMENT / {{ document.status }}</span>
@@ -93,7 +99,15 @@ useHead(() => ({
           <span>{{ document.reading_time || 1 }} {{ t('minRead') }}</span>
         </div>
         <div class="tags">
-          <span v-for="tag in document.tags" :key="tag" class="tag"># {{ tag }}</span>
+          <button
+            v-for="tag in document.tags"
+            :key="tag"
+            class="tag"
+            type="button"
+            @click="showSearch({ tag }, $event)"
+          >
+            # {{ tag }}
+          </button>
         </div>
       </header>
       <MarkdownRenderer :source="document.content" />
@@ -128,11 +142,11 @@ useHead(() => ({
           </NuxtLink>
         </div>
       </section>
-    </main>
+    </article>
     <TableOfContents :source="document.content" />
   </div>
 
-  <main v-else-if="folder" class="folder-page">
+  <section v-else-if="folder" class="folder-page">
     <Breadcrumbs :items="breadcrumbs" />
     <header>
       <span class="eyebrow">{{ t('folderEyebrow') }}</span>
@@ -179,7 +193,7 @@ useHead(() => ({
       </div>
       <div v-else class="empty-state">{{ t('emptyFolder') }}</div>
     </section>
-  </main>
+  </section>
 </template>
 
 <style scoped>
@@ -204,16 +218,9 @@ useHead(() => ({
 }
 .document-header h1 {
   margin: 13px 0 13px;
-  font-size: clamp(34px, 5vw, 54px);
-  line-height: 1.08;
-  letter-spacing: -0.045em;
-}
-.document-header > p {
-  max-width: 680px;
-  margin: 0;
-  color: var(--kb-text-muted);
-  font-size: 17px;
-  line-height: 1.65;
+  font-size: clamp(30px, 3.5vw, 44px);
+  line-height: 1.3;
+  letter-spacing: 0;
 }
 .document-meta {
   display: flex;
@@ -340,7 +347,7 @@ useHead(() => ({
 .folder-title h1 {
   margin: 0;
   font-size: clamp(34px, 5vw, 52px);
-  letter-spacing: -0.045em;
+  letter-spacing: 0;
 }
 .folder-page header p {
   max-width: 650px;
@@ -540,6 +547,11 @@ useHead(() => ({
 }
 
 .document-header > p {
+  max-width: 680px;
+  margin: 0;
+  color: var(--kb-text-muted);
+  font-size: 17px;
+  line-height: 1.65;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;

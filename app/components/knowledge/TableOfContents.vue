@@ -21,7 +21,12 @@ async function closeCompact(event: MouseEvent, id: string) {
   // Wait for the outline to collapse before calculating the anchor position.
   await nextTick()
   window.history.pushState(window.history.state, '', `#${encodeURIComponent(id)}`)
-  document.getElementById(id)?.scrollIntoView({ block: 'start' })
+  const heading = document.getElementById(id)
+  if (heading) {
+    heading.tabIndex = -1
+    heading.scrollIntoView({ block: 'start' })
+    heading.focus({ preventScroll: true })
+  }
 }
 let observer: IntersectionObserver | undefined
 let mounted = false

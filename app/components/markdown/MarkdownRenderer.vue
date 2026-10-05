@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { RotateCcw, X, ZoomIn, ZoomOut } from 'lucide-vue-next'
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
+import { lockBodyScroll } from '~/utils/scroll-lock'
 import { renderMarkdown } from '~/utils/markdown'
 
 const props = defineProps<{ source: string }>()
@@ -17,7 +18,11 @@ const panX = ref(0)
 const panY = ref(0)
 const isPanning = ref(false)
 const zoomPercent = computed(() => `${Math.round(zoom.value * 100)}%`)
-let previousBodyOverflow = ''
+let releaseScroll: (() => void) | undefined
+let viewerTrigger: HTMLElement | null = null
+let previousInert = false
+const copyStatus = ref('')
+const copyTimers = new Set<ReturnType<typeof setTimeout>>()
 let dragStartX = 0
 let dragStartY = 0
 let codeGroupSequence = 0
@@ -213,9 +218,21 @@ async function enhance() {
     button.setAttribute('aria-label', t('copy'))
     button.onclick = async () => {
       const code = button.closest('pre')?.querySelector('code')?.textContent || ''
-      await navigator.clipboard.writeText(code)
-      button.textContent = t('copied')
-      setTimeout(() => (button.textContent = t('copy')), 1200)
+      try {
+        await navigator.clipboard.writeText(code)
+        button.textContent = t('copied')
+        button.setAttribute('aria-label', t('copied'))
+        copyStatus.value = t('copied')
+        const timer = setTimeout(() => {
+          button.textContent = t('copy')
+          button.setAttribute('aria-label', t('copy'))
+          copyTimers.delete(timer)
+        }, 1600)
+        copyTimers.add(timer)
+      } catch {
+        copyStatus.value = t('copyFailed')
+        button.textContent = t('copy')
+      }
     }
   })
   const nodes = root.value.querySelectorAll<HTMLElement>('.mermaid')
@@ -281,17 +298,27 @@ function openDiagram(node: HTMLElement) {
   zoom.value = 1
   panX.value = 0
   panY.value = 0
+  viewerTrigger =
+    node.querySelector<HTMLElement>('.mermaid-open-button') ||
+    (document.activeElement as HTMLElement)
+  const background = document.getElementById('__nuxt')
+  previousInert = background?.inert || false
+  if (background) background.inert = true
   viewerOpen.value = true
-  previousBodyOverflow = document.body.style.overflow
-  document.body.style.overflow = 'hidden'
+  releaseScroll = lockBodyScroll()
   nextTick(() => viewerDialog.value?.focus())
 }
 
 function closeViewer() {
+  if (!viewerOpen.value) return
   viewerOpen.value = false
   viewerSvg.value = ''
   isPanning.value = false
-  document.body.style.overflow = previousBodyOverflow
+  releaseScroll?.()
+  releaseScroll = undefined
+  const background = document.getElementById('__nuxt')
+  if (background) background.inert = previousInert
+  viewerTrigger?.focus({ preventScroll: true })
 }
 
 function handleRootClick(event: MouseEvent) {
@@ -339,7 +366,23 @@ function stopPan(event: PointerEvent) {
 }
 
 function handleViewerKeydown(event: KeyboardEvent) {
-  if (!viewerOpen.value) return
+  if (!viewerOpen.value || document.querySelector('dialog[open]')) return
+  if (event.key === 'Tab') {
+    const buttons = [
+      ...(viewerDialog.value?.querySelectorAll<HTMLButtonElement>('button') || []),
+    ]
+    if (
+      event.shiftKey &&
+      (document.activeElement === buttons[0] ||
+        document.activeElement === viewerDialog.value)
+    ) {
+      event.preventDefault()
+      buttons.at(-1)?.focus()
+    } else if (!event.shiftKey && document.activeElement === buttons.at(-1)) {
+      event.preventDefault()
+      buttons[0]?.focus()
+    }
+  }
   if (event.key === 'Escape') closeViewer()
   if (event.key === '+' || event.key === '=') setZoom(zoom.value + 0.25)
   if (event.key === '-') setZoom(zoom.value - 0.25)
@@ -352,7 +395,8 @@ onMounted(() => {
 })
 onBeforeUnmount(() => {
   window.removeEventListener('keydown', handleViewerKeydown)
-  if (viewerOpen.value) document.body.style.overflow = previousBodyOverflow
+  if (viewerOpen.value) closeViewer()
+  copyTimers.forEach(clearTimeout)
 })
 watch(rendered, enhance)
 watch([theme, locale], async () => {
@@ -371,6 +415,7 @@ watch([theme, locale], async () => {
     v-html="rendered"
   />
 
+  <p v-if="copyStatus" class="copy-status" role="status">{{ copyStatus }}</p>
   <Teleport to="body">
     <Transition name="diagram-viewer">
       <section
@@ -457,8 +502,8 @@ watch([theme, locale], async () => {
 <style>
 .markdown-body {
   color: var(--kb-markdown-text);
-  font-size: 16px;
-  line-height: 1.78;
+  font-size: var(--kb-text-body);
+  line-height: 1.85;
   overflow-wrap: anywhere;
 }
 .markdown-body > :first-child {
@@ -551,15 +596,17 @@ watch([theme, locale], async () => {
   justify-content: space-between;
   padding: 0 10px 0 14px;
   border-bottom: 1px solid var(--kb-border);
-  color: var(--kb-text-subtle);
+  color: var(--kb-code-text);
   font: 11px monospace;
   position: sticky;
   left: 0;
 }
 .markdown-body .copy-code {
+  min-width: 72px;
+  min-height: 30px;
   border: 0;
   background: transparent;
-  color: var(--kb-text-muted);
+  color: var(--kb-code-text);
   cursor: pointer;
   font-size: 11px;
 }
@@ -624,18 +671,6 @@ watch([theme, locale], async () => {
 .markdown-body .code-panels .copy-code {
   color: var(--kb-code-text);
   opacity: 0.72;
-}
-.markdown-body table {
-  width: 100%;
-  border-collapse: collapse;
-  display: block;
-  overflow-x: auto;
-}
-.markdown-body th,
-.markdown-body td {
-  padding: 9px 12px;
-  border: 1px solid var(--kb-border);
-  text-align: left;
 }
 .markdown-body th {
   color: var(--kb-text);
@@ -819,7 +854,6 @@ watch([theme, locale], async () => {
 }
 .diagram-viewer-canvas {
   width: min(1380px, calc(100vw - 120px));
-  will-change: transform;
   transform-origin: center;
   transition: transform 100ms ease-out;
 }
@@ -903,17 +937,18 @@ watch([theme, locale], async () => {
   }
 }
 
-.markdown-body {
-  font-size: 17px;
-  line-height: 1.85;
-}
 .markdown-body table {
+  width: 100%;
+  border-collapse: collapse;
   display: block;
   max-width: 100%;
   overflow-x: auto;
 }
 .markdown-body th,
 .markdown-body td {
+  padding: 9px 12px;
+  border: 1px solid var(--kb-border);
+  text-align: left;
   min-width: 110px;
 }
 .markdown-body pre,
@@ -951,5 +986,19 @@ watch([theme, locale], async () => {
   .diagram-viewer-shell {
     min-height: 0;
   }
+}
+.copy-status {
+  position: fixed;
+  z-index: 60;
+  bottom: 16px;
+  right: 16px;
+  max-width: calc(100vw - 32px);
+  background: var(--kb-surface);
+  box-shadow: var(--kb-shadow);
+  color: var(--kb-text-muted);
+  font-size: 13px;
+  padding: 10px 14px;
+  border: 1px solid var(--kb-border);
+  border-radius: var(--kb-radius-sm);
 }
 </style>

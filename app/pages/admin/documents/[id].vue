@@ -18,6 +18,6 @@ useHead(() => ({ title: `编辑 ${document.value?.title}` }))
       :title="`编辑：${document.title}`"
       description="修改正文、文件夹、标签或发布状态。"
     />
-    <DocumentEditor :document="document" />
+    <DocumentEditor :key="document.id" :document="document" />
   </div>
 </template>

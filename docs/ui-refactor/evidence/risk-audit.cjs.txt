@@ -1,0 +1,41 @@
+const fs = require('node:fs');
+const assert = require('node:assert/strict');
+const ts = require('typescript');
+const root=process.cwd()+'/';
+function factory(path,name,globals){
+ let code=fs.readFileSync(root+path,'utf8').replace(/^import .*\n/gm,'').replace(/import\.meta\.(server|dev)/g,'false');
+ code=ts.transpileModule(code,{compilerOptions:{target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.ES2022}}).outputText.replace(/export /g,'');
+ return new Function(...Object.keys(globals),code+'\nreturn '+name)(...Object.values(globals));
+}
+function setup(options={}){
+ const states=new Map(),calls=[],uploads=[];
+ let records=structuredClone(options.docs||[]);
+ const supabase={auth:{signOut:async()=>({error:null})},storage:{from:()=>({upload:async(path,file)=>{calls.push('upload');uploads.push({path,file});return {error:options.uploadError||null}},remove:async()=>{calls.push('remove-source');return {error:null}}})},from(table){
+  let op='select',payload,id,status,single=false;
+  const q={select(){return q},order(){return q},in(k,v){if(k==='status')status=v;return q},eq(k,v){id=v;return q},single(){single=true;return q},insert(p){op='insert';payload=p;return q},update(p){op='update';payload=p;return q},delete(){op='delete';return q},then(resolve,reject){return Promise.resolve().then(async()=>{
+   calls.push({table,op,payload,id,status});
+   if(options.gate&&op==='select')await options.gate;
+   if(op==='select')return options.reloadError?{error:new Error('reload failed')}:{data:table==='documents'?structuredClone(records.filter(x=>!status||status.includes(x.status))):[],error:null};
+   if(payload?.source_storage_path&&options.pointerError)return {error:new Error('pointer update failed')};
+   if(payload?.sort_order&&options.failSortId&&id===options.failSortId)return {error:new Error('sort update failed')};
+   if(op==='delete'&&options.deleteError)return {error:new Error('delete failed')};
+   if(op==='insert'){const doc={...payload,id:'created'};records.push(doc);return {data:structuredClone(doc),error:null}}
+   if(op==='update'){const doc=records.find(x=>x.id===id);Object.assign(doc,payload);return {data:structuredClone(doc),error:null}}
+   if(op==='delete'){records=records.filter(x=>x.id!==id);return {error:null}}
+  }).then(resolve,reject)}};return q;
+ }};
+ const globals={useNuxtApp:()=>({$supabase:supabase,$supabaseConfigured:true}),useState:(key,init)=>{if(!states.has(key))states.set(key,{value:init()});return states.get(key)},computed:fn=>({get value(){return fn()}}),navigateTo:async()=>{},readingTime:()=>1,excerpt:x=>x,sortDocuments:(a,b)=>a.sort_order-b.sort_order,sortFolders:(a,b)=>a.sort_order-b.sort_order};
+ const k=factory('app/composables/useKnowledge.ts','useKnowledge',globals)();
+ return {k,auth:factory('app/composables/useAuth.ts','useAuth',globals)(),states,calls,uploads,records:()=>records};
+}
+const draft={id:'d',folder_id:'f',title:'Doc',slug:'doc',tags:[],content:'edited body',status:'draft',sort_order:10,original_filename:'doc.md'};
+(async()=>{
+ let s=setup({docs:[draft]});await s.k.load(false,true);await s.auth.signOut();const before=s.calls.length;await s.k.load();assert.equal(s.k.documents.value[0].status,'draft');assert.equal(s.calls.length,before);console.log('PROVED logout retains draft cache; subsequent public load makes no query');
+ let release;const gate=new Promise(r=>release=r);s=setup({docs:[draft],gate});const first=s.k.load();await s.k.load(false,true);assert.equal(s.k.loaded.value,false);release();await first;assert.equal(s.k.documents.value.length,0);console.log('PROVED concurrent draft load resolves before first fetch and is never retried');
+ s=setup({docs:[{...draft,source_storage_path:'old.md'}]});await s.k.saveDocument({...draft,content:'new body'});assert.equal(s.records()[0].source_storage_path,'old.md');assert.equal(s.uploads.length,0);console.log('PROVED editing saved document does not update existing source Markdown');
+ s=setup({docs:[draft],pointerError:true});const saved=await s.k.saveDocument(draft,{text:async()=> 'old uploaded body'});assert.ok(saved.source_storage_path);assert.equal(s.records()[0].source_storage_path,undefined);console.log('PROVED storage pointer update error ignored; save returns nonexistent persisted pointer');
+ s=setup({docs:[],uploadError:new Error('upload failed')});await assert.rejects(s.k.saveDocument({...draft,id:undefined},{}));assert.equal(s.records().length,1);console.log('PROVED upload failure leaves committed document while caller receives save failure');
+ s=setup({docs:[draft],reloadError:true});const result=await s.k.saveDocument(draft);assert.equal(result.id,'d');assert.ok(s.k.error.value);console.log('PROVED refresh failure swallowed after successful write; caller receives normal success');
+ s=setup({docs:[{...draft,id:'a',sort_order:10},{...draft,id:'b',sort_order:20}],failSortId:'a'});s.k.documents.value=structuredClone(s.records());await assert.rejects(s.k.moveDocument('a',1));assert.deepEqual(s.records().map(x=>x.sort_order),[10,10]);assert.deepEqual(s.k.documents.value.map(x=>x.sort_order),[10,20]);console.log('PROVED partial reorder commits one sibling, retains duplicate order and stale local cache');
+ s=setup({docs:[{...draft,source_storage_path:'old.md'}],deleteError:true});s.k.documents.value=structuredClone(s.records());await assert.rejects(s.k.deleteDocument('d'));assert.equal(s.calls[0],'remove-source');assert.equal(s.records().length,1);console.log('PROVED document deletion removes source before failed row delete');
+})();

@@ -3,29 +3,17 @@ import { Menu, PanelLeftClose, RefreshCw, Search, Settings, X } from 'lucide-vue
 const route = useRoute()
 const { folders, documents, loading, updateAvailable, load, isDemo } = useKnowledge()
 const { t } = useLocale()
-const searchOpen = ref(false)
+const { open: searchOpen, show: showSearch, close: closeSearch, shortcut } = useSearch()
 const mobileOpen = ref(false)
 const compact = ref(false)
 const sidebar = ref<HTMLElement>()
 const menuButton = ref<HTMLButtonElement>()
 let media: MediaQueryList | undefined
-let previousOverflow = ''
 function updateCompact() {
   compact.value = media?.matches ?? false
   if (!compact.value) mobileOpen.value = false
 }
-watch(mobileOpen, async (open) => {
-  if (open) {
-    previousOverflow = document.body.style.overflow
-    document.body.style.overflow = 'hidden'
-    await nextTick()
-    sidebar.value?.querySelector<HTMLButtonElement>('.mobile-close')?.focus()
-  } else {
-    document.body.style.overflow = previousOverflow
-    await nextTick()
-    if (compact.value) menuButton.value?.focus()
-  }
-})
+useDrawer(mobileOpen, sidebar, menuButton)
 const collapsed = useCookie('kb-sidebar-collapsed', { default: () => false })
 const context = computed(() => {
   const path = Array.isArray(route.params.path)
@@ -56,31 +44,10 @@ await callOnce('load-knowledge', () => load())
 useKnowledgeRealtime()
 
 function onKeydown(event: KeyboardEvent) {
-  if (mobileOpen.value && !searchOpen.value) {
-    if (event.key === 'Escape') {
-      mobileOpen.value = false
-      return
-    }
-    if (event.key === 'Tab') {
-      const items = Array.from(
-        sidebar.value?.querySelectorAll<HTMLElement>(
-          'a[href], button, select, [tabindex="0"]',
-        ) ?? [],
-      ).filter((el) => el.getClientRects().length && !el.hasAttribute('disabled'))
-      const first = items[0],
-        last = items.at(-1)
-      if (event.shiftKey && document.activeElement === first) {
-        event.preventDefault()
-        last?.focus()
-      } else if (!event.shiftKey && document.activeElement === last) {
-        event.preventDefault()
-        first?.focus()
-      }
-    }
-  }
   if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') {
     event.preventDefault()
-    searchOpen.value = true
+    if (searchOpen.value) closeSearch()
+    else showSearch()
   }
 }
 onMounted(() => {
@@ -92,7 +59,6 @@ onMounted(() => {
 onUnmounted(() => {
   media?.removeEventListener('change', updateCompact)
   window.removeEventListener('keydown', onKeydown)
-  if (mobileOpen.value) document.body.style.overflow = previousOverflow
 })
 watch(
   () => route.fullPath,
@@ -102,6 +68,7 @@ watch(
 
 <template>
   <div class="app-shell" :class="{ collapsed }">
+    <a class="skip-link" href="#main-content">{{ t('skipContent') }}</a>
     <header class="mobile-header" :inert="mobileOpen">
       <button
         ref="menuButton"
@@ -116,12 +83,14 @@ watch(
       <NuxtLink to="/" class="mobile-brand"
         ><BrandMark /><strong>Damnatiox</strong></NuxtLink
       >
-      <button type="button" :aria-label="t('search')" @click="searchOpen = true">
+      <button type="button" :aria-label="t('search')" @click="showSearch({}, $event)">
         <Search :size="19" />
       </button>
     </header>
 
-    <div v-if="mobileOpen" class="mobile-backdrop" @click="mobileOpen = false" />
+    <Transition name="fade"
+      ><div v-if="mobileOpen" class="mobile-backdrop" @click="mobileOpen = false"
+    /></Transition>
     <aside
       id="knowledge-navigation"
       ref="sidebar"
@@ -145,12 +114,13 @@ watch(
           <X :size="17" />
         </button>
       </div>
-      <button class="search-trigger" type="button" @click="searchOpen = true">
+      <button class="search-trigger" type="button" @click="showSearch({}, $event)">
         <Search :size="15" /><span>{{ t('searchKnowledge') }}</span
-        ><kbd>⌘ K</kbd>
+        ><kbd>{{ shortcut }}</kbd>
       </button>
       <div class="sidebar-label">
-        <span>LIBRARY</span><span>{{ documents.length }}</span>
+        <span>{{ t('library') }}</span
+        ><span>{{ documents.length }}</span>
       </div>
       <div class="tree-scroll">
         <div v-if="loading" class="tree-loading">
@@ -188,7 +158,7 @@ watch(
       <BrandMark />
     </button>
 
-    <main class="main-pane" :inert="mobileOpen">
+    <main id="main-content" tabindex="-1" class="main-pane" :inert="mobileOpen">
       <div v-if="isDemo" class="demo-strip">
         <span><i /> DEMO DATA</span>
         <span>{{ t('demoConnected') }}</span>
@@ -203,7 +173,7 @@ watch(
       </button>
       <slot />
     </main>
-    <SearchDialog :open="searchOpen" @close="searchOpen = false" />
+    <SearchDialog />
   </div>
 </template>
 
@@ -220,7 +190,7 @@ watch(
   flex-direction: column;
   border-right: 1px solid var(--kb-border);
   background: var(--kb-surface);
-  transition: transform 180ms ease;
+  transition: transform var(--kb-duration-panel) var(--kb-ease-out);
 }
 .brand {
   height: 67px;
@@ -335,7 +305,7 @@ watch(
 .main-pane {
   min-height: 100vh;
   margin-left: var(--kb-sidebar-width);
-  transition: margin 180ms ease;
+  transition: margin-left var(--kb-duration-panel) var(--kb-ease-out);
 }
 .collapsed .left-sidebar {
   transform: translateX(-100%);
@@ -441,7 +411,7 @@ watch(
     position: fixed;
     inset: 0;
     z-index: 25;
-    background: rgb(0 0 0 / 55%);
+    background: var(--kb-overlay);
   }
   .main-pane,
   .collapsed .main-pane {
@@ -458,9 +428,6 @@ watch(
   .demo-strip span:last-child {
     display: none;
   }
-}
-
-@media (max-width: 1180px) {
   .left-sidebar {
     width: min(340px, calc(100vw - 48px));
     height: 100dvh;

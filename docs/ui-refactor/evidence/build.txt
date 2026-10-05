@@ -1,0 +1,319 @@
+
+> damnatiox-knowledge@1.0.0 build
+> nuxt build
+
+┌  Building Nuxt for production...
+│
+●  Nuxt 3.21.9 (with Nitro 2.13.4, Vite 7.3.6 and Vue 3.5.40)
+│
+●  Nitro preset: vercel
+ℹ Building client...
+ℹ vite v7.3.6 building client environment for production...
+ℹ transforming...
+ℹ ✓ 4678 modules transformed.
+ℹ rendering chunks...
+ℹ computing gzip size...
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_Size3-Regular.CTq5MqoE.woff             4.42 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_Size4-Regular.Dl5lxZxV.woff2            4.93 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_Size2-Regular.Dy4dx90m.woff2            5.21 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_Size1-Regular.mCD8mA8B.woff2            5.47 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_Size4-Regular.BF-4gkZK.woff             5.98 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_Size2-Regular.oD1tc_U0.woff             6.19 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_Size1-Regular.C195tn64.woff             6.50 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_Caligraphic-Regular.Di6jR-x-.woff2      6.91 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_Caligraphic-Bold.Dq_IR9rO.woff2         6.91 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_Size3-Regular.DgpXs0kz.ttf              7.59 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_Caligraphic-Regular.CTRA-rTL.woff       7.66 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_Caligraphic-Bold.BEiXGLvX.woff          7.72 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_Script-Regular.D3wIWfF6.woff2           9.64 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_SansSerif-Regular.DDBCnlJ7.woff2       10.34 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_Size4-Regular.DWFBv043.ttf             10.36 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_Script-Regular.D5yQViql.woff           10.59 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_Fraktur-Regular.CTYiF6lA.woff2         11.32 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_Fraktur-Bold.CL6g_b3V.woff2            11.35 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_Size2-Regular.B7gKUWhC.ttf             11.51 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_SansSerif-Italic.C3H0VqGB.woff2        12.03 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_SansSerif-Bold.D1sUS0GD.woff2          12.22 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_Size1-Regular.Dbsnue_I.ttf             12.23 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_SansSerif-Regular.CS6fqUqJ.woff        12.32 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_Caligraphic-Regular.wX97UBjC.ttf       12.34 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_Caligraphic-Bold.ATXxdsX0.ttf          12.37 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_Fraktur-Regular.Dxdc4cR9.woff          13.21 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_Fraktur-Bold.BsDP51OF.woff             13.30 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_Typewriter-Regular.CO6r4hn1.woff2      13.57 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_SansSerif-Italic.DN2j7dab.woff         14.11 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_SansSerif-Bold.DbIhKOiC.woff           14.41 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_Typewriter-Regular.C0xS9mPB.woff       16.03 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_Math-BoldItalic.CZnvNsCZ.woff2         16.40 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_Math-Italic.t53AETM-.woff2             16.44 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_Script-Regular.C5JkGWo-.ttf            16.65 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_Main-BoldItalic.DxDJ3AOS.woff2         16.78 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_Main-Italic.NWA7e6Wa.woff2             16.99 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_Math-BoldItalic.iY-2wyZ7.woff          18.67 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_Math-Italic.DA0__PXp.woff              18.75 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_Main-BoldItalic.SpSLRI95.woff          19.41 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_SansSerif-Regular.BNo7hRIc.ttf         19.44 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_Fraktur-Regular.CB_wures.ttf           19.57 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_Fraktur-Bold.BdnERNNW.ttf              19.58 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_Main-Italic.BMLOBm91.woff              19.68 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_SansSerif-Italic.YYjJ1zSn.ttf          22.36 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_SansSerif-Bold.CFMepnvq.ttf            24.50 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_Main-Bold.Cx986IdX.woff2               25.32 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_Main-Regular.B22Nviop.woff2            26.27 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_Typewriter-Regular.D3Ib7_Hf.ttf        27.56 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_AMS-Regular.BQhdFMY1.woff2             28.08 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_Main-Bold.Jm3AIy58.woff                29.91 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_Main-Regular.Dr94JaBh.woff             30.77 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_Math-BoldItalic.B3XSjfu4.ttf           31.20 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_Math-Italic.flOr_0UB.ttf               31.31 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_Main-BoldItalic.DzxPMmG6.ttf           32.97 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_AMS-Regular.DMm9YOAa.woff              33.52 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_Main-Italic.3WenGoN9.ttf               33.58 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_Main-Bold.waoOVXN0.ttf                 51.34 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_Main-Regular.ypZvNtVU.ttf              53.58 kB
+ℹ ../.nuxt/dist/client/_nuxt/KaTeX_AMS-Regular.DRggAlZN.ttf               63.63 kB
+ℹ ../.nuxt/dist/client/manifest.json                                      68.35 kB │ gzip:   5.13 kB
+ℹ ../.nuxt/dist/client/_nuxt/UiDialog.oLkvhNyr.css                         0.82 kB │ gzip:   0.41 kB
+ℹ ../.nuxt/dist/client/_nuxt/BrandMark.BRhIBjK-.css                        1.82 kB │ gzip:   0.73 kB
+ℹ ../.nuxt/dist/client/_nuxt/useDrawer.9C7YmvOY.css                        1.94 kB │ gzip:   0.69 kB
+ℹ ../.nuxt/dist/client/_nuxt/login.Bqco93Rs.css                            2.07 kB │ gzip:   0.67 kB
+ℹ ../.nuxt/dist/client/_nuxt/index.DiI10ex3.css                            4.73 kB │ gzip:   1.15 kB
+ℹ ../.nuxt/dist/client/_nuxt/DocumentEditor.KhiEUuQb.css                   5.56 kB │ gzip:   1.42 kB
+ℹ ../.nuxt/dist/client/_nuxt/index.CAjy3VIu.css                            7.40 kB │ gzip:   1.88 kB
+ℹ ../.nuxt/dist/client/_nuxt/_...B15qCaMs.css                              9.09 kB │ gzip:   1.90 kB
+ℹ ../.nuxt/dist/client/_nuxt/MarkdownRenderer.Z9heIOmJ.css                 9.14 kB │ gzip:   2.32 kB
+ℹ ../.nuxt/dist/client/_nuxt/default.CN1q3Rda.css                         10.22 kB │ gzip:   2.31 kB
+ℹ ../.nuxt/dist/client/_nuxt/admin.C2kMY4U7.css                           10.95 kB │ gzip:   2.31 kB
+ℹ ../.nuxt/dist/client/_nuxt/DlAUqK2U.js                                   0.09 kB │ gzip:   0.10 kB
+ℹ ../.nuxt/dist/client/_nuxt/Dnw8IOD3.js                                   0.10 kB │ gzip:   0.11 kB
+ℹ ../.nuxt/dist/client/_nuxt/DDxwax3v.js                                   0.12 kB │ gzip:   0.14 kB
+ℹ ../.nuxt/dist/client/_nuxt/Gi6I4Gst.js                                   0.15 kB │ gzip:   0.13 kB
+ℹ ../.nuxt/dist/client/_nuxt/cbsq22eO.js                                   0.16 kB │ gzip:   0.16 kB
+ℹ ../.nuxt/dist/client/_nuxt/CVjYKDDg.js                                   0.16 kB │ gzip:   0.16 kB
+ℹ ../.nuxt/dist/client/_nuxt/ChaAX9I-.js                                   0.18 kB │ gzip:   0.15 kB
+ℹ ../.nuxt/dist/client/_nuxt/C6J5_59_.js                                   0.19 kB │ gzip:   0.17 kB
+ℹ ../.nuxt/dist/client/_nuxt/YD-VI55-.js                                   0.19 kB │ gzip:   0.17 kB
+ℹ ../.nuxt/dist/client/_nuxt/DunfwykP.js                                   0.21 kB │ gzip:   0.16 kB
+ℹ ../.nuxt/dist/client/_nuxt/CZfJFNzl.js                                   0.22 kB │ gzip:   0.20 kB
+ℹ ../.nuxt/dist/client/_nuxt/CReNSewC.js                                   0.29 kB │ gzip:   0.22 kB
+ℹ ../.nuxt/dist/client/_nuxt/CFKt8erB.js                                   0.30 kB │ gzip:   0.21 kB
+ℹ ../.nuxt/dist/client/_nuxt/DfVdObpo.js                                   0.35 kB │ gzip:   0.26 kB
+ℹ ../.nuxt/dist/client/_nuxt/DaB35NWe.js                                   0.37 kB │ gzip:   0.26 kB
+ℹ ../.nuxt/dist/client/_nuxt/CQDa_LV2.js                                   0.37 kB │ gzip:   0.26 kB
+ℹ ../.nuxt/dist/client/_nuxt/gioqpXNi.js                                   0.40 kB │ gzip:   0.27 kB
+ℹ ../.nuxt/dist/client/_nuxt/DfruxwaW.js                                   0.40 kB │ gzip:   0.27 kB
+ℹ ../.nuxt/dist/client/_nuxt/BtLJy8MD.js                                   0.46 kB │ gzip:   0.30 kB
+ℹ ../.nuxt/dist/client/_nuxt/CQq9TecF.js                                   0.49 kB │ gzip:   0.35 kB
+ℹ ../.nuxt/dist/client/_nuxt/_cel7FER.js                                   0.50 kB │ gzip:   0.34 kB
+ℹ ../.nuxt/dist/client/_nuxt/CDwao0rs.js                                   0.51 kB │ gzip:   0.28 kB
+ℹ ../.nuxt/dist/client/_nuxt/DYs1Rzjj.js                                   0.57 kB │ gzip:   0.43 kB
+ℹ ../.nuxt/dist/client/_nuxt/hYW2-CCL.js                                   0.57 kB │ gzip:   0.38 kB
+ℹ ../.nuxt/dist/client/_nuxt/D97SMEIa.js                                   0.64 kB │ gzip:   0.39 kB
+ℹ ../.nuxt/dist/client/_nuxt/IM_OFtee.js                                   0.70 kB │ gzip:   0.39 kB
+ℹ ../.nuxt/dist/client/_nuxt/BKJriCvC.js                                   0.74 kB │ gzip:   0.43 kB
+ℹ ../.nuxt/dist/client/_nuxt/CyCVOxIE.js                                   0.88 kB │ gzip:   0.62 kB
+ℹ ../.nuxt/dist/client/_nuxt/C_mgTkK2.js                                   0.94 kB │ gzip:   0.53 kB
+ℹ ../.nuxt/dist/client/_nuxt/CmKTTxBW.js                                   1.18 kB │ gzip:   0.57 kB
+ℹ ../.nuxt/dist/client/_nuxt/C9N8deCv.js                                   1.56 kB │ gzip:   0.71 kB
+ℹ ../.nuxt/dist/client/_nuxt/Bl9C35hc.js                                   1.68 kB │ gzip:   0.88 kB
+ℹ ../.nuxt/dist/client/_nuxt/B30X0cAR.js                                   1.69 kB │ gzip:   0.88 kB
+ℹ ../.nuxt/dist/client/_nuxt/CoT1ch5i.js                                   1.77 kB │ gzip:   0.84 kB
+ℹ ../.nuxt/dist/client/_nuxt/DuCj138w.js                                   1.87 kB │ gzip:   0.82 kB
+ℹ ../.nuxt/dist/client/_nuxt/_GbM2FBG.js                                   1.91 kB │ gzip:   0.87 kB
+ℹ ../.nuxt/dist/client/_nuxt/86HNac7a.js                                   1.96 kB │ gzip:   0.83 kB
+ℹ ../.nuxt/dist/client/_nuxt/mNjrHDz5.js                                   3.43 kB │ gzip:   1.48 kB
+ℹ ../.nuxt/dist/client/_nuxt/BiPE0FHN.js                                   3.52 kB │ gzip:   1.83 kB
+ℹ ../.nuxt/dist/client/_nuxt/C9MvVv9Y.js                                   3.70 kB │ gzip:   1.81 kB
+ℹ ../.nuxt/dist/client/_nuxt/BYMcwBfD.js                                   3.71 kB │ gzip:   1.76 kB
+ℹ ../.nuxt/dist/client/_nuxt/BA5BmFxW.js                                   4.18 kB │ gzip:   1.80 kB
+ℹ ../.nuxt/dist/client/_nuxt/DX6XiGOO.js                                   4.69 kB │ gzip:   2.18 kB
+ℹ ../.nuxt/dist/client/_nuxt/dg22_G4G.js                                   5.06 kB │ gzip:   2.07 kB
+ℹ ../.nuxt/dist/client/_nuxt/sWetK3hn.js                                   5.63 kB │ gzip:   2.29 kB
+ℹ ../.nuxt/dist/client/_nuxt/TGAi60le.js                                   5.90 kB │ gzip:   2.51 kB
+ℹ ../.nuxt/dist/client/_nuxt/BPDBNkh0.js                                   5.96 kB │ gzip:   2.48 kB
+ℹ ../.nuxt/dist/client/_nuxt/D9jpo6M0.js                                   6.25 kB │ gzip:   2.58 kB
+ℹ ../.nuxt/dist/client/_nuxt/CXm6pt94.js                                   7.06 kB │ gzip:   2.71 kB
+ℹ ../.nuxt/dist/client/_nuxt/UjLqaJq3.js                                   8.09 kB │ gzip:   3.35 kB
+ℹ ../.nuxt/dist/client/_nuxt/CBeZ_nud.js                                   8.29 kB │ gzip:   3.67 kB
+ℹ ../.nuxt/dist/client/_nuxt/B0m6wegM.js                                   8.54 kB │ gzip:   3.28 kB
+ℹ ../.nuxt/dist/client/_nuxt/DI5OsasT.js                                  10.07 kB │ gzip:   3.60 kB
+ℹ ../.nuxt/dist/client/_nuxt/B5HQsQEh.js                                  10.35 kB │ gzip:   3.59 kB
+ℹ ../.nuxt/dist/client/_nuxt/Kj7nsPQq.js                                  10.60 kB │ gzip:   4.34 kB
+ℹ ../.nuxt/dist/client/_nuxt/CMq-1al8.js                                  10.69 kB │ gzip:   4.10 kB
+ℹ ../.nuxt/dist/client/_nuxt/Blxgz6GR.js                                  11.29 kB │ gzip:   4.67 kB
+ℹ ../.nuxt/dist/client/_nuxt/BTikLf29.js                                  14.56 kB │ gzip:   5.65 kB
+ℹ ../.nuxt/dist/client/_nuxt/DdcYbUXu.js                                  15.72 kB │ gzip:   4.40 kB
+ℹ ../.nuxt/dist/client/_nuxt/UVZydCXu.js                                  15.89 kB │ gzip:   5.63 kB
+ℹ ../.nuxt/dist/client/_nuxt/DmKUg2l5.js                                  17.47 kB │ gzip:   6.64 kB
+ℹ ../.nuxt/dist/client/_nuxt/Dpg9-VGF.js                                  19.59 kB │ gzip:   7.47 kB
+ℹ ../.nuxt/dist/client/_nuxt/uxRt8yZA.js                                  20.28 kB │ gzip:   7.18 kB
+ℹ ../.nuxt/dist/client/_nuxt/CHhWOE6x.js                                  23.15 kB │ gzip:   7.79 kB
+ℹ ../.nuxt/dist/client/_nuxt/J2FncIaH.js                                  23.19 kB │ gzip:   8.55 kB
+ℹ ../.nuxt/dist/client/_nuxt/Co9MJSFm.js                                  23.54 kB │ gzip:   8.32 kB
+ℹ ../.nuxt/dist/client/_nuxt/DOmOIIwC.js                                  23.92 kB │ gzip:   8.32 kB
+ℹ ../.nuxt/dist/client/_nuxt/CUD9URH5.js                                  25.47 kB │ gzip:   6.76 kB
+ℹ ../.nuxt/dist/client/_nuxt/BplyvRI9.js                                  27.06 kB │ gzip:   9.38 kB
+ℹ ../.nuxt/dist/client/_nuxt/CkWNxcpZ.js                                  29.37 kB │ gzip:   8.65 kB
+ℹ ../.nuxt/dist/client/_nuxt/CiOpA74A.js                                  30.83 kB │ gzip:  10.15 kB
+ℹ ../.nuxt/dist/client/_nuxt/CFjM4v7D.js                                  30.98 kB │ gzip:   9.71 kB
+ℹ ../.nuxt/dist/client/_nuxt/NgWxQlFI.js                                  30.99 kB │ gzip:  11.18 kB
+ℹ ../.nuxt/dist/client/_nuxt/CLLTl3Cm.js                                  33.99 kB │ gzip:   9.95 kB
+ℹ ../.nuxt/dist/client/_nuxt/CP8N8Crz.js                                  38.06 kB │ gzip:  12.49 kB
+ℹ ../.nuxt/dist/client/_nuxt/DrjymfiZ.js                                  41.90 kB │ gzip:  12.02 kB
+ℹ ../.nuxt/dist/client/_nuxt/BM-avrwr.js                                  41.96 kB │ gzip:  15.70 kB
+ℹ ../.nuxt/dist/client/_nuxt/McJBdqt-.js                                  49.11 kB │ gzip:  15.69 kB
+ℹ ../.nuxt/dist/client/_nuxt/DMAmW6S9.js                                  58.76 kB │ gzip:  21.67 kB
+ℹ ../.nuxt/dist/client/_nuxt/CE4zbelL.js                                  60.64 kB │ gzip:  19.46 kB
+ℹ ../.nuxt/dist/client/_nuxt/BgnjloET.js                                  69.67 kB │ gzip:  23.54 kB
+ℹ ../.nuxt/dist/client/_nuxt/DC4ZUI62.js                                  69.93 kB │ gzip:  19.61 kB
+ℹ ../.nuxt/dist/client/_nuxt/CTu1MqJy.js                                  73.71 kB │ gzip:  21.23 kB
+ℹ ../.nuxt/dist/client/_nuxt/C4wfPpcf.js                                  81.69 kB │ gzip:  22.46 kB
+ℹ ../.nuxt/dist/client/_nuxt/C1f9BO_b.js                                 116.94 kB │ gzip:  31.10 kB
+ℹ ../.nuxt/dist/client/_nuxt/BWaHQQzh.js                                 118.72 kB │ gzip:  43.60 kB
+ℹ ../.nuxt/dist/client/_nuxt/DAWHs2yD.js                                 151.32 kB │ gzip:  42.95 kB
+ℹ ../.nuxt/dist/client/_nuxt/D2OalP0P.js                                 431.98 kB │ gzip: 137.89 kB
+ℹ ../.nuxt/dist/client/_nuxt/D3_iZ_3b.js                                 442.92 kB │ gzip: 141.93 kB
+ℹ ../.nuxt/dist/client/_nuxt/BzO_Jm6-.js                                 613.33 kB │ gzip: 145.08 kB
+ℹ ../.nuxt/dist/client/_nuxt/DXbfyUgu.js                                 688.12 kB │ gzip: 154.15 kB
+ℹ ../.nuxt/dist/client/_nuxt/CPvm893Q.js                               1,877.28 kB │ gzip: 622.42 kB
+
+ WARN 
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+
+ℹ ✓ built in 9.55s
+✔ Client built in 9566ms
+ℹ Building server...
+ℹ vite v7.3.6 building ssr environment for production...
+ℹ transforming...
+ℹ ✓ 190 modules transformed.
+ℹ rendering chunks...
+ℹ ✓ built in 3.95s
+✔ Server built in 3962ms
+[nitro] ✔ Generated public .vercel/output/static
+[nitro] ℹ Building Nuxt Nitro server (preset: vercel, compatibility date: 2025-07-15)
+[nitro] ✔ Nuxt Nitro server built
+  ├─ .vercel/output/functions/__fallback.func/chunks/_/error-500.mjs (4.9 kB) (2.06 kB gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/_/error-500.mjs.map (265 B) (203 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/_...path_-C22xxTbu.mjs (20 kB) (4.09 kB gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/_...path_-C22xxTbu.mjs.map (18.6 kB) (3.43 kB gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/_...path_-styles-1.mjs-6Xs0Mgt1.mjs (848 B) (424 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/_...path_-styles-1.mjs-6Xs0Mgt1.mjs.map (199 B) (155 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/_...path_-styles-2.mjs-BFYL2N3e.mjs (1.79 kB) (670 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/_...path_-styles-2.mjs-BFYL2N3e.mjs.map (199 B) (157 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/_...path_-styles.DyjGv2zJ.mjs (7.54 kB) (1.73 kB gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/_...path_-styles.DyjGv2zJ.mjs.map (369 B) (220 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/_id_-J6Yy6yJW.mjs (2.9 kB) (1.2 kB gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/_id_-J6Yy6yJW.mjs.map (1.95 kB) (694 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/_plugin-vue_export-helper-1tPrXgE0.mjs (254 B) (201 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/_plugin-vue_export-helper-1tPrXgE0.mjs.map (412 B) (248 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/admin-2-styles-1.mjs-DXlaRLzH.mjs (3.75 kB) (1.13 kB gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/admin-2-styles-1.mjs-DXlaRLzH.mjs.map (195 B) (156 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/admin-2-styles-2.mjs-Nfkqvc9Q.mjs (4.6 kB) (1.17 kB gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/admin-2-styles-2.mjs-Nfkqvc9Q.mjs.map (195 B) (155 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/admin-CgSwXAEn.mjs (664 B) (313 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/admin-CgSwXAEn.mjs.map (218 B) (167 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/admin-DSpBOndB.mjs (34.9 kB) (7.16 kB gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/admin-DSpBOndB.mjs.map (30.7 kB) (5.42 kB gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/admin-styles.D4t2e3cU.mjs (3.67 kB) (1.14 kB gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/admin-styles.D4t2e3cU.mjs.map (359 B) (224 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/AdminExplorer-styles.Cn4sVcUI.mjs (341 B) (215 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/AdminExplorer-styles.Cn4sVcUI.mjs.map (212 B) (160 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/AdminExplorerItem-styles.mlGFBkfg.mjs (361 B) (214 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/AdminExplorerItem-styles.mlGFBkfg.mjs.map (220 B) (161 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/AdminPageHeader-styles.HgSn1D3M.mjs (881 B) (446 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/AdminPageHeader-styles.HgSn1D3M.mjs.map (330 B) (205 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/BrandMark-Cz8FTvJs.mjs (2.92 kB) (1.05 kB gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/BrandMark-Cz8FTvJs.mjs.map (2.68 kB) (819 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/BrandMark-styles.vnIE9Hir.mjs (1.03 kB) (506 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/BrandMark-styles.vnIE9Hir.mjs.map (312 B) (197 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/Breadcrumbs-styles.GkT5THKH.mjs (333 B) (212 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/Breadcrumbs-styles.GkT5THKH.mjs.map (208 B) (160 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/client.precomputed.mjs (154 kB) (9.33 kB gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/client.precomputed.mjs.map (94.3 kB) (2.82 kB gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/default-D7UGN4FF.mjs (37.3 kB) (7.4 kB gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/default-D7UGN4FF.mjs.map (34.9 kB) (6.25 kB gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/default-styles-1.mjs-B6KXBWZP.mjs (2.44 kB) (815 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/default-styles-1.mjs-B6KXBWZP.mjs.map (195 B) (157 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/default-styles-2.mjs-DT3-VSMZ.mjs (256 B) (188 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/default-styles-2.mjs-DT3-VSMZ.mjs.map (195 B) (156 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/default-styles-3.mjs-BaertuFF.mjs (2.89 kB) (946 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/default-styles-3.mjs-BaertuFF.mjs.map (195 B) (154 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/default-styles.CglGGhsT.mjs (6.08 kB) (1.62 kB gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/default-styles.CglGGhsT.mjs.map (391 B) (227 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/DocumentEditor-DuMyImNH.mjs (16.1 kB) (4.12 kB gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/DocumentEditor-DuMyImNH.mjs.map (14.4 kB) (3 kB gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/DocumentEditor-styles.LeKIg7LB.mjs (5.28 kB) (1.43 kB gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/DocumentEditor-styles.LeKIg7LB.mjs.map (327 B) (204 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/entry-styles.DbSkjcWe.mjs (42 kB) (11.9 kB gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/entry-styles.DbSkjcWe.mjs.map (2.78 kB) (488 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/folders-BJMr1IoE.mjs (1.2 kB) (545 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/folders-BJMr1IoE.mjs.map (751 B) (358 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/FolderTree-styles.BZhn5Cjc.mjs (326 B) (208 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/FolderTree-styles.BZhn5Cjc.mjs.map (206 B) (157 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/FolderTreeItem-styles.CsAlUGBM.mjs (346 B) (211 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/FolderTreeItem-styles.CsAlUGBM.mjs.map (214 B) (160 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/index-CscjGZdv.mjs (1.2 kB) (548 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/index-CscjGZdv.mjs.map (747 B) (357 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/index-DHZkWhej.mjs (12.6 kB) (3.09 kB gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/index-DHZkWhej.mjs.map (10.3 kB) (2.18 kB gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/index-DNZuRu_b.mjs (9.11 kB) (2.53 kB gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/index-DNZuRu_b.mjs.map (6.67 kB) (1.57 kB gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/index-styles-2.DyuSVNpe.mjs (4.99 kB) (1.27 kB gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/index-styles-2.DyuSVNpe.mjs.map (306 B) (200 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/index-styles.jov96z9Y.mjs (8.09 kB) (2.15 kB gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/index-styles.jov96z9Y.mjs.map (357 B) (223 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/LanguageSelector-styles.CzDAaft5.mjs (2.25 kB) (817 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/LanguageSelector-styles.CzDAaft5.mjs.map (333 B) (208 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/login-BAH4mgUQ.mjs (6.05 kB) (1.91 kB gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/login-BAH4mgUQ.mjs.map (4.44 kB) (1.17 kB gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/login-styles.bd_gadtp.mjs (2.32 kB) (792 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/login-styles.bd_gadtp.mjs.map (300 B) (195 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/MarkdownRenderer-styles.DssD8032.mjs (9.41 kB) (2.42 kB gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/MarkdownRenderer-styles.DssD8032.mjs.map (333 B) (207 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/MarkdownRenderer-uaT_prY6.mjs (13.3 kB) (3.94 kB gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/MarkdownRenderer-uaT_prY6.mjs.map (13.3 kB) (3.02 kB gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/new-BetTTPxk.mjs (2.31 kB) (992 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/new-BetTTPxk.mjs.map (1.23 kB) (494 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/once-Dha4gcqP.mjs (1.19 kB) (552 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/once-Dha4gcqP.mjs.map (1.53 kB) (534 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/SearchDialog-styles.BDrsHYZG.mjs (336 B) (208 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/SearchDialog-styles.BDrsHYZG.mjs.map (210 B) (160 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/server.mjs (83.8 kB) (23.3 kB gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/server.mjs.map (449 B) (213 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/styles.mjs (2.5 kB) (705 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/styles.mjs.map (1.66 kB) (386 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/TableOfContents-styles.B-ISq8da.mjs (351 B) (221 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/TableOfContents-styles.B-ISq8da.mjs.map (216 B) (163 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/ThemeToggle-styles.D2nhdZ08.mjs (1.35 kB) (614 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/ThemeToggle-styles.D2nhdZ08.mjs.map (318 B) (201 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/UiDialog-BYEXoj9b.mjs (3.68 kB) (1.4 kB gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/UiDialog-BYEXoj9b.mjs.map (3.74 kB) (1.12 kB gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/UiDialog-styles.BEbjl2HM.mjs (1.08 kB) (537 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/UiDialog-styles.BEbjl2HM.mjs.map (309 B) (197 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/useAdminWorkspace-pUIyOkU5.mjs (979 B) (358 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/useAdminWorkspace-pUIyOkU5.mjs.map (1.05 kB) (368 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/useAuth-_SmwCr9K.mjs (1.43 kB) (602 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/useAuth-_SmwCr9K.mjs.map (1.62 kB) (549 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/useDrawer-BAgdbxKO.mjs (3.63 kB) (1.32 kB gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/useDrawer-BAgdbxKO.mjs.map (3.54 kB) (1.01 kB gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/useKnowledge-f_zTo9ey.mjs (32.4 kB) (9.24 kB gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/useKnowledge-f_zTo9ey.mjs.map (31 kB) (5.62 kB gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/useSearch-BoXO-wa0.mjs (779 B) (396 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/build/useSearch-BoXO-wa0.mjs.map (907 B) (379 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/nitro/nitro.mjs (154 kB) (38 kB gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/nitro/nitro.mjs.map (6.08 kB) (786 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/routes/api/health.get.mjs (1.47 kB) (651 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/routes/api/health.get.mjs.map (1.25 kB) (356 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/routes/renderer.mjs (14.3 kB) (4.59 kB gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/routes/renderer.mjs.map (1.59 kB) (319 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/virtual/_virtual_spa-template.mjs (94 B) (100 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/chunks/virtual/_virtual_spa-template.mjs.map (90 B) (98 B gzip)
+  ├─ .vercel/output/functions/__fallback.func/index.mjs (334 B) (200 B gzip)
+  └─ .vercel/output/functions/__fallback.func/package.json (3.5 kB) (1.18 kB gzip)
+Σ Total size: 18.6 MB (4.86 MB gzip)
+[nitro] ✔ You can deploy this build using npx vercel deploy --prebuilt
+│
+└  ✨ Build complete!

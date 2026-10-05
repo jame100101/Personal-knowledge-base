@@ -5,6 +5,22 @@ const auth = useAuth()
 const { isDemo } = useKnowledge()
 const route = useRoute()
 const mobileOpen = ref(false)
+const { t } = useLocale()
+const sidebar = ref<HTMLElement>()
+const menuButton = ref<HTMLButtonElement>()
+const compact = ref(false)
+let media: MediaQueryList | undefined
+function resize() {
+  compact.value = media?.matches ?? false
+  if (!compact.value) mobileOpen.value = false
+}
+useDrawer(mobileOpen, sidebar, menuButton)
+onMounted(() => {
+  media = window.matchMedia('(max-width: 760px)')
+  resize()
+  media.addEventListener('change', resize)
+})
+onBeforeUnmount(() => media?.removeEventListener('change', resize))
 
 watch(
   () => route.fullPath,
@@ -16,16 +32,32 @@ watch(
 
 <template>
   <div class="admin-shell">
-    <header class="admin-mobile-header">
-      <button type="button" aria-label="打开知识文件" @click="mobileOpen = true">
+    <a class="skip-link" href="#main-content">{{ t('skipContent') }}</a>
+    <header class="admin-mobile-header" :inert="mobileOpen">
+      <button
+        ref="menuButton"
+        type="button"
+        :aria-label="t('openNavigation')"
+        :aria-expanded="mobileOpen"
+        aria-controls="admin-navigation"
+        @click="mobileOpen = true"
+      >
         <Menu :size="20" />
       </button>
       <NuxtLink to="/admin"><BrandMark /><strong>Damnatiox</strong></NuxtLink>
       <ThemeToggle />
     </header>
 
-    <div v-if="mobileOpen" class="admin-backdrop" @click="mobileOpen = false" />
-    <aside :class="{ mobileOpen }">
+    <Transition name="fade"
+      ><div v-if="mobileOpen" class="admin-backdrop" @click="mobileOpen = false"
+    /></Transition>
+    <aside
+      id="admin-navigation"
+      ref="sidebar"
+      :class="{ mobileOpen }"
+      :inert="compact && !mobileOpen"
+      :aria-label="t('admin')"
+    >
       <div class="admin-brand-row">
         <NuxtLink to="/admin" class="admin-brand"
           ><BrandMark /><span
@@ -35,7 +67,7 @@ watch(
         <button
           class="mobile-close"
           type="button"
-          aria-label="关闭知识文件"
+          :aria-label="t('closeNavigation')"
           @click="mobileOpen = false"
         >
           <X :size="17" />
@@ -45,15 +77,17 @@ watch(
       <AdminExplorer />
 
       <div class="admin-bottom">
-        <NuxtLink to="/"><BookOpen :size="15" /> 查看知识库</NuxtLink>
-        <ThemeToggle show-label />
+        <NuxtLink to="/"><BookOpen :size="15" /> {{ t('backLibrary') }}</NuxtLink>
+        <div class="admin-preferences">
+          <ThemeToggle show-label /><LanguageSelector />
+        </div>
         <button v-if="!isDemo" type="button" @click="auth.signOut">
-          <LogOut :size="15" /> 退出登录
+          <LogOut :size="15" /> {{ t('signOut') }}
         </button>
       </div>
     </aside>
-    <main>
-      <div v-if="isDemo" class="admin-demo">开发演示模式 · 更改仅保存在当前内存</div>
+    <main id="main-content" tabindex="-1" :inert="mobileOpen">
+      <div v-if="isDemo" class="admin-demo">{{ t('adminDemo') }}</div>
       <slot />
     </main>
   </div>
@@ -61,16 +95,15 @@ watch(
 
 <style scoped>
 .admin-shell {
-  --admin-sidebar-width: 294px;
-  min-height: 100vh;
+  min-height: 100dvh;
   display: grid;
-  grid-template-columns: var(--admin-sidebar-width) minmax(0, 1fr);
+  grid-template-columns: var(--kb-admin-sidebar-width) minmax(0, 1fr);
 }
 aside {
   position: sticky;
   top: 0;
-  z-index: 40;
-  height: 100vh;
+  z-index: 50;
+  height: 100dvh;
   min-height: 0;
   display: flex;
   flex-direction: column;
@@ -116,7 +149,7 @@ aside {
 .admin-bottom a,
 .admin-bottom button {
   width: 100%;
-  min-height: 34px;
+  min-height: 44px;
   display: flex;
   align-items: center;
   gap: 9px;
@@ -125,7 +158,7 @@ aside {
   border-radius: var(--kb-radius-sm);
   background: transparent;
   color: var(--kb-text-muted);
-  font-size: 11px;
+  font-size: 13px;
   cursor: pointer;
 }
 .admin-bottom a:hover,
@@ -160,7 +193,7 @@ main {
     z-index: 45;
     height: 54px;
     display: grid;
-    grid-template-columns: 36px 1fr 36px;
+    grid-template-columns: 44px 1fr 44px;
     align-items: center;
     padding: 0 10px;
     border-bottom: 1px solid var(--kb-border);
@@ -168,8 +201,8 @@ main {
     backdrop-filter: blur(8px);
   }
   .admin-mobile-header > button {
-    width: 34px;
-    height: 34px;
+    width: 44px;
+    height: 44px;
     display: grid;
     place-items: center;
     border: 0;
@@ -187,16 +220,16 @@ main {
     position: fixed;
     inset: 0 auto 0 0;
     width: min(310px, 88vw);
-    height: 100vh;
+    height: 100dvh;
     transform: translateX(-100%);
-    transition: transform 180ms ease;
+    transition: transform var(--kb-duration-panel) var(--kb-ease-out);
   }
   aside.mobileOpen {
     transform: translateX(0);
   }
   .mobile-close {
-    width: 32px;
-    height: 32px;
+    width: 44px;
+    height: 44px;
     display: grid;
     place-items: center;
     border: 0;
@@ -206,9 +239,19 @@ main {
   .admin-backdrop {
     position: fixed;
     inset: 0;
-    z-index: 35;
+    z-index: 46;
     display: block;
-    background: rgb(0 0 0 / 64%);
+    background: var(--kb-overlay);
+  }
+}
+.admin-preferences {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+@media (max-width: 760px) {
+  aside {
+    padding-bottom: max(12px, env(safe-area-inset-bottom));
   }
 }
 </style>

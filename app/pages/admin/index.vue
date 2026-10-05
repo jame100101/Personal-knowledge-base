@@ -82,7 +82,6 @@ function openFolder(id: string | null) {
           v-for="folder in childFolders"
           :key="folder.id"
           type="button"
-          @dblclick="openFolder(folder.id)"
           @click="openFolder(folder.id)"
         >
           <span class="folder-icon"><Folder :size="20" /></span>
@@ -156,7 +155,7 @@ function openFolder(id: string | null) {
 .workspace-header p {
   margin: 0;
   color: var(--kb-text-subtle);
-  font-size: 12px;
+  font-size: 14px;
 }
 .workspace-breadcrumbs {
   min-height: 45px;
@@ -176,9 +175,12 @@ function openFolder(id: string | null) {
   border: 0;
   background: transparent;
   color: inherit;
-  font-size: 10px;
+  font-size: 14px;
   white-space: nowrap;
   cursor: pointer;
+  transition:
+    background-color var(--kb-duration-fast),
+    border-color var(--kb-duration-fast);
 }
 .workspace-breadcrumbs button:hover {
   color: var(--kb-text);
@@ -192,7 +194,7 @@ function openFolder(id: string | null) {
   justify-content: space-between;
   margin-bottom: 10px;
   color: var(--kb-text-subtle);
-  font-size: 10px;
+  font-size: 14px;
 }
 .section-heading > div {
   display: flex;
@@ -214,7 +216,7 @@ function openFolder(id: string | null) {
 }
 .folder-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr));
   gap: 8px;
 }
 .folder-grid > button {
@@ -231,11 +233,13 @@ function openFolder(id: string | null) {
   color: var(--kb-text-subtle);
   text-align: left;
   cursor: pointer;
+  transition:
+    background-color var(--kb-duration-fast),
+    border-color var(--kb-duration-fast);
 }
 .folder-grid > button:hover {
   border-color: var(--kb-border-strong);
   background: var(--kb-surface-hover);
-  transform: translateY(-1px);
 }
 .folder-icon,
 .file-icon {
@@ -257,15 +261,16 @@ function openFolder(id: string | null) {
 .folder-grid small {
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 .folder-grid strong {
   color: var(--kb-text);
-  font-size: 12px;
+  font-size: 14px;
 }
 .folder-grid small {
   color: var(--kb-text-subtle);
-  font-size: 10px;
+  font-size: 14px;
 }
 .files-heading {
   margin-top: 35px;
@@ -309,16 +314,16 @@ function openFolder(id: string | null) {
 }
 .file-main strong {
   color: var(--kb-text);
-  font-size: 12px;
+  font-size: 14px;
 }
 .file-main small,
 .file-list time {
   color: var(--kb-text-subtle);
-  font-size: 9px;
+  font-size: 14px;
 }
 .file-status {
-  color: #bc944c;
-  font-size: 10px;
+  color: var(--kb-warning);
+  font-size: 14px;
 }
 .file-status.published {
   color: var(--kb-success);
@@ -332,17 +337,18 @@ function openFolder(id: string | null) {
   border: 1px dashed var(--kb-border);
   border-radius: var(--kb-radius-md);
   color: var(--kb-text-subtle);
-  font-size: 10px;
+  font-size: 14px;
 }
 @media (max-width: 760px) {
   .workspace-header {
     min-height: 130px;
     align-items: flex-start;
+    flex-wrap: wrap;
     padding: 25px 16px 20px;
   }
   .workspace-header .button {
     flex: none;
-    font-size: 0;
+    font-size: 12px;
   }
   .workspace-header .button svg {
     margin: 0;

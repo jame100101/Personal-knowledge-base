@@ -1,0 +1,117 @@
+{
+  "note": "One unauthenticated read-only cold browser navigation of public production, 1440×1000, local machine, no network or CPU throttling. Not field INP, not a statistical benchmark. Search metric includes two requestAnimationFrame waits; it is an upper frame-to-render observation, not pure filter compute time.",
+  "url": "https://knowledge.damnatiox.com",
+  "status": 200,
+  "htmlBytes": 2351316,
+  "metrics": {
+    "stateKeys": [
+      "$skb-theme",
+      "$skb-locale-state",
+      "$sknowledge-folders",
+      "$sknowledge-documents",
+      "$sknowledge-loaded",
+      "$sknowledge-loaded-includes-drafts",
+      "$sknowledge-loading",
+      "$sknowledge-error",
+      "$sknowledge-update"
+    ],
+    "documentCount": 314,
+    "folderCount": 71,
+    "bodyChars": 1092476,
+    "bodyUtf8Bytes": 1782145,
+    "draftCount": 0,
+    "nuxtSerializedChars": 1435561,
+    "navigation": {
+      "ttfb": 944.1000000014901,
+      "domContentLoaded": 6264.70000000298,
+      "transferSize": 828508,
+      "encodedBodySize": 828208,
+      "decodedBodySize": 2351316
+    },
+    "resources": {
+      "count": 36,
+      "transferSize": 2507180,
+      "decodedBodySize": 4187286,
+      "apiRequests": []
+    },
+    "longTasks": [
+      {
+        "start": 6653.20000000298,
+        "duration": 58
+      },
+      {
+        "start": 7481.20000000298,
+        "duration": 73
+      }
+    ]
+  },
+  "searches": [
+    {
+      "query": "软",
+      "toSecondFrameMs": 25.5,
+      "renderedResults": 9,
+      "resultTitles": [
+        "软件工程",
+        "软件工程学习路线：把一个小功能从想法做到可靠交付",
+        "Git 从保存改动到合并：给每一次变化留下记录",
+        "Java 开发入门：平台、JDK、编译运行与开发环境"
+      ],
+      "localFullTextMatches": 23
+    },
+    {
+      "query": "软件",
+      "toSecondFrameMs": 159.10000000149012,
+      "renderedResults": 9,
+      "resultTitles": [
+        "软件工程",
+        "软件工程学习路线：把一个小功能从想法做到可靠交付",
+        "Git 从保存改动到合并：给每一次变化留下记录",
+        "Java 开发入门：平台、JDK、编译运行与开发环境"
+      ],
+      "localFullTextMatches": 23
+    },
+    {
+      "query": "软件工",
+      "toSecondFrameMs": 26.899999998509884,
+      "renderedResults": 9,
+      "resultTitles": [
+        "软件工程",
+        "软件工程学习路线：把一个小功能从想法做到可靠交付",
+        "Git 从保存改动到合并：给每一次变化留下记录",
+        "从用户问题到验收标准：把“好用一点”写具体"
+      ],
+      "localFullTextMatches": 20
+    },
+    {
+      "query": "软件工程",
+      "toSecondFrameMs": 26.69999999552965,
+      "renderedResults": 9,
+      "resultTitles": [
+        "软件工程",
+        "软件工程学习路线：把一个小功能从想法做到可靠交付",
+        "Git 从保存改动到合并：给每一次变化留下记录",
+        "从用户问题到验收标准：把“好用一点”写具体"
+      ],
+      "localFullTextMatches": 20
+    },
+    {
+      "query": "依赖倒置",
+      "toSecondFrameMs": 27.399999998509884,
+      "renderedResults": 2,
+      "resultTitles": [
+        "设计原则、UML 与常用设计模式",
+        "模块、包、模块解析与声明文件"
+      ],
+      "localFullTextMatches": 2
+    },
+    {
+      "query": "beforeunload",
+      "toSecondFrameMs": 25.299999997019768,
+      "renderedResults": 0,
+      "resultTitles": [],
+      "localFullTextMatches": 0
+    }
+  ],
+  "errors": [],
+  "failed": []
+}

@@ -12,6 +12,7 @@ const { t } = useLocale()
       <ChevronRight v-if="index" :size="13" aria-hidden="true" />
       <NuxtLink
         :to="item.path"
+        :title="item.label"
         :aria-current="index === items.length - 1 ? 'page' : undefined"
       >
         {{ item.label }}
@@ -27,7 +28,7 @@ const { t } = useLocale()
   gap: 5px;
   color: var(--kb-text-subtle);
   font-size: 12px;
-  overflow: hidden;
+  flex-wrap: wrap;
 }
 .breadcrumbs a {
   white-space: nowrap;

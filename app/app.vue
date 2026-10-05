@@ -1,15 +1,29 @@
 <script setup lang="ts">
 const { theme } = useTheme()
 const { locale } = useLocale()
+let themeFrame = 0
+onBeforeUnmount(() => {
+  cancelAnimationFrame(themeFrame)
+  delete document.documentElement.dataset.themeChanging
+})
 
 watch(
   theme,
-  (value) => {
+  (value, previous) => {
     if (!import.meta.client) return
+    if (previous && previous !== value) {
+      cancelAnimationFrame(themeFrame)
+      document.documentElement.dataset.themeChanging = ''
+      themeFrame = requestAnimationFrame(() => {
+        themeFrame = requestAnimationFrame(() => {
+          delete document.documentElement.dataset.themeChanging
+        })
+      })
+    }
     document.documentElement.dataset.theme = value
     document.documentElement.style.colorScheme = value
   },
-  { immediate: true },
+  { immediate: true, flush: 'sync' },
 )
 
 useHead(() => ({

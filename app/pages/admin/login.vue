@@ -5,12 +5,14 @@ definePageMeta({ layout: false })
 useHead({ title: '管理员登录' })
 const { $supabaseConfigured } = useNuxtApp()
 const auth = useAuth()
+const { t } = useLocale()
 const email = ref('')
 const password = ref('')
 const busy = ref(false)
 const error = ref('')
 
 async function submit() {
+  if (busy.value) return
   error.value = ''
   busy.value = true
   try {
@@ -30,7 +32,9 @@ async function submit() {
 
 <template>
   <main class="login-page">
-    <NuxtLink to="/" class="back"><ArrowLeft :size="15" /> 返回知识库</NuxtLink>
+    <NuxtLink to="/" class="back"
+      ><ArrowLeft :size="15" /> {{ t('backLibrary') }}</NuxtLink
+    >
     <ThemeToggle class="theme-control" />
     <section class="login-card">
       <div class="login-brand">
@@ -40,18 +44,22 @@ async function submit() {
       </div>
       <div class="login-icon"><LockKeyhole :size="22" /></div>
       <span class="eyebrow">ADMIN CONSOLE</span>
-      <h1>管理员登录</h1>
-      <p>使用 Supabase Auth 中已被授予 admin 角色的账户。</p>
+      <h1>{{ t('adminLogin') }}</h1>
+      <p>{{ t('loginHint') }}</p>
       <div v-if="!$supabaseConfigured" class="config-notice">
         当前尚未配置 Supabase 环境变量。本地开发可直接访问
         <NuxtLink to="/admin">管理后台</NuxtLink>。
       </div>
       <form v-else @submit.prevent="submit">
         <div class="field">
-          <label>邮箱</label>
+          <label for="login-email">{{ t('email') }}</label>
           <div class="input-wrap">
             <Mail :size="15" /><input
+              id="login-email"
               v-model="email"
+              :disabled="busy"
+              :aria-invalid="!!error"
+              :aria-describedby="error ? 'login-error' : undefined"
               type="email"
               autocomplete="email"
               required
@@ -60,10 +68,14 @@ async function submit() {
           </div>
         </div>
         <div class="field">
-          <label>密码</label>
+          <label for="login-password">{{ t('password') }}</label>
           <div class="input-wrap">
             <KeyRound :size="15" /><input
+              id="login-password"
               v-model="password"
+              :disabled="busy"
+              :aria-invalid="!!error"
+              :aria-describedby="error ? 'login-error' : undefined"
               type="password"
               autocomplete="current-password"
               required
@@ -71,9 +83,9 @@ async function submit() {
             />
           </div>
         </div>
-        <p v-if="error" class="error-text">{{ error }}</p>
+        <p v-if="error" id="login-error" class="error-text" role="alert">{{ error }}</p>
         <button class="button primary" :disabled="busy" type="submit">
-          {{ busy ? '正在验证…' : '进入管理后台' }}
+          {{ busy ? t('signingIn') : t('signIn') }}
         </button>
       </form>
     </section>
@@ -85,7 +97,7 @@ async function submit() {
   min-height: 100vh;
   display: grid;
   place-items: center;
-  padding: 24px;
+  padding: 80px 20px 32px;
   background: var(--kb-bg);
 }
 .back {
@@ -160,7 +172,7 @@ form {
   gap: 16px;
 }
 .input-wrap {
-  height: 42px;
+  min-height: 48px;
   display: flex;
   align-items: center;
   gap: 9px;
@@ -177,16 +189,16 @@ form {
   min-width: 0;
   flex: 1;
   border: 0;
-  outline: 0;
+  outline-offset: 2px;
   background: transparent;
   color: var(--kb-text);
 }
 .config-notice {
   padding: 12px;
-  border: 1px solid #3c4023;
+  border: 1px solid var(--kb-demo-border);
   border-radius: var(--kb-radius-sm);
-  background: #171a0f;
-  color: #b7c17c;
+  background: var(--kb-demo-bg);
+  color: var(--kb-demo-text);
   font-size: 12px;
   line-height: 1.6;
 }

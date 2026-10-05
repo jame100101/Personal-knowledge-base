@@ -1,0 +1,61 @@
+{
+  "note": "Actual Playwright browser recording on local demo. Editor text was changed only in memory, never saved or published. Viewport changes from 1440x1000 to 390x844 within fixed 1440x1000 recording frame.",
+  "events": [
+    {
+      "atSeconds": 1.5,
+      "label": "Desktop homepage"
+    },
+    {
+      "atSeconds": 7.4,
+      "label": "Pointer spotlight on category cards"
+    },
+    {
+      "atSeconds": 9.2,
+      "label": "Visible button press on chunking tag"
+    },
+    {
+      "atSeconds": 9.2,
+      "label": "Tag search applies actual #chunking filter"
+    },
+    {
+      "atSeconds": 11.6,
+      "label": "Desktop folder collapse"
+    },
+    {
+      "atSeconds": 12.7,
+      "label": "Desktop folder expand"
+    },
+    {
+      "atSeconds": 14,
+      "label": "Desktop sidebar collapse"
+    },
+    {
+      "atSeconds": 15.2,
+      "label": "Desktop sidebar restore"
+    },
+    {
+      "atSeconds": 16.4,
+      "label": "Keyboard command search"
+    },
+    {
+      "atSeconds": 19.8,
+      "label": "Switch to light theme"
+    },
+    {
+      "atSeconds": 22.4,
+      "label": "Mobile 390px"
+    },
+    {
+      "atSeconds": 23.5,
+      "label": "Mobile navigation drawer"
+    },
+    {
+      "atSeconds": 26.8,
+      "label": "Mobile editor source"
+    },
+    {
+      "atSeconds": 28,
+      "label": "Switch to rendered preview"
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import {
   CheckCircle2,
+  LoaderCircle,
   FileUp,
   ImagePlus,
   Save,
@@ -13,6 +14,8 @@ import { isSafeMarkdownFilename, slugify } from '~/utils/slug'
 
 const props = defineProps<{ document?: KnowledgeDocument }>()
 const route = useRoute()
+const { t } = useLocale()
+const router = useRouter()
 const { folders, documents, load, saveDocument } = useKnowledge()
 await load(false, true)
 const requestedFolderId =
@@ -48,17 +51,47 @@ const busy = ref(false)
 const error = ref('')
 const success = ref('')
 const parseNotice = ref('')
-const dirty = ref(false)
+const savedSnapshot = ref(JSON.stringify(draft))
+const dirty = computed(() => JSON.stringify(draft) !== savedSnapshot.value)
+const invalid = ref('')
+const panel = ref<'edit' | 'preview'>('edit')
+const preview = ref(draft.content)
+let previewTimer: ReturnType<typeof setTimeout> | undefined
+watch(
+  () => draft.content,
+  (value) => {
+    clearTimeout(previewTimer)
+    previewTimer = setTimeout(() => {
+      preview.value = value
+    }, 180)
+  },
+)
+const leaveOpen = ref(false)
+let resolveLeave: ((value: boolean) => void) | undefined
+let pendingLeave: Promise<boolean> | undefined
+function leaveDecision(value: boolean) {
+  leaveOpen.value = false
+  resolveLeave?.(value)
+  resolveLeave = undefined
+  pendingLeave = undefined
+}
+const removeGuard = router.beforeEach(() => {
+  if (!dirty.value) return true
+  if (pendingLeave) return pendingLeave
+  leaveOpen.value = true
+  pendingLeave = new Promise<boolean>((resolve) => {
+    resolveLeave = resolve
+  })
+  return pendingLeave
+})
+onBeforeUnmount(() => {
+  removeGuard()
+  clearTimeout(previewTimer)
+  resolveLeave?.(false)
+})
 const fileInput = ref<HTMLInputElement>()
 const dragging = ref(false)
 
-watch(
-  draft,
-  () => {
-    dirty.value = true
-  },
-  { deep: true },
-)
 watch(tagsInput, (value) => {
   draft.tags = value
     .split(',')
@@ -67,12 +100,16 @@ watch(tagsInput, (value) => {
 })
 watch(
   () => draft.title,
-  (value) => {
-    if (!draft.id && (!draft.slug || !dirty.value)) draft.slug = slugify(value)
+  (value, previous) => {
+    if (!draft.id && (!draft.slug || draft.slug === slugify(previous)))
+      draft.slug = slugify(value)
   },
 )
 function beforeUnload(event: BeforeUnloadEvent) {
-  if (dirty.value) event.preventDefault()
+  if (dirty.value) {
+    event.preventDefault()
+    event.returnValue = ''
+  }
 }
 onMounted(() => window.addEventListener('beforeunload', beforeUnload))
 onUnmounted(() => window.removeEventListener('beforeunload', beforeUnload))
@@ -80,9 +117,8 @@ onUnmounted(() => window.removeEventListener('beforeunload', beforeUnload))
 async function readFile(file: File) {
   error.value = ''
   parseNotice.value = ''
-  if (!isSafeMarkdownFilename(file.name))
-    throw new Error('请选择安全的 .md 或 .markdown 文件名')
-  if (file.size > 2 * 1024 * 1024) throw new Error('Markdown 文件不能超过 2 MB')
+  if (!isSafeMarkdownFilename(file.name)) throw new Error(t('fileInvalid'))
+  if (file.size > 2 * 1024 * 1024) throw new Error(t('fileLarge'))
   const buffer = await file.arrayBuffer()
   const source = new TextDecoder('utf-8', { fatal: true }).decode(buffer)
   const parsed = parseFrontmatter(source, file.name)
@@ -98,19 +134,20 @@ async function readFile(file: File) {
   })
   tagsInput.value = parsed.tags.join(', ')
   originalFile.value = file
-  parseNotice.value = parsed.folderSuggestion
-    ? `Frontmatter 建议文件夹：${parsed.folderSuggestion}。请在上方手动确认。`
-    : 'Markdown 已读取，可在发布前继续编辑。'
+  parseNotice.value = t('fileRead')
+  if (parsed.folderSuggestion) parseNotice.value += ` (${parsed.folderSuggestion})`
 }
 
 async function handleFiles(files: FileList | null) {
-  if (!files?.length) return
+  if (!files?.length || busy.value) return
+  if (files.length !== 1) {
+    error.value = t('fileMultiple')
+    return
+  }
   try {
     await readFile(files[0]!)
-    if (files.length > 1)
-      parseNotice.value += ` 当前编辑器已载入首个文件，其余 ${files.length - 1} 个可逐一处理。`
   } catch (cause) {
-    error.value = cause instanceof Error ? cause.message : '文件读取失败'
+    error.value = cause instanceof Error ? cause.message : t('fileFailed')
   }
 }
 
@@ -120,24 +157,37 @@ function handleDrop(event: DragEvent) {
 }
 
 async function submit(status: 'draft' | 'published') {
+  if (busy.value) return
   error.value = ''
   success.value = ''
-  if (!draft.title.trim()) return (error.value = '请填写标题')
-  if (!draft.slug.trim()) return (error.value = 'Slug 不能为空')
-  if (!draft.folder_id) return (error.value = '请确认目标文件夹')
+  invalid.value = ''
+  const failed = !draft.title.trim()
+    ? ['title', t('requiredTitle')]
+    : !draft.slug.trim()
+      ? ['slug', t('requiredSlug')]
+      : !draft.folder_id
+        ? ['folder', t('requiredFolder')]
+        : null
+  if (failed) {
+    invalid.value = failed[0]!
+    error.value = failed[1]!
+    await nextTick()
+    globalThis.document.getElementById(`editor-${invalid.value}`)?.focus()
+    return
+  }
   busy.value = true
   try {
     draft.status = status
     const saved = await saveDocument(draft, originalFile.value)
-    dirty.value = false
-    success.value = status === 'published' ? '文档已发布' : '草稿已保存'
+    savedSnapshot.value = JSON.stringify(draft)
+    success.value = status === 'published' ? t('documentPublished') : t('draftSaved')
     if (status === 'published') {
       await navigateTo(documentPublicPath(saved, folders.value))
     } else if (!draft.id) {
       await navigateTo(`/admin/documents/${saved.id}`)
     }
   } catch (cause) {
-    error.value = cause instanceof Error ? cause.message : '保存失败'
+    error.value = cause instanceof Error ? cause.message : t('saveFailed')
   } finally {
     busy.value = false
   }
@@ -145,95 +195,147 @@ async function submit(status: 'draft' | 'published') {
 </script>
 
 <template>
-  <div class="editor-shell">
-    <section class="editor-meta">
-      <div class="field field-wide">
-        <label>标题</label
-        ><input v-model="draft.title" class="input" placeholder="文档标题" />
-      </div>
-      <div class="field">
-        <label>Slug</label
-        ><input v-model="draft.slug" class="input mono" placeholder="document-slug" />
-      </div>
-      <div class="field">
-        <label>目标文件夹</label
-        ><FolderSelect v-model="draft.folder_id" :folders="folders" required />
-      </div>
-      <div class="field field-wide">
-        <label>描述</label
-        ><input
-          v-model="draft.description"
-          class="input"
-          placeholder="一句话描述文档内容"
-        />
-      </div>
-      <div class="field">
-        <label>标签（逗号分隔）</label
-        ><input v-model="tagsInput" class="input" placeholder="java, spring" />
-      </div>
-      <div class="field">
-        <label>排序</label
-        ><input v-model.number="draft.sort_order" class="input" type="number" />
-      </div>
-    </section>
+  <div class="editor-shell" :aria-busy="busy">
+    <fieldset :disabled="busy" class="editor-fields">
+      <section class="editor-meta">
+        <div class="field field-wide">
+          <label for="editor-title">{{ t('editorTitle') }}</label
+          ><input
+            id="editor-title"
+            v-model="draft.title"
+            :aria-invalid="invalid === 'title'"
+            :aria-describedby="invalid === 'title' ? 'editor-error' : undefined"
+            class="input"
+            placeholder="文档标题"
+          />
+        </div>
+        <div class="field">
+          <label for="editor-slug">Slug</label
+          ><input
+            id="editor-slug"
+            v-model="draft.slug"
+            :aria-invalid="invalid === 'slug'"
+            :aria-describedby="invalid === 'slug' ? 'editor-error' : undefined"
+            class="input mono"
+            placeholder="document-slug"
+          />
+        </div>
+        <div class="field">
+          <label for="editor-folder">{{ t('editorFolder') }}</label
+          ><FolderSelect
+            id="editor-folder"
+            v-model="draft.folder_id"
+            :aria-invalid="invalid === 'folder'"
+            :aria-describedby="invalid === 'folder' ? 'editor-error' : undefined"
+            :folders="folders"
+            required
+          />
+        </div>
+        <div class="field field-wide">
+          <label for="editor-description">{{ t('editorDescription') }}</label
+          ><input
+            id="editor-description"
+            v-model="draft.description"
+            class="input"
+            placeholder="一句话描述文档内容"
+          />
+        </div>
+        <div class="field">
+          <label for="editor-tags">{{ t('editorTags') }}</label
+          ><input
+            id="editor-tags"
+            v-model="tagsInput"
+            class="input"
+            placeholder="java, spring"
+          />
+        </div>
+        <div class="field">
+          <label for="editor-order">{{ t('editorOrder') }}</label
+          ><input
+            id="editor-order"
+            v-model.number="draft.sort_order"
+            class="input"
+            type="number"
+          />
+        </div>
+      </section>
 
-    <section
-      class="drop-zone"
-      :class="{ dragging }"
-      @dragover.prevent="dragging = true"
-      @dragleave.prevent="dragging = false"
-      @drop.prevent="handleDrop"
-    >
-      <UploadCloud :size="20" />
-      <span
-        ><strong>拖入 Markdown</strong><small>.md / .markdown，最大 2 MB</small></span
+      <section
+        class="drop-zone"
+        :class="{ dragging }"
+        @dragover.prevent="dragging = true"
+        @dragleave.prevent="dragging = false"
+        @drop.prevent="handleDrop"
       >
-      <button class="button small" type="button" @click="fileInput?.click()">
-        <FileUp :size="14" /> 选择文件
-      </button>
-      <input
-        ref="fileInput"
-        hidden
-        type="file"
-        accept=".md,.markdown,text/markdown,text/plain"
-        multiple
-        @change="handleFiles(($event.target as HTMLInputElement).files)"
-      />
-    </section>
-    <p v-if="parseNotice" class="notice">
-      <CheckCircle2 :size="14" /> {{ parseNotice }}
-    </p>
-    <p v-if="error" class="error-text">{{ error }}</p>
-    <p v-if="success" class="success-text">{{ success }}</p>
-
-    <section class="split-editor">
-      <div class="editor-pane">
-        <header>
-          <span>MARKDOWN</span><span>{{ draft.content.length }} CHARS</span>
-        </header>
-        <textarea
-          v-model="draft.content"
-          class="source-editor mono"
-          spellcheck="false"
-          aria-label="Markdown 原文"
+        <UploadCloud :size="20" />
+        <span
+          ><strong>{{ t('dropMarkdown') }}</strong
+          ><small>{{ t('fileHint') }}</small></span
+        >
+        <button class="button small" type="button" @click="fileInput?.click()">
+          <FileUp :size="14" /> {{ t('chooseFile') }}
+        </button>
+        <input
+          ref="fileInput"
+          hidden
+          type="file"
+          accept=".md,.markdown,text/markdown,text/plain"
+          @change="handleFiles(($event.target as HTMLInputElement).files)"
         />
-      </div>
-      <div class="preview-pane">
-        <header>
-          <span>PREVIEW</span
-          ><button type="button" title="上传图片功能需要 Supabase Storage">
-            <ImagePlus :size="14" /> 图片
-          </button>
-        </header>
-        <div class="preview-scroll"><MarkdownRenderer :source="draft.content" /></div>
-      </div>
-    </section>
+      </section>
+      <p v-if="parseNotice" class="notice">
+        <CheckCircle2 :size="14" /> {{ parseNotice }}
+      </p>
+      <p v-if="error" id="editor-error" class="error-text" role="alert">{{ error }}</p>
+      <p class="success-text" role="status">{{ success }}</p>
 
+      <div class="editor-panel-switch" :aria-label="t('editorPreview')">
+        <button type="button" :aria-pressed="panel === 'edit'" @click="panel = 'edit'">
+          {{ t('editorEdit') }}
+        </button>
+        <button
+          type="button"
+          :aria-pressed="panel === 'preview'"
+          @click="panel = 'preview'"
+        >
+          {{ t('editorPreview') }}
+        </button>
+      </div>
+      <section class="split-editor" :data-panel="panel">
+        <div class="editor-pane">
+          <header>
+            <span>MARKDOWN</span><span>{{ draft.content.length }} CHARS</span>
+          </header>
+          <textarea
+            v-model="draft.content"
+            class="source-editor mono"
+            spellcheck="false"
+            :aria-label="t('editorSource')"
+          />
+        </div>
+        <div class="preview-pane">
+          <header>
+            <span>{{ t('editorPreview') }}</span
+            ><button type="button" disabled aria-describedby="image-unavailable">
+              <ImagePlus :size="14" /> {{ t('images') }}
+            </button>
+          </header>
+          <p id="image-unavailable" class="image-unavailable">
+            {{ t('imageUnavailable') }}
+          </p>
+          <div class="preview-scroll"><MarkdownRenderer :source="preview" /></div>
+        </div>
+      </section>
+    </fieldset>
     <footer class="editor-actions">
-      <span>{{ dirty ? '有尚未保存的修改' : '全部修改已保存' }}</span>
+      <span>{{ busy ? t('saving') : dirty ? t('unsaved') : t('saved') }}</span>
       <div>
         <button class="button" type="button" :disabled="busy" @click="submit('draft')">
-          <Save :size="15" /> 保存草稿
+          <LoaderCircle v-if="busy" class="busy-icon" :size="15" /><Save
+            v-else
+            :size="15"
+          />
+          {{ t('saveDraft') }}
         </button>
         <button
           class="button primary"
@@ -241,16 +343,39 @@ async function submit(status: 'draft' | 'published') {
           :disabled="busy"
           @click="submit('published')"
         >
-          <Send :size="15" /> 发布文档
+          <Send :size="15" /> {{ t('publishDocument') }}
         </button>
       </div>
     </footer>
+    <UiDialog
+      compact
+      :open="leaveOpen"
+      :label="t('leaveTitle')"
+      @close="leaveDecision(false)"
+    >
+      <div class="leave-confirm">
+        <h2>{{ t('leaveTitle') }}</h2>
+        <p>{{ t('leaveHint') }}</p>
+        <div>
+          <button
+            class="button primary"
+            type="button"
+            autofocus
+            @click="leaveDecision(false)"
+          >
+            {{ t('keepEditing') }}</button
+          ><button class="button danger" type="button" @click="leaveDecision(true)">
+            {{ t('discardLeave') }}
+          </button>
+        </div>
+      </div>
+    </UiDialog>
   </div>
 </template>
 
 <style scoped>
 .editor-shell {
-  padding: 22px 28px 90px;
+  padding: 24px 28px 0;
 }
 .editor-meta {
   display: grid;
@@ -289,7 +414,7 @@ async function submit(status: 'draft' | 'published') {
   font-size: 12px;
 }
 .drop-zone small {
-  font-size: 10px;
+  font-size: 12px;
 }
 .notice {
   display: flex;
@@ -348,7 +473,7 @@ async function submit(status: 'draft' | 'published') {
   overscroll-behavior: contain;
   resize: none;
   border: 0;
-  outline: 0;
+  outline-offset: -3px;
   padding: 19px;
   background: var(--kb-code-bg);
   color: var(--kb-code-text);
@@ -364,21 +489,21 @@ async function submit(status: 'draft' | 'published') {
   overscroll-behavior: contain;
 }
 .editor-actions {
-  position: fixed;
-  inset: auto 0 0 294px;
+  position: sticky;
+  bottom: 0;
   z-index: 20;
   min-height: 62px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 28px;
+  padding: 12px 0 max(12px, env(safe-area-inset-bottom));
   border-top: 1px solid var(--kb-border);
   background: var(--kb-panel-bg);
-  backdrop-filter: blur(5px);
+  margin-top: 20px;
 }
 .editor-actions > span {
   color: var(--kb-text-subtle);
-  font-size: 11px;
+  font-size: 12px;
 }
 .editor-actions > div {
   display: flex;
@@ -392,21 +517,24 @@ async function submit(status: 'draft' | 'published') {
     grid-column: span 2;
   }
   .split-editor {
-    height: auto;
+    height: min(640px, 70dvh);
     grid-template-columns: 1fr;
   }
   .editor-pane {
     border-right: 0;
     border-bottom: 1px solid var(--kb-border);
   }
+  .source-editor {
+    font-size: 16px;
+  }
   .source-editor,
   .preview-scroll {
-    min-height: 480px;
+    min-height: 0;
   }
 }
 @media (max-width: 760px) {
   .editor-shell {
-    padding: 15px 14px 90px;
+    padding: 18px 14px 0;
   }
   .editor-meta {
     grid-template-columns: 1fr;
@@ -424,7 +552,7 @@ async function submit(status: 'draft' | 'published') {
   .editor-actions {
     left: 0;
     bottom: 0;
-    padding: 8px 12px;
+    padding: 12px 0 max(12px, env(safe-area-inset-bottom));
   }
   .editor-actions > span {
     display: none;
@@ -437,6 +565,77 @@ async function submit(status: 'draft' | 'published') {
   }
   .preview-scroll {
     padding: 20px 16px;
+  }
+}
+.editor-fields {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+.editor-panel-switch {
+  display: none;
+}
+.image-unavailable {
+  margin: 0;
+  padding: 10px 14px;
+  color: var(--kb-text-subtle);
+  font-size: 12px;
+  line-height: 1.6;
+  border-bottom: 1px solid var(--kb-border);
+}
+.leave-confirm {
+  padding: 28px;
+}
+.leave-confirm h2 {
+  margin: 0 0 12px;
+  font-size: 22px;
+}
+.leave-confirm p {
+  color: var(--kb-text-muted);
+  line-height: 1.8;
+}
+.leave-confirm > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+.busy-icon {
+  animation: busy-spin 1s linear infinite;
+}
+@keyframes busy-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (max-width: 980px) {
+  .editor-panel-switch {
+    display: flex;
+    gap: 4px;
+    padding: 4px;
+    margin-top: 20px;
+    border: 1px solid var(--kb-border);
+    border-radius: var(--kb-radius-md);
+    background: var(--kb-surface);
+  }
+  .editor-panel-switch button {
+    flex: 1;
+    min-height: 44px;
+    border: 0;
+    border-radius: var(--kb-radius-sm);
+    background: transparent;
+    color: var(--kb-text-muted);
+    cursor: pointer;
+  }
+  .editor-panel-switch button[aria-pressed='true'] {
+    color: var(--kb-text);
+    background: var(--kb-selected-bg);
+    box-shadow: inset 0 -2px var(--kb-accent);
+  }
+  .split-editor[data-panel='edit'] .preview-pane,
+  .split-editor[data-panel='preview'] .editor-pane {
+    display: none;
   }
 }
 </style>

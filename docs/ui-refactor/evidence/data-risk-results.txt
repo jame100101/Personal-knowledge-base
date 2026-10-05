@@ -1,0 +1,8 @@
+PROVED logout retains draft cache; subsequent public load makes no query
+PROVED concurrent draft load resolves before first fetch and is never retried
+PROVED editing saved document does not update existing source Markdown
+PROVED storage pointer update error ignored; save returns nonexistent persisted pointer
+PROVED upload failure leaves committed document while caller receives save failure
+PROVED refresh failure swallowed after successful write; caller receives normal success
+PROVED partial reorder commits one sibling, retains duplicate order and stale local cache
+PROVED document deletion removes source before failed row delete
