@@ -1,3 +1,4 @@
+import { rootOrder, folderOrder, documentOrder } from './learning-order.mjs'
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import process from 'node:process'
@@ -71,7 +72,7 @@ async function scanTree(contentRoot) {
         parentKey,
         name: displayName(entry.name),
         slug: slugify(displayName(entry.name)),
-        sortOrder: orderOf(entry.name),
+        sortOrder: folderOrder(path.basename(contentRoot), key, orderOf(entry.name)),
       })
       await visit(fullPath, key)
     }
@@ -87,7 +88,12 @@ async function scanTree(contentRoot) {
         markdown,
         title: titleOf(markdown, entry.name),
         slug: slugify(titleOf(markdown, entry.name)),
-        sortOrder: orderOf(entry.name),
+        sortOrder: documentOrder(
+          path.basename(contentRoot),
+          parentKey,
+          entry.name,
+          orderOf(entry.name),
+        ),
       })
     }
   }
@@ -172,7 +178,7 @@ export async function syncContentTree({
     slug: slugify(rootName),
     description: rootDescription,
     icon: 'Folder',
-    sort_order: 1000,
+    sort_order: rootOrder(rootName),
     is_visible: true,
   }
   if (root) {

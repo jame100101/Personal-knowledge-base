@@ -34,7 +34,11 @@
     "content:verify-backend": "node scripts/import-backend-knowledge.mjs --verify",
     "content:import-frontend": "node scripts/import-frontend-knowledge.mjs",
     "content:verify-frontend": "node scripts/import-frontend-knowledge.mjs --verify",
-    "content:validate-frontend": "node scripts/validate-frontend-knowledge.mjs"
+    "content:validate-frontend": "node scripts/validate-frontend-knowledge.mjs",
+    "content:validate-software-engineering": "node scripts/validate-software-engineering.mjs",
+    "content:import-software-engineering": "node scripts/import-software-engineering.mjs",
+    "content:verify-software-engineering": "node scripts/import-software-engineering.mjs --verify",
+    "test:software-engineering": "node --test examples/software-engineering/favorites.test.mjs"
   },
   "overrides": {
     "brace-expansion": "5.0.8",

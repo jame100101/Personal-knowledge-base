@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-05",
+  "newArticles": 18,
+  "matchingBodyHashes": 18,
+  "existingFoldersPreserved": 94,
+  "existingDocumentsPreserved": 298,
+  "folderOrderChanges": 38,
+  "documentOrderChanges": 64,
+  "roots": [
+    "语言基础",
+    "软件工程",
+    "前端架构",
+    "后端知识",
+    "Java开发",
+    "Agent开发"
+  ],
+  "guideBodiesUpdatedAndVerified": 4,
+  "liveArticlePagesVerified": 22,
+  "liveNewDiagramsVerified": 3,
+  "responsiveWidths": [
+    390,
+    820,
+    1280
+  ],
+  "unitTestsPassed": 37,
+  "exampleTestsPassed": 4,
+  "browserRegressionCasesPassed": 20,
+  "productionUrl": "https://knowledge.damnatiox.com",
+  "deploymentId": "dpl_A8wNwwAQAVVuubTqEmAuxAiZxqZm",
+  "deploymentState": "READY",
+  "framework": "Nuxt 3",
+  "buildDurationSeconds": 73.4,
+  "gitSource": "Local working tree uploaded via CLI; not pushed to GitHub"
+}

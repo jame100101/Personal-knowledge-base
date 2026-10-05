@@ -6,7 +6,11 @@ import {
   FolderOpen,
 } from 'lucide-vue-next'
 import type { Folder, FolderNode } from '~/types/knowledge'
-import { documentPublicPath, folderPublicPath } from '~/utils/folders'
+import {
+  documentPublicPath,
+  folderPublicPath,
+  orderedFolderEntries,
+} from '~/utils/folders'
 
 const props = defineProps<{
   node: FolderNode
@@ -15,6 +19,9 @@ const props = defineProps<{
   currentFolderId?: string
   currentDocumentId?: string
 }>()
+const entries = computed(() =>
+  orderedFolderEntries(props.node.children, props.node.documents),
+)
 const expanded = ref((props.level || 0) < 1)
 const hasChildren = computed(
   () => props.node.children.length > 0 || props.node.documents.length > 0,
@@ -80,26 +87,27 @@ watch(
       <span class="tree-count">{{ node.documentCount }}</span>
     </div>
     <ul v-if="expanded" class="tree-children">
-      <FolderTreeItem
-        v-for="child in node.children"
-        :key="child.id"
-        :node="child"
-        :all-folders="allFolders"
-        :level="(level || 0) + 1"
-        :current-folder-id="currentFolderId"
-        :current-document-id="currentDocumentId"
-      />
-      <li v-for="document in node.documents" :key="document.id">
-        <NuxtLink
-          :to="documentPublicPath(document, allFolders)"
-          class="tree-document"
-          :class="{ active: currentDocumentId === document.id }"
-          :style="{ '--depth': (level || 0) + 1 }"
-        >
-          <FileText :size="13" />
-          <span>{{ document.title }}</span>
-        </NuxtLink>
-      </li>
+      <template v-for="entry in entries" :key="`${entry.kind}-${entry.item.id}`">
+        <FolderTreeItem
+          v-if="entry.kind === 'folder'"
+          :node="entry.item"
+          :all-folders="allFolders"
+          :level="(level || 0) + 1"
+          :current-folder-id="currentFolderId"
+          :current-document-id="currentDocumentId"
+        />
+        <li v-else>
+          <NuxtLink
+            :to="documentPublicPath(entry.item, allFolders)"
+            class="tree-document"
+            :class="{ active: currentDocumentId === entry.item.id }"
+            :style="{ '--depth': (level || 0) + 1 }"
+          >
+            <FileText :size="13" />
+            <span>{{ entry.item.title }}</span>
+          </NuxtLink>
+        </li>
+      </template>
     </ul>
   </li>
 </template>

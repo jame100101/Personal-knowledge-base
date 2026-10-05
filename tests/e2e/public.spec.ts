@@ -104,9 +104,11 @@ test('TypeScript language foundations are published with detailed comparisons', 
     page.getByRole('heading', { name: '语言基础', exact: true }),
   ).toBeVisible()
 
-  const basics = page.locator('.child-grid a').filter({ hasText: 'TypeScript语言基础' })
+  const basics = page
+    .locator('.learning-order a')
+    .filter({ hasText: 'TypeScript语言基础' })
   const comparison = page
-    .locator('.child-grid a')
+    .locator('.learning-order a')
     .filter({ hasText: 'TypeScript跨语言对照' })
   await expect(basics).toBeVisible()
   await expect(comparison).toBeVisible()

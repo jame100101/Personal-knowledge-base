@@ -3,6 +3,7 @@
 做一个能回答问题的聊天窗口并不难；难的是让它连续做事，遇到错误能调整，做完还能证明结果。可以沿着一个小任务学习：读文件、找问题、修改文件、运行测试。下面各模块解释的，就是这条路径上的不同环节，不需要第一天就把所有组件装齐。
 
 > **版本与资料依据**
+>
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `2026 Agent Engineering`
 > - `source_type`: `official-spec + primary-paper + official-repository`
@@ -14,18 +15,18 @@
 
 本次章节映射固定在[原书提交 4dc4429d56ff](https://github.com/bojieli/ai-agent-book/tree/4dc4429d56ff9c5d7cc7dcbc971cfcd6a618d674)，核对日期为 2026-09-20。原书和本站的编号不是同一套目录；按主题对应，不要拿本站的“08”去猜书里的第八章。
 
-| 原书章节 | 本站对应模块 | 阅读时带着的问题 |
-|---|---|---|
-| [1：Agent 基础](https://bojieli.github.io/ai-agent-book/book/chapter1/) | Agent 基础、Loop、Harness | 下一步是谁决定的，何时结束？ |
-| [2：上下文工程](https://bojieli.github.io/ai-agent-book/book/chapter2/) | Context Engineering、Skills | 这一轮到底把哪些材料交给了模型？ |
-| [3：用户记忆和知识库](https://bojieli.github.io/ai-agent-book/book/chapter3/) | Knowledge 与 Memory | 要保存的是用户偏好，还是可引用的资料？ |
-| [4：工具](https://bojieli.github.io/ai-agent-book/book/chapter4/) | Tools 与 Runtime | 请求怎样变成实际动作，错误怎样返回？ |
-| [5：Coding Agent 与通用 Agent](https://bojieli.github.io/ai-agent-book/book/chapter5/) | Harness、现代 Agent 源码研究 | 修改如何落盘，结果如何验收？ |
-| [6：交互](https://bojieli.github.io/ai-agent-book/book/chapter6/) | Browser Runtime、Production Agent | 外部事件到来时，正在执行的任务怎么办？ |
-| [7：评估](https://bojieli.github.io/ai-agent-book/book/chapter7/) | Evaluation Observability Safety | 什么证据说明任务真的完成了？ |
-| [8：模型后训练](https://bojieli.github.io/ai-agent-book/book/chapter8/) | Model Post-training | 改的是模型参数，还是外围程序？ |
-| [9：持续进化](https://bojieli.github.io/ai-agent-book/book/chapter9/) | Agent Evolution | 改动怎样经过评测，再发布或回滚？ |
-| [10：多 Agent 协作](https://bojieli.github.io/ai-agent-book/book/chapter10/) | Multi-Agent | 分工的收益是否超过通信与重复工作的成本？ |
+| 原书章节                                                                               | 本站对应模块                      | 阅读时带着的问题                         |
+| -------------------------------------------------------------------------------------- | --------------------------------- | ---------------------------------------- |
+| [1：Agent 基础](https://bojieli.github.io/ai-agent-book/book/chapter1/)                | Agent 基础、Loop、Harness         | 下一步是谁决定的，何时结束？             |
+| [2：上下文工程](https://bojieli.github.io/ai-agent-book/book/chapter2/)                | Context Engineering、Skills       | 这一轮到底把哪些材料交给了模型？         |
+| [3：用户记忆和知识库](https://bojieli.github.io/ai-agent-book/book/chapter3/)          | Knowledge 与 Memory               | 要保存的是用户偏好，还是可引用的资料？   |
+| [4：工具](https://bojieli.github.io/ai-agent-book/book/chapter4/)                      | Tools 与 Runtime                  | 请求怎样变成实际动作，错误怎样返回？     |
+| [5：Coding Agent 与通用 Agent](https://bojieli.github.io/ai-agent-book/book/chapter5/) | Harness、现代 Agent 源码研究      | 修改如何落盘，结果如何验收？             |
+| [6：交互](https://bojieli.github.io/ai-agent-book/book/chapter6/)                      | Browser Runtime、Production Agent | 外部事件到来时，正在执行的任务怎么办？   |
+| [7：评估](https://bojieli.github.io/ai-agent-book/book/chapter7/)                      | Evaluation Observability Safety   | 什么证据说明任务真的完成了？             |
+| [8：模型后训练](https://bojieli.github.io/ai-agent-book/book/chapter8/)                | Model Post-training               | 改的是模型参数，还是外围程序？           |
+| [9：持续进化](https://bojieli.github.io/ai-agent-book/book/chapter9/)                  | Agent Evolution                   | 改动怎样经过评测，再发布或回滚？         |
+| [10：多 Agent 协作](https://bojieli.github.io/ai-agent-book/book/chapter10/)           | Multi-Agent                       | 分工的收益是否超过通信与重复工作的成本？ |
 
 同步上游不是整本复制，也不是照搬所有结论。本站保留工程主题结构，修正旧链接，并补充与已有知识连接的说明。书中示例涉及的特定模型、价格、实验分数仍需按原实验条件阅读；章节映射完成不代表 109 个配套实验都已复现。
 
@@ -50,21 +51,23 @@ flowchart LR
 
 ## 2. 主线顺序
 
-1. **01 Agent 基础**：Model、Agent、Workflow、Loop、Tool、Skill、Memory、Context、Harness、Runtime、Multi-Agent 的边界。
-2. **02 Agent Loop**：Minimal → Reliable → Planned → Workflow → Durable；先获得可停止、可验证的单 Agent。
-3. **03 Context Engineering**：Manifest、Assembly、Token Budget、Compaction、Prompt Cache、JIT Retrieval、Progressive Disclosure 与信任边界。
-4. **04 Tools 与 Runtime**：Schema、Registry、Invocation、Execution、OS Process、File/Shell/Browser、权限、幂等与证据。
-5. **05 Knowledge 与 Memory**：RAG/Knowledge 与 Memory 是两个子系统；均可向 context 提供材料，但不等同于 context。
-6. **06 Agent Harness**：执行控制、session、trace、恢复、验证与扩展点。
-7. **07 Skills 与 Protocols**：Skill/Tool/Prompt 及 MCP、A2A、ACP 的层级与版本边界。
-8. **08 Evaluation / Observability / Safety**：先建立任务、环境、validator、trace 与回归门，再讨论扩展能力。
-9. **09 Agent Evolution**：以评测、版本、sandbox 和 rollback 约束候选更新。
-10. **10 Multi-Agent**：只有角色隔离、并行吞吐或权限隔离收益高于协调成本时才使用。
-11. **11 Model Post-training**：可选高级轨道；区分 Harness Improvement 与 Model Improvement。
-12. **12 Production Agent**：可靠性、成本、SLO、发布、运维、审计。
-13. **13 Project Ladder**：P0–P7 的逐级可验收工程项目。
-14. **14 完整链路与架构对照**：把局部机制放回端到端系统。
-15. **99 源码研究**：固定 commit、证据等级和未知项，不把静态推断写成产品承诺。
+1. **Agent 基础**：Model、Agent、Workflow、Loop、Tool、Skill、Memory、Context、Harness、Runtime、Multi-Agent 的边界。
+2. **Agent Loop**：Minimal → Reliable → Planned → Workflow → Durable；先获得可停止、可验证的单 Agent。
+3. **Context Engineering**：Manifest、Assembly、Token Budget、Compaction、Prompt Cache、JIT Retrieval、Progressive Disclosure 与信任边界。
+4. **Tools 与 Runtime**：Schema、Registry、Invocation、Execution、OS Process、File/Shell/Browser、权限、幂等与证据。
+5. **Knowledge 与 Memory**：RAG/Knowledge 与 Memory 是两个子系统；均可向 context 提供材料，但不等同于 context。
+6. **Agent Harness**：执行控制、session、trace、恢复、验证与扩展点。
+7. **Skills 与 Protocols**：Skill/Tool/Prompt 及 MCP、A2A、ACP 的层级与版本边界。
+8. **Evaluation / Observability / Safety**：先建立任务、环境、validator、trace 与回归门，再讨论扩展能力。
+9. **Production Agent**：可靠性、成本、SLO、发布、运维、审计。
+10. **Project Ladder**：P0–P7 的逐级可验收工程项目。
+11. **完整链路与架构对照**：把局部机制放回端到端系统。
+12. **Multi-Agent**：只有角色隔离、并行吞吐或权限隔离收益高于协调成本时才使用。
+13. **Agent Evolution**：以评测、版本、sandbox 和 rollback 约束候选更新。
+14. **Model Post-training**：可选高级轨道；区分 Harness Improvement 与 Model Improvement。
+15. **源码研究**：固定 commit、证据等级和未知项，不把静态推断写成产品承诺。
+
+先把单 Agent 做到能验证、能交付，再按需学习多 Agent、进化与模型后训练。历史目录编号保留，网页按上述学习顺序展示。
 
 ## 3. 最小学习闭环
 
@@ -72,14 +75,14 @@ flowchart LR
 
 ## 4. 哪些能力不是默认项
 
-| 能力 | 何时引入 | 何时暂缓 |
-|---|---|---|
-| Plan / Scheduler | 任务可拆分、依赖可验证、重规划有收益 | 单步或短链任务 |
-| RAG | 答案依赖外部可引用知识 | 模型与确定性工具已经足够 |
-| Long-term Memory | 跨会话个性化或持续状态有明确收益 | 一次性任务或写入质量不可控 |
-| Reflection | 有独立 verifier 或可测反馈 | 只是让同一模型重复评价自己 |
-| Multi-Agent | 并行、隔离或异质能力收益可测 | 单 Agent + tools 已可可靠完成 |
-| Post-training | 有高质量轨迹、奖励和离线回归 | 仅靠 prompt/harness 就能修复 |
+| 能力             | 何时引入                             | 何时暂缓                      |
+| ---------------- | ------------------------------------ | ----------------------------- |
+| Plan / Scheduler | 任务可拆分、依赖可验证、重规划有收益 | 单步或短链任务                |
+| RAG              | 答案依赖外部可引用知识               | 模型与确定性工具已经足够      |
+| Long-term Memory | 跨会话个性化或持续状态有明确收益     | 一次性任务或写入质量不可控    |
+| Reflection       | 有独立 verifier 或可测反馈           | 只是让同一模型重复评价自己    |
+| Multi-Agent      | 并行、隔离或异质能力收益可测         | 单 Agent + tools 已可可靠完成 |
+| Post-training    | 有高质量轨迹、奖励和离线回归         | 仅靠 prompt/harness 就能修复  |
 
 ## 5. 毕业判据
 

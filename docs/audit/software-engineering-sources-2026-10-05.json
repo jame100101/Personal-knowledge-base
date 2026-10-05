@@ -1,0 +1,152 @@
+[
+  {
+    "url": "https://abseil.io/resources/swe-book/html/ch01.html",
+    "status": 200,
+    "final": "https://abseil.io/resources/swe-book/html/ch01.html"
+  },
+  {
+    "url": "https://adr.github.io/",
+    "status": 200,
+    "final": "https://adr.github.io/"
+  },
+  {
+    "url": "https://agilemanifesto.org/iso/zhchs/manifesto.html",
+    "status": 200,
+    "final": "https://agilemanifesto.org/iso/zhchs/manifesto.html"
+  },
+  {
+    "url": "https://agilemanifesto.org/iso/zhchs/principles.html",
+    "status": 200,
+    "final": "https://agilemanifesto.org/iso/zhchs/principles.html"
+  },
+  {
+    "url": "https://c4model.com/",
+    "status": 200,
+    "final": "https://c4model.com/"
+  },
+  {
+    "url": "https://cucumber.io/docs/bdd/",
+    "status": 200,
+    "final": "https://cucumber.io/docs/bdd/"
+  },
+  {
+    "url": "https://cucumber.io/docs/gherkin/reference",
+    "status": 200,
+    "final": "https://cucumber.io/docs/gherkin/reference/"
+  },
+  {
+    "url": "https://diataxis.fr/",
+    "status": 200,
+    "final": "https://diataxis.fr/"
+  },
+  {
+    "url": "https://docs.npmjs.com/cli/v11/commands/npm-ci/",
+    "status": 200,
+    "final": "https://docs.npmjs.com/cli/v11/commands/npm-ci/"
+  },
+  {
+    "url": "https://git-scm.com/book/zh/v2",
+    "status": 200,
+    "final": "https://git-scm.com/book/zh/v2"
+  },
+  {
+    "url": "https://git-scm.com/docs/git-bisect",
+    "status": 200,
+    "final": "https://git-scm.com/docs/git-bisect"
+  },
+  {
+    "url": "https://google.github.io/eng-practices/review/",
+    "status": 200,
+    "final": "https://google.github.io/eng-practices/review/"
+  },
+  {
+    "url": "https://google.github.io/eng-practices/review/developer/cl-descriptions.html",
+    "status": 200,
+    "final": "https://google.github.io/eng-practices/review/developer/cl-descriptions.html"
+  },
+  {
+    "url": "https://google.github.io/eng-practices/review/reviewer/looking-for.html",
+    "status": 200,
+    "final": "https://google.github.io/eng-practices/review/reviewer/looking-for.html"
+  },
+  {
+    "url": "https://martinfowler.com/articles/continuousIntegration.html",
+    "status": 200,
+    "final": "https://martinfowler.com/articles/continuousIntegration.html"
+  },
+  {
+    "url": "https://martinfowler.com/bliki/ContinuousDelivery.html",
+    "status": 200,
+    "final": "https://martinfowler.com/bliki/ContinuousDelivery.html"
+  },
+  {
+    "url": "https://nodejs.org/docs/latest-v24.x/api/test.html",
+    "status": 200,
+    "final": "https://nodejs.org/docs/latest-v24.x/api/test.html"
+  },
+  {
+    "url": "https://owasp.org/projects/top-ten",
+    "status": 200,
+    "final": "https://owasp.org/projects/top-ten"
+  },
+  {
+    "url": "https://refactoring.com/",
+    "status": 200,
+    "final": "https://refactoring.com/"
+  },
+  {
+    "url": "https://scrumguides.org/scrum-guide.html",
+    "status": 200,
+    "final": "https://scrumguides.org/scrum-guide.html"
+  },
+  {
+    "url": "https://semver.org/lang/zh-CN/",
+    "status": 200,
+    "final": "https://semver.org/lang/zh-CN/"
+  },
+  {
+    "url": "https://software-carpentry.org/lessons/",
+    "status": 200,
+    "final": "https://software-carpentry.org/lessons/"
+  },
+  {
+    "url": "https://sre.google/sre-book/postmortem-culture/",
+    "status": 200,
+    "final": "https://sre.google/sre-book/postmortem-culture/"
+  },
+  {
+    "url": "https://sre.google/sre-book/release-engineering/",
+    "status": 200,
+    "final": "https://sre.google/sre-book/release-engineering/"
+  },
+  {
+    "url": "https://sre.google/sre-book/service-level-objectives/",
+    "status": 200,
+    "final": "https://sre.google/sre-book/service-level-objectives/"
+  },
+  {
+    "url": "https://sre.google/sre-book/testing-reliability/",
+    "status": 200,
+    "final": "https://sre.google/sre-book/testing-reliability/"
+  },
+  {
+    "url": "https://swcarpentry.github.io/git-novice/",
+    "status": 200,
+    "final": "https://swcarpentry.github.io/git-novice/"
+  },
+  {
+    "url": "https://swcarpentry.github.io/python-novice-inflammation/11-debugging.html",
+    "status": 200,
+    "final": "https://swcarpentry.github.io/python-novice-inflammation/11-debugging.html"
+  },
+  {
+    "url": "https://www.postgresql.org/docs/17/ddl-constraints.html",
+    "status": 200,
+    "final": "https://www.postgresql.org/docs/17/ddl-constraints.html"
+  },
+  {
+    "url": "https://www.rfc-editor.org/rfc/rfc9110.html",
+    "status": 200,
+    "final": "https://www.rfc-editor.org/rfc/rfc9110.html"
+  }
+]

@@ -5,6 +5,7 @@ import {
   documentPublicPath,
   folderPublicPath,
   resolveKnowledgePath,
+  orderedFolderEntries,
   sortDocuments,
   sortFolders,
 } from '~/utils/folders'
@@ -32,6 +33,9 @@ const folderDocuments = computed(() =>
   documents.value
     .filter((item) => item.folder_id === folder.value?.id)
     .sort(sortDocuments),
+)
+const folderEntries = computed(() =>
+  orderedFolderEntries(childFolders.value, folderDocuments.value),
 )
 const siblings = computed(() =>
   documents.value
@@ -142,43 +146,35 @@ useHead(() => ({
         ><span>{{ folderDocuments.length }} {{ t('documents') }}</span>
       </div>
     </header>
-    <section v-if="childFolders.length">
-      <div class="section-title">
-        <h2>{{ t('subdirectories') }}</h2>
-        <span>{{ childFolders.length }}</span>
-      </div>
-      <div class="child-grid">
-        <NuxtLink
-          v-for="item in childFolders"
-          :key="item.id"
-          :to="folderPublicPath(item.id, folders)"
-        >
-          <span class="mini-folder"><Folder :size="17" /></span>
-          <span
-            ><strong>{{ item.name }}</strong
-            ><small>{{ item.description || t('knowledgeSubfolder') }}</small></span
-          >
-          <ArrowRight :size="15" />
-        </NuxtLink>
-      </div>
-    </section>
     <section>
       <div class="section-title">
-        <h2>{{ t('documents') }}</h2>
-        <span>{{ folderDocuments.length }}</span>
+        <h2>{{ t('readingOrder') }}</h2>
+        <span>{{ folderEntries.length }}</span>
       </div>
-      <div v-if="folderDocuments.length" class="document-list">
+      <div v-if="folderEntries.length" class="document-list learning-order">
         <NuxtLink
-          v-for="item in folderDocuments"
-          :key="item.id"
-          :to="documentPublicPath(item, folders)"
+          v-for="entry in folderEntries"
+          :key="`${entry.kind}-${entry.item.id}`"
+          :to="
+            entry.kind === 'folder'
+              ? folderPublicPath(entry.item.id, folders)
+              : documentPublicPath(entry.item, folders)
+          "
         >
-          <FileText :size="16" />
-          <span
-            ><strong>{{ item.title }}</strong
-            ><small>{{ item.description }}</small></span
-          >
-          <time>{{ new Date(item.updated_at).toLocaleDateString(dateLocale) }}</time>
+          <span v-if="entry.kind === 'folder'" class="mini-folder"
+            ><Folder :size="16"
+          /></span>
+          <FileText v-else :size="16" />
+          <span>
+            <strong>{{
+              entry.kind === 'folder' ? entry.item.name : entry.item.title
+            }}</strong>
+            <small>{{ entry.item.description }}</small>
+          </span>
+          <ArrowRight v-if="entry.kind === 'folder'" class="entry-arrow" :size="15" />
+          <time v-else>{{
+            new Date(entry.item.updated_at).toLocaleDateString(dateLocale)
+          }}</time>
         </NuxtLink>
       </div>
       <div v-else class="empty-state">{{ t('emptyFolder') }}</div>
@@ -446,6 +442,10 @@ useHead(() => ({
   border-radius: 7px;
   color: var(--kb-text-muted);
 }
+.document-list a > .mini-folder {
+  width: 25px;
+  height: 25px;
+}
 .document-list a:hover {
   background: var(--kb-surface-hover);
 }
@@ -481,7 +481,8 @@ useHead(() => ({
   .document-list a {
     grid-template-columns: 25px 1fr;
   }
-  .document-list time {
+  .document-list time,
+  .document-list .entry-arrow {
     display: none;
   }
 }

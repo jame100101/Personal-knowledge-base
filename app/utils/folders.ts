@@ -44,17 +44,30 @@ export function sortFolders(a: Folder, b: Folder): number {
   return a.sort_order - b.sort_order || a.name.localeCompare(b.name, 'zh-CN')
 }
 
-export function sortDocuments(
-  a: KnowledgeDocument,
-  b: KnowledgeDocument,
-): number {
+export function sortDocuments(a: KnowledgeDocument, b: KnowledgeDocument): number {
   return a.sort_order - b.sort_order || a.title.localeCompare(b.title, 'zh-CN')
 }
 
-export function findFolderPath(
-  folderId: string | null,
-  folders: Folder[],
-): Folder[] {
+/** Keep lessons and subfolders in one reading order (guide before chapters). */
+export function orderedFolderEntries<T extends Folder>(
+  folders: T[],
+  documents: KnowledgeDocument[],
+) {
+  const entries = [
+    ...folders.map((item) => ({ kind: 'folder' as const, item })),
+    ...documents.map((item) => ({ kind: 'document' as const, item })),
+  ]
+  return entries.sort((a, b) => {
+    const order = a.item.sort_order - b.item.sort_order
+    if (order) return order
+    if (a.kind !== b.kind) return a.kind === 'document' ? -1 : 1
+    const left = a.kind === 'folder' ? a.item.name : a.item.title
+    const right = b.kind === 'folder' ? b.item.name : b.item.title
+    return left.localeCompare(right, 'zh-CN') || a.item.id.localeCompare(b.item.id)
+  })
+}
+
+export function findFolderPath(folderId: string | null, folders: Folder[]): Folder[] {
   if (!folderId) return []
   const byId = new Map(folders.map((folder) => [folder.id, folder]))
   const path: Folder[] = []
@@ -135,9 +148,7 @@ export function buildBreadcrumbs(
   folder: Folder | undefined,
   folders: Folder[],
 ): Breadcrumb[] {
-  const crumbs: Breadcrumb[] = [
-    { label: '知识库', path: '/', type: 'root' },
-  ]
+  const crumbs: Breadcrumb[] = [{ label: '知识库', path: '/', type: 'root' }]
   const path = findFolderPath(document?.folder_id || folder?.id || null, folders)
   path.forEach((item, index) => {
     crumbs.push({

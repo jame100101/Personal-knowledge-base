@@ -1,4 +1,5 @@
 // Append-only publication for the new module. Existing nonidentical rows stop the run.
+import { rootOrder, folderOrder, documentOrder } from './learning-order.mjs'
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import assert from 'node:assert/strict'
@@ -12,7 +13,9 @@ const verify = process.argv.includes('--verify')
 assert(!(apply && verify), 'Choose --apply or --verify')
 const rootName = '后端知识'
 const rootPath = `content/${rootName}`
-const folderSpecs = [{ key: '', parent: null, name: rootName, order: 1000 }]
+const folderSpecs = [
+  { key: '', parent: null, name: rootName, order: rootOrder(rootName) },
+]
 const documents = []
 const display = (name) => name.replace(/^\d{2,3}-/, '').replace(/\.md$/, '')
 const order = (name) =>
@@ -28,7 +31,7 @@ async function scan(key) {
         key: relative,
         parent: key,
         name: display(entry.name),
-        order: order(entry.name),
+        order: folderOrder(rootName, relative, order(entry.name)),
       })
       await scan(relative)
     } else if (entry.name.endsWith('.md')) {
@@ -42,7 +45,7 @@ async function scan(key) {
         filename: entry.name,
         content,
         title,
-        order: order(entry.name),
+        order: documentOrder(rootName, key, entry.name, order(entry.name)),
         slug: slugify(title),
       })
     }

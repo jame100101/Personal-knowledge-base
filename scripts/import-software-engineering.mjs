@@ -17,7 +17,7 @@ for (const file of ['.env.local', '.env']) {
 const apply = process.argv.includes('--apply')
 const verify = process.argv.includes('--verify')
 assert(!(apply && verify), 'Choose --apply or --verify')
-const rootName = '前端架构'
+const rootName = '软件工程'
 const rootPath = `content/${rootName}`
 const folderSpecs = [
   { key: '', parent: null, name: rootName, order: rootOrder(rootName) },
@@ -152,7 +152,7 @@ try {
     )
   if (apply) {
     await fs.mkdir('.tools/content-backups', { recursive: true })
-    const backup = `.tools/content-backups/frontend-${Date.now()}.json`
+    const backup = `.tools/content-backups/software-engineering-${Date.now()}.json`
     await fs.writeFile(backup, JSON.stringify({ folders, documents: rows }, null, 2))
     console.log(`Backup: ${backup}`)
     for (const spec of missingFolders) {
@@ -164,7 +164,7 @@ try {
           parent_id: parentId,
           name: spec.name,
           slug: slugify(spec.name),
-          description: '从浏览器与组件学到 Vue、React、路由、状态、渲染、安全和交付',
+          description: '从收藏功能出发，循序学习需求、设计、协作、测试、交付与维护',
           icon: 'Folder',
           sort_order: spec.order,
           is_visible: true,
@@ -191,7 +191,7 @@ try {
           sort_order: spec.order,
           tags: [
             rootName,
-            'Vue与React',
+            '软件工程入门',
             display(spec.parent.split('/').at(-1) || '学习路线'),
           ],
           description: excerpt,
@@ -246,9 +246,9 @@ try {
         url: `https://knowledge.damnatiox.com/knowledge/${chain.join('/')}/${row.slug}`,
       }
     })
-    await fs.mkdir('.tools/frontend', { recursive: true })
+    await fs.mkdir('.tools/software-engineering', { recursive: true })
     await fs.writeFile(
-      '.tools/frontend/publication.json',
+      '.tools/software-engineering/publication.json',
       JSON.stringify(records, null, 2),
     )
   }

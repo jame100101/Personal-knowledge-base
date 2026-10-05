@@ -1,0 +1,614 @@
+[
+  {
+    "table": "folders",
+    "name": "Agent开发",
+    "before": 1000,
+    "after": 60
+  },
+  {
+    "table": "folders",
+    "name": "Java开发",
+    "before": 1000,
+    "after": 50
+  },
+  {
+    "table": "folders",
+    "name": "前端架构",
+    "before": 1000,
+    "after": 30
+  },
+  {
+    "table": "folders",
+    "name": "后端知识",
+    "before": 1000,
+    "after": 40
+  },
+  {
+    "table": "folders",
+    "name": "语言基础",
+    "before": 1000,
+    "after": 10
+  },
+  {
+    "table": "folders",
+    "name": "Agent开发/Agent Evolution",
+    "before": 90,
+    "after": 130
+  },
+  {
+    "table": "folders",
+    "name": "Agent开发/Multi-Agent",
+    "before": 100,
+    "after": 120
+  },
+  {
+    "table": "folders",
+    "name": "Agent开发/Model Post-training",
+    "before": 110,
+    "after": 140
+  },
+  {
+    "table": "folders",
+    "name": "Agent开发/Production Agent",
+    "before": 120,
+    "after": 90
+  },
+  {
+    "table": "folders",
+    "name": "Agent开发/Project Ladder",
+    "before": 130,
+    "after": 100
+  },
+  {
+    "table": "folders",
+    "name": "Agent开发/完整Agent链路与架构对照",
+    "before": 140,
+    "after": 110
+  },
+  {
+    "table": "folders",
+    "name": "Agent开发/现代Agent架构与源码研究",
+    "before": 990,
+    "after": 150
+  },
+  {
+    "table": "folders",
+    "name": "前端架构/从网页基础开始",
+    "before": 0,
+    "after": 10
+  },
+  {
+    "table": "folders",
+    "name": "前端架构/浏览器与工程基础",
+    "before": 10,
+    "after": 20
+  },
+  {
+    "table": "folders",
+    "name": "前端架构/组件与架构设计",
+    "before": 20,
+    "after": 50
+  },
+  {
+    "table": "folders",
+    "name": "前端架构/路由数据与渲染",
+    "before": 50,
+    "after": 60
+  },
+  {
+    "table": "folders",
+    "name": "前端架构/质量安全与交付",
+    "before": 60,
+    "after": 70
+  },
+  {
+    "table": "folders",
+    "name": "前端架构/双框架实战与选型",
+    "before": 70,
+    "after": 80
+  },
+  {
+    "table": "folders",
+    "name": "Java开发/JVM与并发",
+    "before": 20,
+    "after": 130
+  },
+  {
+    "table": "folders",
+    "name": "Java开发/工程基础与Internet-Linux",
+    "before": 30,
+    "after": 20
+  },
+  {
+    "table": "folders",
+    "name": "Java开发/关系型数据库",
+    "before": 40,
+    "after": 30
+  },
+  {
+    "table": "folders",
+    "name": "Java开发/Spring Framework",
+    "before": 50,
+    "after": 40
+  },
+  {
+    "table": "folders",
+    "name": "Java开发/Spring Boot与Web",
+    "before": 60,
+    "after": 50
+  },
+  {
+    "table": "folders",
+    "name": "Java开发/数据访问与事务",
+    "before": 70,
+    "after": 60
+  },
+  {
+    "table": "folders",
+    "name": "Java开发/测试与质量工程",
+    "before": 80,
+    "after": 70
+  },
+  {
+    "table": "folders",
+    "name": "Java开发/安全认证与授权",
+    "before": 90,
+    "after": 80
+  },
+  {
+    "table": "folders",
+    "name": "Java开发/应用架构与模块化单体",
+    "before": 100,
+    "after": 90
+  },
+  {
+    "table": "folders",
+    "name": "Java开发/缓存与搜索",
+    "before": 110,
+    "after": 100
+  },
+  {
+    "table": "folders",
+    "name": "Java开发/消息与事件驱动",
+    "before": 120,
+    "after": 110
+  },
+  {
+    "table": "folders",
+    "name": "Java开发/分布式与微服务",
+    "before": 130,
+    "after": 120
+  },
+  {
+    "table": "folders",
+    "name": "Java开发/可选专项",
+    "before": 160,
+    "after": 170
+  },
+  {
+    "table": "folders",
+    "name": "Java开发/项目阶梯",
+    "before": 170,
+    "after": 160
+  },
+  {
+    "table": "folders",
+    "name": "Java开发/开源项目架构研究",
+    "before": 990,
+    "after": 180
+  },
+  {
+    "table": "folders",
+    "name": "Agent开发/Tools与Runtime/Browser Runtime",
+    "before": 20,
+    "after": 100
+  },
+  {
+    "table": "folders",
+    "name": "后端知识/常见后端架构",
+    "before": 20,
+    "after": 40
+  },
+  {
+    "table": "folders",
+    "name": "后端知识/数据与存储",
+    "before": 30,
+    "after": 20
+  },
+  {
+    "table": "folders",
+    "name": "后端知识/分布式与可靠性",
+    "before": 40,
+    "after": 50
+  },
+  {
+    "table": "folders",
+    "name": "后端知识/身份权限与安全",
+    "before": 50,
+    "after": 30
+  },
+  {
+    "table": "documents",
+    "name": "语言基础/TypeScript语言基础/TypeScript 官方资料、学习顺序与版本边界",
+    "before": -10,
+    "after": 900
+  },
+  {
+    "table": "documents",
+    "name": "Java开发/Java语言与核心API/Java 基础推荐阅读",
+    "before": -10,
+    "after": 900
+  },
+  {
+    "table": "documents",
+    "name": "Java开发/Java语言与核心API/Java 集合框架：Collection、List、Set、Map、遍历、工具类与 Lambda",
+    "before": 70,
+    "after": 80
+  },
+  {
+    "table": "documents",
+    "name": "Java开发/Java语言与核心API/Java 泛型：泛型类、接口、方法、通配符、边界与类型擦除",
+    "before": 80,
+    "after": 70
+  },
+  {
+    "table": "documents",
+    "name": "Java开发/Java语言与核心API/Java 反射机制：Class、构造器、字段、方法、注解与动态代理",
+    "before": 90,
+    "after": 100
+  },
+  {
+    "table": "documents",
+    "name": "Java开发/Java语言与核心API/Java I/O 与 NIO.2：文件、字节流、字符流、转换流与序列化",
+    "before": 100,
+    "after": 110
+  },
+  {
+    "table": "documents",
+    "name": "Java开发/Java语言与核心API/JDBC 数据库访问：驱动、连接、Statement、事务、批处理与连接池",
+    "before": 110,
+    "after": 120
+  },
+  {
+    "table": "documents",
+    "name": "Java开发/Java语言与核心API/泛型与集合框架综合：类型安全容器、迭代、排序与集合选型",
+    "before": 140,
+    "after": 90
+  },
+  {
+    "table": "documents",
+    "name": "Agent开发/Project Ladder/项目阶梯推荐阅读",
+    "before": -10,
+    "after": 900
+  },
+  {
+    "table": "documents",
+    "name": "Agent开发/Evaluation Observability Safety/评测、可观测性与安全推荐阅读",
+    "before": -10,
+    "after": 900
+  },
+  {
+    "table": "documents",
+    "name": "Agent开发/Knowledge与Memory/Knowledge/RAG 推荐阅读",
+    "before": -10,
+    "after": 900
+  },
+  {
+    "table": "documents",
+    "name": "Agent开发/Agent基础/Agent 基础推荐阅读",
+    "before": -10,
+    "after": 900
+  },
+  {
+    "table": "documents",
+    "name": "Agent开发/Agent基础/Agent 类型区分：Chatbot、Workflow、Agent 与 Multi-Agent",
+    "before": 10,
+    "after": 20
+  },
+  {
+    "table": "documents",
+    "name": "Agent开发/Agent基础/Agent 基本循环：Observe → Think → Act → Observe",
+    "before": 20,
+    "after": 30
+  },
+  {
+    "table": "documents",
+    "name": "Agent开发/Agent基础/Agent 适用范围：什么时候使用，什么时候优先 Workflow",
+    "before": 30,
+    "after": 10
+  },
+  {
+    "table": "documents",
+    "name": "Java开发/关系型数据库/数据库、缓存与搜索推荐阅读",
+    "before": -10,
+    "after": 900
+  },
+  {
+    "table": "documents",
+    "name": "Java开发/消息与事件驱动/高性能与消息队列推荐阅读",
+    "before": -10,
+    "after": 900
+  },
+  {
+    "table": "documents",
+    "name": "Agent开发/Agent Loop/Agent Loop 推荐阅读",
+    "before": -10,
+    "after": 900
+  },
+  {
+    "table": "documents",
+    "name": "前端架构/前端学习推荐阅读：带着问题读开源教程",
+    "before": -10,
+    "after": 900
+  },
+  {
+    "table": "documents",
+    "name": "Java开发/Spring Boot与Web/Spring Boot 与 Web 开发推荐阅读",
+    "before": -10,
+    "after": 900
+  },
+  {
+    "table": "documents",
+    "name": "Agent开发/Multi-Agent/多 Agent 推荐阅读",
+    "before": -10,
+    "after": 900
+  },
+  {
+    "table": "documents",
+    "name": "Agent开发/Agent Harness/Agent Harness 推荐阅读",
+    "before": -10,
+    "after": 900
+  },
+  {
+    "table": "documents",
+    "name": "Java开发/安全认证与授权/安全、认证与授权推荐阅读",
+    "before": -10,
+    "after": 900
+  },
+  {
+    "table": "documents",
+    "name": "Agent开发/现代Agent架构与源码研究/现代主流 Coding Agent 研究阅读顺序",
+    "before": -10,
+    "after": 900
+  },
+  {
+    "table": "documents",
+    "name": "Agent开发/现代Agent架构与源码研究/NousResearch Hermes Agent 源码精读：长运行、自改进 Agent Harness",
+    "before": 40,
+    "after": 30
+  },
+  {
+    "table": "documents",
+    "name": "Agent开发/现代Agent架构与源码研究/OpenClaw 源码精读：Gateway、Agent Harness、Tools、Memory 与 Context Engine",
+    "before": 50,
+    "after": 40
+  },
+  {
+    "table": "documents",
+    "name": "Agent开发/现代Agent架构与源码研究/现代 Agent 架构与实现细节对比：十个 Coding Agent / Harness",
+    "before": 60,
+    "after": 110
+  },
+  {
+    "table": "documents",
+    "name": "Agent开发/现代Agent架构与源码研究/Aider 源码研究：Repo Map、Edit Format 与 Git-aware 修复循环",
+    "before": 70,
+    "after": 50
+  },
+  {
+    "table": "documents",
+    "name": "Agent开发/现代Agent架构与源码研究/Goose 源码研究：Rust State Machine、MCP Extensions 与安全检查链",
+    "before": 80,
+    "after": 60
+  },
+  {
+    "table": "documents",
+    "name": "Agent开发/现代Agent架构与源码研究/OpenCode 源码研究：Effect Runtime、Server/Client 与 Snapshot-aware Session Loop",
+    "before": 90,
+    "after": 70
+  },
+  {
+    "table": "documents",
+    "name": "Agent开发/现代Agent架构与源码研究/DeepSeek Harness Web 源码研究：Cordis 插件树、事件日志与双端运行时",
+    "before": 100,
+    "after": 80
+  },
+  {
+    "table": "documents",
+    "name": "Agent开发/现代Agent架构与源码研究/pi-agent 源码研究：极小 Loop、可组合 Harness 与树形 Session",
+    "before": 110,
+    "after": 90
+  },
+  {
+    "table": "documents",
+    "name": "Agent开发/现代Agent架构与源码研究/Grok Build 源码研究：Rust Agent Runtime、并行工具与 Worktree Subagent",
+    "before": 120,
+    "after": 100
+  },
+  {
+    "table": "documents",
+    "name": "Java开发/可选专项/前端与全栈交付/前端基础与全栈交付推荐阅读",
+    "before": -10,
+    "after": 900
+  },
+  {
+    "table": "documents",
+    "name": "Java开发/可选专项/前端与全栈交付/Vue 3、TypeScript 与后台管理界面",
+    "before": 20,
+    "after": 60
+  },
+  {
+    "table": "documents",
+    "name": "Java开发/可选专项/前端与全栈交付/全栈交付：契约、认证、上传下载、WebSocket 与 Nginx",
+    "before": 30,
+    "after": 80
+  },
+  {
+    "table": "documents",
+    "name": "Java开发/可选专项/前端与全栈交付/HTML：语义结构、表单、媒体与可访问性",
+    "before": 40,
+    "after": 20
+  },
+  {
+    "table": "documents",
+    "name": "Java开发/可选专项/前端与全栈交付/CSS：级联、盒模型、布局、响应式与动画",
+    "before": 50,
+    "after": 30
+  },
+  {
+    "table": "documents",
+    "name": "Java开发/可选专项/前端与全栈交付/JavaScript 基础：类型、函数、集合、DOM 与事件",
+    "before": 60,
+    "after": 40
+  },
+  {
+    "table": "documents",
+    "name": "Java开发/可选专项/前端与全栈交付/JavaScript 高级：异步、模块、网络与性能",
+    "before": 70,
+    "after": 50
+  },
+  {
+    "table": "documents",
+    "name": "Java开发/可选专项/前端与全栈交付/TypeScript、Vue 工程化、测试与性能",
+    "before": 80,
+    "after": 70
+  },
+  {
+    "table": "documents",
+    "name": "Agent开发/Skills与Protocols/Skills 与协议推荐阅读",
+    "before": -10,
+    "after": 900
+  },
+  {
+    "table": "documents",
+    "name": "Agent开发/Tools与Runtime/Tools Call 推荐阅读",
+    "before": -10,
+    "after": 900
+  },
+  {
+    "table": "documents",
+    "name": "Agent开发/完整Agent链路与架构对照/完整 Agent 链路与框架推荐阅读",
+    "before": -10,
+    "after": 900
+  },
+  {
+    "table": "documents",
+    "name": "Java开发/云原生DevOps与可观测性/云原生、DevOps 与可观测性推荐阅读",
+    "before": -10,
+    "after": 900
+  },
+  {
+    "table": "documents",
+    "name": "Java开发/分布式与微服务/分布式系统与微服务推荐阅读",
+    "before": -10,
+    "after": 900
+  },
+  {
+    "table": "documents",
+    "name": "Agent开发/Production Agent/生产交付推荐阅读",
+    "before": -10,
+    "after": 900
+  },
+  {
+    "table": "documents",
+    "name": "Java开发/项目阶梯/Java 后端项目阶梯推荐阅读",
+    "before": -10,
+    "after": 900
+  },
+  {
+    "table": "documents",
+    "name": "Java开发/项目阶梯/项目一：模块化单体任务系统",
+    "before": 10,
+    "after": 20
+  },
+  {
+    "table": "documents",
+    "name": "Java开发/项目阶梯/项目二：事件驱动订单、库存与支付系统",
+    "before": 20,
+    "after": 30
+  },
+  {
+    "table": "documents",
+    "name": "Java开发/项目阶梯/项目三：云原生高可用服务平台",
+    "before": 30,
+    "after": 40
+  },
+  {
+    "table": "documents",
+    "name": "Java开发/项目阶梯/作品集验收、文档与面试证据",
+    "before": 40,
+    "after": 50
+  },
+  {
+    "table": "documents",
+    "name": "Java开发/数据访问与事务/数据访问与 ORM推荐阅读",
+    "before": -10,
+    "after": 900
+  },
+  {
+    "table": "documents",
+    "name": "Agent开发/Tools与Runtime/Browser Runtime/Browser Agent 推荐阅读",
+    "before": -10,
+    "after": 900
+  },
+  {
+    "table": "documents",
+    "name": "Agent开发/Knowledge与Memory/Memory/Memory 推荐阅读",
+    "before": -10,
+    "after": 900
+  },
+  {
+    "table": "documents",
+    "name": "Java开发/Spring Framework/Spring Framework推荐阅读",
+    "before": -10,
+    "after": 900
+  },
+  {
+    "table": "documents",
+    "name": "Java开发/Spring Framework/Spring IoC、依赖注入与 Bean 生命周期",
+    "before": 10,
+    "after": 20
+  },
+  {
+    "table": "documents",
+    "name": "Java开发/Spring Framework/Spring AOP、代理与声明式事务",
+    "before": 20,
+    "after": 30
+  },
+  {
+    "table": "documents",
+    "name": "Java开发/Spring Framework/Spring 资源、事件、校验、缓存与任务调度",
+    "before": 30,
+    "after": 40
+  },
+  {
+    "table": "documents",
+    "name": "Java开发/Spring Framework/Spring 异步、任务调度、Quartz 与 Spring Batch",
+    "before": 40,
+    "after": 50
+  },
+  {
+    "table": "documents",
+    "name": "Java开发/Spring Framework/Spring Framework、Boot、MVC、Data 与 Cloud 的责任边界",
+    "before": 50,
+    "after": 10
+  },
+  {
+    "table": "documents",
+    "name": "后端知识/后端学习推荐阅读：先找问题，再查原文",
+    "before": -10,
+    "after": 900
+  },
+  {
+    "table": "documents",
+    "name": "Java开发/工程基础与Internet-Linux/Java 工程工具与 Linux推荐阅读",
+    "before": -10,
+    "after": 900
+  },
+  {
+    "table": "documents",
+    "name": "Java开发/测试与质量工程/测试与质量工程推荐阅读",
+    "before": -10,
+    "after": 900
+  }
+]

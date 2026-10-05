@@ -221,3 +221,21 @@ npm run content:verify-frontend
 ```
 
 发布脚本只新增本模块，已有正文出现差异时停止；本地备份放在 Git 忽略的 `.tools/content-backups`。不要将管理员密码或高权限 Key 提交到仓库。Vercel 代码部署与 Supabase 内容发布是两个步骤，缺一不能视为课程上线。
+
+## 软件工程课程与学习顺序
+
+新增「软件工程」18 篇、8 个阶段，以收藏功能贯穿需求、设计、Git 协作、测试、发布、安全和维护。每课先讲场景，再解释术语，提供练习与参考资料。独立示例见 [examples/software-engineering](examples/software-engineering/README.md)。
+
+```bash
+npm run content:validate-software-engineering
+npm run test:software-engineering
+npm run content:import-software-engineering          # 默认只读预检查
+npm run content:import-software-engineering -- --apply
+npm run content:verify-software-engineering
+```
+
+发布沿用管理员凭据环境变量机制，不需要向客户端提供高权限 Key。
+
+全库首页依次为「语言基础 → 软件工程 → 前端架构 → 后端知识 → Java开发 → Agent开发」。这是推荐浏览顺序，前后端可按方向选读。目录将文章和子目录统一按排序值排列，导学在前、章节居中、补充阅读在后。维护规则位于 `scripts/learning-order.mjs`，现有导入器共用，避免再次同步时覆盖学习顺序；历史目录名、文章 ID、Slug 和链接保持不变。
+
+本次数据库发布使用连接器执行事务：仅新增课程及修改已有排序，事务内比较既有行除排序与更新时间以外的全部字段。可用 `node scripts/prepare-learning-release.mjs SNAPSHOT.json` 从新鲜的 folders/documents 元数据快照生成只读发布计划与 SQL；脚本本身不连接数据库。具体核验与发布记录见 [交付记录](docs/SOFTWARE_ENGINEERING_2026-10-05.md)。
