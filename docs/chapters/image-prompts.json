@@ -1,0 +1,357 @@
+[
+  {
+    "id": "language",
+    "output": "app/public/images/chapter-overviews/language.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"语言基础\". Exactly 6 surrounding modules, each once: 01 环境与运行; 02 变量与数据; 03 函数与类型; 04 模块与异步; 05 测试与项目; 06 跨语言对照. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先用 TypeScript 建立编程模型，再带着同一个问题比较其他语言；类型检查与运行时行为要分开理解。"
+  },
+  {
+    "id": "language-typescript",
+    "output": "app/public/images/chapter-overviews/language-typescript.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"TypeScript 基础\". Exactly 7 surrounding modules, each once: 01 运行与编译; 02 变量与数据; 03 函数与对象; 04 联合与收窄; 05 泛型与类型运算; 06 模块与异步; 07 工程与实战. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先运行一段程序，再理解数据与函数；掌握日常类型表达后，再进入泛型、类型运算和工程实践。"
+  },
+  {
+    "id": "language-comparison",
+    "output": "app/public/images/chapter-overviews/language-comparison.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"TypeScript 跨语言对照\". Exactly 6 surrounding modules, each once: 01 共同问题; 02 JavaScript 对照; 03 Java 对照; 04 Python 对照; 05 C++ 对照; 06 能力与边界. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先区分编译、类型检查与执行，再比较语言之间相似语法背后的不同约束；不把一种语言的规则直接套到另一种语言上。"
+  },
+  {
+    "id": "software-engineering",
+    "output": "app/public/images/chapter-overviews/software-engineering.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"软件工程\". Exactly 7 surrounding modules, each once: 01 问题与需求; 02 设计与拆分; 03 版本与协作; 04 测试与排错; 05 构建与发布; 06 维护与安全; 07 综合实战. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 从一个收藏功能出发，先说清用户问题和验收标准，再完成设计、协作、验证与交付；实际开发可以反复返回前面的步骤。"
+  },
+  {
+    "id": "se-small-feature",
+    "output": "app/public/images/chapter-overviews/se-small-feature.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"从一个小功能开始\". Exactly 5 surrounding modules, each once: 01 用户问题; 02 功能边界; 03 完成标准; 04 开发流程; 05 小步迭代. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先看一个按钮背后还需要哪些工作，再把任务拆成能验证的小步；写出代码只是交付过程的一部分。"
+  },
+  {
+    "id": "se-requirements",
+    "output": "app/public/images/chapter-overviews/se-requirements.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"把需求说清楚\". Exactly 5 surrounding modules, each once: 01 用户与场景; 02 问题与目标; 03 验收例子; 04 范围与优先级; 05 变更与反馈. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 把“好用一点”变成具体场景和验收例子，再决定本轮做什么、暂时不做什么，以及变化来了如何处理。"
+  },
+  {
+    "id": "se-design",
+    "output": "app/public/images/chapter-overviews/se-design.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"设计与拆分\". Exactly 5 surrounding modules, each once: 01 规则与数据; 02 模块边界; 03 接口约定; 04 结构与流程; 05 取舍与记录. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先找业务规则和数据的归属，再约定模块怎样协作；用一张图和一条决策记录说明取舍。"
+  },
+  {
+    "id": "se-git",
+    "output": "app/public/images/chapter-overviews/se-git.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"版本管理与协作\". Exactly 5 surrounding modules, each once: 01 工作区与提交; 02 分支与合并; 03 冲突处理; 04 代码评审; 05 协作说明. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先用提交记录一次清楚的修改，再练习分支、合并和评审，让协作者能理解变化并验证结果。"
+  },
+  {
+    "id": "se-testing",
+    "output": "app/public/images/chapter-overviews/se-testing.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"测试与排错\". Exactly 5 surrounding modules, each once: 01 验收与测试; 02 测试边界; 03 复现问题; 04 定位原因; 05 修复与回归. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 从输入和预期结果开始写测试；遇到错误时先稳定复现，再缩小范围，最后用回归测试防止重现。"
+  },
+  {
+    "id": "se-delivery",
+    "output": "app/public/images/chapter-overviews/se-delivery.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"构建发布与运行\". Exactly 5 surrounding modules, each once: 01 环境与依赖; 02 可复现构建; 03 持续集成; 04 部署与发布; 05 观察与回滚. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 让代码在一致的环境里构建和检查，再区分部署与发布；上线后观察真实行为，并准备恢复办法。"
+  },
+  {
+    "id": "se-maintenance",
+    "output": "app/public/images/chapter-overviews/se-maintenance.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"维护安全与改进\". Exactly 5 surrounding modules, each once: 01 重构与验证; 02 技术债管理; 03 兼容与演进; 04 权限与安全; 05 复盘与文档. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 在保留行为的前提下改进结构，同时管理技术债和兼容性；把安全检查与故障复盘落实为可执行的改进。"
+  },
+  {
+    "id": "se-practice",
+    "output": "app/public/images/chapter-overviews/se-practice.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"软件工程综合实战\". Exactly 6 surrounding modules, each once: 01 需求与验收; 02 设计与拆分; 03 实现与协作; 04 测试与排错; 05 发布与恢复; 06 证据与复盘. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 用收藏功能串起完整过程：需求、设计、实现与验证必须相互对应，最终交付可运行、可检查的成果。"
+  },
+  {
+    "id": "frontend",
+    "output": "app/public/images/chapter-overviews/frontend.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"前端架构\". Exactly 7 surrounding modules, each once: 01 网页基础; 02 浏览器与工程; 03 框架入门; 04 组件与架构; 05 路由与数据; 06 质量与交付; 07 项目与选型. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先做能使用的网页，再理解框架、组件边界和数据流；Vue 与 React 可以先选一条实践，再进行对照。"
+  },
+  {
+    "id": "fe-web",
+    "output": "app/public/images/chapter-overviews/fe-web.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"从网页基础开始\". Exactly 6 surrounding modules, each once: 01 网页分工; 02 文档与表单; 03 布局与样式; 04 事件与数据; 05 Vue 入门; 06 React 入门. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先用 HTML、CSS 和 JavaScript 做出可交互页面，再认识 Vue 与 React 如何组织界面；两个框架可以先选一个学习。"
+  },
+  {
+    "id": "fe-browser",
+    "output": "app/public/images/chapter-overviews/fe-browser.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"浏览器与工程基础\". Exactly 6 surrounding modules, each once: 01 渲染过程; 02 事件循环; 03 语义与布局; 04 键盘与无障碍; 05 类型与模块; 06 构建与发布. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先理解浏览器怎样显示页面和处理任务，再把语义、布局、无障碍与构建工具接起来。"
+  },
+  {
+    "id": "fe-components",
+    "output": "app/public/images/chapter-overviews/fe-components.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"组件与架构设计\". Exactly 6 surrounding modules, each once: 01 组件职责; 02 状态归属; 03 共享与复用; 04 目录分层; 05 设计系统; 06 规模与边界. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先判断一个组件负责什么、状态应该放在哪里，再考虑复用、目录分层和跨团队组织；规模化方案按需要引入。"
+  },
+  {
+    "id": "fe-vue",
+    "output": "app/public/images/chapter-overviews/fe-vue.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"Vue 从入门到原理\". Exactly 6 surrounding modules, each once: 01 模板与组件; 02 响应式数据; 03 计算与监听; 04 请求与清理; 05 通信与共享; 06 渲染与性能. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 从文章筛选组件开始，先弄懂数据怎样驱动界面，再处理副作用、共享状态与渲染性能。"
+  },
+  {
+    "id": "fe-react",
+    "output": "app/public/images/chapter-overviews/fe-react.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"React 从入门到原理\". Exactly 6 surrounding modules, each once: 01 JSX 与组件; 02 状态快照; 03 Hooks 与 Effect; 04 清理与竞态; 05 状态组织; 06 渲染与提交. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先理解 JSX、组件和状态快照，再处理外部同步与复杂状态；最后区分渲染、提交和浏览器绘制。"
+  },
+  {
+    "id": "fe-routing",
+    "output": "app/public/images/chapter-overviews/fe-routing.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"路由、数据与渲染\". Exactly 6 surrounding modules, each once: 01 URL 与导航; 02 页面生命周期; 03 请求与缓存; 04 乐观更新; 05 页面生成; 06 框架边界. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 从 URL 和返回行为开始，再理解请求缓存和页面生成位置；框架提供组织方式，业务边界仍需要自己决定。"
+  },
+  {
+    "id": "fe-quality",
+    "output": "app/public/images/chapter-overviews/fe-quality.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"前端质量与交付\". Exactly 5 surrounding modules, each once: 01 表单与校验; 02 身份与权限; 03 任务与测试; 04 性能与资源; 05 部署与回滚. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先保证用户能正确完成操作，再检查权限边界、回归测试和性能；构建成功后仍要验证真实部署。"
+  },
+  {
+    "id": "fe-practice",
+    "output": "app/public/images/chapter-overviews/fe-practice.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"双框架实战与选型\". Exactly 5 surrounding modules, each once: 01 统一需求; 02 Vue 实现; 03 React 实现; 04 行为验证; 05 成本与选型. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 用同一个文章搜索需求分别实践 Vue 和 React，比较交互、数据流与维护成本，再给出有依据的选择。"
+  },
+  {
+    "id": "backend",
+    "output": "app/public/images/chapter-overviews/backend.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"后端知识\". Exactly 7 surrounding modules, each once: 01 请求与接口; 02 数据与存储; 03 身份与安全; 04 架构与边界; 05 分布式可靠性; 06 部署与观察; 07 项目与选型. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 跟随一次请求进入服务，先掌握数据和权限，再比较架构；分布式方案应由实际问题驱动。"
+  },
+  {
+    "id": "be-request",
+    "output": "app/public/images/chapter-overviews/be-request.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"请求与接口基础\". Exactly 6 surrounding modules, each once: 01 地址与连接; 02 代理与应用; 03 接口契约; 04 错误与分页; 05 幂等请求; 06 并发与连接池. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先追踪一次请求的来回，再约定接口的输入、结果和错误；最后理解服务如何同时处理多个请求。"
+  },
+  {
+    "id": "be-architecture",
+    "output": "app/public/images/chapter-overviews/be-architecture.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"常见后端架构\". Exactly 6 surrounding modules, each once: 01 分层与职责; 02 模块化单体; 03 领域与依赖; 04 微服务治理; 05 事件与读写; 06 部署与组合. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先建立职责边界，再比较不同架构解决的问题和额外成本；这些方案不是必须逐级升级的一条产品路线。"
+  },
+  {
+    "id": "be-data",
+    "output": "app/public/images/chapter-overviews/be-data.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"数据与存储\". Exactly 6 surrounding modules, each once: 01 模型与约束; 02 事务与隔离; 03 索引与查询; 04 数据演进; 05 缓存与搜索; 06 对象存储. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先用模型、约束和事务守住正确性，再根据访问方式理解索引与演进；缓存、搜索和对象存储各有职责。"
+  },
+  {
+    "id": "be-reliability",
+    "output": "app/public/images/chapter-overviews/be-reliability.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"分布式与可靠性\". Exactly 6 surrounding modules, each once: 01 消息与重复; 02 可靠事件; 03 幂等消费; 04 一致性取舍; 05 跨服务收尾; 06 超时与保护. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先承认消息可能重复、依赖可能失败，再设计可靠事件、跨服务收尾和过载保护，不把重试当成万能解法。"
+  },
+  {
+    "id": "be-security",
+    "output": "app/public/images/chapter-overviews/be-security.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"身份、权限与安全\". Exactly 5 surrounding modules, each once: 01 身份识别; 02 权限检查; 03 租户隔离; 04 输入边界; 05 验证与审计. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先区分“你是谁”和“你能做什么”，再检查租户隔离和输入边界；登录成功不代表可以访问任意数据。"
+  },
+  {
+    "id": "be-operations",
+    "output": "app/public/images/chapter-overviews/be-operations.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"部署与可观测性\". Exactly 5 surrounding modules, each once: 01 日志与指标; 02 请求追踪; 03 目标与告警; 04 部署与迁移; 05 备份与回滚. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先定义如何判断服务正常，再用日志、指标和追踪定位问题；发布、数据迁移与恢复需要共同考虑。"
+  },
+  {
+    "id": "be-practice",
+    "output": "app/public/images/chapter-overviews/be-practice.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"后端项目实战与选型\". Exactly 6 surrounding modules, each once: 01 需求与约束; 02 订单与库存; 03 幂等与事件; 04 故障与验证; 05 容量与取舍; 06 决策记录. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 用订单、库存和可靠事件串起后端知识，再根据约束估算容量、记录取舍，并检查失败路径。"
+  },
+  {
+    "id": "java",
+    "output": "app/public/images/chapter-overviews/java.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"Java 开发\". Exactly 7 surrounding modules, each once: 01 语言与核心库; 02 工程与数据; 03 Spring 与 Web; 04 测试与安全; 05 架构与集成; 06 性能与运维; 07 项目与选修. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先用 Java 写出并运行小程序，再建立工程、数据与 Web 服务能力；有了可维护的服务后，再深入并发、性能和分布式。"
+  },
+  {
+    "id": "java-core",
+    "output": "app/public/images/chapter-overviews/java-core.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"Java 语言与核心 API\". Exactly 7 surrounding modules, each once: 01 环境与语法; 02 类与对象; 03 异常与常用库; 04 泛型与集合; 05 反射与注解; 06 文件与输入输出; 07 数据库访问. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 从编译运行、变量和方法开始，逐步建立对象与异常模型；学会泛型后再组织集合，并连接文件与数据库。"
+  },
+  {
+    "id": "java-jvm",
+    "output": "app/public/images/chapter-overviews/java-jvm.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"JVM 与并发\". Exactly 7 surrounding modules, each once: 01 类加载与内存; 02 垃圾收集; 03 线程与任务; 04 可见性与同步; 05 锁与原子操作; 06 线程池与异步; 07 诊断与版本边界. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先理解代码怎样运行和使用内存，再处理线程协作与可见性；高级并发能力要结合项目使用的 JDK 版本。"
+  },
+  {
+    "id": "java-tools",
+    "output": "app/public/images/chapter-overviews/java-tools.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"工程工具与网络基础\". Exactly 6 surrounding modules, each once: 01 JDK 与开发环境; 02 依赖与构建; 03 Git 协作; 04 Linux 与容器; 05 网络请求; 06 Java 网络编程. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先建立可复现的开发与构建环境，再学习协作和服务运行；用一次网络请求把 Linux、网络和 Java 程序连起来。"
+  },
+  {
+    "id": "java-database",
+    "output": "app/public/images/chapter-overviews/java-database.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"关系型数据库\". Exactly 6 surrounding modules, each once: 01 关系模型; 02 约束与 SQL; 03 事务与隔离; 04 索引与计划; 05 MySQL 实践; 06 PostgreSQL 对照. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先建立表、约束、查询与事务模型，再比较 MySQL 和 PostgreSQL；根据执行计划判断优化方向。"
+  },
+  {
+    "id": "java-spring",
+    "output": "app/public/images/chapter-overviews/java-spring.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"Spring Framework\". Exactly 6 surrounding modules, each once: 01 产品分工; 02 容器与注入; 03 对象生命周期; 04 代理与事务; 05 事件与校验; 06 缓存与调度. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先弄清 Spring 各产品的分工，再认识容器如何管理对象；接着学习代理、事务和常用基础设施能力。"
+  },
+  {
+    "id": "java-boot",
+    "output": "app/public/images/chapter-overviews/java-boot.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"Spring Boot 与 Web\". Exactly 6 surrounding modules, each once: 01 启动与配置; 02 自动装配; 03 请求处理链; 04 接口与校验; 05 文件与通信; 06 运行状态观察. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先启动并配置服务，再跟踪请求经过容器与控制器的路径，最后完善接口契约和运行状态观察。"
+  },
+  {
+    "id": "java-data-access",
+    "output": "app/public/images/chapter-overviews/java-data-access.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"数据访问与事务\". Exactly 6 surrounding modules, each once: 01 连接与 SQL; 02 MyBatis 映射; 03 JPA 实体模型; 04 事务边界; 05 数据迁移; 06 选型与验证. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先理解连接和 SQL 执行，再比较映射与实体模型；事务边界、迁移和技术选择必须围绕实际业务。"
+  },
+  {
+    "id": "java-testing",
+    "output": "app/public/images/chapter-overviews/java-testing.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"Java 测试与质量\". Exactly 6 surrounding modules, each once: 01 行为与策略; 02 单元与替身; 03 集成与容器; 04 接口与契约; 05 性能与故障; 06 回归与发布. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先明确要保护的行为，再安排单元、集成和契约检查；通过真实依赖与故障演练形成发布证据。"
+  },
+  {
+    "id": "java-security",
+    "output": "app/public/images/chapter-overviews/java-security.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"Java 安全与权限\". Exactly 6 surrounding modules, each once: 01 认证与授权; 02 过滤链; 03 协议与令牌; 04 接口与输入; 05 秘密与供应链; 06 审计与验证. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先理解认证、授权与过滤链，再学习协议和令牌；输入、秘密、依赖和审计都属于安全边界。"
+  },
+  {
+    "id": "java-modularity",
+    "output": "app/public/images/chapter-overviews/java-modularity.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"应用架构与模块化单体\". Exactly 6 surrounding modules, each once: 01 职责与分层; 02 按业务分模块; 03 模块边界验证; 04 事务与事件; 05 幂等与恢复; 06 服务拆分判断. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先在一个应用中把模块边界守住，再处理事务与事件；只有证据表明需要独立服务时，才讨论拆分。"
+  },
+  {
+    "id": "java-cache",
+    "output": "app/public/images/chapter-overviews/java-cache.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"缓存与搜索\". Exactly 6 surrounding modules, each once: 01 访问与瓶颈; 02 本地缓存; 03 Redis 缓存; 04 搜索与索引; 05 多级与一致性; 06 热点与治理. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先用访问模式和性能证据说明需求，再选择缓存或搜索；始终检查失效、一致性和热点问题。"
+  },
+  {
+    "id": "java-messaging",
+    "output": "app/public/images/chapter-overviews/java-messaging.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"消息与事件驱动\". Exactly 6 surrounding modules, each once: 01 消息模型; 02 交付与顺序; 03 幂等消费; 04 积压与死信; 05 Kafka 实践; 06 队列产品对照. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先理解消息交付、顺序和重复，再比较产品；可靠消费与积压治理比只记配置更重要。"
+  },
+  {
+    "id": "java-distributed",
+    "output": "app/public/images/chapter-overviews/java-distributed.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"分布式与微服务\". Exactly 6 surrounding modules, each once: 01 故障与一致性; 02 服务通信; 03 发现与配置; 04 网关与保护; 05 事务与事件; 06 版本与兼容. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先理解部分失败和一致性取舍，再处理通信、发现、保护与跨服务流程；组件组合须核对兼容关系。"
+  },
+  {
+    "id": "java-performance",
+    "output": "app/public/images/chapter-overviews/java-performance.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"Java 性能工程\". Exactly 6 surrounding modules, each once: 01 目标与容量; 02 基准测量; 03 定位瓶颈; 04 提出假设; 05 实施改动; 06 复测与证据. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先明确目标并测量，再定位瓶颈和提出假设；每次只做可解释的改动，随后重新测量确认结果。"
+  },
+  {
+    "id": "java-cloud",
+    "output": "app/public/images/chapter-overviews/java-cloud.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"云原生与可观测性\". Exactly 6 surrounding modules, each once: 01 镜像与容器; 02 工作负载编排; 03 网络与配置; 04 持续交付; 05 迁移与回滚; 06 遥测与响应. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先把服务打包成可重复运行的镜像，再学习编排和交付；上线后用遥测、目标与故障响应维持可用性。"
+  },
+  {
+    "id": "java-electives",
+    "output": "app/public/images/chapter-overviews/java-electives.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"Java 可选专项\". Exactly 4 surrounding modules, each once: 01 前端与全栈; 02 算法与设计; 03 文档数据库; 04 AI 集成. Independent optional branches, arrows from center to each module, NO sequential arrows. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先完成 Java 后端主线，再按项目需要选择专项；下面四条是并列选择，不要求按顺序全部学习。"
+  },
+  {
+    "id": "java-fullstack",
+    "output": "app/public/images/chapter-overviews/java-fullstack.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"前端与全栈交付\". Exactly 6 surrounding modules, each once: 01 网页结构; 02 样式与布局; 03 事件与异步; 04 类型与组件; 05 接口与认证; 06 测试与交付. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 从网页结构、样式和交互开始，再使用 TypeScript 与 Vue 组织界面，最后与后端契约和部署环境连通。"
+  },
+  {
+    "id": "java-cs",
+    "output": "app/public/images/chapter-overviews/java-cs.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"算法与工程设计\". Exactly 6 surrounding modules, each once: 01 问题与规模; 02 数据结构; 03 复杂度分析; 04 设计原则; 05 图示与模式; 06 工程验证. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先根据问题选择数据结构并分析成本，再用设计原则、图示和模式表达可维护的解决办法。"
+  },
+  {
+    "id": "java-mongodb",
+    "output": "app/public/images/chapter-overviews/java-mongodb.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"MongoDB 数据模型\". Exactly 6 surrounding modules, each once: 01 访问模式; 02 文档结构; 03 嵌入与引用; 04 索引与查询; 05 原子性与事务; 06 选型边界. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先分析读取和更新方式，再选择嵌入或引用；检查索引、原子性与事务需求，最后判断是否适合当前业务。"
+  },
+  {
+    "id": "java-ai",
+    "output": "app/public/images/chapter-overviews/java-ai.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"Spring AI 集成\". Exactly 6 surrounding modules, each once: 01 模型调用; 02 提示与输出; 03 工具调用; 04 检索增强; 05 安全与评测; 06 集成边界. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先接通模型调用，再组织提示、结构化结果和工具；检索增强、安全与评测需要在业务中分别验证。"
+  },
+  {
+    "id": "java-projects",
+    "output": "app/public/images/chapter-overviews/java-projects.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"Java 项目阶梯\". Exactly 6 surrounding modules, each once: 01 基础服务; 02 数据与接口; 03 模块化单体; 04 可靠事件; 05 高可用平台; 06 验收与作品集. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 从能运行的小服务逐步增加数据、测试和架构要求；任务系统、订单系统和高可用平台是递进练习，不要求一步到位。"
+  },
+  {
+    "id": "java-source",
+    "output": "app/public/images/chapter-overviews/java-source.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"Java 开源架构研究\". Exactly 6 surrounding modules, each once: 01 版本与证据; 02 启动与请求; 03 模块与依赖; 04 数据与事务; 05 安全与运行; 06 横向对照. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 带着固定问题进入源码，先确认版本和证据，再追踪请求、数据与模块边界；不同项目用同一框架比较。"
+  },
+  {
+    "id": "agent",
+    "output": "app/public/images/chapter-overviews/agent.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"Agent 开发\". Exactly 7 surrounding modules, each once: 01 适用边界; 02 行动循环; 03 上下文与工具; 04 知识与记忆; 05 运行支撑; 06 评测与交付; 07 进阶与研究. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先构建能观察、行动和停止的最小 Agent，再补齐上下文、工具、检索与运行支撑；评测和生产交付之后再按需进入高级方向。"
+  },
+  {
+    "id": "agent-basics",
+    "output": "app/public/images/chapter-overviews/agent-basics.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"Agent 基础\". Exactly 5 surrounding modules, each once: 01 任务与适用性; 02 类型与分工; 03 观察与行动; 04 工具界面; 05 工程边界. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先判断任务是否需要 Agent，再区分聊天、工作流和自主循环；用一个小循环理解工具界面与工程边界。"
+  },
+  {
+    "id": "agent-loop",
+    "output": "app/public/images/chapter-overviews/agent-loop.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"Agent Loop\". Exactly 6 surrounding modules, each once: 01 输入与状态; 02 模型决策; 03 结果解析; 04 计划与调度; 05 动作与反馈; 06 终止与恢复. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 从最小循环出发，明确输入、状态、决策和动作；再加入计划、调度、终止与错误处理，避免无界运行。"
+  },
+  {
+    "id": "agent-context",
+    "output": "app/public/images/chapter-overviews/agent-context.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"Context Engineering\". Exactly 6 surrounding modules, each once: 01 本轮可见信息; 02 多源状态; 03 装配与清单; 04 预算与压缩; 05 按需检索; 06 信任边界. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先看模型本轮实际收到什么，再按任务装配上下文；预算、检索与压缩都不能混淆可信指令和不可信材料。"
+  },
+  {
+    "id": "agent-tools",
+    "output": "app/public/images/chapter-overviews/agent-tools.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"Tools 与 Runtime\". Exactly 6 surrounding modules, each once: 01 工具与接口; 02 调用与执行; 03 权限与幂等; 04 结果与证据; 05 终端与文件; 06 浏览器扩展. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先区分工具声明、调用请求和实际执行，再检查权限、结果与失败；终端、文件和浏览器各有运行边界。"
+  },
+  {
+    "id": "agent-browser",
+    "output": "app/public/images/chapter-overviews/agent-browser.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"Browser Runtime\". Exactly 6 surrounding modules, each once: 01 页面观察; 02 动作选择; 03 可靠定位; 04 等待与验证; 05 失败恢复; 06 日志与评测. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先观察当前页面，再选择可验证的动作；用稳定定位、等待条件和失败恢复组织循环，并保留评测证据。"
+  },
+  {
+    "id": "agent-knowledge-memory",
+    "output": "app/public/images/chapter-overviews/agent-knowledge-memory.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"知识与记忆\". Exactly 5 surrounding modules, each once: 01 外部知识; 02 会话历史; 03 短期状态; 04 长期记忆; 05 当前上下文. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先区分外部知识、跨轮记忆、历史记录和当前上下文，再决定哪些信息应该检索、保存或装配到本轮请求。"
+  },
+  {
+    "id": "agent-rag",
+    "output": "app/public/images/chapter-overviews/agent-rag.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"RAG 知识检索\". Exactly 6 surrounding modules, each once: 01 资料摄取; 02 切分与表示; 03 检索候选; 04 重排与筛选; 05 引用与回答; 06 失败与评测. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先把资料整理成可检索内容，再寻找和排序证据；回答必须能回到来源，没有足够证据时要明确限制。"
+  },
+  {
+    "id": "agent-memory",
+    "output": "app/public/images/chapter-overviews/agent-memory.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"Memory 记忆管理\". Exactly 5 surrounding modules, each once: 01 信息与价值; 02 短期状态; 03 长期记录; 04 写入与检索; 05 更新与遗忘. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先判断哪些信息值得保存，再区分短期状态和长期记录；记忆需要检索、修正和遗忘，而不只是不断追加。"
+  },
+  {
+    "id": "agent-harness",
+    "output": "app/public/images/chapter-overviews/agent-harness.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"Agent Harness\". Exactly 6 surrounding modules, each once: 01 能力与边界; 02 工具与权限; 03 会话与上下文; 04 执行与恢复; 05 追踪与验证; 06 扩展与钩子. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先区分模型决策和模型外的运行支撑，再把工具、权限、会话、执行和恢复接起来；扩展点应有清晰边界。"
+  },
+  {
+    "id": "agent-skills",
+    "output": "app/public/images/chapter-overviews/agent-skills.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"Skills 与协议\". Exactly 6 surrounding modules, each once: 01 概念边界; 02 技能说明; 03 渐进加载; 04 冒烟验证; 05 工具协议; 06 Agent 互操作. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先区分可复用做法、可执行工具和互操作协议，再学习技能加载与验证；MCP、A2A、ACP 处理的边界并不相同。"
+  },
+  {
+    "id": "agent-evaluation",
+    "output": "app/public/images/chapter-overviews/agent-evaluation.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"评测、观测与安全\". Exactly 5 surrounding modules, each once: 01 任务与数据; 02 指标与基准; 03 追踪与定位; 04 权限与攻击; 05 回归与发布. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先定义任务和成功标准，再选择数据、指标和运行证据；将权限与攻击测试纳入回归及发布判断。"
+  },
+  {
+    "id": "agent-evolution",
+    "output": "app/public/images/chapter-overviews/agent-evolution.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"Agent 受控改进\". Exactly 5 surrounding modules, each once: 01 失败与证据; 02 改进假设; 03 技能与流程; 04 隔离与评测; 05 版本与回退. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先收集失败证据，再提出可版本化的技能或流程改动；经过隔离评测后才推广，保留回退路径。"
+  },
+  {
+    "id": "agent-multi",
+    "output": "app/public/images/chapter-overviews/agent-multi.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"多 Agent 协作\". Exactly 6 surrounding modules, each once: 01 单体与协作; 02 角色与契约; 03 编排与依赖; 04 共享与交接; 05 停止与恢复; 06 成本与验证. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先判断是否真的需要多个 Agent，再明确角色和交接契约；编排、停止条件与失败恢复必须一起设计。"
+  },
+  {
+    "id": "agent-training",
+    "output": "app/public/images/chapter-overviews/agent-training.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"模型后训练\". Exactly 6 surrounding modules, each once: 01 工程与训练; 02 轨迹与数据; 03 环境与任务; 04 奖励与反馈; 05 训练与评测; 06 适用边界. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先区分应用工程改进与模型参数训练，再认识轨迹、环境和奖励；这是可选高级方向，需要独立评测和数据治理。"
+  },
+  {
+    "id": "agent-production",
+    "output": "app/public/images/chapter-overviews/agent-production.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"Production Agent\". Exactly 6 surrounding modules, each once: 01 用户与任务; 02 成功标准; 03 重试与超时; 04 成本与预算; 05 部署与运维; 06 交付与手册. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先定义用户任务和完成标准，再控制失败、时间与成本；运行手册和交付检查同样属于生产能力。"
+  },
+  {
+    "id": "agent-projects",
+    "output": "app/public/images/chapter-overviews/agent-projects.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"Agent 项目阶梯\". Exactly 6 surrounding modules, each once: 01 最小循环; 02 工具执行; 03 上下文管理; 04 检索与记忆; 05 运行与评测; 06 生产交付. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 按 P0–P7 逐步练习，让每一步都有可以运行和验证的成果；先做可靠的小系统，再增加工具、检索和生产约束。"
+  },
+  {
+    "id": "agent-endtoend",
+    "output": "app/public/images/chapter-overviews/agent-endtoend.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"完整 Agent 链路\". Exactly 7 surrounding modules, each once: 01 用户输入; 02 上下文装配; 03 决策与解析; 04 权限与执行; 05 反馈与恢复; 06 证据化交付; 07 架构对照. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 沿着输入、上下文、决策、执行与结果检查完整系统，再比较不同路线的控制权和适用边界。"
+  },
+  {
+    "id": "agent-source",
+    "output": "app/public/images/chapter-overviews/agent-source.png",
+    "prompt": "Use case: infographic-diagram. NEW chapter overview, reference image ONLY for consistent series style. Replace ALL original labels. Central title exactly \"Coding Agent 源码研究\". Exactly 6 surrounding modules, each once: 01 版本与证据; 02 入口与循环; 03 工具与权限; 04 会话与上下文; 05 恢复与扩展; 06 横向对照. Arrows show numbered learning sequence; no final-to-first arrow. Landscape 16:9, clean blue white pale gray, softly dimensional relevant technical icons, generous whitespace, large accurate Chinese labels, no small print, no extra text or watermark. Context (do not print): 先确认公开证据和版本范围，再跟踪循环、工具、会话及上下文；把已证实实现和推断分开记录。"
+  }
+]

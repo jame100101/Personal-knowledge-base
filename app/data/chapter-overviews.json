@@ -1,0 +1,1099 @@
+[
+  {
+    "id": "language",
+    "key": "语言基础",
+    "sourceDirectory": "content/语言基础",
+    "title": "语言基础",
+    "summary": "先用 TypeScript 建立编程模型，再带着同一个问题比较其他语言；类型检查与运行时行为要分开理解。",
+    "modules": [
+      "环境与运行",
+      "变量与数据",
+      "函数与类型",
+      "模块与异步",
+      "测试与项目",
+      "跨语言对照"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/language.png"
+  },
+  {
+    "id": "language-typescript",
+    "key": "语言基础/TypeScript语言基础",
+    "sourceDirectory": "content/语言基础/01-TypeScript语言基础",
+    "title": "TypeScript 基础",
+    "summary": "先运行一段程序，再理解数据与函数；掌握日常类型表达后，再进入泛型、类型运算和工程实践。",
+    "modules": [
+      "运行与编译",
+      "变量与数据",
+      "函数与对象",
+      "联合与收窄",
+      "泛型与类型运算",
+      "模块与异步",
+      "工程与实战"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/language-typescript.png"
+  },
+  {
+    "id": "language-comparison",
+    "key": "语言基础/TypeScript跨语言对照",
+    "sourceDirectory": "content/语言基础/02-TypeScript跨语言对照",
+    "title": "TypeScript 跨语言对照",
+    "summary": "先区分编译、类型检查与执行，再比较语言之间相似语法背后的不同约束；不把一种语言的规则直接套到另一种语言上。",
+    "modules": [
+      "共同问题",
+      "JavaScript 对照",
+      "Java 对照",
+      "Python 对照",
+      "C++ 对照",
+      "能力与边界"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/language-comparison.png"
+  },
+  {
+    "id": "software-engineering",
+    "key": "软件工程",
+    "sourceDirectory": "content/软件工程",
+    "title": "软件工程",
+    "summary": "从一个收藏功能出发，先说清用户问题和验收标准，再完成设计、协作、验证与交付；实际开发可以反复返回前面的步骤。",
+    "modules": [
+      "问题与需求",
+      "设计与拆分",
+      "版本与协作",
+      "测试与排错",
+      "构建与发布",
+      "维护与安全",
+      "综合实战"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/software-engineering.png"
+  },
+  {
+    "id": "se-small-feature",
+    "key": "软件工程/从一个小功能开始",
+    "sourceDirectory": "content/软件工程/01-从一个小功能开始",
+    "title": "从一个小功能开始",
+    "summary": "先看一个按钮背后还需要哪些工作，再把任务拆成能验证的小步；写出代码只是交付过程的一部分。",
+    "modules": ["用户问题", "功能边界", "完成标准", "开发流程", "小步迭代"],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/se-small-feature.png"
+  },
+  {
+    "id": "se-requirements",
+    "key": "软件工程/把需求说清楚",
+    "sourceDirectory": "content/软件工程/02-把需求说清楚",
+    "title": "把需求说清楚",
+    "summary": "把“好用一点”变成具体场景和验收例子，再决定本轮做什么、暂时不做什么，以及变化来了如何处理。",
+    "modules": ["用户与场景", "问题与目标", "验收例子", "范围与优先级", "变更与反馈"],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/se-requirements.png"
+  },
+  {
+    "id": "se-design",
+    "key": "软件工程/设计与拆分",
+    "sourceDirectory": "content/软件工程/03-设计与拆分",
+    "title": "设计与拆分",
+    "summary": "先找业务规则和数据的归属，再约定模块怎样协作；用一张图和一条决策记录说明取舍。",
+    "modules": ["规则与数据", "模块边界", "接口约定", "结构与流程", "取舍与记录"],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/se-design.png"
+  },
+  {
+    "id": "se-git",
+    "key": "软件工程/版本管理与协作",
+    "sourceDirectory": "content/软件工程/04-版本管理与协作",
+    "title": "版本管理与协作",
+    "summary": "先用提交记录一次清楚的修改，再练习分支、合并和评审，让协作者能理解变化并验证结果。",
+    "modules": ["工作区与提交", "分支与合并", "冲突处理", "代码评审", "协作说明"],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/se-git.png"
+  },
+  {
+    "id": "se-testing",
+    "key": "软件工程/测试与排错",
+    "sourceDirectory": "content/软件工程/05-测试与排错",
+    "title": "测试与排错",
+    "summary": "从输入和预期结果开始写测试；遇到错误时先稳定复现，再缩小范围，最后用回归测试防止重现。",
+    "modules": ["验收与测试", "测试边界", "复现问题", "定位原因", "修复与回归"],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/se-testing.png"
+  },
+  {
+    "id": "se-delivery",
+    "key": "软件工程/构建发布与运行",
+    "sourceDirectory": "content/软件工程/06-构建发布与运行",
+    "title": "构建发布与运行",
+    "summary": "让代码在一致的环境里构建和检查，再区分部署与发布；上线后观察真实行为，并准备恢复办法。",
+    "modules": ["环境与依赖", "可复现构建", "持续集成", "部署与发布", "观察与回滚"],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/se-delivery.png"
+  },
+  {
+    "id": "se-maintenance",
+    "key": "软件工程/维护安全与改进",
+    "sourceDirectory": "content/软件工程/07-维护安全与改进",
+    "title": "维护安全与改进",
+    "summary": "在保留行为的前提下改进结构，同时管理技术债和兼容性；把安全检查与故障复盘落实为可执行的改进。",
+    "modules": ["重构与验证", "技术债管理", "兼容与演进", "权限与安全", "复盘与文档"],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/se-maintenance.png"
+  },
+  {
+    "id": "se-practice",
+    "key": "软件工程/把全过程做一遍",
+    "sourceDirectory": "content/软件工程/08-把全过程做一遍",
+    "title": "软件工程综合实战",
+    "summary": "用收藏功能串起完整过程：需求、设计、实现与验证必须相互对应，最终交付可运行、可检查的成果。",
+    "modules": [
+      "需求与验收",
+      "设计与拆分",
+      "实现与协作",
+      "测试与排错",
+      "发布与恢复",
+      "证据与复盘"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/se-practice.png"
+  },
+  {
+    "id": "frontend",
+    "key": "前端架构",
+    "sourceDirectory": "content/前端架构",
+    "title": "前端架构",
+    "summary": "先做能使用的网页，再理解框架、组件边界和数据流；Vue 与 React 可以先选一条实践，再进行对照。",
+    "modules": [
+      "网页基础",
+      "浏览器与工程",
+      "框架入门",
+      "组件与架构",
+      "路由与数据",
+      "质量与交付",
+      "项目与选型"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/frontend.png"
+  },
+  {
+    "id": "fe-web",
+    "key": "前端架构/从网页基础开始",
+    "sourceDirectory": "content/前端架构/00-从网页基础开始",
+    "title": "从网页基础开始",
+    "summary": "先用 HTML、CSS 和 JavaScript 做出可交互页面，再认识 Vue 与 React 如何组织界面；两个框架可以先选一个学习。",
+    "modules": [
+      "网页分工",
+      "文档与表单",
+      "布局与样式",
+      "事件与数据",
+      "Vue 入门",
+      "React 入门"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/fe-web.png"
+  },
+  {
+    "id": "fe-browser",
+    "key": "前端架构/浏览器与工程基础",
+    "sourceDirectory": "content/前端架构/01-浏览器与工程基础",
+    "title": "浏览器与工程基础",
+    "summary": "先理解浏览器怎样显示页面和处理任务，再把语义、布局、无障碍与构建工具接起来。",
+    "modules": [
+      "渲染过程",
+      "事件循环",
+      "语义与布局",
+      "键盘与无障碍",
+      "类型与模块",
+      "构建与发布"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/fe-browser.png"
+  },
+  {
+    "id": "fe-components",
+    "key": "前端架构/组件与架构设计",
+    "sourceDirectory": "content/前端架构/02-组件与架构设计",
+    "title": "组件与架构设计",
+    "summary": "先判断一个组件负责什么、状态应该放在哪里，再考虑复用、目录分层和跨团队组织；规模化方案按需要引入。",
+    "modules": [
+      "组件职责",
+      "状态归属",
+      "共享与复用",
+      "目录分层",
+      "设计系统",
+      "规模与边界"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/fe-components.png"
+  },
+  {
+    "id": "fe-vue",
+    "key": "前端架构/Vue从入门到原理",
+    "sourceDirectory": "content/前端架构/03-Vue从入门到原理",
+    "title": "Vue 从入门到原理",
+    "summary": "从文章筛选组件开始，先弄懂数据怎样驱动界面，再处理副作用、共享状态与渲染性能。",
+    "modules": [
+      "模板与组件",
+      "响应式数据",
+      "计算与监听",
+      "请求与清理",
+      "通信与共享",
+      "渲染与性能"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/fe-vue.png"
+  },
+  {
+    "id": "fe-react",
+    "key": "前端架构/React从入门到原理",
+    "sourceDirectory": "content/前端架构/04-React从入门到原理",
+    "title": "React 从入门到原理",
+    "summary": "先理解 JSX、组件和状态快照，再处理外部同步与复杂状态；最后区分渲染、提交和浏览器绘制。",
+    "modules": [
+      "JSX 与组件",
+      "状态快照",
+      "Hooks 与 Effect",
+      "清理与竞态",
+      "状态组织",
+      "渲染与提交"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/fe-react.png"
+  },
+  {
+    "id": "fe-routing",
+    "key": "前端架构/路由数据与渲染",
+    "sourceDirectory": "content/前端架构/05-路由数据与渲染",
+    "title": "路由、数据与渲染",
+    "summary": "从 URL 和返回行为开始，再理解请求缓存和页面生成位置；框架提供组织方式，业务边界仍需要自己决定。",
+    "modules": [
+      "URL 与导航",
+      "页面生命周期",
+      "请求与缓存",
+      "乐观更新",
+      "页面生成",
+      "框架边界"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/fe-routing.png"
+  },
+  {
+    "id": "fe-quality",
+    "key": "前端架构/质量安全与交付",
+    "sourceDirectory": "content/前端架构/06-质量安全与交付",
+    "title": "前端质量与交付",
+    "summary": "先保证用户能正确完成操作，再检查权限边界、回归测试和性能；构建成功后仍要验证真实部署。",
+    "modules": ["表单与校验", "身份与权限", "任务与测试", "性能与资源", "部署与回滚"],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/fe-quality.png"
+  },
+  {
+    "id": "fe-practice",
+    "key": "前端架构/双框架实战与选型",
+    "sourceDirectory": "content/前端架构/07-双框架实战与选型",
+    "title": "双框架实战与选型",
+    "summary": "用同一个文章搜索需求分别实践 Vue 和 React，比较交互、数据流与维护成本，再给出有依据的选择。",
+    "modules": ["统一需求", "Vue 实现", "React 实现", "行为验证", "成本与选型"],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/fe-practice.png"
+  },
+  {
+    "id": "backend",
+    "key": "后端知识",
+    "sourceDirectory": "content/后端知识",
+    "title": "后端知识",
+    "summary": "跟随一次请求进入服务，先掌握数据和权限，再比较架构；分布式方案应由实际问题驱动。",
+    "modules": [
+      "请求与接口",
+      "数据与存储",
+      "身份与安全",
+      "架构与边界",
+      "分布式可靠性",
+      "部署与观察",
+      "项目与选型"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/backend.png"
+  },
+  {
+    "id": "be-request",
+    "key": "后端知识/请求与接口基础",
+    "sourceDirectory": "content/后端知识/01-请求与接口基础",
+    "title": "请求与接口基础",
+    "summary": "先追踪一次请求的来回，再约定接口的输入、结果和错误；最后理解服务如何同时处理多个请求。",
+    "modules": [
+      "地址与连接",
+      "代理与应用",
+      "接口契约",
+      "错误与分页",
+      "幂等请求",
+      "并发与连接池"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/be-request.png"
+  },
+  {
+    "id": "be-architecture",
+    "key": "后端知识/常见后端架构",
+    "sourceDirectory": "content/后端知识/02-常见后端架构",
+    "title": "常见后端架构",
+    "summary": "先建立职责边界，再比较不同架构解决的问题和额外成本；这些方案不是必须逐级升级的一条产品路线。",
+    "modules": [
+      "分层与职责",
+      "模块化单体",
+      "领域与依赖",
+      "微服务治理",
+      "事件与读写",
+      "部署与组合"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/be-architecture.png"
+  },
+  {
+    "id": "be-data",
+    "key": "后端知识/数据与存储",
+    "sourceDirectory": "content/后端知识/03-数据与存储",
+    "title": "数据与存储",
+    "summary": "先用模型、约束和事务守住正确性，再根据访问方式理解索引与演进；缓存、搜索和对象存储各有职责。",
+    "modules": [
+      "模型与约束",
+      "事务与隔离",
+      "索引与查询",
+      "数据演进",
+      "缓存与搜索",
+      "对象存储"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/be-data.png"
+  },
+  {
+    "id": "be-reliability",
+    "key": "后端知识/分布式与可靠性",
+    "sourceDirectory": "content/后端知识/04-分布式与可靠性",
+    "title": "分布式与可靠性",
+    "summary": "先承认消息可能重复、依赖可能失败，再设计可靠事件、跨服务收尾和过载保护，不把重试当成万能解法。",
+    "modules": [
+      "消息与重复",
+      "可靠事件",
+      "幂等消费",
+      "一致性取舍",
+      "跨服务收尾",
+      "超时与保护"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/be-reliability.png"
+  },
+  {
+    "id": "be-security",
+    "key": "后端知识/身份权限与安全",
+    "sourceDirectory": "content/后端知识/05-身份权限与安全",
+    "title": "身份、权限与安全",
+    "summary": "先区分“你是谁”和“你能做什么”，再检查租户隔离和输入边界；登录成功不代表可以访问任意数据。",
+    "modules": ["身份识别", "权限检查", "租户隔离", "输入边界", "验证与审计"],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/be-security.png"
+  },
+  {
+    "id": "be-operations",
+    "key": "后端知识/部署与可观测性",
+    "sourceDirectory": "content/后端知识/06-部署与可观测性",
+    "title": "部署与可观测性",
+    "summary": "先定义如何判断服务正常，再用日志、指标和追踪定位问题；发布、数据迁移与恢复需要共同考虑。",
+    "modules": ["日志与指标", "请求追踪", "目标与告警", "部署与迁移", "备份与回滚"],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/be-operations.png"
+  },
+  {
+    "id": "be-practice",
+    "key": "后端知识/项目实战与选型",
+    "sourceDirectory": "content/后端知识/07-项目实战与选型",
+    "title": "后端项目实战与选型",
+    "summary": "用订单、库存和可靠事件串起后端知识，再根据约束估算容量、记录取舍，并检查失败路径。",
+    "modules": [
+      "需求与约束",
+      "订单与库存",
+      "幂等与事件",
+      "故障与验证",
+      "容量与取舍",
+      "决策记录"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/be-practice.png"
+  },
+  {
+    "id": "java",
+    "key": "Java开发",
+    "sourceDirectory": "content/Java开发",
+    "title": "Java 开发",
+    "summary": "先用 Java 写出并运行小程序，再建立工程、数据与 Web 服务能力；有了可维护的服务后，再深入并发、性能和分布式。",
+    "modules": [
+      "语言与核心库",
+      "工程与数据",
+      "Spring 与 Web",
+      "测试与安全",
+      "架构与集成",
+      "性能与运维",
+      "项目与选修"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/java.png"
+  },
+  {
+    "id": "java-core",
+    "key": "Java开发/Java语言与核心API",
+    "sourceDirectory": "content/Java开发/01-Java语言与核心API",
+    "title": "Java 语言与核心 API",
+    "summary": "从编译运行、变量和方法开始，逐步建立对象与异常模型；学会泛型后再组织集合，并连接文件与数据库。",
+    "modules": [
+      "环境与语法",
+      "类与对象",
+      "异常与常用库",
+      "泛型与集合",
+      "反射与注解",
+      "文件与输入输出",
+      "数据库访问"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/java-core.png"
+  },
+  {
+    "id": "java-jvm",
+    "key": "Java开发/JVM与并发",
+    "sourceDirectory": "content/Java开发/02-JVM与并发",
+    "title": "JVM 与并发",
+    "summary": "先理解代码怎样运行和使用内存，再处理线程协作与可见性；高级并发能力要结合项目使用的 JDK 版本。",
+    "modules": [
+      "类加载与内存",
+      "垃圾收集",
+      "线程与任务",
+      "可见性与同步",
+      "锁与原子操作",
+      "线程池与异步",
+      "诊断与版本边界"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/java-jvm.png"
+  },
+  {
+    "id": "java-tools",
+    "key": "Java开发/工程基础与Internet-Linux",
+    "sourceDirectory": "content/Java开发/03-工程基础与Internet-Linux",
+    "title": "工程工具与网络基础",
+    "summary": "先建立可复现的开发与构建环境，再学习协作和服务运行；用一次网络请求把 Linux、网络和 Java 程序连起来。",
+    "modules": [
+      "JDK 与开发环境",
+      "依赖与构建",
+      "Git 协作",
+      "Linux 与容器",
+      "网络请求",
+      "Java 网络编程"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/java-tools.png"
+  },
+  {
+    "id": "java-database",
+    "key": "Java开发/关系型数据库",
+    "sourceDirectory": "content/Java开发/04-关系型数据库",
+    "title": "关系型数据库",
+    "summary": "先建立表、约束、查询与事务模型，再比较 MySQL 和 PostgreSQL；根据执行计划判断优化方向。",
+    "modules": [
+      "关系模型",
+      "约束与 SQL",
+      "事务与隔离",
+      "索引与计划",
+      "MySQL 实践",
+      "PostgreSQL 对照"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/java-database.png"
+  },
+  {
+    "id": "java-spring",
+    "key": "Java开发/Spring Framework",
+    "sourceDirectory": "content/Java开发/05-Spring Framework",
+    "title": "Spring Framework",
+    "summary": "先弄清 Spring 各产品的分工，再认识容器如何管理对象；接着学习代理、事务和常用基础设施能力。",
+    "modules": [
+      "产品分工",
+      "容器与注入",
+      "对象生命周期",
+      "代理与事务",
+      "事件与校验",
+      "缓存与调度"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/java-spring.png"
+  },
+  {
+    "id": "java-boot",
+    "key": "Java开发/Spring Boot与Web",
+    "sourceDirectory": "content/Java开发/06-Spring Boot与Web",
+    "title": "Spring Boot 与 Web",
+    "summary": "先启动并配置服务，再跟踪请求经过容器与控制器的路径，最后完善接口契约和运行状态观察。",
+    "modules": [
+      "启动与配置",
+      "自动装配",
+      "请求处理链",
+      "接口与校验",
+      "文件与通信",
+      "运行状态观察"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/java-boot.png"
+  },
+  {
+    "id": "java-data-access",
+    "key": "Java开发/数据访问与事务",
+    "sourceDirectory": "content/Java开发/07-数据访问与事务",
+    "title": "数据访问与事务",
+    "summary": "先理解连接和 SQL 执行，再比较映射与实体模型；事务边界、迁移和技术选择必须围绕实际业务。",
+    "modules": [
+      "连接与 SQL",
+      "MyBatis 映射",
+      "JPA 实体模型",
+      "事务边界",
+      "数据迁移",
+      "选型与验证"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/java-data-access.png"
+  },
+  {
+    "id": "java-testing",
+    "key": "Java开发/测试与质量工程",
+    "sourceDirectory": "content/Java开发/08-测试与质量工程",
+    "title": "Java 测试与质量",
+    "summary": "先明确要保护的行为，再安排单元、集成和契约检查；通过真实依赖与故障演练形成发布证据。",
+    "modules": [
+      "行为与策略",
+      "单元与替身",
+      "集成与容器",
+      "接口与契约",
+      "性能与故障",
+      "回归与发布"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/java-testing.png"
+  },
+  {
+    "id": "java-security",
+    "key": "Java开发/安全认证与授权",
+    "sourceDirectory": "content/Java开发/09-安全认证与授权",
+    "title": "Java 安全与权限",
+    "summary": "先理解认证、授权与过滤链，再学习协议和令牌；输入、秘密、依赖和审计都属于安全边界。",
+    "modules": [
+      "认证与授权",
+      "过滤链",
+      "协议与令牌",
+      "接口与输入",
+      "秘密与供应链",
+      "审计与验证"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/java-security.png"
+  },
+  {
+    "id": "java-modularity",
+    "key": "Java开发/应用架构与模块化单体",
+    "sourceDirectory": "content/Java开发/10-应用架构与模块化单体",
+    "title": "应用架构与模块化单体",
+    "summary": "先在一个应用中把模块边界守住，再处理事务与事件；只有证据表明需要独立服务时，才讨论拆分。",
+    "modules": [
+      "职责与分层",
+      "按业务分模块",
+      "模块边界验证",
+      "事务与事件",
+      "幂等与恢复",
+      "服务拆分判断"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/java-modularity.png"
+  },
+  {
+    "id": "java-cache",
+    "key": "Java开发/缓存与搜索",
+    "sourceDirectory": "content/Java开发/11-缓存与搜索",
+    "title": "缓存与搜索",
+    "summary": "先用访问模式和性能证据说明需求，再选择缓存或搜索；始终检查失效、一致性和热点问题。",
+    "modules": [
+      "访问与瓶颈",
+      "本地缓存",
+      "Redis 缓存",
+      "搜索与索引",
+      "多级与一致性",
+      "热点与治理"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/java-cache.png"
+  },
+  {
+    "id": "java-messaging",
+    "key": "Java开发/消息与事件驱动",
+    "sourceDirectory": "content/Java开发/12-消息与事件驱动",
+    "title": "消息与事件驱动",
+    "summary": "先理解消息交付、顺序和重复，再比较产品；可靠消费与积压治理比只记配置更重要。",
+    "modules": [
+      "消息模型",
+      "交付与顺序",
+      "幂等消费",
+      "积压与死信",
+      "Kafka 实践",
+      "队列产品对照"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/java-messaging.png"
+  },
+  {
+    "id": "java-distributed",
+    "key": "Java开发/分布式与微服务",
+    "sourceDirectory": "content/Java开发/13-分布式与微服务",
+    "title": "分布式与微服务",
+    "summary": "先理解部分失败和一致性取舍，再处理通信、发现、保护与跨服务流程；组件组合须核对兼容关系。",
+    "modules": [
+      "故障与一致性",
+      "服务通信",
+      "发现与配置",
+      "网关与保护",
+      "事务与事件",
+      "版本与兼容"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/java-distributed.png"
+  },
+  {
+    "id": "java-performance",
+    "key": "Java开发/性能工程",
+    "sourceDirectory": "content/Java开发/14-性能工程",
+    "title": "Java 性能工程",
+    "summary": "先明确目标并测量，再定位瓶颈和提出假设；每次只做可解释的改动，随后重新测量确认结果。",
+    "modules": [
+      "目标与容量",
+      "基准测量",
+      "定位瓶颈",
+      "提出假设",
+      "实施改动",
+      "复测与证据"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/java-performance.png"
+  },
+  {
+    "id": "java-cloud",
+    "key": "Java开发/云原生DevOps与可观测性",
+    "sourceDirectory": "content/Java开发/15-云原生DevOps与可观测性",
+    "title": "云原生与可观测性",
+    "summary": "先把服务打包成可重复运行的镜像，再学习编排和交付；上线后用遥测、目标与故障响应维持可用性。",
+    "modules": [
+      "镜像与容器",
+      "工作负载编排",
+      "网络与配置",
+      "持续交付",
+      "迁移与回滚",
+      "遥测与响应"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/java-cloud.png"
+  },
+  {
+    "id": "java-electives",
+    "key": "Java开发/可选专项",
+    "sourceDirectory": "content/Java开发/16-可选专项",
+    "title": "Java 可选专项",
+    "summary": "先完成 Java 后端主线，再按项目需要选择专项；下面四条是并列选择，不要求按顺序全部学习。",
+    "modules": ["前端与全栈", "算法与设计", "文档数据库", "AI 集成"],
+    "mode": "choices",
+    "image": "/images/chapter-overviews/java-electives.png"
+  },
+  {
+    "id": "java-fullstack",
+    "key": "Java开发/可选专项/前端与全栈交付",
+    "sourceDirectory": "content/Java开发/16-可选专项/01-前端与全栈交付",
+    "title": "前端与全栈交付",
+    "summary": "从网页结构、样式和交互开始，再使用 TypeScript 与 Vue 组织界面，最后与后端契约和部署环境连通。",
+    "modules": [
+      "网页结构",
+      "样式与布局",
+      "事件与异步",
+      "类型与组件",
+      "接口与认证",
+      "测试与交付"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/java-fullstack.png"
+  },
+  {
+    "id": "java-cs",
+    "key": "Java开发/可选专项/计算机科学与工程选修",
+    "sourceDirectory": "content/Java开发/16-可选专项/02-计算机科学与工程选修",
+    "title": "算法与工程设计",
+    "summary": "先根据问题选择数据结构并分析成本，再用设计原则、图示和模式表达可维护的解决办法。",
+    "modules": [
+      "问题与规模",
+      "数据结构",
+      "复杂度分析",
+      "设计原则",
+      "图示与模式",
+      "工程验证"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/java-cs.png"
+  },
+  {
+    "id": "java-mongodb",
+    "key": "Java开发/可选专项/MongoDB数据模型",
+    "sourceDirectory": "content/Java开发/16-可选专项/03-MongoDB数据模型",
+    "title": "MongoDB 数据模型",
+    "summary": "先分析读取和更新方式，再选择嵌入或引用；检查索引、原子性与事务需求，最后判断是否适合当前业务。",
+    "modules": [
+      "访问模式",
+      "文档结构",
+      "嵌入与引用",
+      "索引与查询",
+      "原子性与事务",
+      "选型边界"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/java-mongodb.png"
+  },
+  {
+    "id": "java-ai",
+    "key": "Java开发/可选专项/Spring AI",
+    "sourceDirectory": "content/Java开发/16-可选专项/04-Spring AI",
+    "title": "Spring AI 集成",
+    "summary": "先接通模型调用，再组织提示、结构化结果和工具；检索增强、安全与评测需要在业务中分别验证。",
+    "modules": [
+      "模型调用",
+      "提示与输出",
+      "工具调用",
+      "检索增强",
+      "安全与评测",
+      "集成边界"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/java-ai.png"
+  },
+  {
+    "id": "java-projects",
+    "key": "Java开发/项目阶梯",
+    "sourceDirectory": "content/Java开发/17-项目阶梯",
+    "title": "Java 项目阶梯",
+    "summary": "从能运行的小服务逐步增加数据、测试和架构要求；任务系统、订单系统和高可用平台是递进练习，不要求一步到位。",
+    "modules": [
+      "基础服务",
+      "数据与接口",
+      "模块化单体",
+      "可靠事件",
+      "高可用平台",
+      "验收与作品集"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/java-projects.png"
+  },
+  {
+    "id": "java-source",
+    "key": "Java开发/开源项目架构研究",
+    "sourceDirectory": "content/Java开发/99-开源项目架构研究",
+    "title": "Java 开源架构研究",
+    "summary": "带着固定问题进入源码，先确认版本和证据，再追踪请求、数据与模块边界；不同项目用同一框架比较。",
+    "modules": [
+      "版本与证据",
+      "启动与请求",
+      "模块与依赖",
+      "数据与事务",
+      "安全与运行",
+      "横向对照"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/java-source.png"
+  },
+  {
+    "id": "agent",
+    "key": "Agent开发",
+    "sourceDirectory": "content/Agent开发",
+    "title": "Agent 开发",
+    "summary": "先构建能观察、行动和停止的最小 Agent，再补齐上下文、工具、检索与运行支撑；评测和生产交付之后再按需进入高级方向。",
+    "modules": [
+      "适用边界",
+      "行动循环",
+      "上下文与工具",
+      "知识与记忆",
+      "运行支撑",
+      "评测与交付",
+      "进阶与研究"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/agent.png"
+  },
+  {
+    "id": "agent-basics",
+    "key": "Agent开发/Agent基础",
+    "sourceDirectory": "content/Agent开发/01-Agent基础",
+    "title": "Agent 基础",
+    "summary": "先判断任务是否需要 Agent，再区分聊天、工作流和自主循环；用一个小循环理解工具界面与工程边界。",
+    "modules": ["任务与适用性", "类型与分工", "观察与行动", "工具界面", "工程边界"],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/agent-basics.png"
+  },
+  {
+    "id": "agent-loop",
+    "key": "Agent开发/Agent Loop",
+    "sourceDirectory": "content/Agent开发/02-Agent Loop",
+    "title": "Agent Loop",
+    "summary": "从最小循环出发，明确输入、状态、决策和动作；再加入计划、调度、终止与错误处理，避免无界运行。",
+    "modules": [
+      "输入与状态",
+      "模型决策",
+      "结果解析",
+      "计划与调度",
+      "动作与反馈",
+      "终止与恢复"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/agent-loop.png"
+  },
+  {
+    "id": "agent-context",
+    "key": "Agent开发/Context Engineering",
+    "sourceDirectory": "content/Agent开发/03-Context Engineering",
+    "title": "Context Engineering",
+    "summary": "先看模型本轮实际收到什么，再按任务装配上下文；预算、检索与压缩都不能混淆可信指令和不可信材料。",
+    "modules": [
+      "本轮可见信息",
+      "多源状态",
+      "装配与清单",
+      "预算与压缩",
+      "按需检索",
+      "信任边界"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/agent-context.png"
+  },
+  {
+    "id": "agent-tools",
+    "key": "Agent开发/Tools与Runtime",
+    "sourceDirectory": "content/Agent开发/04-Tools与Runtime",
+    "title": "Tools 与 Runtime",
+    "summary": "先区分工具声明、调用请求和实际执行，再检查权限、结果与失败；终端、文件和浏览器各有运行边界。",
+    "modules": [
+      "工具与接口",
+      "调用与执行",
+      "权限与幂等",
+      "结果与证据",
+      "终端与文件",
+      "浏览器扩展"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/agent-tools.png"
+  },
+  {
+    "id": "agent-browser",
+    "key": "Agent开发/Tools与Runtime/Browser Runtime",
+    "sourceDirectory": "content/Agent开发/04-Tools与Runtime/02-Browser Runtime",
+    "title": "Browser Runtime",
+    "summary": "先观察当前页面，再选择可验证的动作；用稳定定位、等待条件和失败恢复组织循环，并保留评测证据。",
+    "modules": [
+      "页面观察",
+      "动作选择",
+      "可靠定位",
+      "等待与验证",
+      "失败恢复",
+      "日志与评测"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/agent-browser.png"
+  },
+  {
+    "id": "agent-knowledge-memory",
+    "key": "Agent开发/Knowledge与Memory",
+    "sourceDirectory": "content/Agent开发/05-Knowledge与Memory",
+    "title": "知识与记忆",
+    "summary": "先区分外部知识、跨轮记忆、历史记录和当前上下文，再决定哪些信息应该检索、保存或装配到本轮请求。",
+    "modules": ["外部知识", "会话历史", "短期状态", "长期记忆", "当前上下文"],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/agent-knowledge-memory.png"
+  },
+  {
+    "id": "agent-rag",
+    "key": "Agent开发/Knowledge与Memory/Knowledge",
+    "sourceDirectory": "content/Agent开发/05-Knowledge与Memory/01-Knowledge",
+    "title": "RAG 知识检索",
+    "summary": "先把资料整理成可检索内容，再寻找和排序证据；回答必须能回到来源，没有足够证据时要明确限制。",
+    "modules": [
+      "资料摄取",
+      "切分与表示",
+      "检索候选",
+      "重排与筛选",
+      "引用与回答",
+      "失败与评测"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/agent-rag.png"
+  },
+  {
+    "id": "agent-memory",
+    "key": "Agent开发/Knowledge与Memory/Memory",
+    "sourceDirectory": "content/Agent开发/05-Knowledge与Memory/02-Memory",
+    "title": "Memory 记忆管理",
+    "summary": "先判断哪些信息值得保存，再区分短期状态和长期记录；记忆需要检索、修正和遗忘，而不只是不断追加。",
+    "modules": ["信息与价值", "短期状态", "长期记录", "写入与检索", "更新与遗忘"],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/agent-memory.png"
+  },
+  {
+    "id": "agent-harness",
+    "key": "Agent开发/Agent Harness",
+    "sourceDirectory": "content/Agent开发/06-Agent Harness",
+    "title": "Agent Harness",
+    "summary": "先区分模型决策和模型外的运行支撑，再把工具、权限、会话、执行和恢复接起来；扩展点应有清晰边界。",
+    "modules": [
+      "能力与边界",
+      "工具与权限",
+      "会话与上下文",
+      "执行与恢复",
+      "追踪与验证",
+      "扩展与钩子"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/agent-harness.png"
+  },
+  {
+    "id": "agent-skills",
+    "key": "Agent开发/Skills与Protocols",
+    "sourceDirectory": "content/Agent开发/07-Skills与Protocols",
+    "title": "Skills 与协议",
+    "summary": "先区分可复用做法、可执行工具和互操作协议，再学习技能加载与验证；MCP、A2A、ACP 处理的边界并不相同。",
+    "modules": [
+      "概念边界",
+      "技能说明",
+      "渐进加载",
+      "冒烟验证",
+      "工具协议",
+      "Agent 互操作"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/agent-skills.png"
+  },
+  {
+    "id": "agent-evaluation",
+    "key": "Agent开发/Evaluation Observability Safety",
+    "sourceDirectory": "content/Agent开发/08-Evaluation Observability Safety",
+    "title": "评测、观测与安全",
+    "summary": "先定义任务和成功标准，再选择数据、指标和运行证据；将权限与攻击测试纳入回归及发布判断。",
+    "modules": ["任务与数据", "指标与基准", "追踪与定位", "权限与攻击", "回归与发布"],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/agent-evaluation.png"
+  },
+  {
+    "id": "agent-evolution",
+    "key": "Agent开发/Agent Evolution",
+    "sourceDirectory": "content/Agent开发/09-Agent Evolution",
+    "title": "Agent 受控改进",
+    "summary": "先收集失败证据，再提出可版本化的技能或流程改动；经过隔离评测后才推广，保留回退路径。",
+    "modules": ["失败与证据", "改进假设", "技能与流程", "隔离与评测", "版本与回退"],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/agent-evolution.png"
+  },
+  {
+    "id": "agent-multi",
+    "key": "Agent开发/Multi-Agent",
+    "sourceDirectory": "content/Agent开发/10-Multi-Agent",
+    "title": "多 Agent 协作",
+    "summary": "先判断是否真的需要多个 Agent，再明确角色和交接契约；编排、停止条件与失败恢复必须一起设计。",
+    "modules": [
+      "单体与协作",
+      "角色与契约",
+      "编排与依赖",
+      "共享与交接",
+      "停止与恢复",
+      "成本与验证"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/agent-multi.png"
+  },
+  {
+    "id": "agent-training",
+    "key": "Agent开发/Model Post-training",
+    "sourceDirectory": "content/Agent开发/11-Model Post-training",
+    "title": "模型后训练",
+    "summary": "先区分应用工程改进与模型参数训练，再认识轨迹、环境和奖励；这是可选高级方向，需要独立评测和数据治理。",
+    "modules": [
+      "工程与训练",
+      "轨迹与数据",
+      "环境与任务",
+      "奖励与反馈",
+      "训练与评测",
+      "适用边界"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/agent-training.png"
+  },
+  {
+    "id": "agent-production",
+    "key": "Agent开发/Production Agent",
+    "sourceDirectory": "content/Agent开发/12-Production Agent",
+    "title": "Production Agent",
+    "summary": "先定义用户任务和完成标准，再控制失败、时间与成本；运行手册和交付检查同样属于生产能力。",
+    "modules": [
+      "用户与任务",
+      "成功标准",
+      "重试与超时",
+      "成本与预算",
+      "部署与运维",
+      "交付与手册"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/agent-production.png"
+  },
+  {
+    "id": "agent-projects",
+    "key": "Agent开发/Project Ladder",
+    "sourceDirectory": "content/Agent开发/13-Project Ladder",
+    "title": "Agent 项目阶梯",
+    "summary": "按 P0–P7 逐步练习，让每一步都有可以运行和验证的成果；先做可靠的小系统，再增加工具、检索和生产约束。",
+    "modules": [
+      "最小循环",
+      "工具执行",
+      "上下文管理",
+      "检索与记忆",
+      "运行与评测",
+      "生产交付"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/agent-projects.png"
+  },
+  {
+    "id": "agent-endtoend",
+    "key": "Agent开发/完整Agent链路与架构对照",
+    "sourceDirectory": "content/Agent开发/14-完整Agent链路与架构对照",
+    "title": "完整 Agent 链路",
+    "summary": "沿着输入、上下文、决策、执行与结果检查完整系统，再比较不同路线的控制权和适用边界。",
+    "modules": [
+      "用户输入",
+      "上下文装配",
+      "决策与解析",
+      "权限与执行",
+      "反馈与恢复",
+      "证据化交付",
+      "架构对照"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/agent-endtoend.png"
+  },
+  {
+    "id": "agent-source",
+    "key": "Agent开发/现代Agent架构与源码研究",
+    "sourceDirectory": "content/Agent开发/99-现代Agent架构与源码研究",
+    "title": "Coding Agent 源码研究",
+    "summary": "先确认公开证据和版本范围，再跟踪循环、工具、会话及上下文；把已证实实现和推断分开记录。",
+    "modules": [
+      "版本与证据",
+      "入口与循环",
+      "工具与权限",
+      "会话与上下文",
+      "恢复与扩展",
+      "横向对照"
+    ],
+    "mode": "sequence",
+    "image": "/images/chapter-overviews/agent-source.png"
+  }
+]

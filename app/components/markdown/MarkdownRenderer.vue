@@ -4,7 +4,7 @@ import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { lockBodyScroll } from '~/utils/scroll-lock'
 import { renderMarkdown } from '~/utils/markdown'
 
-const props = defineProps<{ source: string }>()
+const props = defineProps<{ source: string; diagramOnly?: boolean }>()
 const root = ref<HTMLElement>()
 const viewerDialog = ref<HTMLElement>()
 const rendered = computed(() => renderMarkdown(props.source))
@@ -410,7 +410,7 @@ watch([theme, locale], async () => {
   <!-- eslint-disable vue/no-v-html -->
   <article
     ref="root"
-    class="markdown-body"
+    :class="diagramOnly ? 'chapter-route-renderer' : 'markdown-body'"
     @click="handleRootClick"
     v-html="rendered"
   />
@@ -689,7 +689,7 @@ watch([theme, locale], async () => {
   accent-color: var(--kb-accent);
   margin-right: 8px;
 }
-.markdown-body .mermaid {
+:is(.markdown-body, .chapter-route-renderer) .mermaid {
   position: relative;
   border: 1px solid var(--kb-border);
   border-radius: var(--kb-radius-md);
@@ -697,16 +697,16 @@ watch([theme, locale], async () => {
   overflow: hidden;
   text-align: center;
 }
-.markdown-body .mermaid-interactive {
+:is(.markdown-body, .chapter-route-renderer) .mermaid-interactive {
   cursor: zoom-in;
 }
-.markdown-body .mermaid-scroll-viewport {
+:is(.markdown-body, .chapter-route-renderer) .mermaid-scroll-viewport {
   width: 100%;
   min-width: 0;
   padding: 52px 18px 18px;
   overflow: auto;
 }
-.markdown-body .mermaid svg {
+:is(.markdown-body, .chapter-route-renderer) .mermaid svg {
   display: block;
   width: auto;
   min-width: 0;
@@ -715,7 +715,7 @@ watch([theme, locale], async () => {
   height: auto;
   margin: 0 auto;
 }
-.markdown-body .mermaid-open-button {
+:is(.markdown-body, .chapter-route-renderer) .mermaid-open-button {
   position: absolute;
   z-index: 2;
   top: 10px;
@@ -739,7 +739,7 @@ watch([theme, locale], async () => {
   overflow-wrap: normal;
   cursor: zoom-in;
 }
-.markdown-body .mermaid-open-button svg {
+:is(.markdown-body, .chapter-route-renderer) .mermaid-open-button svg {
   width: 13px;
   height: 13px;
   min-width: 13px;
@@ -750,7 +750,7 @@ watch([theme, locale], async () => {
   stroke-linecap: round;
   stroke-linejoin: round;
 }
-.markdown-body .mermaid-open-button:hover {
+:is(.markdown-body, .chapter-route-renderer) .mermaid-open-button:hover {
   border-color: var(--kb-accent);
   color: var(--kb-accent);
 }

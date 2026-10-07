@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ArrowLeft, ArrowRight, CalendarDays, FileText, Folder } from 'lucide-vue-next'
+import chapterOverviews from '~/data/chapter-overviews.json'
 import {
+  findFolderPath,
   buildBreadcrumbs,
   documentPublicPath,
   folderPublicPath,
@@ -46,6 +48,15 @@ const siblings = computed(() =>
 const currentIndex = computed(() =>
   siblings.value.findIndex((item) => item.id === document.value?.id),
 )
+const chapterOverview = computed(() => {
+  const key = findFolderPath(
+    document.value?.folder_id || folder.value?.id || null,
+    folders.value,
+  )
+    .map((item) => item.name)
+    .join('/')
+  return chapterOverviews.find((item) => item.key === key)
+})
 const previous = computed(() => siblings.value[currentIndex.value - 1])
 const next = computed(() => siblings.value[currentIndex.value + 1])
 const related = computed(() =>
@@ -110,6 +121,10 @@ useHead(() => ({
           </button>
         </div>
       </header>
+      <ChapterOverview
+        v-if="chapterOverview && currentIndex === 0"
+        :chapter="chapterOverview"
+      />
       <MarkdownRenderer :source="document.content" />
       <nav class="document-nav">
         <NuxtLink v-if="previous" :to="documentPublicPath(previous, folders)">
@@ -160,6 +175,7 @@ useHead(() => ({
         ><span>{{ folderDocuments.length }} {{ t('documents') }}</span>
       </div>
     </header>
+    <ChapterOverview v-if="chapterOverview" :chapter="chapterOverview" />
     <section>
       <div class="section-title">
         <h2>{{ t('readingOrder') }}</h2>

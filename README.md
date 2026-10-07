@@ -239,3 +239,18 @@ npm run content:verify-software-engineering
 全库首页依次为「语言基础 → 软件工程 → 前端架构 → 后端知识 → Java开发 → Agent开发」。这是推荐浏览顺序，前后端可按方向选读。目录将文章和子目录统一按排序值排列，导学在前、章节居中、补充阅读在后。维护规则位于 `scripts/learning-order.mjs`，现有导入器共用，避免再次同步时覆盖学习顺序；历史目录名、文章 ID、Slug 和链接保持不变。
 
 本次数据库发布使用连接器执行事务：仅新增课程及修改已有排序，事务内比较既有行除排序与更新时间以外的全部字段。可用 `node scripts/prepare-learning-release.mjs SNAPSHOT.json` 从新鲜的 folders/documents 元数据快照生成只读发布计划与 SQL；脚本本身不连接数据库。具体核验与发布记录见 [交付记录](docs/SOFTWARE_ENGINEERING_2026-10-05.md)。
+
+## 章节概览与学习路线
+
+每章配有蓝白风格概括图、可编辑的 Mermaid 学习路线和按学习顺序排列的原文链接。路线表示推荐阅读顺序；可选专项按需要选择。
+
+从[全部 71 个章节概览](docs/chapters/README.md)进入，也可以直接选择主栏目：
+
+- [语言基础](docs/chapters/language.md)
+- [软件工程](docs/chapters/software-engineering.md)
+- [前端架构](docs/chapters/frontend.md)
+- [后端架构](docs/chapters/backend.md)
+- [Java 开发](docs/chapters/java.md)
+- [Agent 开发](docs/chapters/agent.md)
+
+修改章节元数据后运行 `node scripts/build-chapter-overviews.mjs` 更新文档，再运行 `node scripts/validate-chapter-overviews.mjs` 检查覆盖范围、链接和图片。
