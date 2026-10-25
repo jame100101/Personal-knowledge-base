@@ -50,6 +50,30 @@ test('outline filtering, keyboard jumps and active section reflect the article',
     .poll(() => page.evaluate(() => document.activeElement?.id))
     .toBe(href!.slice(1))
   await expect(target).toHaveAttribute('aria-current', 'location')
+  // A late diagram above the destination must not strand the jump at an old offset.
+  await page.evaluate((id) => {
+    const spacer = document.createElement('div')
+    spacer.style.height = '320px'
+    document.getElementById(id)!.before(spacer)
+  }, href!.slice(1))
+  await expect
+    .poll(() =>
+      page.evaluate(
+        (id) => document.getElementById(id)!.getBoundingClientRect().top,
+        href!.slice(1),
+      ),
+    )
+    .toBeLessThan(115)
+  await page.mouse.move(700, 500)
+  await page.mouse.wheel(0, 400)
+  await expect
+    .poll(() =>
+      page.evaluate(
+        (id) => document.getElementById(id)!.getBoundingClientRect().top,
+        href!.slice(1),
+      ),
+    )
+    .toBeLessThan(-100)
   await page.locator('.reading-tools').getByRole('link', { name: '开始阅读' }).click()
   await expect(page.locator('#article-body')).toBeFocused()
   const source = page.locator('.reading-tools').getByRole('link', { name: '参考资料' })
@@ -75,6 +99,14 @@ test('mobile outline collapses after a jump and filtering resets on navigation',
   await expect
     .poll(() => page.evaluate(() => document.activeElement?.id))
     .toBe(href!.slice(1))
+  await expect
+    .poll(() =>
+      page.evaluate(
+        (id) => Math.round(document.getElementById(id)!.getBoundingClientRect().top),
+        href!.slice(1),
+      ),
+    )
+    .toBe(110)
   await page.locator('.document-nav .next').click()
   await toggle.click()
   const filter = page.getByRole('searchbox', { name: '查找本页小节' })

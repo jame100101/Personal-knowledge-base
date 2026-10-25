@@ -24,18 +24,30 @@ async function closeCompact(event: MouseEvent, id: string) {
   const heading = document.getElementById(id)
   if (heading) {
     heading.tabIndex = -1
-    heading.scrollIntoView({ block: 'start' })
+    heading.scrollIntoView({ block: 'start', behavior: 'instant' })
     heading.focus({ preventScroll: true })
   }
 }
 const mounted = ref(false)
 let frame = 0
-let headingElements: HTMLElement[] = []
+let resizeObserver: ResizeObserver | undefined
 function updateActive() {
   frame = 0
+  // Theme/locale changes can replace Markdown nodes without changing the source.
+  const headingElements = headings.value
+    .map(({ id }) => document.getElementById(id))
+    .filter((el): el is HTMLElement => !!el)
+  const first = headingElements[0]
+  const scrollPadding =
+    Number.parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0
+  const anchorTop =
+    scrollPadding +
+    (first
+      ? (Number.parseFloat(getComputedStyle(first).scrollMarginTop) || 30) + 2
+      : 32)
   // Keep the preceding section active between headings, including when scrolling up.
   const current = headingElements.findLast(
-    (heading) => heading.getBoundingClientRect().top <= 140,
+    (heading) => heading.getBoundingClientRect().top <= anchorTop,
   )
   activeId.value = current?.id || headingElements[0]?.id || ''
 }
@@ -47,14 +59,15 @@ async function observeHeadings() {
   activeId.value = ''
   await nextTick()
   if (!mounted.value) return
-  headingElements = headings.value
-    .map(({ id }) => document.getElementById(id))
-    .filter((el): el is HTMLElement => !!el)
+  resizeObserver?.disconnect()
+  const body = document.getElementById('article-body')
+  if (body) resizeObserver?.observe(body)
   updateActive()
 }
 
 onMounted(() => {
   mounted.value = true
+  resizeObserver = new ResizeObserver(queueActiveUpdate)
   observeHeadings()
   window.addEventListener('scroll', queueActiveUpdate, { passive: true })
   window.addEventListener('resize', queueActiveUpdate)
@@ -72,6 +85,7 @@ onUnmounted(() => {
   window.removeEventListener('scroll', queueActiveUpdate)
   window.removeEventListener('resize', queueActiveUpdate)
   window.cancelAnimationFrame(frame)
+  resizeObserver?.disconnect()
 })
 </script>
 

@@ -30,7 +30,7 @@ function jump(event: MouseEvent, id: string) {
   event.preventDefault()
   window.history.pushState(window.history.state, '', `#${encodeURIComponent(id)}`)
   target.tabIndex = -1
-  target.scrollIntoView({ block: 'start' })
+  target.scrollIntoView({ block: 'start', behavior: 'instant' })
   target.focus({ preventScroll: true })
 }
 onMounted(() => {
