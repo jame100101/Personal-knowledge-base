@@ -33,3 +33,17 @@ flowchart LR
 ## 生产原则
 
 先测量再调参。保留 JVM/JDK/container/GC flags、负载、warm-up、JFR 和 GC log。不要从一次 heap dump 推断长期趋势，也不要在未理解 workload 时复制“最佳 JVM 参数”。
+
+<!-- evidence-update:2026-10-25 -->
+
+## 先用一个慢请求练习诊断
+
+准备一个自己能复现的慢接口，记下请求时间和进程 ID。先用 `jcmd <pid> help` 看目标 JVM 支持哪些诊断命令，再按帮助收集短时间的 JFR 记录。别一上来就把所有参数改掉。
+
+读记录时先区分两种现象：线程持续占用 CPU，还是大量时间在等待锁或 I/O？然后只改一个假设相关的因素，重复同样的请求。`jcmd` 的命令各有影响级别，堆转储尤其不能当成没有成本的日常探针；先在练习服务操作，再安排生产采样。
+
+### 本节的核验依据
+
+2026-10-25 查阅。下面的链接支持本节的机制说明；练习场景和选型建议是本教程的教学设计。
+
+- [JDK 25：jcmd 诊断命令与影响说明](https://docs.oracle.com/en/java/javase/25/docs/specs/man/jcmd.html)

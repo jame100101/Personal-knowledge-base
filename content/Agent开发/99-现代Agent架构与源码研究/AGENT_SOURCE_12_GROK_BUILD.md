@@ -2,6 +2,26 @@
 
 Grok Build 的研究重点是编码任务怎样被执行：消息进入后，模型怎样选动作，工具怎样修改环境，结果怎样返回。这里讨论的是 Coding Agent 工程，不是基础模型的训练或推理实现；两者需要不同的阅读线索。
 
+<!-- evidence-update:2026-10-25 -->
+
+## 2026-10-25：当前源码入口与阅读练习
+
+本节固定到公开仓库提交 `2bdd1d6a6369de0e8c68132ea4539e9abd9e14a8`（提交时间 `2026-09-29T16:57:09Z`）。只对下面列出的文件和机制重新核对；后面的历史长文继续按各自快照阅读，不把新 HEAD 当作全部旧结论的重新验证。
+
+公开仓库 README 说明源码周期性从单体仓库同步，`SOURCE_REV` 记录对应的内部来源提交。本次该值为 `559751fdcec02d413e4c57c8832ab275e4f44980`；它与公开 GitHub HEAD 是不同标识，研究记录应同时保留。
+
+调度器的 occurrence journal 将一次触发与移除版本关联，恢复逻辑先产生计划，再由 actor 完成状态修改。这是研究“定时任务触发后重启，怎样避免丢失或重复”的具体入口。本次仅做静态阅读，没有构建 Rust workspace 或声称完成端到端运行复现。
+
+### 本节的核验依据
+
+2026-10-25 查阅。下面的链接支持本节的机制说明；练习场景和选型建议是本教程的教学设计。
+
+- [xai-org/grok-build / README.md](https://github.com/xai-org/grok-build/blob/2bdd1d6a6369de0e8c68132ea4539e9abd9e14a8/README.md)
+- [xai-org/grok-build / SOURCE_REV](https://github.com/xai-org/grok-build/blob/2bdd1d6a6369de0e8c68132ea4539e9abd9e14a8/SOURCE_REV)
+- [xai-org/grok-build / crates/codegen/xai-grok-tools/src/implementations/grok_build/scheduler/occurrence_journal.rs](https://github.com/xai-org/grok-build/blob/2bdd1d6a6369de0e8c68132ea4539e9abd9e14a8/crates/codegen/xai-grok-tools/src/implementations/grok_build/scheduler/occurrence_journal.rs)
+
+> 以下为历史快照研究。涉及路径、默认值和产品行为时，请同时查看上面的本次核对范围。
+
 > **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: GitHub `07b2f7144fd5c5c9d3dd1966937a87852d2dbdb8`；上游 monorepo `SOURCE_REV=956313d459bee15ae8f17bf73e0633605e18dddd`

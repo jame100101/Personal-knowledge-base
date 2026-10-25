@@ -93,6 +93,6 @@ VersionedValue update(VersionedValue current, String next, long expectedVersion)
 
 ## 参考资料
 
-- [CAP FAQ](https://www.cs.utexas.edu/~lorenzo/corsi/cs380d/papers/CAP.pdf)
+- [Gilbert 与 Lynch：CAP 形式化证明](https://groups.csail.mit.edu/tds/papers/Gilbert/Brewer6.pdf)
 - [Raft](https://raft.github.io/)
 - [SWIM Paper](https://www.cs.cornell.edu/projects/Quicksilver/public_pdfs/SWIM.pdf)

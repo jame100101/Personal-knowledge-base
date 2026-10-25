@@ -1,0 +1,432 @@
+{
+  "base": "09eadc75f8e2a8d8e9d4bca457d98a4ef1f3d175",
+  "checked_on": "2026-10-25",
+  "scope": "Update the reviewed existing 85 article bodies and derived excerpt/reading metadata only; retain identifiers, URLs, titles, folders and ordering.",
+  "articles": [
+    {
+      "path": "content/Agent开发/01-Agent基础/05-统一工程模型与概念边界.md",
+      "id": "a6f04978-542d-41d9-aeed-a278912f68f2",
+      "contentSha256": "d434e6c7ccfeaeea12c2b28df6efa5193ff6a4f5215338cf50ede84aaf7657af"
+    },
+    {
+      "path": "content/Agent开发/02-Agent Loop/01-最小Agent Loop实现.md",
+      "id": "ca662c8d-cc5a-4382-937c-70623dfe0a3e",
+      "contentSha256": "2daaf7bb175aa5128a12d323eab8529d6e649b51551f4c86cbef9013900099be"
+    },
+    {
+      "path": "content/Agent开发/02-Agent Loop/02-结构化输出与状态机.md",
+      "id": "115caedc-8a84-493e-9ede-def0b44c9838",
+      "contentSha256": "3ad27225f2b9be890ca1edfb5a3147161a989f0f0f6ad64bb4e8ac2170e2934f"
+    },
+    {
+      "path": "content/Agent开发/02-Agent Loop/08-Loop分层与机制选择.md",
+      "id": "b04fe93d-5e71-48e2-bd70-5a41c87608a1",
+      "contentSha256": "50b38b3740de2ecc1437c49f3b0db2e20e45b9bbfc857eeea88d53a9f7e86fd8"
+    },
+    {
+      "path": "content/Agent开发/03-Context Engineering/01-Context Engineering总览.md",
+      "id": "7615a20d-cd1f-4cc6-8465-cfdf6f88317a",
+      "contentSha256": "cd193ddf486c11ac97d88fc43d572c902c8b0d027fbe2bdb60bf89779e4605b3"
+    },
+    {
+      "path": "content/Agent开发/03-Context Engineering/04-Context Manifest与Assembly.md",
+      "id": "a5c5849d-8cea-48ec-b8c4-f05eddef77b0",
+      "contentSha256": "657acad3f62d20b375cf8bc544426ea60fecccf9b8ed15a0cf2af621fa9c055f"
+    },
+    {
+      "path": "content/Agent开发/03-Context Engineering/05-Token Budget Compaction Prompt Cache与History.md",
+      "id": "581b920d-b6c3-40b8-84c7-42204b1523e2",
+      "contentSha256": "ff45b3af0f1650f5e8de613e9336887e73140f70d4fa9ba2cafd1d5e8df84e6b"
+    },
+    {
+      "path": "content/Agent开发/03-Context Engineering/06-JIT Retrieval与Progressive Disclosure.md",
+      "id": "bb5e81b8-5f85-4fd5-add8-0e821890a714",
+      "contentSha256": "74d11df5c9a2918c3edf4a2e101476e63e293b81d4d3e985e72b516a2b2dd71c"
+    },
+    {
+      "path": "content/Agent开发/03-Context Engineering/07-Context Trust与Prompt Injection边界.md",
+      "id": "eda1fabc-6f04-4f36-ba48-fccabd0c762e",
+      "contentSha256": "53206163e93616cd54fb9c0e5731ca05591a5378a19fc7fc28ec4197827dfa00"
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/00-Tool与Runtime边界.md",
+      "id": "58c7a0fd-0cf0-44dc-905c-89215a43df4d",
+      "contentSha256": "cd6d3e475ef5b858d90204ddebb735d1f340f6c0d75e896eaffd0fdca4c0f088"
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/02-Browser Runtime/01-Browser Agent观察动作循环.md",
+      "id": "a6ab2141-d6b7-4133-bfaa-4a754907bf38",
+      "contentSha256": "4264a3cc641997d1d1044165fb998d7547d6e4075c15a6837fa99677333f88ad"
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/02-Browser Runtime/02-Playwright可靠操作与失败恢复.md",
+      "id": "bfeb34b1-9bdd-4b49-a3e5-8aab44d3797b",
+      "contentSha256": "817341bc07b2af61410a5ef9c3fbce021dcc0ce6cc5823c6ce5c51ca27a9f9c6"
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/02-工具Schema权限与幂等.md",
+      "id": "c27a1216-b9c1-4dc8-a8cc-eee2bd54b59f",
+      "contentSha256": "06ccea51fae34372f57e620a4b9f1d538579c6794ae5df4280eddd028e29dae4"
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/03-工具失败空结果与证据.md",
+      "id": "e5c14c94-5dec-4097-ade8-f9325a118b60",
+      "contentSha256": "58555023279d2dc30019eae0b1203a6f4cce0e71df90767f727d5c1cd6b0ab9f"
+    },
+    {
+      "path": "content/Agent开发/05-Knowledge与Memory/00-Knowledge与Memory边界.md",
+      "id": "4acfd7bb-c33d-4586-8c90-5e4f7397a174",
+      "contentSha256": "b5c69dad9ffd7172e33e9d200e699e53ec0514514b127b2d5bf60ef2ebe4980b"
+    },
+    {
+      "path": "content/Agent开发/05-Knowledge与Memory/01-Knowledge/02-Chunk Embed Retrieve Rerank.md",
+      "id": "9ff2189a-bb26-46c0-b35f-9d9a1ff8a4ba",
+      "contentSha256": "e7ac210bdf28a87c805ca275fb99c4768f625c5c4d48e8c3063fb64f8d33bc06"
+    },
+    {
+      "path": "content/Agent开发/05-Knowledge与Memory/01-Knowledge/03-引用Grounded Answer与失败处理.md",
+      "id": "ad208a41-8215-4e86-80c5-fccb1e2e0402",
+      "contentSha256": "828deee73c312dd972288f237a87b3945ac121215ce42637914e030f823728e5"
+    },
+    {
+      "path": "content/Agent开发/05-Knowledge与Memory/02-Memory/02-Short-term Memory短期记忆.md",
+      "id": "5628f012-7ac1-4b05-8d7c-633f9332bba0",
+      "contentSha256": "0483e693eb47d4798afe2e390f8993bbe2d7742d07e8c9dd3ceb5da1fbd9ac37"
+    },
+    {
+      "path": "content/Agent开发/05-Knowledge与Memory/02-Memory/03-Long-term Memory长期记忆.md",
+      "id": "bef93031-5cf9-483b-b9bc-8c5f4210abd9",
+      "contentSha256": "68ede8a8895bfae729f558b95e522253824266cbc5cae3f13b286db264ecb16c"
+    },
+    {
+      "path": "content/Agent开发/05-Knowledge与Memory/02-Memory/04-记忆写入检索更新与遗忘.md",
+      "id": "8afd0c2c-5b40-43c3-8392-5b4229bb5922",
+      "contentSha256": "93bf91f4c00d474df1658431b4008c3a60c274941b869f865e2aab2f3465adaf"
+    },
+    {
+      "path": "content/Agent开发/06-Agent Harness/02-Registry Permission Session与Compaction.md",
+      "id": "bd0d9960-7437-4c67-aa44-1deb74da6299",
+      "contentSha256": "f2f4fadc679b925984ac392ae473f7cfe82f198e7ecb483ba5cc312a5eebb52a"
+    },
+    {
+      "path": "content/Agent开发/06-Agent Harness/03-Trace调试恢复与验证.md",
+      "id": "6924373c-6d94-40ec-ab22-cd26accd8af9",
+      "contentSha256": "6df195a8b25c6ebf657b3ef41c2de5a2ff4bcc4263a998f877e32a1971ee7b2d"
+    },
+    {
+      "path": "content/Agent开发/07-Skills与Protocols/01-Skill Tool Prompt与MCP边界.md",
+      "id": "e65fc74b-22da-4a52-8f53-f7044b2cfa8a",
+      "contentSha256": "5533e2ec448c7aa4ff202620d9b61be492ac88e794c6c7f3b30cbe1a985246b0"
+    },
+    {
+      "path": "content/Agent开发/07-Skills与Protocols/02-SKILL设计渐进加载与Smoke Test.md",
+      "id": "78038f84-28d7-4b60-a566-fd8b57af362d",
+      "contentSha256": "186a018a4fec18f0041a63e0fb9c3633e724270fccd07059ce97e986892b8674"
+    },
+    {
+      "path": "content/Agent开发/07-Skills与Protocols/03-MCP A2A与ACP.md",
+      "id": "af6e2e45-e928-493c-9074-23201b7ed9ea",
+      "contentSha256": "c908c3ceca7713f80c66457b8d22d1e8c0a859224bcf0cc6f8c8382eb05c75c0"
+    },
+    {
+      "path": "content/Agent开发/08-Evaluation Observability Safety/02-Trace指标与故障定位.md",
+      "id": "b82b4dfd-12ca-40fc-82ab-2b969c9fb4cf",
+      "contentSha256": "85518519ae0ce5ac2b83b4547e93bae6d6fdc6a7fe24faf0c91a446457a8b8da"
+    },
+    {
+      "path": "content/Agent开发/08-Evaluation Observability Safety/03-Prompt Injection权限与Human in the loop.md",
+      "id": "9f28bb7b-51df-49f2-ab41-b8a3118e637a",
+      "contentSha256": "e9f7f6a3be85d662fabdb5479e61f674778bc1c9e6b609bbac62de17de90e424"
+    },
+    {
+      "path": "content/Agent开发/08-Evaluation Observability Safety/04-Agent Benchmark Map.md",
+      "id": "f2b93ed3-09cd-48d3-a6ad-25e0de723f53",
+      "contentSha256": "ec1960cc432fab0b351b0029cd21d9e637016bea1bcfc5fd15c5e47dea51ecc3"
+    },
+    {
+      "path": "content/Agent开发/08-Evaluation Observability Safety/05-Evaluation闭环与发布门.md",
+      "id": "656fd47f-cf5c-4d69-ae2c-2eaee776e248",
+      "contentSha256": "9862122b4bd8e6c89287868d512e0cd55fc86527fb6ed279b1a8c4f72f16ca79"
+    },
+    {
+      "path": "content/Agent开发/09-Agent Evolution/02-Skill Workflow与Program Evolution.md",
+      "id": "1d253799-3c49-4149-a2fb-cab37fd81cfb",
+      "contentSha256": "1aef47ef34ad0dcf718fc11dc8cd9d575cd1c6886225e03f9618353a5062e697"
+    },
+    {
+      "path": "content/Agent开发/10-Multi-Agent/01-角色职责与输入输出边界.md",
+      "id": "27d71883-b2fd-4267-9c65-ad580625ee87",
+      "contentSha256": "992d09be71db39fafe88104f0c7fdbfc027b4c7221ac61cba82b881f8f2c643f"
+    },
+    {
+      "path": "content/Agent开发/10-Multi-Agent/02-Supervisor Graph与停止条件.md",
+      "id": "40c68f25-1e39-463f-b172-1fc79f67cee5",
+      "contentSha256": "2e3d1648a03dffba0a7ed1903dfcc7f06a8d60fb113e61abdcdeb1368a71f86b"
+    },
+    {
+      "path": "content/Agent开发/10-Multi-Agent/03-故障模式与单Agent判断.md",
+      "id": "36b694d0-abbd-4447-bba5-c011c6c3eeed",
+      "contentSha256": "7071e352181aa610959b64cbbacf1b3f854506f1db7a53d345d12b74f0e03edc"
+    },
+    {
+      "path": "content/Agent开发/12-Production Agent/01-用户任务与成功标准.md",
+      "id": "7455a6f8-938e-418e-a219-9f9ccc60d70b",
+      "contentSha256": "09cbe9817f20e85be78b518b9d3276ca7cfebe21b9d25468d0ed497c71ead52e"
+    },
+    {
+      "path": "content/Agent开发/12-Production Agent/03-README运行手册与交付检查表.md",
+      "id": "a7ffafb9-763a-4f74-9316-25a7e1a2a868",
+      "contentSha256": "e4afdbda5b044cf60b56dca6e7b9ecc241000595436b0df8ea0c8c551fb43648"
+    },
+    {
+      "path": "content/Agent开发/13-Project Ladder/01-P0到P7 Agent工程项目阶梯.md",
+      "id": "55af0b76-0453-49bd-81b2-66a983d14472",
+      "contentSha256": "8a88916170308563e9ef82198f7412d98109ecac866ddaf2cbb7b95a3f780491"
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/00-统一研究模板与证据等级.md",
+      "id": "9957f5e9-be2e-4cb6-bf9f-d6ada94ed402",
+      "contentSha256": "a744eca177d96612f33958b885f474d3c8bd8aaa03085bfc5f0ef757e5e0328b"
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/000-Coding Agent研究阅读顺序.md",
+      "id": "0a42ebec-1721-4049-b7c1-785378b7c8fe",
+      "contentSha256": "353401156cab1af1bc68a5f936b6d2a3c281e1ac38da8fe4dccab10a339988eb"
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_01_CODEX.md",
+      "id": "a942c8a1-2f40-4d76-a53d-c3a1a0d43af0",
+      "contentSha256": "383db458a8219a0073f423141537971677375b72a2ec26fff84d61071157fd53"
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_02_CLAUDE_CODE.md",
+      "id": "75d960e6-78df-4971-9ac1-8f4755c2db69",
+      "contentSha256": "3fc318221b6a2d37f6d8a0c8c469eb2cfa2cf7be0766e473057f1e2189693a79"
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_04_HERMES_AGENT.md",
+      "id": "0a16f88a-ac61-4623-b0b8-b36a1052c705",
+      "contentSha256": "1fb2518ce5576afc97b78f93ee7a7047b410dd18e4bcbe6c6701f0a040063409"
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_05_OPENCLAW.md",
+      "id": "ea6dd810-3bcb-4744-999b-633a79273f4c",
+      "contentSha256": "aca1e3a89bddff7157b2cacc35f4d19d9eaca93e0473c33c4d4b4bf2af135551"
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_06_COMPARISON.md",
+      "id": "ee416bf2-27bd-42af-b41c-81f3430cdf63",
+      "contentSha256": "c97e6e41ca6d73e09e0ae4e1c348004a41528e424fbbe4b46688590df48343aa"
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_07_AIDER.md",
+      "id": "613cd2b2-1ecb-4e16-8921-76d13a2040c6",
+      "contentSha256": "1bd209733c091bd9661205de6431036a41c6c76632e3ddce5e454b7037932ce7"
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_08_GOOSE.md",
+      "id": "e47266a5-c51f-4525-844e-a064012639e0",
+      "contentSha256": "fdb185052ba16ab7771222ac8b004c1b93fe1fc78efbefd356549dd3e6d2869a"
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_09_OPENCODE.md",
+      "id": "e5f73335-edf3-4458-a322-c894e02752a2",
+      "contentSha256": "5808bf4830b8bb51dae2ba63d97696a14682ee6a67362e28f231ae238c583988"
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_10_DEEPSEEK_HARNESS_WEB.md",
+      "id": "28526510-aa67-4ec9-b4aa-0e1ce0c2035e",
+      "contentSha256": "049a253f21fa298a7eb52c0102f0a4ce8fc45c4d204bbe89a68a485f79e08275"
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_11_PI_AGENT.md",
+      "id": "da3dad73-ac65-4d22-9d56-0183d9d6736c",
+      "contentSha256": "bca41fe29ca1298931f8d1efd2671d4d3439bdd1ae0e8e13e82b5300fa9ed4c4"
+    },
+    {
+      "path": "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_12_GROK_BUILD.md",
+      "id": "98d47134-4512-4564-bab6-a66fff4c5e22",
+      "contentSha256": "7b5dfd42665fd81c149b03ce9df538dd74f463a99c0f4b6fc5fcc48922a21569"
+    },
+    {
+      "path": "content/Java开发/00-Java后端学习路线.md",
+      "id": "9e83bcca-8982-4a04-98c5-dba88fec70f6",
+      "contentSha256": "a83cbb5b3726b783b80e03e7f49d9e51ab772e8c869db55d9b02f07ce5f44bf6"
+    },
+    {
+      "path": "content/Java开发/01-Java语言与核心API/01-Java开发入门.md",
+      "id": "953be3ce-e454-4650-8564-7a11c45dd3d9",
+      "contentSha256": "4143a0048911904c87199bfbd170dab4ede36b9011ef4523ea6f6d8da4c47416"
+    },
+    {
+      "path": "content/Java开发/01-Version Baseline与Compatibility Matrix.md",
+      "id": "ad9eb2ce-69be-49eb-8526-a0f22a8bb424",
+      "contentSha256": "afa904244d35aeef77a3ca7e270267da0009293b9d1cfb4555a82805a933f601"
+    },
+    {
+      "path": "content/Java开发/02-JVM与并发/00-JVM与并发学习导图.md",
+      "id": "431a3eea-96fd-46b3-a29b-fc6d2380a0f8",
+      "contentSha256": "e63349e4f95513122fb6d50fccab92e4342ffd5c04f1ec70e426b7e9199bafda"
+    },
+    {
+      "path": "content/Java开发/02-JVM与并发/03-JMM线程池锁原子类与CompletableFuture.md",
+      "id": "b9bdfd28-9a8e-4f93-8c77-f220f094a7b2",
+      "contentSha256": "9c7a654ba4c3bdb62f5c52a1c9f80a2ce7c58fcc0447cc5167a7a9c982e7da57"
+    },
+    {
+      "path": "content/Java开发/03-工程基础与Internet-Linux/04-Internet请求完整链路.md",
+      "id": "8b3b2513-e7fc-4d30-a648-38394becf5dc",
+      "contentSha256": "2cc3d907403aeb77986216fb2726087966c05bf81eba4de4726a84091410bedb"
+    },
+    {
+      "path": "content/Java开发/05-Spring Framework/05-Spring产品族责任边界.md",
+      "id": "ff05c391-6a3f-483d-8b5a-56e5d086bdaf",
+      "contentSha256": "89db7b503d7ed2f294d3107a456f34c0ad1d5192143df5cdb63e1f33ee48e244"
+    },
+    {
+      "path": "content/Java开发/07-数据访问与事务/05-JDBC vs MyBatis vs JPA决策.md",
+      "id": "7d5ba05c-1c5d-4a15-88e9-37a63f4750c3",
+      "contentSha256": "817fb644865b26c7fcb909fdabc2256d93868d4ea46e4e3c9ad9f762d84d6e2a"
+    },
+    {
+      "path": "content/Java开发/08-测试与质量工程/05-Testing Portfolio与发布回归.md",
+      "id": "050925da-d932-4917-95cf-b76b616c27c0",
+      "contentSha256": "71790002107cdbcfe492b5be7d991816cc42b972b207f349505cb51a617fbdd0"
+    },
+    {
+      "path": "content/Java开发/10-应用架构与模块化单体/00-应用架构导学.md",
+      "id": "8b53bbac-af79-47f2-8071-823d675c14b7",
+      "contentSha256": "2ee7f109c18e001a96fc8f0bda401788d32f09662cb936331e1f0834b639fbae"
+    },
+    {
+      "path": "content/Java开发/10-应用架构与模块化单体/01-分层按功能打包与领域边界.md",
+      "id": "32d82c0c-110a-4930-aab2-a2f653955fa3",
+      "contentSha256": "80273d420a50f99d4d908e0a9e721333939181ed993f77f0b36b561f53eb2638"
+    },
+    {
+      "path": "content/Java开发/10-应用架构与模块化单体/02-Spring Modulith模块验证测试事件与可观测性.md",
+      "id": "c4d82b70-4c58-4b9b-9603-bee9e594dc50",
+      "contentSha256": "21cde45b1189a2a0e7781d44f1778e492f4e908be4e5c49848e8444092a75f0d"
+    },
+    {
+      "path": "content/Java开发/10-应用架构与模块化单体/03-事务边界Outbox与幂等.md",
+      "id": "1372cbbc-2fa3-4bb8-8fb6-0c977426627c",
+      "contentSha256": "d9fe7ab900ea338da50c5f1a4873297ea92459c8e0f6ab523647fb1e163ddcdf"
+    },
+    {
+      "path": "content/Java开发/10-应用架构与模块化单体/04-模块化单体到微服务什么时候拆.md",
+      "id": "b35e08de-be2b-4ba8-a772-6893ed9ec1a6",
+      "contentSha256": "6d1e909038ff8d665a4bfe92eb1987bd2fa2c7e361d21faadbf7a11d21201d07"
+    },
+    {
+      "path": "content/Java开发/11-缓存与搜索/00-缓存与搜索导学.md",
+      "id": "34ecf253-c9d5-4768-9b88-d44315b971b2",
+      "contentSha256": "812ab5f14403fb75dada59aa2a3ee56209aac20dbfc98fb8d63a6765be37711a"
+    },
+    {
+      "path": "content/Java开发/12-消息与事件驱动/00-本阶段导学.md",
+      "id": "93b451e9-451f-4015-9925-6cdec29a1712",
+      "contentSha256": "7bf9bdd7aacf0871b9a01a43c3f3f4edd0fd8e75237aed19239255ab76802a55"
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/00-本阶段导学.md",
+      "id": "aca93436-8360-41bd-b6cf-75c34be88910",
+      "contentSha256": "5a5561bb283f2809f36255ec7c9a58ea3aaaf40528e7b87631834e0c436275f4"
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/000-分布式系统与微服务推荐阅读.md",
+      "id": "9b2f5ae5-c97a-420a-83f6-c3b0f5c1f6b8",
+      "contentSha256": "4f95670958cb5d94d4889a82fe84c14be5f3e95c4fed12768450f78526285360"
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/01-分布式基础CAP-BASE与共识.md",
+      "id": "60f4a53f-d0ad-43fa-b3fe-10b24d831cf4",
+      "contentSha256": "c6dacb5e8cb0c1058acf4e19c19649bb4e8ab837433067596708eab4bdaa1051"
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/03-Nacos注册发现与配置治理.md",
+      "id": "033af9b7-c905-40ab-b643-ef57b84b22da",
+      "contentSha256": "e828b3d54f9179228a6b540e6417aff5618ce73efa28c65c80c6c43020879e3c"
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/06-Spring-Cloud与Spring-Cloud-Alibaba组件图.md",
+      "id": "38871e85-b931-495b-b018-6fbc480ce2e6",
+      "contentSha256": "f7e01d96dee534b3f1bad1d5dc7bfcbf3c8deabbfd0291dced621b4b72e514b3"
+    },
+    {
+      "path": "content/Java开发/14-性能工程/00-性能工程导学.md",
+      "id": "8671e6f9-cb69-45df-8804-b3912dd86ac0",
+      "contentSha256": "19843b893319800297e72e4d2ccda79bfc54cb05e69c7bac2349d676c926a4ae"
+    },
+    {
+      "path": "content/Java开发/16-可选专项/03-MongoDB数据模型/01-MongoDB文档模型与选型.md",
+      "id": "0d47f6b3-5ca7-433a-9bdb-9ca14e4dc860",
+      "contentSha256": "d2e34c63843303f4c87436a817efa21bca256b1f9545b1b6982318508d4c70b3"
+    },
+    {
+      "path": "content/Java开发/16-可选专项/04-Spring AI/01-Spring AI工程实现总览.md",
+      "id": "6f4a84c4-03b5-456d-be28-07763327f6b6",
+      "contentSha256": "985a6504c8790d92c57ba1ea870aff15ecd24c87b3d05f8aeaa64e9ceddaf953"
+    },
+    {
+      "path": "content/Java开发/17-项目阶梯/01-P0到P8 Java后端项目阶梯.md",
+      "id": "0d338fb7-f649-4bed-8b0c-1fb9e982e0a6",
+      "contentSha256": "002169fd61cc757cfb812ee809ebb505ca9f4160fee3c750d480cec2433b27d6"
+    },
+    {
+      "path": "content/Java开发/99-开源项目架构研究/00-统一源码研究模板.md",
+      "id": "dab6551f-1d4d-41c2-9eef-c5ce034836b3",
+      "contentSha256": "a4e0c140f9ef8dc92589beb90db8de2038ca5d703329763b8e70468186b418c8"
+    },
+    {
+      "path": "content/前端架构/03-Vue从入门到原理/02-computed-watch与副作用清理.md",
+      "id": "44808f9e-e17d-420f-9ab2-4358da895d71",
+      "contentSha256": "394ca670a7d15ec4c26aad85ef2eeee2873d7ac4d8684a8e0b38b305e5d7736a"
+    },
+    {
+      "path": "content/前端架构/04-React从入门到原理/02-Hooks-Effect与请求竞态.md",
+      "id": "e5610b19-e602-4980-b5d2-3c4561d18ea7",
+      "contentSha256": "5f2daf9aff6fac836696144af5bfa794cf19ad12ba7e094a6b84c7f19053a747"
+    },
+    {
+      "path": "content/前端架构/05-路由数据与渲染/03-CSR-SSR-SSG与Hydration.md",
+      "id": "d4b9bbaa-bf23-4417-b9d0-738bca19030c",
+      "contentSha256": "f246750590296545009eb9337d7698c88793f58df7b09996193034a5c71bc553"
+    },
+    {
+      "path": "content/后端知识/04-分布式与可靠性/03-超时重试限流熔断与隔离.md",
+      "id": "4e2d7fd5-010e-4a0e-bd2a-807f5baaecc7",
+      "contentSha256": "cabbcef188bff39d78a06306e244fa8d98dadb4c95e6e9687d61a804e5155eaa"
+    },
+    {
+      "path": "content/后端知识/05-身份权限与安全/01-认证授权多租户与输入边界.md",
+      "id": "7c8bf44b-a933-4f32-93e7-2faac824f5ca",
+      "contentSha256": "8d81bba626db36008fa6e86a71c1a2749ebe40843877f5a8907b82d1e999d8da"
+    },
+    {
+      "path": "content/后端知识/06-部署与可观测性/02-部署配置迁移备份与回滚.md",
+      "id": "28ff6ba2-5139-4b17-a644-e341cb5ac73a",
+      "contentSha256": "ab678a35269222ae653822ff0215c131ac6af68c5d658e873a4630187fda7ba0"
+    },
+    {
+      "path": "content/语言基础/00-语言基础学习路线.md",
+      "id": "85da4ee5-1f3e-4e53-b3e5-a2c8f82521bc",
+      "contentSha256": "436b3033f0394c30aba0240dc04d08b5ca9579596b3ec3d103a4c16c56d18011"
+    },
+    {
+      "path": "content/语言基础/02-TypeScript跨语言对照/05-TypeScript独有能力与缺失能力清单.md",
+      "id": "a377322d-0254-4559-9ba0-e100c9dfb7d7",
+      "contentSha256": "c54f8399d04bcbc1548450e3ef0d8cfafc2a512b398b035c73bb810bf7f4cba3"
+    },
+    {
+      "path": "content/软件工程/06-构建发布与运行/01-构建环境与持续集成.md",
+      "id": "02056709-98c5-42dc-8f1b-e6bc8dcef801",
+      "contentSha256": "1a6c50dfe03f834c3d4e955e326e526b2e91be0804318470bc861a9b36806431"
+    },
+    {
+      "path": "content/软件工程/06-构建发布与运行/02-部署发布回滚与观察.md",
+      "id": "4fbd59cd-c96b-4719-a0c2-b41cc8dc7b42",
+      "contentSha256": "1b4724b6a15b248599a1915f1a44f65509e5c1f4e7b7e9071853983db098f5c2"
+    }
+  ]
+}

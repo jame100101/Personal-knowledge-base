@@ -23,3 +23,17 @@ Spring Modulith 基于 Spring Boot 应用的 package 结构发现 application mo
 模块事件与数据库事务要明确：同步 listener 可参与当前事务；异步 listener 产生新的失败窗口；可靠跨进程发布使用 transactional outbox/event publication，而不是假设一次方法调用和 broker publish 原子完成。
 
 先在单 JVM 内验证 module API、transaction 与 events；只有在组织/部署/数据所有权收益明确时再把同一边界物理拆分。
+
+<!-- evidence-update:2026-10-25 -->
+
+## 区分“发过事件”与“处理完事件”
+
+订单保存成功后，通知模块处理失败怎么办？接入对应的持久化事件登记实现后，Spring Modulith 可以在原业务事务中记录需要投递给事务监听器的事件，监听器成功后再标记完成。失败记录如何重发，还要配置并验证，不能理解成“加注解后永不丢失”。
+
+练习：让通知监听器第一次故意失败，检查记录仍未完成；恢复监听器并触发重发，检查状态变化。再模拟通知已经发送、完成标记尚未保存就崩溃，说明为什么接收方仍需要识别重复业务操作。
+
+### 本节的核验依据
+
+2026-10-25 查阅。下面的链接支持本节的机制说明；练习场景和选型建议是本教程的教学设计。
+
+- [Spring Modulith：事件发布登记与恢复](https://docs.spring.io/spring-modulith/reference/events.html)

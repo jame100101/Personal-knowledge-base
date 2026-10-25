@@ -38,7 +38,8 @@
     "content:validate-software-engineering": "node scripts/validate-software-engineering.mjs",
     "content:import-software-engineering": "node scripts/import-software-engineering.mjs",
     "content:verify-software-engineering": "node scripts/import-software-engineering.mjs --verify",
-    "test:software-engineering": "node --test examples/software-engineering/favorites.test.mjs"
+    "test:software-engineering": "node --test examples/software-engineering/favorites.test.mjs",
+    "test:agent-loop": "node --test examples/agent-loop/loop.test.mjs"
   },
   "overrides": {
     "brace-expansion": "5.0.8",

@@ -41,3 +41,18 @@ try (var executor = java.util.concurrent.Executors.newVirtualThreadPerTaskExecut
 ## 4. Failure modes
 
 线程泄漏、锁顺序死锁、忘记恢复 interrupt、共享可变状态、线程池饥饿、future 异常无人观察、取消未传播。使用 bounded load test、JFR、thread dump 与故障注入验证。
+
+<!-- evidence-update:2026-10-25 -->
+
+## 把“可见”与“不可分割”分开验证
+
+假设 `count` 初始为 0。线程甲读到 0，线程乙也读到 0，随后两者都写回 1。两次加一最后只增加一次。即使字段有 `volatile`，也没有把“读、加、写”合成一个动作。可以使用原子类的 `incrementAndGet()`，或让整个修改过程持有同一把锁。若规则跨两个字段，只改其中一个字段为原子类还不够。
+
+再做一组异步练习：让一个 `CompletableFuture` 在 100 毫秒后超时，底层任务却继续等待 1 秒。观察到“调用方收到超时”不等于“底层工作停止”。`orTimeout` 改变 Future 的完成结果；对外部 I/O，还要配置对应客户端的超时和取消。普通 `CompletableFuture.cancel(true)` 也不靠中断控制其计算。
+
+### 本节的核验依据
+
+2026-10-25 查阅。下面的链接支持本节的机制说明；练习场景和选型建议是本教程的教学设计。
+
+- [JLS 25 §17.4.5：线程之间的先后保证](https://docs.oracle.com/javase/specs/jls/se25/html/jls-17.html#jls-17.4.5)
+- [CompletableFuture：执行器、取消与超时语义](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html)

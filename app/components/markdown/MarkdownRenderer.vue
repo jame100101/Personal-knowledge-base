@@ -502,7 +502,7 @@ watch([theme, locale], async () => {
 <style>
 .markdown-body {
   color: var(--kb-markdown-text);
-  font-size: var(--kb-text-body);
+  font-size: var(--kb-reading-size, var(--kb-text-body));
   line-height: 1.85;
   overflow-wrap: anywhere;
 }
@@ -968,7 +968,7 @@ watch([theme, locale], async () => {
 }
 @media (max-width: 600px) {
   .markdown-body {
-    font-size: 16px;
+    font-size: var(--kb-reading-size, 16px);
     line-height: 1.85;
   }
   .markdown-body h1 {

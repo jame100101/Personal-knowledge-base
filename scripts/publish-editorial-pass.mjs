@@ -77,8 +77,15 @@ function folderChain(id) {
 }
 const planned = []
 const issues = []
-for (const { path: file } of manifest.articles) {
+for (const { path: file, id, contentSha256 } of manifest.articles) {
   const content = await fs.readFile(file, 'utf8')
+  if (
+    contentSha256 &&
+    createHash('sha256').update(normalize(content)).digest('hex') !== contentSha256
+  ) {
+    issues.push(`Local content changed after review: ${file}`)
+    continue
+  }
   const title = content.match(/^# (.+)$/m)?.[1]
   const matches = rows.filter(
     (row) => row.title === title && row.original_filename === path.basename(file),
@@ -88,6 +95,10 @@ for (const { path: file } of manifest.articles) {
     continue
   }
   const row = matches[0]
+  if (id && row.id !== id) {
+    issues.push(`Published document identity changed: ${file}`)
+    continue
+  }
   const chain = folderChain(row.folder_id)
   if (chain[0]?.name !== file.split('/')[1]) {
     issues.push(`Wrong root: ${file}`)

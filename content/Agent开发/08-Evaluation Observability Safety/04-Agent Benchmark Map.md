@@ -28,3 +28,26 @@
 ## 产品评测映射
 
 先为产品定义 `Task + Environment + Initial State + Allowed Actions + Success State + Budget`，再选择 benchmark 作外部对照。生产回归应保留真实脱敏失败 case，而不是只追逐公开榜单。
+
+<!-- evidence-update:2026-10-25 -->
+
+## 先核对基准版本，再谈分数
+
+现在查 Terminal-Bench，应从 Harbor 体系和带标签的数据集版本入手，不能把不断变化的 `latest` 当作可重复的实验条件。OSWorld 也有 OSWorld-Verified 的修订，旧结果和新结果要先核对任务与环境版本。
+
+tau-bench 与 tau2-bench 不是同一个实验名称；报告结果时写出具体仓库、任务集和评测器。GAIA 数据集有访问与再分发条件，也不应为方便抓取而复制隐藏测试答案到公开知识库。
+
+可以自己做一份实验登记表：任务集版本、环境镜像、Agent 提交、模型标识、预算、运行次数、成功判断。先用基准提供的已知解检查环境能否正常运行，再测自己的 Agent。否则环境安装失败会被误算成模型能力不足。
+
+SWE-bench 的结果也要区分“评测程序跑完了”和“补丁解决了问题”。本页只给使用入口，不提供未经复现的榜单名次或成功率。
+
+### 本节的核验依据
+
+2026-10-25 查阅。下面的链接支持本节的机制说明；练习场景和选型建议是本教程的教学设计。
+
+- [Terminal-Bench：当前仓库与 Harbor 运行入口](https://github.com/harbor-framework/terminal-bench)
+- [OSWorld：Verified 修订说明](https://github.com/xlang-ai/OSWorld)
+- [tau2-bench：官方任务与评测实现](https://github.com/sierra-research/tau2-bench)
+- [GAIA：官方数据卡与使用条件](https://huggingface.co/datasets/gaia-benchmark/GAIA)
+- [WebArena：官方环境与评测](https://github.com/web-arena-x/webarena)
+- [SWE-bench：评测输入、环境与结果](https://www.swebench.com/SWE-bench/guides/evaluation/)

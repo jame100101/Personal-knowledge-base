@@ -74,3 +74,18 @@ InputEnvelope
 3. README/官方文档、源码、测试冲突时，记录漂移并优先可执行测试与实现。
 4. 闭源产品只写公开契约，不虚构内部 class 或算法。
 5. 基础模型 runtime 不放进 Agent Harness 横向表；模型 KV cache 也不写成 Agent Memory。
+
+<!-- evidence-update:2026-10-25 -->
+
+## 先选一条短链路读完
+
+第一次读源码，可以从 Pi 的 Agent Loop 或 Aider 的单轮处理开始，先弄清输入、工具结果和结束条件。再进入 Codex、OpenCode 等层次更多的实现，比较持久化、取消与权限如何接进来。
+
+这里的先后是教学建议，不是复杂度排名。每次只选一个问题，例如“工具失败后，错误怎样回到模型”，记录当前提交与实际文件。2026-10-25 的核对已经确认 OpenCode 原 processor 路径不再适用于当前树，使用本章各项目顶部的新入口。
+
+### 本节的核验依据
+
+2026-10-25 查阅。下面的链接支持本节的机制说明；练习场景和选型建议是本教程的教学设计。
+
+- [Pi：当前循环入口](https://github.com/earendil-works/pi/blob/38ff99177fba21e9c57a670f4e95adcf407c99c7/packages/agent/src/agent-loop.ts)
+- [OpenCode：当前 SessionRunner](https://github.com/anomalyco/opencode/blob/32b57015e5b491a789fba1534ecb472e676c9d8e/packages/core/src/session/runner/index.ts)

@@ -138,3 +138,20 @@ sequenceDiagram
 常用策略包括滑动窗口、按相关性选择、结构化摘要和把旧产物移到外部存储。摘要需要可增量更新，并保留“已确认事实 / 未解决问题 / 已执行副作用 / 证据引用”。对被压缩掉的原始事件保存 trace 指针，以便审计和调试。
 
 参考：[LangGraph Memory 概览](https://docs.langchain.com/oss/python/concepts/memory)。
+
+<!-- evidence-update:2026-10-25 -->
+
+## 重启测试，比聊天轮数更能说明问题
+
+先在会话 A 写下“工单 42 已检查到附件”，再读回。随后换成会话 B，最后重启进程再回到 A。三个动作分别检验同一会话连续性、会话隔离和持久化。
+
+Deep Agents 的 StateBackend 把文件放进图状态，作用域属于当前 thread；是否能跨进程保存，还取决于你配置的 checkpointer。名字里有 Memory 或 state，不代表服务重启后数据一定还在。
+
+测试中让每个会话使用不同 ID，并记录读到了哪个版本。不要把数据库里存着全量历史与模型本轮能看见哪些消息混成一件事。
+
+### 本节的核验依据
+
+2026-10-25 查阅。下面的链接支持本节的机制说明；练习场景和选型建议是本教程的教学设计。
+
+- [Deep Agents：thread 内的文件状态（固定源码）](https://github.com/langchain-ai/deepagents/blob/793ac5af081079977616fe1925b09670871121d3/libs/deepagents/deepagents/backends/state.py)
+- [LangGraph：Persistence](https://docs.langchain.com/oss/python/langgraph/persistence)

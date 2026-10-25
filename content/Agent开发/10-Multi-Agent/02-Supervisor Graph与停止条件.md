@@ -75,3 +75,20 @@ Worker 失败不必让全局任务立即失败。Supervisor 根据任务关键�
 - 用户取消；
 - 某分支部分成功；
 - Graph 出现环。
+
+<!-- evidence-update:2026-10-25 -->
+
+## 等待、失败和完成要有不同的出口
+
+设三个 Worker 中有一个需要用户补充信息。此时它不是成功，也不是应该立即重试的失败；协调者需要保留“等待输入”的状态，并决定其他独立任务能否继续。
+
+可以先用普通函数模拟 Worker，分别返回完成、等待和失败，再画出每种结果走向哪里。LangGraph 的工作流示例展示了条件路由，interrupt 则提供等待外部输入的机制。恢复时注意节点会重跑，审批前不要放不可重复的写操作。
+
+练习给全局设置一个统一预算，并让某个 Worker 永远返回“还要再检查”。协调者最终应交代已完成部分和未完成原因，而不是为了等所有结果无限循环。最大轮数是本项目的策略，需要由任务成本决定。
+
+### 本节的核验依据
+
+2026-10-25 查阅。下面的链接支持本节的机制说明；练习场景和选型建议是本教程的教学设计。
+
+- [LangGraph：工作流与 Agent 模式](https://docs.langchain.com/oss/python/langgraph/workflows-agents)
+- [LangGraph：中断与恢复](https://docs.langchain.com/oss/python/langgraph/interrupts)

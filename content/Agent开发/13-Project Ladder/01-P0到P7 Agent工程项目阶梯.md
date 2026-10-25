@@ -29,3 +29,20 @@
 - P5 只有能力目录变大时才引入 progressive disclosure。
 - P6 的 durable state 不得只依赖对话历史。
 - P7 的毕业标准是可运营、可审计、可回滚。
+
+<!-- evidence-update:2026-10-25 -->
+
+## 每升一级，只引入一个新问题
+
+可以给整条路线固定一个“工单助手”：先回答一条工单，再加入只读工具；随后加入资料检索、跨会话偏好、审批和故障恢复。数据与任务尽量不变，才容易看出新增机制解决了什么问题。
+
+每一级都保留上一版测试。加入记忆后，要检查是否串用户；加入子 Agent 后，要检查共享文件冲突；加入恢复后，要检查重复提交。不要为了凑齐架构名词，把所有机制一次放进最初版本。
+
+当前框架的最小循环和持久执行能力可以作为参考，但本章的 P0–P7 是教学顺序，不是行业认证等级。最后交付的证据应是可复现的任务、失败案例和测试结果。
+
+### 本节的核验依据
+
+2026-10-25 查阅。下面的链接支持本节的机制说明；练习场景和选型建议是本教程的教学设计。
+
+- [Agents SDK：运行循环（固定提交）](https://github.com/openai/openai-agents-python/blob/0dc4cf152bff1f50bdc0e41f28808563406545b2/docs/running_agents.md)
+- [Pydantic AI：持久执行（固定提交）](https://github.com/pydantic/pydantic-ai/blob/4ee11516b5be6b767654304ec8fe346b81369597/docs/durable_execution/overview.md)

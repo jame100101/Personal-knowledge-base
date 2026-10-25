@@ -12,6 +12,14 @@ export const knowledgeLocaleOptions: Array<{
 
 const messages = {
   'zh-CN': {
+    readingTools: '阅读工具',
+    startReading: '开始阅读',
+    articleSources: '参考资料',
+    readingFontSize: '正文字号',
+    filterOutline: '查找本页小节',
+    outlineEmpty: '没有匹配的小节',
+    outlineCount: '{count} 个小节',
+    clearOutline: '清除小节筛选',
     importPartial: '已完成 {count} 个文件，在第 {next} 个停止。请仅重试未完成文件。',
     skipContent: '跳到正文',
     clearFilters: '清空条件',
@@ -138,6 +146,14 @@ const messages = {
     diagramHelp: '滚轮缩放 · 拖拽移动 · 双击复位',
   },
   en: {
+    readingTools: 'Reading tools',
+    startReading: 'Start reading',
+    articleSources: 'Sources',
+    readingFontSize: 'Text size',
+    filterOutline: 'Find a section',
+    outlineEmpty: 'No matching sections',
+    outlineCount: '{count} sections',
+    clearOutline: 'Clear section filter',
     importPartial:
       '{count} files completed; stopped at file {next}. Retry only unfinished files.',
     skipContent: 'Skip to content',
@@ -269,6 +285,14 @@ const messages = {
     diagramHelp: 'Wheel to zoom · Drag to pan · Double-click to reset',
   },
   'zh-TW': {
+    readingTools: '閱讀工具',
+    startReading: '開始閱讀',
+    articleSources: '參考資料',
+    readingFontSize: '正文字級',
+    filterOutline: '尋找本頁小節',
+    outlineEmpty: '沒有相符的小節',
+    outlineCount: '{count} 個小節',
+    clearOutline: '清除小節篩選',
     importPartial: '已完成 {count} 個檔案，在第 {next} 個停止。請僅重試未完成檔案。',
     skipContent: '跳至正文',
     clearFilters: '清除條件',

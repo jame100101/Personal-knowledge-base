@@ -1,6 +1,8 @@
 # Damnatiox Knowledge
 
-基于 Nuxt 3、Vue 3、TypeScript 与 Supabase 的动态 Markdown 知识库。公开运行时从 Supabase 读取文件夹、文章正文与元数据；`content/Agent开发`、`content/Java开发`、`content/语言基础`、`content/后端知识`、`content/前端架构` 是课程的 Git 审查与批量同步源。
+基于 Nuxt 3、Vue 3、TypeScript 与 Supabase 的动态 Markdown 知识库。公开运行时从 Supabase 读取文件夹、文章正文与元数据；`content/Agent开发`、`content/Java开发`、`content/语言基础`、`content/后端知识`、`content/前端架构`、`content/软件工程` 是课程的 Git 审查与批量同步源。
+
+本轮内容与阅读交互更新见 [2026-10-25 核查记录](docs/KNOWLEDGE_REVIEW_2026-10-25.md)，含逐篇范围、固定源码证据和验证结果。新增 [无需 API Key 的 Agent Loop 练习](examples/agent-loop/README.md)，可执行 `npm run test:agent-loop` 观察权限、重放、取消与超时边界。
 
 ## 功能
 

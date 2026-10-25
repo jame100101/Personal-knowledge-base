@@ -2,6 +2,25 @@
 
 Hermes Agent 涉及模型适配、工具、技能和多种交互入口。可以先从一次对话如何进入循环开始，跟踪工具执行与结果返回，再看其余模块怎样加入。这样读比逐个目录浏览更容易形成整体认识。
 
+<!-- evidence-update:2026-10-25 -->
+
+## 2026-10-25：当前源码入口与阅读练习
+
+本节固定到公开仓库提交 `4ea8d23cc9f527332ccb1d55359b27741b6ea51b`（提交时间 `2026-10-25T02:56:21Z`）。只对下面列出的文件和机制重新核对；后面的历史长文继续按各自快照阅读，不把新 HEAD 当作全部旧结论的重新验证。
+
+主循环文档仍区分简单返回接口与包含消息、用量等信息的完整接口，并分别讨论可中断模型调用、工具执行和会话保存。阅读时先把一次调用的返回值画出来，再判断上层界面需要哪一种接口。
+
+新增阅读重点是 micro-compaction：固定文档说明它默认关闭，把旧回合分批并入摘要，并可能增加压缩调用与缓存前缀失效成本。练习时比较总成本和约束保留情况，而不是只看压缩后提示词变短了多少。
+
+### 本节的核验依据
+
+2026-10-25 查阅。下面的链接支持本节的机制说明；练习场景和选型建议是本教程的教学设计。
+
+- [NousResearch/hermes-agent / website/docs/developer-guide/agent-loop.md](https://github.com/NousResearch/hermes-agent/blob/4ea8d23cc9f527332ccb1d55359b27741b6ea51b/website/docs/developer-guide/agent-loop.md)
+- [NousResearch/hermes-agent / website/docs/developer-guide/micro-compaction.md](https://github.com/NousResearch/hermes-agent/blob/4ea8d23cc9f527332ccb1d55359b27741b6ea51b/website/docs/developer-guide/micro-compaction.md)
+
+> 以下为历史快照研究。涉及路径、默认值和产品行为时，请同时查看上面的本次核对范围。
+
 > **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `analyzed snapshot 760112adb6458417da8614d2269e5325f0739ed5; HEAD audit 057dcdf236f8a6a26721c10fcc6ccb72726e272a`

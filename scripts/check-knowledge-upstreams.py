@@ -34,8 +34,15 @@ def check(repo, expected):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', type=Path)
+    parser.add_argument('--baseline', type=Path,
+                        help='Explicit source-review JSON; defaults to the latest dated audit')
     args = parser.parse_args()
-    records = json.loads((ROOT / 'docs/audit/source-review-2026-09-20.json').read_text())
+    baselines = sorted((ROOT / 'docs/audit').glob('source-review-????-??-??.json'))
+    baseline = args.baseline or (baselines[-1] if baselines else None)
+    if baseline is None:
+        parser.error('No source review baseline found')
+    print(f'Baseline: {baseline}', file=sys.stderr)
+    records = json.loads(baseline.read_text())
     sources = {r['repo']: r['head'] for r in records}
     sources['bojieli/ai-agent-book'] = '4dc4429d56ff9c5d7cc7dcbc971cfcd6a618d674'
     results = []

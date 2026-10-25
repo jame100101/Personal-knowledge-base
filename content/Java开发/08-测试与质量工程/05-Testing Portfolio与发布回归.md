@@ -28,3 +28,18 @@ void duplicateRequestReturnsOriginalOrder() {
 ```
 
 覆盖率只表示哪些代码被执行，不表示断言质量、边界覆盖或 mutation resistance。关键是测试目标、初始状态、行为、外部副作用和可复现失败证据。
+
+<!-- evidence-update:2026-10-25 -->
+
+## 把串行成功推进到并发失败
+
+前面的重复请求测试只覆盖“第一次结束以后再发第二次”。再加一个用例：两个请求同时带相同业务编号到达，观察最终仍只有一条订单；随后用相同编号带不同金额，要求明确拒绝冲突，不能静默返回旧订单。
+
+先用单元测试覆盖“金额不合法”，再用真实数据库集成测试覆盖唯一约束和事务竞争，最后留一条从 HTTP 入口创建订单的测试。这样每个测试都有独立目的。不能用内存集合的成功结果，证明目标数据库的事务和并发行为。
+
+### 本节的核验依据
+
+2026-10-25 查阅。下面的链接支持本节的机制说明；练习场景和选型建议是本教程的教学设计。
+
+- [Spring Boot：测试支持的职责与模块](https://docs.spring.io/spring-boot/reference/testing/index.html)
+- [Debezium：Outbox Event Router 的事件 ID 与分区键](https://debezium.io/documentation/reference/stable/transformations/outbox-event-router.html)

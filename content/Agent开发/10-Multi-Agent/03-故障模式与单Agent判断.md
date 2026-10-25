@@ -70,3 +70,20 @@ B: supervisor + workers + reviewer + same total budget
 ```
 
 控制模型、工具和总预算，比较 pass@1、成本、延迟、故障恢复、引用正确性和用户评分，避免多 Agent 因额外 token 获得不公平优势。
+
+<!-- evidence-update:2026-10-25 -->
+
+## 做一次公平的对照，再决定拆不拆
+
+拿同一批任务，先让一个 Agent 完成，再让分工版本完成。两边使用相同工具、相同模型与相同总预算，并分别记录任务是否完成、花费和等待时间。不要拿单 Agent 的一次调用与多 Agent 的十次尝试直接比较。
+
+还要加入一个故意冲突的任务：两个 Worker 都提出修改同一个字段。检查最终由谁决定、依据是什么、是否保留被否定的假设。多个回答一致，只是意见一致；真正的事实依据仍应回到源码或实验。
+
+LangGraph 把编排与动态决策作为不同控制方式，Deep Agents 则提供具体的子任务实现。它们能帮助搭出对照实验，但没有替你的任务证明“多 Agent 一定更好”。
+
+### 本节的核验依据
+
+2026-10-25 查阅。下面的链接支持本节的机制说明；练习场景和选型建议是本教程的教学设计。
+
+- [LangGraph：工作流与 Agent 模式](https://docs.langchain.com/oss/python/langgraph/workflows-agents)
+- [Deep Agents：子 Agent 中间件（固定源码）](https://github.com/langchain-ai/deepagents/blob/793ac5af081079977616fe1925b09670871121d3/libs/deepagents/deepagents/middleware/subagents.py)

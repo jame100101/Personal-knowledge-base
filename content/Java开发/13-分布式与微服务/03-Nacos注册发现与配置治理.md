@@ -101,5 +101,5 @@ spring:
 
 ## 参考资料
 
-- [Nacos Documentation](https://nacos.io/en/docs/latest/)
+- [Nacos Documentation](https://www.nacos.io/docs/latest/overview/)
 - [Spring Cloud Alibaba Nacos](https://sca.aliyun.com/en/docs/2023/user-guide/nacos/quick-start/)

@@ -2,6 +2,25 @@
 
 Goose 的实现可以从一个 reply 的推进过程读起。先看操作怎样被选择和执行，再看审批、重试或压缩如何改变后续步骤。这样能把状态机中的名字对应到实际行为，而不是只记一串抽象类型。
 
+<!-- evidence-update:2026-10-25 -->
+
+## 2026-10-25：当前源码入口与阅读练习
+
+本节固定到公开仓库提交 `2b17adc33a7176e701c2fef9578a5fc5834ea89a`（提交时间 `2026-10-24T17:41:22Z`）。只对下面列出的文件和机制重新核对；后面的历史长文继续按各自快照阅读，不把新 HEAD 当作全部旧结论的重新验证。
+
+当前架构文档明确区分两种 ACP 用法：goose 可以作为 ACP server 接入编辑器，也可以把外部 ACP Agent 当作 provider。后者由外部 Agent 处理自己的工具执行，不能把它画成 goose 本地工具循环的简单同义词。
+
+先分别画两张图，标出编辑器、goose、外部 Agent 和 MCP 服务。再问一句：这次文件写入由谁执行，失败由谁报告？连接方式相似，不代表运行时责任归属相同。
+
+### 本节的核验依据
+
+2026-10-25 查阅。下面的链接支持本节的机制说明；练习场景和选型建议是本教程的教学设计。
+
+- [aaif-goose/goose / documentation/docs/goose-architecture/goose-architecture.md](https://github.com/aaif-goose/goose/blob/2b17adc33a7176e701c2fef9578a5fc5834ea89a/documentation/docs/goose-architecture/goose-architecture.md)
+- [aaif-goose/goose / README.md](https://github.com/aaif-goose/goose/blob/2b17adc33a7176e701c2fef9578a5fc5834ea89a/README.md)
+
+> 以下为历史快照研究。涉及路径、默认值和产品行为时，请同时查看上面的本次核对范围。
+
 > **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `2eb3ab1001dedb5ab09a6ed60158adfc248bac56`（workspace version `1.47.0`）

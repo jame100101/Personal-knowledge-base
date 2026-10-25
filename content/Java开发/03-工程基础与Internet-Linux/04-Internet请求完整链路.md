@@ -28,7 +28,7 @@ flowchart LR
 
 ## 2. HTTP semantics
 
-HTTP 方法、状态码、响应头、资源表示、缓存和条件请求，共同约定一次调用的含义。幂等性尤其影响失败后是否可以重试。`GET` 应安全；`PUT` 语义上幂等；`POST` 是否可重试取决于应用提供的 idempotency key。keep-alive 复用连接，不等同于 WebSocket。
+HTTP 方法、状态码、响应头、资源表示、缓存和条件请求，共同约定一次调用的含义。幂等性尤其影响失败后是否可以重试。`GET` 应安全；`PUT` 语义上幂等；`POST` 不天然幂等；自动重试要有业务幂等保证，或能确认原请求未被应用。keep-alive 复用连接，不等同于 WebSocket。
 
 ## 3. Proxy、cookie 与 CORS
 
@@ -39,3 +39,17 @@ HTTP 方法、状态码、响应头、资源表示、缓存和条件请求，共
 ## 4. 诊断顺序
 
 DNS→连接→TLS→HTTP status/headers→proxy route→container/filter→controller→DB/downstream。使用 `curl -v`、DNS 工具、证书检查、access log、trace/span 和应用日志关联 request id，避免把所有超时归因于 Controller。
+
+<!-- evidence-update:2026-10-25 -->
+
+## 超时后先判断操作是否可能已经成功
+
+你点击“创建订单”，页面一直转圈。此时至少有两种情况：请求没到服务器；订单已经保存，响应在路上丢失。只看浏览器的超时提示，分不出它们。
+
+练习时给一次业务操作一个稳定编号，服务端记录该编号对应的结果；模拟响应丢失后，用同一编号查询或重试，并检查只创建一个订单。幂等键是常用实现方式，但不是 POST 可重试的唯一定义：RFC 还允许客户端在知道操作语义本身幂等、或能确认原请求未被应用时重试。不能证明这些条件时，不应盲目自动重发。
+
+### 本节的核验依据
+
+2026-10-25 查阅。下面的链接支持本节的机制说明；练习场景和选型建议是本教程的教学设计。
+
+- [RFC 9110 §9.2.2：幂等性与自动重试](https://www.rfc-editor.org/rfc/rfc9110.html#section-9.2.2)

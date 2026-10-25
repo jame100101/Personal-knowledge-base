@@ -38,3 +38,20 @@ flowchart LR
 ## Trace 不是越多越好
 
 Trace 事件需有 `trace_id/span_id/event_type/timestamp/attempt/tool_call_id/state_before/state_after/evidence_ref`。敏感 prompt、secret 和用户数据按字段脱敏与 retention policy 管理。可观测性用于定位，不应成为新的数据泄漏面。
+
+<!-- evidence-update:2026-10-25 -->
+
+## 不要让平均分藏住最贵的一次失败
+
+假设新版在 20 个练习任务中多答对了两个，却把一次“只预览”的操作直接提交了。总成功数上升，不意味着这次版本适合发布。可以先把权限边界、核心任务和体验指标分开看，再决定哪些失败必须阻止上线。
+
+把旧版与新版放在相同初始环境中逐题比较，并保存每题的检查结果。代码修复可以借鉴 SWE-bench 的方式，用实际补丁和测试验收；开放问答则需要额外检查证据支持度。不能让系统自己说“任务成功”就记一分。
+
+再选三道失败题手动看 trace：一次工具故障、一次材料不足、一次答案不合要求。把改动对准真正原因，再复跑这些题和未参与修复的保留题。这里的 20 个任务是教学规模，不能据此宣称已经覆盖真实生产分布。
+
+### 本节的核验依据
+
+2026-10-25 查阅。下面的链接支持本节的机制说明；练习场景和选型建议是本教程的教学设计。
+
+- [SWE-bench：评测输入、环境与结果](https://www.swebench.com/SWE-bench/guides/evaluation/)
+- [OpenTelemetry：GenAI Agent span 语义约定](https://github.com/open-telemetry/semantic-conventions-genai/blob/main/docs/gen-ai/gen-ai-agent-spans.md)

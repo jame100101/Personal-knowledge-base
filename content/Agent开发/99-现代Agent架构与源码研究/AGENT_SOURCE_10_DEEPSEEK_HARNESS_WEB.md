@@ -2,6 +2,25 @@
 
 这里关注 DeepSeek Harness 的 Web 版本。读它时先分清 Host 与浏览器两端分别运行什么，再看插件怎样注册服务与事件。沿着一次消息往返理解插件树，比把它想成一个巨大的 Agent 类更贴近代码组织。
 
+<!-- evidence-update:2026-10-25 -->
+
+## 2026-10-25：当前源码入口与阅读练习
+
+本节固定到公开仓库提交 `22ddee3792402c3e70ec5f86a63c3e3e895a2f60`（提交时间 `2026-10-23T11:48:59Z`）。只对下面列出的文件和机制重新核对；后面的历史长文继续按各自快照阅读，不把新 HEAD 当作全部旧结论的重新验证。
+
+本次架构文档继续以 profile、bundle 和 patch 说明装配过程，`sdk-minimal` 是明确的例外：它不套用完整 `dsh-base`。因此研究某个 profile 时，要先看最终装配结果，而不是假设所有入口加载同一套插件。
+
+会话日志部分还区分了已结算的持久事件和实时 UI 增量：进程在结算前硬退出，不会天然留下完整的持久 attempt stream。练习时把“用户已经看到文字”和“记录已落盘”画成两个状态，便于分析恢复后为什么可能缺一段输出。
+
+### 本节的核验依据
+
+2026-10-25 查阅。下面的链接支持本节的机制说明；练习场景和选型建议是本教程的教学设计。
+
+- [deepseek-ai/deepseek-harness / docs/architecture.md](https://github.com/deepseek-ai/deepseek-harness/blob/22ddee3792402c3e70ec5f86a63c3e3e895a2f60/docs/architecture.md)
+- [deepseek-ai/deepseek-harness / README.md](https://github.com/deepseek-ai/deepseek-harness/blob/22ddee3792402c3e70ec5f86a63c3e3e895a2f60/README.md)
+
+> 以下为历史快照研究。涉及路径、默认值和产品行为时，请同时查看上面的本次核对范围。
+
 > **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: 本地 Web 仓库 `141eb6fef83422698aef7a981029e843e8161534`；远端 HEAD 复核至 `b150a551b8d465e31e418e1b2eaf5e79bbb7d28e`

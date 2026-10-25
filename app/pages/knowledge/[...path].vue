@@ -13,6 +13,7 @@ import {
 } from '~/utils/folders'
 
 const route = useRoute()
+const readingSize = ref(16)
 const { show: showSearch } = useSearch()
 const { t, dateLocale } = useLocale()
 const { folders, documents, load, loaded, error, loading } = useKnowledge()
@@ -95,7 +96,7 @@ useHead(() => ({
   </div>
   <div v-else-if="loading" class="status-panel" role="status">{{ t('loading') }}</div>
   <div v-else-if="document" class="reader-grid">
-    <article class="document-page">
+    <article class="document-page" :style="{ '--kb-reading-size': `${readingSize}px` }">
       <Breadcrumbs :items="breadcrumbs" />
       <header class="document-header">
         <span class="eyebrow">DOCUMENT / {{ document.status }}</span>
@@ -121,11 +122,14 @@ useHead(() => ({
           </button>
         </div>
       </header>
+      <ReadingTools :source="document.content" @size="readingSize = $event" />
       <ChapterOverview
         v-if="chapterOverview && currentIndex === 0"
         :chapter="chapterOverview"
       />
-      <MarkdownRenderer :source="document.content" />
+      <div id="article-body" class="article-body" tabindex="-1">
+        <MarkdownRenderer :source="document.content" />
+      </div>
       <nav class="document-nav">
         <NuxtLink v-if="previous" :to="documentPublicPath(previous, folders)">
           <ArrowLeft :size="15" /><span
@@ -226,6 +230,9 @@ useHead(() => ({
 }
 .document-page {
   min-width: 0;
+}
+.article-body {
+  scroll-margin-top: 24px;
 }
 .document-header {
   padding: 43px 0 39px;

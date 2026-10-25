@@ -25,3 +25,17 @@ Idempotency key 需要定义 scope、request fingerprint、result retention、�
 ## Failure simulation
 
 在 commit 后 publish 前 kill 进程、重复 relay、consumer 处理后 ack 前崩溃、乱序和 poison message。验收要求最终状态正确、重复不产生二次副作用、trace 可从业务 ID 关联 event ID。
+
+<!-- evidence-update:2026-10-25 -->
+
+## 沿着一次崩溃看 Outbox 的作用
+
+把订单保存和待发事件放进同一个数据库事务后，提交前失败会一起回滚；提交后进程退出，待发事件仍可由后续发布程序找到。这解决的是“业务保存了，却没有留下待通知记录”的间隙。
+
+它没有消灭重复：发布程序可能已经把消息发出去，却没记下发送成功。恢复后再发一次，消费者会收到相同事件 ID。因此去重记录与数据库业务修改应处在同一事务边界；若副作用是外部邮件或支付，还需要对方的幂等契约或状态核对。练习中分别在这两个位置中断，检查数据，不只检查日志。
+
+### 本节的核验依据
+
+2026-10-25 查阅。下面的链接支持本节的机制说明；练习场景和选型建议是本教程的教学设计。
+
+- [Debezium：Outbox Event Router 的事件 ID 与分区键](https://debezium.io/documentation/reference/stable/transformations/outbox-event-router.html)

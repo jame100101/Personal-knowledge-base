@@ -98,3 +98,20 @@ await expect(page.getByText('保存成功')).toBeVisible()
 - 页面局部刷新；
 - 下载文件名变化；
 - 浏览器进程中断后恢复。
+
+<!-- evidence-update:2026-10-25 -->
+
+## 自动等待的边界与语言示例
+
+点击前可见、稳定、可接收事件等检查，由 Playwright 按动作类型自动等待；`expect` 的异步断言还会重试检查结果。两者都不意味着接口已经持久化数据。对保存操作，应再断言成功状态，必要时重新加载页面验证。
+
+上面的 Rust 片段是 WebDriver 风格的同目标示意，不是 Playwright 官方 Rust API。不能把 Python/JavaScript 的自动等待语义直接套到它上面；需要使用所选 Rust 驱动自己的等待机制。官方语言文档列出的运行方式包括 JavaScript/TypeScript、Python、Java 和 .NET。
+
+实际练习先只选一种语言：打开测试页，填写标题，点击保存，断言结果。然后让两个按钮同名，观察严格定位如何报错；把定位限定到对应表单后再运行。这样能看懂定位条件，而不是依赖任意固定等待时间。
+
+### 本节的核验依据
+
+2026-10-25 查阅。下面的链接支持本节的机制说明；练习场景和选型建议是本教程的教学设计。
+
+- [Playwright：自动等待](https://playwright.dev/docs/actionability)
+- [Playwright：支持的语言](https://playwright.dev/docs/languages)

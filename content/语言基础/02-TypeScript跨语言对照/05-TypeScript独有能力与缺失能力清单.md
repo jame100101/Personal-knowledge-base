@@ -4,7 +4,7 @@
 
 下面把语言本身与外部能力分开列出。例如，类型系统可以约束代码，却不会因此提供某个操作系统接口。需要浏览器、Node、库或构建工具完成的事情，会注明来源；这样比较能力时才不会把层次混在一起。
 
-## 1. TypeScript 特别独有/突出的能力
+## 1. TypeScript 在本课程对照语言中的突出能力
 
 ### 1.1 为现有 JavaScript 形状建立结构类型
 
@@ -120,3 +120,17 @@ TypeScript 运行时就是 JavaScript，所以它不会替代 JS 的闭包、原
 - [ ] 能解释 C++ 模板为什么可能增加二进制代码，而 TS 泛型不会。
 - [ ] 能为浏览器、Node、JVM、Python、native 场景选择正确运行时，而不是只比较语法。
 
+<!-- evidence-update:2026-10-25 -->
+
+## “突出”不等于全世界只有它有
+
+这里的比较以本课程的 TypeScript、Java、Python、C++ 为主，不是对所有语言的排他性声明。结构类型、泛型和类型层计算并非 TypeScript 首创；应比较它们在各自语言里怎样工作。
+
+例如从 `{ title: string; done: boolean }` 派生可选属性类型，可以用映射类型遍历属性名。它减少的是重复声明，不会在运行时补齐缺失字段。拿到网络 JSON 后，仍需验证 title 是字符串、done 是布尔值，再交给业务代码。
+
+### 本节的核验依据
+
+2026-10-25 查阅。下面的链接支持本节的机制说明；练习场景和选型建议是本教程的教学设计。
+
+- [TypeScript：映射类型与键重映射](https://www.typescriptlang.org/docs/handbook/2/mapped-types.html)
+- [TypeScript：类型断言的运行时边界](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html)

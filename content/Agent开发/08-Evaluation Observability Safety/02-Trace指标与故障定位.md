@@ -67,3 +67,19 @@ agent.run
 - 循环和超时增多；
 - 引用验证失败；
 - 同一版本出现新的错误分类。
+
+<!-- evidence-update:2026-10-25 -->
+
+## 先画一条能串起来的调用链
+
+先给“查询工单”这个请求一个 run ID，再记录模型调用和查询工具各自的开始、结束与错误。只需要这条最小链，就能分清慢在模型、数据库还是重试等待，不必一开始就建几十张仪表盘。
+
+上文的 `agent.run` 等名称是教学示意，不是 OpenTelemetry 规定的标准名称。当前 GenAI Agent span 文档仍标为 Development；接入时应记录采用的语义约定与采集器版本，把字段映射集中管理。
+
+练习中让工具第一次超时、第二次成功。最终任务虽然成功，trace 仍应保留第一次尝试，指标也应能统计重试成本。正文、凭据和完整工单内容不要默认写进遥测；先保存必要 ID、状态和耗时，再根据实际排障需求增加脱敏字段。
+
+### 本节的核验依据
+
+2026-10-25 查阅。下面的链接支持本节的机制说明；练习场景和选型建议是本教程的教学设计。
+
+- [OpenTelemetry：GenAI Agent span 语义约定](https://github.com/open-telemetry/semantic-conventions-genai/blob/main/docs/gen-ai/gen-ai-agent-spans.md)

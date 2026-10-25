@@ -48,3 +48,20 @@ MCP（Model Context Protocol）标准化 Host、Client 与 Server 之间的连�
 5. 输出 release note。
 
 Skill 只在任务匹配时加载详细内容，工具描述保持精简。
+
+<!-- evidence-update:2026-10-25 -->
+
+## 用发布说明把四者串起来
+
+用户要写一份发布说明。Prompt 说明这次任务；Skill 给出反复可用的写作步骤；Tool 读取版本差异；MCP 可以把远程工单查询能力接进来。四者可以协作，但 Skill 文件本身不会自动获得 shell 或网络权限。
+
+先写一个只有名称、用途和三步流程的 Skill，再让它调用现成的只读工具。等流程反复使用后，才把重复操作整理成脚本。Agent Skills 规范允许附带脚本与资源，`allowed-tools` 字段仍有实现差异，不能当成各客户端都支持的统一授权系统。
+
+验收时问一个具体问题：如果用户只想查版本号，这份发布 Skill 会不会被误加载并执行发布？触发范围和权限边界应分别测试。
+
+### 本节的核验依据
+
+2026-10-25 查阅。下面的链接支持本节的机制说明；练习场景和选型建议是本教程的教学设计。
+
+- [Agent Skills 格式规范](https://agentskills.io/specification)
+- [MCP：核心能力与扩展](https://modelcontextprotocol.io/specification/2026-07-28)

@@ -95,5 +95,5 @@ spring:
 ## 参考资料
 
 - [Spring Cloud Supported Versions](https://github.com/spring-cloud/spring-cloud-release/wiki/Supported-Versions)
-- [Spring Cloud Reference](https://docs.spring.io/spring-cloud-reference/)
+- [Spring Cloud Reference](https://spring.io/projects/spring-cloud/)
 - [Spring Cloud Alibaba](https://sca.aliyun.com/en/)

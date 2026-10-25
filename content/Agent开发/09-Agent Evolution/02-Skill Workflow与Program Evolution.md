@@ -27,3 +27,20 @@
 ## 参考实现的阅读方式
 
 Hermes Agent、OpenClaw 及 Darwin Skill、EvoSkill、Agent Lightning 等方向可用于发现机制，但先确认具体项目版本、论文与代码是否仍维护。把其 confirmed implementation、论文 proposal 与本仓库 inference 分栏记录，项目介绍中的目标不等于已经测得的效果。
+
+<!-- evidence-update:2026-10-25 -->
+
+## 一次只改一个可解释的地方
+
+假设三次任务都漏掉了测试。可以提出一个很小的候选改动：在 Skill 的完成条件里要求给出测试命令和结果。先固定原版本，再把候选与原版本放在同一组任务上比较，而不是直接宣布系统“学会了测试”。
+
+如果改的是工作流，就检查新节点是否会让失败路径走进死循环；如果改的是程序，就运行程序测试。Skill 格式与工作流结构只是承载改动的方法，不是效果证明。
+
+上文提到的演进项目是研究方向索引，不是本章已复现的性能结论。初学者可以先完成“提出候选—独立检查—接受或撤回”的人工闭环，等这一步可重复，再考虑自动生成候选。
+
+### 本节的核验依据
+
+2026-10-25 查阅。下面的链接支持本节的机制说明；练习场景和选型建议是本教程的教学设计。
+
+- [Agent Skills：能力文件与附属资源](https://agentskills.io/specification)
+- [LangGraph：工作流与 Agent 模式](https://docs.langchain.com/oss/python/langgraph/workflows-agents)

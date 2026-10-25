@@ -77,3 +77,20 @@ untrusted document
 - RAG 权限后过滤。
 
 结果不仅是“模型是否识别”，还要验证确定性策略是否真正阻断。
+
+<!-- evidence-update:2026-10-25 -->
+
+## 把防护放在副作用发生之前
+
+如果输入检查和 Agent 同时开始，检查器判定不合格时，工具可能已经执行了。Agents SDK 文档把并行输入 guardrail 与阻塞模式分开，并说明并行模式存在这个时间窗口。
+
+因此，付款、发消息、删除数据等动作不能只靠最后一层输出检查。先在具体工具执行前校验权限与必要审批，再把结果交给模型组织文字。输出 guardrail 可以拦截回答，却不能撤销已经发生的外部动作。
+
+做一个不产生真实副作用的练习：假工具只把 `executed` 从 false 改成 true。让输入检查延迟后拒绝，分别观察并行模式与阻塞模式，再加工具前置校验。通过这个过程，你能看见每道检查究竟挡住了哪一步。
+
+### 本节的核验依据
+
+2026-10-25 查阅。下面的链接支持本节的机制说明；练习场景和选型建议是本教程的教学设计。
+
+- [OpenAI Agents SDK：guardrail 的执行位置与并发模式（固定提交）](https://github.com/openai/openai-agents-python/blob/0dc4cf152bff1f50bdc0e41f28808563406545b2/docs/guardrails.md)
+- [OpenAI Agents SDK：审批与恢复（固定提交）](https://github.com/openai/openai-agents-python/blob/0dc4cf152bff1f50bdc0e41f28808563406545b2/docs/human_in_the_loop.md)

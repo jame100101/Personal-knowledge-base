@@ -30,3 +30,19 @@ Knowledge 子系统负责 ingestion、chunking、index、embedding、hybrid retr
 ## 验证
 
 分别测 retrieval recall/citation correctness、memory write precision/forget success、context selection ablation；不要用“向量库命中”代替端到端任务成功。
+
+<!-- evidence-update:2026-10-25 -->
+
+## 同一条信息，按用途选择存放位置
+
+“团队发布流程”适合作为可版本化的知识资料；“这次发布已检查到第三步”属于当前任务状态；“用户偏好中文回复”可能是跨会话记忆。先说清用途，再选数据库或向量库，顺序会更自然。
+
+在 LangGraph 中，checkpointer 面向某个 thread 的状态快照，store 用于图状态之外的跨 thread 数据。这是具体框架的分工，不等于所有记忆都必须向量化。即使都落在 PostgreSQL，也仍要区分作用域、保留时间和访问权限。
+
+练习：开两个会话，只在第一个会话记录“发布到第三步”。第二个会话是否应该看到它？再给用户偏好加上用户 ID，检查换一个用户以后是否还会读到。答案应由产品的数据边界决定，而不是由向量相似度决定。
+
+### 本节的核验依据
+
+2026-10-25 查阅。下面的链接支持本节的机制说明；练习场景和选型建议是本教程的教学设计。
+
+- [LangGraph：checkpointer 与 store 的分工](https://docs.langchain.com/oss/python/langgraph/persistence)

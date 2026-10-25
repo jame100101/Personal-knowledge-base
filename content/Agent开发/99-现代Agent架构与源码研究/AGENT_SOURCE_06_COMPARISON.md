@@ -363,3 +363,21 @@ Input
 ```
 
 评价一个 Agent 的关键不在工具数量，而在这条闭环遇到失败、取消、压缩、并发、断线和恢复时是否仍保持同一组不变量。
+
+<!-- evidence-update:2026-10-25 -->
+
+## 比较前先对齐证据范围
+
+本次源码复核记录显示，OpenCode 的阅读入口已经移动，OpenClaw 的内建核心边界也不能直接套用旧的 Pi 依赖描述。比较表中的历史快照仍可以用于理解当时设计，但不能把不同日期的实现拼成一张“今天的产品功能表”。
+
+建议为每一行增加三项信息：公开提交、实际读过的文件、是否运行过测试。Claude Code 的官方行为资料与可逐行阅读的开源运行时也应分开，不把两者都标成“源码已证实”。
+
+练习只比较一个机制，例如工具取消。分别写清模型停止生成、工具停止执行、结果如何保存，再记录缺失证据。这样即使不能比较谁更好，也能给出可靠、可继续验证的结论。
+
+### 本节的核验依据
+
+2026-10-25 查阅。下面的链接支持本节的机制说明；练习场景和选型建议是本教程的教学设计。
+
+- [OpenCode：当前 SessionRunner](https://github.com/anomalyco/opencode/blob/32b57015e5b491a789fba1534ecb472e676c9d8e/packages/core/src/session/runner/index.ts)
+- [OpenClaw：当前运行时边界](https://github.com/openclaw/openclaw/blob/233c8b629a383ac2473e9aa5894d6cfe312860c9/docs/agent-runtime-architecture.md)
+- [Claude Code：公开仓库范围](https://github.com/anthropics/claude-code/blob/318b7e6ac4e726e88a4ad326214866a93c373b1b/README.md)

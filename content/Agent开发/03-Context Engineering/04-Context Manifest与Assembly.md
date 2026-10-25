@@ -55,3 +55,20 @@
 - injection test：文件中的“忽略规则”保持 data 身份；
 - provider adapter test：tool result 与 call id 配对；
 - trace 可从最终消息追溯到每个 source。
+
+<!-- evidence-update:2026-10-25 -->
+
+## 给被删掉的材料也留一条记录
+
+可以从三份材料练起：一条当前报错、一份已经过期的配置、一份当前配置。装配前先记下各自的文件路径和版本，再决定把哪些内容送给模型。过期配置可以不放，但记录中要写“被当前版本替代”，否则排查时只会看到它突然消失。
+
+这里的 `trust` 是应用的分类标签，不会让文本天然安全。给网页标上 `untrusted` 后，仍然要让权限检查在工具执行前生效。也别把密钥装进 Manifest 或 trace；记录“使用了认证服务”通常已经足够，不需要记下认证秘密。
+
+做一个小检查：只查看 Manifest，能否找到回答引用的文件和版本？再只查看发给模型的请求，确认它没有包含本地 context 中的数据库连接或密钥。这两项分别检查可追溯性和数据边界。
+
+### 本节的核验依据
+
+2026-10-25 查阅。下面的链接支持本节的机制说明；练习场景和选型建议是本教程的教学设计。
+
+- [OpenAI Agents SDK：本地 context 与模型 context（固定提交）](https://github.com/openai/openai-agents-python/blob/0dc4cf152bff1f50bdc0e41f28808563406545b2/docs/context.md)
+- [OWASP：提示注入的分层防护](https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html)

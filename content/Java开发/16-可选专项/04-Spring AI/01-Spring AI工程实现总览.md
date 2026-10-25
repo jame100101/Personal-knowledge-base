@@ -34,3 +34,18 @@ Answer answer = chatClient.prompt()
 ## Cross-reference
 
 Agent 原理请阅读 `Agent开发 / 02-Agent Loop`、`03-Context Engineering`、`04-Tools与Runtime`、`05-Knowledge与Memory` 与 `06-Agent Harness`。本模块只讨论 Java/Spring AI 的实现映射，避免复制理论。
+
+<!-- evidence-update:2026-10-25 -->
+
+## 先验证结构，再验证答案
+
+当前查阅的 Spring AI Getting Started 展示 2.0.2，2.0.x 支持 Boot 4.0.x 与 4.1.x。按 BOM 选择配套版本后，先运行一次没有工具的模型调用，再增加结构化返回，不要同时引入检索、记忆和工具循环，让错误难以定位。
+
+对上面的 Answer 做两道检查：第一道检查字段能否解析；第二道检查 sources 中的标识是否真实存在、当前用户能否读取、是否支持 summary 中的说法。故意给模型一段含虚构来源的输入，确认程序不会因为 Java record 构造成功就把答案标成已核实。
+
+### 本节的核验依据
+
+2026-10-25 查阅。下面的链接支持本节的机制说明；练习场景和选型建议是本教程的教学设计。
+
+- [Spring AI：版本配套与入门](https://docs.spring.io/spring-ai/reference/getting-started.html)
+- [Spring AI：结构化输出的保证范围](https://docs.spring.io/spring-ai/reference/api/structured-output-converter.html)

@@ -53,3 +53,18 @@ Operate It in Production
 ## 学习闭环
 
 每阶段都交付 `code + tests + architecture note + failure simulation + observability evidence`。版本相关事实集中在同级《Version Baseline 与 Compatibility Matrix》，概念文档只保留 `version_scope` 与复查日期。
+
+<!-- evidence-update:2026-10-25 -->
+
+## 第一周先交付一件能解释的事
+
+先做一个“保存并查询读书笔记”的小程序。第一天让它接受标题并打印结果；第二天保存到文件，故意给它一个不存在的路径，观察错误；学到 SQL 后，把保存动作换成数据库事务；最后才通过 HTTP 接收请求。这是同一个需求逐步增加边界，不是每学一章就重写一个陌生项目。
+
+每次只回答一个新问题：输入不合法怎么办？保存一半失败怎么办？两个人同时改怎么办？做到这一步，再引入测试、安全和模块划分就有了理由。版本选择请回到同级兼容表；例如 Boot 4.1.2 的 Java 支持范围已到 27，并不意味着 Cloud 的任意发行列车也支持这个组合。
+
+### 本节的核验依据
+
+2026-10-25 查阅。下面的链接支持本节的机制说明；练习场景和选型建议是本教程的教学设计。
+
+- [Spring Boot：系统要求](https://docs.spring.io/spring-boot/system-requirements.html)
+- [Spring Cloud：项目与版本配套](https://spring.io/projects/spring-cloud/)

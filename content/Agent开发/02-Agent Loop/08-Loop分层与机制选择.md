@@ -85,3 +85,20 @@ flowchart LR
 ## 3. 状态机底线
 
 允许状态集合必须封闭，例如 `ready → running → succeeded|failed|cancelled`；`failed → ready` 只能由明确 retry/replan 事件触发。每次转移记录 `who/when/input/evidence`，这样 trace 才能用于回归而不只是日志堆积。
+
+<!-- evidence-update:2026-10-25 -->
+
+## 用一次中断决定是否需要更重的运行时
+
+先做一个可以重新运行的只读搜索任务。它失败后从头查一次，通常容易处理。再把任务改成“创建工单后等待负责人确认”：进程此时崩溃，重新从头执行可能创建两张工单。
+
+这才是引入持久执行的具体理由。保存一份聊天历史，解决的是以后能看见过程；执行引擎还需要记录哪些步骤已完成、哪一步结果未知，以及恢复时怎样处理。Pydantic AI 的文档也明确区分了步骤存储与持久执行引擎。
+
+练习时在工具返回前、返回后但保存检查点前各模拟一次崩溃。若只在最后一步保存 `done=true`，第二种故障仍可能重复执行。要给外部动作稳定的业务幂等键，或先查询其真实结果。检查点的存在本身，不是“外部副作用恰好一次”的证明。
+
+### 本节的核验依据
+
+2026-10-25 查阅。下面的链接支持本节的机制说明；练习场景和选型建议是本教程的教学设计。
+
+- [Pydantic AI：持久执行与存储的区别（固定提交）](https://github.com/pydantic/pydantic-ai/blob/4ee11516b5be6b767654304ec8fe346b81369597/docs/durable_execution/overview.md)
+- [LangGraph：检查点与重放](https://docs.langchain.com/oss/python/langgraph/checkpointers)

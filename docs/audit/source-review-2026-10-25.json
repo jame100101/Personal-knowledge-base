@@ -1,0 +1,480 @@
+[
+  {
+    "repo": "openai/codex",
+    "head": "970111f6cb62cc02fe36a82ea7d71b37a2889c97",
+    "commit_date": "2026-10-23T18:50:54Z",
+    "checked_on": "2026-10-25",
+    "truncated_tree": false,
+    "files": [
+      {
+        "path": "README.md",
+        "url": "https://github.com/openai/codex/blob/970111f6cb62cc02fe36a82ea7d71b37a2889c97/README.md",
+        "sha256": "ba4e1f69ff48386e72a9c5e1edaf76aad64a475c2d51af79ccba6d1128261ba7",
+        "bytes": 3334
+      },
+      {
+        "path": "codex-rs/core/src/session/turn.rs",
+        "url": "https://github.com/openai/codex/blob/970111f6cb62cc02fe36a82ea7d71b37a2889c97/codex-rs/core/src/session/turn.rs",
+        "sha256": "9fc51309911acf0722445f4a062c9c83dd8ec228504fd498e7281bb09d286ff1",
+        "bytes": 140084
+      },
+      {
+        "path": "codex-rs/core/src/session/session.rs",
+        "url": "https://github.com/openai/codex/blob/970111f6cb62cc02fe36a82ea7d71b37a2889c97/codex-rs/core/src/session/session.rs",
+        "sha256": "9a97ddc94a43dd42f5b6561dc00c306c564fc622f046b3bc8379d5cf56c55b20",
+        "bytes": 98268
+      },
+      {
+        "path": "codex-rs/core/src/guardian/permissions.rs",
+        "url": "https://github.com/openai/codex/blob/970111f6cb62cc02fe36a82ea7d71b37a2889c97/codex-rs/core/src/guardian/permissions.rs",
+        "sha256": "948c7fd2154cf549e5e42b5bb8610402e45b284b663ba5d78ecba75507c551e0",
+        "bytes": 3918
+      }
+    ],
+    "review_scope": "Selected files and documentation; not a full repository audit or runtime verification."
+  },
+  {
+    "repo": "anthropics/claude-code",
+    "head": "318b7e6ac4e726e88a4ad326214866a93c373b1b",
+    "commit_date": "2026-10-24T02:18:57Z",
+    "checked_on": "2026-10-25",
+    "truncated_tree": false,
+    "files": [
+      {
+        "path": "README.md",
+        "url": "https://github.com/anthropics/claude-code/blob/318b7e6ac4e726e88a4ad326214866a93c373b1b/README.md",
+        "sha256": "aa0d8b80ac083e1591be0789273f447058cc9187b4331634a5614155da27778d",
+        "bytes": 2873
+      },
+      {
+        "path": "CHANGELOG.md",
+        "url": "https://github.com/anthropics/claude-code/blob/318b7e6ac4e726e88a4ad326214866a93c373b1b/CHANGELOG.md",
+        "sha256": "27d7a0e1d5c1b98cce5153a4c9e467e8a361550c4cfe9d0aa471f46b8dc0ed83",
+        "bytes": 1085784
+      }
+    ],
+    "review_scope": "Selected files and documentation; not a full repository audit or runtime verification."
+  },
+  {
+    "repo": "NousResearch/hermes-agent",
+    "head": "4ea8d23cc9f527332ccb1d55359b27741b6ea51b",
+    "commit_date": "2026-10-25T02:56:21Z",
+    "checked_on": "2026-10-25",
+    "truncated_tree": false,
+    "files": [
+      {
+        "path": "README.md",
+        "url": "https://github.com/NousResearch/hermes-agent/blob/4ea8d23cc9f527332ccb1d55359b27741b6ea51b/README.md",
+        "sha256": "38b023e1bb33bf302dbc7d0856dd7d79e87cbd67de506dac47a3fed6e5c776bc",
+        "bytes": 17490
+      },
+      {
+        "path": "website/docs/developer-guide/agent-loop.md",
+        "url": "https://github.com/NousResearch/hermes-agent/blob/4ea8d23cc9f527332ccb1d55359b27741b6ea51b/website/docs/developer-guide/agent-loop.md",
+        "sha256": "93c1c57c3fba8b0368214c5647a61e14a7243072f2b4c5435349252f5c5e1b08",
+        "bytes": 11537
+      },
+      {
+        "path": "website/docs/developer-guide/subagent-lifecycle-api.md",
+        "url": "https://github.com/NousResearch/hermes-agent/blob/4ea8d23cc9f527332ccb1d55359b27741b6ea51b/website/docs/developer-guide/subagent-lifecycle-api.md",
+        "sha256": "d5f5f2308541dfaf6883d3432b2556a65bb51d4632c97e5f0a8043bf20873d31",
+        "bytes": 4517
+      },
+      {
+        "path": "website/docs/developer-guide/micro-compaction.md",
+        "url": "https://github.com/NousResearch/hermes-agent/blob/4ea8d23cc9f527332ccb1d55359b27741b6ea51b/website/docs/developer-guide/micro-compaction.md",
+        "sha256": "083e85f452e733830836c130978134467da1686f260921f948b88ab152c95f66",
+        "bytes": 20088
+      },
+      {
+        "path": "website/docs/developer-guide/prompt-assembly.md",
+        "url": "https://github.com/NousResearch/hermes-agent/blob/4ea8d23cc9f527332ccb1d55359b27741b6ea51b/website/docs/developer-guide/prompt-assembly.md",
+        "sha256": "b0333ed28aaccaf5e7e480c0c9000b80ac3db1e7e5c8b2971b1742c48a613c5f",
+        "bytes": 18261
+      }
+    ],
+    "review_scope": "Selected files and documentation; not a full repository audit or runtime verification."
+  },
+  {
+    "repo": "openclaw/openclaw",
+    "head": "233c8b629a383ac2473e9aa5894d6cfe312860c9",
+    "commit_date": "2026-10-25T06:10:39Z",
+    "checked_on": "2026-10-25",
+    "truncated_tree": false,
+    "files": [
+      {
+        "path": "README.md",
+        "url": "https://github.com/openclaw/openclaw/blob/233c8b629a383ac2473e9aa5894d6cfe312860c9/README.md",
+        "sha256": "a909b7f0435eb27d68ce7e326c8375008fac6fbdfd7602219c10086595f6fe81",
+        "bytes": 113204
+      },
+      {
+        "path": "docs/agent-runtime-architecture.md",
+        "url": "https://github.com/openclaw/openclaw/blob/233c8b629a383ac2473e9aa5894d6cfe312860c9/docs/agent-runtime-architecture.md",
+        "sha256": "608ad409afbd123b9316d12b0b6adfe972363ca45e2d86970e2db39facc2f9af",
+        "bytes": 10556
+      }
+    ],
+    "review_scope": "Selected files and documentation; not a full repository audit or runtime verification."
+  },
+  {
+    "repo": "Aider-AI/aider",
+    "head": "5dc9490bb35f9729ef2c95d00a19ccd30c26339c",
+    "commit_date": "2026-05-22T14:02:20Z",
+    "checked_on": "2026-10-25",
+    "truncated_tree": false,
+    "files": [
+      {
+        "path": "README.md",
+        "url": "https://github.com/Aider-AI/aider/blob/5dc9490bb35f9729ef2c95d00a19ccd30c26339c/README.md",
+        "sha256": "e40e05367ceacf7138a2605484bf7d1cb5a262d2dba03f52a5327c023b3cd0dc",
+        "bytes": 12406
+      },
+      {
+        "path": "aider/coders/base_coder.py",
+        "url": "https://github.com/Aider-AI/aider/blob/5dc9490bb35f9729ef2c95d00a19ccd30c26339c/aider/coders/base_coder.py",
+        "sha256": "04a7b38c4f1d2b1684ac958f40bcd81a28b00139eae88afed59d2c970bef1ee1",
+        "bytes": 86302
+      }
+    ],
+    "review_scope": "Selected files and documentation; not a full repository audit or runtime verification."
+  },
+  {
+    "repo": "aaif-goose/goose",
+    "head": "2b17adc33a7176e701c2fef9578a5fc5834ea89a",
+    "commit_date": "2026-10-24T17:41:22Z",
+    "checked_on": "2026-10-25",
+    "truncated_tree": false,
+    "files": [
+      {
+        "path": "README.md",
+        "url": "https://github.com/aaif-goose/goose/blob/2b17adc33a7176e701c2fef9578a5fc5834ea89a/README.md",
+        "sha256": "0f1df85a0c457caf1f3c4e1c0370f2da3887fffa588d207862cfc298c1d39755",
+        "bytes": 3449
+      },
+      {
+        "path": "documentation/docs/goose-architecture/goose-architecture.md",
+        "url": "https://github.com/aaif-goose/goose/blob/2b17adc33a7176e701c2fef9578a5fc5834ea89a/documentation/docs/goose-architecture/goose-architecture.md",
+        "sha256": "61de56641bc9a5c60516d539bf0d6c249ee5ec07db2957e627ca771aab59964e",
+        "bytes": 5785
+      }
+    ],
+    "review_scope": "Selected files and documentation; not a full repository audit or runtime verification."
+  },
+  {
+    "repo": "anomalyco/opencode",
+    "head": "32b57015e5b491a789fba1534ecb472e676c9d8e",
+    "commit_date": "2026-10-25T05:57:05Z",
+    "checked_on": "2026-10-25",
+    "truncated_tree": false,
+    "files": [
+      {
+        "path": "README.md",
+        "url": "https://github.com/anomalyco/opencode/blob/32b57015e5b491a789fba1534ecb472e676c9d8e/README.md",
+        "sha256": "9d93c425fc5f9f8b93c4fc3d40fc82ef10450403116371736feafce57c875635",
+        "bytes": 4668
+      },
+      {
+        "path": "packages/opencode/src/session/processor.ts",
+        "status": "not-in-current-tree"
+      },
+      {
+        "path": "packages/core/src/session/runner/index.ts",
+        "url": "https://github.com/anomalyco/opencode/blob/32b57015e5b491a789fba1534ecb472e676c9d8e/packages/core/src/session/runner/index.ts",
+        "sha256": "581f1d682c3198c52fe0b37f4c5ab062beb3ecd408026147c466eef5d8c22dc3",
+        "bytes": 1625
+      },
+      {
+        "path": "packages/core/src/session/runner/step.ts",
+        "url": "https://github.com/anomalyco/opencode/blob/32b57015e5b491a789fba1534ecb472e676c9d8e/packages/core/src/session/runner/step.ts",
+        "sha256": "b54c49f83a3512c8c598482ee22d4cefe3ba69fe6731bb5f9b8da364571b6ce2",
+        "bytes": 14444
+      },
+      {
+        "path": "packages/core/src/session/run-coordinator.ts",
+        "url": "https://github.com/anomalyco/opencode/blob/32b57015e5b491a789fba1534ecb472e676c9d8e/packages/core/src/session/run-coordinator.ts",
+        "sha256": "2073edef2f14be91fd19246c409d50b399af1bc551e517bb1cd07552440d0269",
+        "bytes": 8415
+      }
+    ],
+    "review_scope": "Selected files and documentation; not a full repository audit or runtime verification."
+  },
+  {
+    "repo": "deepseek-ai/deepseek-harness",
+    "head": "22ddee3792402c3e70ec5f86a63c3e3e895a2f60",
+    "commit_date": "2026-10-23T11:48:59Z",
+    "checked_on": "2026-10-25",
+    "truncated_tree": false,
+    "files": [
+      {
+        "path": "README.md",
+        "url": "https://github.com/deepseek-ai/deepseek-harness/blob/22ddee3792402c3e70ec5f86a63c3e3e895a2f60/README.md",
+        "sha256": "0f5516be2acde776f05572cbc8c3093c90549afe04ce118e11157d073d5d15f4",
+        "bytes": 2673
+      },
+      {
+        "path": "docs/architecture.md",
+        "url": "https://github.com/deepseek-ai/deepseek-harness/blob/22ddee3792402c3e70ec5f86a63c3e3e895a2f60/docs/architecture.md",
+        "sha256": "e07f34a0111ef6a37aee51e8f13bc23c631f1f81d4fd15f3f3ab8790ed41d469",
+        "bytes": 19032
+      }
+    ],
+    "review_scope": "Selected files and documentation; not a full repository audit or runtime verification."
+  },
+  {
+    "repo": "earendil-works/pi",
+    "head": "38ff99177fba21e9c57a670f4e95adcf407c99c7",
+    "commit_date": "2026-10-24T20:48:11Z",
+    "checked_on": "2026-10-25",
+    "truncated_tree": false,
+    "files": [
+      {
+        "path": "README.md",
+        "url": "https://github.com/earendil-works/pi/blob/38ff99177fba21e9c57a670f4e95adcf407c99c7/README.md",
+        "sha256": "69cb1e626257bd68d041f05513815e426717a843ddc0e7706802865ec7fd898c",
+        "bytes": 10635
+      },
+      {
+        "path": "packages/agent/src/agent-loop.ts",
+        "url": "https://github.com/earendil-works/pi/blob/38ff99177fba21e9c57a670f4e95adcf407c99c7/packages/agent/src/agent-loop.ts",
+        "sha256": "9d7589b5071ea3b8b3e3c624f9cfc09a976ebf7436024a58213837de4645167d",
+        "bytes": 29889
+      }
+    ],
+    "review_scope": "Selected files and documentation; not a full repository audit or runtime verification."
+  },
+  {
+    "repo": "xai-org/grok-build",
+    "head": "2bdd1d6a6369de0e8c68132ea4539e9abd9e14a8",
+    "commit_date": "2026-09-29T16:57:09Z",
+    "checked_on": "2026-10-25",
+    "truncated_tree": false,
+    "files": [
+      {
+        "path": "README.md",
+        "url": "https://github.com/xai-org/grok-build/blob/2bdd1d6a6369de0e8c68132ea4539e9abd9e14a8/README.md",
+        "sha256": "322066de9f5bc136295bd0ae4f1752cef3d8dcb1a8f9d88044609e7b6d7abcf7",
+        "bytes": 5757
+      },
+      {
+        "path": "SOURCE_REV",
+        "url": "https://github.com/xai-org/grok-build/blob/2bdd1d6a6369de0e8c68132ea4539e9abd9e14a8/SOURCE_REV",
+        "sha256": "ef218bf538f31e240aff551a39d6d9a6564b03bb2a75c49f309bf46015ee3030",
+        "bytes": 41
+      },
+      {
+        "path": "crates/codegen/xai-grok-tools/src/implementations/grok_build/scheduler/occurrence_journal.rs",
+        "url": "https://github.com/xai-org/grok-build/blob/2bdd1d6a6369de0e8c68132ea4539e9abd9e14a8/crates/codegen/xai-grok-tools/src/implementations/grok_build/scheduler/occurrence_journal.rs",
+        "sha256": "60d3bff109d04b6fdaae236e0acb8ccf8cd1961ce15b6d691eb02141c2341604",
+        "bytes": 19809
+      }
+    ],
+    "review_scope": "Selected files and documentation; not a full repository audit or runtime verification."
+  },
+  {
+    "repo": "langchain-ai/langgraph",
+    "head": "4c52e129eb1ab69a3da58b799f67929f77d81149",
+    "commit_date": "2026-10-24T01:02:32Z",
+    "checked_on": "2026-10-25",
+    "truncated_tree": false,
+    "files": [
+      {
+        "path": "README.md",
+        "url": "https://github.com/langchain-ai/langgraph/blob/4c52e129eb1ab69a3da58b799f67929f77d81149/README.md",
+        "sha256": "3a13e257af1216962d53d72414a7f44ac1fc5cea34d994bdff60ea2a3b045933",
+        "bytes": 6395
+      }
+    ],
+    "review_scope": "Selected files and documentation; not a full repository audit or runtime verification."
+  },
+  {
+    "repo": "langchain-ai/deepagents",
+    "head": "793ac5af081079977616fe1925b09670871121d3",
+    "commit_date": "2026-10-25T03:13:14Z",
+    "checked_on": "2026-10-25",
+    "truncated_tree": false,
+    "files": [
+      {
+        "path": "README.md",
+        "url": "https://github.com/langchain-ai/deepagents/blob/793ac5af081079977616fe1925b09670871121d3/README.md",
+        "sha256": "24666c576b54e1e1ed9793b97971f8cb0e16ebb9d0ab9a887989c6e4dfece4ac",
+        "bytes": 7043
+      },
+      {
+        "path": "libs/deepagents/deepagents/backends/filesystem.py",
+        "url": "https://github.com/langchain-ai/deepagents/blob/793ac5af081079977616fe1925b09670871121d3/libs/deepagents/deepagents/backends/filesystem.py",
+        "sha256": "bb08bac99d188cd7da1a55d53ce14f6beb1856d178ea815220df4e0533ba9b08",
+        "bytes": 71904
+      },
+      {
+        "path": "libs/deepagents/deepagents/backends/state.py",
+        "url": "https://github.com/langchain-ai/deepagents/blob/793ac5af081079977616fe1925b09670871121d3/libs/deepagents/deepagents/backends/state.py",
+        "sha256": "d8283ca6b8b33286eadb1042e14e4e5c66336f0ddc1357ba042a862e963447f5",
+        "bytes": 14559
+      },
+      {
+        "path": "libs/deepagents/deepagents/backends/store.py",
+        "url": "https://github.com/langchain-ai/deepagents/blob/793ac5af081079977616fe1925b09670871121d3/libs/deepagents/deepagents/backends/store.py",
+        "sha256": "2b144d4fbe4dd85d796e4fa3c8be6e03f99fe2c0f7137a8be44c6699a64e5c95",
+        "bytes": 26716
+      },
+      {
+        "path": "libs/deepagents/deepagents/middleware/subagents.py",
+        "url": "https://github.com/langchain-ai/deepagents/blob/793ac5af081079977616fe1925b09670871121d3/libs/deepagents/deepagents/middleware/subagents.py",
+        "sha256": "66d1a30c8669309a306db73f0ce7376ee9ca1e627e7a4456b57bde7f84fec2e5",
+        "bytes": 44071
+      }
+    ],
+    "review_scope": "Selected files and documentation; not a full repository audit or runtime verification."
+  },
+  {
+    "repo": "openai/openai-agents-python",
+    "head": "0dc4cf152bff1f50bdc0e41f28808563406545b2",
+    "commit_date": "2026-10-22T21:39:28Z",
+    "checked_on": "2026-10-25",
+    "truncated_tree": false,
+    "files": [
+      {
+        "path": "README.md",
+        "url": "https://github.com/openai/openai-agents-python/blob/0dc4cf152bff1f50bdc0e41f28808563406545b2/README.md",
+        "sha256": "cf68cb43182d6ea4f79a32421f6723e8ee2cc0f68f97524da7f300e9fc77940b",
+        "bytes": 9009
+      },
+      {
+        "path": "docs/context.md",
+        "url": "https://github.com/openai/openai-agents-python/blob/0dc4cf152bff1f50bdc0e41f28808563406545b2/docs/context.md",
+        "sha256": "fff7dab722cb80c7afc7cf3b44858b7560e0bc54b389e84fb812c8d3aa37a240",
+        "bytes": 9975
+      },
+      {
+        "path": "docs/guardrails.md",
+        "url": "https://github.com/openai/openai-agents-python/blob/0dc4cf152bff1f50bdc0e41f28808563406545b2/docs/guardrails.md",
+        "sha256": "ccdfa6eb4ca29ef5f265a2bad4d3d0b7786f1a3970f58cfcf07a641b3bb56667",
+        "bytes": 16786
+      },
+      {
+        "path": "docs/human_in_the_loop.md",
+        "url": "https://github.com/openai/openai-agents-python/blob/0dc4cf152bff1f50bdc0e41f28808563406545b2/docs/human_in_the_loop.md",
+        "sha256": "3bae9c7256245fe97c1725194b140e32eec0f5131d16ddb3fa4454def352fca2",
+        "bytes": 21971
+      },
+      {
+        "path": "docs/running_agents.md",
+        "url": "https://github.com/openai/openai-agents-python/blob/0dc4cf152bff1f50bdc0e41f28808563406545b2/docs/running_agents.md",
+        "sha256": "881e6986fde7e8143bbb722577a04ed169f49a5bdf3c64f29124a5ffc42fb7bf",
+        "bytes": 36463
+      },
+      {
+        "path": "docs/sessions/index.md",
+        "url": "https://github.com/openai/openai-agents-python/blob/0dc4cf152bff1f50bdc0e41f28808563406545b2/docs/sessions/index.md",
+        "sha256": "ca09eca46c0f55621fe97389c3a37a3be205b6876a3c9f0c68ab80afefef6506",
+        "bytes": 32211
+      },
+      {
+        "path": "docs/tools.md",
+        "url": "https://github.com/openai/openai-agents-python/blob/0dc4cf152bff1f50bdc0e41f28808563406545b2/docs/tools.md",
+        "sha256": "762d91079338475d3935af8e36ca8a958a6f476ac1b0ecfb81536a573c6cdbeb",
+        "bytes": 53426
+      }
+    ],
+    "review_scope": "Selected files and documentation; not a full repository audit or runtime verification."
+  },
+  {
+    "repo": "pydantic/pydantic-ai",
+    "head": "4ee11516b5be6b767654304ec8fe346b81369597",
+    "commit_date": "2026-10-25T05:04:29Z",
+    "checked_on": "2026-10-25",
+    "truncated_tree": false,
+    "files": [
+      {
+        "path": "README.md",
+        "url": "https://github.com/pydantic/pydantic-ai/blob/4ee11516b5be6b767654304ec8fe346b81369597/README.md",
+        "sha256": "1ccfe7e487bd5ff4382711c9e49677d41301427b7aa8913ba0dd924adcc456fc",
+        "bytes": 25502
+      },
+      {
+        "path": "docs/deferred-tools.md",
+        "url": "https://github.com/pydantic/pydantic-ai/blob/4ee11516b5be6b767654304ec8fe346b81369597/docs/deferred-tools.md",
+        "sha256": "399fba436087aee7d57e27c784491d49fdade50b6a512fb66a65d63806e82c5e",
+        "bytes": 32797
+      },
+      {
+        "path": "docs/output.md",
+        "url": "https://github.com/pydantic/pydantic-ai/blob/4ee11516b5be6b767654304ec8fe346b81369597/docs/output.md",
+        "sha256": "2e351ac257353909c0c33d06398d1bd536e8da9261b3c1490f83e8027e3b61f9",
+        "bytes": 71205
+      },
+      {
+        "path": "docs/durable_execution/overview.md",
+        "url": "https://github.com/pydantic/pydantic-ai/blob/4ee11516b5be6b767654304ec8fe346b81369597/docs/durable_execution/overview.md",
+        "sha256": "f363acc4a0b72816d6c19034e74ebe86c71aa901d3ed019653297f492c173d23",
+        "bytes": 3907
+      }
+    ],
+    "review_scope": "Selected files and documentation; not a full repository audit or runtime verification."
+  },
+  {
+    "repo": "microsoft/playwright",
+    "head": "91a765d1681cb3eeb0d0fb89fefec3cf0d21bd9b",
+    "commit_date": "2026-10-24T17:04:31Z",
+    "checked_on": "2026-10-25",
+    "truncated_tree": false,
+    "files": [
+      {
+        "path": "README.md",
+        "url": "https://github.com/microsoft/playwright/blob/91a765d1681cb3eeb0d0fb89fefec3cf0d21bd9b/README.md",
+        "sha256": "99cadec371946eb05c2b809f5627d002ed0cd39db0ee1fe3cc76a06efec29431",
+        "bytes": 11282
+      }
+    ],
+    "review_scope": "Selected files and documentation; not a full repository audit or runtime verification."
+  },
+  {
+    "repo": "modelcontextprotocol/modelcontextprotocol",
+    "head": "dae694f61a31f7a3ec2af3aff709e11f70f61e48",
+    "commit_date": "2026-10-23T10:50:53Z",
+    "checked_on": "2026-10-25",
+    "truncated_tree": false,
+    "files": [
+      {
+        "path": "README.md",
+        "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/blob/dae694f61a31f7a3ec2af3aff709e11f70f61e48/README.md",
+        "sha256": "7e98444c73ed5d923a3b02b1247e9cdf678d31a30cc32b1503bdcd906aa984e2",
+        "bytes": 876
+      }
+    ],
+    "review_scope": "Selected files and documentation; not a full repository audit or runtime verification."
+  },
+  {
+    "repo": "a2aproject/A2A",
+    "head": "98279d62316361ba8451eaef300f72b72e169185",
+    "commit_date": "2026-10-20T17:28:30Z",
+    "checked_on": "2026-10-25",
+    "truncated_tree": false,
+    "files": [
+      {
+        "path": "README.md",
+        "url": "https://github.com/a2aproject/A2A/blob/98279d62316361ba8451eaef300f72b72e169185/README.md",
+        "sha256": "440930f051475027fc54f0747c1f8ee84a12b36c343f585cdb0a54e6436abc1d",
+        "bytes": 8586
+      }
+    ],
+    "review_scope": "Selected files and documentation; not a full repository audit or runtime verification."
+  },
+  {
+    "repo": "agentclientprotocol/agent-client-protocol",
+    "head": "62bd8636848dadefd8546b527cd1aac6db5423b9",
+    "commit_date": "2026-10-24T20:51:07Z",
+    "checked_on": "2026-10-25",
+    "truncated_tree": false,
+    "files": [
+      {
+        "path": "README.md",
+        "url": "https://github.com/agentclientprotocol/agent-client-protocol/blob/62bd8636848dadefd8546b527cd1aac6db5423b9/README.md",
+        "sha256": "56f5d88d99567098850f27a25f97f45f49c43899097ae9bf988f79c0d66adf13",
+        "bytes": 5444
+      }
+    ],
+    "review_scope": "Selected files and documentation; not a full repository audit or runtime verification."
+  }
+]

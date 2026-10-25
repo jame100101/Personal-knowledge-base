@@ -7,15 +7,15 @@ const { t } = useLocale()
 const headings = computed(() => extractHeadings(props.source))
 const activeId = ref('')
 const expanded = ref(false)
-async function closeCompact(event: MouseEvent, id: string) {
-  if (
-    !window.matchMedia('(max-width: 1180px)').matches ||
-    event.ctrlKey ||
-    event.metaKey ||
-    event.shiftKey ||
-    event.altKey
+const query = ref('')
+const filteredHeadings = computed(() => {
+  const needle = query.value.trim().toLocaleLowerCase()
+  return headings.value.filter((heading) =>
+    heading.title.toLocaleLowerCase().includes(needle),
   )
-    return
+})
+async function closeCompact(event: MouseEvent, id: string) {
+  if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return
   event.preventDefault()
   expanded.value = false
   // Wait for the outline to collapse before calculating the anchor position.
@@ -28,40 +28,50 @@ async function closeCompact(event: MouseEvent, id: string) {
     heading.focus({ preventScroll: true })
   }
 }
-let observer: IntersectionObserver | undefined
-let mounted = false
+const mounted = ref(false)
+let frame = 0
+let headingElements: HTMLElement[] = []
+function updateActive() {
+  frame = 0
+  // Keep the preceding section active between headings, including when scrolling up.
+  const current = headingElements.findLast(
+    (heading) => heading.getBoundingClientRect().top <= 140,
+  )
+  activeId.value = current?.id || headingElements[0]?.id || ''
+}
+function queueActiveUpdate() {
+  if (!frame) frame = window.requestAnimationFrame(updateActive)
+}
 
 async function observeHeadings() {
-  observer?.disconnect()
   activeId.value = ''
   await nextTick()
-  if (!mounted) return
-  observer = new IntersectionObserver(
-    (entries) => {
-      const visible = entries.find((entry) => entry.isIntersecting)
-      if (visible) activeId.value = visible.target.id
-    },
-    { rootMargin: '-15% 0px -75% 0px' },
-  )
-  headings.value.forEach(({ id }) => {
-    const el = document.getElementById(id)
-    if (el) observer?.observe(el)
-  })
+  if (!mounted.value) return
+  headingElements = headings.value
+    .map(({ id }) => document.getElementById(id))
+    .filter((el): el is HTMLElement => !!el)
+  updateActive()
 }
 
 onMounted(() => {
-  mounted = true
+  mounted.value = true
   observeHeadings()
+  window.addEventListener('scroll', queueActiveUpdate, { passive: true })
+  window.addEventListener('resize', queueActiveUpdate)
 })
 watch(
   () => props.source,
   () => {
-    if (mounted) observeHeadings()
+    query.value = ''
+    expanded.value = false
+    if (mounted.value) observeHeadings()
   },
 )
 onUnmounted(() => {
-  mounted = false
-  observer?.disconnect()
+  mounted.value = false
+  window.removeEventListener('scroll', queueActiveUpdate)
+  window.removeEventListener('resize', queueActiveUpdate)
+  window.cancelAnimationFrame(frame)
 })
 </script>
 
@@ -72,6 +82,7 @@ onUnmounted(() => {
       class="toc-toggle"
       type="button"
       :aria-expanded="expanded"
+      :disabled="!mounted"
       aria-controls="article-outline"
       @click="expanded = !expanded"
     >
@@ -83,11 +94,38 @@ onUnmounted(() => {
       :class="{ expanded }"
       :aria-label="t('pageToc')"
     >
+      <div v-if="headings.length > 8" class="toc-search">
+        <label for="outline-query">{{ t('filterOutline') }}</label>
+        <div>
+          <input
+            id="outline-query"
+            v-model="query"
+            :disabled="!mounted"
+            type="search"
+            autocomplete="off"
+            :placeholder="t('filterOutline')"
+            @keydown.esc="query = ''"
+          >
+          <button
+            v-if="query"
+            type="button"
+            :aria-label="t('clearOutline')"
+            @click="query = ''"
+          >
+            ×
+          </button>
+        </div>
+        <span role="status">{{
+          t('outlineCount').replace('{count}', String(filteredHeadings.length))
+        }}</span>
+      </div>
+      <p v-if="!filteredHeadings.length" class="toc-empty">{{ t('outlineEmpty') }}</p>
       <a
-        v-for="heading in headings"
+        v-for="heading in filteredHeadings"
         :key="heading.id"
         :href="`#${heading.id}`"
         :class="[`level-${heading.level}`, { active: activeId === heading.id }]"
+        :aria-current="activeId === heading.id ? 'location' : undefined"
         @click="closeCompact($event, heading.id)"
       >
         {{ heading.title }}
@@ -155,6 +193,51 @@ p {
 
 .toc-toggle {
   display: none;
+}
+.toc-search {
+  padding: 0 10px 12px;
+  display: grid;
+  gap: 7px;
+}
+.toc-search label,
+.toc-search > span {
+  font-size: 12px;
+  color: var(--kb-text-muted);
+}
+.toc-search > div {
+  position: relative;
+}
+.toc-search input {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  padding: 8px 44px 8px 10px;
+  border: 1px solid var(--kb-border);
+  border-radius: 7px;
+  background: var(--kb-surface);
+  color: var(--kb-text);
+  font: inherit;
+  font-size: 13px;
+}
+.toc-search input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+.toc-search button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  background: transparent;
+  color: var(--kb-text);
+  cursor: pointer;
+  font-size: 20px;
+}
+.toc-empty {
+  padding: 8px 14px;
+  color: var(--kb-text-muted);
 }
 @media (max-width: 1180px) {
   .toc-title {

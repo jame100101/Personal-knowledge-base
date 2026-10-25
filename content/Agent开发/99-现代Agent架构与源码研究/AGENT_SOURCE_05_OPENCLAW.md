@@ -2,6 +2,25 @@
 
 OpenClaw 的入口、会话与运行时分工较多。先选一条消息，看它怎样经过 Gateway 到达对应会话，再跟到模型与工具。下文按固定快照解释这些连接，也把推断和未验证行为单独保留。
 
+<!-- evidence-update:2026-10-25 -->
+
+## 2026-10-25：当前源码入口与阅读练习
+
+本节固定到公开仓库提交 `233c8b629a383ac2473e9aa5894d6cfe312860c9`（提交时间 `2026-10-25T06:10:39Z`）。只对下面列出的文件和机制重新核对；后面的历史长文继续按各自快照阅读，不把新 HEAD 当作全部旧结论的重新验证。
+
+当前架构文档把可复用核心放在 `packages/agent-core/`，内建运行时由 OpenClaw 自己拥有；`pi` 作为旧 runtime 别名归一到 `openclaw`。因此不能把历史章节中与 Pi 的关系直接当作当前外部框架依赖关系。插件也应使用公开 SDK 入口，而不是依赖 `src/**` 内部路径。
+
+另一个值得学习的细节是 worker 的“返回结果、执行结束、资源释放”分开记录。试着画一个取消流程：结果先被拒绝时，底层资源是否已经释放？这能帮助理解为什么界面显示取消，不等于后台资源已经全部回收。
+
+### 本节的核验依据
+
+2026-10-25 查阅。下面的链接支持本节的机制说明；练习场景和选型建议是本教程的教学设计。
+
+- [openclaw/openclaw / docs/agent-runtime-architecture.md](https://github.com/openclaw/openclaw/blob/233c8b629a383ac2473e9aa5894d6cfe312860c9/docs/agent-runtime-architecture.md)
+- [openclaw/openclaw / README.md](https://github.com/openclaw/openclaw/blob/233c8b629a383ac2473e9aa5894d6cfe312860c9/README.md)
+
+> 以下为历史快照研究。涉及路径、默认值和产品行为时，请同时查看上面的本次核对范围。
+
 > **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `analyzed snapshot 6e604438b6a2274145bae60aef053afa78d9170d; HEAD audit dea053e32f4cca1207f980d643f7c6ef795fd9f9`

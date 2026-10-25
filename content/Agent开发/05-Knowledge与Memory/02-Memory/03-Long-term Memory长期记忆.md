@@ -179,3 +179,19 @@ flowchart LR
 写入可在响应热路径完成，也可由后台任务整理。热路径及时但增加延迟；后台整理能合并冲突和去重，但存在最终一致性。读取时不能只做向量相似度，还要过滤主体、权限、时间和任务范围。
 
 参考：[LangGraph 长期记忆文档](https://docs.langchain.com/oss/python/langchain/long-term-memory)。
+
+<!-- evidence-update:2026-10-25 -->
+
+## 跨会话不是跨所有用户
+
+一个偏好能在新会话中读到，说明它跨了会话边界，不意味着应该让所有用户都读到。先给记忆确定用户或组织作用域，再决定是否要做语义检索。
+
+StoreBackend 的源码把 namespace 作为存储接口的一部分；实际权限仍由应用和底层存储共同保证。可以先用一个明确的键保存语言偏好，等查询真的需要模糊匹配时再加向量搜索。
+
+练习用甲、乙两个虚构用户：甲保存中文偏好，乙保存英文偏好，再分别新开会话读回。接着修改甲的偏好并删除乙的偏好，检查不会读到陈旧记录或其他人的记录。
+
+### 本节的核验依据
+
+2026-10-25 查阅。下面的链接支持本节的机制说明；练习场景和选型建议是本教程的教学设计。
+
+- [Deep Agents：跨 thread StoreBackend（固定源码）](https://github.com/langchain-ai/deepagents/blob/793ac5af081079977616fe1925b09670871121d3/libs/deepagents/deepagents/backends/store.py)

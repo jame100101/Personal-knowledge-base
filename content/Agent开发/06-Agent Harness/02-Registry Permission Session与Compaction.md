@@ -74,3 +74,20 @@ Compaction 是给后续模型请求整理一份更短的工作上下文。它应
 - Compaction 前后成功条件是否一致；
 - 崩溃恢复是否重复写操作；
 - 旧 trace 能否用对应 schema 解码。
+
+<!-- evidence-update:2026-10-25 -->
+
+## 工具列表变了，旧审批还能不能用
+
+工具目录只是“现在有哪些能力”的清单。假设 `read_ticket` 原来只读标题，后来升级为同时导出附件，即使名字没变，数据访问范围也变了。运行时需要重新判断实际参数、身份和资源，不能把发现了工具等同于已经授权。
+
+Agents SDK 的能力可见性回调决定工具是否向本轮开放，但文档明确提醒：这不能授权模型后来选择的具体参数。审批状态也可能随 RunState 恢复；换一份 context 对象，不代表旧审批已经清空。
+
+练习可以用同名的两个假工具，分别只读和读写。恢复旧会话时先检查工具版本与权限，再决定继续、要求新授权还是停止。把决定写成可观察事件，后面才有办法解释一次意外动作。
+
+### 本节的核验依据
+
+2026-10-25 查阅。下面的链接支持本节的机制说明；练习场景和选型建议是本教程的教学设计。
+
+- [OpenAI Agents SDK：本地 context 与模型 context（固定提交）](https://github.com/openai/openai-agents-python/blob/0dc4cf152bff1f50bdc0e41f28808563406545b2/docs/context.md)
+- [OpenAI Agents SDK：审批与恢复（固定提交）](https://github.com/openai/openai-agents-python/blob/0dc4cf152bff1f50bdc0e41f28808563406545b2/docs/human_in_the_loop.md)

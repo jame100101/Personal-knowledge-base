@@ -2,6 +2,25 @@
 
 Aider 很适合用来观察“模型输出怎样真正变成代码改动”。阅读时先跟踪编辑格式的解析，再看文件修改、Git 和测试反馈如何连接。它与以通用工具调用为中心的系统不完全相同，这个差别贯穿全文。
 
+<!-- evidence-update:2026-10-25 -->
+
+## 2026-10-25：当前源码入口与阅读练习
+
+本节固定到公开仓库提交 `5dc9490bb35f9729ef2c95d00a19ccd30c26339c`（提交时间 `2026-05-22T14:02:20Z`）。只对下面列出的文件和机制重新核对；后面的历史长文继续按各自快照阅读，不把新 HEAD 当作全部旧结论的重新验证。
+
+这次远端 HEAD 与上次记录相同，仍是 `5dc9490bb35f9729ef2c95d00a19ccd30c26339c`。如实保留这一点：重新核验不等于项目一定发布了新功能，也不能从提交没有变化推断项目已经停止维护。
+
+学习入口仍可选 `base_coder.py` 的 `run_one` 和消息装配相关方法。给自己一个小任务：画出“用户消息—可见文件—模型响应—编辑处理”的数据流，再找到不同 edit format 如何接入。这个练习比把某种补丁格式说成所有 Coding Agent 的标准更可靠。
+
+### 本节的核验依据
+
+2026-10-25 查阅。下面的链接支持本节的机制说明；练习场景和选型建议是本教程的教学设计。
+
+- [Aider-AI/aider / aider/coders/base_coder.py](https://github.com/Aider-AI/aider/blob/5dc9490bb35f9729ef2c95d00a19ccd30c26339c/aider/coders/base_coder.py)
+- [Aider-AI/aider / README.md](https://github.com/Aider-AI/aider/blob/5dc9490bb35f9729ef2c95d00a19ccd30c26339c/README.md)
+
+> 以下为历史快照研究。涉及路径、默认值和产品行为时，请同时查看上面的本次核对范围。
+
 > **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `5dc9490bb35f9729ef2c95d00a19ccd30c26339c`

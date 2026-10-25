@@ -2,6 +2,25 @@
 
 阅读 Codex 时，可以先跟着一个回合走：用户输入怎样进入 session，模型请求怎样形成，工具结果又怎样回到下一轮。把这条线看清，再展开 Skills、压缩和权限机制。下文的文件与符号是定位线索，不需要先背完整模块表。
 
+<!-- evidence-update:2026-10-25 -->
+
+## 2026-10-25：当前源码入口与阅读练习
+
+本节固定到公开仓库提交 `970111f6cb62cc02fe36a82ea7d71b37a2889c97`（提交时间 `2026-10-23T18:50:54Z`）。只对下面列出的文件和机制重新核对；后面的历史长文继续按各自快照阅读，不把新 HEAD 当作全部旧结论的重新验证。
+
+当前仍可从 `session/turn.rs` 的 `run_turn` 进入，沿着采样前压缩、Skills/Plugins 装配和取消令牌往下读。文件中还能看到异步压缩候选的启动与接收，因此不要把所有压缩都简化成“达到阈值后同步生成一条摘要”。哪些路径启用，仍取决于配置和条件分支。
+
+建议只追一个问题：用户在工具运行时取消，取消信号怎样进入这一轮执行？先找到令牌的传递，再追到具体工具；不要仅凭最外层有 `CancellationToken` 就宣称所有外部动作都已被撤销。
+
+### 本节的核验依据
+
+2026-10-25 查阅。下面的链接支持本节的机制说明；练习场景和选型建议是本教程的教学设计。
+
+- [openai/codex / codex-rs/core/src/session/turn.rs](https://github.com/openai/codex/blob/970111f6cb62cc02fe36a82ea7d71b37a2889c97/codex-rs/core/src/session/turn.rs)
+- [openai/codex / codex-rs/core/src/session/session.rs](https://github.com/openai/codex/blob/970111f6cb62cc02fe36a82ea7d71b37a2889c97/codex-rs/core/src/session/session.rs)
+
+> 以下为历史快照研究。涉及路径、默认值和产品行为时，请同时查看上面的本次核对范围。
+
 > **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `analyzed snapshot 4c43465133428898aa84f0bfc02c306ed65fb66a; HEAD audit 77b30a21e17d6ec6317f712ab6d044cb1bd152e7`

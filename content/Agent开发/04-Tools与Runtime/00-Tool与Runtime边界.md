@@ -46,3 +46,19 @@ flowchart LR
 ## 4. Verification
 
 测试 spawn failure、超时、用户取消、stdout 洪水、stderr only、非零 exit、子进程遗留、并发写冲突、重复 invocation、部分成功与证据缺失。
+
+<!-- evidence-update:2026-10-25 -->
+
+## 名字叫文件工具，不代表运行在沙箱里
+
+模型看到 `read_file(path)` 时，并不知道背后读的是内存、数据库还是你电脑的磁盘。Deep Agents 正好展示了这个差别：同样一组文件接口，可以由不同 backend 承担。
+
+读 `FilesystemBackend` 的安全说明会发现，路径限制与进程隔离是两件事。`virtual_mode` 提供虚拟路径和部分路径检查，不构成操作系统沙箱。若同一 Agent 又能调用宿主机 shell，单靠文件工具的根目录也不能约束所有副作用。
+
+练习时列出每个工具实际拥有的文件、网络、进程权限，再标出谁负责检查。表中如果只写“模型会遵守提示词”，就还没有找到执行层的边界。
+
+### 本节的核验依据
+
+2026-10-25 查阅。下面的链接支持本节的机制说明；练习场景和选型建议是本教程的教学设计。
+
+- [Deep Agents FilesystemBackend 的安全边界（固定源码）](https://github.com/langchain-ai/deepagents/blob/793ac5af081079977616fe1925b09670871121d3/libs/deepagents/deepagents/backends/filesystem.py)

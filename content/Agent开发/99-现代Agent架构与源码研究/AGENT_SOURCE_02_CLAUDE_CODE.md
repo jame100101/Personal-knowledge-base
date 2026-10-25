@@ -2,6 +2,25 @@
 
 Claude Code 的公开资料与完整产品内部实现不是一回事。本篇先解释公开可见的工作方式，再标明哪些结论来自仓库、文档或行为观察。阅读时保留这种区分，才不会把合理推断当作已经看过的源码。
 
+<!-- evidence-update:2026-10-25 -->
+
+## 2026-10-25：当前源码入口与阅读练习
+
+本节固定到公开仓库提交 `318b7e6ac4e726e88a4ad326214866a93c373b1b`（提交时间 `2026-10-24T02:18:57Z`）。只对下面列出的文件和机制重新核对；后面的历史长文继续按各自快照阅读，不把新 HEAD 当作全部旧结论的重新验证。
+
+本次公开变更日志列到 `2.1.310`。其中包含符号链接目标的权限提示、超长上下文压缩等修正；前一版本还列出 shell 启动文件和沙箱边界相关修复。它们能证明官方发布了这些行为变化，不能证明私有运行时采用了某个内部算法。
+
+学习时可以把一条修复改写成自己的回归案例，例如“允许读某目录时，符号链接指向目录外会怎样”。用自己有权限的测试目录复现边界即可；本次没有运行 Claude Code 的内部测试，也没有把公开仓库视为完整开源运行时。
+
+### 本节的核验依据
+
+2026-10-25 查阅。下面的链接支持本节的机制说明；练习场景和选型建议是本教程的教学设计。
+
+- [anthropics/claude-code / CHANGELOG.md](https://github.com/anthropics/claude-code/blob/318b7e6ac4e726e88a4ad326214866a93c373b1b/CHANGELOG.md)
+- [anthropics/claude-code / README.md](https://github.com/anthropics/claude-code/blob/318b7e6ac4e726e88a4ad326214866a93c373b1b/README.md)
+
+> 以下为历史快照研究。涉及路径、默认值和产品行为时，请同时查看上面的本次核对范围。
+
 > **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `analyzed snapshot inside document; HEAD rechecked 45bdfa96ca415da92e62b6ca85a1d6e29adf3c44`

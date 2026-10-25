@@ -30,7 +30,7 @@ Skill、Tool、Prompt 是能力建模概念；MCP/A2A/ACP 是互操作协议。�
 
 当前规范以**无状态核心**为方向：每个请求自描述，旧式“Host 永久持有 Client session、Client 永久连接 Server”不再是通用前提。HTTP 请求可用 `Mcp-Method` / `Mcp-Name` 等头辅助路由；list 结果支持稳定排序与 cache hint；server-to-client 多轮交互转向 Multi Round-Trip Requests。Tasks、MCP Apps、Enterprise Managed Authorization 等属于 extensions，采用时需记录扩展版本与能力协商。
 
-授权必须校验 issuer，远程部署仍需 TLS、client identity、resource/operation scope、redirect/SSRF 防护与最小权限。SDK API 不等于规范本身；TypeScript/Python/Go/C# Tier 1 SDK 已面向该 revision，Rust 支持状态需按采用时版本复查。
+授权必须校验 issuer，远程部署仍需 TLS、client identity、resource/operation scope、redirect/SSRF 防护与最小权限。SDK API 不等于规范本身；各语言 SDK 对该 revision 的支持必须按所用版本的发布说明与契约测试核对；不能从语言名称或维护等级推断兼容。
 
 ## 3. A2A 1.0
 
@@ -61,6 +61,25 @@ ACP 用 JSON-RPC 风格接口标准化 editor/client 与 coding agent 的交互�
 - [MCP 2026-07-28 specification](https://modelcontextprotocol.io/specification/2026-07-28)
 - [MCP 2026-07-28 release notes](https://blog.modelcontextprotocol.io/posts/2026-07-28/)
 - [A2A latest specification](https://a2a-protocol.org/latest/specification/)
-- [A2A v1.0 changes](https://a2a-protocol.org/latest/specification/whats-new-v1/)
 - [ACP introduction](https://agentclientprotocol.com/get-started/introduction)
 - [ACP architecture](https://agentclientprotocol.com/get-started/architecture)
+
+<!-- evidence-update:2026-10-25 -->
+
+## 按版本接线：别把三个握手过程混用
+
+本次复核中，MCP 的规范入口仍指向 `2026-07-28`。这一版删除了旧的 `initialize` 握手与协议级 session，加入 `server/discover`，每个请求携带版本和能力信息。旧 SDK 或旧 Server 不能仅靠换一个网址就自动获得这些行为。
+
+MCP 这一版还要求结果区分 `complete` 与 `input_required`；流中断后重新发起请求，需要考虑业务动作会不会重复。协议请求 ID 用来对应请求和响应，业务幂等键用来避免重复动作，两者用途不同。
+
+ACP 官方文档当前把 v1 标成 Latest、v2 标成 Draft。v1 仍有自己的初始化流程，不能把 MCP 的变化套到 ACP。A2A 则应以当前规范中的版本、任务与绑定定义为准；本页原来的 `whats-new-v1` 链接已经失效，阅读应回到规范入口。
+
+练习可以只做一张兼容表：客户端版本、服务端版本、协议 revision、可用扩展、失败处理。先让普通查询跑通，再测试版本不匹配、取消和结果未知，最后才接有副作用的工具。
+
+### 本节的核验依据
+
+2026-10-25 查阅。下面的链接支持本节的机制说明；练习场景和选型建议是本教程的教学设计。
+
+- [MCP 2026-07-28：规范变更](https://modelcontextprotocol.io/specification/2026-07-28/changelog)
+- [ACP v1：初始化](https://agentclientprotocol.com/protocol/v1/initialization)
+- [A2A：当前规范](https://a2a-protocol.org/latest/specification/)

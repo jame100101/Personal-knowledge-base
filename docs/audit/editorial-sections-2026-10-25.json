@@ -1,0 +1,920 @@
+{
+  "content/Agent开发/01-Agent基础/05-统一工程模型与概念边界.md": {
+    "section": "把“查工单”按责任拆开看",
+    "sources": [
+      {
+        "title": "OpenAI Agents SDK：本地 context 与模型 context（固定提交）",
+        "url": "https://github.com/openai/openai-agents-python/blob/0dc4cf152bff1f50bdc0e41f28808563406545b2/docs/context.md"
+      }
+    ]
+  },
+  "content/Agent开发/02-Agent Loop/02-结构化输出与状态机.md": {
+    "section": "先过格式关，再过业务关",
+    "sources": [
+      {
+        "title": "Pydantic AI：输出模式与校验（固定提交）",
+        "url": "https://github.com/pydantic/pydantic-ai/blob/4ee11516b5be6b767654304ec8fe346b81369597/docs/output.md"
+      }
+    ]
+  },
+  "content/Agent开发/02-Agent Loop/08-Loop分层与机制选择.md": {
+    "section": "用一次中断决定是否需要更重的运行时",
+    "sources": [
+      {
+        "title": "Pydantic AI：持久执行与存储的区别（固定提交）",
+        "url": "https://github.com/pydantic/pydantic-ai/blob/4ee11516b5be6b767654304ec8fe346b81369597/docs/durable_execution/overview.md"
+      },
+      {
+        "title": "LangGraph：检查点与重放",
+        "url": "https://docs.langchain.com/oss/python/langgraph/checkpointers"
+      }
+    ]
+  },
+  "content/Agent开发/03-Context Engineering/01-Context Engineering总览.md": {
+    "section": "从一份工单开始装上下文",
+    "sources": [
+      {
+        "title": "OpenAI Agents SDK：本地 context 与模型 context（固定提交）",
+        "url": "https://github.com/openai/openai-agents-python/blob/0dc4cf152bff1f50bdc0e41f28808563406545b2/docs/context.md"
+      }
+    ]
+  },
+  "content/Agent开发/03-Context Engineering/04-Context Manifest与Assembly.md": {
+    "section": "给被删掉的材料也留一条记录",
+    "sources": [
+      {
+        "title": "OpenAI Agents SDK：本地 context 与模型 context（固定提交）",
+        "url": "https://github.com/openai/openai-agents-python/blob/0dc4cf152bff1f50bdc0e41f28808563406545b2/docs/context.md"
+      },
+      {
+        "title": "OWASP：提示注入的分层防护",
+        "url": "https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html"
+      }
+    ]
+  },
+  "content/Agent开发/03-Context Engineering/05-Token Budget Compaction Prompt Cache与History.md": {
+    "section": "压缩更勤，不一定更便宜",
+    "sources": [
+      {
+        "title": "Hermes：micro-compaction 的成本与限制（固定提交）",
+        "url": "https://github.com/NousResearch/hermes-agent/blob/4ea8d23cc9f527332ccb1d55359b27741b6ea51b/website/docs/developer-guide/micro-compaction.md"
+      },
+      {
+        "title": "Pydantic AI：持久执行与存储的区别（固定提交）",
+        "url": "https://github.com/pydantic/pydantic-ai/blob/4ee11516b5be6b767654304ec8fe346b81369597/docs/durable_execution/overview.md"
+      }
+    ]
+  },
+  "content/Agent开发/03-Context Engineering/06-JIT Retrieval与Progressive Disclosure.md": {
+    "section": "先拿目录，再拿需要的那一页",
+    "sources": [
+      {
+        "title": "Agent Skills 格式规范",
+        "url": "https://agentskills.io/specification"
+      }
+    ]
+  },
+  "content/Agent开发/03-Context Engineering/07-Context Trust与Prompt Injection边界.md": {
+    "section": "一段网页文字怎样越过边界",
+    "sources": [
+      {
+        "title": "OWASP：提示注入的分层防护",
+        "url": "https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html"
+      },
+      {
+        "title": "OpenAI Agents SDK：guardrail 的执行位置与并发模式（固定提交）",
+        "url": "https://github.com/openai/openai-agents-python/blob/0dc4cf152bff1f50bdc0e41f28808563406545b2/docs/guardrails.md"
+      }
+    ]
+  },
+  "content/Agent开发/04-Tools与Runtime/00-Tool与Runtime边界.md": {
+    "section": "名字叫文件工具，不代表运行在沙箱里",
+    "sources": [
+      {
+        "title": "Deep Agents FilesystemBackend 的安全边界（固定源码）",
+        "url": "https://github.com/langchain-ai/deepagents/blob/793ac5af081079977616fe1925b09670871121d3/libs/deepagents/deepagents/backends/filesystem.py"
+      }
+    ]
+  },
+  "content/Agent开发/04-Tools与Runtime/02-Browser Runtime/01-Browser Agent观察动作循环.md": {
+    "section": "点击之后，再观察一次",
+    "sources": [
+      {
+        "title": "Playwright：定位器",
+        "url": "https://playwright.dev/docs/locators"
+      },
+      {
+        "title": "Playwright：自动等待",
+        "url": "https://playwright.dev/docs/actionability"
+      }
+    ]
+  },
+  "content/Agent开发/04-Tools与Runtime/02-Browser Runtime/02-Playwright可靠操作与失败恢复.md": {
+    "section": "自动等待的边界与语言示例",
+    "sources": [
+      {
+        "title": "Playwright：自动等待",
+        "url": "https://playwright.dev/docs/actionability"
+      },
+      {
+        "title": "Playwright：支持的语言",
+        "url": "https://playwright.dev/docs/languages"
+      }
+    ]
+  },
+  "content/Agent开发/04-Tools与Runtime/02-工具Schema权限与幂等.md": {
+    "section": "审批通过的究竟是哪一次调用",
+    "sources": [
+      {
+        "title": "OpenAI Agents SDK：审批与恢复（固定提交）",
+        "url": "https://github.com/openai/openai-agents-python/blob/0dc4cf152bff1f50bdc0e41f28808563406545b2/docs/human_in_the_loop.md"
+      }
+    ]
+  },
+  "content/Agent开发/04-Tools与Runtime/03-工具失败空结果与证据.md": {
+    "section": "把“没查到”与“没查成”分开",
+    "sources": [
+      {
+        "title": "goose：工具循环与错误回传（固定提交）",
+        "url": "https://github.com/aaif-goose/goose/blob/2b17adc33a7176e701c2fef9578a5fc5834ea89a/documentation/docs/goose-architecture/goose-architecture.md"
+      }
+    ]
+  },
+  "content/Agent开发/05-Knowledge与Memory/00-Knowledge与Memory边界.md": {
+    "section": "同一条信息，按用途选择存放位置",
+    "sources": [
+      {
+        "title": "LangGraph：checkpointer 与 store 的分工",
+        "url": "https://docs.langchain.com/oss/python/langgraph/persistence"
+      }
+    ]
+  },
+  "content/Agent开发/05-Knowledge与Memory/01-Knowledge/02-Chunk Embed Retrieve Rerank.md": {
+    "section": "用一个错误码检查检索有没有帮上忙",
+    "sources": [
+      {
+        "title": "Haystack：DocumentJoiner 与 RRF",
+        "url": "https://docs.haystack.deepset.ai/docs/documentjoiner"
+      },
+      {
+        "title": "Sentence Transformers：Cross-Encoder",
+        "url": "https://www.sbert.net/examples/cross_encoder/applications/README.html"
+      }
+    ]
+  },
+  "content/Agent开发/05-Knowledge与Memory/01-Knowledge/03-引用Grounded Answer与失败处理.md": {
+    "section": "给引用做一个可失败的小测试",
+    "sources": [
+      {
+        "title": "OWASP：提示注入的分层防护",
+        "url": "https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html"
+      }
+    ]
+  },
+  "content/Agent开发/05-Knowledge与Memory/02-Memory/04-记忆写入检索更新与遗忘.md": {
+    "section": "记住偏好之前，先想好怎样改掉它",
+    "sources": [
+      {
+        "title": "Deep Agents StoreBackend（固定源码）",
+        "url": "https://github.com/langchain-ai/deepagents/blob/793ac5af081079977616fe1925b09670871121d3/libs/deepagents/deepagents/backends/store.py"
+      },
+      {
+        "title": "LangGraph：Store 的作用域",
+        "url": "https://docs.langchain.com/oss/python/langgraph/stores"
+      }
+    ]
+  },
+  "content/Agent开发/06-Agent Harness/02-Registry Permission Session与Compaction.md": {
+    "section": "工具列表变了，旧审批还能不能用",
+    "sources": [
+      {
+        "title": "OpenAI Agents SDK：本地 context 与模型 context（固定提交）",
+        "url": "https://github.com/openai/openai-agents-python/blob/0dc4cf152bff1f50bdc0e41f28808563406545b2/docs/context.md"
+      },
+      {
+        "title": "OpenAI Agents SDK：审批与恢复（固定提交）",
+        "url": "https://github.com/openai/openai-agents-python/blob/0dc4cf152bff1f50bdc0e41f28808563406545b2/docs/human_in_the_loop.md"
+      }
+    ]
+  },
+  "content/Agent开发/06-Agent Harness/03-Trace调试恢复与验证.md": {
+    "section": "恢复一段会话时，先找结果未知的动作",
+    "sources": [
+      {
+        "title": "LangGraph：interrupt 恢复时会重新执行节点",
+        "url": "https://docs.langchain.com/oss/python/langgraph/interrupts"
+      },
+      {
+        "title": "Pydantic AI：持久执行与存储的区别（固定提交）",
+        "url": "https://github.com/pydantic/pydantic-ai/blob/4ee11516b5be6b767654304ec8fe346b81369597/docs/durable_execution/overview.md"
+      }
+    ]
+  },
+  "content/Agent开发/07-Skills与Protocols/01-Skill Tool Prompt与MCP边界.md": {
+    "section": "用发布说明把四者串起来",
+    "sources": [
+      {
+        "title": "Agent Skills 格式规范",
+        "url": "https://agentskills.io/specification"
+      },
+      {
+        "title": "MCP：核心能力与扩展",
+        "url": "https://modelcontextprotocol.io/specification/2026-07-28"
+      }
+    ]
+  },
+  "content/Agent开发/07-Skills与Protocols/02-SKILL设计渐进加载与Smoke Test.md": {
+    "section": "先测会不会误触发，再测写得好不好",
+    "sources": [
+      {
+        "title": "Agent Skills 格式规范",
+        "url": "https://agentskills.io/specification"
+      }
+    ]
+  },
+  "content/Agent开发/08-Evaluation Observability Safety/03-Prompt Injection权限与Human in the loop.md": {
+    "section": "把防护放在副作用发生之前",
+    "sources": [
+      {
+        "title": "OpenAI Agents SDK：guardrail 的执行位置与并发模式（固定提交）",
+        "url": "https://github.com/openai/openai-agents-python/blob/0dc4cf152bff1f50bdc0e41f28808563406545b2/docs/guardrails.md"
+      },
+      {
+        "title": "OpenAI Agents SDK：审批与恢复（固定提交）",
+        "url": "https://github.com/openai/openai-agents-python/blob/0dc4cf152bff1f50bdc0e41f28808563406545b2/docs/human_in_the_loop.md"
+      }
+    ]
+  },
+  "content/Agent开发/08-Evaluation Observability Safety/02-Trace指标与故障定位.md": {
+    "section": "先画一条能串起来的调用链",
+    "sources": [
+      {
+        "title": "OpenTelemetry：GenAI Agent span 语义约定",
+        "url": "https://github.com/open-telemetry/semantic-conventions-genai/blob/main/docs/gen-ai/gen-ai-agent-spans.md"
+      }
+    ]
+  },
+  "content/Agent开发/08-Evaluation Observability Safety/04-Agent Benchmark Map.md": {
+    "section": "先核对基准版本，再谈分数",
+    "sources": [
+      {
+        "title": "Terminal-Bench：当前仓库与 Harbor 运行入口",
+        "url": "https://github.com/harbor-framework/terminal-bench"
+      },
+      {
+        "title": "OSWorld：Verified 修订说明",
+        "url": "https://github.com/xlang-ai/OSWorld"
+      },
+      {
+        "title": "tau2-bench：官方任务与评测实现",
+        "url": "https://github.com/sierra-research/tau2-bench"
+      },
+      {
+        "title": "GAIA：官方数据卡与使用条件",
+        "url": "https://huggingface.co/datasets/gaia-benchmark/GAIA"
+      },
+      {
+        "title": "WebArena：官方环境与评测",
+        "url": "https://github.com/web-arena-x/webarena"
+      },
+      {
+        "title": "SWE-bench：评测输入、环境与结果",
+        "url": "https://www.swebench.com/SWE-bench/guides/evaluation/"
+      }
+    ]
+  },
+  "content/Agent开发/08-Evaluation Observability Safety/05-Evaluation闭环与发布门.md": {
+    "section": "不要让平均分藏住最贵的一次失败",
+    "sources": [
+      {
+        "title": "SWE-bench：评测输入、环境与结果",
+        "url": "https://www.swebench.com/SWE-bench/guides/evaluation/"
+      },
+      {
+        "title": "OpenTelemetry：GenAI Agent span 语义约定",
+        "url": "https://github.com/open-telemetry/semantic-conventions-genai/blob/main/docs/gen-ai/gen-ai-agent-spans.md"
+      }
+    ]
+  },
+  "content/Agent开发/09-Agent Evolution/02-Skill Workflow与Program Evolution.md": {
+    "section": "一次只改一个可解释的地方",
+    "sources": [
+      {
+        "title": "Agent Skills：能力文件与附属资源",
+        "url": "https://agentskills.io/specification"
+      },
+      {
+        "title": "LangGraph：工作流与 Agent 模式",
+        "url": "https://docs.langchain.com/oss/python/langgraph/workflows-agents"
+      }
+    ]
+  },
+  "content/Agent开发/10-Multi-Agent/01-角色职责与输入输出边界.md": {
+    "section": "给子任务一张足够用的任务单",
+    "sources": [
+      {
+        "title": "Deep Agents：子 Agent 中间件（固定源码）",
+        "url": "https://github.com/langchain-ai/deepagents/blob/793ac5af081079977616fe1925b09670871121d3/libs/deepagents/deepagents/middleware/subagents.py"
+      }
+    ]
+  },
+  "content/Agent开发/10-Multi-Agent/02-Supervisor Graph与停止条件.md": {
+    "section": "等待、失败和完成要有不同的出口",
+    "sources": [
+      {
+        "title": "LangGraph：工作流与 Agent 模式",
+        "url": "https://docs.langchain.com/oss/python/langgraph/workflows-agents"
+      },
+      {
+        "title": "LangGraph：中断与恢复",
+        "url": "https://docs.langchain.com/oss/python/langgraph/interrupts"
+      }
+    ]
+  },
+  "content/Agent开发/10-Multi-Agent/03-故障模式与单Agent判断.md": {
+    "section": "做一次公平的对照，再决定拆不拆",
+    "sources": [
+      {
+        "title": "LangGraph：工作流与 Agent 模式",
+        "url": "https://docs.langchain.com/oss/python/langgraph/workflows-agents"
+      },
+      {
+        "title": "Deep Agents：子 Agent 中间件（固定源码）",
+        "url": "https://github.com/langchain-ai/deepagents/blob/793ac5af081079977616fe1925b09670871121d3/libs/deepagents/deepagents/middleware/subagents.py"
+      }
+    ]
+  },
+  "content/Agent开发/12-Production Agent/01-用户任务与成功标准.md": {
+    "section": "把“完成”改写成能观察的结果",
+    "sources": [
+      {
+        "title": "Agents SDK：运行循环（固定提交）",
+        "url": "https://github.com/openai/openai-agents-python/blob/0dc4cf152bff1f50bdc0e41f28808563406545b2/docs/running_agents.md"
+      },
+      {
+        "title": "SWE-bench：评测输入、环境与结果",
+        "url": "https://www.swebench.com/SWE-bench/guides/evaluation/"
+      }
+    ]
+  },
+  "content/Agent开发/12-Production Agent/03-README运行手册与交付检查表.md": {
+    "section": "让运行手册接住“结果未知”",
+    "sources": [
+      {
+        "title": "Pydantic AI：持久执行（固定提交）",
+        "url": "https://github.com/pydantic/pydantic-ai/blob/4ee11516b5be6b767654304ec8fe346b81369597/docs/durable_execution/overview.md"
+      }
+    ]
+  },
+  "content/Agent开发/13-Project Ladder/01-P0到P7 Agent工程项目阶梯.md": {
+    "section": "每升一级，只引入一个新问题",
+    "sources": [
+      {
+        "title": "Agents SDK：运行循环（固定提交）",
+        "url": "https://github.com/openai/openai-agents-python/blob/0dc4cf152bff1f50bdc0e41f28808563406545b2/docs/running_agents.md"
+      },
+      {
+        "title": "Pydantic AI：持久执行（固定提交）",
+        "url": "https://github.com/pydantic/pydantic-ai/blob/4ee11516b5be6b767654304ec8fe346b81369597/docs/durable_execution/overview.md"
+      }
+    ]
+  },
+  "content/Agent开发/05-Knowledge与Memory/02-Memory/02-Short-term Memory短期记忆.md": {
+    "section": "重启测试，比聊天轮数更能说明问题",
+    "sources": [
+      {
+        "title": "Deep Agents：thread 内的文件状态（固定源码）",
+        "url": "https://github.com/langchain-ai/deepagents/blob/793ac5af081079977616fe1925b09670871121d3/libs/deepagents/deepagents/backends/state.py"
+      },
+      {
+        "title": "LangGraph：Persistence",
+        "url": "https://docs.langchain.com/oss/python/langgraph/persistence"
+      }
+    ]
+  },
+  "content/Agent开发/05-Knowledge与Memory/02-Memory/03-Long-term Memory长期记忆.md": {
+    "section": "跨会话不是跨所有用户",
+    "sources": [
+      {
+        "title": "Deep Agents：跨 thread StoreBackend（固定源码）",
+        "url": "https://github.com/langchain-ai/deepagents/blob/793ac5af081079977616fe1925b09670871121d3/libs/deepagents/deepagents/backends/store.py"
+      }
+    ]
+  },
+  "content/Agent开发/07-Skills与Protocols/03-MCP A2A与ACP.md": {
+    "section": "按版本接线：别把三个握手过程混用",
+    "sources": [
+      {
+        "title": "MCP 2026-07-28：规范变更",
+        "url": "https://modelcontextprotocol.io/specification/2026-07-28/changelog"
+      },
+      {
+        "title": "ACP v1：初始化",
+        "url": "https://agentclientprotocol.com/protocol/v1/initialization"
+      },
+      {
+        "title": "A2A：当前规范",
+        "url": "https://a2a-protocol.org/latest/specification/"
+      }
+    ]
+  },
+  "content/Agent开发/02-Agent Loop/01-最小Agent Loop实现.md": {
+    "section": "先用假模型把循环跑明白",
+    "sources": [
+      {
+        "title": "Hermes：回合生命周期与工具执行（固定提交）",
+        "url": "https://github.com/NousResearch/hermes-agent/blob/4ea8d23cc9f527332ccb1d55359b27741b6ea51b/website/docs/developer-guide/agent-loop.md"
+      },
+      {
+        "title": "Agents SDK：运行循环（固定提交）",
+        "url": "https://github.com/openai/openai-agents-python/blob/0dc4cf152bff1f50bdc0e41f28808563406545b2/docs/running_agents.md"
+      }
+    ]
+  },
+  "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_01_CODEX.md": {
+    "section": "2026-10-25：当前源码入口与阅读练习",
+    "sources": [
+      {
+        "title": "openai/codex / codex-rs/core/src/session/turn.rs",
+        "url": "https://github.com/openai/codex/blob/970111f6cb62cc02fe36a82ea7d71b37a2889c97/codex-rs/core/src/session/turn.rs"
+      },
+      {
+        "title": "openai/codex / codex-rs/core/src/session/session.rs",
+        "url": "https://github.com/openai/codex/blob/970111f6cb62cc02fe36a82ea7d71b37a2889c97/codex-rs/core/src/session/session.rs"
+      }
+    ]
+  },
+  "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_02_CLAUDE_CODE.md": {
+    "section": "2026-10-25：当前源码入口与阅读练习",
+    "sources": [
+      {
+        "title": "anthropics/claude-code / CHANGELOG.md",
+        "url": "https://github.com/anthropics/claude-code/blob/318b7e6ac4e726e88a4ad326214866a93c373b1b/CHANGELOG.md"
+      },
+      {
+        "title": "anthropics/claude-code / README.md",
+        "url": "https://github.com/anthropics/claude-code/blob/318b7e6ac4e726e88a4ad326214866a93c373b1b/README.md"
+      }
+    ]
+  },
+  "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_04_HERMES_AGENT.md": {
+    "section": "2026-10-25：当前源码入口与阅读练习",
+    "sources": [
+      {
+        "title": "NousResearch/hermes-agent / website/docs/developer-guide/agent-loop.md",
+        "url": "https://github.com/NousResearch/hermes-agent/blob/4ea8d23cc9f527332ccb1d55359b27741b6ea51b/website/docs/developer-guide/agent-loop.md"
+      },
+      {
+        "title": "NousResearch/hermes-agent / website/docs/developer-guide/micro-compaction.md",
+        "url": "https://github.com/NousResearch/hermes-agent/blob/4ea8d23cc9f527332ccb1d55359b27741b6ea51b/website/docs/developer-guide/micro-compaction.md"
+      }
+    ]
+  },
+  "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_05_OPENCLAW.md": {
+    "section": "2026-10-25：当前源码入口与阅读练习",
+    "sources": [
+      {
+        "title": "openclaw/openclaw / docs/agent-runtime-architecture.md",
+        "url": "https://github.com/openclaw/openclaw/blob/233c8b629a383ac2473e9aa5894d6cfe312860c9/docs/agent-runtime-architecture.md"
+      },
+      {
+        "title": "openclaw/openclaw / README.md",
+        "url": "https://github.com/openclaw/openclaw/blob/233c8b629a383ac2473e9aa5894d6cfe312860c9/README.md"
+      }
+    ]
+  },
+  "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_07_AIDER.md": {
+    "section": "2026-10-25：当前源码入口与阅读练习",
+    "sources": [
+      {
+        "title": "Aider-AI/aider / aider/coders/base_coder.py",
+        "url": "https://github.com/Aider-AI/aider/blob/5dc9490bb35f9729ef2c95d00a19ccd30c26339c/aider/coders/base_coder.py"
+      },
+      {
+        "title": "Aider-AI/aider / README.md",
+        "url": "https://github.com/Aider-AI/aider/blob/5dc9490bb35f9729ef2c95d00a19ccd30c26339c/README.md"
+      }
+    ]
+  },
+  "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_08_GOOSE.md": {
+    "section": "2026-10-25：当前源码入口与阅读练习",
+    "sources": [
+      {
+        "title": "aaif-goose/goose / documentation/docs/goose-architecture/goose-architecture.md",
+        "url": "https://github.com/aaif-goose/goose/blob/2b17adc33a7176e701c2fef9578a5fc5834ea89a/documentation/docs/goose-architecture/goose-architecture.md"
+      },
+      {
+        "title": "aaif-goose/goose / README.md",
+        "url": "https://github.com/aaif-goose/goose/blob/2b17adc33a7176e701c2fef9578a5fc5834ea89a/README.md"
+      }
+    ]
+  },
+  "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_09_OPENCODE.md": {
+    "section": "2026-10-25：当前源码入口与阅读练习",
+    "sources": [
+      {
+        "title": "anomalyco/opencode / packages/core/src/session/runner/index.ts",
+        "url": "https://github.com/anomalyco/opencode/blob/32b57015e5b491a789fba1534ecb472e676c9d8e/packages/core/src/session/runner/index.ts"
+      },
+      {
+        "title": "anomalyco/opencode / packages/core/src/session/runner/step.ts",
+        "url": "https://github.com/anomalyco/opencode/blob/32b57015e5b491a789fba1534ecb472e676c9d8e/packages/core/src/session/runner/step.ts"
+      },
+      {
+        "title": "anomalyco/opencode / packages/core/src/session/run-coordinator.ts",
+        "url": "https://github.com/anomalyco/opencode/blob/32b57015e5b491a789fba1534ecb472e676c9d8e/packages/core/src/session/run-coordinator.ts"
+      }
+    ]
+  },
+  "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_10_DEEPSEEK_HARNESS_WEB.md": {
+    "section": "2026-10-25：当前源码入口与阅读练习",
+    "sources": [
+      {
+        "title": "deepseek-ai/deepseek-harness / docs/architecture.md",
+        "url": "https://github.com/deepseek-ai/deepseek-harness/blob/22ddee3792402c3e70ec5f86a63c3e3e895a2f60/docs/architecture.md"
+      },
+      {
+        "title": "deepseek-ai/deepseek-harness / README.md",
+        "url": "https://github.com/deepseek-ai/deepseek-harness/blob/22ddee3792402c3e70ec5f86a63c3e3e895a2f60/README.md"
+      }
+    ]
+  },
+  "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_11_PI_AGENT.md": {
+    "section": "2026-10-25：当前源码入口与阅读练习",
+    "sources": [
+      {
+        "title": "earendil-works/pi / packages/agent/src/agent-loop.ts",
+        "url": "https://github.com/earendil-works/pi/blob/38ff99177fba21e9c57a670f4e95adcf407c99c7/packages/agent/src/agent-loop.ts"
+      },
+      {
+        "title": "earendil-works/pi / README.md",
+        "url": "https://github.com/earendil-works/pi/blob/38ff99177fba21e9c57a670f4e95adcf407c99c7/README.md"
+      }
+    ]
+  },
+  "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_12_GROK_BUILD.md": {
+    "section": "2026-10-25：当前源码入口与阅读练习",
+    "sources": [
+      {
+        "title": "xai-org/grok-build / README.md",
+        "url": "https://github.com/xai-org/grok-build/blob/2bdd1d6a6369de0e8c68132ea4539e9abd9e14a8/README.md"
+      },
+      {
+        "title": "xai-org/grok-build / SOURCE_REV",
+        "url": "https://github.com/xai-org/grok-build/blob/2bdd1d6a6369de0e8c68132ea4539e9abd9e14a8/SOURCE_REV"
+      },
+      {
+        "title": "xai-org/grok-build / crates/codegen/xai-grok-tools/src/implementations/grok_build/scheduler/occurrence_journal.rs",
+        "url": "https://github.com/xai-org/grok-build/blob/2bdd1d6a6369de0e8c68132ea4539e9abd9e14a8/crates/codegen/xai-grok-tools/src/implementations/grok_build/scheduler/occurrence_journal.rs"
+      }
+    ]
+  },
+  "content/Agent开发/99-现代Agent架构与源码研究/AGENT_SOURCE_06_COMPARISON.md": {
+    "section": "比较前先对齐证据范围",
+    "sources": [
+      {
+        "title": "OpenCode：当前 SessionRunner",
+        "url": "https://github.com/anomalyco/opencode/blob/32b57015e5b491a789fba1534ecb472e676c9d8e/packages/core/src/session/runner/index.ts"
+      },
+      {
+        "title": "OpenClaw：当前运行时边界",
+        "url": "https://github.com/openclaw/openclaw/blob/233c8b629a383ac2473e9aa5894d6cfe312860c9/docs/agent-runtime-architecture.md"
+      },
+      {
+        "title": "Claude Code：公开仓库范围",
+        "url": "https://github.com/anthropics/claude-code/blob/318b7e6ac4e726e88a4ad326214866a93c373b1b/README.md"
+      }
+    ]
+  },
+  "content/Agent开发/99-现代Agent架构与源码研究/00-统一研究模板与证据等级.md": {
+    "section": "一条源码结论至少留下这三样东西",
+    "sources": [
+      {
+        "title": "OpenCode：当前 SessionRunner",
+        "url": "https://github.com/anomalyco/opencode/blob/32b57015e5b491a789fba1534ecb472e676c9d8e/packages/core/src/session/runner/index.ts"
+      }
+    ]
+  },
+  "content/Agent开发/99-现代Agent架构与源码研究/000-Coding Agent研究阅读顺序.md": {
+    "section": "先选一条短链路读完",
+    "sources": [
+      {
+        "title": "Pi：当前循环入口",
+        "url": "https://github.com/earendil-works/pi/blob/38ff99177fba21e9c57a670f4e95adcf407c99c7/packages/agent/src/agent-loop.ts"
+      },
+      {
+        "title": "OpenCode：当前 SessionRunner",
+        "url": "https://github.com/anomalyco/opencode/blob/32b57015e5b491a789fba1534ecb472e676c9d8e/packages/core/src/session/runner/index.ts"
+      }
+    ]
+  },
+  "content/Java开发/00-Java后端学习路线.md": {
+    "section": "第一周先交付一件能解释的事",
+    "sources": [
+      {
+        "title": "Spring Boot：系统要求",
+        "url": "https://docs.spring.io/spring-boot/system-requirements.html"
+      },
+      {
+        "title": "Spring Cloud：项目与版本配套",
+        "url": "https://spring.io/projects/spring-cloud/"
+      }
+    ]
+  },
+  "content/Java开发/02-JVM与并发/00-JVM与并发学习导图.md": {
+    "section": "先用一个慢请求练习诊断",
+    "sources": [
+      {
+        "title": "JDK 25：jcmd 诊断命令与影响说明",
+        "url": "https://docs.oracle.com/en/java/javase/25/docs/specs/man/jcmd.html"
+      }
+    ]
+  },
+  "content/Java开发/02-JVM与并发/03-JMM线程池锁原子类与CompletableFuture.md": {
+    "section": "把“可见”与“不可分割”分开验证",
+    "sources": [
+      {
+        "title": "JLS 25 §17.4.5：线程之间的先后保证",
+        "url": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-17.html#jls-17.4.5"
+      },
+      {
+        "title": "CompletableFuture：执行器、取消与超时语义",
+        "url": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html"
+      }
+    ]
+  },
+  "content/Java开发/03-工程基础与Internet-Linux/04-Internet请求完整链路.md": {
+    "section": "超时后先判断操作是否可能已经成功",
+    "sources": [
+      {
+        "title": "RFC 9110 §9.2.2：幂等性与自动重试",
+        "url": "https://www.rfc-editor.org/rfc/rfc9110.html#section-9.2.2"
+      }
+    ]
+  },
+  "content/Java开发/05-Spring Framework/05-Spring产品族责任边界.md": {
+    "section": "用一条请求辨认每个项目的工作",
+    "sources": [
+      {
+        "title": "Spring Framework：项目总览",
+        "url": "https://docs.spring.io/spring-framework/reference/overview.html"
+      },
+      {
+        "title": "Spring Cloud：项目与版本配套",
+        "url": "https://spring.io/projects/spring-cloud/"
+      }
+    ]
+  },
+  "content/Java开发/07-数据访问与事务/05-JDBC vs MyBatis vs JPA决策.md": {
+    "section": "用同一条查询比较，而不是比较口号",
+    "sources": [
+      {
+        "title": "Spring JDBC：JdbcClient 与参数化查询",
+        "url": "https://docs.spring.io/spring-framework/reference/data-access/jdbc/core.html"
+      }
+    ]
+  },
+  "content/Java开发/08-测试与质量工程/05-Testing Portfolio与发布回归.md": {
+    "section": "把串行成功推进到并发失败",
+    "sources": [
+      {
+        "title": "Spring Boot：测试支持的职责与模块",
+        "url": "https://docs.spring.io/spring-boot/reference/testing/index.html"
+      },
+      {
+        "title": "Debezium：Outbox Event Router 的事件 ID 与分区键",
+        "url": "https://debezium.io/documentation/reference/stable/transformations/outbox-event-router.html"
+      }
+    ]
+  },
+  "content/Java开发/10-应用架构与模块化单体/00-应用架构导学.md": {
+    "section": "先画谁能访问谁，再画目录",
+    "sources": [
+      {
+        "title": "Spring Modulith：模块验证规则",
+        "url": "https://docs.spring.io/spring-modulith/reference/verification.html"
+      }
+    ]
+  },
+  "content/Java开发/10-应用架构与模块化单体/01-分层按功能打包与领域边界.md": {
+    "section": "“公开 API”不能只靠文件夹名字",
+    "sources": [
+      {
+        "title": "Spring Modulith：模块验证规则",
+        "url": "https://docs.spring.io/spring-modulith/reference/verification.html"
+      },
+      {
+        "title": "Spring Modulith：模块模型与命名接口",
+        "url": "https://docs.spring.io/spring-modulith/reference/fundamentals.html"
+      }
+    ]
+  },
+  "content/Java开发/10-应用架构与模块化单体/02-Spring Modulith模块验证测试事件与可观测性.md": {
+    "section": "区分“发过事件”与“处理完事件”",
+    "sources": [
+      {
+        "title": "Spring Modulith：事件发布登记与恢复",
+        "url": "https://docs.spring.io/spring-modulith/reference/events.html"
+      }
+    ]
+  },
+  "content/Java开发/10-应用架构与模块化单体/03-事务边界Outbox与幂等.md": {
+    "section": "沿着一次崩溃看 Outbox 的作用",
+    "sources": [
+      {
+        "title": "Debezium：Outbox Event Router 的事件 ID 与分区键",
+        "url": "https://debezium.io/documentation/reference/stable/transformations/outbox-event-router.html"
+      }
+    ]
+  },
+  "content/Java开发/10-应用架构与模块化单体/04-模块化单体到微服务什么时候拆.md": {
+    "section": "用一个问题检验拆分收益",
+    "sources": [
+      {
+        "title": "Microsoft：服务间通信的故障与耦合",
+        "url": "https://learn.microsoft.com/en-us/azure/architecture/microservices/design/interservice-communication"
+      }
+    ]
+  },
+  "content/Java开发/11-缓存与搜索/00-缓存与搜索导学.md": {
+    "section": "先观察“写成功但暂时搜不到”",
+    "sources": [
+      {
+        "title": "Elasticsearch：近实时搜索与 refresh",
+        "url": "https://www.elastic.co/docs/manage-data/data-store/near-real-time-search"
+      }
+    ]
+  },
+  "content/Java开发/12-消息与事件驱动/00-本阶段导学.md": {
+    "section": "两个确认回答的是不同问题",
+    "sources": [
+      {
+        "title": "RabbitMQ：发布确认与消费者确认互相独立",
+        "url": "https://www.rabbitmq.com/docs/confirms"
+      }
+    ]
+  },
+  "content/Java开发/14-性能工程/00-性能工程导学.md": {
+    "section": "让性能结论能够被别人复查",
+    "sources": [
+      {
+        "title": "JDK 25：jcmd 诊断命令与影响说明",
+        "url": "https://docs.oracle.com/en/java/javase/25/docs/specs/man/jcmd.html"
+      }
+    ]
+  },
+  "content/Java开发/16-可选专项/03-MongoDB数据模型/01-MongoDB文档模型与选型.md": {
+    "section": "从订单地址与评论列表理解嵌入和引用",
+    "sources": [
+      {
+        "title": "MongoDB：数据建模与嵌入/引用取舍",
+        "url": "https://www.mongodb.com/docs/manual/data-modeling/best-practices/"
+      }
+    ]
+  },
+  "content/Java开发/16-可选专项/04-Spring AI/01-Spring AI工程实现总览.md": {
+    "section": "先验证结构，再验证答案",
+    "sources": [
+      {
+        "title": "Spring AI：版本配套与入门",
+        "url": "https://docs.spring.io/spring-ai/reference/getting-started.html"
+      },
+      {
+        "title": "Spring AI：结构化输出的保证范围",
+        "url": "https://docs.spring.io/spring-ai/reference/api/structured-output-converter.html"
+      }
+    ]
+  },
+  "content/Java开发/17-项目阶梯/01-P0到P8 Java后端项目阶梯.md": {
+    "section": "同一个笔记应用，分阶段增加责任",
+    "sources": [
+      {
+        "title": "Spring Boot：测试支持的职责与模块",
+        "url": "https://docs.spring.io/spring-boot/reference/testing/index.html"
+      },
+      {
+        "title": "Spring Modulith：模块验证规则",
+        "url": "https://docs.spring.io/spring-modulith/reference/verification.html"
+      }
+    ]
+  },
+  "content/Java开发/99-开源项目架构研究/00-统一源码研究模板.md": {
+    "section": "给读者一条不会随主分支变化的路径",
+    "sources": [
+      {
+        "title": "GitHub：获取文件的永久链接",
+        "url": "https://docs.github.com/en/repositories/working-with-files/using-files/getting-permanent-links-to-files"
+      }
+    ]
+  },
+  "content/语言基础/00-语言基础学习路线.md": {
+    "section": "第一份作业：让类型错误和数据错误分别出现",
+    "sources": [
+      {
+        "title": "TypeScript Handbook：学习范围",
+        "url": "https://www.typescriptlang.org/docs/handbook/intro.html"
+      },
+      {
+        "title": "TypeScript：类型断言不执行运行时检查",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      }
+    ]
+  },
+  "content/语言基础/02-TypeScript跨语言对照/05-TypeScript独有能力与缺失能力清单.md": {
+    "section": "“突出”不等于全世界只有它有",
+    "sources": [
+      {
+        "title": "TypeScript：映射类型与键重映射",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/mapped-types.html"
+      },
+      {
+        "title": "TypeScript：类型断言的运行时边界",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+      }
+    ]
+  },
+  "content/前端架构/04-React从入门到原理/02-Hooks-Effect与请求竞态.md": {
+    "section": "练习要同时检查结果、错误和等待状态",
+    "sources": [
+      {
+        "title": "React useEffect：手动获取数据与竞态清理",
+        "url": "https://react.dev/reference/react/useEffect"
+      }
+    ]
+  },
+  "content/前端架构/03-Vue从入门到原理/02-computed-watch与副作用清理.md": {
+    "section": "两个清理 API 的限制别混淆",
+    "sources": [
+      {
+        "title": "Vue Watchers：两种清理注册方式及限制",
+        "url": "https://vuejs.org/guide/essentials/watchers.html#side-effect-cleanup"
+      }
+    ]
+  },
+  "content/前端架构/05-路由数据与渲染/03-CSR-SSR-SSG与Hydration.md": {
+    "section": "个性化设置先保证首屏一致",
+    "sources": [
+      {
+        "title": "React hydrateRoot：初始内容一致与恢复限制",
+        "url": "https://react.dev/reference/react-dom/client/hydrateRoot"
+      },
+      {
+        "title": "Vue SSR：Hydration Mismatch",
+        "url": "https://vuejs.org/guide/scaling-up/ssr.html#hydration-mismatch"
+      }
+    ]
+  },
+  "content/后端知识/05-身份权限与安全/01-认证授权多租户与输入边界.md": {
+    "section": "用实际业务身份测试行级权限",
+    "sources": [
+      {
+        "title": "PostgreSQL 18：行级权限、角色例外与写入检查",
+        "url": "https://www.postgresql.org/docs/18/ddl-rowsecurity.html"
+      }
+    ]
+  },
+  "content/后端知识/04-分布式与可靠性/03-超时重试限流熔断与隔离.md": {
+    "section": "一次请求的预算之外，还要看整体重试量",
+    "sources": [
+      {
+        "title": "Google SRE：Deciding to Retry 与多层重试放大",
+        "url": "https://sre.google/sre-book/handling-overload/"
+      }
+    ]
+  },
+  "content/后端知识/06-部署与可观测性/02-部署配置迁移备份与回滚.md": {
+    "section": "发布前运行一次旧版本兼容实验",
+    "sources": [
+      {
+        "title": "PostgreSQL 18：修改表与删除列的效果",
+        "url": "https://www.postgresql.org/docs/18/ddl-alter.html"
+      }
+    ]
+  },
+  "content/软件工程/06-构建发布与运行/01-构建环境与持续集成.md": {
+    "section": "再看流水线运行的第三方代码",
+    "sources": [
+      {
+        "title": "GitHub Actions：依赖固定、最小权限与安全使用",
+        "url": "https://docs.github.com/en/actions/reference/security/secure-use"
+      },
+      {
+        "title": "GitHub：工作流依赖锁文件的预览状态与范围",
+        "url": "https://docs.github.com/en/actions/concepts/security/workflow-dependency-lockfiles"
+      }
+    ]
+  },
+  "content/软件工程/06-构建发布与运行/02-部署发布回滚与观察.md": {
+    "section": "把内容发布也做成可核对的变更",
+    "sources": [
+      {
+        "title": "PostgreSQL 18：结构变更与数据影响",
+        "url": "https://www.postgresql.org/docs/18/ddl-alter.html"
+      },
+      {
+        "title": "GitHub：固定源码版本的永久链接",
+        "url": "https://docs.github.com/en/repositories/working-with-files/using-files/getting-permanent-links-to-files"
+      }
+    ]
+  }
+}

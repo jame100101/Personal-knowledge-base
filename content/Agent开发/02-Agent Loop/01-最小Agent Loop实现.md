@@ -33,7 +33,7 @@ assistant: tool_call(...) 或 final_answer
 
 ## 3. 协议伪代码：先看清每轮先后关系
 
-下面四段是同一逻辑的教学伪代码，`Tool`、模型适配器、schema 与执行器都需另行实现，并非可直接复制运行的 SDK。执行器必须负责权限、异常归一化与取消；循环条件只检查轮与轮之间，不能打断已经卡住的调用。计时预算应使用单调时钟，重启后的 deadline 则需另外持久化和换算。
+下面四段是同一逻辑的教学伪代码，`Tool`、模型适配器、schema 与执行器都需另行实现，并非可直接复制运行的 SDK。执行器必须负责权限、异常归一化与取消；循环条件只检查轮与轮之间，不能打断已经卡住的调用。计时预算应使用单调时钟，例如 JavaScript 初始化为 `deadline = performance.now() + timeoutMs`，检查时也使用同一时钟；重启后的 deadline 则需另外持久化和换算。
 
 ```python group=multi-3d8a038d43df label=Python
 async def run_agent(goal, tools, options):
@@ -109,7 +109,7 @@ async fn run_agent(
 async function runAgent(goal, tools, options) {
   const state = createInitialState(goal, options)
 
-  while (state.step < state.maxSteps && Date.now() < state.deadline) {
+  while (state.step < state.maxSteps && performance.now() < state.deadline) {
     const response = await callModel({
       messages: state.messages,
       tools: tools.map(toToolSchema),
@@ -143,7 +143,7 @@ async function runAgent(goal, tools, options) {
 async function runAgent(goal: string, tools: Tool[], options: Options) {
   const state = createInitialState(goal, options)
 
-  while (state.step < state.maxSteps && Date.now() < state.deadline) {
+  while (state.step < state.maxSteps && performance.now() < state.deadline) {
     const response = await callModel({
       messages: state.messages,
       tools: tools.map(toToolSchema),
@@ -366,3 +366,32 @@ type FinalResult = {
 生产 Runner 还需增加：并行调用并发上限、幂等键、checkpoint、流式事件、审批暂停与恢复、上下文压缩、trace/span、模型与工具重试的独立策略，以及最终产物的语义验证。每增加一个机制，都应配一个确定性测试用例，而不是只靠对话试跑。
 
 参考：[OpenAI Agents SDK 的 Agent loop](https://openai.github.io/openai-agents-python/running_agents/)。
+
+<!-- evidence-update:2026-10-25 -->
+
+## 先用假模型把循环跑明白
+
+第一次做循环，可以让“模型”按顺序返回两条固定消息：先请求读取工单，再根据工具结果结束。这样无需 API 密钥，也能观察调用 ID、参数校验、结果回填和停止条件。
+
+正常路径跑通以后，换成未知工具、错误参数和始终要求继续的三个假响应。分别检查：错误是否作为观察返回、工具有没有被误执行、最大轮数是否真正结束任务。等这些行为稳定，再换成实际模型适配器。
+
+对照 Hermes 的真实回合生命周期，可以看到框架还要处理取消、预算和压缩等问题。它们是接入真实环境后逐步增加的责任；本页前面的伪代码不能被当成已经包含所有这些能力的完整 SDK。
+
+### 动手跑：不接真实模型也能测试运行规则
+
+仓库新增了 [Agent Loop 练习](https://github.com/jame100101/Personal-knowledge-base/tree/main/examples/agent-loop)。在项目根目录执行：
+
+```bash
+node --test examples/agent-loop/loop.test.mjs
+```
+
+先读第一个测试，观察工具结果如何回到下一轮“假模型”；再看拒绝权限、错误参数、重复调用、权限撤销、步数耗尽、取消和超时。它只读取内存中的练习数据，不需要 API Key。运行成功后，尝试故意删掉权限判断，确认对应测试会失败，再恢复代码。
+
+这个小运行时每轮只处理一个工具调用，使用自定义消息格式；内存回执只在当前运行内有效。超时停止等待并发出取消信号，不会撤销已经发生的外部写入，也不能强制打断阻塞的 JavaScript。接入真实 SDK 前，先读练习 README 的边界说明。
+
+### 本节的核验依据
+
+2026-10-25 查阅。下面的链接支持本节的机制说明；练习场景和选型建议是本教程的教学设计。
+
+- [Hermes：回合生命周期与工具执行（固定提交）](https://github.com/NousResearch/hermes-agent/blob/4ea8d23cc9f527332ccb1d55359b27741b6ea51b/website/docs/developer-guide/agent-loop.md)
+- [Agents SDK：运行循环（固定提交）](https://github.com/openai/openai-agents-python/blob/0dc4cf152bff1f50bdc0e41f28808563406545b2/docs/running_agents.md)

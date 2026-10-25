@@ -50,3 +50,20 @@ Cache 是 provider/runtime 能力而不是通用语义保证。常见策略：�
 - budget cliff：估算与 provider tokenizer 差异导致请求拒绝。
 
 用同一组任务比较成功率、输入 token、缓存命中、压缩次数和重要事实丢失情况。抽取摘要中的说法回查原始记录，确认压缩没有改变事实；省下 token 但丢掉关键条件，并不是有效优化。
+
+<!-- evidence-update:2026-10-25 -->
+
+## 压缩更勤，不一定更便宜
+
+Hermes 当前的 micro-compaction 提供了一个很直观的反例：它把压缩工作分散到每轮结束后，逐步吸收旧回合；这个选项默认关闭。文档明确提醒，压缩需要额外模型调用，而且改写历史可能破坏提示缓存的稳定前缀。
+
+所以不要只比较“压缩后剩多少 token”。准备同一段长对话，分别记录总输入、缓存命中、压缩调用、端到端等待时间，以及一个早期约束在最后是否仍被遵守。只有这些结果放在一起，才能判断更频繁的压缩是否适合你的任务。
+
+这是一个具体实现的取舍，不是所有 Agent 都该采用的规则。尤其要保留原始记录的位置：摘要说“已经保存工单”，恢复时仍应查询实际工单，不能把摘要当作写入成功凭证。
+
+### 本节的核验依据
+
+2026-10-25 查阅。下面的链接支持本节的机制说明；练习场景和选型建议是本教程的教学设计。
+
+- [Hermes：micro-compaction 的成本与限制（固定提交）](https://github.com/NousResearch/hermes-agent/blob/4ea8d23cc9f527332ccb1d55359b27741b6ea51b/website/docs/developer-guide/micro-compaction.md)
+- [Pydantic AI：持久执行与存储的区别（固定提交）](https://github.com/pydantic/pydantic-ai/blob/4ee11516b5be6b767654304ec8fe346b81369597/docs/durable_execution/overview.md)

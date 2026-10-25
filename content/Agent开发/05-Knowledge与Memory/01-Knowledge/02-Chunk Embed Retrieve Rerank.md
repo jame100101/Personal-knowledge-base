@@ -90,3 +90,20 @@ $$
 ## 9. Rerank 与 Context Packing
 
 Reranker 对 query-document 对做更精细判断，通常成本高于初筛，所以只处理候选集合。Context packing 不是简单取前 N：需要去重相邻片段、保留多来源覆盖、按引用 ID 包装、控制单来源占比，并为问题中不同子目标分配上下文预算。
+
+<!-- evidence-update:2026-10-25 -->
+
+## 用一个错误码检查检索有没有帮上忙
+
+准备三段短文：一段包含精确错误码 `E_CONN_42`，一段只描述“连接建立失败”，一段讲无关的配置。先问错误码，再换一种自然语言问法，观察不同检索方式选中了谁。
+
+Haystack 的 DocumentJoiner 可以把不同检索器的结果合并，RRF 用排名生成融合结果，因此不用直接把 BM25 原始分数和向量分数相加。融合本身仍不证明哪份文档正确。Cross-Encoder 则把问题和候选一起评分，适合在候选集合上进一步排序。
+
+最后做一个容易漏掉的检查：正确文档若根本没进候选集，重排器就没有机会把它选出来。分别记录“正确文档是否召回”和“是否排在前面”，才能分清该修召回还是排序。上文 50～100 个问题只是起步建议，不是有统计保证的统一样本量。
+
+### 本节的核验依据
+
+2026-10-25 查阅。下面的链接支持本节的机制说明；练习场景和选型建议是本教程的教学设计。
+
+- [Haystack：DocumentJoiner 与 RRF](https://docs.haystack.deepset.ai/docs/documentjoiner)
+- [Sentence Transformers：Cross-Encoder](https://www.sbert.net/examples/cross_encoder/applications/README.html)

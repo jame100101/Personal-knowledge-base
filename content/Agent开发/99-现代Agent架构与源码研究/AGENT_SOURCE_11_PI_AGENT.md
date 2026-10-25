@@ -2,6 +2,25 @@
 
 pi 的仓库里既有较小的 Agent Core，也有完整 Coding Agent 所需的工具和会话能力。建议先读核心循环，再看外层怎样补齐使用场景。下面沿着这种由内向外的顺序，避免把 UI 与核心决策混在一起。
 
+<!-- evidence-update:2026-10-25 -->
+
+## 2026-10-25：当前源码入口与阅读练习
+
+本节固定到公开仓库提交 `38ff99177fba21e9c57a670f4e95adcf407c99c7`（提交时间 `2026-10-24T20:48:11Z`）。只对下面列出的文件和机制重新核对；后面的历史长文继续按各自快照阅读，不把新 HEAD 当作全部旧结论的重新验证。
+
+当前入口仍区分新消息启动与基于现有 context 继续执行。`agentLoopContinue` 会检查空历史和末尾 assistant 角色，文件注释也提醒：转换给模型后，最后一条需要符合 provider 允许的 user 或 tool-result 语义。
+
+这说明“恢复”不是把任意聊天数组重新发一次。可以先构造正常工具结果结尾、空数组、assistant 结尾三种输入，读清各自走到哪里。再追事件输出，区分 agent、turn、message 和 tool 的生命周期。
+
+### 本节的核验依据
+
+2026-10-25 查阅。下面的链接支持本节的机制说明；练习场景和选型建议是本教程的教学设计。
+
+- [earendil-works/pi / packages/agent/src/agent-loop.ts](https://github.com/earendil-works/pi/blob/38ff99177fba21e9c57a670f4e95adcf407c99c7/packages/agent/src/agent-loop.ts)
+- [earendil-works/pi / README.md](https://github.com/earendil-works/pi/blob/38ff99177fba21e9c57a670f4e95adcf407c99c7/README.md)
+
+> 以下为历史快照研究。涉及路径、默认值和产品行为时，请同时查看上面的本次核对范围。
+
 > **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `dcd461925db2edf69a43c8135db1180d418afd54`

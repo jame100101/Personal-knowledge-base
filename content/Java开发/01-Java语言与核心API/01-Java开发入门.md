@@ -126,5 +126,5 @@ java -jar app.jar
 - [Java SE 26 API](https://docs.oracle.com/en/java/javase/26/docs/api/)
 - [Oracle Java Downloads](https://www.oracle.com/java/technologies/downloads/)
 - [OpenJDK JDK 25](https://openjdk.org/projects/jdk/25/)
-- [JDK 26 Release Notes](https://www.oracle.com/java/technologies/javase/26-relnotes.html)
+- [JDK 26 Release Notes](https://www.oracle.com/java/technologies/javase/26-relnote-issues.html)
 - [Dev.java Learn](https://dev.java/learn/)

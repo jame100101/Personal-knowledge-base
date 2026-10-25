@@ -2,6 +2,26 @@
 
 OpenCode 不只包含终端界面，界面背后还有会话服务、工具、权限和存储。可以先从一次会话请求进入，再观察不同层之间怎样传递事件。下面把交互入口与核心服务分开分析。
 
+<!-- evidence-update:2026-10-25 -->
+
+## 2026-10-25：当前源码入口与阅读练习
+
+本节固定到公开仓库提交 `32b57015e5b491a789fba1534ecb472e676c9d8e`（提交时间 `2026-10-25T05:57:05Z`）。只对下面列出的文件和机制重新核对；后面的历史长文继续按各自快照阅读，不把新 HEAD 当作全部旧结论的重新验证。
+
+旧入口 `packages/opencode/src/session/processor.ts` 已不在当前源码树中。现在应从 `packages/core/src/session/runner/` 与 `run-coordinator.ts` 继续追。`SessionRunner` 暴露对已记录历史中可执行工作的 drain 接口，返回结果区分 Complete、Moved 和 Reloaded。
+
+`step.ts` 还把可取消的工作与需要完成记录的收尾区分开。读代码时分别标出工具实际执行、取消请求、最终事件写入，不要把三者看成同一个瞬间。旧版 processor 的分析仍属于下面明确标注的历史快照。
+
+### 本节的核验依据
+
+2026-10-25 查阅。下面的链接支持本节的机制说明；练习场景和选型建议是本教程的教学设计。
+
+- [anomalyco/opencode / packages/core/src/session/runner/index.ts](https://github.com/anomalyco/opencode/blob/32b57015e5b491a789fba1534ecb472e676c9d8e/packages/core/src/session/runner/index.ts)
+- [anomalyco/opencode / packages/core/src/session/runner/step.ts](https://github.com/anomalyco/opencode/blob/32b57015e5b491a789fba1534ecb472e676c9d8e/packages/core/src/session/runner/step.ts)
+- [anomalyco/opencode / packages/core/src/session/run-coordinator.ts](https://github.com/anomalyco/opencode/blob/32b57015e5b491a789fba1534ecb472e676c9d8e/packages/core/src/session/run-coordinator.ts)
+
+> 以下为历史快照研究。涉及路径、默认值和产品行为时，请同时查看上面的本次核对范围。
+
 > **版本与资料依据**
 > - `last_verified`: `2026-08-24`
 > - `version_scope`: `analyzed snapshot 105b398c2a9ff2f16eaae409836e1dbc4d37671a; HEAD audit 2a6be0a03b93a6734070e10a6c3b56863475f214`
