@@ -36,7 +36,7 @@ OAuth 定义 resource owner、client、authorization server 和 resource server�
 - 公开客户端不保存 client secret。
 - 避免隐式授权和资源所有者密码流程。
 
-**这里容易混淆的是：** OAuth access token 证明授权，不天然证明用户登录属性；OIDC ID Token 面向 client 身份会话。
+OAuth access token 证明授权，不天然证明用户登录属性；OIDC ID Token 面向 client 身份会话。
 
 ### 2. JWT 验证
 
@@ -46,7 +46,7 @@ JWT 是带声明的 JWS/JWE 容器。资源服务器验证签名算法、issuer�
 - 按 `kid` 获取并缓存可信 JWK，处理轮换。
 - 令牌只放必要声明，避免敏感数据和过大 header。
 
-**这里容易混淆的是：** Base64URL 编码不是加密；签名 JWT 的 payload 对持有者可见。
+Base64URL 编码不是加密；签名 JWT 的 payload 对持有者可见。
 
 ### 3. 令牌生命周期
 
@@ -56,7 +56,7 @@ JWT 是带声明的 JWS/JWE 容器。资源服务器验证签名算法、issuer�
 - 浏览器 token 优先安全 cookie/BFF，降低脚本窃取面。
 - 服务间使用专用 client identity 和最小 scope。
 
-**这里容易混淆的是：** “无状态 JWT”不代表系统没有状态；密钥、授权、撤销、客户端和审计仍是状态。
+“无状态 JWT”不代表系统没有状态；密钥、授权、撤销、客户端和审计仍是状态。
 
 ### 4. API 防护
 
@@ -66,7 +66,7 @@ API 除身份外还需输入校验、对象级授权、CSRF/CORS、速率限制�
 - cookie 认证的状态变更请求使用 CSRF token/SameSite 等防护。
 - 输出编码、参数化查询和安全反序列化分别处理不同注入面。
 
-**这里容易混淆的是：** 允许任意 Origin 并携带凭据会扩大跨站风险；规则应是明确来源白名单。
+允许任意 Origin 并携带凭据会扩大跨站风险；规则应是明确来源白名单。
 
 ## 3. 工程链路
 

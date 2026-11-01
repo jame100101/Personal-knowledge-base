@@ -23,7 +23,7 @@ IDE 的运行按钮背后，仍然需要 JDK、依赖解析和构建命令。把
 - preview 特性需要编译、测试、运行阶段一致启用，并与长期维护模块隔离。
 - IDE 只导入构建模型，不作为依赖版本的唯一真实来源。
 
-**这里容易混淆的是：** `source/target` 只限制语法和字节码时可能仍错误引用新 API，`--release` 同时约束标准 API 视图。
+`source/target` 只限制语法和字节码时可能仍错误引用新 API，`--release` 同时约束标准 API 视图。
 
 ### 2. Maven 生命周期与坐标
 
@@ -33,7 +33,7 @@ Maven 按 validate、compile、test、package、verify、install、deploy 生命
 - 多模块 reactor 按模块依赖拓扑构建，parent POM 与 aggregator 可以重合也可以分离。
 - 用 dependency:tree、dependency:analyze 和 Enforcer 定位冲突与未声明依赖。
 
-**这里容易混淆的是：** Maven 的“nearest definition”版本仲裁不等于选择最新版本；关键依赖应显式受 BOM/management 控制。
+Maven 的“nearest definition”版本仲裁不等于选择最新版本；关键依赖应显式受 BOM/management 控制。
 
 ### 3. Gradle 任务图与依赖管理
 
@@ -43,7 +43,7 @@ Gradle 配置阶段构造 task graph，执行阶段运行需要的任务。Java 
 - 多项目通过声明 project dependency 建立构建顺序，避免跨项目直接读写任务内部状态。
 - 配置缓存、构建缓存和增量任务要求准确声明 inputs/outputs。
 
-**这里容易混淆的是：** Gradle 动态版本和 SNAPSHOT 会削弱可复现性；生产构建锁定版本和校验依赖来源。
+Gradle 动态版本和 SNAPSHOT 会削弱可复现性；生产构建锁定版本和校验依赖来源。
 
 ### 4. 依赖供应链与私服
 
@@ -53,7 +53,7 @@ Gradle 配置阶段构造 task graph，执行阶段运行需要的任务。Java 
 - 生成 SBOM，运行 SCA，设定升级和 CVE 响应流程。
 - 构建产物带 commit、版本和 provenance，可从制品回溯源码。
 
-**这里容易混淆的是：** 锁版本只解决漂移，不证明依赖可信；仍需来源、哈希、审计和发布权限控制。
+锁版本只解决漂移，不证明依赖可信；仍需来源、哈希、审计和发布权限控制。
 
 ## 3. 工程链路
 

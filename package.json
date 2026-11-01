@@ -39,7 +39,10 @@
     "content:import-software-engineering": "node scripts/import-software-engineering.mjs",
     "content:verify-software-engineering": "node scripts/import-software-engineering.mjs --verify",
     "test:software-engineering": "node --test examples/software-engineering/favorites.test.mjs",
-    "test:agent-loop": "node --test examples/agent-loop/loop.test.mjs"
+    "test:agent-loop": "node --test examples/agent-loop/loop.test.mjs",
+    "content:style": "node tools/humanizer/check.mjs",
+    "content:style:verify": "node tools/humanizer/check.mjs --verify",
+    "test:humanizer": "node --test tools/humanizer/check.test.mjs"
   },
   "overrides": {
     "brace-expansion": "5.0.8",

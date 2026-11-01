@@ -2,7 +2,7 @@
 
 结账服务需要查询订单，也需要调用支付接口。把这些依赖交给构造器，既能清楚看到它需要什么，也方便测试时换成替代实现。Spring 容器负责把这样的对象连接起来，下面就从这个过程理解 IoC。
 
-IoC 容器创建对象图、解析依赖并管理生命周期。依赖注入的目的不是减少 `new`，而是让依赖显式、可替换和可测试。
+IoC 容器负责创建对象、把相互依赖的对象连接起来，并管理它们从创建到销毁的过程。使用依赖注入，是为了看清对象需要什么、方便替换依赖和编写测试；少写几个 `new` 并不是目的。
 
 ## 先从两个普通 Java 对象开始
 
@@ -23,23 +23,23 @@ IoC 容器创建对象图、解析依赖并管理生命周期。依赖注入的�
 
 ### 1. 容器与 BeanDefinition
 
-ApplicationContext 读取 Java 配置、组件扫描或 XML，形成 BeanDefinition，实例化单例并处理后置器。容器还提供事件、资源、国际化和类型转换。
+ApplicationContext 先读取 Java 配置、组件扫描结果或 XML，把对象的创建信息整理成 BeanDefinition。随后，容器创建单例对象，并让后置处理器参与处理。除了装配对象，它还提供事件、资源、国际化和类型转换功能。
 
 - 组件扫描限定业务包，避免扫描整个 classpath。
 - @Configuration/@Bean 适合第三方类型和显式装配。
 - 启动失败应定位 Bean 创建链和根 cause，而非盲目加注解。
 
-**这里容易混淆的是：** Spring 的 singleton 是“每个容器、每个 Bean 定义共享一个实例”，不是“同一个类在容器里只能有一个对象”。同一类可以有两个不同的 Bean 定义。它也不等于 JVM 全局单例，不会自动获得线程安全。参见 [Bean Scopes](https://docs.spring.io/spring-framework/reference/core/beans/factory-scopes.html)。
+Spring 的 singleton 是“每个容器、每个 Bean 定义共享一个实例”，不是“同一个类在容器里只能有一个对象”。同一类可以有两个不同的 Bean 定义。它也不等于 JVM 全局单例，不会自动获得线程安全。参见 [Bean Scopes](https://docs.spring.io/spring-framework/reference/core/beans/factory-scopes.html)。
 
 ### 2. 依赖注入选择
 
-构造器注入保证必需依赖在创建时完整，字段可 final，并便于普通单元测试。setter 适合真正可选或可重配置依赖；字段注入隐藏依赖且难以脱离容器。
+必需的依赖放进构造器，创建对象时就得提供齐全，保存这些依赖的字段也可以声明为 final。这样写普通单元测试更方便。真正可选、或需要重新配置的依赖，可以通过 setter 传入。字段注入则把依赖藏在对象内部，脱离容器使用时更难处理。
 
 - 单构造器通常无需 @Autowired。
 - 多个同类型实现用语义接口、@Qualifier、@Primary/@Fallback 明确。
 - 依赖过多提示类职责过重，应拆分而非继续堆构造参数。
 
-**这里容易混淆的是：** Optional 注入不应掩盖配置错误；关键能力缺失应在启动阶段失败。
+Optional 注入不应掩盖配置错误；关键能力缺失应在启动阶段失败。
 
 ### 3. Scope、生命周期与销毁
 
@@ -49,7 +49,7 @@ singleton、prototype、request、session 等 scope 决定实例边界。初始�
 - prototype 注入 singleton 时要通过 Provider/ObjectProvider 获取新实例。
 - request/session 数据不进入 singleton 可变字段。
 
-**这里容易混淆的是：** 容器通常不管理 prototype Bean 的完整销毁生命周期，使用者承担清理。
+容器通常不管理 prototype Bean 的完整销毁生命周期，使用者承担清理。
 
 ### 4. 循环依赖与代理
 
@@ -59,7 +59,7 @@ singleton、prototype、request、session 等 scope 决定实例边界。初始�
 - 按接口依赖降低实现耦合。
 - 调试时检查 bean 实际类型和 advisor。
 
-**这里容易混淆的是：** 容器能在部分 setter/字段场景“绕过”循环并不证明设计正确，且与代理/版本组合可能失败。
+容器能在部分 setter/字段场景“绕过”循环并不证明设计正确，且与代理/版本组合可能失败。
 
 ## 3. 工程链路
 

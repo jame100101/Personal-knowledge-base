@@ -21,7 +21,7 @@
 - 一个主进程正确响应 SIGTERM 并优雅退出。
 - 日志写 stdout/stderr，临时文件有配额。
 
-**这里容易混淆的是：** 删除 Dockerfile 后续层中的秘密不会从早期层移除；构建秘密使用 BuildKit secret。
+删除 Dockerfile 后续层中的秘密不会从早期层移除；构建秘密使用 BuildKit secret。
 
 ### 2. Java 镜像
 
@@ -31,7 +31,7 @@
 - 容器内存/CPU 限制纳入 JVM heap、native memory 和线程预算。
 - 健康检查与应用 readiness 一致。
 
-**这里容易混淆的是：** 只设置 `-Xmx` 未覆盖 metaspace、direct buffer、线程栈和本地库内存。
+只设置 `-Xmx` 未覆盖 metaspace、direct buffer、线程栈和本地库内存。
 
 ### 3. Compose
 
@@ -41,7 +41,7 @@ Compose 声明应用、数据库、Redis、broker 的网络、volume、health �
 - 数据卷和网络命名隔离不同项目。
 - 示例环境变量提供非生产默认值。
 
-**这里容易混淆的是：** Compose 不是生产编排器的完整等价物，仍需在目标平台验证。
+Compose 不是生产编排器的完整等价物，仍需在目标平台验证。
 
 ### 4. 供应链和运行限制
 
@@ -51,7 +51,7 @@ Compose 声明应用、数据库、Redis、broker 的网络、volume、health �
 - 漏洞有例外、所有者和修复期限。
 - registry 权限区分推送、发布和拉取。
 
-**这里容易混淆的是：** 没有已知 CVE 不代表镜像安全，仍需最小权限、配置和运行时检测。
+没有已知 CVE 不代表镜像安全，仍需最小权限、配置和运行时检测。
 
 ## 3. 工程链路
 

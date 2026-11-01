@@ -39,7 +39,7 @@
 6. 选中的工作区材料与检索依据。
 7. 当前用户消息。
 
-具体 provider 可能对 system、tool、cache block 有不同 API，适配器应保留同一 Manifest 语义，而不是把 provider 结构泄漏到业务状态。
+不同 provider 对 system、tool、cache block 的 API 设计可能不同。这些差异由适配器处理，同时保留 Manifest 原本表达的含义；业务状态不应跟着某一家 provider 的请求结构改变。
 
 ## 3. 冲突规则
 

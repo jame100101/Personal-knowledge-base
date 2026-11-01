@@ -4,6 +4,8 @@
 
 本轮内容与阅读交互更新见 [2026-10-25 核查记录](docs/KNOWLEDGE_REVIEW_2026-10-25.md)，含逐篇范围、固定源码证据和验证结果。新增 [无需 API Key 的 Agent Loop 练习](examples/agent-loop/README.md)，可执行 `npm run test:agent-loop` 观察权限、重放、取消与超时边界。
 
+本轮表达调整的范围见 [2026-11-01 humanizer 记录](docs/HUMANIZER_REVIEW_2026-11-01.md)。中文正文的编辑流程见 [中文教学写作约定](docs/WRITING_GUIDE_ZH.md)。项目已接入三份固定版本的 humanizer 参考规则，并提供 `npm run content:style` 与改写保护校验；用法和许可证见 [编辑工具说明](tools/humanizer/README.md)。
+
 ## 功能
 
 - 任意层级知识文件夹、稳定排序、移动与循环关系校验

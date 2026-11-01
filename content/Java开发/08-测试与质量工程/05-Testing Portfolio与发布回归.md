@@ -27,7 +27,7 @@ void duplicateRequestReturnsOriginalOrder() {
 }
 ```
 
-覆盖率只表示哪些代码被执行，不表示断言质量、边界覆盖或 mutation resistance。关键是测试目标、初始状态、行为、外部副作用和可复现失败证据。
+覆盖率只告诉你哪些代码执行过。它不能说明断言是否有效、是否检查了边界情况，也不能说明测试能否发现故意改坏的代码（mutation resistance）。审阅测试时，要看目标是什么、从什么状态开始、执行什么行为，以及怎样检查外部影响和复现失败。
 
 <!-- evidence-update:2026-10-25 -->
 

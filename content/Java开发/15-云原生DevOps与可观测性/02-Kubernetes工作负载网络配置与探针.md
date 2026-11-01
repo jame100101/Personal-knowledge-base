@@ -28,7 +28,7 @@ Pod 是调度单元；Deployment 管理无状态 ReplicaSet；StatefulSet 提供
 - PDB 和 topology spread 改善维护与故障域分布。
 - 批任务有幂等、并发、重试和截止时间。
 
-**这里容易混淆的是：** StatefulSet 提供稳定身份，不自动让数据库复制或故障转移正确。
+StatefulSet 提供稳定身份，不自动让数据库复制或故障转移正确。
 
 ### 2. 服务网络
 
@@ -38,7 +38,7 @@ Service 为动态 Pod 集合提供稳定虚拟地址，EndpointSlice 记录后�
 - NetworkPolicy 是流量准入规则。没有相关策略选中时，Pod 默认并非“全部拒绝”；入口、出口隔离分别计算。生产练习可以先**主动配置** default-deny，再按 DNS、数据库等实际依赖开放，前提是所用网络插件支持策略。参见 [Kubernetes 网络策略](https://kubernetes.io/docs/concepts/services-networking/network-policies/)。
 - DNS 缓存、连接复用和 Pod 终止配合。
 
-**这里容易混淆的是：** Service 可达不代表应用 ready，且 NetworkPolicy 是否生效取决于网络实现。
+Service 可达不代表应用 ready，且 NetworkPolicy 是否生效取决于网络实现。
 
 ### 3. 配置与秘密
 
@@ -48,7 +48,7 @@ ConfigMap/Secret 可作为环境或文件挂载；更新传播方式和应用刷
 - 配置带 schema 和版本，发布可回滚。
 - Pod 不拥有读取整个 namespace secrets 的权限。
 
-**这里容易混淆的是：** 把秘密放 Kubernetes Secret 仍需要 etcd 加密、访问审计和轮换。
+把秘密放 Kubernetes Secret 仍需要 etcd 加密、访问审计和轮换。
 
 ### 4. 资源与探针
 
@@ -58,7 +58,7 @@ scheduler 使用 requests 放置 Pod，limits 由运行时执行；startup/liven
 - preStop、terminationGracePeriod 和服务摘流完成优雅终止。
 - 滚动发布设置 maxUnavailable/maxSurge 和 readiness gate。
 
-**这里容易混淆的是：** liveness 依赖数据库会在数据库故障时重启全部服务，扩大事故。
+liveness 依赖数据库会在数据库故障时重启全部服务，扩大事故。
 
 ## 3. 工程链路
 

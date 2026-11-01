@@ -8,7 +8,7 @@
 > - `source_type`: `official-docs + engineering synthesis`
 > - `stability`: `version-sensitive`
 
-Context Engineering 是在约束的 token、延迟、成本和信任边界内，决定**什么信息在何时以何种形式进入一次模型请求**。它不属于长期记忆，也不等于写 system prompt。
+做 Context Engineering，就是为每次模型请求挑选材料：这次需要什么，什么时候放进去，用原文还是其他形式？挑选时要兼顾 token 额度、延迟、成本，以及材料的可信程度。这项工作与长期记忆不同，也不只是编写 system prompt。
 
 ```mermaid
 flowchart LR
@@ -34,7 +34,7 @@ flowchart LR
 - knowledge retrieval 与 memory retrieval；
 - time、identity、permission、environment metadata。
 
-源存在不代表应全部拼接。Context Builder 先产生 Manifest，记录来源、摘要、优先级、信任等级、token 估计、缓存策略和截断结果，再由 Assembly 形成最终有序消息。
+能找到的材料，不必全部放进请求。Context Builder 先列一份 Manifest，记下材料来源、摘要、优先级、信任等级、预计 token 数，以及缓存和截断的处理结果。Assembly 再依据这份记录，把选中的材料按顺序组成消息。
 
 ## 2. 三个目标函数
 
@@ -51,7 +51,7 @@ flowchart LR
 
 ## 4. 验证
 
-对每次请求保存可脱敏的 manifest：输入源、选择原因、token、截断、compaction 版本、cache 命中提示、未加载材料。用 ablation 测试删除某类上下文是否影响成功率，而不是根据 prompt 长度猜测质量。
+每次请求都应保存一份可脱敏的 manifest。里面记录输入来自哪里、为什么选它、占用多少 token、哪里被截断，还要记录 compaction 版本、cache 命中提示和没有加载的材料。想知道某类材料是否有用，可以做 ablation 测试：去掉它，再比较任务成功率。只看 prompt 长短，判断不了上下文质量。
 
 <!-- evidence-update:2026-10-25 -->
 

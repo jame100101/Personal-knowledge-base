@@ -2,7 +2,7 @@
 
 为什么在一个方法上写了 `@Transactional`，有时却没有开启预期的事务？关键在于调用有没有经过 Spring 创建的代理。下面先画清普通对象与代理的关系，再看事务传播和异常处理。
 
-Spring AOP 通过代理拦截 Spring Bean 的方法执行，声明式事务是其最重要应用之一。理解代理边界才能解释事务为何有时“失效”。
+Spring AOP 通过代理介入 Spring Bean 的方法执行，声明式事务就是它的一项主要用途。所以排查事务为何没有生效时，要先追踪调用是否经过了代理。
 
 ## 先把代理想成方法入口处的一层包装
 
@@ -29,7 +29,7 @@ Spring AOP 只支持 Spring Bean 方法执行 join point，以 JDK 动态代理�
 - pointcut 尽量精确，避免无意代理整个应用。
 - around advice 自己决定是否调用 `proceed()`：普通包装通常调用一次，缓存命中可以不调用，重试可能调用多次。每一种都要明确返回值、副作用和异常语义，不能把“必须调用一次”当作 AOP 的通用规则。参见 [Declaring Advice](https://docs.spring.io/spring-framework/reference/core/aop/ataspectj/advice.html)。
 
-**这里容易混淆的是：** Spring AOP 不是完整 AspectJ；字段访问和任意对象构造等 join point 不在代理式 AOP 范围。
+Spring AOP 不是完整 AspectJ；字段访问和任意对象构造等 join point 不在代理式 AOP 范围。
 
 ### 2. 代理与自调用
 
@@ -39,7 +39,7 @@ Spring AOP 只支持 Spring Bean 方法执行 join point，以 JDK 动态代理�
 - 需要复用时拆分到另一个 Bean，而非获取当前代理形成隐式耦合。
 - final/private 方法不适合作为类代理拦截点。
 
-**这里容易混淆的是：** 注解只是元数据，真正行为来自代理和 advisor；对象不由 Spring 管理时注解没有对应拦截器。
+注解只是元数据，真正行为来自代理和 advisor；对象不由 Spring 管理时注解没有对应拦截器。
 
 ### 3. 事务传播与回滚
 
@@ -49,7 +49,7 @@ REQUIRED 加入现有事务或新建，REQUIRES_NEW 挂起外层并新建，NEST
 - 捕获异常后若继续提交，要明确业务允许；否则重新抛出或标记 rollback-only。
 - REQUIRES_NEW 需要额外连接，嵌套使用可能耗尽连接池。
 
-**这里容易混淆的是：** `readOnly=true` 是优化提示和框架语义，不是数据库权限控制。
+`readOnly=true` 是优化提示和框架语义，不是数据库权限控制。
 
 ### 4. 远程调用与事务事件
 
@@ -59,7 +59,7 @@ REQUIRED 加入现有事务或新建，REQUIRES_NEW 挂起外层并新建，NEST
 - 事件必须有幂等 key、版本和重放策略。
 - 集成测试验证真实数据库提交/回滚而非只 Mock。
 
-**这里容易混淆的是：** 本地事务 + 发送消息的普通两步操作不是原子事务。
+本地事务 + 发送消息的普通两步操作不是原子事务。
 
 ## 3. 工程链路
 

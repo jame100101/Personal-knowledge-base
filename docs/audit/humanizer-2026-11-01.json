@@ -1,0 +1,1017 @@
+{
+  "reviewedOn": "2026-11-01",
+  "base": "d1a96b5f762103b86cb48c06e5e4cf8def6db2ab",
+  "scanned": 314,
+  "changed": 84,
+  "changedByCategory": {
+    "Agent开发": 20,
+    "Java开发": 64
+  },
+  "paragraphRewrites": 47,
+  "repeatedLeadsRemoved": 240,
+  "protectedChanges": 0,
+  "styleFindingsBefore": 456,
+  "styleFindingsAfter": 215,
+  "note": "Heuristic findings are review hints, not AI-authorship scores or a semantic correctness proof. Existing technical facts were preserved; this pass is not a fresh upstream technical audit.",
+  "edits": [
+    {
+      "path": "content/Agent开发/01-Agent基础/01-Agent类型区分.md",
+      "before": "Chatbot 的主结构是“用户消息 → 模型生成 → 文本回复”。它可以保持对话历史，也可以做知识问答，但通常没有由模型自主选择的外部动作。判断关键不是 UI 是否像聊天，而是系统是否存在工具执行、环境反馈和多步状态迁移。",
+      "after": "Chatbot 通常按“用户消息 → 模型生成 → 文本回复”工作。它可以记住对话历史，也可以回答知识问题，但一般不会让模型自己选择并执行外部操作。辨认这类系统时，聊天框的样式帮不上多少忙。要看它能不能调用工具、读回执行结果，再根据结果继续行动。",
+      "kind": "paragraph-rewrite"
+    },
+    {
+      "path": "content/Agent开发/01-Agent基础/02-Agent基本循环.md",
+      "before": "观察不仅是用户输入，还包括工具结果、文件变化、测试日志、页面 DOM、错误类型、剩余预算和权限状态。高质量观察应满足：",
+      "after": "Agent 做下一步决定前，要先弄清现在发生了什么。除了用户输入，它还需要读取工具结果、文件变化、测试日志或页面 DOM，并查看错误类型、剩余预算和权限状态。收集这些信息时，需要做到：",
+      "kind": "paragraph-rewrite"
+    },
+    {
+      "path": "content/Agent开发/01-Agent基础/02-Agent基本循环.md",
+      "before": "Think 是广义的决策阶段，不要求把内部推理文本公开。模型应基于目标、当前状态和工具说明，在以下动作中选择：",
+      "after": "这里把作决定的阶段叫作 Think，并不要求模型公开内部推理文本。模型要结合目标、当前状态和工具说明，选择接下来做什么：",
+      "kind": "paragraph-rewrite"
+    },
+    {
+      "path": "content/Agent开发/01-Agent基础/04-SWE Agent基础概念与ACI.md",
+      "before": "SWE Agent（Software Engineering Agent，软件工程智能体）面向的不是“补全一段代码”，而是在真实或可复现的代码仓库环境中持续观察、采取动作、读取执行反馈，并交付可验证的软件变更。它是理解现代 Coding Agent 的重要入口：模型能力固然重要，但工具接口、上下文组织、执行环境和验证方式同样会显著影响最终结果。",
+      "after": "SWE Agent（Software Engineering Agent，软件工程智能体）要在真实或可复现的代码仓库里完成工作。它查看仓库、采取动作、读取执行反馈，直到交付可以验证的代码修改；只补全一段代码还不够。学习现代 Coding Agent 时，可以从这里入手：除了模型本身，也要观察工具是否好用、上下文怎样组织、代码在哪里运行，以及修改结果如何验证。这些都会影响最终结果。",
+      "kind": "paragraph-rewrite"
+    },
+    {
+      "path": "content/Agent开发/01-Agent基础/05-统一工程模型与概念边界.md",
+      "before": "公式是工程抽象。某些系统把检索、policy 或 planner 放在模型服务外部；某些模型原生支持工具协议；责任边界仍需在具体架构中标注。",
+      "after": "这两个公式只是帮助我们拆解系统。有些项目把检索、权限策略（policy）或计划器（planner）放在模型服务外部，有些模型则原生支持工具协议。看具体架构时，仍要标清每项工作由谁负责。",
+      "kind": "paragraph-rewrite"
+    },
+    {
+      "path": "content/Agent开发/01-Agent基础/05-统一工程模型与概念边界.md",
+      "before": "仓库不是 prompt 的一部分，而是环境状态；只有被读取、摘要或检索出的片段进入 context。工具执行也不是“模型执行命令”，而是 Runtime 根据经验证的 invocation 创建受控副作用。",
+      "after": "仓库保存在运行环境里，不会整份自动进入 prompt。程序读取、摘要或检索出的片段，才会进入本轮 context。工具调用也要分开看：模型提出调用请求（invocation），Runtime 校验请求后，才实际执行操作并控制它对外部环境的影响。",
+      "kind": "paragraph-rewrite"
+    },
+    {
+      "path": "content/Agent开发/02-Agent Loop/01-最小Agent Loop实现.md",
+      "before": "1. LLM client；\n2. 对话与状态容器；\n3. 工具定义和 JSON Schema；\n4. tool call 解析；\n5. 参数校验与工具执行；\n6. tool result 回填；\n7. 最终答案识别；\n8. 最大步数、超时、取消和错误分类。",
+      "after": "1. 用 LLM client 向模型发送请求；\n2. 保存对话和当前任务状态；\n3. 用工具定义和 JSON Schema 说明可用工具及其参数；\n4. 解析模型提出的 tool call；\n5. 校验参数，再执行工具；\n6. 把 tool result 作为结果交回模型；\n7. 识别模型给出的最终答案；\n8. 限制最大步数，处理超时、取消，并区分错误类型。",
+      "kind": "paragraph-rewrite"
+    },
+    {
+      "path": "content/Agent开发/02-Agent Loop/01-最小Agent Loop实现.md",
+      "before": "“模型输出一段 JSON”只是决策，不是完整闭环。只有结果回填后模型继续判断，才形成 Agent Loop。",
+      "after": "模型输出 JSON，只是提出了下一步决定。程序还要执行动作，把结果交回模型，让它据此继续判断。这些步骤连起来，才构成 Agent Loop。",
+      "kind": "paragraph-rewrite"
+    },
+    {
+      "path": "content/Agent开发/02-Agent Loop/01-最小Agent Loop实现.md",
+      "before": "关键不变量是每个调用 ID 与结果对应。并行调用时，也要保持协议要求的结果集合和顺序。",
+      "after": "每份工具结果都要对应原来的调用 ID，这个关系不能丢。即使多个工具并行执行，回传时也要满足协议对结果集合和顺序的要求。",
+      "kind": "paragraph-rewrite"
+    },
+    {
+      "path": "content/Agent开发/02-Agent Loop/02-结构化输出与状态机.md",
+      "before": "更推荐使用模型提供商的原生 tool/function calling，因为调用与普通文本分离，协议更清楚。无论来源如何，运行时都要再次使用 schema 验证，不能把模型输出当成可信输入。",
+      "after": "如果模型提供商支持原生 tool/function calling，通常优先使用它。调用信息与普通回答分开传递，程序更容易区分两者。即便如此，运行时仍要按 schema 再校验一次；模型给出的参数不能直接当作可信输入。",
+      "kind": "paragraph-rewrite"
+    },
+    {
+      "path": "content/Agent开发/02-Agent Loop/02-结构化输出与状态机.md",
+      "before": "把这些状态全部塞入自然语言历史会导致漂移。稳定字段应放入类型化对象或数据库，由 Harness 在每轮构造模型上下文。",
+      "after": "如果只把状态写在聊天记录里，后续对话可能把它说漏或说变。需要稳定保存的字段，应放进有类型约束的对象或数据库。Harness 每轮再从这些记录中取出需要的部分，组成模型上下文。",
+      "kind": "paragraph-rewrite"
+    },
+    {
+      "path": "content/Agent开发/02-Agent Loop/04-任务拆分与Plan表示.md",
+      "before": "任务拆分的核心不是“把任务写得更长”，而是把一个开放目标转换成一组**依赖明确、输入可定位、输出可校验、失败可归因、状态可恢复**的工作单元。",
+      "after": "拆任务时，每一项都要回答几个实际问题：开始前要等什么，输入去哪里找，完成后怎样检查结果？如果失败，要能找到原因；如果中途停下，要能恢复状态。把这些写清楚，开放目标才变成可以逐项执行的工作。单纯把任务描述写长并没有用。",
+      "kind": "paragraph-rewrite"
+    },
+    {
+      "path": "content/Agent开发/02-Agent Loop/05-Task Scheduler依赖并发与重规划.md",
+      "before": "二者分离后，系统不再依靠模型每轮“凭感觉选择下一项”。依赖满足、预算扣减、锁冲突、并发上限、租约过期和迟到结果处理，都可由确定性运行时管理。",
+      "after": "把 Planner 和 Scheduler 分开后，下一项能否执行就不必每轮都由模型临时判断。运行时可以按明确规则检查依赖、扣减预算、处理锁冲突和并发上限，也能处理租约过期与迟到的结果。",
+      "kind": "paragraph-rewrite"
+    },
+    {
+      "path": "content/Agent开发/02-Agent Loop/06-Workflow流程控制模式.md",
+      "before": "越靠右，系统越能适应开放环境，但成本、延迟、状态空间和失败模式也随之增加。工程目标不是“尽量 Agent 化”，而是把动态决策放在确有价值的位置，其他部分保持可预测。",
+      "after": "越靠右，系统越能应对事先没有列全的情况，但也通常更贵、更慢，需要处理的状态和失败方式更多。选择时要看哪一步确实需要临时判断，把这部分交给模型；其余步骤仍可按固定规则执行。",
+      "kind": "paragraph-rewrite"
+    },
+    {
+      "path": "content/Agent开发/03-Context Engineering/01-Context Engineering总览.md",
+      "before": "Context Engineering 是在约束的 token、延迟、成本和信任边界内，决定**什么信息在何时以何种形式进入一次模型请求**。它不属于长期记忆，也不等于写 system prompt。",
+      "after": "做 Context Engineering，就是为每次模型请求挑选材料：这次需要什么，什么时候放进去，用原文还是其他形式？挑选时要兼顾 token 额度、延迟、成本，以及材料的可信程度。这项工作与长期记忆不同，也不只是编写 system prompt。",
+      "kind": "paragraph-rewrite"
+    },
+    {
+      "path": "content/Agent开发/03-Context Engineering/01-Context Engineering总览.md",
+      "before": "源存在不代表应全部拼接。Context Builder 先产生 Manifest，记录来源、摘要、优先级、信任等级、token 估计、缓存策略和截断结果，再由 Assembly 形成最终有序消息。",
+      "after": "能找到的材料，不必全部放进请求。Context Builder 先列一份 Manifest，记下材料来源、摘要、优先级、信任等级、预计 token 数，以及缓存和截断的处理结果。Assembly 再依据这份记录，把选中的材料按顺序组成消息。",
+      "kind": "paragraph-rewrite"
+    },
+    {
+      "path": "content/Agent开发/03-Context Engineering/01-Context Engineering总览.md",
+      "before": "对每次请求保存可脱敏的 manifest：输入源、选择原因、token、截断、compaction 版本、cache 命中提示、未加载材料。用 ablation 测试删除某类上下文是否影响成功率，而不是根据 prompt 长度猜测质量。",
+      "after": "每次请求都应保存一份可脱敏的 manifest。里面记录输入来自哪里、为什么选它、占用多少 token、哪里被截断，还要记录 compaction 版本、cache 命中提示和没有加载的材料。想知道某类材料是否有用，可以做 ablation 测试：去掉它，再比较任务成功率。只看 prompt 长短，判断不了上下文质量。",
+      "kind": "paragraph-rewrite"
+    },
+    {
+      "path": "content/Agent开发/03-Context Engineering/02-Context上下文.md",
+      "before": "Context 是一次模型调用输入中的信息集合，包括系统指令、用户消息、最近对话、工具定义、工具结果、检索片段、任务状态和运行时提示。它不是 Memory 的同义词，而是 Memory 被选择和装配后的**当前工作集**。",
+      "after": "一次调用里真正送给模型的信息，合起来就是 Context。这里面可以有系统指令、用户消息、最近对话、工具定义和结果，也可以有检索片段、任务状态与运行时提示。Memory 中保存的信息要经过选择和整理，才会进入这份当前可用的材料；两者不能直接画等号。",
+      "kind": "paragraph-rewrite"
+    },
+    {
+      "path": "content/Agent开发/03-Context Engineering/03-Context Builder与Prompt Assembly.md",
+      "before": "所谓 “input 大拼接 prompt” 如果只是把规则、聊天记录、工具说明、检索结果和日志依次连接，系统会很快遇到冲突、重复、协议断裂和 token 浪费。生产级 Context Builder 应把多源信息建模成**有类型、有信任层、有预算、有来源的本轮状态投影**。",
+      "after": "把规则、聊天记录、工具说明、检索结果和日志直接连在一起，看起来很省事，却容易出现内容冲突、重复、协议不完整和 token 浪费。Context Builder 需要先弄清每份材料的类型、来源、信任程度和预算，再选出能反映本轮任务状态的部分。",
+      "kind": "paragraph-rewrite"
+    },
+    {
+      "path": "content/Agent开发/03-Context Engineering/03-Context Builder与Prompt Assembly.md",
+      "before": "Context Builder 不生成新的任务事实。摘要、压缩和排序都可能有损，因此必须保留原始 artifact 或事件引用。",
+      "after": "Context Builder 负责整理已有材料，不能凭空增加任务事实。摘要、压缩和排序都可能丢失信息，所以要保留原始产物（artifact）或事件的引用，方便回头核对。",
+      "kind": "paragraph-rewrite"
+    },
+    {
+      "path": "content/Agent开发/03-Context Engineering/04-Context Manifest与Assembly.md",
+      "before": "具体 provider 可能对 system、tool、cache block 有不同 API，适配器应保留同一 Manifest 语义，而不是把 provider 结构泄漏到业务状态。",
+      "after": "不同 provider 对 system、tool、cache block 的 API 设计可能不同。这些差异由适配器处理，同时保留 Manifest 原本表达的含义；业务状态不应跟着某一家 provider 的请求结构改变。",
+      "kind": "paragraph-rewrite"
+    },
+    {
+      "path": "content/Agent开发/03-Context Engineering/06-JIT Retrieval与Progressive Disclosure.md",
+      "before": "建立 information-need 数据集，测 recall@k、最终任务成功率、加载 token、检索轮次与延迟；不要只优化向量相似度。",
+      "after": "可以整理一组“遇到这个问题，需要找到哪些材料”的 information-need 数据。用它测 recall@k，同时记录最终任务成功率、加载的 token、检索轮次和延迟。向量相似度更高，并不能单独说明任务做得更好。",
+      "kind": "paragraph-rewrite"
+    },
+    {
+      "path": "content/Agent开发/03-Context Engineering/07-Context Trust与Prompt Injection边界.md",
+      "before": "Prompt injection 的关键不是“文本是否像命令”，而是**低信任数据是否改变了高权限控制决策**。网页、issue、代码注释、文档、tool output、memory 都可能携带指令形态文本。",
+      "after": "判断 Prompt injection，要看程序是否把低信任材料当成了有权指挥它的指令。网页、issue、代码注释、文档、tool output 和 memory 里，都可能出现命令式文字。文字像命令还不等于攻击成功；需要检查它有没有改变高权限的控制决策。",
+      "kind": "paragraph-rewrite"
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/00-Tool与Runtime边界.md",
+      "before": "模型产生 invocation，并不直接拥有文件系统或进程权限。Registry 解析版本，Policy Gate 判定 capability，Executor 负责执行，Result Normalizer 把结构化状态回填。",
+      "after": "模型发出调用请求（invocation），不代表它直接拥有文件系统或进程权限。请求先由 Registry 找到对应版本的工具，再由 Policy Gate 检查所需能力（capability）是否允许使用。通过检查后，Executor 执行操作，Result Normalizer 把结果整理成结构化状态并交回去。",
+      "kind": "paragraph-rewrite"
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/01-工具调用完整链路.md",
+      "before": "模型只负责提出调用。Registry、Router、Permission Gate 和 Executor 负责把调用变成真实动作。",
+      "after": "模型提出调用后，还需要程序接手。Registry 找工具，Router 分发请求，Permission Gate 检查权限，Executor 才负责实际执行。把这些职责分开，才能知道调用卡在哪一步。",
+      "kind": "paragraph-rewrite"
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/04-Terminal执行与进程生命周期.md",
+      "before": "Terminal 是 Coding Agent 最常用、也最容易被低估的工具。它不是“把一段字符串交给 shell”，而是一个受约束的 **OS 进程执行器**：接收结构化请求，创建子进程，持续消费输出，处理超时与取消，最后返回可审计结果。",
+      "after": "Coding Agent 经常用 Terminal 工作。实现这个工具时，不能只把字符串交给 shell 就结束：它需要接收结构化请求、创建子进程、持续读取输出，还要处理超时和取消，最后留下可以核查的结果。可以把它理解成一个受约束的 OS 进程执行器。",
+      "kind": "paragraph-rewrite"
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/05-Terminal输出流读取与结果归一化.md",
+      "before": "执行命令只是第一步。Agent 还需要知道命令正在做什么、是否卡住、哪些输出是结果、哪些是诊断，以及输出被截断后还能否追溯完整日志。可靠的 Terminal Tool 应把**字节流、进程状态和面向模型的观察**分成三层。",
+      "after": "命令启动后，Agent 还要知道它在做什么、有没有卡住。输出里哪些是结果，哪些是诊断信息？如果内容被截断，完整日志还能去哪里找？处理这些问题时，Terminal Tool 要分别管理收到的字节流、进程的运行状态，以及最终交给模型的信息。",
+      "kind": "paragraph-rewrite"
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/06-File IO读取写入补丁与原子更新.md",
+      "before": "文件工具是 Coding Agent 与仓库交互的基础。可靠实现的目标不是“让模型拥有一个万能文件 API”，而是提供少量、语义明确、结果可验证的操作，使每次读取和变更都能定位、比较、回滚和测试。",
+      "after": "Coding Agent 靠文件工具读写仓库。工具不必包揽所有操作，但每种操作都要说清用途，并让结果可验证。这样每次读取或修改后，程序才能定位文件、比较变化、回滚改动，并检查结果。",
+      "kind": "paragraph-rewrite"
+    },
+    {
+      "path": "content/Java开发/05-Spring Framework/00-本阶段导学.md",
+      "before": "理解 Spring 如何创建对象、连接依赖、在方法调用边界织入事务等基础设施，并通过事件、资源、校验、缓存和调度支持应用。重点是容器与代理的真实边界，而不是背注解。",
+      "after": "这一阶段先看 Spring 怎样创建对象、连接依赖，再看代理怎样在方法调用前后处理事务。事件、资源、校验、缓存和调度也会逐项学到。学完后，应该能解释容器和代理各自做了什么、哪些调用不在它们的管理范围内，而不只是记住注解名字。",
+      "kind": "paragraph-rewrite"
+    },
+    {
+      "path": "content/Java开发/05-Spring Framework/01-IoC依赖注入与Bean生命周期.md",
+      "before": "IoC 容器创建对象图、解析依赖并管理生命周期。依赖注入的目的不是减少 `new`，而是让依赖显式、可替换和可测试。",
+      "after": "IoC 容器负责创建对象、把相互依赖的对象连接起来，并管理它们从创建到销毁的过程。使用依赖注入，是为了看清对象需要什么、方便替换依赖和编写测试；少写几个 `new` 并不是目的。",
+      "kind": "paragraph-rewrite"
+    },
+    {
+      "path": "content/Java开发/05-Spring Framework/01-IoC依赖注入与Bean生命周期.md",
+      "before": "ApplicationContext 读取 Java 配置、组件扫描或 XML，形成 BeanDefinition，实例化单例并处理后置器。容器还提供事件、资源、国际化和类型转换。",
+      "after": "ApplicationContext 先读取 Java 配置、组件扫描结果或 XML，把对象的创建信息整理成 BeanDefinition。随后，容器创建单例对象，并让后置处理器参与处理。除了装配对象，它还提供事件、资源、国际化和类型转换功能。",
+      "kind": "paragraph-rewrite"
+    },
+    {
+      "path": "content/Java开发/05-Spring Framework/01-IoC依赖注入与Bean生命周期.md",
+      "before": "构造器注入保证必需依赖在创建时完整，字段可 final，并便于普通单元测试。setter 适合真正可选或可重配置依赖；字段注入隐藏依赖且难以脱离容器。",
+      "after": "必需的依赖放进构造器，创建对象时就得提供齐全，保存这些依赖的字段也可以声明为 final。这样写普通单元测试更方便。真正可选、或需要重新配置的依赖，可以通过 setter 传入。字段注入则把依赖藏在对象内部，脱离容器使用时更难处理。",
+      "kind": "paragraph-rewrite"
+    },
+    {
+      "path": "content/Java开发/05-Spring Framework/02-Spring-AOP代理与事务.md",
+      "before": "Spring AOP 通过代理拦截 Spring Bean 的方法执行，声明式事务是其最重要应用之一。理解代理边界才能解释事务为何有时“失效”。",
+      "after": "Spring AOP 通过代理介入 Spring Bean 的方法执行，声明式事务就是它的一项主要用途。所以排查事务为何没有生效时，要先追踪调用是否经过了代理。",
+      "kind": "paragraph-rewrite"
+    },
+    {
+      "path": "content/Java开发/05-Spring Framework/03-Spring资源事件校验缓存与调度.md",
+      "before": "Spring Core 还提供 Resource、事件、类型转换、Bean Validation 集成、缓存抽象和任务调度；这些能力必须带边界使用。",
+      "after": "Spring Core 用 Resource 处理资源访问，也提供事件、类型转换、Bean Validation 集成、缓存抽象和任务调度。使用时要分别弄清它们负责哪一段工作，以及哪部分仍需应用自己处理。",
+      "kind": "paragraph-rewrite"
+    },
+    {
+      "path": "content/Java开发/05-Spring Framework/04-Spring异步定时任务Quartz与Batch.md",
+      "before": "后台任务需要明确触发方式、并发模型、幂等、持久状态、重试和可观测性。`@Async`、`@Scheduled`、Quartz 与 Spring Batch 分别解决不同复杂度，不应混为一个“定时器”。",
+      "after": "安排后台任务前，先说明它由什么触发、能同时运行多少个、重复执行是否安全。还要决定状态是否保存、失败怎样重试、运行过程怎样查看。`@Async`、`@Scheduled`、Quartz 和 Spring Batch 各有用途，不能都当成同一种“定时器”。",
+      "kind": "paragraph-rewrite"
+    },
+    {
+      "path": "content/Java开发/06-Spring Boot与Web/00-本阶段导学.md",
+      "before": "从浏览器发出 HTTP 请求开始，理解连接如何进入服务器、经过 Servlet 容器和 Spring MVC，最终被控制器、业务层与异常处理器转换为稳定响应；再学习 Boot 如何约定并自动配置这一链路。",
+      "after": "跟着浏览器发出的一次 HTTP 请求往里看：连接怎样进入服务器，请求怎样经过 Servlet 容器和 Spring MVC，控制器、业务层与异常处理器又怎样一起产生响应。弄清这个过程后，再看 Boot 为哪些环节提供了约定和自动配置。",
+      "kind": "paragraph-rewrite"
+    },
+    {
+      "path": "content/Java开发/06-Spring Boot与Web/03-REST-API校验错误处理与版本.md",
+      "before": "REST API 的正确性来自 HTTP 语义、资源模型、幂等性、错误契约和兼容演进，而不是 URL 是否“看起来像名词”。",
+      "after": "设计 REST API，要说清请求操作哪种资源、HTTP 方法表达什么含义、重复请求会怎样。出错时返回什么、版本变化后是否仍兼容，也属于接口约定。只把 URL 改成名词，并不能保证接口设计正确。",
+      "kind": "paragraph-rewrite"
+    },
+    {
+      "path": "content/Java开发/06-Spring Boot与Web/04-Actuator日志指标追踪与生产配置.md",
+      "before": "生产级 Boot 服务需要 health、metrics、traces、logs、审计和安全暴露策略形成诊断闭环。",
+      "after": "Boot 服务上线后，要能查看健康状态（health）、指标（metrics）、调用追踪（traces）和日志（logs），也要保留审计记录。同时需要规定这些信息向谁开放，避免排错入口泄露不该公开的数据。",
+      "kind": "paragraph-rewrite"
+    },
+    {
+      "path": "content/Java开发/06-Spring Boot与Web/05-OpenAPI文件处理邮件与WebSocket.md",
+      "before": "真实 Web 服务除 JSON CRUD 外，还需要契约文档、文件流、异步通知和双向通信。每类能力都有独立的资源限制、安全边界与失败模型。",
+      "after": "实际开发 Web 服务时，除了 JSON 的增删改查，还可能需要接口文档、文件传输、异步通知和双向通信。它们占用的资源、允许的操作以及失败后的处理方式各不相同，需要分别设计。",
+      "kind": "paragraph-rewrite"
+    },
+    {
+      "path": "content/Java开发/08-测试与质量工程/00-本阶段导学.md",
+      "before": "用不同层级的可执行证据降低变更风险。单元测试快速验证局部规则；集成测试验证真实边界；契约与端到端测试验证协作；性能和稳定性测试验证非功能目标。",
+      "after": "修改代码后，可以用不同层次的测试检查结果。单元测试先快速检查局部规则，集成测试再检查与真实依赖的配合；契约和端到端测试关注多个部分能否一起工作。性能和稳定性测试则检查速度、容量以及长时间运行的表现。",
+      "kind": "paragraph-rewrite"
+    },
+    {
+      "path": "content/Java开发/08-测试与质量工程/01-测试策略-JUnit与Mockito.md",
+      "before": "高质量测试验证可观察行为和重要不变量，并在失败时给出定位信息；覆盖率是辅助信号，不是目标本身。",
+      "after": "测试应检查能观察到的行为，以及始终需要成立的规则。失败时，还要给出能帮助定位问题的信息。覆盖率可以提醒我们哪些地方没执行到，但提高这个数字本身不是测试的目标。",
+      "kind": "paragraph-rewrite"
+    },
+    {
+      "path": "content/Java开发/08-测试与质量工程/02-Spring集成-Testcontainers与契约测试.md",
+      "before": "框架切片、真实数据库和服务契约测试共同覆盖序列化、事务、SQL、配置和边界兼容性。",
+      "after": "把框架切片测试、真实数据库测试和服务契约测试配合起来，才能一起检查序列化、事务、SQL、配置，以及不同部分之间的接口是否兼容。",
+      "kind": "paragraph-rewrite"
+    },
+    {
+      "path": "content/Java开发/08-测试与质量工程/03-API-UI自动化与测试平台.md",
+      "before": "自动化测试需要稳定定位、独立数据、并行能力、失败证据和责任闭环，脚本数量本身不代表质量。",
+      "after": "自动化测试要能稳定找到目标，使用互不干扰的数据，并支持并行运行。失败后要留下可查的记录，也要明确由谁处理。脚本写得多，并不代表这些问题已经解决。",
+      "kind": "paragraph-rewrite"
+    },
+    {
+      "path": "content/Java开发/08-测试与质量工程/05-Testing Portfolio与发布回归.md",
+      "before": "覆盖率只表示哪些代码被执行，不表示断言质量、边界覆盖或 mutation resistance。关键是测试目标、初始状态、行为、外部副作用和可复现失败证据。",
+      "after": "覆盖率只告诉你哪些代码执行过。它不能说明断言是否有效、是否检查了边界情况，也不能说明测试能否发现故意改坏的代码（mutation resistance）。审阅测试时，要看目标是什么、从什么状态开始、执行什么行为，以及怎样检查外部影响和复现失败。",
+      "kind": "paragraph-rewrite"
+    },
+    {
+      "path": "content/Java开发/11-缓存与搜索/00-缓存与搜索导学.md",
+      "before": "Redis 不是“更快数据库”，Elasticsearch 也不是关系数据库的默认替代品。先定义 source of truth、查询/延迟目标、一致性窗口和失败回退。",
+      "after": "使用 Redis 或 Elasticsearch 前，先确定数据以哪里为准（source of truth），要支持什么查询、能接受多少延迟，以及结果最多可以旧到什么程度。还要考虑缓存或索引出错后怎样退回可用路径。不能只把 Redis 当成“更快数据库”，或默认用 Elasticsearch 替换关系数据库。",
+      "kind": "paragraph-rewrite"
+    },
+    {
+      "path": "content/Java开发/11-缓存与搜索/02-Elasticsearch搜索工程.md",
+      "before": "mapping 决定字段如何索引。text 经分析用于全文检索，keyword 保存精确值用于过滤、排序和聚合；日期、数值、nested、object 与向量各有语义。",
+      "after": "mapping 决定每个字段怎样建立索引。需要按词查找正文时，使用经过分析的 text；需要按原值过滤、排序或聚合时，使用 keyword。日期、数值、nested、object 和向量也各有自己的含义，不能当成同一种字段处理。",
+      "kind": "paragraph-rewrite"
+    },
+    {
+      "path": "content/Java开发/11-缓存与搜索/03-缓存CDN分库分表与热点治理.md",
+      "before": "扩展数据路径应先优化模型、索引和缓存，再引入复制或分片；每一层都增加一致性和运维成本。",
+      "after": "数据访问需要扩容时，先检查模型、索引和缓存是否合适，再考虑复制或分片。每增加一层，都多出一份需要同步和维护的数据，也就增加了一致性和运维成本。",
+      "kind": "paragraph-rewrite"
+    },
+    {
+      "path": "content/Java开发/03-工程基础与Internet-Linux/01-JDK-IDE-Maven与Gradle.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/03-工程基础与Internet-Linux/02-Git协作与版本治理.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/03-工程基础与Internet-Linux/03-Linux-Shell与Docker.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/06-Spring Boot与Web/05-OpenAPI文件处理邮件与WebSocket.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/06-Spring Boot与Web/02-Servlet-Tomcat-Spring-MVC完整链路.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/06-Spring Boot与Web/03-REST-API校验错误处理与版本.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/06-Spring Boot与Web/01-Spring-Boot自动配置与启动.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/06-Spring Boot与Web/04-Actuator日志指标追踪与生产配置.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/14-性能工程/01-性能工程容量规划与JVM诊断.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/05-Spring Framework/01-IoC依赖注入与Bean生命周期.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/05-Spring Framework/02-Spring-AOP代理与事务.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/05-Spring Framework/04-Spring异步定时任务Quartz与Batch.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/05-Spring Framework/03-Spring资源事件校验缓存与调度.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/09-安全认证与授权/03-应用安全秘密供应链与审计.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/09-安全认证与授权/01-Spring-Security过滤链与方法授权.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/09-安全认证与授权/02-OAuth2-OIDC-JWT与API安全.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/02-RPC-HTTP-OpenFeign-Dubbo-gRPC与Netty.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/04-网关负载均衡限流熔断与重试.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/07-Seata-Sentinel-SkyWalking实战边界.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/06-Spring-Cloud与Spring-Cloud-Alibaba组件图.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/05-分布式ID事务与可靠事件.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/03-Nacos注册发现与配置治理.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/01-分布式基础CAP-BASE与共识.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/15-云原生DevOps与可观测性/03-CICD发布数据库迁移与回滚.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/15-云原生DevOps与可观测性/04-OpenTelemetry-SLO与故障响应.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/15-云原生DevOps与可观测性/02-Kubernetes工作负载网络配置与探针.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/15-云原生DevOps与可观测性/01-Docker镜像-Compose与供应链.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/04-关系型数据库/01-数据库原理与SQL.md",
+      "kind": "remove-repeated-lead",
+      "count": 5
+    },
+    {
+      "path": "content/Java开发/04-关系型数据库/02-MySQL-InnoDB索引事务与调优.md",
+      "kind": "remove-repeated-lead",
+      "count": 5
+    },
+    {
+      "path": "content/Java开发/11-缓存与搜索/04-Caffeine本地缓存与多级缓存.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/11-缓存与搜索/03-缓存CDN分库分表与热点治理.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/11-缓存与搜索/01-Redis与缓存工程.md",
+      "kind": "remove-repeated-lead",
+      "count": 5
+    },
+    {
+      "path": "content/Java开发/11-缓存与搜索/02-Elasticsearch搜索工程.md",
+      "kind": "remove-repeated-lead",
+      "count": 5
+    },
+    {
+      "path": "content/Java开发/07-数据访问与事务/03-连接池事务迁移与数据访问决策.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/07-数据访问与事务/04-MyBatis-Plus工程实践.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/07-数据访问与事务/02-JPA-Hibernate与Spring-Data.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/07-数据访问与事务/01-MyBatis映射与动态SQL.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/08-测试与质量工程/01-测试策略-JUnit与Mockito.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/08-测试与质量工程/03-API-UI自动化与测试平台.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/08-测试与质量工程/04-性能稳定性与故障演练.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/08-测试与质量工程/02-Spring集成-Testcontainers与契约测试.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/02-JVM与并发/01-JVM内存类加载字节码与GC.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/17-项目阶梯/04-作品集验收与面试证据.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/17-项目阶梯/03-项目三云原生高可用平台.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/17-项目阶梯/02-项目二事件驱动订单与库存系统.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/17-项目阶梯/01-项目一模块化单体任务系统.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/12-消息与事件驱动/02-消息队列基础与可靠消费.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/12-消息与事件驱动/03-Kafka事件流平台.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/12-消息与事件驱动/04-RabbitMQ与RocketMQ.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/16-可选专项/02-计算机科学与工程选修/01-数据结构算法复杂度与刷题方法.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/16-可选专项/02-计算机科学与工程选修/02-设计原则UML与常用设计模式.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/05-CSS级联盒模型布局响应式与动画.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/01-Web-HTML-CSS-JavaScript与TypeScript基础.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/02-Vue3-TypeScript与后台管理界面.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/06-JavaScript基础类型函数集合DOM与事件.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/03-全栈契约认证上传下载WebSocket与Nginx.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/08-TypeScript-Vue工程化测试与性能.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/07-JavaScript高级异步模块网络与性能.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/04-HTML语义表单媒体与可访问性.md",
+      "kind": "remove-repeated-lead",
+      "count": 4
+    }
+  ],
+  "articles": [
+    {
+      "path": "content/Agent开发/01-Agent基础/01-Agent类型区分.md",
+      "beforeSha256": "2279f7a4f8b850ec9cae999bf29c2cf1959ab7abc25499ee02204933620b9c4c",
+      "afterSha256": "c8ebe21563fa87ad0d6077768e09b4b64cdab921c33f2ea9aa8ce358d827323f"
+    },
+    {
+      "path": "content/Agent开发/01-Agent基础/02-Agent基本循环.md",
+      "beforeSha256": "0fb2c757078e2c53d2afd36bf4e3493ef4c8d8220f7211a254a5a738e617cb8d",
+      "afterSha256": "deb445ceeda738582256c56c35a471ff52f67e4bee5413d512bb8cace030e62b"
+    },
+    {
+      "path": "content/Agent开发/01-Agent基础/04-SWE Agent基础概念与ACI.md",
+      "beforeSha256": "9a9d9922647d38fd4a968c3298ca6964a0b496d81b46683c77a146a9f11b416a",
+      "afterSha256": "661ab2d48f45284e314aa79fbaf321860a3d9d6fec8bee166e99d46ac0ea7397"
+    },
+    {
+      "path": "content/Agent开发/01-Agent基础/05-统一工程模型与概念边界.md",
+      "beforeSha256": "d434e6c7ccfeaeea12c2b28df6efa5193ff6a4f5215338cf50ede84aaf7657af",
+      "afterSha256": "f65469b6af9a0f2db027a5846f3b56522c1d518834512f45e069c95729499ed2"
+    },
+    {
+      "path": "content/Agent开发/02-Agent Loop/01-最小Agent Loop实现.md",
+      "beforeSha256": "2daaf7bb175aa5128a12d323eab8529d6e649b51551f4c86cbef9013900099be",
+      "afterSha256": "2ee15a1714af1b5b4fa7de578a74485d0818eb36f1913536e323403cee724bab"
+    },
+    {
+      "path": "content/Agent开发/02-Agent Loop/02-结构化输出与状态机.md",
+      "beforeSha256": "3ad27225f2b9be890ca1edfb5a3147161a989f0f0f6ad64bb4e8ac2170e2934f",
+      "afterSha256": "6061bf1454cb0ec365f4d79d13b8e027851b3388a2de6c6298315afbdd8a2950"
+    },
+    {
+      "path": "content/Agent开发/02-Agent Loop/04-任务拆分与Plan表示.md",
+      "beforeSha256": "b37ee389439a3dd9ef9b64e08e246f1776738a626b02ec566d324c1adf35f6e9",
+      "afterSha256": "5d7947ef2228ed94cdd768afc33c2b1267d923f73e6dbe1f161e4de50e12567b"
+    },
+    {
+      "path": "content/Agent开发/02-Agent Loop/05-Task Scheduler依赖并发与重规划.md",
+      "beforeSha256": "cddf8ded1ddc5ea1098e57cddedf03d8ec25809e1f0610558a7e4e87dc284723",
+      "afterSha256": "ab341fe4959ab77d01927ea61400b81aefa23da78660dd7a815b4c93b225d7b2"
+    },
+    {
+      "path": "content/Agent开发/02-Agent Loop/06-Workflow流程控制模式.md",
+      "beforeSha256": "26b3655176dae61ef4554fbd76d8ea183a04c2053fe531da7e781a4fb1f9d0b1",
+      "afterSha256": "3985bf66223a8f1f66472c69f5278e4671b8fb7b8d55e5dfc5039efe5d0fee64"
+    },
+    {
+      "path": "content/Agent开发/03-Context Engineering/01-Context Engineering总览.md",
+      "beforeSha256": "cd193ddf486c11ac97d88fc43d572c902c8b0d027fbe2bdb60bf89779e4605b3",
+      "afterSha256": "f805409e5ba858191cb751ee9479926ae83a4e43be41f911aed8d5902c561dbd"
+    },
+    {
+      "path": "content/Agent开发/03-Context Engineering/02-Context上下文.md",
+      "beforeSha256": "cdd6baea4200dc8759f39b92ba0fb15a6dd1f0430cb0260313ddbd360e20deae",
+      "afterSha256": "67d53a7b0a9662d7959e5948d11852eba23498473dadd9a0632c3317f9970b88"
+    },
+    {
+      "path": "content/Agent开发/03-Context Engineering/03-Context Builder与Prompt Assembly.md",
+      "beforeSha256": "fde1d7e3bc74c9a0bf22d7c3680f4152eb511dd9b5c8fa83198ffc66fe4bf3fc",
+      "afterSha256": "c94762fd6d506ab510c2f9e221e2bb5575ede778679cd0be6f5c72350e002de0"
+    },
+    {
+      "path": "content/Agent开发/03-Context Engineering/04-Context Manifest与Assembly.md",
+      "beforeSha256": "657acad3f62d20b375cf8bc544426ea60fecccf9b8ed15a0cf2af621fa9c055f",
+      "afterSha256": "4690f5f44f3dc759e64eee87bb021344cbac8cafdff799d0da2d2f9ae95612db"
+    },
+    {
+      "path": "content/Agent开发/03-Context Engineering/06-JIT Retrieval与Progressive Disclosure.md",
+      "beforeSha256": "74d11df5c9a2918c3edf4a2e101476e63e293b81d4d3e985e72b516a2b2dd71c",
+      "afterSha256": "e67501095a6a5d43cca2713d9298c3e0f84f2ab1ef26a6a2e1482b53f62a4dcf"
+    },
+    {
+      "path": "content/Agent开发/03-Context Engineering/07-Context Trust与Prompt Injection边界.md",
+      "beforeSha256": "53206163e93616cd54fb9c0e5731ca05591a5378a19fc7fc28ec4197827dfa00",
+      "afterSha256": "2c92bc5b8370b465917beec92ed3c45dc1dbd912b0aabf6ef185825af8b7fa35"
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/00-Tool与Runtime边界.md",
+      "beforeSha256": "cd6d3e475ef5b858d90204ddebb735d1f340f6c0d75e896eaffd0fdca4c0f088",
+      "afterSha256": "a70ca31ccd56fb777271c05701542ca919c47bf158f3f7bb123762332b41967e"
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/01-工具调用完整链路.md",
+      "beforeSha256": "6dd7f6cfe3445c94fa7bd69dbc24c5c9ef9f6c97082636105b050a09b9fd7106",
+      "afterSha256": "dd91001a2c2be0e0b5508d1317c8e7f96c0d1d5cd405c61ef0d95f8f1ad4fb43"
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/04-Terminal执行与进程生命周期.md",
+      "beforeSha256": "4e4b9595b0674730b9b47a952fbeeada506d73c156c0a740646fc276717258fc",
+      "afterSha256": "6b340fbf3a671a2e256f39c87e40118bcb2e94f4e62397416fd8ab18c6a156e2"
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/05-Terminal输出流读取与结果归一化.md",
+      "beforeSha256": "60579447a6ec96c827912399972596237e862643f666de2848b2026d2d5d42a1",
+      "afterSha256": "5f609e48d6181a60fe86b12de6e1db41676ad99f383b9937aab2bd830d08569e"
+    },
+    {
+      "path": "content/Agent开发/04-Tools与Runtime/06-File IO读取写入补丁与原子更新.md",
+      "beforeSha256": "bb9f7a97c514c0064ef74feaa49904c2666845cf7ceae9160ba5f4f6ee57711e",
+      "afterSha256": "edc0b6705d9057771a057e66f5e3a8aa3fdeade45d06b408799215f8c2d77bf0"
+    },
+    {
+      "path": "content/Java开发/02-JVM与并发/01-JVM内存类加载字节码与GC.md",
+      "beforeSha256": "1b0a87bba91ec17d989922aafc312bc069618655e5ee6f7dd64f28e028c160aa",
+      "afterSha256": "2bd967bf416bff05e93612b866483e5f03b0e96df894ec4a0c391d0db6ba31e5"
+    },
+    {
+      "path": "content/Java开发/03-工程基础与Internet-Linux/01-JDK-IDE-Maven与Gradle.md",
+      "beforeSha256": "85f56aed609fcd92dba13e1408ec471dea5d5fd1ffbede141dbbac7dd43c70c6",
+      "afterSha256": "0be12634f32eec5e517fd07223451f23cadf2a2b166c3349e9e8963788b64015"
+    },
+    {
+      "path": "content/Java开发/03-工程基础与Internet-Linux/02-Git协作与版本治理.md",
+      "beforeSha256": "29c984e0b65e75f2b8b10b3e492182ce743430609ca1f4e67e57e217eec4d18d",
+      "afterSha256": "2c8980b212014ed1167f89d6535c7332ae98a495355e02c162ffd4463f480f42"
+    },
+    {
+      "path": "content/Java开发/03-工程基础与Internet-Linux/03-Linux-Shell与Docker.md",
+      "beforeSha256": "51a9381caca1e54ecfb1819924d1dfe383c6be34d494a59cf1006f9a3748ee91",
+      "afterSha256": "1bfbfdccd5a4e5d7a0fd1c7068db1c845b03cafcc30725d2e63405e66a2ba21f"
+    },
+    {
+      "path": "content/Java开发/04-关系型数据库/01-数据库原理与SQL.md",
+      "beforeSha256": "2915bba88d3bed5479573daa8495ae08a0ccdef9a2a88f68fcecd0efb26659e3",
+      "afterSha256": "bfe2a8353746ec95ea20a60a3c71930c01c46fd10b288a3356e2cfe377655ef1"
+    },
+    {
+      "path": "content/Java开发/04-关系型数据库/02-MySQL-InnoDB索引事务与调优.md",
+      "beforeSha256": "332fdee1b8120abf12195a33ac133e9817c56df120bc038ccbed41f1082812d3",
+      "afterSha256": "3a700d4c4277b270b5310b637afca04f4c3906426b58887b545f95caee189a35"
+    },
+    {
+      "path": "content/Java开发/05-Spring Framework/00-本阶段导学.md",
+      "beforeSha256": "dd3ccadfb5ee22fe7360a48788fd6616c8e9bcdcb9ba430b7854ca42afff2e8e",
+      "afterSha256": "d9122ed560bfc0df0b0530b4dae6def4f7ed50166f6abf73f786a7127df395f8"
+    },
+    {
+      "path": "content/Java开发/05-Spring Framework/01-IoC依赖注入与Bean生命周期.md",
+      "beforeSha256": "7315356bc6de901f126ace4d68131c54f32ede972dce53b34dadbf4f978458e3",
+      "afterSha256": "5c2eee2c0409f555bfb433c500f90f3b77644cb057c4cd13d99f849583050e80"
+    },
+    {
+      "path": "content/Java开发/05-Spring Framework/02-Spring-AOP代理与事务.md",
+      "beforeSha256": "8b5f96fa8bf46e25bfe3cdda177b00194df6c54f99ee53a5c81bb1d2d1f97fd2",
+      "afterSha256": "f811a95fb18307aaa265632664ed8954bb9b1a2791ada41bc32e41337802d9f9"
+    },
+    {
+      "path": "content/Java开发/05-Spring Framework/03-Spring资源事件校验缓存与调度.md",
+      "beforeSha256": "cb9eb8a33f4cf9670d15d94173e66f046bc71a3e68118e8323aa2ff6927076c5",
+      "afterSha256": "c5fe59684516508b0af796e88cf08eb2c4119aa5e0371179e64764d450b49358"
+    },
+    {
+      "path": "content/Java开发/05-Spring Framework/04-Spring异步定时任务Quartz与Batch.md",
+      "beforeSha256": "1b4359977127d184d68d24a51e3dc4a3066677a3f3778e7713c3f02c1c6ee84d",
+      "afterSha256": "08015294a8e95acfee0c3e0c6526f416ed5bbcdc4bdeeff85a195f8a61ca8402"
+    },
+    {
+      "path": "content/Java开发/06-Spring Boot与Web/00-本阶段导学.md",
+      "beforeSha256": "e0c812cd62d1683e5dde21f2e66cb627f2731c4b21434a6d9b4c5b986c7d8f04",
+      "afterSha256": "1d513e79d07e0895543865eaa93ab90f46c04f339bfd1b31fd9af6f71531f451"
+    },
+    {
+      "path": "content/Java开发/06-Spring Boot与Web/01-Spring-Boot自动配置与启动.md",
+      "beforeSha256": "24cfdb8d5bc131ff30f184b08c596c667e1b59cedf9ab86f1884bbdc956d597e",
+      "afterSha256": "f6522034209a464916efe8bed715bcdf8ac21a7449cd390ec8f899260b952c20"
+    },
+    {
+      "path": "content/Java开发/06-Spring Boot与Web/02-Servlet-Tomcat-Spring-MVC完整链路.md",
+      "beforeSha256": "3f5647a854f2b84da383725977f9c9c95cd3cc56974f5c5d805633a7c3c19637",
+      "afterSha256": "9694eca7a4eecc245c54e2eef3a77e6af81b80fbfe7fe8e7694578820564c6d7"
+    },
+    {
+      "path": "content/Java开发/06-Spring Boot与Web/03-REST-API校验错误处理与版本.md",
+      "beforeSha256": "9ff981541ff17d7bcbd9cc7afb2c20b0f64668b165c9f1545ecd43c2880a7222",
+      "afterSha256": "fd7ec4889ad3eba60fbb1e5ab9c29c3b505b5c0028e006b4b99d06f1ce48fbee"
+    },
+    {
+      "path": "content/Java开发/06-Spring Boot与Web/04-Actuator日志指标追踪与生产配置.md",
+      "beforeSha256": "f2dbd75a0a761382e0ee9b7e178cc8b10f9bf9ca4992cc4062b83fb908c3ad72",
+      "afterSha256": "9f73111779e9cc9d3f35bbbbb358094be60e07a0ea1b6f050d6b9f03b6cebb59"
+    },
+    {
+      "path": "content/Java开发/06-Spring Boot与Web/05-OpenAPI文件处理邮件与WebSocket.md",
+      "beforeSha256": "a5b446b6fb2d07b66ee32503abc2a5b2446f9cc29a4a5f8422ded166e94bbc9d",
+      "afterSha256": "e22a4938b66b8178749361ef7eb46274c223f9d84a571a60471df5c16230aadd"
+    },
+    {
+      "path": "content/Java开发/07-数据访问与事务/01-MyBatis映射与动态SQL.md",
+      "beforeSha256": "662ab662fc795dc86bcd9ee3c353156b6640f637ea01eca0465449c8982d51cc",
+      "afterSha256": "77c24a303834043545084b6d241cf30b003fc9d8647626e43c11385e4d99a33b"
+    },
+    {
+      "path": "content/Java开发/07-数据访问与事务/02-JPA-Hibernate与Spring-Data.md",
+      "beforeSha256": "d8aef163deab186b7312bc862b2a8194c50252813b59ea620f5e8f6e88ed7820",
+      "afterSha256": "4443b37722659c587bd786fd70ce9aa00cb6de7378038174e0a008636602e286"
+    },
+    {
+      "path": "content/Java开发/07-数据访问与事务/03-连接池事务迁移与数据访问决策.md",
+      "beforeSha256": "7cb68c3c0bd81ff086ccdfceaead19d485d0fcea03ebdd424d54bd9a894150d2",
+      "afterSha256": "d7253df6d917122aa5c67d88f44f287a74679034a6d2b9dbc0e100dd802a2afb"
+    },
+    {
+      "path": "content/Java开发/07-数据访问与事务/04-MyBatis-Plus工程实践.md",
+      "beforeSha256": "4f252b7c97b05eb714561f327dab17973f61c361714f8a4973a1879b812f7c7c",
+      "afterSha256": "7eef73f18f317275673e1ba240de0996e64931e2d5a235024cddeab19b103db7"
+    },
+    {
+      "path": "content/Java开发/08-测试与质量工程/00-本阶段导学.md",
+      "beforeSha256": "3df1872e0c559f4def8db8a52c814d785c23f46810f56d3205afde66134eefe9",
+      "afterSha256": "3250630d243b635e189ffc425b2025346b16b8bbc47bc15b31854ffe036d895d"
+    },
+    {
+      "path": "content/Java开发/08-测试与质量工程/01-测试策略-JUnit与Mockito.md",
+      "beforeSha256": "21604ac48407df79d7a4313f790941d3d31171018cb20748482100a2689d29ef",
+      "afterSha256": "c59fade97ec27d749e78b89508420b00d09d32fc22bdac9a6327e7fdaa395763"
+    },
+    {
+      "path": "content/Java开发/08-测试与质量工程/02-Spring集成-Testcontainers与契约测试.md",
+      "beforeSha256": "e4d772c206a7804a306b2af820b0df07cf10f0c15f14e4205da15c9dccc4d981",
+      "afterSha256": "8edbc247fd171404485b6cd5a276311962fe841a341e4f5cc82d715a01e476ae"
+    },
+    {
+      "path": "content/Java开发/08-测试与质量工程/03-API-UI自动化与测试平台.md",
+      "beforeSha256": "bf6596bcd1c4b6eef03df13755df8970ad3fd7b745451074f8608bb45697fd37",
+      "afterSha256": "b817540e446972fa7dc00793d2e88a566fabe9728938c8adbba1662b1ca9a5aa"
+    },
+    {
+      "path": "content/Java开发/08-测试与质量工程/04-性能稳定性与故障演练.md",
+      "beforeSha256": "f99d55ea780681025625d25febd3ab8a3008f80ca2bc5ae73ef49b1573e1ee52",
+      "afterSha256": "440890bc021f83dc2efed006dc5b0b63f15efd1d8c1b8cf67f5e2641a9a5dde7"
+    },
+    {
+      "path": "content/Java开发/08-测试与质量工程/05-Testing Portfolio与发布回归.md",
+      "beforeSha256": "71790002107cdbcfe492b5be7d991816cc42b972b207f349505cb51a617fbdd0",
+      "afterSha256": "91fb4c548f8d9e5aca0e8ffe51ca9fb44bc1a7d125cd11082902fe5ebe1fd00a"
+    },
+    {
+      "path": "content/Java开发/09-安全认证与授权/01-Spring-Security过滤链与方法授权.md",
+      "beforeSha256": "5f07776399db7e68164740f8feb052b0b9cc1cc080373a7d2f6629ab4de4cf69",
+      "afterSha256": "3d9a4a30aee679370f0d7d9c051e85d464d0b741a5da325133e5b56f952448ce"
+    },
+    {
+      "path": "content/Java开发/09-安全认证与授权/02-OAuth2-OIDC-JWT与API安全.md",
+      "beforeSha256": "531ee7315aeab0c89b4a79cce6e31714b0fa6ef6bea30a7ae0bed7f649c3eb16",
+      "afterSha256": "79f7fc6123d7ec242ffaf2e126ae537db00e6ea7e81e6c2b726726203876bfc9"
+    },
+    {
+      "path": "content/Java开发/09-安全认证与授权/03-应用安全秘密供应链与审计.md",
+      "beforeSha256": "32d5eb3f7cdb7ff65fbf3e738a56431b9441028120f3396889c05fbd280f1b5b",
+      "afterSha256": "383dc357cda3d503f0c2d7419eb1f552b7660500d5e3b98879bb2f26088265ee"
+    },
+    {
+      "path": "content/Java开发/11-缓存与搜索/00-缓存与搜索导学.md",
+      "beforeSha256": "812ab5f14403fb75dada59aa2a3ee56209aac20dbfc98fb8d63a6765be37711a",
+      "afterSha256": "d75f3fad624a13dffd160c1c8e95ed8bdf939093690c180baecc6ad0fbf2a9b3"
+    },
+    {
+      "path": "content/Java开发/11-缓存与搜索/01-Redis与缓存工程.md",
+      "beforeSha256": "2ef5dc2ac745abe9599a36bb3a4aeb18b05f5afc4b7f893e2036e02c57369c13",
+      "afterSha256": "8183c34b3e1e5bcd388a19c1c716863a1c5fee1d47061029b08d88735d801266"
+    },
+    {
+      "path": "content/Java开发/11-缓存与搜索/02-Elasticsearch搜索工程.md",
+      "beforeSha256": "a6c9ba3ee254379499b01c4656d8991cf2ebfd79bfdd303b5b294b160a4b76bd",
+      "afterSha256": "b6248b595f9eac9197124d164b1147a86ce66a11fb33af56f737343ccd5f6986"
+    },
+    {
+      "path": "content/Java开发/11-缓存与搜索/03-缓存CDN分库分表与热点治理.md",
+      "beforeSha256": "c154e4a9e01a6d5c6dca5e5a69b6264768821372d135429a30cb52d893b68b60",
+      "afterSha256": "7a49a0b8f027225374e32f6f2ac7648e5dba0254826ba4f41bb12a359cb2ac80"
+    },
+    {
+      "path": "content/Java开发/11-缓存与搜索/04-Caffeine本地缓存与多级缓存.md",
+      "beforeSha256": "692513c42ef9a4fbab2335a04dae8926e1742d6109666138e36f5f55300cd9f4",
+      "afterSha256": "cff8a280d2b464e126b1dde58552af7f527467f19caa775a41ea7cf044276a37"
+    },
+    {
+      "path": "content/Java开发/12-消息与事件驱动/02-消息队列基础与可靠消费.md",
+      "beforeSha256": "bac652daaf246693e70f81e7681d6a4c59c8499a53f56b056b8c5c720b1a4107",
+      "afterSha256": "0f3630a8f54ef7a7b9185b9da1576c9c3e607c656d759788bc918c5151496061"
+    },
+    {
+      "path": "content/Java开发/12-消息与事件驱动/03-Kafka事件流平台.md",
+      "beforeSha256": "17950fd32a801d54c5c7297a3557eaa396c07fcdf7cbe731e7603173c40fedb7",
+      "afterSha256": "e08fe4ee5b3c203344e3ee709ecc8e7ec1be74054085becec67a04c52e3e6baa"
+    },
+    {
+      "path": "content/Java开发/12-消息与事件驱动/04-RabbitMQ与RocketMQ.md",
+      "beforeSha256": "77656e7bbb7dbe867ec2ea42b638b1077a0a934a76666eda49fd4dbd98404c86",
+      "afterSha256": "4ff96371d58e9fc58719f7ab0c8e00c6187906f770571994d1cf9e4ff55d30d5"
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/01-分布式基础CAP-BASE与共识.md",
+      "beforeSha256": "c6dacb5e8cb0c1058acf4e19c19649bb4e8ab837433067596708eab4bdaa1051",
+      "afterSha256": "328a39c7e60abce0b8c0b4fa0f853de7484d90fac0c86724b0de0a18a2d7af2e"
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/02-RPC-HTTP-OpenFeign-Dubbo-gRPC与Netty.md",
+      "beforeSha256": "e456be7fb211fbdeb3d7ef4c0941103f64701d98ed15cd34d70b6cd61e5e5602",
+      "afterSha256": "58f62e22b13fcb77acda168971af7174e3e06e9d073d0e256e6124eb1e541415"
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/03-Nacos注册发现与配置治理.md",
+      "beforeSha256": "e828b3d54f9179228a6b540e6417aff5618ce73efa28c65c80c6c43020879e3c",
+      "afterSha256": "5f45b22dabea257be8d7752c81bc5aa2abd3b33f13ff6f55a32dcba052c1ea8d"
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/04-网关负载均衡限流熔断与重试.md",
+      "beforeSha256": "7d25c6417adedb84e09e6fc6860bd78fc68b5a7b09885a6fa71abb8560a62fb5",
+      "afterSha256": "207eddaa50aee1c4d020fbcc5b77f41b06c3ae60546a27a49f56dda650a93fab"
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/05-分布式ID事务与可靠事件.md",
+      "beforeSha256": "3f4a3894d73aefb1031f2851ec98b491d1333345d5789d45a13e8a94f97d2789",
+      "afterSha256": "f992599009624e0cd8f8ccaf61812fd79bd74969fd61621b6dfa7a7284c9be67"
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/06-Spring-Cloud与Spring-Cloud-Alibaba组件图.md",
+      "beforeSha256": "f7e01d96dee534b3f1bad1d5dc7bfcbf3c8deabbfd0291dced621b4b72e514b3",
+      "afterSha256": "3c7e7549e4bb030c86c6b191dc48d2296d4c5a7b3429a0e546cfeee8d9d76480"
+    },
+    {
+      "path": "content/Java开发/13-分布式与微服务/07-Seata-Sentinel-SkyWalking实战边界.md",
+      "beforeSha256": "e3ee4cec2857c4ed0110df98c58e204838fa74be343fd6b60dfd61c50ef24310",
+      "afterSha256": "9695fed8100731341d80062f0ba0b9d749f09db89b3ab841396036db74dde931"
+    },
+    {
+      "path": "content/Java开发/14-性能工程/01-性能工程容量规划与JVM诊断.md",
+      "beforeSha256": "1b9408abe744d123f3b61ca8ac58c1ec02e19bec6bcb8430fd9bf51e25e6d51f",
+      "afterSha256": "3c70f7af754eb084f5253b48db65910416f4b6db01c9bd75f2ac6367af63feb8"
+    },
+    {
+      "path": "content/Java开发/15-云原生DevOps与可观测性/01-Docker镜像-Compose与供应链.md",
+      "beforeSha256": "6b9732328a18a5eed9e5b4aa3338046efb9cd26ce7abb33e0d381d2ce7ceb57a",
+      "afterSha256": "857e115734d9d1732ae8c34e6d0a46acea99f058c520c0350d438af1daa8fd06"
+    },
+    {
+      "path": "content/Java开发/15-云原生DevOps与可观测性/02-Kubernetes工作负载网络配置与探针.md",
+      "beforeSha256": "577c96a6ea25dd9d8d9205f42d6d59889d15b338e1e37d813ab1473ecedb6d3d",
+      "afterSha256": "5d84b3fbb245a4595e4e3bd900e47d2955311b4426413341d4f8ffb26efdec08"
+    },
+    {
+      "path": "content/Java开发/15-云原生DevOps与可观测性/03-CICD发布数据库迁移与回滚.md",
+      "beforeSha256": "768a60c347f2fe6cacdc72ce61fab4334108e4065c1d41344f090f71cd177ebb",
+      "afterSha256": "91f5acd0917735601ad36f5b5d16d56fddbcadcd520b6c10eb31eba150336d0e"
+    },
+    {
+      "path": "content/Java开发/15-云原生DevOps与可观测性/04-OpenTelemetry-SLO与故障响应.md",
+      "beforeSha256": "731b7b4fa8856732d81fd9435553c9992e09073cd2f435f699600526520b2d28",
+      "afterSha256": "571562faef4d3824723b391addded3dc444e97aca78c6ceb3ae3d21fe722d8f7"
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/01-Web-HTML-CSS-JavaScript与TypeScript基础.md",
+      "beforeSha256": "a11bfd5979089dd599f9997637aa25af1cae64a165d079e9315a5c2727183e1c",
+      "afterSha256": "cec3acc257938cbc70c1e69c5f73f91f8b02897ac677639f13389597ce9996d9"
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/02-Vue3-TypeScript与后台管理界面.md",
+      "beforeSha256": "e669aac46e35150818ce200908360bde5a5256e34541078ed947d5626c96ab13",
+      "afterSha256": "554da2797f5969fa08cd2cdc9b91bdf73dbea6f3f3e3f8c913658c5321ee6d5d"
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/03-全栈契约认证上传下载WebSocket与Nginx.md",
+      "beforeSha256": "7e42d3472758ce218b61c3ed8a596a2e18182c6214440455a9bdf1db9cc4d31f",
+      "afterSha256": "19f1f18503ad8f5ad9289a1e944e5ed6effd0325300f154799fb44155ad99326"
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/04-HTML语义表单媒体与可访问性.md",
+      "beforeSha256": "e6bbda913b0ea6fb7c3daf018862af9cbd8d2040d8ca2a2dc2d3d1aa0a31671d",
+      "afterSha256": "68e77a0c8b8d288292a40fd8b4dccde175a675270a79b5341d28ef3c1e5a9c94"
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/05-CSS级联盒模型布局响应式与动画.md",
+      "beforeSha256": "30874b613946152463c0c23260a16c3b4b7e35769f2d297a68ecda91227b3d6d",
+      "afterSha256": "a66458b2678f2cdb2d1797ce5f3bf0f449fca4aa229760a2e25776aa8aef8e25"
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/06-JavaScript基础类型函数集合DOM与事件.md",
+      "beforeSha256": "d5d8d26e280c27b7672ccf13f2849b7de147c13aae10e5ef5b169dba99697465",
+      "afterSha256": "bd48eda028b2d39ded93d97ee066b8092fcb999f3e8edf7af81e343b21d6a5c2"
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/07-JavaScript高级异步模块网络与性能.md",
+      "beforeSha256": "10f7b1728ef9c664963ed4aa2942e41bc30bf6ba13e7fee8ade1935f14beacc6",
+      "afterSha256": "d41c97fc3de6544a882f4098123de95013c7e393c94fa8786fb5828a8ca40d15"
+    },
+    {
+      "path": "content/Java开发/16-可选专项/01-前端与全栈交付/08-TypeScript-Vue工程化测试与性能.md",
+      "beforeSha256": "f499fe545e513f4865668611bc1e5d5dd8dd9e00de17faab544dc422355dc90c",
+      "afterSha256": "e486a89a8d1169219db57cb8eccdf5606f2c8eb98444c8df33845f001d43d60b"
+    },
+    {
+      "path": "content/Java开发/16-可选专项/02-计算机科学与工程选修/01-数据结构算法复杂度与刷题方法.md",
+      "beforeSha256": "41a223389de487d351434861c30f32013a542af9c1853c5a04c9d6d579a04e8a",
+      "afterSha256": "e4ecf538d245d5a4ed4e1fb0bdc5766e63b600ad88eea4a147f4ea06a190a849"
+    },
+    {
+      "path": "content/Java开发/16-可选专项/02-计算机科学与工程选修/02-设计原则UML与常用设计模式.md",
+      "beforeSha256": "bd5f197d9967b91b1bcb21471fe774597e7c0d5b44f9fddc2e3f1256b04bad36",
+      "afterSha256": "80ea8d0f57c865d097974da4a3ac975c1e876ecb029649bc23eb3d276b444a74"
+    },
+    {
+      "path": "content/Java开发/17-项目阶梯/01-项目一模块化单体任务系统.md",
+      "beforeSha256": "77f7140b67bfc53241108a392467b13effe6e86cef2c5bc4ddb6a584e0ac3199",
+      "afterSha256": "a15d199abab1a41c4f5058b102a8a7e0eec000d003d3fb1e663ceb2d487c3997"
+    },
+    {
+      "path": "content/Java开发/17-项目阶梯/02-项目二事件驱动订单与库存系统.md",
+      "beforeSha256": "f757b0f126b349549d9bc1992ac2e957c80cb9d1f4ffc198c1e56b2c627a1daa",
+      "afterSha256": "7cca2870c9b75f4d897ee42cdc67ce1773f6b36e85fdbef26de30d01de411fc2"
+    },
+    {
+      "path": "content/Java开发/17-项目阶梯/03-项目三云原生高可用平台.md",
+      "beforeSha256": "793e6f0100cb7fab052867f2dfe77d97a6ea9afd3636908823d0ad3bff4f8b7e",
+      "afterSha256": "9218cf0823d015ef7e9096169cbc8bf4cd4d96294c3e7051e2e99fa19449bc88"
+    },
+    {
+      "path": "content/Java开发/17-项目阶梯/04-作品集验收与面试证据.md",
+      "beforeSha256": "3a22f2df030c4e150041456796389018ce7ebf29c58c143e574f5a7405b1aab1",
+      "afterSha256": "62bac72beec5d89641ae3187a6a0d03d7d57eb4a62272dbb18f96bac944667f3"
+    }
+  ]
+}

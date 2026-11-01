@@ -17,25 +17,25 @@ HTML 定义内容和交互控件的语义。浏览器据此构建 DOM 和可访�
 
 `<!doctype html>` 启用标准模式；`html/head/body` 构成骨架。`header/nav/main/article/section/aside/footer` 表达区域角色，标题层级描述内容大纲。`button`、`a`、列表和表格应按真实语义选择。
 
-**这里容易混淆的是：** `section` 通常需要可识别标题；用于布局的无语义容器可使用 `div`，但不要用 `div` 模拟原生按钮。
+`section` 通常需要可识别标题；用于布局的无语义容器可使用 `div`，但不要用 `div` 模拟原生按钮。
 
 ### 2. 表单与浏览器校验
 
 `form` 通过 method/action/encoding 定义提交。每个控件用 `label for` 获得可访问名称，`name` 决定 FormData 键；`required`、`min/max`、`minlength`、`pattern` 提供约束。服务端必须再次校验。
 
-**这里容易混淆的是：** placeholder 不是 label；disabled 控件不提交，readonly 控件通常仍提交。
+placeholder 不是 label；disabled 控件不提交，readonly 控件通常仍提交。
 
 ### 3. 媒体与性能
 
 `img` 需要反映用途的 `alt`；装饰图可用空 alt。`picture/srcset/sizes` 让浏览器按视口和像素密度选择资源，显式 width/height 减少布局偏移。音视频应提供字幕和替代信息。
 
-**这里容易混淆的是：** 不要把重要文字只放进图片；懒加载首屏主图可能延迟最大内容绘制。
+不要把重要文字只放进图片；懒加载首屏主图可能延迟最大内容绘制。
 
 ### 4. 可访问性
 
 可访问名称来自 label、文本或 ARIA；焦点顺序通常遵循 DOM。先使用原生语义，ARIA 仅补充缺失语义。动态错误用文本关联，模态框需管理初始焦点、焦点约束和关闭后的焦点恢复。
 
-**这里容易混淆的是：** ARIA 不会自动加入键盘行为、状态管理和视觉样式。
+ARIA 不会自动加入键盘行为、状态管理和视觉样式。
 
 ## 3. 运行链路
 

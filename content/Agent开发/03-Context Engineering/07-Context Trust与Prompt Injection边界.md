@@ -8,7 +8,7 @@
 > - `source_type`: `official-security-guidance + engineering synthesis`
 > - `stability`: `version-sensitive`
 
-Prompt injection 的关键不是“文本是否像命令”，而是**低信任数据是否改变了高权限控制决策**。网页、issue、代码注释、文档、tool output、memory 都可能携带指令形态文本。
+判断 Prompt injection，要看程序是否把低信任材料当成了有权指挥它的指令。网页、issue、代码注释、文档、tool output 和 memory 里，都可能出现命令式文字。文字像命令还不等于攻击成功；需要检查它有没有改变高权限的控制决策。
 
 ## 控制面与数据面
 

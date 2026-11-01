@@ -17,19 +17,19 @@ JavaScript 是动态类型、基于原型、拥有词法作用域和一等函数
 
 原始值包括 undefined、null、boolean、number、bigint、string、symbol；对象按引用比较。`===` 通常避免隐式转换，`Object.is` 对 NaN 和正负零语义不同。`null` 表示有意空值，`undefined` 常表示缺失。
 
-**这里容易混淆的是：** `typeof null` 历史上返回 `"object"`；数组用 `Array.isArray` 检查。
+`typeof null` 历史上返回 `"object"`；数组用 `Array.isArray` 检查。
 
 ### 2. 作用域、闭包与 this
 
 `let/const` 是块级词法作用域；闭包让函数保留定义位置的变量。普通函数的 `this` 由调用方式决定，箭头函数捕获外层 this 且没有自己的 arguments。
 
-**这里容易混淆的是：** 闭包可能延长对象生命期；事件监听和计时器应在组件销毁时清理。
+闭包可能延长对象生命期；事件监听和计时器应在组件销毁时清理。
 
 ### 3. 数组与对象
 
 `map/filter/reduce/find/some/every` 表达集合变换；spread 只做浅拷贝，嵌套对象仍共享引用。`Map` 支持任意键，`Set` 表达唯一集合。
 
-**这里容易混淆的是：** `sort()` 默认按字符串且原地修改；数字排序需比较器，保留原数组可用 `toSorted()`。
+`sort()` 默认按字符串且原地修改；数字排序需比较器，保留原数组可用 `toSorted()`。
 
 ### 4. DOM 与事件
 
@@ -37,7 +37,7 @@ DOM 是浏览器里的节点树。事件传播通常要区分捕获、目标和�
 
 `preventDefault()` 针对可取消事件的默认动作，不负责阻止传播；被动监听器也不能用它取消默认动作。`stopPropagation()` 处理传播，不等于取消浏览器默认动作。这两件事分开想，按钮点击和表单提交就更容易调试。参见 [事件的 bubbles 属性](https://developer.mozilla.org/en-US/docs/Web/API/Event/bubbles)。
 
-**这里容易混淆的是：** 阻止默认动作不等于阻止冒泡；过度 stopPropagation 会破坏组合。
+阻止默认动作不等于阻止冒泡；过度 stopPropagation 会破坏组合。
 
 ## 3. 运行链路
 

@@ -28,7 +28,7 @@ Servlet 容器管理 Servlet 生命周期并把 HTTP 请求映射为 HttpServlet
 - Filter 适合容器级请求/响应包装、认证和关联 ID。
 - 容器连接、线程、accept queue 和超时共同决定过载行为。
 
-**这里容易混淆的是：** Tomcat 既是 Servlet 容器也提供 HTTP 服务器能力；Nginx 反代并不是运行 Spring MVC 的前提。
+Tomcat 既是 Servlet 容器也提供 HTTP 服务器能力；Nginx 反代并不是运行 Spring MVC 的前提。
 
 ### 2. DispatcherServlet 调度
 
@@ -38,7 +38,7 @@ DispatcherServlet 根据 HandlerMapping 找 handler，通过 HandlerAdapter 调�
 - JSON 序列化、内容协商、校验和异常解析各由独立组件负责。
 - 控制器保持薄，事务与业务逻辑进入应用服务。
 
-**这里容易混淆的是：** Controller 方法并不是由浏览器直接反射调用，中间存在映射、绑定、校验、转换和异常处理。
+Controller 方法并不是由浏览器直接反射调用，中间存在映射、绑定、校验、转换和异常处理。
 
 ### 3. 请求绑定与响应
 
@@ -48,7 +48,7 @@ DispatcherServlet 根据 HandlerMapping 找 handler，通过 HandlerAdapter 调�
 - 上传限制总大小、单文件、类型、文件名和存储路径。
 - 流式响应和下载正确设置 Content-Type、Disposition 与缓存。
 
-**这里容易混淆的是：** 仅检查文件扩展名不足以识别内容类型，且用户文件名不得直接作为服务器路径。
+仅检查文件扩展名不足以识别内容类型，且用户文件名不得直接作为服务器路径。
 
 ### 4. 线程模型与异步
 
@@ -58,7 +58,7 @@ DispatcherServlet 根据 HandlerMapping 找 handler，通过 HandlerAdapter 调�
 - 设置请求截止时间并取消下游操作。
 - 响应提交后异常无法再正常改写状态码。
 
-**这里容易混淆的是：** 异步/虚拟线程不自动提供背压，必须限制队列、连接和并发。
+异步/虚拟线程不自动提供背压，必须限制队列、连接和并发。
 
 ## 3. 工程链路
 

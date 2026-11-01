@@ -17,7 +17,7 @@
 | Tool execution | executor 接收已验证参数并产生 result | I/O、业务错误、取消 |
 | OS process execution | pid、argv、cwd、env、stdin/stdout/stderr、exit code | spawn 失败、死锁、孤儿进程 |
 
-模型产生 invocation，并不直接拥有文件系统或进程权限。Registry 解析版本，Policy Gate 判定 capability，Executor 负责执行，Result Normalizer 把结构化状态回填。
+模型发出调用请求（invocation），不代表它直接拥有文件系统或进程权限。请求先由 Registry 找到对应版本的工具，再由 Policy Gate 检查所需能力（capability）是否允许使用。通过检查后，Executor 执行操作，Result Normalizer 把结果整理成结构化状态并交回去。
 
 ```mermaid
 flowchart LR
